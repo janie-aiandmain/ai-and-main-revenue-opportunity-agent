@@ -1,4 +1,4 @@
-const RELEASE = "2026-10-09-revenue-opportunity-agent-v0.3";
+const RELEASE = "2026-10-09-revenue-opportunity-agent-v0.4";
 
 export default {
   async fetch(request, env) {
@@ -87,26 +87,49 @@ async function shadowEvaluate(env) {
     const context = await getHubSpotContext(env);
     if (context.response) return context.response;
 
-    const evaluations = context.contacts.map((contact) => {
-      const combinedNotes = contact.notes.map((note) => stripHtml(note.body)).join(" ");
-      return {
-        contactId: contact.id,
-        customer: [contact.firstname, contact.lastname].filter(Boolean).join(" "),
-        email: contact.email,
-        mode: "shadow",
-        crmWritePerformed: false,
-        ...evaluateRevenueOpportunity(combinedNotes),
-      };
-    });
+    const eligible = [];
+    const ignored = [];
+
+    for (const contact of context.contacts) {
+      const combinedNotes = contact.notes.map((note) => stripHtml(note.body)).join(" ").trim();
+      const eligibility = evaluateEligibility(contact, combinedNotes);
+
+      if (!eligibility.eligible) {
+        ignored.push({
+          contactId: contact.id,
+          customer: [contact.firstname, contact.lastname].filter(Boolean).join(" "),
+          email: contact.email,
+          reason: eligibility.reason,
+        });
+        continue;
+      }
+
+      eligible.push({
+        contact,
+        combinedNotes,
+      });
+    }
+
+    const evaluations = eligible.map(({ contact, combinedNotes }) => ({
+      contactId: contact.id,
+      customer: [contact.firstname, contact.lastname].filter(Boolean).join(" "),
+      email: contact.email,
+      mode: "shadow",
+      crmWritePerformed: false,
+      ...evaluateRevenueOpportunity(combinedNotes),
+    }));
 
     return json({
       status: "shadow_evaluation_complete",
       source: "HubSpot",
       readOnly: true,
-      methodology: "deterministic diagnostic rules v0.1",
-      note: "This validates the deployment pipeline before an LLM reasoning layer is introduced.",
-      evaluationCount: evaluations.length,
+      methodology: "deterministic diagnostic rules v0.2",
+      note: "Only contacts with substantive service-note context are evaluated. No CRM write is performed.",
+      recordsScanned: context.contacts.length,
+      recordsEvaluated: evaluations.length,
+      recordsIgnored: ignored.length,
       evaluations,
+      ignored,
     });
   } catch (error) {
     return apiError(error);
@@ -189,6 +212,24 @@ async function getHubSpotContext(env) {
       notes: contact.noteIds.map((id) => notesById[id]).filter(Boolean),
     })),
   };
+}
+
+function evaluateEligibility(contact, noteText) {
+  if (!contact.notes || contact.notes.length === 0) {
+    return { eligible: false, reason: "No associated service notes." };
+  }
+
+  const clean = (noteText || "").replace(/\s+/g, " ").trim();
+
+  if (!clean) {
+    return { eligible: false, reason: "Associated note contains no substantive text." };
+  }
+
+  if (clean.length < 20) {
+    return { eligible: false, reason: "Note text is too limited to support a reliable revenue evaluation." };
+  }
+
+  return { eligible: true, reason: "Substantive service-note context available." };
 }
 
 function evaluateRevenueOpportunity(noteText) {
