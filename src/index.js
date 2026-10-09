@@ -15,7 +15,11 @@ export default {
       });
     }
 
-    if (url.pathname === "/hubspot-notes-test") {\n      return testNotes(request, env);\n    }\n\n    if (url.pathname === "/hubspot-test") {
+    if (url.pathname === "/hubspot-notes-test") {
+      return testNotes(request, env);
+    }
+
+    if (url.pathname === "/hubspot-test") {
       if (!env.HUBSPOT_ACCESS_TOKEN) {
         return json(
           {
