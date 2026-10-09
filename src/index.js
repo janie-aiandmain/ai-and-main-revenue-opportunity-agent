@@ -1,4 +1,4 @@
-const RELEASE = "2026-10-09-revenue-opportunity-agent-v0.1";
+const RELEASE = "2026-10-09-revenue-opportunity-agent-v0.2";
 
 export default {
   async fetch(request, env) {
@@ -15,7 +15,7 @@ export default {
       });
     }
 
-    if (url.pathname === "/hubspot-test") {
+    if (url.pathname === "/hubspot-notes-test") {\n      return testNotes(request, env);\n    }\n\n    if (url.pathname === "/hubspot-test") {
       if (!env.HUBSPOT_ACCESS_TOKEN) {
         return json(
           {
@@ -84,7 +84,7 @@ export default {
     return json({
       service: "AI & MAIN Revenue Opportunity Agent",
       release: RELEASE,
-      endpoints: ["/health", "/hubspot-test"],
+      endpoints: ["/health", "/hubspot-test", "/hubspot-notes-test"],
       nextStep:
         "Configure HUBSPOT_ACCESS_TOKEN as a Cloudflare secret, then open /hubspot-test.",
     });
@@ -99,4 +99,87 @@ function json(data, status = 200) {
       "cache-control": "no-store",
     },
   });
+}
+
+
+async function testNotes(request, env) {
+  if (!env.HUBSPOT_ACCESS_TOKEN) {
+    return json({ status: "not_configured", message: "Add HUBSPOT_ACCESS_TOKEN as a Cloudflare secret." }, 503);
+  }
+
+  try {
+    const contactsResponse = await fetch(
+      "https://api.hubapi.com/crm/v3/objects/contacts?limit=100&properties=firstname,lastname,email&associations=notes",
+      { headers: { Authorization: "Bearer " + env.HUBSPOT_ACCESS_TOKEN, Accept: "application/json" } }
+    );
+
+    const contactsBody = await contactsResponse.json();
+
+    if (!contactsResponse.ok) {
+      return json({ status: "contacts_error", httpStatus: contactsResponse.status, details: contactsBody }, contactsResponse.status);
+    }
+
+    const contacts = (contactsBody.results || []).map((contact) => ({
+      id: contact.id,
+      firstname: contact.properties?.firstname || "",
+      lastname: contact.properties?.lastname || "",
+      email: contact.properties?.email || "",
+      noteIds: (contact.associations?.notes?.results || []).map((x) => x.id),
+    }));
+
+    const noteIds = [...new Set(contacts.flatMap((x) => x.noteIds))];
+
+    if (!noteIds.length) {
+      return json({
+        status: "connected_no_notes_found",
+        message: "Contacts were retrieved, but no associated notes were returned.",
+        contacts,
+      });
+    }
+
+    const notesResponse = await fetch(
+      "https://api.hubapi.com/crm/v3/objects/notes/batch/read",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + env.HUBSPOT_ACCESS_TOKEN,
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          properties: ["hs_note_body", "hs_timestamp"],
+          inputs: noteIds.map((id) => ({ id })),
+        }),
+      }
+    );
+
+    const notesBody = await notesResponse.json();
+
+    if (!notesResponse.ok) {
+      return json({
+        status: "notes_access_error",
+        httpStatus: notesResponse.status,
+        message: "Note associations were found, but HubSpot rejected the note read.",
+        details: notesBody,
+      }, notesResponse.status);
+    }
+
+    const notes = Object.fromEntries((notesBody.results || []).map((note) => [note.id, {
+      id: note.id,
+      body: note.properties?.hs_note_body || "",
+      timestamp: note.properties?.hs_timestamp || "",
+    }]));
+
+    return json({
+      status: "connected_with_notes",
+      contactCount: contacts.length,
+      noteCount: noteIds.length,
+      contacts: contacts.map((contact) => ({
+        ...contact,
+        notes: contact.noteIds.map((id) => notes[id]).filter(Boolean),
+      })),
+    });
+  } catch (error) {
+    return json({ status: "error", error: error instanceof Error ? error.message : String(error) }, 500);
+  }
 }
