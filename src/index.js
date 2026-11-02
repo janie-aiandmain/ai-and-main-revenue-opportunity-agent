@@ -247,15 +247,6 @@ async function aiShadowEvaluate(env) {
 
 async function writebackPreview(env) {
   if (!env.HUBSPOT_ACCESS_TOKEN) return missingSecret();
-  if (!env.HUBSPOT_WRITE_TOKEN) {
-    return json(
-      {
-        status: "not_configured",
-        message: "HUBSPOT_WRITE_TOKEN is required for the bounded writeback phase.",
-      },
-      503
-    );
-  }
   if (!env.OPENAI_API_KEY) {
     return json({ status: "not_configured", message: "OPENAI_API_KEY is required." }, 503);
   }
@@ -353,6 +344,15 @@ async function createApprovedFollowUpTask(request, env) {
   }
 
   if (!env.HUBSPOT_ACCESS_TOKEN) return missingSecret();
+  if (!env.HUBSPOT_WRITE_TOKEN) {
+    return json(
+      {
+        status: "not_configured",
+        message: "HUBSPOT_WRITE_TOKEN is required for the bounded writeback phase.",
+      },
+      503
+    );
+  }
   if (!env.OPENAI_API_KEY) {
     return json({ status: "not_configured", message: "OPENAI_API_KEY is required." }, 503);
   }
