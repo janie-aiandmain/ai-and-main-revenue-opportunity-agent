@@ -6,6 +6,10 @@ This repository contains the AI & MAIN Revenue Opportunity Agent. The current ha
 
 Work on the `enterprise-hardening` branch unless explicitly instructed otherwise. Do not merge to `main` automatically.
 
+## Product boundary
+
+Read `docs/product-direction.md` before proposing architecture or product changes. It is the controlling product-direction document for this hardening effort. The Revenue Opportunity Agent is an intelligence/orchestration layer over an existing CRM, not a CRM replacement. Do not add generic CRM functionality as a solution to enterprise hardening.
+
 ## Operating principles
 
 - Begin with the business workflow and evidence, not model capability.
