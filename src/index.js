@@ -1,4 +1,4 @@
-const RELEASE = "2026-11-02-revenue-opportunity-agent-v0.7";
+const RELEASE = "2026-11-02-revenue-opportunity-agent-v0.8";
 
 export default {
   async fetch(request, env) {
@@ -10,7 +10,8 @@ export default {
         service: "AI & MAIN Revenue Opportunity Agent",
         release: RELEASE,
         mode: "read-only deployment practicum",
-        hubspotSecretConfigured: Boolean(env.HUBSPOT_ACCESS_TOKEN),
+        hubspotReadSecretConfigured: Boolean(env.HUBSPOT_ACCESS_TOKEN),
+        hubspotWriteSecretConfigured: Boolean(env.HUBSPOT_WRITE_TOKEN),
         openAISecretConfigured: Boolean(env.OPENAI_API_KEY),
         crmWritesEnabled: env.CRM_WRITEBACK_ENABLED === "true",
         writebackApprovalTokenConfigured: Boolean(env.WRITEBACK_APPROVAL_TOKEN),
@@ -246,6 +247,15 @@ async function aiShadowEvaluate(env) {
 
 async function writebackPreview(env) {
   if (!env.HUBSPOT_ACCESS_TOKEN) return missingSecret();
+  if (!env.HUBSPOT_WRITE_TOKEN) {
+    return json(
+      {
+        status: "not_configured",
+        message: "HUBSPOT_WRITE_TOKEN is required for the bounded writeback phase.",
+      },
+      503
+    );
+  }
   if (!env.OPENAI_API_KEY) {
     return json({ status: "not_configured", message: "OPENAI_API_KEY is required." }, 503);
   }
@@ -438,7 +448,7 @@ async function createApprovedFollowUpTask(request, env) {
       ],
     };
 
-    const response = await hubspotFetch(
+    const response = await hubspotWriteFetch(
       env,
       "https://api.hubapi.com/crm/objects/2026-09/tasks",
       {
@@ -1099,6 +1109,17 @@ async function hubspotFetch(env, url, options = {}) {
     ...options,
     headers: {
       Authorization: "Bearer " + env.HUBSPOT_ACCESS_TOKEN,
+      Accept: "application/json",
+      ...(options.headers || {}),
+    },
+  });
+}
+
+async function hubspotWriteFetch(env, url, options = {}) {
+  return fetch(url, {
+    ...options,
+    headers: {
+      Authorization: "Bearer " + env.HUBSPOT_WRITE_TOKEN,
       Accept: "application/json",
       ...(options.headers || {}),
     },
