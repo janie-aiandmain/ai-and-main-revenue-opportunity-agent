@@ -2,7 +2,7 @@
 
 ## First task
 
-Read `AGENTS.md` and `docs/enterprise-hardening-plan.md` completely before making changes.
+Read `AGENTS.md`, `docs/product-direction.md`, and `docs/enterprise-hardening-plan.md` completely before making changes.
 
 Then inspect the repository and prepare an enterprise-readiness assessment.
 
@@ -20,6 +20,8 @@ Return:
 8. any assumptions in the current code that should be challenged.
 
 Treat the target buyer as a roughly $20M-revenue service business with an internal IT/security team.
+
+Do not solve enterprise readiness by recreating CRM functionality. HubSpot remains the system of record; the AI & MAIN dashboard remains a narrow agent operator console.
 
 Do not broaden permissions, alter production credentials, merge to `main`, or change the production reasoning prompt during this first task.
 
