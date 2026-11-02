@@ -139,3 +139,9 @@ This representation is the prerequisite for exact finding/action approval,
 material-change invalidation and per-action idempotency. No remediation has begun.
 Unauthenticated endpoints remain a separate deployment risk from the assessment;
 this synthetic baseline does not validate their protection.
+
+## Subsequent authorized remediation
+
+The historical v0.1 evidence above is retained unchanged. See
+[multi-finding-comparison.md](multi-finding-comparison.md) for the versioned v0.2
+remediation, its separate 31-case run, exact hashes and remaining review limits.

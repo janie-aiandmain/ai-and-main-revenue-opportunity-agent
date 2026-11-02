@@ -194,3 +194,13 @@ external identity, single-tenant isolation and 12-month audit defaults.
 Implement Phases 1–3 only: architecture/baseline, external synthetic fixtures,
 multidimensional offline grading and a separate opt-in model runner. Keep the
 production prompt unchanged. Unavailable model results are not a passing baseline.
+
+## Approved multi-finding remediation
+
+Following the completed, remotely preserved v0.1 baseline, the user authorized a
+minimal versioned multi-finding shape change. Follow `docs/multi-finding-remediation.md`.
+The new read-only reasoning contract may return zero/one/multiple independent
+findings with stable context/key-derived IDs, local evidence and exact versioned
+proposals. Retain the prior prompt/schema and baseline for comparison. Do not
+extend this remediation into identity, authentication, durable idempotency or live
+writeback changes. Do not change the product into a CRM or merge to main.

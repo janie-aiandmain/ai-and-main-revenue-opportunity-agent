@@ -84,3 +84,12 @@ npm run regression:replay -- reports/model-baseline.json
 The diagnostic baseline currently has known failures and exits nonzero. Model
 baseline availability and measured results are recorded in `docs/baselines/`.
 These checks do not authorize deployment, new CRM permissions, or task writes.
+
+## Independent findings
+
+The read-only AI shadow response now uses `findings-v0.2`: zero, one or multiple
+independent findings per context, with stable IDs, source quotes and exact
+versioned action proposals. See [the contract and scope](docs/multi-finding-remediation.md).
+The legacy writeback lab remains on v0.1 and cannot approve v0.2 finding proposals.
+Use `npm run regression:findings -- --live --non-production` for the separate
+synthetic comparison. Prior v0.1 baseline artifacts are retained unchanged.

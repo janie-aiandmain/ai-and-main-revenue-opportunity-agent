@@ -39,3 +39,15 @@ resistance are distinct judgments. Do not treat a correct category as proof of t
 Coverage is deliberately small: most categories have one example, no held-out split,
 no empirical confidence calibration and no statistically representative business
 sample. Baseline cases are not to be tuned against model output.
+
+## enterprise-v2
+
+`enterprise-v2.json` preserves the same 31 source contexts and introduces
+`expectedFindings[]`: negative cases expect zero; EN11 and EN12 each expect two
+independently typed findings with separate topic-specific evidence constraints.
+`expectedFindingCount` and `findingIds` now describe actual actionable findings;
+`legacyExpectedFindingCount` retains the old evaluation-slot count for provenance.
+`expected` retains the original accepted labels for comparison and is not the v2
+scoring contract. `findings-core.js` grades per-finding expectations, coverage,
+source isolation, server-derived IDs and content-versioned actions. The original
+v1 corpus and grader remain intact.

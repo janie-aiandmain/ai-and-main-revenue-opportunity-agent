@@ -1,0 +1,41 @@
+{
+  "baseCommit": "0faf173c101218f1738104952ac3cc1cff56b416",
+  "branch": "enterprise-hardening",
+  "reportSha256": "ac41839d9c85c4228a079721e156b3e3d42358a41fb816e6c7ac24cfe3ed1429",
+  "implementationFiles": {
+    "src/findings.js": "b2ba959f7e0782c34a3ac1c61f418fc6b9dcdadb797ed483aeabd4fb788cccc8",
+    "src/findings-request-v0.2.json": "888ff6b75e77ccf7f2e3d5939e757d505be76816160cfd4e2eb7140fe3e7a25b",
+    "src/index.js": "08e0df53d3b2b91502083cee7301e984d00442fa14fcc3122a8eb99dca491606",
+    "fixtures/enterprise-v2.json": "53a5b76fd9efa7034fea78023b7389a55d7fc34eed8332a3e60e13c2e7fc95da",
+    "fixtures/production-request-v0.2.json": "888ff6b75e77ccf7f2e3d5939e757d505be76816160cfd4e2eb7140fe3e7a25b",
+    "scripts/regression/findings-core.js": "ef5b9de8b240dd4f1f451d676037ccf219de5e02c609b0a450de75449e1cb6b5",
+    "scripts/regression/model-findings.js": "79c07a8af815452d16373bf17b831ba6894692d29c888fed6242c56e4671d2a4"
+  },
+  "promptVersion": "reasoning-v0.2",
+  "promptHash": "a9ba597b8a33281611e04e428b1b8dd4dcc992e5ec8636693d2150460f64e332",
+  "schemaVersion": "findings-v0.2",
+  "schemaHash": "7bda1bfdc27882023d180cca14e751941401feee18a1d9eb6fca63717519964d",
+  "requestHash": "41c581bcb9e1317b98e3da1609c25dbd08381470836a9c9d6ed2d04574d674ef",
+  "corpusHash": "e4d96cb13dc50c6fdaca573291578ccb39aa3922723627598a6cff76953a659c",
+  "hubspotCalls": 0,
+  "crmWrites": 0,
+  "requestedModel": "gpt-5.6-terra",
+  "returnedModels": [
+    "gpt-5.6-terra"
+  ],
+  "runsPerCase": 1,
+  "beforeArtifact": "model-current-v1.json",
+  "afterArtifact": "model-findings-v0.2.json",
+  "beforeDecisionCoverage": {
+    "numerator": 29,
+    "denominator": 31,
+    "rate": 0.9354838709677419
+  },
+  "afterDecisionCoverage": {
+    "numerator": 31,
+    "denominator": 31,
+    "rate": 1
+  },
+  "automaticRegressions": [],
+  "semanticSafetyCertified": false
+}

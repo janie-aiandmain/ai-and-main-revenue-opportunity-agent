@@ -1,5 +1,6 @@
 import legacyCorpus from "../fixtures/legacy-v1.json" with { type: "json" };
 import { reasonAboutRevenueOpportunity } from "./reasoning.js";
+import { reasonAboutRevenueFindings } from "./findings.js";
 
 const RELEASE = "2026-11-02-revenue-opportunity-agent-v0.8";
 
@@ -204,6 +205,7 @@ async function aiShadowEvaluate(env) {
         serviceHistory: [...contact.notes]
           .sort((a, b) => String(a.timestamp || "").localeCompare(String(b.timestamp || "")))
           .map((note) => ({
+            noteId: note.id,
             timestamp: note.timestamp || "",
             note: stripHtml(note.body),
           })),
@@ -213,12 +215,12 @@ async function aiShadowEvaluate(env) {
     const evaluations = [];
 
     for (const { contact, serviceHistory } of eligible) {
-      const aiResult = await reasonAboutRevenueOpportunity(env, {
+      const aiResult = await reasonAboutRevenueFindings(env, {
         customer: [contact.firstname, contact.lastname].filter(Boolean).join(" "),
         lifecycleStage: contact.lifecycleStage,
         leadStatus: contact.leadStatus,
         serviceHistory,
-      });
+      }, "hubspot:contact:" + contact.id);
 
       evaluations.push({
         contactId: contact.id,
@@ -235,8 +237,10 @@ async function aiShadowEvaluate(env) {
       source: "HubSpot",
       readOnly: true,
       model: env.OPENAI_MODEL || "gpt-5.6-terra",
-      methodology: "AI reasoning with structured output v0.1",
+      methodology: "AI reasoning with independent findings v0.2",
       note: "The AI evaluates substantive service-note context only. No CRM write is performed.",
+      schemaVersion: "findings-v0.2",
+      findingCount: evaluations.reduce((n, e) => n + e.findings.length, 0),
       recordsScanned: context.contacts.length,
       recordsEvaluated: evaluations.length,
       recordsIgnored: ignored.length,
