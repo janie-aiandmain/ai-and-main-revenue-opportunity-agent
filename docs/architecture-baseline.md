@@ -1,7 +1,11 @@
 # Architecture, versions and trust boundaries
 
-Status: source inspection and offline testing based on `a2add93`; no deployed
-configuration or live HubSpot integration is certified by this report.
+Status: source inspection based on `a2add93`, with tooling committed as `c256761`
+and baseline collected at `5f88111`. Live model-only evaluation is recorded in
+`baselines/README.md`. No deployed configuration or live HubSpot integration is
+certified by this report. Main's `a056bcc` was merged into this branch; its only
+change adds `keep_vars: true` to preserve dashboard variables on future deployments.
+No deployment or production runtime-variable modification was performed here.
 
 ```mermaid
 flowchart LR

@@ -1,0 +1,22 @@
+{
+  "sourceBranch": "enterprise-hardening",
+  "sourceCommit": "5f88111a7932bd16192992e1f0fb3f93159303c9",
+  "runnerReportSha256": "7df43df850254ba914644ff45b0c3b7607f3cf65fd7dbd3ef928259048702819",
+  "runnerReport": "model-current-v1.json",
+  "credentialCheck": {
+    "endpoint": "POST /v1/responses",
+    "httpStatus": 200,
+    "completed": true
+  },
+  "hubspotCalls": 0,
+  "crmWrites": 0,
+  "requestedModel": "gpt-5.6-terra",
+  "returnedModels": [
+    "gpt-5.6-terra"
+  ],
+  "runsPerCase": 1,
+  "promptHash": "9411125efa6d0016b0e4d221e29f7baaa89b9bdc9b2b954af97ab7ac7bb1304c",
+  "schemaHash": "bfe78e2765e4c60681a7e0fcf2b95f45934f4db91cbebfa5de6da1346cea558f",
+  "requestHash": "d4ebb0184d4f87652544e70d1b6aba97c4724ad9aca8759f6a3bb91ae5c6915d",
+  "corpusHash": "8363a9e68da7ff69f4a9e964fb483234176b6a6d9341ca8578cbbdf76f7d8652"
+}
