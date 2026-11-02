@@ -530,11 +530,19 @@ small{color:#66737C}.status{padding:12px;border-radius:10px;background:#FBF1DD;m
 <h1>Revenue Opportunity Agent — Human Approval Test</h1>
 <p>This lab page previews actionable opportunities. Nothing is written until you enter the test approval token and click an individual approval button.</p>
 <label><strong>Writeback approval token</strong></label>
-<input id="token" type="password" placeholder="Stored only in this browser session">
+<input id="token" type="password" placeholder="Enter the approval token">
+<small>Enter the token here, then click <strong>Create approved follow-up task</strong> on the customer you want to approve. There is no separate submit step.</small>
+<div id="tokenState" class="status" style="display:none;background:#E8F0ED"></div>
 <div id="status" class="status">Loading preview…</div>
 <div id="list"></div>
 <script>
-const statusBox=document.querySelector("#status"), list=document.querySelector("#list");
+const statusBox=document.querySelector("#status"), list=document.querySelector("#list"), tokenInput=document.querySelector("#token"), tokenState=document.querySelector("#tokenState");
+tokenInput.addEventListener("input",()=>{
+  tokenState.style.display=tokenInput.value.trim()?"block":"none";
+  tokenState.textContent=tokenInput.value.trim()
+    ?"Approval token entered. Now choose the customer task you want to create."
+    :"";
+});
 async function load(){
   const r=await fetch("/writeback-preview");
   const data=await r.json();
