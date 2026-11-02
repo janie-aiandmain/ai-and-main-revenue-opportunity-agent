@@ -1,4 +1,4 @@
-const RELEASE = "2026-11-02-revenue-opportunity-agent-v0.6";
+const RELEASE = "2026-11-02-revenue-opportunity-agent-v0.7";
 
 export default {
   async fetch(request, env) {
@@ -12,7 +12,8 @@ export default {
         mode: "read-only deployment practicum",
         hubspotSecretConfigured: Boolean(env.HUBSPOT_ACCESS_TOKEN),
         openAISecretConfigured: Boolean(env.OPENAI_API_KEY),
-        crmWritesEnabled: false,
+        crmWritesEnabled: env.CRM_WRITEBACK_ENABLED === "true",
+        writebackApprovalTokenConfigured: Boolean(env.WRITEBACK_APPROVAL_TOKEN),
       });
     }
 
@@ -36,11 +37,26 @@ export default {
       return aiStressTest(env);
     }
 
+    if (url.pathname === "/writeback-preview") {
+      return writebackPreview(env);
+    }
+
+    if (url.pathname === "/writeback-test") {
+      return writebackTestPage();
+    }
+
+    if (url.pathname === "/writeback-task") {
+      if (request.method !== "POST") {
+        return json({ status: "method_not_allowed", message: "POST required." }, 405);
+      }
+      return createApprovedFollowUpTask(request, env);
+    }
+
     return json({
       service: "AI & MAIN Revenue Opportunity Agent",
       release: RELEASE,
-      endpoints: ["/health", "/hubspot-test", "/hubspot-notes-test", "/shadow-evaluate", "/ai-shadow-evaluate", "/ai-stress-test"],
-      nextStep: "Use /ai-stress-test to challenge the AI reasoning layer before any CRM write permissions are added.",
+      endpoints: ["/health", "/hubspot-test", "/hubspot-notes-test", "/shadow-evaluate", "/ai-shadow-evaluate", "/ai-stress-test", "/writeback-preview", "/writeback-test", "/writeback-task"],
+      nextStep: "Use /writeback-preview to review proposed follow-up tasks. /writeback-task requires explicit human approval and remains disabled unless CRM_WRITEBACK_ENABLED is true.",
     });
   },
 };
@@ -226,6 +242,323 @@ async function aiShadowEvaluate(env) {
   } catch (error) {
     return apiError(error);
   }
+}
+
+async function writebackPreview(env) {
+  if (!env.HUBSPOT_ACCESS_TOKEN) return missingSecret();
+  if (!env.OPENAI_API_KEY) {
+    return json({ status: "not_configured", message: "OPENAI_API_KEY is required." }, 503);
+  }
+
+  try {
+    const context = await getHubSpotContext(env);
+    if (context.response) return context.response;
+
+    const candidates = [];
+
+    for (const contact of context.contacts) {
+      const combinedNotes = contact.notes.map((note) => stripHtml(note.body)).join(" ").trim();
+      const eligibility = evaluateEligibility(contact, combinedNotes);
+      if (!eligibility.eligible) continue;
+
+      const serviceHistory = [...contact.notes]
+        .sort((a, b) => String(a.timestamp || "").localeCompare(String(b.timestamp || "")))
+        .map((note) => ({
+          timestamp: note.timestamp || "",
+          note: stripHtml(note.body),
+        }));
+
+      const evaluation = await reasonAboutRevenueOpportunity(env, {
+        customer: [contact.firstname, contact.lastname].filter(Boolean).join(" "),
+        lifecycleStage: contact.lifecycleStage,
+        leadStatus: contact.leadStatus,
+        serviceHistory,
+      });
+
+      if (!evaluation.humanReviewRequired || evaluation.opportunityType === "none") continue;
+
+      candidates.push({
+        contactId: contact.id,
+        customer: [contact.firstname, contact.lastname].filter(Boolean).join(" "),
+        email: contact.email,
+        classification: evaluation.classification,
+        opportunityType: evaluation.opportunityType,
+        confidence: evaluation.confidence,
+        evidence: evaluation.evidence,
+        reasoningSummary: evaluation.reasoningSummary,
+        proposedTask: {
+          subject: "Revenue follow-up: " + [contact.firstname, contact.lastname].filter(Boolean).join(" "),
+          body: buildTaskBody(evaluation),
+          priority: evaluation.classification === "strong cross-sell opportunity" ? "HIGH" : "MEDIUM",
+          status: "NOT_STARTED",
+          type: "TODO",
+        },
+        writePerformed: false,
+      });
+    }
+
+    return json({
+      status: "writeback_preview_ready",
+      source: "HubSpot",
+      readOnly: true,
+      writebackEnabled: env.CRM_WRITEBACK_ENABLED === "true",
+      candidates,
+      note: "No CRM write has occurred. Each task requires a separate explicit human approval.",
+    });
+  } catch (error) {
+    return apiError(error);
+  }
+}
+
+async function createApprovedFollowUpTask(request, env) {
+  if (env.CRM_WRITEBACK_ENABLED !== "true") {
+    return json(
+      {
+        status: "writeback_disabled",
+        message: "CRM writeback is disabled. Set CRM_WRITEBACK_ENABLED=true only for the bounded test phase.",
+      },
+      403
+    );
+  }
+
+  if (!env.WRITEBACK_APPROVAL_TOKEN) {
+    return json(
+      {
+        status: "not_configured",
+        message: "WRITEBACK_APPROVAL_TOKEN must be configured as a Cloudflare secret.",
+      },
+      503
+    );
+  }
+
+  const suppliedToken = request.headers.get("X-AI-MAIN-APPROVAL");
+  if (!suppliedToken || suppliedToken !== env.WRITEBACK_APPROVAL_TOKEN) {
+    return json(
+      {
+        status: "approval_required",
+        message: "A valid human approval token is required. No CRM write was performed.",
+      },
+      403
+    );
+  }
+
+  if (!env.HUBSPOT_ACCESS_TOKEN) return missingSecret();
+  if (!env.OPENAI_API_KEY) {
+    return json({ status: "not_configured", message: "OPENAI_API_KEY is required." }, 503);
+  }
+
+  let payload;
+  try {
+    payload = await request.json();
+  } catch {
+    return json({ status: "invalid_request", message: "JSON body required." }, 400);
+  }
+
+  const contactId = String(payload.contactId || "").trim();
+  const approval = String(payload.approval || "").trim();
+
+  if (!contactId || approval !== "APPROVE_FOLLOW_UP_TASK") {
+    return json(
+      {
+        status: "explicit_approval_required",
+        message: "Provide contactId and approval='APPROVE_FOLLOW_UP_TASK'. No CRM write was performed.",
+      },
+      400
+    );
+  }
+
+  try {
+    const context = await getHubSpotContext(env);
+    if (context.response) return context.response;
+
+    const contact = context.contacts.find((item) => String(item.id) === contactId);
+    if (!contact) {
+      return json({ status: "contact_not_found", message: "Contact was not found in the connected HubSpot account." }, 404);
+    }
+
+    const combinedNotes = contact.notes.map((note) => stripHtml(note.body)).join(" ").trim();
+    const eligibility = evaluateEligibility(contact, combinedNotes);
+    if (!eligibility.eligible) {
+      return json(
+        {
+          status: "write_blocked",
+          reason: eligibility.reason,
+          message: "The contact is no longer eligible for an opportunity evaluation. No CRM write was performed.",
+        },
+        409
+      );
+    }
+
+    const serviceHistory = [...contact.notes]
+      .sort((a, b) => String(a.timestamp || "").localeCompare(String(b.timestamp || "")))
+      .map((note) => ({
+        timestamp: note.timestamp || "",
+        note: stripHtml(note.body),
+      }));
+
+    const evaluation = await reasonAboutRevenueOpportunity(env, {
+      customer: [contact.firstname, contact.lastname].filter(Boolean).join(" "),
+      lifecycleStage: contact.lifecycleStage,
+      leadStatus: contact.leadStatus,
+      serviceHistory,
+    });
+
+    if (!evaluation.humanReviewRequired || evaluation.opportunityType === "none") {
+      return json(
+        {
+          status: "write_blocked",
+          message: "Fresh evaluation does not support an actionable follow-up task. No CRM write was performed.",
+          evaluation,
+        },
+        409
+      );
+    }
+
+    const customer = [contact.firstname, contact.lastname].filter(Boolean).join(" ");
+    const dueAt = normalizeDueDate(payload.dueAt);
+    const taskInput = {
+      properties: {
+        hs_timestamp: dueAt,
+        hs_task_subject: "Revenue follow-up: " + customer,
+        hs_task_body: buildTaskBody(evaluation),
+        hs_task_status: "NOT_STARTED",
+        hs_task_priority: evaluation.classification === "strong cross-sell opportunity" ? "HIGH" : "MEDIUM",
+        hs_task_type: "TODO",
+      },
+      associations: [
+        {
+          to: { id: contact.id },
+          types: [
+            {
+              associationCategory: "HUBSPOT_DEFINED",
+              associationTypeId: 204,
+            },
+          ],
+        },
+      ],
+    };
+
+    const response = await hubspotFetch(
+      env,
+      "https://api.hubapi.com/crm/objects/2026-09/tasks",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(taskInput),
+      }
+    );
+
+    const body = await response.json();
+
+    if (!response.ok) {
+      return json(
+        {
+          status: "hubspot_write_error",
+          httpStatus: response.status,
+          message: "HubSpot rejected the bounded task write. No other CRM records were changed.",
+          details: body,
+        },
+        response.status
+      );
+    }
+
+    return json({
+      status: "follow_up_task_created",
+      crmWritePerformed: true,
+      writeType: "task_create_only",
+      contactId: contact.id,
+      customer,
+      taskId: body.id,
+      task: body,
+      evaluation,
+    });
+  } catch (error) {
+    return apiError(error);
+  }
+}
+
+function buildTaskBody(evaluation) {
+  return [
+    "AI & MAIN Revenue Opportunity Agent",
+    "",
+    "Classification: " + evaluation.classification,
+    "Confidence: " + evaluation.confidence,
+    "Evidence: " + evaluation.evidence,
+    "Reasoning: " + evaluation.reasoningSummary,
+    "Recommended next action: " + evaluation.recommendedNextAction,
+    "",
+    "Created only after explicit human approval. Review customer context before outreach.",
+  ].join("\n");
+}
+
+function normalizeDueDate(value) {
+  if (value) {
+    const parsed = new Date(value);
+    if (!Number.isNaN(parsed.getTime())) return parsed.toISOString();
+  }
+  return new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString();
+}
+
+function writebackTestPage() {
+  const html = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI & MAIN Revenue Opportunity Agent — Writeback Test</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#F6F2E9;color:#102538}
+main{max-width:980px;margin:0 auto;padding:32px 20px}
+h1{font-family:Georgia,serif;color:#134F43}
+.card{background:#fff;border:1px solid #DED8CC;border-radius:16px;padding:18px;margin:14px 0}
+button{background:#134F43;color:#fff;border:0;border-radius:9px;padding:10px 14px;font-weight:700;cursor:pointer}
+input{width:100%;padding:10px;border:1px solid #DED8CC;border-radius:9px;margin:6px 0 14px}
+small{color:#66737C}.status{padding:12px;border-radius:10px;background:#FBF1DD;margin:12px 0;white-space:pre-wrap}
+</style>
+</head>
+<body><main>
+<h1>Revenue Opportunity Agent — Human Approval Test</h1>
+<p>This lab page previews actionable opportunities. Nothing is written until you enter the test approval token and click an individual approval button.</p>
+<label><strong>Writeback approval token</strong></label>
+<input id="token" type="password" placeholder="Stored only in this browser session">
+<div id="status" class="status">Loading preview…</div>
+<div id="list"></div>
+<script>
+const statusBox=document.querySelector("#status"), list=document.querySelector("#list");
+async function load(){
+  const r=await fetch("/writeback-preview");
+  const data=await r.json();
+  statusBox.textContent="Preview status: "+data.status+" | Writeback enabled: "+data.writebackEnabled;
+  list.innerHTML="";
+  for(const c of data.candidates||[]){
+    const el=document.createElement("div"); el.className="card";
+    el.innerHTML="<h3>"+esc(c.customer)+"</h3><p><strong>"+esc(c.classification)+"</strong> · "+esc(c.confidence)+"</p><p>"+esc(c.reasoningSummary)+"</p><p><small>Evidence: "+esc(c.evidence)+"</small></p><button>Create approved follow-up task</button><pre></pre>";
+    el.querySelector("button").onclick=async()=>{
+      const token=document.querySelector("#token").value;
+      if(!token){alert("Enter the approval token first.");return;}
+      if(!confirm("Create one HubSpot follow-up task for "+c.customer+"?")) return;
+      const res=await fetch("/writeback-task",{
+        method:"POST",
+        headers:{"Content-Type":"application/json","X-AI-MAIN-APPROVAL":token},
+        body:JSON.stringify({contactId:c.contactId,approval:"APPROVE_FOLLOW_UP_TASK"})
+      });
+      const out=await res.json();
+      el.querySelector("pre").textContent=JSON.stringify(out,null,2);
+    };
+    list.appendChild(el);
+  }
+}
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+load();
+</script>
+</main></body></html>`;
+  return new Response(html, {
+    headers: {
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "no-store",
+      "x-content-type-options": "nosniff",
+    },
+  });
 }
 
 async function aiStressTest(env) {
