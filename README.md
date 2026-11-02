@@ -1,6 +1,9 @@
 # AI & MAIN Revenue Opportunity Agent
 
-Deployment practicum for a bounded AI agent that identifies revenue opportunities from CRM activity.
+An intelligence and orchestration layer that finds missed revenue and retention
+signals in CRM service activity. HubSpot remains the system of record. The agent
+supports evidence-backed reasoning, bounded recommendations, human approval and
+CRM-native follow-up; it does not replace the CRM.
 
 ## Practicum phases
 
@@ -12,9 +15,72 @@ Deployment practicum for a bounded AI agent that identifies revenue opportunitie
 
 The first milestone uses a HubSpot developer test account and a Cloudflare Worker. Credentials must be stored as Cloudflare secrets and must never be committed to GitHub.
 
-## Initial endpoints
+## Current lab endpoints
 
 - `/health` — confirms the Worker is running
 - `/hubspot-test` — will test read-only HubSpot access once the secret and scopes are configured
+- `/hubspot-notes-test` — retrieve contact and note context
+- `/shadow-evaluate` — deterministic read-only evaluation
+- `/ai-shadow-evaluate` — structured model evaluation
+- `/ai-stress-test` — nine embedded synthetic model cases
+- `/writeback-preview` — proposed tasks without CRM writes
+- `/writeback-test` — lab approval interface
+- `/writeback-task` — POST-only bounded task creation with writeback enabled,
+  separate credentials, approval token, explicit approval and fresh evaluation
 
-No production CRM write actions are enabled in this initial version.
+The write path exists but is disabled unless `CRM_WRITEBACK_ENABLED=true`.
+The shared approval token is a lab mechanism. Endpoint authentication, durable
+idempotency and enterprise auditability remain hardening work. This is not a
+claim of enterprise or production readiness.
+
+## Local development
+
+Node 24.19.0/npm 11.9.0 were validated during onboarding; CI uses Node 22.
+The repository currently has no lockfile.
+
+```sh
+npm install --package-lock=false --no-audit --no-fund
+WRANGLER_SEND_METRICS=false npm run check
+WRANGLER_SEND_METRICS=false npm run dev -- --local --ip 127.0.0.1 --port 8787
+```
+
+Verify `/health` returns 200 with `status: ready`. Without secrets, HubSpot
+evaluation endpoints return 503 `not_configured`; POST `/writeback-task` returns
+403 `writeback_disabled`. A dry-run build does not deploy. The offline harness is available through `npm test`; model-backed checks are
+separate and explicitly opt-in. Keep generated `node_modules/` and `.wrangler/`
+outputs out of commits.
+
+Live reads require `HUBSPOT_ACCESS_TOKEN`; AI routes also require `OPENAI_API_KEY`.
+Bounded lab writes additionally require `HUBSPOT_WRITE_TOKEN` and
+`WRITEBACK_APPROVAL_TOKEN`. Store production credentials as Cloudflare secrets,
+never in Git. Do not enable writes or deploy as part of routine validation.
+
+## Hardening direction
+
+See [engineering instructions](AGENTS.md), the
+[enterprise hardening plan](docs/enterprise-hardening-plan.md), and
+[implementation kickoff](docs/codex-kickoff.md). The operator console should show
+findings, evidence, decisions, authorized actions and outcomes, with links to
+HubSpot for deeper context. Generic customer, contact, pipeline, note and task
+management are outside this product's scope.
+
+
+## Enterprise hardening baseline
+
+The approved scope is Phases 1–3. See the [approved policies](docs/approved-hardening-policies.md),
+[architecture and risks](docs/architecture-baseline.md), and
+[regression methodology](docs/regression-methodology.md). Synthetic fixtures are
+versioned under `fixtures/`; production reasoning request settings are unchanged.
+
+```sh
+npm test
+npm run regression:offline
+# Requires the secure, non-production EVAL_OPENAI_API_KEY binding:
+npm run regression:model -- --live --non-production
+# Regrade captured outputs without additional API calls:
+npm run regression:replay -- reports/model-baseline.json
+```
+
+The diagnostic baseline currently has known failures and exits nonzero. Model
+baseline availability and measured results are recorded in `docs/baselines/`.
+These checks do not authorize deployment, new CRM permissions, or task writes.

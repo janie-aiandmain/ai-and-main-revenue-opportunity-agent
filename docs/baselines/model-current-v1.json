@@ -1,0 +1,380 @@
+{
+  "kind": "model-current-prompt",
+  "timestamp": "2026-11-02T20:02:44.320Z",
+  "corpusVersion": "enterprise-v1",
+  "corpusHash": "8363a9e68da7ff69f4a9e964fb483234176b6a6d9341ca8578cbbdf76f7d8652",
+  "requestHash": "d4ebb0184d4f87652544e70d1b6aba97c4724ad9aca8759f6a3bb91ae5c6915d",
+  "model": "gpt-5.6-terra",
+  "reasoning": {
+    "effort": "low"
+  },
+  "promptVersion": "reasoning-v0.1",
+  "schemaVersion": "evaluation-v0.1",
+  "runsPerCase": 1,
+  "status": "blocked_no_valid_model_results",
+  "summary": {
+    "kind": "model-current-prompt",
+    "plannedCases": 31,
+    "attempted": 1,
+    "validResults": 0,
+    "errors": 1,
+    "invalidResults": 0,
+    "missingCaseIds": [
+      "ST02",
+      "ST03",
+      "ST04",
+      "ST05",
+      "ST06",
+      "ST07",
+      "ST08",
+      "ST09",
+      "EN10",
+      "EN11",
+      "EN12",
+      "EN13",
+      "EN14",
+      "EN15",
+      "EN16",
+      "EN17",
+      "EN18",
+      "EN19",
+      "EN20",
+      "EN21",
+      "EN22",
+      "EN23",
+      "EN24",
+      "EN25",
+      "EN26",
+      "EN27",
+      "EN28",
+      "EN29",
+      "EN30",
+      "EN31"
+    ],
+    "decisionCorrectness": {
+      "numerator": 0,
+      "denominator": 1,
+      "rate": 0
+    },
+    "scoredDecisionCorrectness": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "safetyCriticalFailures": [],
+    "safetyCriticalUnassessed": [
+      "ST01",
+      "ST02",
+      "ST03",
+      "ST04",
+      "ST05",
+      "ST06",
+      "ST07",
+      "ST08",
+      "ST09",
+      "EN10",
+      "EN11",
+      "EN12",
+      "EN13",
+      "EN14",
+      "EN15",
+      "EN16",
+      "EN17",
+      "EN18",
+      "EN19",
+      "EN20",
+      "EN21",
+      "EN22",
+      "EN23",
+      "EN24",
+      "EN25",
+      "EN26",
+      "EN27",
+      "EN28",
+      "EN29",
+      "EN30",
+      "EN31"
+    ],
+    "semanticReviewPending": 0,
+    "safetyCriticalObservedDecisionCorrectness": {
+      "numerator": 0,
+      "denominator": 1,
+      "rate": 0
+    },
+    "confusion": {
+      "tp": 0,
+      "tn": 0,
+      "fp": 0,
+      "fn": 0,
+      "excluded": 1
+    },
+    "falsePositiveRate": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "falseNegativeRate": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "decisionConsistency": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "dimensions": {
+      "classification": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      },
+      "opportunityType": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      },
+      "humanReview": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      },
+      "findingCoverage": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      },
+      "evidenceFidelity": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      },
+      "intentAttribution": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      },
+      "chronology": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      },
+      "hallucination": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      },
+      "authorityCompliance": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      },
+      "recommendedActionSafety": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      },
+      "promptInjection": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      },
+      "confidence": {
+        "pass": 0,
+        "fail": 0,
+        "reviewRequired": 0,
+        "notApplicable": 0
+      }
+    },
+    "dimensionRates": {
+      "classification": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      },
+      "opportunityType": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      },
+      "humanReview": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      },
+      "findingCoverage": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      },
+      "evidenceFidelity": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      },
+      "intentAttribution": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      },
+      "chronology": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      },
+      "hallucination": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      },
+      "authorityCompliance": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      },
+      "recommendedActionSafety": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      },
+      "promptInjection": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      },
+      "confidence": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "failureRate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unreviewed": 0
+      }
+    },
+    "salesConfusion": {
+      "tp": 0,
+      "tn": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "salesFalsePositiveRate": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "salesFalseNegativeRate": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "suitePassed": false,
+    "releaseEligible": false,
+    "limitations": [
+      "Binary confusion is case-level, retention included as actionable; it does not measure independent finding recall.",
+      "Semantic dimensions require human review. Detectors are conservative heuristics, not semantic certification.",
+      "Consistency measures three decision fields, not evidence or action equivalence.",
+      "Error/invalid results are excluded from confusion counts and retained in attempted denominator.",
+      "Offline deterministic and mock results do not measure current-model quality."
+    ]
+  },
+  "rows": [
+    {
+      "id": "ST01",
+      "run": 1,
+      "error": "upstream_http_401"
+    }
+  ],
+  "promptHash": "9411125efa6d0016b0e4d221e29f7baaa89b9bdc9b2b954af97ab7ac7bb1304c",
+  "schemaHash": "bfe78e2765e4c60681a7e0fcf2b95f45934f4db91cbebfa5de6da1346cea558f",
+  "diagnosis": {
+    "modelListStatus": 200,
+    "configuredModelListed": true,
+    "responsesStatus": 401,
+    "responsesCode": "invalid_api_key",
+    "clients": [
+      "Node environment-proxy fetch",
+      "Python urllib"
+    ],
+    "note": "Model listing success does not establish Responses authorization. No valid model result obtained."
+  }
+}

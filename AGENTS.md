@@ -185,3 +185,12 @@ Before enterprise pilot readiness, the repository should contain current documen
 - production-readiness checklist.
 
 Clearly label claims as implemented, tested, planned, client-configurable, or requiring client IT approval.
+
+## Approved scope following assessment
+
+The assessment is approved. `docs/approved-hardening-policies.md` records the
+controlling finding identity, exact-action approval, 24-hour validity, idempotency,
+external identity, single-tenant isolation and 12-month audit defaults.
+Implement Phases 1–3 only: architecture/baseline, external synthetic fixtures,
+multidimensional offline grading and a separate opt-in model runner. Keep the
+production prompt unchanged. Unavailable model results are not a passing baseline.
