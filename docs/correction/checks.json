@@ -1,0 +1,48 @@
+{
+  "mode": "OFFLINE_LOCAL_SANDBOX",
+  "offlineHarness": {
+    "tests": 60,
+    "passed": 60,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0
+  },
+  "workerDryRun": {
+    "exitCode": 0,
+    "deployed": false
+  },
+  "reprocessing": {
+    "executions": 155,
+    "stableIdentitySlots": 12,
+    "expectedSlots": 12,
+    "statefulReplay": true,
+    "newModelCalls": 0
+  },
+  "focusedScenario": {
+    "opportunities": 1,
+    "tasks": 1,
+    "staleApprovalBlocked": true,
+    "duplicateCreateAfterMaterialChangeBlocked": true,
+    "outcomeEvents": 1,
+    "syntheticRevenueMinor": 25000,
+    "currency": "USD"
+  },
+  "concurrencyTest": {
+    "taskProcesses": 4,
+    "taskCreates": 1,
+    "outcomeProcesses": 4,
+    "outcomeRecords": 1
+  },
+  "semanticReview": {
+    "reviewerKind": "ASSISTANT_NOT_HUMAN",
+    "contexts": 31,
+    "executions": 155,
+    "pass": 24,
+    "fail": 1,
+    "concern": 6,
+    "humanApprovals": 0
+  },
+  "hubspotCalls": 0,
+  "crmWrites": 0,
+  "liveExactlyOnceCertified": false
+}

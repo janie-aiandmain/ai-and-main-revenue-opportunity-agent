@@ -204,3 +204,12 @@ findings with stable context/key-derived IDs, local evidence and exact versioned
 proposals. Retain the prior prompt/schema and baseline for comparison. Do not
 extend this remediation into identity, authentication, durable idempotency or live
 writeback changes. Do not change the product into a CRM or merge to main.
+
+## Approved focused pre-writeback correction
+
+The user subsequently authorized source-anchored opportunity identity, explicit
+material approval/version policy, semantic review, and local sandbox duplicate-
+effect/attribution verification. See `docs/correction/README.md`. Keep this work
+separate from live CRM rollout: the new policy/reference SQLite adapter is not a
+production authentication, external exactly-once-write or human approval system.
+No HubSpot calls, production changes or merge to main are authorized here.

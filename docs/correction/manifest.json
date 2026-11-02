@@ -1,0 +1,27 @@
+{
+  "baseCommit": "342cf64fa70431ccf98f409d472d7e3e2b7e6e63",
+  "policyVersion": "source-anchored-task-policy-v1",
+  "frozenCaptureSha256": "04f31f3e352d76c8774363d37a6387bb5658f17bb91ca4f65a443918d782b52b",
+  "implementationHashes": {
+    "src/correction-policy.js": "dcec0f650e8af54ee1306e5fad4fdbebbbe6ea267a31fe60c570b5163d77cb98",
+    "sandbox/correction-store.js": "cd3c01b5a81ca70a5cd3c5988de0ec68d289a911c5566b3cd50dc766b242638a",
+    "sandbox/effect-worker.js": "8451dff6786f6a2fb25d0f0f3a0eb294e70ba8fab5bca99e3e875bee74a42351",
+    "sandbox/focused-scenario.js": "d1fec533315721944649316ce75f833586755b2a8a5672cedefcfa4fa0cb0f82",
+    "scripts/regression/correction-replay.js": "22961ea29d5ce9078c36ac995466e42e3a2351a48fe39b887a559fdb8c617de7",
+    "tests/correction.test.js": "1a7f93f54f9f9647d4c3325c910d6338f40b2dd50bb2cc039735d4ce736a821a"
+  },
+  "artifacts": {
+    "semantic-review.md": "3bd7e775c148ffb3b6e6a046f149ac4837e864128fb14d48359893ddc48b9aba",
+    "semantic-review.json": "c82eff87500b62ee77b9bbd475e7f43d3b80678425c32eb2d93bb86c2fba1c09",
+    "checks.json": "6e8ce5a6b367cd722937bf2ab154c3013d5f4c29be77f5e6d3e7458a999c3a17",
+    "reference-contracts.json": "56b50a7e3d5bd969d25e6dea657478b69e9d0913c07c492dfe39d281421569b2",
+    "reprocessing.json": "6fec1241d30ba285c4fa80d53006a3cd82e49fa5e7fcbf16a890d63f93af9b85",
+    "README.md": "6c996b07ead1e75d661f7d28e9c563c00f73e374b48c705302e2a8830bad92f4",
+    "sandbox-results.json": "dbd8ded27b569324bcaa0256065e2ca49a1503d5065abc64bf3fe01bdc233f1e"
+  },
+  "humanApprovals": 0,
+  "newModelCalls": 0,
+  "hubspotCalls": 0,
+  "crmWrites": 0,
+  "productionWired": false
+}

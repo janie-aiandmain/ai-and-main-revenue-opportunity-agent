@@ -1,0 +1,61 @@
+{
+  "kind": "SYNTHETIC_LOCAL_SANDBOX_NOT_LIVE_CRM",
+  "newModelCalls": 0,
+  "hubspotCalls": 0,
+  "crmWrites": 0,
+  "syntheticApprovalsOnly": true,
+  "modelKeyObservations": [
+    {
+      "modelKey": "surge-protection",
+      "opportunityId": "op_b37258ca-a555-4e9a-b15a-e83605156598",
+      "version": "action_1dd10fe3313a67119a14ed047f0f80210b825323721f9bafe4f3fbb7fbe58b70"
+    },
+    {
+      "modelKey": "surge-protection-pricing",
+      "opportunityId": "op_b37258ca-a555-4e9a-b15a-e83605156598",
+      "version": "action_1dd10fe3313a67119a14ed047f0f80210b825323721f9bafe4f3fbb7fbe58b70"
+    },
+    {
+      "modelKey": "whole-home-surge-review",
+      "opportunityId": "op_b37258ca-a555-4e9a-b15a-e83605156598",
+      "version": "action_1dd10fe3313a67119a14ed047f0f80210b825323721f9bafe4f3fbb7fbe58b70"
+    },
+    {
+      "modelKey": "surge-protection",
+      "opportunityId": "op_b37258ca-a555-4e9a-b15a-e83605156598",
+      "version": "action_1dd10fe3313a67119a14ed047f0f80210b825323721f9bafe4f3fbb7fbe58b70"
+    },
+    {
+      "modelKey": "surge-protection-pricing",
+      "opportunityId": "op_b37258ca-a555-4e9a-b15a-e83605156598",
+      "version": "action_3624086822a250c72432dada8d6a8ca77f0a3714e104977bf3e7c46a32f5c692"
+    }
+  ],
+  "stableIdentityForSynonyms": true,
+  "repeatCounts": {
+    "opportunities": 1,
+    "tasks": 1,
+    "outcomes": 0,
+    "revenueByCurrency": {}
+  },
+  "materialVersionChanged": true,
+  "oldApprovalBlocked": true,
+  "secondCreateBlocked": true,
+  "restartTaskCount": 1,
+  "revenueAttempts": [
+    true,
+    false,
+    false,
+    false,
+    false
+  ],
+  "finalCounts": {
+    "opportunities": 1,
+    "tasks": 1,
+    "outcomes": 1,
+    "revenueByCurrency": {
+      "USD": 25000
+    }
+  },
+  "limitations": "SQLite task/outcome effects share the transaction with the ledger. Remote HubSpot effects do not; no exactly-once live CRM guarantee is claimed."
+}

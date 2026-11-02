@@ -13,7 +13,9 @@
     "regression:replay": "node scripts/regression/replay.js",
     "regression:findings": "NODE_USE_ENV_PROXY=1 node scripts/regression/model-findings.js",
     "regression:stability": "NODE_USE_ENV_PROXY=1 node scripts/regression/repeat-findings.js",
-    "regression:review": "node scripts/regression/generate-review.js"
+    "regression:review": "node scripts/regression/generate-review.js",
+    "correction:replay": "node scripts/regression/correction-replay.js",
+    "correction:sandbox": "node sandbox/focused-scenario.js"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"

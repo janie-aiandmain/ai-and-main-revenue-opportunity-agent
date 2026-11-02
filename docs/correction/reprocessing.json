@@ -1,0 +1,805 @@
+{
+  "policyVersion": "source-anchored-task-policy-v1",
+  "sourceCaptureSha256": "04f31f3e352d76c8774363d37a6387bb5658f17bb91ca4f65a443918d782b52b",
+  "mode": "OFFLINE_CAPTURE_REPROCESSING_WITH_PERSISTENT_SANDBOX_STATE",
+  "newModelCalls": 0,
+  "hubspotCalls": 0,
+  "crmWrites": 0,
+  "originalRawKeysPreserved": true,
+  "contexts": 31,
+  "reprocessedExecutions": 155,
+  "expectedPositiveSlots": 12,
+  "stableOpportunitySlots": 12,
+  "stableCanonicalReferenceActionSlots": 12,
+  "referenceEquivalenceLimit": "Reference typed semantics were authored from source; they are not autonomous semantic judgments or human approvals. Unknown changes suspend execution.",
+  "sandboxCounts": {
+    "opportunities": 12,
+    "tasks": 0,
+    "outcomes": 0,
+    "revenueByCurrency": {}
+  },
+  "results": [
+    {
+      "id": "ST01",
+      "slots": []
+    },
+    {
+      "id": "ST02",
+      "slots": []
+    },
+    {
+      "id": "ST03",
+      "slots": [
+        {
+          "slot": 1,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_54af09ff-275f-48a2-a85d-aabac2e94243",
+              "originalModelKey": "garage-outlets"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_54af09ff-275f-48a2-a85d-aabac2e94243",
+              "originalModelKey": "garage-outlets"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_54af09ff-275f-48a2-a85d-aabac2e94243",
+              "originalModelKey": "garage-outlet-addition"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_54af09ff-275f-48a2-a85d-aabac2e94243",
+              "originalModelKey": "garage-three-outlets"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_54af09ff-275f-48a2-a85d-aabac2e94243",
+              "originalModelKey": "garage-three-outlets"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_857ae84280b65c85ed7e8c4adde62e987f6724186e964d34c3c07974d049ba22"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_857ae84280b65c85ed7e8c4adde62e987f6724186e964d34c3c07974d049ba22"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_857ae84280b65c85ed7e8c4adde62e987f6724186e964d34c3c07974d049ba22"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_857ae84280b65c85ed7e8c4adde62e987f6724186e964d34c3c07974d049ba22"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_857ae84280b65c85ed7e8c4adde62e987f6724186e964d34c3c07974d049ba22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ST04",
+      "slots": [
+        {
+          "slot": 1,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_517568fe-ee12-494a-b7cb-54534492b3aa",
+              "originalModelKey": "flickering-new-fixture-service-recovery"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_517568fe-ee12-494a-b7cb-54534492b3aa",
+              "originalModelKey": "flickering-new-fixture-service-recovery"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_517568fe-ee12-494a-b7cb-54534492b3aa",
+              "originalModelKey": "flickering-new-fixture-service-recovery"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_517568fe-ee12-494a-b7cb-54534492b3aa",
+              "originalModelKey": "flickering-new-fixture-service-recovery"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_517568fe-ee12-494a-b7cb-54534492b3aa",
+              "originalModelKey": "flickering-new-fixture-service-recovery"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_79857e42d780664266e146ea96010b5b758f7037f30bdbf0bfb5537de5f21359"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_79857e42d780664266e146ea96010b5b758f7037f30bdbf0bfb5537de5f21359"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_79857e42d780664266e146ea96010b5b758f7037f30bdbf0bfb5537de5f21359"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_79857e42d780664266e146ea96010b5b758f7037f30bdbf0bfb5537de5f21359"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_79857e42d780664266e146ea96010b5b758f7037f30bdbf0bfb5537de5f21359"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ST05",
+      "slots": []
+    },
+    {
+      "id": "ST06",
+      "slots": []
+    },
+    {
+      "id": "ST07",
+      "slots": [
+        {
+          "slot": 1,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_16577b32-3276-43d0-8ae0-6a09a59f5a8f",
+              "originalModelKey": "whole-home-surge-protection"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_16577b32-3276-43d0-8ae0-6a09a59f5a8f",
+              "originalModelKey": "whole-home-surge-protection"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_16577b32-3276-43d0-8ae0-6a09a59f5a8f",
+              "originalModelKey": "whole-home-surge-protection"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_16577b32-3276-43d0-8ae0-6a09a59f5a8f",
+              "originalModelKey": "whole-home-surge-protection"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_16577b32-3276-43d0-8ae0-6a09a59f5a8f",
+              "originalModelKey": "whole-home-surge-protection"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_bc3d3b11c0d314a96c5ef9a8b8103d9003e621ba288d8af3b89156ed7293c7b2"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_bc3d3b11c0d314a96c5ef9a8b8103d9003e621ba288d8af3b89156ed7293c7b2"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_bc3d3b11c0d314a96c5ef9a8b8103d9003e621ba288d8af3b89156ed7293c7b2"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_bc3d3b11c0d314a96c5ef9a8b8103d9003e621ba288d8af3b89156ed7293c7b2"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_bc3d3b11c0d314a96c5ef9a8b8103d9003e621ba288d8af3b89156ed7293c7b2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ST08",
+      "slots": [
+        {
+          "slot": 1,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_31fa2940-b493-4b77-b434-c5bc15c541ac",
+              "originalModelKey": "pendant-light-installation"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_31fa2940-b493-4b77-b434-c5bc15c541ac",
+              "originalModelKey": "pendant-light-installation"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_31fa2940-b493-4b77-b434-c5bc15c541ac",
+              "originalModelKey": "pendant-light-installation"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_31fa2940-b493-4b77-b434-c5bc15c541ac",
+              "originalModelKey": "pendant-light-installation"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_31fa2940-b493-4b77-b434-c5bc15c541ac",
+              "originalModelKey": "pendant-light-installation"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_07b0b285f218160f3bc042a5bcc83bc7382996a476b4628fee83270204e6b059"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_07b0b285f218160f3bc042a5bcc83bc7382996a476b4628fee83270204e6b059"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_07b0b285f218160f3bc042a5bcc83bc7382996a476b4628fee83270204e6b059"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_07b0b285f218160f3bc042a5bcc83bc7382996a476b4628fee83270204e6b059"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_07b0b285f218160f3bc042a5bcc83bc7382996a476b4628fee83270204e6b059"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ST09",
+      "slots": []
+    },
+    {
+      "id": "EN10",
+      "slots": []
+    },
+    {
+      "id": "EN11",
+      "slots": [
+        {
+          "slot": 1,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_2f99201d-86bd-47f1-901d-89657a51f2a4",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_2f99201d-86bd-47f1-901d-89657a51f2a4",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_2f99201d-86bd-47f1-901d-89657a51f2a4",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_2f99201d-86bd-47f1-901d-89657a51f2a4",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_2f99201d-86bd-47f1-901d-89657a51f2a4",
+              "originalModelKey": "surge-protection"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_d0c4184d15da9415cf62118ce8a113efbdcbde47789b02cc7dcc60f711e85467"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_d0c4184d15da9415cf62118ce8a113efbdcbde47789b02cc7dcc60f711e85467"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_d0c4184d15da9415cf62118ce8a113efbdcbde47789b02cc7dcc60f711e85467"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_d0c4184d15da9415cf62118ce8a113efbdcbde47789b02cc7dcc60f711e85467"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_d0c4184d15da9415cf62118ce8a113efbdcbde47789b02cc7dcc60f711e85467"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_014968cc-6e52-497a-8bf2-ada14ab646f3",
+              "originalModelKey": "pendant-lighting"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_014968cc-6e52-497a-8bf2-ada14ab646f3",
+              "originalModelKey": "pendant-lighting"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_014968cc-6e52-497a-8bf2-ada14ab646f3",
+              "originalModelKey": "pendant-lighting"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_014968cc-6e52-497a-8bf2-ada14ab646f3",
+              "originalModelKey": "pendant-lighting"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_014968cc-6e52-497a-8bf2-ada14ab646f3",
+              "originalModelKey": "pendant-lighting"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_1e77d5606734b06b486202a2226d51303e6d018e16f9c20fc5c13c1556d89550"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_1e77d5606734b06b486202a2226d51303e6d018e16f9c20fc5c13c1556d89550"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_1e77d5606734b06b486202a2226d51303e6d018e16f9c20fc5c13c1556d89550"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_1e77d5606734b06b486202a2226d51303e6d018e16f9c20fc5c13c1556d89550"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_1e77d5606734b06b486202a2226d51303e6d018e16f9c20fc5c13c1556d89550"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EN12",
+      "slots": [
+        {
+          "slot": 1,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_b33d3e91-496f-42dc-844b-97948b46271e",
+              "originalModelKey": "flickering-fixture-service-recovery"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_b33d3e91-496f-42dc-844b-97948b46271e",
+              "originalModelKey": "flickering-fixture-service-recovery"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_b33d3e91-496f-42dc-844b-97948b46271e",
+              "originalModelKey": "flickering-fixture-service-recovery"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_b33d3e91-496f-42dc-844b-97948b46271e",
+              "originalModelKey": "flickering-fixture-service-recovery"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_b33d3e91-496f-42dc-844b-97948b46271e",
+              "originalModelKey": "flickering-fixture-service-recovery"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_1d9b08faabfb30b5fe12a61f218eb8f49fcb4971b1206c8dd428061cf4df8ecb"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_1d9b08faabfb30b5fe12a61f218eb8f49fcb4971b1206c8dd428061cf4df8ecb"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_1d9b08faabfb30b5fe12a61f218eb8f49fcb4971b1206c8dd428061cf4df8ecb"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_1d9b08faabfb30b5fe12a61f218eb8f49fcb4971b1206c8dd428061cf4df8ecb"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_1d9b08faabfb30b5fe12a61f218eb8f49fcb4971b1206c8dd428061cf4df8ecb"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_3248f827-8967-41e2-bf1e-c67a1f5076b9",
+              "originalModelKey": "ev-charger"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_3248f827-8967-41e2-bf1e-c67a1f5076b9",
+              "originalModelKey": "ev-charger-pricing"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_3248f827-8967-41e2-bf1e-c67a1f5076b9",
+              "originalModelKey": "ev-charger-installation"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_3248f827-8967-41e2-bf1e-c67a1f5076b9",
+              "originalModelKey": "ev-charger-pricing"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_3248f827-8967-41e2-bf1e-c67a1f5076b9",
+              "originalModelKey": "ev-charger-pricing"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_1be3c9a167bdca310b242ffce08faa5033802cbfa5aceb04c76dc664f2c67168"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_1be3c9a167bdca310b242ffce08faa5033802cbfa5aceb04c76dc664f2c67168"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_1be3c9a167bdca310b242ffce08faa5033802cbfa5aceb04c76dc664f2c67168"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_1be3c9a167bdca310b242ffce08faa5033802cbfa5aceb04c76dc664f2c67168"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_1be3c9a167bdca310b242ffce08faa5033802cbfa5aceb04c76dc664f2c67168"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EN13",
+      "slots": []
+    },
+    {
+      "id": "EN14",
+      "slots": []
+    },
+    {
+      "id": "EN15",
+      "slots": []
+    },
+    {
+      "id": "EN16",
+      "slots": []
+    },
+    {
+      "id": "EN17",
+      "slots": [
+        {
+          "slot": 1,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_6f9dfc7a-5779-4cf6-a008-e40e8997716c",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_6f9dfc7a-5779-4cf6-a008-e40e8997716c",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_6f9dfc7a-5779-4cf6-a008-e40e8997716c",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_6f9dfc7a-5779-4cf6-a008-e40e8997716c",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_6f9dfc7a-5779-4cf6-a008-e40e8997716c",
+              "originalModelKey": "surge-protection"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_5b7c6a405bcc5cce435f72782aebca33faabb1ec372c2cbe1ab83ba5baabc24d"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_5b7c6a405bcc5cce435f72782aebca33faabb1ec372c2cbe1ab83ba5baabc24d"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_5b7c6a405bcc5cce435f72782aebca33faabb1ec372c2cbe1ab83ba5baabc24d"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_5b7c6a405bcc5cce435f72782aebca33faabb1ec372c2cbe1ab83ba5baabc24d"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_5b7c6a405bcc5cce435f72782aebca33faabb1ec372c2cbe1ab83ba5baabc24d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EN18",
+      "slots": []
+    },
+    {
+      "id": "EN19",
+      "slots": []
+    },
+    {
+      "id": "EN20",
+      "slots": []
+    },
+    {
+      "id": "EN21",
+      "slots": []
+    },
+    {
+      "id": "EN22",
+      "slots": []
+    },
+    {
+      "id": "EN23",
+      "slots": []
+    },
+    {
+      "id": "EN24",
+      "slots": [
+        {
+          "slot": 1,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_e6f44b60-8070-49eb-98ef-01a2a6343ec1",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_e6f44b60-8070-49eb-98ef-01a2a6343ec1",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_e6f44b60-8070-49eb-98ef-01a2a6343ec1",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_e6f44b60-8070-49eb-98ef-01a2a6343ec1",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_e6f44b60-8070-49eb-98ef-01a2a6343ec1",
+              "originalModelKey": "surge-protection"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_af4457c2cf2e4ac967a9a9f75053e44e792016da25d4bddca2300794fa877647"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_af4457c2cf2e4ac967a9a9f75053e44e792016da25d4bddca2300794fa877647"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_af4457c2cf2e4ac967a9a9f75053e44e792016da25d4bddca2300794fa877647"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_af4457c2cf2e4ac967a9a9f75053e44e792016da25d4bddca2300794fa877647"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_af4457c2cf2e4ac967a9a9f75053e44e792016da25d4bddca2300794fa877647"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EN25",
+      "slots": []
+    },
+    {
+      "id": "EN26",
+      "slots": []
+    },
+    {
+      "id": "EN27",
+      "slots": []
+    },
+    {
+      "id": "EN28",
+      "slots": []
+    },
+    {
+      "id": "EN29",
+      "slots": []
+    },
+    {
+      "id": "EN30",
+      "slots": [
+        {
+          "slot": 1,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_75cd6dd9-db99-480f-8c92-45562ba17c30",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_75cd6dd9-db99-480f-8c92-45562ba17c30",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_75cd6dd9-db99-480f-8c92-45562ba17c30",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_75cd6dd9-db99-480f-8c92-45562ba17c30",
+              "originalModelKey": "surge-protection"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_75cd6dd9-db99-480f-8c92-45562ba17c30",
+              "originalModelKey": "surge-protection"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_2a900db1cf942668ef5b6924cbe67b0bd784a118b72fef2fe354bc1c00788364"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_2a900db1cf942668ef5b6924cbe67b0bd784a118b72fef2fe354bc1c00788364"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_2a900db1cf942668ef5b6924cbe67b0bd784a118b72fef2fe354bc1c00788364"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_2a900db1cf942668ef5b6924cbe67b0bd784a118b72fef2fe354bc1c00788364"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_2a900db1cf942668ef5b6924cbe67b0bd784a118b72fef2fe354bc1c00788364"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EN31",
+      "slots": [
+        {
+          "slot": 1,
+          "identityStable": true,
+          "runs": [
+            {
+              "run": 1,
+              "opportunityId": "op_d1e321b5-35d7-4784-a9dc-ca1984f32bbd",
+              "originalModelKey": "garage-outlets"
+            },
+            {
+              "run": 2,
+              "opportunityId": "op_d1e321b5-35d7-4784-a9dc-ca1984f32bbd",
+              "originalModelKey": "garage-outlets"
+            },
+            {
+              "run": 3,
+              "opportunityId": "op_d1e321b5-35d7-4784-a9dc-ca1984f32bbd",
+              "originalModelKey": "garage-outlets"
+            },
+            {
+              "run": 4,
+              "opportunityId": "op_d1e321b5-35d7-4784-a9dc-ca1984f32bbd",
+              "originalModelKey": "garage-outlets"
+            },
+            {
+              "run": 5,
+              "opportunityId": "op_d1e321b5-35d7-4784-a9dc-ca1984f32bbd",
+              "originalModelKey": "garage-outlets"
+            }
+          ],
+          "referenceActionVersionStable": true,
+          "referenceVersions": [
+            {
+              "run": 1,
+              "referenceActionVersion": "action_cc477a126b82dff60049ab029ab1a5c76f9bc2814a61533a551f5d38d13f9da4"
+            },
+            {
+              "run": 2,
+              "referenceActionVersion": "action_cc477a126b82dff60049ab029ab1a5c76f9bc2814a61533a551f5d38d13f9da4"
+            },
+            {
+              "run": 3,
+              "referenceActionVersion": "action_cc477a126b82dff60049ab029ab1a5c76f9bc2814a61533a551f5d38d13f9da4"
+            },
+            {
+              "run": 4,
+              "referenceActionVersion": "action_cc477a126b82dff60049ab029ab1a5c76f9bc2814a61533a551f5d38d13f9da4"
+            },
+            {
+              "run": 5,
+              "referenceActionVersion": "action_cc477a126b82dff60049ab029ab1a5c76f9bc2814a61533a551f5d38d13f9da4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
