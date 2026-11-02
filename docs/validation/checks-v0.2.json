@@ -1,0 +1,33 @@
+{
+  "phase": "repeated-run validation; remediation not authorized in this change",
+  "offlineHarness": {
+    "command": "npm test",
+    "tests": 37,
+    "passed": 37,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0
+  },
+  "workerDryRun": {
+    "command": "WRANGLER_SEND_METRICS=false npm run check",
+    "exitCode": 0,
+    "deployed": false
+  },
+  "legacyDiagnostic": {
+    "command": "npm run regression:offline",
+    "decisionCorrect": 19,
+    "cases": 31,
+    "exitCode": 1,
+    "interpretation": "Unchanged known diagnostic mismatches, not new model regressions"
+  },
+  "legacyModelReplay": {
+    "command": "npm run regression:replay -- docs/baselines/model-current-v1.json",
+    "decisionCorrect": 29,
+    "cases": 31,
+    "exitCode": 1,
+    "interpretation": "Unchanged historical coverage failures / pending semantic review"
+  },
+  "hubspotCalls": 0,
+  "crmWrites": 0,
+  "humanAdjudications": 0
+}

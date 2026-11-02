@@ -1,0 +1,26 @@
+{
+  "validationToolHashes": {
+    "scripts/regression/repeat-findings.js": "6f58e4b55c8e1e677a1130856c89e13cd3e0bbd34b2e0963bc82290f3ae8f3d5",
+    "scripts/regression/stability-core.js": "abaea55630a85191c2a561db3227d46d67702624ea41d1b7615a8a4964850331",
+    "scripts/regression/generate-review.js": "e160ecd9c952281fd1e7c0d2308c4a3a66250b6b76b3351b65509bff9bc60f1e",
+    "tests/stability.test.js": "755748508623fa3a49f8be6135b92ba3a11ab1acc0fd442a9bf5b437bb963304"
+  },
+  "sourceCommit": "7746a5411ead880ff7f6d28d59b3edc8b7f7d3a2",
+  "promptVersion": "reasoning-v0.2",
+  "schemaVersion": "findings-v0.2",
+  "promptHash": "a9ba597b8a33281611e04e428b1b8dd4dcc992e5ec8636693d2150460f64e332",
+  "schemaHash": "7bda1bfdc27882023d180cca14e751941401feee18a1d9eb6fca63717519964d",
+  "corpusHash": "e4d96cb13dc50c6fdaca573291578ccb39aa3922723627598a6cff76953a659c",
+  "seedSha256": "ac41839d9c85c4228a079721e156b3e3d42358a41fb816e6c7ac24cfe3ed1429",
+  "hubspotCalls": 0,
+  "crmWrites": 0,
+  "humanAdjudications": 0,
+  "artifacts": {
+    "findings-v0.2-five-runs.json": "04f31f3e352d76c8774363d37a6387bb5658f17bb91ca4f65a443918d782b52b",
+    "stability-v0.2.json": "a8e3c36cfde9d5d31d4432cd0a8d387bc46f9a4218a04ec1d3e817c41019c778",
+    "semantic-review-v0.2.json": "03a4813c781646887c75b81df32ee8f3bd0c4fd64315be3c13afbabf0ee09782",
+    "semantic-review-v0.2.md": "85d638690d0f42fd5d4e3dc17c4f1e22dd43cb4512232effa724d8b7eb0ae908",
+    "README.md": "b8256165189f4ce929d0be033b941a7309547ef46cbf0f24a2939dd0a7e96d8a",
+    "checks-v0.2.json": "438c6ed759ae8d9e9d8c950550c5c1c54bfefd7824bae9de62eb670720afdd75"
+  }
+}
