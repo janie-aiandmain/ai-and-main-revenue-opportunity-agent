@@ -1,0 +1,25 @@
+{
+  "kind": "READ_ONLY_REVIEW_WRITEBACK_STATE_CHECK",
+  "checkedAt": "2026-11-03T21:59:05.457Z",
+  "worker": "ai-and-main-revenue-opportunity-agent",
+  "activeVersions": [
+    {
+      "versionId": "50ddf101-5484-413a-975a-12865e35e14d",
+      "percentage": 100,
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false"
+      },
+      "temporaryOperatorCapabilityAbsent": true
+    }
+  ],
+  "allExecutionDisabled": true,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "remoteMutations": 0
+}

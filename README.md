@@ -155,3 +155,10 @@ followed by hosted restart/reconciliation with no duplicate create, and stale
 approval rejection. Both credential portal identities and the designated marker
 passed. All test/fault/general execution is now disabled; semantic reviews remain
 pending. This does not establish recovery from a genuine network outage.
+
+The [seven-case human review packet](docs/review/seven-cases/README.md) provides a
+compact table, verbatim task bodies, explicit timing/scope blockers, separate
+finding recommendations and pending human-verdict fields. Its
+[GitHub evidence index](docs/review/seven-cases/evidence-index.md) links each hosted,
+local and model result to its recording and implementation commits. No semantic
+PASS is inferred from recovery controls; general writeback remains disabled.

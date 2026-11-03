@@ -1,0 +1,157 @@
+{
+  "kind": "HUMAN_SEMANTIC_VERDICTS_PENDING",
+  "packetVersion": "seven-case-human-review-v1",
+  "events": [],
+  "cases": [
+    {
+      "caseId": "ST03",
+      "reviewCaseHash": "sha256:b2d50f8f2143519093987f6b789890446f5c2c3a010490f697088d0a88521c9e",
+      "capturedModelOutputHash": "863978258a426cc0134143247720a972219a0701eb680a26b6e88c626ba6da67",
+      "status": "PENDING",
+      "verdict": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": null,
+      "findings": [
+        {
+          "findingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "opportunityKey": "garage-three-outlets",
+          "status": "PENDING",
+          "verdict": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "caseId": "ST04",
+      "reviewCaseHash": "sha256:49f4b64784fcf268ddb322191f685e3f3bb414bee1969d088a0f677440b1232e",
+      "capturedModelOutputHash": "60ea46e7cc9411133073d736119a070f7738a69fd410bbdae05df90ec0f2cf8c",
+      "status": "PENDING",
+      "verdict": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": null,
+      "findings": [
+        {
+          "findingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "opportunityKey": "flickering-new-fixture-service-recovery",
+          "status": "PENDING",
+          "verdict": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "caseId": "ST07",
+      "reviewCaseHash": "sha256:551e47ee5b8e5fb3794b34b31eeb1eb79c64be991d7a440e7263cf84441cc139",
+      "capturedModelOutputHash": "2403abd685c31e325427b61aea7a98bc9ae2a050df105c768c6e4be90f8a62b3",
+      "status": "PENDING",
+      "verdict": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": null,
+      "findings": [
+        {
+          "findingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "opportunityKey": "whole-home-surge-protection",
+          "status": "PENDING",
+          "verdict": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "caseId": "ST08",
+      "reviewCaseHash": "sha256:7057a87dbeee54835eb4c645fa767630260a2c69d792df2e4566ae057db64661",
+      "capturedModelOutputHash": "10fa7860c3a0a668db0e27c553842472075d19bd904e82569fdf8b99dfd605c5",
+      "status": "PENDING",
+      "verdict": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": null,
+      "findings": [
+        {
+          "findingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+          "opportunityKey": "pendant-light-installation",
+          "status": "PENDING",
+          "verdict": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "caseId": "EN11",
+      "reviewCaseHash": "sha256:fc706d7568ab6751d083432ca5aa31a4b800583e68b24cc61dde7544b728b5ca",
+      "capturedModelOutputHash": "2b03e65b9fde08b05991e1ff73e1906a7dfeb7e12af2ba14ee692e12df258996",
+      "status": "PENDING",
+      "verdict": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": null,
+      "findings": [
+        {
+          "findingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+          "opportunityKey": "pendant-lighting",
+          "status": "PENDING",
+          "verdict": null,
+          "notes": null
+        },
+        {
+          "findingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+          "opportunityKey": "surge-protection",
+          "status": "PENDING",
+          "verdict": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "caseId": "EN12",
+      "reviewCaseHash": "sha256:73864cb882d3ccb215a9f6c977a8f6c1f8176e897f158a6bf1e487991765edfe",
+      "capturedModelOutputHash": "fa0d856cdfdc856be019256ef99bb24a3a9af02445761ee8fc0810c9292475bc",
+      "status": "PENDING",
+      "verdict": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": null,
+      "findings": [
+        {
+          "findingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "opportunityKey": "flickering-fixture-service-recovery",
+          "status": "PENDING",
+          "verdict": null,
+          "notes": null
+        },
+        {
+          "findingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "opportunityKey": "ev-charger-pricing",
+          "status": "PENDING",
+          "verdict": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "caseId": "EN31",
+      "reviewCaseHash": "sha256:b5ea85e2b8eb09cb0ea46beaea1d3d5de3ddaaffbe3c4556094bc065058eea8c",
+      "capturedModelOutputHash": "ed59e2cf81cd8fbd32fe2f2613772b4a533488e6f5558887e40cac6b2bd77480",
+      "status": "PENDING",
+      "verdict": null,
+      "reviewer": null,
+      "reviewedAt": null,
+      "notes": null,
+      "findings": [
+        {
+          "findingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+          "opportunityKey": "garage-outlets",
+          "status": "PENDING",
+          "verdict": null,
+          "notes": null
+        }
+      ]
+    }
+  ],
+  "semanticDecisionIsTaskApproval": false,
+  "writesAuthorized": false,
+  "packetHash": "sha256:180ad9c5ad5fd491af2594714dc5352b74ad3d48ff0ca26310976df87aa72165"
+}

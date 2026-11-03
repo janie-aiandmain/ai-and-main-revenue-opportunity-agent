@@ -1,0 +1,36 @@
+{
+  "packetHash": "sha256:180ad9c5ad5fd491af2594714dc5352b74ad3d48ff0ca26310976df87aa72165",
+  "sourceCommit": "c1603282adea6ddcbfb4bd94efcf3b41cf41fc71",
+  "sourceSha256": "71c22f0cad29b212a07a33b62767d1f7a86b64c89dbcc203dab1a5d2d5a4b4a5",
+  "caseCount": 7,
+  "findingCount": 9,
+  "allExecutionBlocked": true,
+  "humanVerdictsSubmitted": 0,
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "35d5d2718861ee68551d5d64973a1e3081adb2397865318abf51f4df6b22e05f",
+      "bytes": 21563
+    },
+    {
+      "file": "review-packet.json",
+      "sha256": "81a7c77c25471dcf6434f46bb84fbc3201043f816eb3df62da520be65a281a9b",
+      "bytes": 40993
+    },
+    {
+      "file": "human-verdicts.json",
+      "sha256": "a156281c5c89baa1bc2850975ecf4f257d6c990bb429cc87ea32fa5485e8caed",
+      "bytes": 5305
+    },
+    {
+      "file": "writeback-state.json",
+      "sha256": "f288eaa7c0b0e555ae518c53a0853f1249936ded2e8a507f6e34dbbd5399c542",
+      "bytes": 761
+    },
+    {
+      "file": "evidence-index.md",
+      "sha256": "e5e0e506e1317d2844995a92fef2d292e7ebf47ca2d25351e9c92f2d4e456ccc",
+      "bytes": 7000
+    }
+  ]
+}

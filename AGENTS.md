@@ -329,3 +329,16 @@ is removed. Do not automatically start a new run under the old maximum-three-tas
 authorization; per-run counters are not a global renewed task budget. Seven human
 semantic reviews remain pending. The original namespace was reused successfully
 without a new migration or resource; no Access setup is needed for that binding.
+
+## Seven-case human adjudication
+
+The user requested docs/review/seven-cases/README.md and its exact captured tasks,
+source/deadline/scope blockers, recommendations and GitHub evidence links. All
+nine finding executions are blocked; all human verdicts remain pending. Do not
+modify original model captures or infer human approval from assistant advice.
+When the user explicitly supplies verdicts, append attributable decision events
+to human-verdicts.json bound to each reviewCaseHash/model-output hash and receipt
+time; support separate EN11/EN12 finding verdicts. Explain remaining corrections
+and fresh evaluations then. A semantic PASS never authorizes a task or clears
+missing timing/source/final-payload requirements. No further HubSpot writes,
+new model run, deployment or code remediation is authorized by review preparation.
