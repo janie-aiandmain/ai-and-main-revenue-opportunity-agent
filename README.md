@@ -121,9 +121,11 @@ remain separate. Setup, model scores and simulated actors do not grant human sig
 The supported description is **controlled prototype with tested local safeguards**.
 
 For existing test credentials, see the [configuration inspection](docs/staging/credential-configuration-inspection.md).
-Cloudflare secret presence is unverified; local credential availability does not
-establish whether a staging Worker secret exists.
+The earlier inspection records pre-deployment limits. The deployed staging
+Worker now has an API-verified empty runtime secret list; local credential
+availability still does not configure Worker secrets.
 
-The separate hosted Worker has not been created, per the user's confirmation.
-See [isolated Worker creation](docs/staging/create-isolated-worker.md) for the exact
-checked-in configuration, deployment blockers and commands using existing access.
+The separate hosted staging Worker is now deployed with its own SQLite namespace,
+closed endpoints and disabled write/release flags. See the
+[verified deployment receipt](docs/staging/deployments/2026-11-03-bootstrap.md).
+Runtime credentials, Access and read-only hosted preflight remain the next setup work.

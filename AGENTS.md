@@ -261,3 +261,15 @@ must remain false. Existing test keys may be attached to the old Worker; do not
 extract secret values or rename bindings on production. Configure staging from the
 original secure test credential source without recreating or rotating keys absent
 an identified reason. See docs/staging/create-isolated-worker.md.
+
+## Verified hosted staging bootstrap
+
+On 2026-11-03 the isolated staging Worker was deployed using only
+wrangler.staging.jsonc in account cda2ab71dd8127c8031c945a738b86e2. See
+docs/staging/deployments/2026-11-03-bootstrap.json for actual resource IDs and
+before/after production fingerprints. The staging namespace is SQLite and belongs
+to that Worker; all four write/release flags and public/preview endpoints are off.
+Runtime secret names were empty at verification. Do not rerun a creation workflow
+blindly after an environment restore; inspect existing staging first. Configure
+existing test credentials and Access only within authorized scope. No hosted
+HubSpot/writeback certification or human semantic approval follows from bootstrap.

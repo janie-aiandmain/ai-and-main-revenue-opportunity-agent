@@ -1,0 +1,82 @@
+{
+  "kind": "HOSTED_STAGING_BOOTSTRAP_VERIFIED_NOT_WRITEBACK_CERTIFICATION",
+  "deployment": {
+    "kind": "STAGING_ONLY_WRANGLER_DEPLOYMENT_COMMAND",
+    "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+    "worker": "ai-and-main-revenue-opportunity-staging",
+    "config": "wrangler.staging.jsonc",
+    "configHash": "39eca02176814ab3dff7647b6c71af65a4f42a5fc292d8da18873f2dfebcba0e",
+    "sourceCommit": "52ce5eecf62e0d522fce0594b36d794e5384bbd5",
+    "exitCode": 0,
+    "signal": null,
+    "cloudflareErrorCodes": [],
+    "commandStarted": true,
+    "finishedAt": "2026-11-03T19:34:34.147Z",
+    "rawCommandOutputPersisted": false,
+    "credentialValuesLogged": false
+  },
+  "verification": {
+    "kind": "DEPLOYED_ISOLATED_STAGING_VERIFIED_BY_GET_ONLY_CHECKS",
+    "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+    "worker": "ai-and-main-revenue-opportunity-staging",
+    "namespaceId": "16dca25759494a33813d2800f3f1a850",
+    "durableObjectClass": "CertificationLedger",
+    "sqlite": true,
+    "binding": "CERTIFICATION_LEDGER",
+    "workersDevEnabled": false,
+    "previewUrlsEnabled": false,
+    "customDomains": 0,
+    "zoneRoutes": "None configured; no zone permissions requested",
+    "writeReleaseFlags": {
+      "CRM_WRITEBACK_ENABLED": "false",
+      "ENABLE_TEST_TASK_WRITES": "false",
+      "ENABLE_GENERAL_EXECUTION": "false",
+      "GENERAL_RELEASE_APPROVED": "false"
+    },
+    "productionMetadataUnchanged": true,
+    "production": {
+      "settingsHash": "fb07d6f0d1042844780c99dbe19d0094b39ae369ac9548dabc54aaa143d20467",
+      "subdomainHash": "81d85b2e35295c30a89a15cfce655824db618966f23be5b068d6f55c545429f3",
+      "customDomainsHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "namespaceIds": []
+    },
+    "runtimeSecretNames": [],
+    "hubspotCalls": 0,
+    "humanApprovals": 0,
+    "verifiedAt": "2026-11-03T19:35:45.669Z"
+  },
+  "productionBefore": {
+    "settingsHash": "fb07d6f0d1042844780c99dbe19d0094b39ae369ac9548dabc54aaa143d20467",
+    "subdomainHash": "81d85b2e35295c30a89a15cfce655824db618966f23be5b068d6f55c545429f3",
+    "customDomainsHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "namespaceIds": []
+  },
+  "productionAfter": {
+    "settingsHash": "fb07d6f0d1042844780c99dbe19d0094b39ae369ac9548dabc54aaa143d20467",
+    "subdomainHash": "81d85b2e35295c30a89a15cfce655824db618966f23be5b068d6f55c545429f3",
+    "customDomainsHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "namespaceIds": []
+  },
+  "validation": {
+    "deterministicTests": 101,
+    "passed": 101,
+    "failed": 0,
+    "stagingDryRunPassed": true,
+    "hostedAppOrCRMTestsExecuted": false,
+    "liveModelCalls": 0,
+    "hubspotCalls": 0,
+    "crmWrites": 0
+  },
+  "nextSetupStep": {
+    "dashboard": "Workers & Pages \u2192 ai-and-main-revenue-opportunity-staging \u2192 Settings \u2192 Variables and Secrets",
+    "secretNames": [
+      "STAGING_HUBSPOT_READ_TOKEN",
+      "STAGING_HUBSPOT_WRITE_TOKEN",
+      "EVAL_OPENAI_API_KEY"
+    ],
+    "credentialPolicy": "Reuse original existing non-production credentials securely; no production changes or key rotation",
+    "then": "Configure ordinary tenant/contact settings and external Access; keep all write/release flags false before read-only preflight"
+  },
+  "humanSignoffs": 0,
+  "productionCertified": false
+}
