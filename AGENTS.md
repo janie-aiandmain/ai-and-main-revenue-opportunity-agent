@@ -239,3 +239,13 @@ setup/preflight does not approve semantics or production. Keep task/release flag
 false during setup; no production-portal substitution or scope expansion.
 The user requested that after the environment refresh the only remote operation
 be read-only production verification; do not run HubSpot or hosted staging writes.
+
+## Existing credential configuration
+
+Before requesting any new key, inspect available names/metadata and distinguish
+Codex availability from deployed Worker configuration. An unavailable local secret
+is not proof of Cloudflare absence. Prefer configuring existing verified test
+credentials under staging's expected names; do not recreate/rotate without an
+identified reason or reuse production credentials. Variables and Secrets holds
+credentials/ordinary settings; Bindings holds resources such as CERTIFICATION_LEDGER.
+See docs/staging/credential-configuration-inspection.md for the current limits.

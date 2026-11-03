@@ -119,3 +119,7 @@ connects designated notes, independent findings, external operator review, exact
 final-payload approval and durable task recovery. Production source and configuration
 remain separate. Setup, model scores and simulated actors do not grant human sign-off.
 The supported description is **controlled prototype with tested local safeguards**.
+
+For existing test credentials, see the [configuration inspection](docs/staging/credential-configuration-inspection.md).
+Cloudflare secret presence is unverified; local credential availability does not
+establish whether a staging Worker secret exists.
