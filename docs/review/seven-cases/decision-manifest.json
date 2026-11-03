@@ -1,0 +1,17 @@
+{
+  "kind": "SEMANTIC_DECISION_RECEIPT_MANIFEST",
+  "recordedAt": "2026-11-03T22:22:40.141140+00:00",
+  "basisPacketCommit": "467a7e67de8ab13a27e8e66c8b177deaf98360bf",
+  "basisPacketHash": "sha256:180ad9c5ad5fd491af2594714dc5352b74ad3d48ff0ca26310976df87aa72165",
+  "findingVerdicts": {
+    "PASS": 5,
+    "CONCERN": 4,
+    "FAIL": 0
+  },
+  "executionApprovals": 0,
+  "initialManifestIsHistoricalAtBasisCommit": true,
+  "files": {
+    "human-verdicts.pending-snapshot.json": "a156281c5c89baa1bc2850975ecf4f257d6c990bb429cc87ea32fa5485e8caed",
+    "human-verdicts.json": "e119b520a2943815237eba14c4c400288e84f4822d1d10eb1efe95b9409f5bda"
+  }
+}

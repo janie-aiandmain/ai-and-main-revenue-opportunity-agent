@@ -1,3 +1,10 @@
+> **Human decisions recorded:** The user supplied five PASS and four CONCERN
+> finding verdicts for these captured proposals. See [the decision ledger](human-verdicts.json).
+> The original pending labels below are historical; they are not current verdicts.
+> No decision grants final task execution. The initial manifest describes commit
+> `467a7e6`; [decision-manifest.json](decision-manifest.json) preserves the pending
+> snapshot and hashes this updated ledger. Corrected outputs require their own review.
+
 # Seven pending cases — compact human review
 
 All human verdicts are **PENDING**. Recommendations below are attributable to Codex, an AI assistant. General writeback, test execution and faults remain disabled; this review performs no HubSpot or model calls.

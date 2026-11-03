@@ -342,3 +342,20 @@ time; support separate EN11/EN12 finding verdicts. Explain remaining corrections
 and fresh evaluations then. A semantic PASS never authorizes a task or clears
 missing timing/source/final-payload requirements. No further HubSpot writes,
 new model run, deployment or code remediation is authorized by review preparation.
+
+## Recorded semantic decisions and authorized corrections
+
+The user explicitly supplied semantic decisions for all nine captured findings:
+ST03/ST04/ST07/EN31 CONCERN, ST08 PASS for internal verification only, both EN11
+findings PASS with pricing-only / internal-verification-with-renovation-gate
+limits, and both EN12 findings PASS with EV pricing independent and pricing-only.
+See docs/review/seven-cases/human-verdicts.json and decision-manifest.json. Preserve
+the original pending snapshot and model captures. These verdicts bind only the
+reviewed output hashes; they are not approvals for new outputs or final payloads.
+The user authorized implementing the identified corrections and affected local/
+non-production model validation, distinguishing internal verification from gated
+customer actions. Keep all live/general/test writeback disabled; no HubSpot writes
+or new hosted control run are authorized. Source timestamp/history, current-job
+verification, exact invoice restriction and non-renewed decision windows must be
+preserved. Internal review cannot certify completion/consent or authorize customer
+contact. Version output/prompt changes and preserve original baseline/fixtures.
