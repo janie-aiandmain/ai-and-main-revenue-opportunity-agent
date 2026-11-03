@@ -273,3 +273,9 @@ Runtime secret names were empty at verification. Do not rerun a creation workflo
 blindly after an environment restore; inspect existing staging first. Configure
 existing test credentials and Access only within authorized scope. No hosted
 HubSpot/writeback certification or human semantic approval follows from bootstrap.
+
+On the subsequent 2026-11-03 recheck, all three required staging secret names were
+verified on the active version; see
+docs/staging/deployments/2026-11-03-secret-sync-resolved.json. Earlier empty-secret
+receipts are historical. Access/tenant setup, credential validity and human
+semantic decisions remain pending; keep write/release flags and public routes off.

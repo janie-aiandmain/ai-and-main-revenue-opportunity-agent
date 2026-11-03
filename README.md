@@ -122,13 +122,13 @@ The supported description is **controlled prototype with tested local safeguards
 
 For existing test credentials, see the [configuration inspection](docs/staging/credential-configuration-inspection.md).
 The earlier inspection records pre-deployment limits. The deployed staging
-Worker now has an API-verified empty runtime secret list; local credential
-availability still does not configure Worker secrets.
+Worker now has all three required secret names API-verified on its active version;
+credential validity and tenant isolation still await read-only preflight.
 
 The separate hosted staging Worker is now deployed with its own SQLite namespace,
 closed endpoints and disabled write/release flags. See the
 [verified deployment receipt](docs/staging/deployments/2026-11-03-bootstrap.md).
-The [secret/configuration sync inspection](docs/staging/deployments/2026-11-03-secret-sync.md)
-records the remaining runtime-secret mismatch. The source declares required secret
+The [resolved secret/configuration sync inspection](docs/staging/deployments/2026-11-03-secret-sync-resolved.md)
+records the active version and matching ordinary settings. The source declares required secret
 names only; Wrangler preserves existing secrets separately from ordinary variables.
 Access and tenant setup remain pending.

@@ -3,8 +3,9 @@
 > **2026-11-03 update:** The account is API-verified and the separate staging
 > Worker and SQLite namespace are deployed. See the [verified bootstrap receipt](deployments/2026-11-03-bootstrap.md).
 > The inventory below records the earlier setup state; do not repeat initial
-> provisioning. Runtime credentials, tenant settings, Access and read-only
-> preflight remain outstanding. All routes/previews and write/release flags stay
+> provisioning. The [subsequent recheck](deployments/2026-11-03-secret-sync-resolved.md)
+> verifies all three secret names on the active version. Credential validity,
+> tenant settings, Access and read-only preflight remain outstanding. All routes/previews and write/release flags stay
 > disabled; opening a protected route is a separate, reviewed step.
 
 Supported description: **controlled prototype with tested local safeguards**.
