@@ -1,0 +1,1186 @@
+{
+  "kind": "HOSTED_REAL_HUBSPOT_SYNTHETIC_CONTROL_RECOVERY",
+  "runId": "demo-542167ab-21ab-44bd-aaa9-cc917cc100fe",
+  "startedAt": "2026-11-03T21:24:04.380Z",
+  "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+  "worker": "ai-and-main-revenue-opportunity-agent",
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "maximumAuthorizedTasks": 3,
+  "taskIds": [
+    "415102198520",
+    "415333966522"
+  ],
+  "phases": [
+    {
+      "phase": "existing_ledger_owner_updated_no_new_migration",
+      "config": "wrangler.staging.jsonc",
+      "code": 0,
+      "version": null,
+      "errorCodes": [],
+      "at": "2026-11-03T21:24:16.973Z"
+    },
+    {
+      "phase": "original_demo_controller_deployed_execution_disabled",
+      "config": "wrangler.jsonc",
+      "code": 0,
+      "version": null,
+      "errorCodes": [],
+      "at": "2026-11-03T21:24:27.545Z"
+    },
+    {
+      "phase": "unauthenticated_operator_access_rejected",
+      "at": "2026-11-03T21:24:34.018Z"
+    },
+    {
+      "phase": "external_existing_namespace_binding_actually_works",
+      "at": "2026-11-03T21:24:34.018Z",
+      "bootId": "5f7b7f34-a10a-4d33-a030-4978cede55d6"
+    },
+    {
+      "phase": "both_credentials_portal_marker_and_task_read_verified",
+      "at": "2026-11-03T21:24:36.704Z"
+    },
+    {
+      "phase": "bounded_synthetic_execution_enabled_general_writeback_still_false",
+      "at": "2026-11-03T21:24:40.924Z"
+    },
+    {
+      "phase": "normal_and_repeat_one_real_task",
+      "at": "2026-11-03T21:24:53.405Z",
+      "taskId": "415102198520",
+      "createAttempts": 1
+    },
+    {
+      "phase": "changed_payload_rejected_old_approval_zero_creates",
+      "at": "2026-11-03T21:24:59.582Z"
+    },
+    {
+      "phase": "real_create_response_deliberately_discarded_ledger_has_no_task_id",
+      "at": "2026-11-03T21:25:04.438Z",
+      "operationId": "demo-op-e92dc018-2e9d-4441-8a76-62127f6313c5"
+    },
+    {
+      "phase": "hosted_original_worker_redeployed_execution_defaults_closed",
+      "config": "wrangler.jsonc",
+      "code": 0,
+      "version": null,
+      "errorCodes": [],
+      "at": "2026-11-03T21:25:15.812Z"
+    },
+    {
+      "phase": "hosted_restart_and_redeployment_durable_unknown_state_verified",
+      "at": "2026-11-03T21:25:20.611Z",
+      "beforeBoot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+      "afterBoot": "93c5ade7-8a63-462b-ad35-a952818c097a"
+    },
+    {
+      "phase": "remote_recovery_verified_for_injected_loss_only",
+      "at": "2026-11-03T21:25:26.356Z",
+      "taskId": "415333966522",
+      "totalCreateAttempts": 2
+    }
+  ],
+  "approvalsAre": "USER_AUTHORIZED_SYNTHETIC_CONTROL_NOT_HUMAN_SEMANTIC_SIGNOFF",
+  "sevenSemanticReviews": "PENDING",
+  "newModelCalls": 0,
+  "newEnvironments": 0,
+  "newNamespaces": 0,
+  "verifiedRemoteRecovery": true,
+  "namespaceBefore": {
+    "id": "16dca25759494a33813d2800f3f1a850",
+    "name": "ai-and-main-revenue-opportunity-staging_CertificationLedger",
+    "script": "ai-and-main-revenue-opportunity-staging",
+    "class": "CertificationLedger",
+    "use_sqlite": true
+  },
+  "namespaceIdsBefore": [
+    "16dca25759494a33813d2800f3f1a850"
+  ],
+  "operatorReadiness": {
+    "httpStatus": 200,
+    "status": null
+  },
+  "unauthenticatedCheck": {
+    "httpStatus": 403,
+    "status": "operator_required"
+  },
+  "bindingProof": {
+    "binding": "EXTERNAL_DURABLE_OBJECT_WORKING",
+    "owner": "ai-and-main-revenue-opportunity-staging",
+    "className": "CertificationLedger",
+    "contract": "demo-remote-recovery-control-v1",
+    "runId": "demo-542167ab-21ab-44bd-aaa9-cc917cc100fe",
+    "closed": false,
+    "totalCreateAttempts": 0,
+    "maxCreateAttempts": 3,
+    "bootId": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+    "bootNumber": 1,
+    "operations": [],
+    "verifiedRevenueOutcomes": [],
+    "revenueRescued": null
+  },
+  "preflight": {
+    "taskReadVerified": true,
+    "kind": "READ_ONLY_DEMO_PREFLIGHT",
+    "readPortalId": "247646122",
+    "writePortalId": "247646122",
+    "contactId": "582095692487",
+    "marker": "AI_MAIN_CERTIFICATION_ONLY",
+    "sourceContract": "demo-remote-recovery-control-v1",
+    "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+    "semanticReviews": "PENDING_NOT_APPLICABLE_TO_SYNTHETIC_CONTROL"
+  },
+  "normal": {
+    "prepared": {
+      "operationId": "demo-op-e898d287-0ef3-4830-aba6-018727436b29",
+      "caseId": "NORMAL",
+      "correlation": "ai-main-demo-a3e9b28d-4b43-4ce9-9929-b057ab883b9b",
+      "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+      "actionVersion": "demo-final-action-v1:sha256:8de6d3fd2c52d7599881c5c7e5334e6260984b27c9e929dd3fc8165e7c896509",
+      "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+      "revision": 1,
+      "state": "PREPARED",
+      "createAttempts": 0,
+      "remoteTaskId": null,
+      "request": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "582095692487"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Synthetic control scenario NORMAL. No customer communication, scheduling, billing or service work. Not a finding semantic approval or revenue outcome.\n[AI_MAIN_CORRELATION:ai-main-demo-a3e9b28d-4b43-4ce9-9929-b057ab883b9b]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "[AI & MAIN SYNTHETIC RECOVERY DEMO] NORMAL 542167ab",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-04T21:24:40.924Z"
+          }
+        },
+        "contractVersion": "demo-remote-recovery-control-v1",
+        "method": "POST",
+        "portalId": "247646122",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "bootId": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+      "bootNumber": 1,
+      "trace": [
+        {
+          "event": "OPERATION_CORRELATION_PAYLOAD_PERSISTED",
+          "detail": {
+            "correlation": "ai-main-demo-a3e9b28d-4b43-4ce9-9929-b057ab883b9b",
+            "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+            "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:43.201Z"
+        }
+      ]
+    },
+    "approval": {
+      "approvalId": "demo-approval-fa4e179e-c704-4896-8fa3-00925445a3aa",
+      "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+      "actionVersion": "demo-final-action-v1:sha256:8de6d3fd2c52d7599881c5c7e5334e6260984b27c9e929dd3fc8165e7c896509",
+      "revision": 1,
+      "expiresAt": "2026-11-04T21:24:43.438Z"
+    },
+    "confirmed": {
+      "operationId": "demo-op-e898d287-0ef3-4830-aba6-018727436b29",
+      "caseId": "NORMAL",
+      "correlation": "ai-main-demo-a3e9b28d-4b43-4ce9-9929-b057ab883b9b",
+      "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+      "actionVersion": "demo-final-action-v1:sha256:8de6d3fd2c52d7599881c5c7e5334e6260984b27c9e929dd3fc8165e7c896509",
+      "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+      "revision": 1,
+      "state": "CONFIRMED",
+      "createAttempts": 1,
+      "remoteTaskId": "415102198520",
+      "request": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "582095692487"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Synthetic control scenario NORMAL. No customer communication, scheduling, billing or service work. Not a finding semantic approval or revenue outcome.\n[AI_MAIN_CORRELATION:ai-main-demo-a3e9b28d-4b43-4ce9-9929-b057ab883b9b]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "[AI & MAIN SYNTHETIC RECOVERY DEMO] NORMAL 542167ab",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-04T21:24:40.924Z"
+          }
+        },
+        "contractVersion": "demo-remote-recovery-control-v1",
+        "method": "POST",
+        "portalId": "247646122",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "bootId": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+      "bootNumber": 1,
+      "trace": [
+        {
+          "event": "OPERATION_CORRELATION_PAYLOAD_PERSISTED",
+          "detail": {
+            "correlation": "ai-main-demo-a3e9b28d-4b43-4ce9-9929-b057ab883b9b",
+            "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+            "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:43.201Z"
+        },
+        {
+          "event": "EXACT_PAYLOAD_APPROVED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:8de6d3fd2c52d7599881c5c7e5334e6260984b27c9e929dd3fc8165e7c896509",
+            "approvalKind": "USER_AUTHORIZED_SYNTHETIC_CONTROL_NOT_SEVEN_CASE_SIGNOFF",
+            "expires": 1793827483438,
+            "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:43.438Z"
+        },
+        {
+          "event": "SUBMISSION_INTENT_DURABLY_PERSISTED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:8de6d3fd2c52d7599881c5c7e5334e6260984b27c9e929dd3fc8165e7c896509",
+            "attempt": 1,
+            "correlation": "ai-main-demo-a3e9b28d-4b43-4ce9-9929-b057ab883b9b",
+            "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:45.397Z"
+        },
+        {
+          "event": "EXISTING_TASK_EXACTLY_RECONCILED_NO_CREATE",
+          "detail": {
+            "candidateCount": 1,
+            "matchProofHash": "sha256:3c345ffdd45a35fb9dcf3a6a585bd49d631482fc3077eab11b20d1cf43b4a6d8",
+            "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+            "remoteTaskId": "415102198520"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:49.536Z"
+        }
+      ]
+    },
+    "repeated": {
+      "operationId": "demo-op-e898d287-0ef3-4830-aba6-018727436b29",
+      "caseId": "NORMAL",
+      "correlation": "ai-main-demo-a3e9b28d-4b43-4ce9-9929-b057ab883b9b",
+      "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+      "actionVersion": "demo-final-action-v1:sha256:8de6d3fd2c52d7599881c5c7e5334e6260984b27c9e929dd3fc8165e7c896509",
+      "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+      "revision": 1,
+      "state": "CONFIRMED",
+      "createAttempts": 1,
+      "remoteTaskId": "415102198520",
+      "request": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "582095692487"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Synthetic control scenario NORMAL. No customer communication, scheduling, billing or service work. Not a finding semantic approval or revenue outcome.\n[AI_MAIN_CORRELATION:ai-main-demo-a3e9b28d-4b43-4ce9-9929-b057ab883b9b]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "[AI & MAIN SYNTHETIC RECOVERY DEMO] NORMAL 542167ab",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-04T21:24:40.924Z"
+          }
+        },
+        "contractVersion": "demo-remote-recovery-control-v1",
+        "method": "POST",
+        "portalId": "247646122",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "bootId": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+      "bootNumber": 1,
+      "trace": [
+        {
+          "event": "OPERATION_CORRELATION_PAYLOAD_PERSISTED",
+          "detail": {
+            "correlation": "ai-main-demo-a3e9b28d-4b43-4ce9-9929-b057ab883b9b",
+            "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+            "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:43.201Z"
+        },
+        {
+          "event": "EXACT_PAYLOAD_APPROVED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:8de6d3fd2c52d7599881c5c7e5334e6260984b27c9e929dd3fc8165e7c896509",
+            "approvalKind": "USER_AUTHORIZED_SYNTHETIC_CONTROL_NOT_SEVEN_CASE_SIGNOFF",
+            "expires": 1793827483438,
+            "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:43.438Z"
+        },
+        {
+          "event": "SUBMISSION_INTENT_DURABLY_PERSISTED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:8de6d3fd2c52d7599881c5c7e5334e6260984b27c9e929dd3fc8165e7c896509",
+            "attempt": 1,
+            "correlation": "ai-main-demo-a3e9b28d-4b43-4ce9-9929-b057ab883b9b",
+            "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:45.397Z"
+        },
+        {
+          "event": "EXISTING_TASK_EXACTLY_RECONCILED_NO_CREATE",
+          "detail": {
+            "candidateCount": 1,
+            "matchProofHash": "sha256:3c345ffdd45a35fb9dcf3a6a585bd49d631482fc3077eab11b20d1cf43b4a6d8",
+            "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+            "remoteTaskId": "415102198520"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:49.536Z"
+        },
+        {
+          "event": "EXISTING_TASK_EXACTLY_RECONCILED_NO_CREATE",
+          "detail": {
+            "candidateCount": 1,
+            "matchProofHash": "sha256:3c345ffdd45a35fb9dcf3a6a585bd49d631482fc3077eab11b20d1cf43b4a6d8",
+            "payloadHash": "sha256:90ba4e84560b2a4e1dacaec09eddcd8b9df0e253d64dbcc9e5e6222ca933308c",
+            "remoteTaskId": "415102198520"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:53.313Z"
+        }
+      ]
+    }
+  },
+  "changedPayload": {
+    "old": {
+      "operationId": "demo-op-8c80f86e-de3c-46d6-82e7-e24d515f64d1",
+      "caseId": "CHANGED",
+      "correlation": "ai-main-demo-d938eb11-7521-4872-8295-88b423aa0b8d",
+      "payloadHash": "sha256:ac839582963d710325bacd0ea9dc1b3cbd83ec193ccd83a32aa67b9ea55467d4",
+      "actionVersion": "demo-final-action-v1:sha256:58a867b3266d4231d8e3e8914fb1ab269e7b9d915aa470aabcbb9298d6ca017b",
+      "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+      "revision": 1,
+      "state": "PREPARED",
+      "createAttempts": 0,
+      "remoteTaskId": null,
+      "request": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "582095692487"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Synthetic control scenario CHANGED. No customer communication, scheduling, billing or service work. Not a finding semantic approval or revenue outcome.\n[AI_MAIN_CORRELATION:ai-main-demo-d938eb11-7521-4872-8295-88b423aa0b8d]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "[AI & MAIN SYNTHETIC RECOVERY DEMO] CHANGED 542167ab",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-04T21:24:40.924Z"
+          }
+        },
+        "contractVersion": "demo-remote-recovery-control-v1",
+        "method": "POST",
+        "portalId": "247646122",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "bootId": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+      "bootNumber": 1,
+      "trace": [
+        {
+          "event": "OPERATION_CORRELATION_PAYLOAD_PERSISTED",
+          "detail": {
+            "correlation": "ai-main-demo-d938eb11-7521-4872-8295-88b423aa0b8d",
+            "payloadHash": "sha256:ac839582963d710325bacd0ea9dc1b3cbd83ec193ccd83a32aa67b9ea55467d4",
+            "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:55.563Z"
+        }
+      ]
+    },
+    "oldApproval": {
+      "approvalId": "demo-approval-7284873d-ce1a-47ef-be0e-098644494f85",
+      "payloadHash": "sha256:ac839582963d710325bacd0ea9dc1b3cbd83ec193ccd83a32aa67b9ea55467d4",
+      "actionVersion": "demo-final-action-v1:sha256:58a867b3266d4231d8e3e8914fb1ab269e7b9d915aa470aabcbb9298d6ca017b",
+      "revision": 1,
+      "expiresAt": "2026-11-04T21:24:55.789Z"
+    },
+    "changed": {
+      "operationId": "demo-op-8c80f86e-de3c-46d6-82e7-e24d515f64d1",
+      "caseId": "CHANGED",
+      "correlation": "ai-main-demo-d938eb11-7521-4872-8295-88b423aa0b8d",
+      "payloadHash": "sha256:33c42e703ffd148250409d02a571a44de3e8f00da4e48af451b7be3bbff4049e",
+      "actionVersion": "demo-final-action-v1:sha256:27ffd6d0bbe01097e36e8915ce19efc976c274b019791de37f1aa0f88d595015",
+      "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+      "revision": 2,
+      "state": "PREPARED",
+      "createAttempts": 0,
+      "remoteTaskId": null,
+      "request": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "582095692487"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Synthetic control scenario CHANGED. No customer communication, scheduling, billing or service work. Not a finding semantic approval or revenue outcome.\n[AI_MAIN_CORRELATION:ai-main-demo-d938eb11-7521-4872-8295-88b423aa0b8d]",
+            "hs_task_priority": "HIGH",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "[AI & MAIN SYNTHETIC RECOVERY DEMO] CHANGED 542167ab",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-04T21:24:40.924Z"
+          }
+        },
+        "contractVersion": "demo-remote-recovery-control-v1",
+        "method": "POST",
+        "portalId": "247646122",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "bootId": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+      "bootNumber": 1,
+      "trace": [
+        {
+          "event": "OPERATION_CORRELATION_PAYLOAD_PERSISTED",
+          "detail": {
+            "correlation": "ai-main-demo-d938eb11-7521-4872-8295-88b423aa0b8d",
+            "payloadHash": "sha256:ac839582963d710325bacd0ea9dc1b3cbd83ec193ccd83a32aa67b9ea55467d4",
+            "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:55.563Z"
+        },
+        {
+          "event": "EXACT_PAYLOAD_APPROVED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:58a867b3266d4231d8e3e8914fb1ab269e7b9d915aa470aabcbb9298d6ca017b",
+            "approvalKind": "USER_AUTHORIZED_SYNTHETIC_CONTROL_NOT_SEVEN_CASE_SIGNOFF",
+            "expires": 1793827495789,
+            "payloadHash": "sha256:ac839582963d710325bacd0ea9dc1b3cbd83ec193ccd83a32aa67b9ea55467d4",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:55.789Z"
+        },
+        {
+          "event": "MATERIAL_CHANGE_REVOKED_OLD_APPROVAL",
+          "detail": {
+            "newHash": "sha256:33c42e703ffd148250409d02a571a44de3e8f00da4e48af451b7be3bbff4049e",
+            "oldHash": "sha256:ac839582963d710325bacd0ea9dc1b3cbd83ec193ccd83a32aa67b9ea55467d4"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:57.483Z"
+        }
+      ]
+    },
+    "rejection": {
+      "status": 409,
+      "data": {
+        "status": "approval_stale_or_payload_or_source_changed"
+      }
+    },
+    "final": {
+      "operationId": "demo-op-8c80f86e-de3c-46d6-82e7-e24d515f64d1",
+      "caseId": "CHANGED",
+      "correlation": "ai-main-demo-d938eb11-7521-4872-8295-88b423aa0b8d",
+      "payloadHash": "sha256:33c42e703ffd148250409d02a571a44de3e8f00da4e48af451b7be3bbff4049e",
+      "actionVersion": "demo-final-action-v1:sha256:27ffd6d0bbe01097e36e8915ce19efc976c274b019791de37f1aa0f88d595015",
+      "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+      "revision": 2,
+      "state": "PREPARED",
+      "createAttempts": 0,
+      "remoteTaskId": null,
+      "request": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "582095692487"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Synthetic control scenario CHANGED. No customer communication, scheduling, billing or service work. Not a finding semantic approval or revenue outcome.\n[AI_MAIN_CORRELATION:ai-main-demo-d938eb11-7521-4872-8295-88b423aa0b8d]",
+            "hs_task_priority": "HIGH",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "[AI & MAIN SYNTHETIC RECOVERY DEMO] CHANGED 542167ab",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-04T21:24:40.924Z"
+          }
+        },
+        "contractVersion": "demo-remote-recovery-control-v1",
+        "method": "POST",
+        "portalId": "247646122",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "bootId": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+      "bootNumber": 1,
+      "trace": [
+        {
+          "event": "OPERATION_CORRELATION_PAYLOAD_PERSISTED",
+          "detail": {
+            "correlation": "ai-main-demo-d938eb11-7521-4872-8295-88b423aa0b8d",
+            "payloadHash": "sha256:ac839582963d710325bacd0ea9dc1b3cbd83ec193ccd83a32aa67b9ea55467d4",
+            "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:55.563Z"
+        },
+        {
+          "event": "EXACT_PAYLOAD_APPROVED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:58a867b3266d4231d8e3e8914fb1ab269e7b9d915aa470aabcbb9298d6ca017b",
+            "approvalKind": "USER_AUTHORIZED_SYNTHETIC_CONTROL_NOT_SEVEN_CASE_SIGNOFF",
+            "expires": 1793827495789,
+            "payloadHash": "sha256:ac839582963d710325bacd0ea9dc1b3cbd83ec193ccd83a32aa67b9ea55467d4",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:55.789Z"
+        },
+        {
+          "event": "MATERIAL_CHANGE_REVOKED_OLD_APPROVAL",
+          "detail": {
+            "newHash": "sha256:33c42e703ffd148250409d02a571a44de3e8f00da4e48af451b7be3bbff4049e",
+            "oldHash": "sha256:ac839582963d710325bacd0ea9dc1b3cbd83ec193ccd83a32aa67b9ea55467d4"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:24:57.483Z"
+        }
+      ]
+    }
+  },
+  "lostResponse": {
+    "prepared": {
+      "operationId": "demo-op-e92dc018-2e9d-4441-8a76-62127f6313c5",
+      "caseId": "LOSS",
+      "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+      "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+      "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+      "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+      "revision": 1,
+      "state": "PREPARED",
+      "createAttempts": 0,
+      "remoteTaskId": null,
+      "request": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "582095692487"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Synthetic control scenario LOSS. No customer communication, scheduling, billing or service work. Not a finding semantic approval or revenue outcome.\n[AI_MAIN_CORRELATION:ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "[AI & MAIN SYNTHETIC RECOVERY DEMO] LOSS 542167ab",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-04T21:24:40.924Z"
+          }
+        },
+        "contractVersion": "demo-remote-recovery-control-v1",
+        "method": "POST",
+        "portalId": "247646122",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "bootId": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+      "bootNumber": 1,
+      "trace": [
+        {
+          "event": "OPERATION_CORRELATION_PAYLOAD_PERSISTED",
+          "detail": {
+            "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.300Z"
+        }
+      ]
+    },
+    "approval": {
+      "approvalId": "demo-approval-29bd71a6-9cd5-40ef-a1ce-1bfcc47fc089",
+      "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+      "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+      "revision": 1,
+      "expiresAt": "2026-11-04T21:25:01.527Z"
+    },
+    "injectedLoss": {
+      "status": 503,
+      "data": {
+        "kind": "INJECTED_APPLICATION_RESPONSE_LOSS_NOT_NETWORK_OUTAGE",
+        "operationId": "demo-op-e92dc018-2e9d-4441-8a76-62127f6313c5",
+        "state": "SENDING",
+        "successNotRecorded": true,
+        "remoteTaskId": null
+      }
+    },
+    "beforeRestart": {
+      "operationId": "demo-op-e92dc018-2e9d-4441-8a76-62127f6313c5",
+      "caseId": "LOSS",
+      "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+      "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+      "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+      "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+      "revision": 1,
+      "state": "SENDING",
+      "createAttempts": 1,
+      "remoteTaskId": null,
+      "request": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "582095692487"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Synthetic control scenario LOSS. No customer communication, scheduling, billing or service work. Not a finding semantic approval or revenue outcome.\n[AI_MAIN_CORRELATION:ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "[AI & MAIN SYNTHETIC RECOVERY DEMO] LOSS 542167ab",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-04T21:24:40.924Z"
+          }
+        },
+        "contractVersion": "demo-remote-recovery-control-v1",
+        "method": "POST",
+        "portalId": "247646122",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "bootId": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+      "bootNumber": 1,
+      "trace": [
+        {
+          "event": "OPERATION_CORRELATION_PAYLOAD_PERSISTED",
+          "detail": {
+            "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.300Z"
+        },
+        {
+          "event": "EXACT_PAYLOAD_APPROVED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+            "approvalKind": "USER_AUTHORIZED_SYNTHETIC_CONTROL_NOT_SEVEN_CASE_SIGNOFF",
+            "expires": 1793827501527,
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.527Z"
+        },
+        {
+          "event": "OPERATOR_ARMED_APPLICATION_RESPONSE_DISCARD",
+          "detail": {
+            "genuineNetworkOutage": false
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.719Z"
+        },
+        {
+          "event": "SUBMISSION_INTENT_DURABLY_PERSISTED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+            "attempt": 1,
+            "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:03.536Z"
+        }
+      ]
+    },
+    "restartRequest": {
+      "status": 409,
+      "data": {
+        "status": "demo_operation_blocked"
+      }
+    },
+    "afterRestart": {
+      "operationId": "demo-op-e92dc018-2e9d-4441-8a76-62127f6313c5",
+      "caseId": "LOSS",
+      "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+      "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+      "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+      "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+      "revision": 1,
+      "state": "UNKNOWN",
+      "createAttempts": 1,
+      "remoteTaskId": null,
+      "request": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "582095692487"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Synthetic control scenario LOSS. No customer communication, scheduling, billing or service work. Not a finding semantic approval or revenue outcome.\n[AI_MAIN_CORRELATION:ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "[AI & MAIN SYNTHETIC RECOVERY DEMO] LOSS 542167ab",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-04T21:24:40.924Z"
+          }
+        },
+        "contractVersion": "demo-remote-recovery-control-v1",
+        "method": "POST",
+        "portalId": "247646122",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "bootId": "93c5ade7-8a63-462b-ad35-a952818c097a",
+      "bootNumber": 2,
+      "trace": [
+        {
+          "event": "OPERATION_CORRELATION_PAYLOAD_PERSISTED",
+          "detail": {
+            "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.300Z"
+        },
+        {
+          "event": "EXACT_PAYLOAD_APPROVED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+            "approvalKind": "USER_AUTHORIZED_SYNTHETIC_CONTROL_NOT_SEVEN_CASE_SIGNOFF",
+            "expires": 1793827501527,
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.527Z"
+        },
+        {
+          "event": "OPERATOR_ARMED_APPLICATION_RESPONSE_DISCARD",
+          "detail": {
+            "genuineNetworkOutage": false
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.719Z"
+        },
+        {
+          "event": "SUBMISSION_INTENT_DURABLY_PERSISTED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+            "attempt": 1,
+            "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:03.536Z"
+        },
+        {
+          "event": "RESTART_RECOVERED_UNCERTAIN_NO_CREATE",
+          "detail": {
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad"
+          },
+          "boot": "93c5ade7-8a63-462b-ad35-a952818c097a",
+          "at": "2026-11-03T21:25:20.481Z"
+        }
+      ]
+    },
+    "reconciled": {
+      "operationId": "demo-op-e92dc018-2e9d-4441-8a76-62127f6313c5",
+      "caseId": "LOSS",
+      "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+      "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+      "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+      "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+      "revision": 1,
+      "state": "CONFIRMED",
+      "createAttempts": 1,
+      "remoteTaskId": "415333966522",
+      "request": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "582095692487"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Synthetic control scenario LOSS. No customer communication, scheduling, billing or service work. Not a finding semantic approval or revenue outcome.\n[AI_MAIN_CORRELATION:ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "[AI & MAIN SYNTHETIC RECOVERY DEMO] LOSS 542167ab",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-04T21:24:40.924Z"
+          }
+        },
+        "contractVersion": "demo-remote-recovery-control-v1",
+        "method": "POST",
+        "portalId": "247646122",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "bootId": "93c5ade7-8a63-462b-ad35-a952818c097a",
+      "bootNumber": 2,
+      "trace": [
+        {
+          "event": "OPERATION_CORRELATION_PAYLOAD_PERSISTED",
+          "detail": {
+            "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.300Z"
+        },
+        {
+          "event": "EXACT_PAYLOAD_APPROVED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+            "approvalKind": "USER_AUTHORIZED_SYNTHETIC_CONTROL_NOT_SEVEN_CASE_SIGNOFF",
+            "expires": 1793827501527,
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.527Z"
+        },
+        {
+          "event": "OPERATOR_ARMED_APPLICATION_RESPONSE_DISCARD",
+          "detail": {
+            "genuineNetworkOutage": false
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.719Z"
+        },
+        {
+          "event": "SUBMISSION_INTENT_DURABLY_PERSISTED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+            "attempt": 1,
+            "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:03.536Z"
+        },
+        {
+          "event": "RESTART_RECOVERED_UNCERTAIN_NO_CREATE",
+          "detail": {
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad"
+          },
+          "boot": "93c5ade7-8a63-462b-ad35-a952818c097a",
+          "at": "2026-11-03T21:25:20.481Z"
+        },
+        {
+          "event": "EXISTING_TASK_EXACTLY_RECONCILED_NO_CREATE",
+          "detail": {
+            "candidateCount": 1,
+            "matchProofHash": "sha256:bf7c1038d2b5e529aa78be6f5281a5148b7f26c0959b7b0657bf540ac2024b5d",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "remoteTaskId": "415333966522"
+          },
+          "boot": "93c5ade7-8a63-462b-ad35-a952818c097a",
+          "at": "2026-11-03T21:25:23.578Z"
+        }
+      ]
+    },
+    "repeated": {
+      "operationId": "demo-op-e92dc018-2e9d-4441-8a76-62127f6313c5",
+      "caseId": "LOSS",
+      "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+      "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+      "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+      "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31",
+      "revision": 1,
+      "state": "CONFIRMED",
+      "createAttempts": 1,
+      "remoteTaskId": "415333966522",
+      "request": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "582095692487"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Synthetic control scenario LOSS. No customer communication, scheduling, billing or service work. Not a finding semantic approval or revenue outcome.\n[AI_MAIN_CORRELATION:ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "[AI & MAIN SYNTHETIC RECOVERY DEMO] LOSS 542167ab",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-04T21:24:40.924Z"
+          }
+        },
+        "contractVersion": "demo-remote-recovery-control-v1",
+        "method": "POST",
+        "portalId": "247646122",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "bootId": "93c5ade7-8a63-462b-ad35-a952818c097a",
+      "bootNumber": 2,
+      "trace": [
+        {
+          "event": "OPERATION_CORRELATION_PAYLOAD_PERSISTED",
+          "detail": {
+            "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "sourceHash": "sha256:8d03553da09a377886edcb6e5a2d43260030a7c269c31961f66ea0c0ec8cda31"
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.300Z"
+        },
+        {
+          "event": "EXACT_PAYLOAD_APPROVED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+            "approvalKind": "USER_AUTHORIZED_SYNTHETIC_CONTROL_NOT_SEVEN_CASE_SIGNOFF",
+            "expires": 1793827501527,
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.527Z"
+        },
+        {
+          "event": "OPERATOR_ARMED_APPLICATION_RESPONSE_DISCARD",
+          "detail": {
+            "genuineNetworkOutage": false
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:01.719Z"
+        },
+        {
+          "event": "SUBMISSION_INTENT_DURABLY_PERSISTED",
+          "detail": {
+            "actionVersion": "demo-final-action-v1:sha256:9cf2e28e8d5ed67736ba45c7364298fe32715ca823c193095bb15a0291857cb9",
+            "attempt": 1,
+            "correlation": "ai-main-demo-c8a90ef1-7f0b-403a-86f2-0f613b9331db",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "revision": 1
+          },
+          "boot": "5f7b7f34-a10a-4d33-a030-4978cede55d6",
+          "at": "2026-11-03T21:25:03.536Z"
+        },
+        {
+          "event": "RESTART_RECOVERED_UNCERTAIN_NO_CREATE",
+          "detail": {
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad"
+          },
+          "boot": "93c5ade7-8a63-462b-ad35-a952818c097a",
+          "at": "2026-11-03T21:25:20.481Z"
+        },
+        {
+          "event": "EXISTING_TASK_EXACTLY_RECONCILED_NO_CREATE",
+          "detail": {
+            "candidateCount": 1,
+            "matchProofHash": "sha256:bf7c1038d2b5e529aa78be6f5281a5148b7f26c0959b7b0657bf540ac2024b5d",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "remoteTaskId": "415333966522"
+          },
+          "boot": "93c5ade7-8a63-462b-ad35-a952818c097a",
+          "at": "2026-11-03T21:25:23.578Z"
+        },
+        {
+          "event": "EXISTING_TASK_EXACTLY_RECONCILED_NO_CREATE",
+          "detail": {
+            "candidateCount": 1,
+            "matchProofHash": "sha256:bf7c1038d2b5e529aa78be6f5281a5148b7f26c0959b7b0657bf540ac2024b5d",
+            "payloadHash": "sha256:8b328b41f66e584d2f536b7ec8e4ebd1438426368db183a1e1e38c9a92178bad",
+            "remoteTaskId": "415333966522"
+          },
+          "boot": "93c5ade7-8a63-462b-ad35-a952818c097a",
+          "at": "2026-11-03T21:25:26.058Z"
+        }
+      ]
+    },
+    "genuineNetworkOutage": false
+  },
+  "finalSummary": {
+    "contract": "demo-remote-recovery-control-v1",
+    "runId": "demo-542167ab-21ab-44bd-aaa9-cc917cc100fe",
+    "closed": false,
+    "totalCreateAttempts": 2,
+    "maxCreateAttempts": 3,
+    "bootId": "93c5ade7-8a63-462b-ad35-a952818c097a",
+    "bootNumber": 2,
+    "operations": [
+      {
+        "id": "demo-op-8c80f86e-de3c-46d6-82e7-e24d515f64d1",
+        "case_id": "CHANGED",
+        "state": "PREPARED",
+        "attempts": 0,
+        "remote_id": null
+      },
+      {
+        "id": "demo-op-e92dc018-2e9d-4441-8a76-62127f6313c5",
+        "case_id": "LOSS",
+        "state": "CONFIRMED",
+        "attempts": 1,
+        "remote_id": "415333966522"
+      },
+      {
+        "id": "demo-op-e898d287-0ef3-4830-aba6-018727436b29",
+        "case_id": "NORMAL",
+        "state": "CONFIRMED",
+        "attempts": 1,
+        "remote_id": "415102198520"
+      }
+    ],
+    "verifiedRevenueOutcomes": [],
+    "revenueRescued": null
+  },
+  "cleanup": {
+    "durableRunClosed": true,
+    "executionAndFaultFlagsDisabled": true,
+    "temporaryOperatorCapabilityRemoved": true,
+    "flagValues": {
+      "CRM_WRITEBACK_ENABLED": "false",
+      "ENABLE_TEST_TASK_WRITES": "false",
+      "ENABLE_GENERAL_EXECUTION": "false",
+      "GENERAL_RELEASE_APPROVED": "false",
+      "DEMO_RECOVERY_ENABLED": "false",
+      "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+      "DEMO_RECOVERY_FAULT_ENABLED": "false"
+    },
+    "noNamespaceAddedOrTransferred": true,
+    "ownerPublicEndpointsRemainDisabled": true,
+    "healthReportsGeneralWritebackDisabled": true
+  },
+  "closedRun": {
+    "contract": "demo-remote-recovery-control-v1",
+    "runId": "demo-542167ab-21ab-44bd-aaa9-cc917cc100fe",
+    "closed": true,
+    "totalCreateAttempts": 2,
+    "maxCreateAttempts": 3,
+    "bootId": "93c5ade7-8a63-462b-ad35-a952818c097a",
+    "bootNumber": 2,
+    "operations": [
+      {
+        "id": "demo-op-8c80f86e-de3c-46d6-82e7-e24d515f64d1",
+        "case_id": "CHANGED",
+        "state": "PREPARED",
+        "attempts": 0,
+        "remote_id": null
+      },
+      {
+        "id": "demo-op-e92dc018-2e9d-4441-8a76-62127f6313c5",
+        "case_id": "LOSS",
+        "state": "CONFIRMED",
+        "attempts": 1,
+        "remote_id": "415333966522"
+      },
+      {
+        "id": "demo-op-e898d287-0ef3-4830-aba6-018727436b29",
+        "case_id": "NORMAL",
+        "state": "CONFIRMED",
+        "attempts": 1,
+        "remote_id": "415102198520"
+      }
+    ],
+    "verifiedRevenueOutcomes": [],
+    "revenueRescued": null
+  },
+  "namespaceIdsAfter": [
+    "16dca25759494a33813d2800f3f1a850"
+  ],
+  "finishedAt": "2026-11-03T21:25:36.812Z"
+}

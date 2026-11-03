@@ -320,3 +320,12 @@ cases. Persist intent before POST, never retry uncertain creates, keep all gener
 writeback flags false, and close test execution/fault controls and remove the
 short-lived operator capability afterward. Report actual IDs/hashes/traces/counts
 and distinguish injection from a genuine network outage.
+
+The bounded hosted run is complete: docs/demo-recovery-evidence/manifest.json
+records two real tasks, one application create attempt each, changed-approval
+rejection with zero creates, and verified injected-response-loss restart recovery.
+All seven flags are false, the durable run is closed, and the temporary capability
+is removed. Do not automatically start a new run under the old maximum-three-task
+authorization; per-run counters are not a global renewed task budget. Seven human
+semantic reviews remain pending. The original namespace was reused successfully
+without a new migration or resource; no Access setup is needed for that binding.

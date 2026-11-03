@@ -148,3 +148,10 @@ See the [existing demo reassessment](docs/demo-reassessment.md) for actual deplo
 observations, the verified write-disable change, limits of portal verification and
 the bounded route to demonstrating the existing safeguards. Deployment labels do
 not establish live customer operations. Do not add infrastructure or permissions.
+
+The [bounded hosted recovery demonstration](docs/demo-recovery-evidence/README.md)
+now verifies two actual synthetic HubSpot tasks, including injected response loss
+followed by hosted restart/reconciliation with no duplicate create, and stale
+approval rejection. Both credential portal identities and the designated marker
+passed. All test/fault/general execution is now disabled; semantic reviews remain
+pending. This does not establish recovery from a genuine network outage.

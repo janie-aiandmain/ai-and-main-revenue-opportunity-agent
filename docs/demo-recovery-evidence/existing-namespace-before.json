@@ -1,0 +1,25 @@
+{
+  "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+  "checkedAt": "2026-11-03T21:08:10.349Z",
+  "owner": "ai-and-main-revenue-opportunity-staging",
+  "binding": {
+    "class_name": "CertificationLedger",
+    "name": "CERTIFICATION_LEDGER",
+    "namespace_id": "16dca25759494a33813d2800f3f1a850",
+    "type": "durable_object_namespace"
+  },
+  "namespace": {
+    "id": "16dca25759494a33813d2800f3f1a850",
+    "name": "ai-and-main-revenue-opportunity-staging_CertificationLedger",
+    "script": "ai-and-main-revenue-opportunity-staging",
+    "class": "CertificationLedger",
+    "use_sqlite": true
+  },
+  "migrationTag": "certification-v1",
+  "ownerWorkersDevEnabled": false,
+  "ownerPreviewsEnabled": false,
+  "namespaceIdsBefore": [
+    "16dca25759494a33813d2800f3f1a850"
+  ],
+  "confirmed": true
+}

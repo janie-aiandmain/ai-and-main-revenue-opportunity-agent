@@ -1,0 +1,103 @@
+{
+  "kind": "HOSTED_REAL_HUBSPOT_SYNTHETIC_CONTROL_RECOVERY",
+  "runId": "demo-3e051ef8-7741-4144-914a-cacdcedf80ab",
+  "startedAt": "2026-11-03T21:21:20.594Z",
+  "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+  "worker": "ai-and-main-revenue-opportunity-agent",
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "maximumAuthorizedTasks": 3,
+  "taskIds": [],
+  "phases": [
+    {
+      "phase": "unauthenticated_operator_access_rejected",
+      "at": "2026-11-03T21:21:29.422Z"
+    },
+    {
+      "phase": "external_existing_namespace_binding_actually_works",
+      "at": "2026-11-03T21:21:29.422Z",
+      "bootId": "0d557b8b-03a4-4012-8b7f-e0271d0f4791"
+    },
+    {
+      "phase": "run_stopped_no_unproven_success",
+      "at": "2026-11-03T21:21:30.361Z",
+      "code": "demo_preflight_409_hubspot_transport_outcome_unknown"
+    }
+  ],
+  "approvalsAre": "USER_AUTHORIZED_SYNTHETIC_CONTROL_NOT_HUMAN_SEMANTIC_SIGNOFF",
+  "sevenSemanticReviews": "PENDING",
+  "newModelCalls": 0,
+  "newEnvironments": 0,
+  "newNamespaces": 0,
+  "verifiedRemoteRecovery": false,
+  "namespaceBefore": {
+    "id": "16dca25759494a33813d2800f3f1a850",
+    "name": "ai-and-main-revenue-opportunity-staging_CertificationLedger",
+    "script": "ai-and-main-revenue-opportunity-staging",
+    "class": "CertificationLedger",
+    "use_sqlite": true
+  },
+  "namespaceIdsBefore": [
+    "16dca25759494a33813d2800f3f1a850"
+  ],
+  "operatorReadiness": {
+    "httpStatus": 200,
+    "status": null
+  },
+  "unauthenticatedCheck": {
+    "httpStatus": 403,
+    "status": "operator_required"
+  },
+  "bindingProof": {
+    "binding": "EXTERNAL_DURABLE_OBJECT_WORKING",
+    "owner": "ai-and-main-revenue-opportunity-staging",
+    "className": "CertificationLedger",
+    "contract": "demo-remote-recovery-control-v1",
+    "runId": "demo-3e051ef8-7741-4144-914a-cacdcedf80ab",
+    "closed": false,
+    "totalCreateAttempts": 0,
+    "maxCreateAttempts": 3,
+    "bootId": "0d557b8b-03a4-4012-8b7f-e0271d0f4791",
+    "bootNumber": 1,
+    "operations": [],
+    "verifiedRevenueOutcomes": [],
+    "revenueRescued": null
+  },
+  "failure": {
+    "code": "demo_preflight_409_hubspot_transport_outcome_unknown",
+    "name": "Error"
+  },
+  "cleanup": {
+    "durableRunClosed": true,
+    "executionAndFaultFlagsDisabled": true,
+    "temporaryOperatorCapabilityRemoved": true,
+    "flagValues": {
+      "CRM_WRITEBACK_ENABLED": "false",
+      "ENABLE_TEST_TASK_WRITES": "false",
+      "ENABLE_GENERAL_EXECUTION": "false",
+      "GENERAL_RELEASE_APPROVED": "false",
+      "DEMO_RECOVERY_ENABLED": "false",
+      "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+      "DEMO_RECOVERY_FAULT_ENABLED": "false"
+    },
+    "noNamespaceAddedOrTransferred": true,
+    "ownerPublicEndpointsRemainDisabled": true,
+    "healthReportsGeneralWritebackDisabled": true
+  },
+  "closedRun": {
+    "contract": "demo-remote-recovery-control-v1",
+    "runId": "demo-3e051ef8-7741-4144-914a-cacdcedf80ab",
+    "closed": true,
+    "totalCreateAttempts": 0,
+    "maxCreateAttempts": 3,
+    "bootId": "0d557b8b-03a4-4012-8b7f-e0271d0f4791",
+    "bootNumber": 1,
+    "operations": [],
+    "verifiedRevenueOutcomes": [],
+    "revenueRescued": null
+  },
+  "namespaceIdsAfter": [
+    "16dca25759494a33813d2800f3f1a850"
+  ],
+  "finishedAt": "2026-11-03T21:21:38.883Z"
+}

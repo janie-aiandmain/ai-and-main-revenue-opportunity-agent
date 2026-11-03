@@ -1,0 +1,75 @@
+{
+  "kind": "HOSTED_REAL_HUBSPOT_SYNTHETIC_CONTROL_RECOVERY",
+  "runId": "demo-dae568f5-dbc8-4e5b-ae65-966f4ef53034",
+  "startedAt": "2026-11-03T21:18:20.591Z",
+  "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+  "worker": "ai-and-main-revenue-opportunity-agent",
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "maximumAuthorizedTasks": 3,
+  "taskIds": [],
+  "phases": [
+    {
+      "phase": "existing_ledger_owner_updated_no_new_migration",
+      "config": "wrangler.staging.jsonc",
+      "code": 0,
+      "version": null,
+      "errorCodes": [],
+      "at": "2026-11-03T21:18:34.976Z"
+    },
+    {
+      "phase": "original_demo_controller_deployed_execution_disabled",
+      "config": "wrangler.jsonc",
+      "code": 0,
+      "version": null,
+      "errorCodes": [],
+      "at": "2026-11-03T21:18:45.482Z"
+    },
+    {
+      "phase": "run_stopped_no_unproven_success",
+      "at": "2026-11-03T21:18:49.337Z",
+      "code": "demo_run_failed"
+    }
+  ],
+  "approvalsAre": "USER_AUTHORIZED_SYNTHETIC_CONTROL_NOT_HUMAN_SEMANTIC_SIGNOFF",
+  "sevenSemanticReviews": "PENDING",
+  "newModelCalls": 0,
+  "newEnvironments": 0,
+  "newNamespaces": 0,
+  "verifiedRemoteRecovery": false,
+  "namespaceBefore": {
+    "id": "16dca25759494a33813d2800f3f1a850",
+    "name": "ai-and-main-revenue-opportunity-staging_CertificationLedger",
+    "script": "ai-and-main-revenue-opportunity-staging",
+    "class": "CertificationLedger",
+    "use_sqlite": true
+  },
+  "namespaceIdsBefore": [
+    "16dca25759494a33813d2800f3f1a850"
+  ],
+  "failure": {
+    "code": "demo_run_failed",
+    "name": "AssertionError"
+  },
+  "cleanup": {
+    "durableRunClosed": false,
+    "executionAndFaultFlagsDisabled": true,
+    "temporaryOperatorCapabilityRemoved": true,
+    "flagValues": {
+      "CRM_WRITEBACK_ENABLED": "false",
+      "ENABLE_TEST_TASK_WRITES": "false",
+      "ENABLE_GENERAL_EXECUTION": "false",
+      "GENERAL_RELEASE_APPROVED": "false",
+      "DEMO_RECOVERY_ENABLED": "false",
+      "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+      "DEMO_RECOVERY_FAULT_ENABLED": "false"
+    },
+    "noNamespaceAddedOrTransferred": true,
+    "ownerPublicEndpointsRemainDisabled": true,
+    "healthReportsGeneralWritebackDisabled": true
+  },
+  "namespaceIdsAfter": [
+    "16dca25759494a33813d2800f3f1a850"
+  ],
+  "finishedAt": "2026-11-03T21:18:55.736Z"
+}

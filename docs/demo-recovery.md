@@ -1,5 +1,9 @@
 # Bounded existing-demo remote recovery
 
+**Executed:** [hosted results, exact hashes and task IDs](demo-recovery-evidence/README.md).
+Normal/repeat and injected-loss/restart recovery each produced one real test task;
+changed-payload approval rejection produced none. All controls are now disabled.
+
 The user authorized deployment to the existing original demo Worker and up to
 three clearly labeled synthetic tasks on HubSpot portal 247646122, contact
 582095692487, only after both existing credentials' portal IDs and the exact

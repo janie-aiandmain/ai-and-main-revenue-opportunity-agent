@@ -1,0 +1,74 @@
+{
+  "kind": "BOUNDED_REMOTE_RECOVERY_EVIDENCE_MANIFEST",
+  "sourceCommit": "bf7f36751251868317e0816639a60872167dae6f",
+  "artifacts": [
+    {
+      "file": "attempt-1-operator-gate.json",
+      "sha256": "58fb2b1d0e3bb27f8a667fdac53068f8280bc1783a88013407e69368bcb4f755",
+      "bytes": 2333
+    },
+    {
+      "file": "attempt-2-native-fetch-preflight.json",
+      "sha256": "fd7625939a27b50a91916044efee6e0f6147e5d1d44af56bb276551486a185b7",
+      "bytes": 3289
+    },
+    {
+      "file": "hosted-success.json",
+      "sha256": "f1e3231d1f286185532299bc9ea74be666dd54561622d49648b24cf555d57c3b",
+      "bytes": 48340
+    },
+    {
+      "file": "independent-final-verification.json",
+      "sha256": "f056e0c5d47adbcb80d60621353a0d17ab7c3b90053c30c77afb544935bff7f4",
+      "bytes": 731
+    },
+    {
+      "file": "existing-namespace-before.json",
+      "sha256": "99c890cf435ea07b561d34d3b1f28d306b902c3f2c99c50fec71e8fbed56c3b5",
+      "bytes": 799
+    }
+  ],
+  "tests": {
+    "passed": 110,
+    "failed": 0,
+    "newTests": 9,
+    "nativeWorkerdRegression": true,
+    "rootDryRunPassed": true,
+    "ownerDryRunPassed": true
+  },
+  "liveScenarios": {
+    "normalRepeat": "PASS_ONE_TASK_ONE_CREATE",
+    "injectedResponseLossHostedRestartReadOnlyReconciliation": "PASS_ONE_TASK_ONE_CREATE",
+    "changedPayloadOldApproval": "PASS_HTTP_409_ZERO_CREATES"
+  },
+  "liveScenariosNotTested": [
+    "Genuine network outage",
+    "Live zero-match, multiple-match and mismatched-property recovery outcomes",
+    "Arbitrary live-note model reasoning/semantic approval",
+    "Revenue outcome attribution"
+  ],
+  "negativeLocalCoverage": [
+    "Absent/ambiguous/mismatched readback cannot create again",
+    "Expired or changed source/payload integrity checks",
+    "Per-run maximum three application create attempts",
+    "Seven unresolved semantic cases blocked",
+    "Operator authentication/fault flag enforcement"
+  ],
+  "scope": "Fixed synthetic control only; no claim of general enterprise certification",
+  "taskIds": [
+    "415102198520",
+    "415333966522"
+  ],
+  "applicationCreateAttempts": 2,
+  "observedMatchingRemoteTasks": 2,
+  "totalPriorFailedRunCreates": 0,
+  "newNamespaceCount": 0,
+  "permissionExpansion": false,
+  "generalWritebackEnabled": false,
+  "testExecutionEnabledAfterRun": false,
+  "faultEnabledAfterRun": false,
+  "temporaryCapabilityPresentAfterRun": false,
+  "humanSemanticReviews": "PENDING",
+  "verifiedRevenueOutcomes": [],
+  "revenueRescued": null
+}
