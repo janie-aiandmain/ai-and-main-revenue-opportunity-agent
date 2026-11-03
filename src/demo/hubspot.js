@@ -4,7 +4,7 @@ export class DemoHubSpot {
  constructor(env){this.env=env;if(!env.HUBSPOT_ACCESS_TOKEN||!env.HUBSPOT_WRITE_TOKEN)throw Error('existing_hubspot_credentials_missing');if(env.HUBSPOT_ACCESS_TOKEN===env.HUBSPOT_WRITE_TOKEN)throw Error('separate_credentials_required');}
  async get(path,writer=false){return this.request(path,{method:'GET'},writer);}
  async request(path,options,writer=false){
-  let r;try{r=await fetch('https://api.hubapi.com'+path,{...options,redirect:'error',headers:{Authorization:'Bearer '+this.env[writer?'HUBSPOT_WRITE_TOKEN':'HUBSPOT_ACCESS_TOKEN'],'Content-Type':'application/json'},signal:AbortSignal.timeout(20000)});}catch{throw Error('hubspot_transport_outcome_unknown');}
+  let r;try{r=await fetch('https://api.hubapi.com'+path,{...options,redirect:'manual',headers:{Authorization:'Bearer '+this.env[writer?'HUBSPOT_WRITE_TOKEN':'HUBSPOT_ACCESS_TOKEN'],'Content-Type':'application/json'},signal:AbortSignal.timeout(20000)});}catch{throw Error('hubspot_transport_outcome_unknown');}
   if(!r.ok){await r.body?.cancel();throw Error(r.status===401?'hubspot_credential_rejected':r.status===403?'hubspot_insufficient_permission':'hubspot_http_'+r.status);}
   return r;
  }

@@ -49,3 +49,10 @@ test('actual HTTP controller verifies both identities/marker, drops success befo
 });
 
 test('failed source checks revoke approval even if the marker/source later returns to its original value',()=>{const s=setup();try{const o=prepare(s.ledger),a=s.ledger.approve(binding(o));s.ledger.invalidate(o.operationId,'fresh_marker_failed');const same=prepare(s.ledger,'NORMAL',{dueAt:o.request.body.properties.hs_timestamp});assert.equal(same.payloadHash,o.payloadHash);assert.throws(()=>begin(s.ledger,same,a),/stale/);assert.equal(s.ledger.summary().totalCreateAttempts,0);}finally{s.db.close();}});
+
+test('native workerd fetch supports the safe redirect policy and completes both-credential read-only preflight',async()=>{
+ const {build}=await import('esbuild'),{Miniflare,convertV4MiniflareOptions,Log,LogLevel}=await import('miniflare');
+ const result=await build({stdin:{contents:`import {DemoHubSpot} from './src/demo/hubspot.js';export default {async fetch(r,env){return Response.json(await new DemoHubSpot(env).preflight());}}`,resolveDir:process.cwd(),sourcefile:'demo-native-test.js'},bundle:true,format:'esm',platform:'browser',external:['node:*'],write:false,logLevel:'silent'});
+ let reads=0;const mf=new Miniflare(convertV4MiniflareOptions({modules:true,script:result.outputFiles[0].text,compatibilityDate:'2026-10-09',compatibilityFlags:['nodejs_compat'],log:new Log(LogLevel.NONE),bindings:{HUBSPOT_ACCESS_TOKEN:'synthetic-reader',HUBSPOT_WRITE_TOKEN:'synthetic-writer'},outboundService:async request=>{reads++;assert.equal(request.method,'GET');const u=new URL(request.url);if(u.pathname==='/account-info/v3/details')return Response.json({portalId:PORTAL});if(u.pathname.includes('/contacts/'))return Response.json({id:CONTACT,properties:{firstname:MARKER}});return Response.json({results:[]});}}));
+ try{const r=await mf.dispatchFetch('http://test');assert.equal(r.status,200);const proof=await r.json();assert.equal(proof.readPortalId,PORTAL);assert.equal(proof.writePortalId,PORTAL);assert.equal(proof.taskReadVerified,true);assert.equal(reads,4);}finally{await mf.dispose();}
+});

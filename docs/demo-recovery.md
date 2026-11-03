@@ -77,3 +77,10 @@ Only a receipt's actually executed scenarios may be called remote-verified.
 Normal and LOSS use two tasks in the intended successful run; CHANGED uses zero.
 Tests and a dry-run alone are not live recovery evidence. Captured fixtures,
 baselines and pending human reviews remain untouched.
+
+The first hosted attempt stopped before tasks at the operator-readiness gate;
+settings activation is now explicit. A read-only retry then proved the external
+binding but exposed workerd's unsupported `redirect: "error"` option. The adapter
+now uses `manual` and rejects non-success responses without forwarding credentials
+through redirects. A native workerd test covers both-credential preflight. Both
+failed receipts are preserved, with zero task creations and closed controls.

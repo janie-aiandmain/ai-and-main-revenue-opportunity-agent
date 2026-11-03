@@ -5,6 +5,7 @@ import {readFile,writeFile,mkdir,symlink,rm} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
 const args=process.argv.slice(2);
+const preflightOnly=args.includes('--preflight-only'),skipDeploy=args.includes('--skip-deploy');
 if(!args.includes('--live')||!args.includes('--user-authorized')||!args.includes('--max-tasks=3')){console.log('Opt-in required: node scripts/demo/remote-recovery.js --live --user-authorized --max-tasks=3');process.exit(2);}
 const account='cda2ab71dd8127c8031c945a738b86e2',worker='ai-and-main-revenue-opportunity-agent',owner='ai-and-main-revenue-opportunity-staging',namespace='16dca25759494a33813d2800f3f1a850';
 const root='https://'+worker+'.ruddy4learning.workers.dev',api='https://api.cloudflare.com/client/v4/accounts/'+account;
@@ -26,6 +27,9 @@ async function settings(values){
  for(const [name,text]of overrides)bindings.push({name,type:'plain_text',text});
  const form=new FormData();form.set('settings',JSON.stringify({bindings,...(before.annotations?{annotations:before.annotations}:{})}));
  const r=await fetch(api+path,{method:'PATCH',headers:{Authorization:'Bearer '+process.env.CLOUDFLARE_API_TOKEN},body:form,redirect:'error',signal:AbortSignal.timeout(25000)});const b=await r.json().catch(()=>null);if(!r.ok||b?.success!==true)throw Error('settings_update_'+r.status);
+ // Explicitly activate the newly created settings version; metadata alone is not runtime proof.
+ const list=await cf('/workers/scripts/'+worker+'/versions?per_page=1');const latest=(Array.isArray(list)?list:list.items)?.[0];if(!latest?.id)throw Error('settings_version_missing');
+ await cf('/workers/scripts/'+worker+'/deployments',{method:'POST',body:{strategy:'percentage',versions:[{version_id:latest.id,percentage:100}],annotations:{'workers/message':'Bounded demo control settings; no new code'}}});
 }
 async function deploy(config,phase){
  const result=await new Promise((resolve,reject)=>{const p=spawn(process.execPath,['node_modules/wrangler/bin/wrangler.js','deploy','--config',config],{env:{...process.env,CLOUDFLARE_ACCOUNT_ID:account,WRANGLER_SEND_METRICS:'false',WRANGLER_LOG:'error',WRANGLER_LOG_PATH:nullLog,CI:'true'},stdio:['ignore','pipe','pipe']});let text='';p.stdout.on('data',d=>{text+=d;});p.stderr.on('data',d=>{text+=d;});p.on('error',()=>reject(Error('wrangler_spawn_failed')));p.on('close',code=>resolve({code,version:text.match(/Current Version ID:\s*([a-f0-9-]{36})/)?.[1]||null,errorCodes:[...text.matchAll(/\[code:\s*(\d+)\]/g)].map(x=>Number(x[1]))}));});
@@ -42,14 +46,17 @@ try{
  if(process.env.CLOUDFLARE_ACCOUNT_ID!==account||!process.env.CLOUDFLARE_API_TOKEN)throw Error('cloudflare_authentication_not_configured');
  const cfg=JSON.parse(await readFile('wrangler.jsonc','utf8'));assert.equal(cfg.name,worker);assert.equal(cfg.vars.DEMO_RECOVERY_EXECUTION_ENABLED,'false');assert.equal(cfg.durable_objects.bindings[0].script_name,owner);assert.equal(cfg.migrations,undefined);
  const before=await cf('/workers/durable_objects/namespaces?per_page=1000');const ns=before.find(n=>n.id===namespace);assert.equal(ns?.script,owner);assert.equal(ns?.class,'CertificationLedger');assert.equal(ns?.use_sqlite,true);evidence.namespaceBefore=ns;evidence.namespaceIdsBefore=before.map(n=>n.id).sort();
- await deploy('wrangler.staging.jsonc','existing_ledger_owner_updated_no_new_migration');
- await deploy('wrangler.jsonc','original_demo_controller_deployed_execution_disabled');
+ if(!skipDeploy){await deploy('wrangler.staging.jsonc','existing_ledger_owner_updated_no_new_migration');
+ await deploy('wrangler.jsonc','original_demo_controller_deployed_execution_disabled');}
  await cf('/workers/scripts/'+worker+'/secrets',{method:'PUT',body:{name:'DEMO_RECOVERY_CAPABILITY',type:'secret_text',text:capability}});installedCapability=true;
  await settings({...Object.fromEntries(allFlags.map(n=>[n,'false'])),DEMO_RECOVERY_ENABLED:'true',DEMO_RECOVERY_EXECUTION_ENABLED:'false',DEMO_RECOVERY_FAULT_ENABLED:'false',DEMO_RECOVERY_RUN_ID:runId,DEMO_RECOVERY_EXPIRES_AT:expiresAt});controlConfigured=true;
- const beforeUnauth=await fetch(root+'/demo-recovery/summary',{method:'POST',headers:{'content-type':'application/json'},body:'{}',redirect:'error',signal:AbortSignal.timeout(20000)});assert.equal(beforeUnauth.status,403);note('unauthenticated_operator_access_rejected');
- evidence.bindingProof=await ok('binding');assert.equal(evidence.bindingProof.className,'CertificationLedger');note('external_existing_namespace_binding_actually_works',{bootId:evidence.bindingProof.bootId});
+ let ready;for(let i=0;i<8;i++){ready=await call('binding');if(ready.status===200)break;if(!['demo_control_disabled','demo_operator_control_unavailable','operator_required'].includes(ready.data.status))break;await new Promise(r=>setTimeout(r,1000));}
+ evidence.operatorReadiness={httpStatus:ready.status,status:ready.data.status||null};if(ready.status!==200)throw Error('binding_readiness_'+ready.status+'_'+ready.data.status);
+ const beforeUnauth=await fetch(root+'/demo-recovery/summary',{method:'POST',headers:{'content-type':'application/json'},body:'{}',redirect:'error',signal:AbortSignal.timeout(20000)});const ua=await beforeUnauth.json().catch(()=>null);evidence.unauthenticatedCheck={httpStatus:beforeUnauth.status,status:ua?.status};if(beforeUnauth.status!==403)throw Error('unauthenticated_gate_'+beforeUnauth.status+'_'+(ua?.status||'unknown'));note('unauthenticated_operator_access_rejected');
+ evidence.bindingProof=ready.data;assert.equal(evidence.bindingProof.className,'CertificationLedger');note('external_existing_namespace_binding_actually_works',{bootId:evidence.bindingProof.bootId});
  const deployed=await cf('/workers/scripts/'+worker+'/settings');assert.equal(deployed.bindings.find(b=>b.name==='DEMO_RECOVERY_LEDGER')?.namespace_id,namespace);
  evidence.preflight=await ok('preflight');assert.equal(evidence.preflight.readPortalId,'247646122');assert.equal(evidence.preflight.writePortalId,'247646122');assert.equal(evidence.preflight.contactId,'582095692487');assert.equal(evidence.preflight.marker,'AI_MAIN_CERTIFICATION_ONLY');assert.equal(evidence.preflight.taskReadVerified,true);note('both_credentials_portal_marker_and_task_read_verified');await save();
+ if(preflightOnly){evidence.readOnlyPreflightVerified=true;note('read_only_preflight_only_no_execution');}else{
  // Only after the preceding hosted preflight may the synthetic task gate open.
  await settings({DEMO_RECOVERY_EXECUTION_ENABLED:'true',DEMO_RECOVERY_FAULT_ENABLED:'true'});note('bounded_synthetic_execution_enabled_general_writeback_still_false');
  const dueAt=new Date(Date.now()+86400000).toISOString();
@@ -66,6 +73,7 @@ try{
  const afterRestart=await ok('status',{operationId:loss.operationId});assert.notEqual(afterRestart.bootId,beforeRestart.bootId);assert.ok(afterRestart.trace.some(t=>t.event==='RESTART_RECOVERED_UNCERTAIN_NO_CREATE'));assert.equal(afterRestart.state,'UNKNOWN');evidence.lostResponse.afterRestart=afterRestart;note('hosted_restart_and_redeployment_durable_unknown_state_verified',{beforeBoot:beforeRestart.bootId,afterBoot:afterRestart.bootId});await save();
  const recovered=await confirmed(loss,lossApproval);assert.equal(recovered.createAttempts,1);const repeatedRecovery=await confirmed(loss,lossApproval);assert.equal(recovered.remoteTaskId,repeatedRecovery.remoteTaskId);evidence.taskIds.push(recovered.remoteTaskId);evidence.lostResponse={...evidence.lostResponse,reconciled:recovered,repeated:repeatedRecovery,genuineNetworkOutage:false};
  evidence.finalSummary=await ok('summary');assert.equal(evidence.finalSummary.totalCreateAttempts,2);assert.equal(new Set(evidence.taskIds).size,2);evidence.verifiedRemoteRecovery=true;note('remote_recovery_verified_for_injected_loss_only',{taskId:recovered.remoteTaskId,totalCreateAttempts:2});
+ }
 }catch(error){evidence.failure={code:/^[a-zA-Z0-9_]+$/.test(error.message)?error.message:'demo_run_failed',name:error.name};note('run_stopped_no_unproven_success',{code:evidence.failure.code});process.exitCode=1;}
 finally{
  evidence.cleanup={};
