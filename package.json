@@ -15,9 +15,15 @@
     "regression:stability": "NODE_USE_ENV_PROXY=1 node scripts/regression/repeat-findings.js",
     "regression:review": "node scripts/regression/generate-review.js",
     "correction:replay": "node scripts/regression/correction-replay.js",
-    "correction:sandbox": "node sandbox/focused-scenario.js"
+    "correction:sandbox": "node sandbox/focused-scenario.js",
+    "certification:local": "node certification/local-certification.js",
+    "certification:replay": "node certification/replay-fresh.js",
+    "certification:check": "WRANGLER_SEND_METRICS=false wrangler deploy --dry-run --config wrangler.certification.jsonc",
+    "certification:evidence": "node certification/package-evidence.js"
   },
   "devDependencies": {
-    "wrangler": "^4.0.0"
+    "wrangler": "4.156.2",
+    "esbuild": "0.28.2",
+    "miniflare": "5.20261102.0-beta"
   }
 }

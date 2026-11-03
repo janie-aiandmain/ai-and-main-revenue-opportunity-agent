@@ -1,0 +1,82 @@
+{
+  "checks": [
+    {
+      "name": "locked_install",
+      "command": "npm ci",
+      "executed": true,
+      "exitCode": 0,
+      "seconds": 1.98,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "deterministic_tests",
+      "command": "npm test",
+      "executed": true,
+      "exitCode": 0,
+      "seconds": 0.6,
+      "expectedExitCode": 0,
+      "result": {
+        "tests": 76,
+        "passed": 76,
+        "failed": 0
+      }
+    },
+    {
+      "name": "worker_recovery",
+      "command": "npm run certification:local",
+      "executed": true,
+      "exitCode": 0,
+      "seconds": 9.0,
+      "expectedExitCode": 0,
+      "result": {
+        "restarts": 4,
+        "confirmedFixtureTasks": 3,
+        "duplicateCreates": 0,
+        "realHubSpotRequests": 0
+      }
+    },
+    {
+      "name": "fresh_identity_replay",
+      "command": "npm run certification:replay",
+      "executed": true,
+      "exitCode": 0,
+      "seconds": 0.18,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "worker_dry_run",
+      "command": "npm run check",
+      "executed": true,
+      "exitCode": 0,
+      "seconds": 0.91,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "staging_dry_run",
+      "command": "npm run certification:check",
+      "executed": true,
+      "exitCode": 0,
+      "seconds": 1.0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "legacy_diagnostic",
+      "command": "npm run regression:offline",
+      "executed": true,
+      "exitCode": 1,
+      "seconds": 0.14,
+      "expectedExitCode": 1
+    },
+    {
+      "name": "fresh_model",
+      "command": "npm run regression:findings -- --live --non-production",
+      "executedEarlierThisCycle": true,
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "reason": "runner deliberately requires human semantic adjudication; 31 valid results; NOT a passing release gate",
+      "newCalls": 31
+    }
+  ],
+  "hostedTestsExecuted": false,
+  "productionDeployed": false
+}

@@ -213,3 +213,17 @@ effect/attribution verification. See `docs/correction/README.md`. Keep this work
 separate from live CRM rollout: the new policy/reference SQLite adapter is not a
 production authentication, external exactly-once-write or human approval system.
 No HubSpot calls, production changes or merge to main are authorized here.
+
+## Approved isolated staging certification
+
+The user subsequently authorized the staging certification cycle documented in
+`docs/certification/README.md`. Use the separate certification Worker/config and
+designated synthetic records only; never production credentials or configuration.
+Keep legacy/production writeback closed. Hosted isolation, tenant/contact IDs,
+separate test credentials and external identity must be verified before any
+HubSpot staging call. Missing access is a blocker, not permission to use production.
+Local HTTP fixture receipts are not real HubSpot evidence. Preserve captured
+failures unchanged; all human verdicts remain pending until actual human sign-off.
+Unknown remote outcomes only reconcile or stay blocked; never retry a create.
+Stop before production promotion and report model, approval, storage and remote
+recovery evidence separately. Estimates and tasks do not establish revenue rescued.

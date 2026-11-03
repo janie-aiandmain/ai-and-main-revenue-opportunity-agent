@@ -17,7 +17,7 @@ export default {
         hubspotReadSecretConfigured: Boolean(env.HUBSPOT_ACCESS_TOKEN),
         hubspotWriteSecretConfigured: Boolean(env.HUBSPOT_WRITE_TOKEN),
         openAISecretConfigured: Boolean(env.OPENAI_API_KEY),
-        crmWritesEnabled: env.CRM_WRITEBACK_ENABLED === "true",
+        crmWritesEnabled: false,
         writebackApprovalTokenConfigured: Boolean(env.WRITEBACK_APPROVAL_TOKEN),
       });
     }
@@ -54,14 +54,14 @@ export default {
       if (request.method !== "POST") {
         return json({ status: "method_not_allowed", message: "POST required." }, 405);
       }
-      return createApprovedFollowUpTask(request, env);
+      return json({ status: "writeback_disabled", message: "Production and legacy writeback are disabled during staging certification." }, 403);
     }
 
     return json({
       service: "AI & MAIN Revenue Opportunity Agent",
       release: RELEASE,
       endpoints: ["/health", "/hubspot-test", "/hubspot-notes-test", "/shadow-evaluate", "/ai-shadow-evaluate", "/ai-stress-test", "/writeback-preview", "/writeback-test", "/writeback-task"],
-      nextStep: "Use /writeback-preview to review proposed follow-up tasks. /writeback-task requires explicit human approval and remains disabled unless CRM_WRITEBACK_ENABLED is true.",
+      nextStep: "Use /writeback-preview to review proposed follow-up tasks. Production and legacy writeback remain disabled during staging certification.",
     });
   },
 };
@@ -309,7 +309,7 @@ async function writebackPreview(env) {
       status: "writeback_preview_ready",
       source: "HubSpot",
       readOnly: true,
-      writebackEnabled: env.CRM_WRITEBACK_ENABLED === "true",
+      writebackEnabled: false,
       candidates,
       note: "No CRM write has occurred. Each task requires a separate explicit human approval.",
     });
