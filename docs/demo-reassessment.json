@@ -1,0 +1,198 @@
+{
+  "kind": "DEMO_PROOF_OF_CONCEPT_SCOPE_REASSESSMENT",
+  "userConfirmed": {
+    "cloudflareAndHubspotDemoOnly": true,
+    "connectedToRealBusiness": false,
+    "separateProductionHubspotPortalExists": false,
+    "expectedPortalId": "247646122",
+    "designatedContactId": "582095692487",
+    "pauseNewStagingAndAccessSetup": true
+  },
+  "originalDemoInspection": {
+    "kind": "READ_ONLY_ORIGINAL_DEMO_REASSESSMENT",
+    "checkedAt": "2026-11-03T20:48:43.016Z",
+    "worker": "ai-and-main-revenue-opportunity-agent",
+    "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+    "expectedTestPortal": "247646122",
+    "designatedTestContact": "582095692487",
+    "remoteMutations": 0,
+    "hubspotCalls": 0,
+    "modelCalls": 0,
+    "crmWrites": 0,
+    "accountVerified": true,
+    "deployment": {
+      "ordinarySettingNames": [
+        "CRM_WRITEBACK_ENABLED",
+        "EVAL_OPENAI_API_KEY"
+      ],
+      "secretNames": [
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "bindingNamesAndTypes": [],
+      "crmWritebackFlag": "true",
+      "portalSettingNames": [],
+      "expectedPortalConfigured": false,
+      "designatedContactConfigured": false,
+      "workersDevEnabled": true,
+      "previewUrlsEnabled": true
+    },
+    "health": {
+      "httpStatus": 200,
+      "status": "ready",
+      "release": "2026-11-02-revenue-opportunity-agent-v0.8",
+      "mode": "read-only deployment practicum",
+      "crmWritesEnabled": true,
+      "hubspotReadSecretConfigured": true,
+      "hubspotWriteSecretConfigured": true,
+      "openAISecretConfigured": true,
+      "writebackApprovalTokenConfigured": true
+    },
+    "deployedCode": {
+      "sha256": "78a8acbebb5833ff9f8bd0aaafff86c5d451a05ff3c82e91bfecae5c25b53e51",
+      "bytes": 38871,
+      "localReleasePresent": true,
+      "testPortalLiteralPresent": false,
+      "designatedContactLiteralPresent": false,
+      "writeRouteFound": true,
+      "writeRouteUnconditionallyDisabled": false,
+      "legacyWriteDispatch": true,
+      "fullCodeNotStored": true
+    },
+    "portalVerified": false,
+    "contactSyntheticMarkerVerified": false,
+    "allPortalRecordsSyntheticVerified": false
+  },
+  "writeDisableAction": {
+    "kind": "ORIGINAL_DEMO_WRITE_FLAG_DISABLED_FOR_INSPECTION",
+    "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+    "worker": "ai-and-main-revenue-opportunity-agent",
+    "startedAt": "2026-11-03T20:50:53.029Z",
+    "authorizedPurpose": "Keep writes disabled during original demo inspection",
+    "crmMutations": 0,
+    "modelCalls": 0,
+    "hubspotCalls": 0,
+    "codeDeployment": false,
+    "otherWorkerChanges": 0,
+    "previousFlag": "true",
+    "patchAttempted": true,
+    "patchSucceeded": true,
+    "newFlag": "false",
+    "otherSettingsAndBindingsUnchanged": false,
+    "secretNamesUnchanged": true,
+    "hostnameSettingsUnchanged": true,
+    "healthHttpStatus": 200,
+    "healthReportsWritesDisabled": true,
+    "verified": false,
+    "finishedAt": "2026-11-03T20:50:58.853Z"
+  },
+  "followupVersionVerification": {
+    "kind": "GET_ONLY_DEMO_CONTAINMENT_VERSION_COMPARISON",
+    "checkedAt": "2026-11-03T20:53:04.325Z",
+    "versions": [
+      {
+        "versionId": "00d91f64-3bcc-4c51-9a9c-e9602b6dfe7c",
+        "createdAt": "2026-11-03T20:50:56.172623Z",
+        "flag": "false",
+        "annotationNames": [
+          "workers/triggered_by"
+        ],
+        "resourceFieldNames": [
+          "script",
+          "script_runtime",
+          "bindings"
+        ],
+        "scriptFieldNames": [
+          "etag",
+          "handlers",
+          "last_deployed_from"
+        ]
+      },
+      {
+        "versionId": "1fa1322f-faef-4177-8b24-157bede464b8",
+        "createdAt": "2026-11-03T19:46:08.29422Z",
+        "flag": "true",
+        "annotationNames": [
+          "workers/message",
+          "workers/triggered_by"
+        ],
+        "resourceFieldNames": [
+          "script",
+          "script_runtime",
+          "bindings"
+        ],
+        "scriptFieldNames": [
+          "etag",
+          "handlers",
+          "last_deployed_from"
+        ]
+      }
+    ],
+    "otherBindingsUnchanged": true,
+    "runtimeSettingsUnchanged": true,
+    "executableEtagUnchanged": true,
+    "handlersUnchanged": true,
+    "otherAnnotationKeyNamesChanged": true,
+    "deployedCodeResponseSha256": "2267355da0ce4f2bd0e103c2520a94f21a4cae571e2fd31491a55364f3c3e6d0",
+    "codeResponseMatchesBefore": false
+  },
+  "contactRead": {
+    "kind": "READ_ONLY_ORIGINAL_DEMO_CONTACT_DIAGNOSTIC",
+    "checkedAt": "2026-11-03T20:53:37.575Z",
+    "userAttestedDemoOnly": true,
+    "expectedPortal": "247646122",
+    "expectedContact": "582095692487",
+    "workerGetRequests": 2,
+    "crmWrites": 0,
+    "modelCalls": 0,
+    "rawContactsPersisted": false,
+    "writesDisabledBeforeRead": true,
+    "httpStatus": 200,
+    "returnedContactCount": 6,
+    "designatedContactReturned": true,
+    "designatedSyntheticFirstnameMarkerMatched": true,
+    "knownFictionalCaseNamesFound": [
+      "David Reynolds"
+    ],
+    "responseReadOnlyReported": true,
+    "accountPortalIdPresentInResponse": false,
+    "returnedPortalMatchesExpected": false,
+    "entirePortalInventoryVerified": false,
+    "limitation": "Existing diagnostic returns first 100 contacts and no credential account identity; matching a contact or known fictional name does not prove portal ID or all-record synthetic status."
+  },
+  "interpretation": {
+    "demoUse": "User attestation, practicum health mode and marked synthetic contact support demo use. A Cloudflare production deployment label does not establish live customer operations.",
+    "allRecordsSynthetic": "Not independently verified",
+    "readAndWriteCredentialPortalIdentity": "Unverified: original endpoint returns no portal ID; no direct HubSpot credential is configured in Codex. Credentials are not extracted from Cloudflare.",
+    "writesCurrentlyDisabled": true,
+    "sourceDeployedDrift": "Same release label but deployed legacy write dispatch differs from current branch unconditional block. Release labels alone do not verify deployed source.",
+    "annotationDifference": "Settings update created a version and dropped workers/message. Initial whole-settings comparison therefore failed; followup confirms all non-flag bindings, runtime settings, executable ETag and handlers unchanged. Raw multipart download hashes vary and are not used as code-change evidence."
+  },
+  "evidenceReused": {
+    "reasoningVersion": "reasoning-v0.3.2",
+    "schemaVersion": "findings-v0.2",
+    "originalDecisionChecks": "31/31 latest capture",
+    "unseenActionabilityChecks": "16/16 latest capture",
+    "humanSignoffs": 0,
+    "localTestCount": 101,
+    "durableRemoteWriteRecovery": "Local HTTP fixtures/workerd evidence only; not real HubSpot interrupted-write evidence"
+  },
+  "planOnlyNoImplementation": true,
+  "noNewInfrastructure": true,
+  "noPermissionExpansion": true,
+  "noWorkerDeleted": true,
+  "crmWritesThisCycle": 0,
+  "modelCallsThisCycle": 0,
+  "readOnlyWorkerContactDiagnosticExecuted": true,
+  "cloudflareControlPlaneChange": "CRM_WRITEBACK_ENABLED true -> false on original demo Worker only; not a CRM write or new-code deployment",
+  "priorStagingNetworkDraft": "Saved earlier but not published; not required for the narrowed demo route and not changed/applied in this cycle",
+  "completionEstimate": {
+    "correctedReadOnlyDemo": "2\u20134 engineering hours after authorization and existing-credential account verification",
+    "hostedBoundedWriteAndRecoveryProof": "1\u20132 engineering days total if an existing durable store is reusable; stop if that requires new infrastructure",
+    "notIncluded": "Customer readiness, enterprise SSO, full semantic human sign-off availability, or guaranteed HubSpot ambiguous-write reconciliation"
+  }
+}

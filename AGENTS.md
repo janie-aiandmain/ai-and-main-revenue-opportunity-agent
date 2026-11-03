@@ -290,3 +290,18 @@ state. Do not infer that authorization establishes Access protection. Inspect
 current metadata/network readiness; enable only when protection can be checked,
 and disable immediately if ineffective. Current source/remote hostname remain
 false because verification prerequisites are missing. Production is unchanged.
+
+## Controlling demo-only reassessment
+
+The user subsequently confirmed Cloudflare and HubSpot are all demos/PoCs, not
+connected to a real business, and that no separate production HubSpot portal
+exists. Pause new staging/Access setup; do not request another Access identifier,
+add infrastructure/permissions, delete either Worker, or invent an exclusion ID.
+Use docs/demo-reassessment.md as current scope. Inspect/read only with writes
+disabled; the original demo flag was found true and set false without changing
+its executable. Existing labels saying production are not proof of customer use.
+The next proposal should reuse the existing demo and safeguards, prioritize
+evidence/deadline/scope correctness, exact-payload approval and duplicate-write
+recovery, and distinguish local proof from real HubSpot evidence. Implementing
+that proposal or enabling a bounded test task is not authorized by the inspection
+request. Preserve all original evidence and pending human decisions.

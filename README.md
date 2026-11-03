@@ -139,3 +139,12 @@ The user has authorized opening only the Access-protected staging hostname.
 The [protected-hostname gate](docs/staging/deployments/2026-11-03-protected-hostname-blocked.md)
 is blocked before enabling by the current network allowlist and unresolved
 Access application lookup; the deployed hostname remains closed.
+
+## Current demo scope
+
+The user confirmed both Cloudflare and HubSpot are proof-of-concept demo resources,
+with no separate production HubSpot portal. New staging/Access setup is paused.
+See the [existing demo reassessment](docs/demo-reassessment.md) for actual deployed
+observations, the verified write-disable change, limits of portal verification and
+the bounded route to demonstrating the existing safeguards. Deployment labels do
+not establish live customer operations. Do not add infrastructure or permissions.
