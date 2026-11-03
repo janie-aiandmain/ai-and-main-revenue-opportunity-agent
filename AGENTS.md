@@ -249,3 +249,15 @@ credentials under staging's expected names; do not recreate/rotate without an
 identified reason or reuse production credentials. Variables and Secrets holds
 credentials/ordinary settings; Bindings holds resources such as CERTIFICATION_LEDGER.
 See docs/staging/credential-configuration-inspection.md for the current limits.
+
+## Authorized isolated Worker creation
+
+The user confirmed ai-and-main-revenue-opportunity-staging has not been created
+and authorized creating it with its own SQLite Durable Object namespace using
+wrangler.staging.jsonc, if deployment access is available. The existing
+ai-and-main-revenue-opportunity-agent Worker is production; do not change its
+secrets, bindings or routes for certification. All staging write/release flags
+must remain false. Existing test keys may be attached to the old Worker; do not
+extract secret values or rename bindings on production. Configure staging from the
+original secure test credential source without recreating or rotating keys absent
+an identified reason. See docs/staging/create-isolated-worker.md.

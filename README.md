@@ -123,3 +123,7 @@ The supported description is **controlled prototype with tested local safeguards
 For existing test credentials, see the [configuration inspection](docs/staging/credential-configuration-inspection.md).
 Cloudflare secret presence is unverified; local credential availability does not
 establish whether a staging Worker secret exists.
+
+The separate hosted Worker has not been created, per the user's confirmation.
+See [isolated Worker creation](docs/staging/create-isolated-worker.md) for the exact
+checked-in configuration, deployment blockers and commands using existing access.

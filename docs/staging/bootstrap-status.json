@@ -1,0 +1,65 @@
+{
+  "kind": "ISOLATED_STAGING_BOOTSTRAP_PREPARED_NOT_DEPLOYED",
+  "observedAt": "2026-11-03T13:53:59.287951-05:00",
+  "branch": "enterprise-hardening",
+  "sourceCommit": "0b33e59ef7395e709e5376528307fbaf14ae6317",
+  "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+  "existingWorker": {
+    "name": "ai-and-main-revenue-opportunity-agent",
+    "url": "https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/",
+    "role": "PRODUCTION_BOUNDARY_USER_CONFIRMED",
+    "configurationInspected": false,
+    "changesPerformed": false
+  },
+  "stagingWorker": {
+    "name": "ai-and-main-revenue-opportunity-staging",
+    "existence": "USER_CONFIRMED_NOT_CREATED",
+    "config": "wrangler.staging.jsonc",
+    "configSha256": "ea47f1cdd7556743fb360e0eace3957535014e07b854643b7c1484786cfc4183",
+    "dryRunExecuted": true,
+    "dryRunExitCode": 0,
+    "deployed": false,
+    "publicRoute": false,
+    "previewUrls": false,
+    "taskWritesEnabled": false
+  },
+  "storage": {
+    "binding": "CERTIFICATION_LEDGER",
+    "className": "CertificationLedger",
+    "migration": "certification-v1",
+    "storageType": "SQLite Durable Object",
+    "status": "PREPARED_IN_SOURCE_NOT_PROVISIONED_HERE",
+    "namespaceId": null
+  },
+  "blockers": [
+    {
+      "code": "blocked_network_access",
+      "host": "api.cloudflare.com",
+      "evidence": "Current runtime observations: enforced restricted policy, destination not allowed"
+    },
+    {
+      "code": "missing_credential",
+      "credential": "Cloudflare deployment authentication in this Codex session",
+      "evidence": "No configured identity/token binding or OAuth file at inspected locations",
+      "notEvidenceOf": "Absence of credentials in the Cloudflare account or a rejected HubSpot key"
+    }
+  ],
+  "existingTestCredentials": {
+    "status": "USER_CONFIRMED_CREATED_STAGING_AVAILABILITY_UNVERIFIED",
+    "reportedReadName": "HUBSPONT_ACCESS_TOKEN",
+    "readNameSpellingVerified": false,
+    "reportedWriteName": "HUBSPOT_WRITE_TOKEN",
+    "stagingNames": [
+      "STAGING_HUBSPOT_READ_TOKEN",
+      "STAGING_HUBSPOT_WRITE_TOKEN",
+      "EVAL_OPENAI_API_KEY"
+    ],
+    "recreated": false,
+    "rotated": false,
+    "valuesInspected": false
+  },
+  "cloudflareApiRequestsAttempted": 0,
+  "hubspotApiRequests": 0,
+  "crmWrites": 0,
+  "humanApprovals": 0
+}
