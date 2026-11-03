@@ -1,0 +1,312 @@
+{
+  "version": "unseen-review-variations-v1",
+  "synthetic": true,
+  "createdBeforeModelRun": true,
+  "promptExamples": false,
+  "cases": [
+    {
+      "id": "UV01",
+      "category": "old-deadline",
+      "context": {
+        "customer": "Synthetic held-out UV01",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer reports a rattling ventilation fan and asks for a supervisor today. Hold further invoices until the fan is repaired."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV02",
+      "category": "old-deadline",
+      "context": {
+        "customer": "Synthetic held-out UV02",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer asks for EV outlet pricing by Friday so they can decide. No appointment has been requested."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV03",
+      "category": "old-deadline",
+      "context": {
+        "customer": "Synthetic held-out UV03",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-12T10:00:00Z",
+            "note": "Customer asked about new garden lights; the technician recommended calling immediately."
+          },
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer requested a quote tomorrow."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV04",
+      "category": "old-deadline",
+      "context": {
+        "customer": "Synthetic held-out UV04",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-12T10:00:00Z",
+            "note": "Customer wanted a manager to call today about patio lighting."
+          },
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer now declines the work and says no follow-up is wanted."
+          }
+        ]
+      },
+      "expectedActionable": false,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV05",
+      "category": "omitted-restriction",
+      "context": {
+        "customer": "Synthetic held-out UV05",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer wants generator pricing. Do not book a visit or charge a deposit without written consent."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV06",
+      "category": "omitted-restriction",
+      "context": {
+        "customer": "Synthetic held-out UV06",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer requests repair follow-up for the buzzing panel. Pause billing until the complaint is resolved."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV07",
+      "category": "omitted-restriction",
+      "context": {
+        "customer": "Synthetic held-out UV07",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer asks for pricing for two exterior outlets, only if the existing paving remains untouched."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV08",
+      "category": "omitted-restriction",
+      "context": {
+        "customer": "Synthetic held-out UV08",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "The dispatcher suggests an upsell, but the customer explicitly declines extra work and does not want a sales call."
+          }
+        ]
+      },
+      "expectedActionable": false,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV09",
+      "category": "deferred-work",
+      "context": {
+        "customer": "Synthetic held-out UV09",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer wants stair lighting after the remodel is finished. The remodel has not yet finished."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV10",
+      "category": "deferred-work",
+      "context": {
+        "customer": "Synthetic held-out UV10",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer asks for a follow-up on a charger once the permit approval arrives. No approval has arrived yet."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV11",
+      "category": "deferred-work",
+      "context": {
+        "customer": "Synthetic held-out UV11",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-12T10:00:00Z",
+            "note": "Customer wanted pendant-light follow-up after the renovation was complete."
+          },
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer confirms the renovation is complete and asks for pendant-light pricing now."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV12",
+      "category": "deferred-work",
+      "context": {
+        "customer": "Synthetic held-out UV12",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-12T10:00:00Z",
+            "note": "Customer wanted lighting after the remodel was finished."
+          },
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer cancels the future lighting request; do not follow up after the remodel."
+          }
+        ]
+      },
+      "expectedActionable": false,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV13",
+      "category": "unrequested-scheduling",
+      "context": {
+        "customer": "Synthetic held-out UV13",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer asks only for surge-protection pricing. The technician says a consultation might help, but the customer did not ask for one."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV14",
+      "category": "unrequested-scheduling",
+      "context": {
+        "customer": "Synthetic held-out UV14",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer requests charger pricing. Do not schedule an assessment; send the request to a human for pricing review only."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV15",
+      "category": "unrequested-scheduling",
+      "context": {
+        "customer": "Synthetic held-out UV15",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer asks to schedule a site assessment for an EV charger and requests pricing. Scheduling itself still requires a separate human workflow."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "UV16",
+      "category": "unrequested-scheduling",
+      "context": {
+        "customer": "Synthetic held-out UV16",
+        "serviceHistory": [
+          {
+            "timestamp": "2025-02-13T10:00:00Z",
+            "note": "Customer asked a question about an EV charger but explicitly declined pricing, visits and follow-up."
+          }
+        ]
+      },
+      "expectedActionable": false,
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    }
+  ]
+}

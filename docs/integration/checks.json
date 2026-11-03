@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "command": "npm test",
+      "executed": true,
+      "tests": 101,
+      "passed": 101,
+      "failed": 0
+    },
+    {
+      "command": "npm run check",
+      "executed": true,
+      "passed": true,
+      "deployed": false
+    },
+    {
+      "command": "npm run certification:check",
+      "executed": true,
+      "passed": true,
+      "deployed": false
+    },
+    {
+      "command": "npm run staging:check",
+      "executed": true,
+      "passed": true,
+      "deployed": false
+    },
+    {
+      "command": "RUN_GENERAL_CERTIFICATION=true CERTIFICATION_EVIDENCE_PATH=docs/integration/worker-validated.json node certification/local-certification.js",
+      "executed": true,
+      "passed": true,
+      "restarts": 7,
+      "realHubSpotCalls": 0,
+      "modelBoundary": "recorded synthetic outputs only"
+    },
+    {
+      "command": "npm run integration:replay",
+      "executed": true,
+      "passed": true,
+      "stableSlots": 12,
+      "distinctOpportunities": 12,
+      "newModelCalls": 0
+    },
+    {
+      "command": "npm run staging:verify-production",
+      "executed": true,
+      "exitCode": 2,
+      "result": "blocked_network_access",
+      "check": "environment_host_not_allowlisted",
+      "setupStep": 11,
+      "originCredentialChecksReached": false
+    }
+  ],
+  "hostedStagingTestsExecuted": false,
+  "productionConfigurationModified": false,
+  "humanSignoffs": 0
+}

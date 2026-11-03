@@ -1,32 +1,37 @@
+import { StagingBlocker,checkedJsonFetch,missingCredential } from './blockers.js';
 export class HubSpotCertificationClient {
-  constructor(env){
+  constructor(env,{readOnly=false}={}){
     this.env=env;
-    if(env.DEPLOYMENT_ENVIRONMENT!=='staging'||env.CRM_WRITEBACK_ENABLED!=='false'||env.ENABLE_TEST_TASK_WRITES!=='true'||!['local','remote-staging'].includes(env.CERTIFICATION_MODE)||!env.STAGING_PORTAL_ID||!env.STAGING_CONTACT_ID) throw Error('staging_isolation_not_configured');
+    this.readOnly=readOnly;
+    if(!env.STAGING_HUBSPOT_READ_TOKEN)throw missingCredential('STAGING_HUBSPOT_READ_TOKEN');
+    if(!env.STAGING_HUBSPOT_WRITE_TOKEN)throw missingCredential('STAGING_HUBSPOT_WRITE_TOKEN');
+    if(env.DEPLOYMENT_ENVIRONMENT!=='staging'||env.CRM_WRITEBACK_ENABLED!=='false'||(!readOnly&&env.ENABLE_TEST_TASK_WRITES!=='true')||!['local','remote-staging'].includes(env.CERTIFICATION_MODE)||!env.STAGING_PORTAL_ID||!env.STAGING_CONTACT_ID) throw Error('staging_isolation_not_configured');
     if(env.CERTIFICATION_MODE==='local'){
       const base=new URL(env.LOCAL_HUBSPOT_FIXTURE_URL);
       if(base.protocol!=='http:'||!['127.0.0.1','localhost'].includes(base.hostname)) throw Error('local_fixture_only');
       this.base=base.origin;
     }else{
       if(env.LOCAL_HUBSPOT_FIXTURE_URL||env.STAGING_ISOLATION_APPROVED!=='true'||!env.PRODUCTION_PORTAL_ID||env.STAGING_PORTAL_ID===env.PRODUCTION_PORTAL_ID) throw Error('hosted_isolation_unverified');
+      if(![env.PRODUCTION_PORTAL_ID,env.STAGING_PORTAL_ID,env.STAGING_CONTACT_ID].every(id=>/^\d+$/.test(id)))throw Error('verified_numeric_portal_and_contact_ids_required');
       this.base='https://api.hubapi.com';
     }
     if(!env.STAGING_HUBSPOT_READ_TOKEN||!env.STAGING_HUBSPOT_WRITE_TOKEN) throw Error('staging_credentials_missing');
     if(env.STAGING_HUBSPOT_READ_TOKEN===env.STAGING_HUBSPOT_WRITE_TOKEN) throw Error('separate_staging_credentials_required');
   }
   async request(path,write=false,body,credential='read'){
-    const response=await fetch(this.base+path,{method:write?'POST':'GET',headers:{Authorization:'Bearer '+(write||credential==='write'?this.env.STAGING_HUBSPOT_WRITE_TOKEN:this.env.STAGING_HUBSPOT_READ_TOKEN),'Content-Type':'application/json'},...(body?{body}:{}),signal:AbortSignal.timeout(10000)});
-    if(!response.ok) throw Error('staging_upstream_http_'+response.status);
-    return response.json();
+    if(write&&this.readOnly)throw Error('preflight_read_only');
+    const name=write||credential==='write'?'STAGING_HUBSPOT_WRITE_TOKEN':'STAGING_HUBSPOT_READ_TOKEN';
+    return checkedJsonFetch(this.base+path,{method:write?'POST':'GET',headers:{Authorization:'Bearer '+this.env[name],'Content-Type':'application/json'},...(body?{body}:{}),signal:AbortSignal.timeout(10000)},name,path);
   }
   async verifyIsolation(){
     const portal=await this.request('/account-info/v3/details');
-    if(String(portal.portalId)!==this.env.STAGING_PORTAL_ID) throw Error('portal_mismatch');
+    if(String(portal.portalId)!==this.env.STAGING_PORTAL_ID) throw new StagingBlocker('portal_mismatch',{credential:'STAGING_HUBSPOT_READ_TOKEN',check:'expected_nonproduction_portal',setupStep:2});
     // Identity check only: never use a write credential for general CRM reads.
     // If existing scopes do not allow this check, block; do not broaden scopes.
     const writer=await this.request('/account-info/v3/details',false,undefined,'write');
-    if(String(writer.portalId)!==this.env.STAGING_PORTAL_ID) throw Error('write_credential_portal_mismatch');
+    if(String(writer.portalId)!==this.env.STAGING_PORTAL_ID) throw new StagingBlocker('portal_mismatch',{credential:'STAGING_HUBSPOT_WRITE_TOKEN',check:'write_credential_portal_mismatch',setupStep:4});
     const contact=await this.request('/crm/v3/objects/contacts/'+encodeURIComponent(this.env.STAGING_CONTACT_ID)+'?properties=firstname');
-    if(String(contact.id)!==this.env.STAGING_CONTACT_ID||contact.properties?.firstname!=='AI_MAIN_CERTIFICATION_ONLY') throw Error('designated_test_contact_unverified');
+    if(String(contact.id)!==this.env.STAGING_CONTACT_ID||contact.properties?.firstname!=='AI_MAIN_CERTIFICATION_ONLY') throw new StagingBlocker('contact_mismatch',{check:'designated_contact_id_and_synthetic_marker',setupStep:3});
   }
   async create(payloadJson){return this.request('/crm/v3/objects/tasks',true,payloadJson);}
   async readTask(id){return this.request('/crm/v3/objects/tasks/'+encodeURIComponent(id)+'?properties=hs_task_subject,hs_task_body,hs_task_priority,hs_task_status,hs_task_type,hs_timestamp&associations=contacts');}

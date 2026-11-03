@@ -1,0 +1,135 @@
+{
+  "kind": "CONTROLLED_PROTOTYPE_WITH_TESTED_LOCAL_SAFEGUARDS",
+  "humanSignoffs": 0,
+  "productionCertified": false,
+  "hostedStagingCertified": false,
+  "productionConfigurationChanged": false,
+  "realHubSpotCalls": 0,
+  "productionMutations": 0,
+  "promptVersion": "reasoning-v0.3.2",
+  "promptHash": "0500274cfd1a2c5ac725fd706ceb0377db57cb9e33166e5135d8b957641310f9",
+  "schemaVersion": "findings-v0.2",
+  "schemaHash": "7bda1bfdc27882023d180cca14e751941401feee18a1d9eb6fca63717519964d",
+  "model": "gpt-5.6-terra",
+  "reasoning": {
+    "effort": "low"
+  },
+  "modelRuns": [
+    {
+      "file": "docs/integration/model-v0.3-run1.json",
+      "promptVersion": "reasoning-v0.3",
+      "cases": 47,
+      "valid": 47,
+      "original31DecisionPasses": 25,
+      "unseen16DecisionPasses": 16,
+      "detectorFlags": [],
+      "humanSignoffs": 0
+    },
+    {
+      "file": "docs/integration/model-v0.3.1-run1.json",
+      "promptVersion": "reasoning-v0.3.1",
+      "cases": 47,
+      "valid": 47,
+      "original31DecisionPasses": 31,
+      "unseen16DecisionPasses": 16,
+      "detectorFlags": [],
+      "humanSignoffs": 0
+    },
+    {
+      "file": "docs/integration/model-v0.3.2-run1.json",
+      "promptVersion": "reasoning-v0.3.2",
+      "cases": 47,
+      "valid": 47,
+      "original31DecisionPasses": 31,
+      "unseen16DecisionPasses": 16,
+      "detectorFlags": [
+        {
+          "id": "ST07",
+          "issues": [
+            {
+              "code": "historical_deadline_repeated_in_action",
+              "noteId": "note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862"
+            }
+          ]
+        },
+        {
+          "id": "UV03",
+          "issues": [
+            {
+              "code": "historical_deadline_repeated_in_action",
+              "noteId": "note_6766be521a21ce3ce57b5b29edd8c0671deac6486f36f52eb403905558fb2584"
+            }
+          ]
+        }
+      ],
+      "humanSignoffs": 0
+    }
+  ],
+  "newModelCalls": 141,
+  "usage": {
+    "input": 185801,
+    "output": 15826
+  },
+  "latestConfusion": {
+    "tp": 10,
+    "tn": 21,
+    "fp": 0,
+    "fn": 0
+  },
+  "falsePositiveRate": {
+    "numerator": 0,
+    "denominator": 21
+  },
+  "falseNegativeRate": {
+    "numerator": 0,
+    "denominator": 10
+  },
+  "semanticCorrectness": "NOT_HUMAN_ADJUDICATED",
+  "repeatedRunConsistency": "NOT_REMEASURED: three different prompts are not independent repeated runs of one contract",
+  "localPipeline": {
+    "executed": true,
+    "restarts": 7,
+    "normalNoteToApprovalTask": true,
+    "zeroAndMultipleFindings": true,
+    "preflightWithWritesDisabled": true,
+    "materialChangeInvalidation": true,
+    "lostResponseRecovery": true,
+    "generalTaskCreateCount": 1,
+    "duplicateCreates": 0,
+    "taskIds": [
+      "fixture-task-1",
+      "fixture-task-2",
+      "fixture-task-3",
+      "fixture-task-4"
+    ],
+    "taskIdsAre": "LOCAL_FIXTURE_NOT_HUBSPOT",
+    "estimatedGeneralOpportunityValue": 0,
+    "verifiedBusinessRevenue": null
+  },
+  "gates": [
+    {
+      "gate": "captured_failures_and_semantic_review",
+      "status": "PENDING_HUMAN"
+    },
+    {
+      "gate": "general_worker_integration",
+      "status": "PASS_LOCAL_PENDING_HOSTED"
+    },
+    {
+      "gate": "durable_remote_effect_recovery",
+      "status": "PASS_LOCAL_PENDING_HUBSPOT"
+    },
+    {
+      "gate": "fresh_model_validation",
+      "status": "AUTOMATED_DECISIONS_PASS_TWO_LITERAL_TIME_FLAGS_PENDING_HUMAN"
+    },
+    {
+      "gate": "hosted_account_setup",
+      "status": "PREPARED_MISSING_ACCESS"
+    },
+    {
+      "gate": "deployed_production_state",
+      "status": "UNKNOWN_BLOCKED_NETWORK_ACCESS"
+    }
+  ]
+}

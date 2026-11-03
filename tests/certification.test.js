@@ -122,7 +122,7 @@ test('hosted adapter fails closed without isolation, separate credentials and di
   const remote={...env,CERTIFICATION_MODE:'remote-staging',LOCAL_HUBSPOT_FIXTURE_URL:undefined};
   assert.throws(()=>new HubSpotCertificationClient(remote),/isolation/);
   assert.throws(()=>new HubSpotCertificationClient({...remote,STAGING_ISOLATION_APPROVED:'true',PRODUCTION_PORTAL_ID:env.STAGING_PORTAL_ID}),/isolation/);
-  assert.throws(()=>new HubSpotCertificationClient({...env,STAGING_HUBSPOT_WRITE_TOKEN:undefined}),/credentials/);
+  assert.throws(()=>new HubSpotCertificationClient({...env,STAGING_HUBSPOT_WRITE_TOKEN:undefined}),/missing_credential/);
 });
 
 test('source Worker legacy writeback stays closed even when a write flag is true',async()=>{
@@ -179,7 +179,7 @@ test('separate write credential tenant is verified by a read-only identity check
     return Response.json({portalId:options.headers.Authorization==='Bearer synthetic-write'?fixture.writeCredentialPortalId:fixture.readCredentialPortalId});
   });
   const client=new HubSpotCertificationClient(env);
-  await assert.rejects(client.verifyIsolation(),/write_credential_portal_mismatch/);
+  await assert.rejects(client.verifyIsolation(),error=>error.code==='portal_mismatch'&&error.details.check==='write_credential_portal_mismatch');
   assert.equal(calls.length,2);assert.ok(calls.every(c=>c.method==='GET'&&c.url.endsWith('/account-info/v3/details')));
   assert.throws(()=>new HubSpotCertificationClient({...env,STAGING_HUBSPOT_WRITE_TOKEN:env.STAGING_HUBSPOT_READ_TOKEN}),/separate/);
 });

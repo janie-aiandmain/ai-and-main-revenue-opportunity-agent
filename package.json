@@ -19,7 +19,13 @@
     "certification:local": "node certification/local-certification.js",
     "certification:replay": "node certification/replay-fresh.js",
     "certification:check": "WRANGLER_SEND_METRICS=false wrangler deploy --dry-run --config wrangler.certification.jsonc",
-    "certification:evidence": "node certification/package-evidence.js"
+    "certification:evidence": "node certification/package-evidence.js",
+    "regression:corrected": "NODE_USE_ENV_PROXY=1 node scripts/regression/model-corrected.js",
+    "integration:local": "RUN_GENERAL_CERTIFICATION=true CERTIFICATION_EVIDENCE_PATH=reports/general-worker-pipeline.json node certification/local-certification.js",
+    "integration:replay": "node certification/replay-corrected.js",
+    "staging:check": "WRANGLER_SEND_METRICS=false wrangler deploy --dry-run --config wrangler.staging.jsonc",
+    "staging:configure": "node scripts/staging/configure.js",
+    "staging:verify-production": "NODE_USE_ENV_PROXY=1 node scripts/staging/verify-production.js"
   },
   "devDependencies": {
     "wrangler": "4.156.2",

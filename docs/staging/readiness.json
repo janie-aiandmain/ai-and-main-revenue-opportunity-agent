@@ -1,0 +1,31 @@
+{
+  "kind": "HOSTED_STAGING_PREPARATION_NOT_CERTIFICATION",
+  "observedAt": "2026-11-03T16:56:07.601323+00:00",
+  "known": {
+    "productionWorkerName": "ai-and-main-revenue-opportunity-agent",
+    "productionUrl": "https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/",
+    "preparedStagingWorkerName": "ai-and-main-revenue-opportunity-staging",
+    "hubspotPortalId": "247646122",
+    "portalIsolation": "USER_CONFIRMED_NON_PRODUCTION_SYNTHETIC_ONLY_NOT_API_VERIFIED",
+    "stagingContactId": "582095692487",
+    "recordVerification": "USER_DESIGNATED_SYNTHETIC_CONTACT_NOT_API_VERIFIED",
+    "cloudflareAccountId": "cda2ab71dd8127c8031c945a738b86e2",
+    "cloudflareAccountVerification": "USER_SUPPLIED_NOT_API_VERIFIED"
+  },
+  "missing": {
+    "isolatedStagingWorkerDeployment": "NOT_PROVISIONED",
+    "productionPortalExclusionId": "NOT_SUPPLIED",
+    "stagingReadCredential": "NOT_CONFIGURED",
+    "stagingWriteCredential": "NOT_CONFIGURED",
+    "stagingModelSecret": "NOT_CONFIGURED_IN_WORKER; Codex evaluation key is ready separately",
+    "accessIssuer": "NOT_SUPPLIED",
+    "accessAudience": "NOT_SUPPLIED",
+    "subjectRoleMap": "NOT_SUPPLIED",
+    "deploymentIdentity": "NOT_CONFIGURED",
+    "networkHosts": "Cloudflare API, HubSpot API, Access issuer, production/staging Worker hostnames are not allowlisted"
+  },
+  "writesEnabled": false,
+  "semanticApproval": false,
+  "productionCertification": false,
+  "humanSignoffs": 0
+}

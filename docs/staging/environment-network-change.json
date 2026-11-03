@@ -1,0 +1,15 @@
+{
+  "environment": "ai-and-main-revenue-opportunity-agent",
+  "settingsScreen": "Environment settings for this chat",
+  "verifiedConfigurationField": "network.allowed_domains",
+  "savedCustomHosts": [
+    "api.openai.com",
+    "ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev"
+  ],
+  "scope": "Single production hostname addition only; presets, scripts, repositories and credential bindings preserved",
+  "draftSaveConfirmed": true,
+  "requiresPublish": true,
+  "runtimeApplied": false,
+  "afterRefreshAuthorizedRemoteOperation": "GET https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/health only",
+  "hubspotActionsAuthorizedAfterRefresh": false
+}

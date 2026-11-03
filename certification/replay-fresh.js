@@ -1,5 +1,5 @@
 // Replay captured model outputs only. No API calls or semantic sign-off.
-import { mkdtemp,rm,readFile,writeFile } from 'node:fs/promises';
+import { mkdtemp,rm,readFile,writeFile,mkdir } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import assert from 'node:assert/strict';
 import { CorrectionSandbox } from '../sandbox/correction-store.js';
@@ -30,6 +30,7 @@ try {
   }
   const record={kind:'OFFLINE_FROZEN_PLUS_FRESH_RECONCILIATION_NOT_MODEL_STABILITY_OR_HUMAN_REVIEW',priorExecutions:155,freshExecutions:31,independentContexts:31,positiveSlots:12,reusedOpportunitySlots:results.flatMap(r=>r.slots).filter(s=>s.identityReused).length,registryOpportunities:db.counts().opportunities,newModelCalls:0,crmCalls:0,results};
   assert.equal(record.registryOpportunities,12);
-  await writeFile('docs/certification/fresh-identity-replay.json',JSON.stringify(record,null,2)+'\n');
+  await mkdir('reports',{recursive:true});
+  await writeFile(process.env.IDENTITY_REPLAY_OUTPUT||'reports/fresh-identity-replay.json',JSON.stringify(record,null,2)+'\n');
   console.log(JSON.stringify({cases:results.length,reusedOpportunitySlots:record.reusedOpportunitySlots,distinctOpportunities:record.registryOpportunities,newModelCalls:0}));
 }finally{db.close();await rm(dir,{recursive:true,force:true});}

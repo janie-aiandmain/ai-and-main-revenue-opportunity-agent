@@ -1,0 +1,12 @@
+{
+  "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+  "stagingPortalId": "247646122",
+  "productionPortalId": "REPLACE_WITH_VERIFIED_DISTINCT_PRODUCTION_PORTAL_ID",
+  "stagingContactId": "582095692487",
+  "accessIssuer": "https://YOUR_TEAM.cloudflareaccess.com",
+  "accessAudience": "REPLACE_WITH_STAGING_ACCESS_APPLICATION_AUD",
+  "subjects": {
+    "REPLACE_WITH_APPROVER_ACCESS_JWT_SUB": "Approver",
+    "REPLACE_WITH_VIEWER_ACCESS_JWT_SUB": "Viewer"
+  }
+}

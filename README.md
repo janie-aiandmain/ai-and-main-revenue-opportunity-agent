@@ -109,3 +109,13 @@ and EN12 still requires scope review. All human sign-offs remain pending. Hosted
 Cloudflare/HubSpot certification is blocked by missing isolated access and network
 configuration. No HubSpot request, production deployment or verified business
 revenue claim was made. Production promotion remains stopped for review.
+
+## Current controlled prototype and hosted setup
+
+See the [current correction/integration evidence](docs/integration/README.md),
+[seven cases awaiting human decisions](docs/integration/seven-case-review.md), and
+[hosted staging account guide](docs/staging/SETUP.md). The general staging path
+connects designated notes, independent findings, external operator review, exact
+final-payload approval and durable task recovery. Production source and configuration
+remain separate. Setup, model scores and simulated actors do not grant human sign-off.
+The supported description is **controlled prototype with tested local safeguards**.

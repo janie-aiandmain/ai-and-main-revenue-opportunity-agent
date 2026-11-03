@@ -20,10 +20,12 @@ jobs:
       - name: Deterministic regression and certification guards
         run: npm test
       - name: Local Worker durable recovery certification
-        run: npm run certification:local
+        run: npm run integration:local
       - name: Fresh captured-output identity replay
         run: npm run certification:replay
       - name: Wrangler dry run
         run: npm run check
       - name: Isolated staging Worker dry run
         run: npm run certification:check
+      - name: Hosted staging configuration dry run
+        run: npm run staging:check

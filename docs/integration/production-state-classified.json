@@ -1,0 +1,18 @@
+{
+  "kind": "READ_ONLY_DEPLOYED_PRODUCTION_HEALTH_CHECK",
+  "url": "https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/health",
+  "checkedAt": "2026-11-03T17:15:28.169Z",
+  "method": "GET",
+  "mutationsAttempted": 0,
+  "verified": false,
+  "crmWritesEnabled": null,
+  "blocker": {
+    "code": "blocked_network_access",
+    "check": "environment_host_not_allowlisted",
+    "setupStep": 11,
+    "setupAction": "Allow the exact host in the relevant runtime network policy and refresh that environment; do not bypass the proxy.",
+    "host": "ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev",
+    "permissionsExpanded": false
+  },
+  "attemptedHTTP": false
+}

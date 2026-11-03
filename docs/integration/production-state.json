@@ -1,0 +1,10 @@
+{
+  "kind": "READ_ONLY_DEPLOYED_PRODUCTION_HEALTH_CHECK",
+  "url": "https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/health",
+  "checkedAt": "2026-11-03T16:35:47.463Z",
+  "method": "GET",
+  "mutationsAttempted": 0,
+  "verified": false,
+  "crmWritesEnabled": null,
+  "blocker": "Network request unavailable; production state remains unknown."
+}

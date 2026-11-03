@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ai-and-main-revenue-opportunity-staging",
+  "main": "src/staging/worker.js",
+  "compatibility_date": "2026-10-09",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": false,
+  "preview_urls": false,
+  "vars": {
+    "DEPLOYMENT_ENVIRONMENT": "staging",
+    "CERTIFICATION_MODE": "remote-staging",
+    "ENABLE_TEST_TASK_WRITES": "false",
+    "CRM_WRITEBACK_ENABLED": "false",
+    "ENABLE_GENERAL_EXECUTION": "false",
+    "GENERAL_RELEASE_APPROVED": "false"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "CERTIFICATION_LEDGER",
+        "class_name": "CertificationLedger"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "certification-v1",
+      "new_sqlite_classes": [
+        "CertificationLedger"
+      ]
+    }
+  ],
+  "keep_vars": false
+}

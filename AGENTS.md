@@ -227,3 +227,15 @@ failures unchanged; all human verdicts remain pending until actual human sign-of
 Unknown remote outcomes only reconcile or stay blocked; never retry a create.
 Stop before production promotion and report model, approval, storage and remote
 recovery evidence separately. Estimates and tasks do not establish revenue rescued.
+
+## Current correction, general integration and setup authorization
+
+The user authorized correcting ST04/EN12, unseen variations, general staging
+note→finding→review→approved task integration and hosted setup preparation. See
+`docs/integration/README.md` and `docs/staging/SETUP.md`. Preserve all prior captures.
+New reasoning uses versioned staging-only contracts; production reasoning stays
+v0.2. Assistant analysis and local test actors are never human sign-off. Account
+setup/preflight does not approve semantics or production. Keep task/release flags
+false during setup; no production-portal substitution or scope expansion.
+The user requested that after the environment refresh the only remote operation
+be read-only production verification; do not run HubSpot or hosted staging writes.

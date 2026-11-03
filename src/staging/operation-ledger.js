@@ -4,6 +4,7 @@ import { prepareHistory,canonical } from '../findings.js';
 import { reviewedProjection,materialExecutable,TASK_CLASS } from '../correction-policy.js';
 import { BLOCKED_CASES,CONTROL_CASES,FINAL_PAYLOAD_CONTRACT } from './policy.js';
 import { taskMatches } from './hubspot-client.js';
+import { StagingBlocker } from './blockers.js';
 const digest=value=>'sha256:'+createHash('sha256').update(typeof value==='string'?value:canonical(value)).digest('hex');
 export class StagingOperationLedger extends CorrectionLedger {
   constructor(db){super(db);db.exec(`
@@ -25,6 +26,9 @@ export class StagingOperationLedger extends CorrectionLedger {
     const finding={opportunityKey:'surge-protection',classification:'strong cross-sell opportunity',opportunityType:'cross-sell',humanReviewRequired:true,evidence:[{noteId:history[0].noteId,quote:'Synthetic certification contact requests surge protection pricing.'}],recommendedNextAction:'Review pricing for the designated synthetic test record.'};
     const identity=this.reconcile(context,history,[finding])[0];
     const projection=reviewedProjection({actionClass:TASK_CLASS,targetContext:context,classification:finding.classification,opportunityType:finding.opportunityType,intent:'prepare_quote',scope:{service:'surge_protection',recordPurpose:'certification_only'},priority:'MEDIUM',evidence:finding.evidence,timing:{kind:'absolute',dueAt:new Date(dueAt).toISOString(),basisRef:'explicit_certification_operator_due_date'},constraints:['No customer communication; designated certification task only.'],humanApprovalRequired:true},history);
+    return this.prepareProjection(identity,projection,env,100000);
+  }
+  prepareProjection(identity,projection,env,estimatedMinor=0){
     return this.tx(()=>{
       const existing=this.db.prepare('SELECT * FROM cert_operations WHERE op_id=?').get(identity.opportunityId);
       if(existing&&!['PREPARED','APPROVED'].includes(existing.state))throw Error('existing_effect_must_be_reconciled');
@@ -37,7 +41,7 @@ export class StagingOperationLedger extends CorrectionLedger {
         if(changed){this.db.prepare('UPDATE cert_approvals SET revoked=1 WHERE operation_id=?').run(id);this.trace(id,'APPROVAL_INVALIDATED',payloadHash);}
         this.db.prepare('UPDATE cert_operations SET payload_json=?,payload_hash=?,material_json=?,material_hash=?,source_hash=?,source_candidate_hash=?,source_revision=?,revision=revision+?,state=? WHERE id=?').run(json,payloadHash,JSON.stringify(projection.material),materialHash,identity.sourceHash,identity.candidateHash,source.revision,changed?1:0,changed?'PREPARED':existing.state,id);
       }else{
-        this.db.prepare('INSERT INTO cert_operations(id,op_id,correlation,payload_json,payload_hash,material_json,material_hash,source_hash,source_candidate_hash,source_revision,revision,state) VALUES(?,?,?,?,?,?,?,?,?,?,1,?)').run(id,identity.opportunityId,correlation,json,payloadHash,JSON.stringify(projection.material),materialHash,identity.sourceHash,identity.candidateHash,source.revision,'PREPARED');
+        this.db.prepare('INSERT INTO cert_operations(id,op_id,correlation,payload_json,payload_hash,material_json,material_hash,source_hash,source_candidate_hash,source_revision,revision,state,estimated_minor) VALUES(?,?,?,?,?,?,?,?,?,?,1,?,?)').run(id,identity.opportunityId,correlation,json,payloadHash,JSON.stringify(projection.material),materialHash,identity.sourceHash,identity.candidateHash,source.revision,'PREPARED',estimatedMinor);
         this.trace(id,'OPERATION_PERSISTED_BEFORE_SUBMISSION',payloadHash);
       }
       return this.status(id);
@@ -66,7 +70,7 @@ export class StagingOperationLedger extends CorrectionLedger {
     if(['SENDING','UNKNOWN'].includes(op.state))return this.reconcileRemote(id,client);
     if(op.state==='CHECKING')return this.status(id);
     this.tx(()=>{op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);if(op.state!=='APPROVED')throw Error('operation_not_approved');this.validate(op,this.db.prepare('SELECT * FROM cert_approvals WHERE id=?').get(approvalId),env);this.db.prepare("UPDATE cert_operations SET state='CHECKING' WHERE id=?").run(id);});
-    try{await client.verifyIsolation();}catch{this.db.prepare("UPDATE cert_operations SET state='APPROVED' WHERE id=? AND state='CHECKING'").run(id);this.trace(id,'ISOLATION_READ_FAILED_NO_POST');throw Error('isolation_not_verified');}
+    try{await client.verifyIsolation();}catch(error){this.db.prepare("UPDATE cert_operations SET state='APPROVED' WHERE id=? AND state='CHECKING'").run(id);this.trace(id,'ISOLATION_READ_FAILED_NO_POST');if(error instanceof StagingBlocker)throw error;throw Error('isolation_not_verified');}
     const body=this.tx(()=>{
       op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);if(op.state!=='CHECKING')throw Error('operation_changed');
       const request=this.validate(op,this.db.prepare('SELECT * FROM cert_approvals WHERE id=?').get(approvalId),env);
@@ -78,8 +82,8 @@ export class StagingOperationLedger extends CorrectionLedger {
       this.db.prepare('UPDATE cert_operations SET remote_id=? WHERE id=?').run(String(created.id),id);
       this.trace(id,'REMOTE_ID_RECEIVED',op.payload_hash,String(created.id));
       return await this.reconcileRemote(id,client);
-    }catch{
-      this.db.prepare("UPDATE cert_operations SET state='UNKNOWN' WHERE id=? AND state!='CONFIRMED'").run(id);this.trace(id,'RESPONSE_LOST_OR_UNCONFIRMED_BLOCKED',op.payload_hash);return this.status(id);
+    }catch(error){
+      this.db.prepare("UPDATE cert_operations SET state='UNKNOWN' WHERE id=? AND state!='CONFIRMED'").run(id);this.trace(id,'RESPONSE_LOST_OR_UNCONFIRMED_BLOCKED',op.payload_hash);return {...this.status(id),...(error instanceof StagingBlocker?{blocker:error.toJSON()}:{})};
     }
   }
   async reconcileRemote(id,client){
@@ -93,7 +97,7 @@ export class StagingOperationLedger extends CorrectionLedger {
       const matches=(await client.lookup(op.correlation,op.remote_id)).filter(t=>taskMatches(t,JSON.parse(op.payload_json).body,op.correlation));
       if(matches.length!==1){this.trace(id,matches.length?'MULTIPLE_MATCHES_MANUAL_RESOLUTION':'NO_PROVEN_MATCH_BLOCKED',op.payload_hash);return this.status(id);}
       this.db.prepare("UPDATE cert_operations SET state='CONFIRMED',remote_id=? WHERE id=?").run(String(matches[0].id),id);this.trace(id,'EXISTING_TASK_RECONCILED_NO_CREATE',op.payload_hash,String(matches[0].id));
-    }catch{this.trace(id,'LOOKUP_UNAVAILABLE_BLOCKED',op.payload_hash);}
+    }catch(error){this.trace(id,'LOOKUP_UNAVAILABLE_BLOCKED',op.payload_hash);if(error instanceof StagingBlocker)return {...this.status(id),blocker:error.toJSON()};}
     return this.status(id);
   }
   recoverChecking(){for(const op of this.db.prepare("SELECT * FROM cert_operations WHERE state IN ('CHECKING','SENDING')").all()){this.db.prepare('UPDATE cert_operations SET state=? WHERE id=?').run(op.state==='SENDING'?'UNKNOWN':'APPROVED',op.id);this.trace(op.id,op.state==='SENDING'?'RESTART_RECOVERED_UNCERTAIN_NO_CREATE':'RESTART_RECOVERED_CHECKING_BEFORE_POST',op.payload_hash);}}

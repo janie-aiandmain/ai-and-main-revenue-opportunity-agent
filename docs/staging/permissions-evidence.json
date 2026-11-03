@@ -1,0 +1,41 @@
+{
+  "sourceRepository": "https://github.com/HubSpot/HubSpot-public-api-spec-collection",
+  "commit": "93f57ea6a3e2c1fd5aa6ac5683eadc8fa44ee5de",
+  "inspected": [
+    {
+      "path": "PublicApiSpecs/CRM/Tasks/Rollouts/424/v3/tasks.json",
+      "sha256": "c9f359edf6190d2c5dabf94f8ecf84f1ad8dc294953b2f0aa155585ac2bb98e6",
+      "endpoint": "/crm/v3/objects/tasks",
+      "security": [],
+      "granularCapabilities": [
+        "crm.objects.tasks.read",
+        "crm.objects.tasks.write"
+      ]
+    },
+    {
+      "path": "PublicApiSpecs/CRM/Notes/Rollouts/424/v3/notes.json",
+      "sha256": "fd4295476d9061b1148988133dda0c0fcf24d0e51293a14c8275986e258cd1f6",
+      "endpoint": "/crm/v3/objects/notes",
+      "security": [],
+      "granularCapabilities": [
+        "crm.objects.notes.read"
+      ]
+    },
+    {
+      "path": "PublicApiSpecs/Account/Account Info/Rollouts/144923/v3/accountInfo.json",
+      "sha256": "85996f580688d1492771f4d36cda349a13905bf731dbc489be7b0eff3a3f7b87",
+      "endpoint": "/account-info/v3/details",
+      "security": [
+        {
+          "oauth2": [
+            "oauth"
+          ]
+        }
+      ],
+      "granularCapabilities": [
+        "oauth"
+      ]
+    }
+  ],
+  "limitations": "Task/note operation security arrays empty; granular task/note scopes only listed for user app credentials. No minimum legacy private-app scope set is certified; stop rather than broaden."
+}
