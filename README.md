@@ -134,3 +134,8 @@ names only; Wrangler preserves existing secrets separately from ordinary variabl
 The [Access values sync](docs/staging/deployments/2026-11-03-access-values-sync.md)
 confirms the issuer/audience and all ordinary settings match. Verified subject
 mapping, tenant settings and authenticated read-only preflight remain pending.
+
+The user has authorized opening only the Access-protected staging hostname.
+The [protected-hostname gate](docs/staging/deployments/2026-11-03-protected-hostname-blocked.md)
+is blocked before enabling by the current network allowlist and unresolved
+Access application lookup; the deployed hostname remains closed.

@@ -1,0 +1,109 @@
+{
+  "kind": "AUTHORIZED_PROTECTED_STAGING_HOSTNAME_BLOCKED_BEFORE_ENABLE",
+  "checkedAt": "2026-11-03T20:41:51.937Z",
+  "hostname": "ai-and-main-revenue-opportunity-staging.ruddy4learning.workers.dev",
+  "authorizedChange": {
+    "workers_dev": true,
+    "preview_urls": false,
+    "writeReleaseFlags": "all four remain false",
+    "productionChangesAuthorized": false
+  },
+  "observedRemoteState": {
+    "settingFieldNames": [
+      "annotations",
+      "bindings",
+      "compatibility_date",
+      "compatibility_flags",
+      "logpush",
+      "placement",
+      "tags",
+      "tail_consumers",
+      "usage_model"
+    ],
+    "accessRelatedFields": [],
+    "workersDevEnabled": false,
+    "previewUrlsEnabled": false,
+    "writeReleaseFlagsAllDisabled": true
+  },
+  "accessInspection": {
+    "kind": "GET_ONLY_STAGING_ACCESS_SCOPE_INSPECTION",
+    "checkedAt": "2026-11-03T20:41:51.937Z",
+    "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+    "worker": "ai-and-main-revenue-opportunity-staging",
+    "remoteMutations": 0,
+    "workerMetadata": {
+      "settingFieldNames": [
+        "annotations",
+        "bindings",
+        "compatibility_date",
+        "compatibility_flags",
+        "logpush",
+        "placement",
+        "tags",
+        "tail_consumers",
+        "usage_model"
+      ],
+      "accessRelatedFields": [],
+      "workersDevEnabled": false,
+      "previewUrlsEnabled": false,
+      "writeReleaseFlagsAllDisabled": true
+    },
+    "returnedAppCount": 0,
+    "stagingReferencedCandidates": [],
+    "matchingAppCount": 0,
+    "blocker": {
+      "code": "access_application_mismatch"
+    },
+    "coverageVerified": false
+  },
+  "network": {
+    "currentAllowlistIncludesStagingHostname": false,
+    "currentAllowlistIncludesAccessIssuer": false,
+    "draftStatus": "saved",
+    "requiresPublish": true,
+    "addedHosts": [
+      "ai-and-main-revenue-opportunity-staging.ruddy4learning.workers.dev",
+      "falling-cell-9501.cloudflareaccess.com"
+    ],
+    "existingHostsPreserved": [
+      "ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev",
+      "api.cloudflare.com",
+      "api.openai.com"
+    ]
+  },
+  "preparedConfiguration": {
+    "path": ".staging/wrangler.access-pending.jsonc",
+    "ignoredLocalOnly": true,
+    "accountPinned": "cda2ab71dd8127c8031c945a738b86e2",
+    "workersDevDesired": true,
+    "previewUrlsDesired": false,
+    "sourceWranglerWorkersDevStillFalse": true,
+    "dryRunPassed": true,
+    "deployed": false
+  },
+  "coverageStatus": "Dashboard screenshots show entire staging Worker selected, production and preview URLs, All traffic and account-members Allow; independent API/behavioral confirmation incomplete. No claim of verified all-path protection.",
+  "unauthenticatedChecks": {
+    "executed": false,
+    "reason": "Required hosts not allowlisted and API could not identify the Access application; hostname intentionally remains disabled",
+    "notCountedAsAccessDenial": true
+  },
+  "authenticatedReadOnlyPreflight": {
+    "executed": false,
+    "blockers": [
+      "Access scope and unauthenticated edge protection not independently confirmed",
+      "Staging/issuer network hosts require saved draft publication",
+      "No verified operator subject, subject-to-role mapping or authenticated session",
+      "Tenant settings incomplete; separate production-portal existence/ID question pending"
+    ],
+    "portalId": "247646122",
+    "contactId": "582095692487"
+  },
+  "mutations": {
+    "cloudflareRemoteWrites": 0,
+    "crmWrites": 0,
+    "hubspotCalls": 0,
+    "modelCalls": 0,
+    "productionChanges": 0
+  },
+  "rollback": "Not required: hostname was never enabled. If future edge checks fail or cannot establish Access enforcement after enable, immediately set enabled=false, previews_enabled=false on the staging script subdomain and verify GET. Do not modify production."
+}

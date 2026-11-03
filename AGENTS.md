@@ -279,3 +279,14 @@ verified on the active version; see
 docs/staging/deployments/2026-11-03-secret-sync-resolved.json. Earlier empty-secret
 receipts are historical. Access/tenant setup, credential validity and human
 semantic decisions remain pending; keep write/release flags and public routes off.
+
+## Authorized protected staging hostname
+
+The user explicitly authorized workers_dev only for
+ai-and-main-revenue-opportunity-staging.ruddy4learning.workers.dev under All traffic
+Access, with previews and all write/release flags false. See
+docs/staging/deployments/2026-11-03-protected-hostname-blocked.json for the gate
+state. Do not infer that authorization establishes Access protection. Inspect
+current metadata/network readiness; enable only when protection can be checked,
+and disable immediately if ineffective. Current source/remote hostname remain
+false because verification prerequisites are missing. Production is unchanged.
