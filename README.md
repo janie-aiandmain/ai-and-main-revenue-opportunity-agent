@@ -131,4 +131,6 @@ closed endpoints and disabled write/release flags. See the
 The [resolved secret/configuration sync inspection](docs/staging/deployments/2026-11-03-secret-sync-resolved.md)
 records the active version and matching ordinary settings. The source declares required secret
 names only; Wrangler preserves existing secrets separately from ordinary variables.
-Access and tenant setup remain pending.
+The [Access values sync](docs/staging/deployments/2026-11-03-access-values-sync.md)
+confirms the issuer/audience and all ordinary settings match. Verified subject
+mapping, tenant settings and authenticated read-only preflight remain pending.

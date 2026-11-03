@@ -14,7 +14,9 @@
     "ENABLE_TEST_TASK_WRITES": "false",
     "CRM_WRITEBACK_ENABLED": "false",
     "ENABLE_GENERAL_EXECUTION": "false",
-    "GENERAL_RELEASE_APPROVED": "false"
+    "GENERAL_RELEASE_APPROVED": "false",
+    "ACCESS_ISSUER": "https://falling-cell-9501.cloudflareaccess.com",
+    "ACCESS_AUDIENCE": "f3d28533ee59378b47a60ea0747a3e9ee6743f6c338ea859b21f371b6c1d0548"
   },
   "durable_objects": {
     "bindings": [

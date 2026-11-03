@@ -1,0 +1,80 @@
+{
+  "kind": "STAGING_ACCESS_ISSUER_AUDIENCE_SYNC_VERIFIED",
+  "checkedAt": "2026-11-03T20:17:53.530Z",
+  "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+  "accountVerified": true,
+  "worker": "ai-and-main-revenue-opportunity-staging",
+  "config": "wrangler.staging.jsonc",
+  "configSha256": "41c78e7fa74a9543a1ffd1907448ce4587e346e3d739363fd8f812987b5bfdca",
+  "secretNames": [
+    "EVAL_OPENAI_API_KEY",
+    "STAGING_HUBSPOT_READ_TOKEN",
+    "STAGING_HUBSPOT_WRITE_TOKEN"
+  ],
+  "missingRequiredSecrets": [],
+  "unexpectedSecretNames": [],
+  "secretTypesCorrect": true,
+  "ordinarySettings": {
+    "configuredNames": [
+      "ACCESS_AUDIENCE",
+      "ACCESS_ISSUER",
+      "CERTIFICATION_MODE",
+      "CRM_WRITEBACK_ENABLED",
+      "DEPLOYMENT_ENVIRONMENT",
+      "ENABLE_GENERAL_EXECUTION",
+      "ENABLE_TEST_TASK_WRITES",
+      "GENERAL_RELEASE_APPROVED"
+    ],
+    "deployedNames": [
+      "ACCESS_AUDIENCE",
+      "ACCESS_ISSUER",
+      "CERTIFICATION_MODE",
+      "CRM_WRITEBACK_ENABLED",
+      "DEPLOYMENT_ENVIRONMENT",
+      "ENABLE_GENERAL_EXECUTION",
+      "ENABLE_TEST_TASK_WRITES",
+      "GENERAL_RELEASE_APPROVED"
+    ],
+    "missingNames": [],
+    "extraDashboardNames": [],
+    "valueMismatchNames": []
+  },
+  "writeReleaseFlagsAllDisabled": true,
+  "compatibilityDateMatches": true,
+  "compatibilityFlagsMatch": true,
+  "durableObject": {
+    "bindingMatches": true,
+    "namespaceId": "16dca25759494a33813d2800f3f1a850"
+  },
+  "workersDevEnabled": false,
+  "previewUrlsEnabled": false,
+  "customDomainCount": 0,
+  "otherBindingNames": [],
+  "keepVars": false,
+  "remoteMutations": 0,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "secretValuesReadOrStored": false,
+  "valueRedaction": "Ordinary values compared in memory; only mismatch names persisted. Secret endpoint returns names/types only; no secret values requested.",
+  "sourceUpdate": {
+    "ordinaryNamesAdded": [
+      "ACCESS_ISSUER",
+      "ACCESS_AUDIENCE"
+    ],
+    "containsSecretValues": false,
+    "remoteRedeploymentPerformed": false
+  },
+  "validation": {
+    "localTestsPassed": 101,
+    "localTestsFailed": 0,
+    "stagingDryRunPassed": true,
+    "authenticatedPreflightExecuted": false,
+    "publicJwksFetchExecuted": false
+  },
+  "remainingPrerequisites": [
+    "Verified external subject and subject-to-role mapping",
+    "Staging tenant/contact settings",
+    "User answer whether a separate production HubSpot portal exists before filling production exclusion",
+    "Protected authenticated staging access; keep routes closed until that access step is reviewed"
+  ]
+}
