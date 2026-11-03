@@ -128,4 +128,7 @@ availability still does not configure Worker secrets.
 The separate hosted staging Worker is now deployed with its own SQLite namespace,
 closed endpoints and disabled write/release flags. See the
 [verified deployment receipt](docs/staging/deployments/2026-11-03-bootstrap.md).
-Runtime credentials, Access and read-only hosted preflight remain the next setup work.
+The [secret/configuration sync inspection](docs/staging/deployments/2026-11-03-secret-sync.md)
+records the remaining runtime-secret mismatch. The source declares required secret
+names only; Wrangler preserves existing secrets separately from ordinary variables.
+Access and tenant setup remain pending.

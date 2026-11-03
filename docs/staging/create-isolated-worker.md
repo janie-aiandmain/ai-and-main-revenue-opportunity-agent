@@ -112,7 +112,10 @@ verified test read value under `STAGING_HUBSPOT_READ_TOKEN` in staging.
 
 Keep ordinary settings in the generated staging config for later deployments:
 `keep_vars: false` deliberately does not preserve dashboard-only ordinary variable
-changes when deploying the bare bootstrap template again. Secrets are separate.
+changes when deploying the bare bootstrap template again. Secrets are separate. The current source also declares names in
+`secrets.required`, so later deployments inherit those bindings or fail if absent.
+Do not put values in this declaration. See the
+[secret/config sync check](deployments/2026-11-03-secret-sync.md) for observed status.
 
 After protected staging URL, identity, binding and ordinary settings are verified,
 read-only `POST /certification/preflight` uses the Worker's stored credentials to

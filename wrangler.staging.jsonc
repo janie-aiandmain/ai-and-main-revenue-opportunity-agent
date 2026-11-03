@@ -32,5 +32,12 @@
       ]
     }
   ],
+  "secrets": {
+    "required": [
+      "STAGING_HUBSPOT_READ_TOKEN",
+      "STAGING_HUBSPOT_WRITE_TOKEN",
+      "EVAL_OPENAI_API_KEY"
+    ]
+  },
   "keep_vars": false
 }
