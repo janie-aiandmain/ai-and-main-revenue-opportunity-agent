@@ -2,9 +2,11 @@ import { createHash,randomUUID } from 'node:crypto';
 import { sourceAnchors,strongOverlap } from '../correction-policy.js';
 import { StagingOperationLedger,digest } from './operation-ledger.js';
 import { prepareHistory,canonical } from '../findings.js';
+import {REVIEW_POLICY} from './review-policy.js';
+import {INTERNAL_PROPOSAL_VERSION} from './internal-task-policy.js';
 import { inspectFinding,generalProjection } from './review-policy.js';
-import request from '../findings-request-v0.3.2.json' with {type:'json'};
-const contractHash=digest(request);
+import request from '../findings-request-v0.3.3.json' with {type:'json'};
+const contractHash=digest({request,reviewPolicy:REVIEW_POLICY,proposalVersion:INTERNAL_PROPOSAL_VERSION});
 const plainHash=value=>createHash('sha256').update(canonical(value)).digest('hex');
 const compactAnchors=(history,evidence)=>sourceAnchors(history,evidence).map(a=>({noteId:a.noteId,start:a.start,end:a.end,sourceHash:plainHash({text:a.sourceText,timestamp:a.timestamp}),text:a.sourceText.slice(a.start,a.end)}));
 const role=actor=>{if(!actor||!['Approver','Admin'].includes(actor.role)||!['LOCAL_SYNTHETIC','EXTERNAL_VERIFIED'].includes(actor.kind)||!actor.subject)throw Error('verified_operator_required');};
@@ -32,7 +34,7 @@ export class GeneralFindingLedger extends StagingOperationLedger {
   acceptEvaluation(ticket,history,result,now=new Date().toISOString()){
     const context=this.db.prepare('SELECT * FROM general_contexts WHERE context_key=?').get(ticket.key);
     if(!context||context.generation!==ticket.generation)throw Error('superseded_evaluation');
-    if(result.promptVersion!=='reasoning-v0.3.2'||result.schemaVersion!=='findings-v0.2')throw Error('reasoning_contract_mismatch');
+    if(result.promptVersion!=='reasoning-v0.3.3'||result.schemaVersion!=='findings-v0.2'||result.proposalVersion!==INTERNAL_PROPOSAL_VERSION)throw Error('reasoning_contract_mismatch');
     let identities;
     try{identities=this.reconcile(ticket.key,history,result.findings);}catch(error){
       if(!/Edited source anchor|Unmatched new evidence|Ambiguous identity bridge|Two candidates resolve|Ambiguous batch/.test(error.message))throw error;

@@ -1,0 +1,96 @@
+{
+  "version": "human-semantic-correction-expectations-v1",
+  "synthetic": true,
+  "authoredBeforeFreshModelCalls": true,
+  "basisReviewCommit": "467a7e67de8ab13a27e8e66c8b177deaf98360bf",
+  "humanDecisionCommit": "38bc069",
+  "customerActionsAuthorized": false,
+  "finalTaskApprovals": 0,
+  "cases": [
+    {
+      "id": "ST03",
+      "reviewCaseHash": "sha256:b2d50f8f2143519093987f6b789890446f5c2c3a010490f697088d0a88521c9e",
+      "expected": {
+        "purpose": "internal_verification",
+        "required": [
+          "current job status",
+          "pricing before additional work"
+        ],
+        "customerGate": "before_work"
+      }
+    },
+    {
+      "id": "ST04",
+      "reviewCaseHash": "sha256:49f4b64784fcf268ddb322191f685e3f3bb414bee1969d088a0f677440b1232e",
+      "expected": {
+        "purpose": "internal_verification",
+        "required": [
+          "2026-10-23T14:00:00Z",
+          "HISTORICAL_NOT_RENEWED",
+          "Do not send another invoice until this is resolved."
+        ],
+        "customerGate": "historical"
+      }
+    },
+    {
+      "id": "ST07",
+      "reviewCaseHash": "sha256:551e47ee5b8e5fb3794b34b31eeb1eb79c64be991d7a440e7263cf84441cc139",
+      "expected": {
+        "purpose": "internal_verification",
+        "required": [
+          "2026-10-26T14:00:00Z",
+          "HISTORICAL_NOT_RENEWED",
+          "current interest"
+        ],
+        "customerGate": "historical"
+      }
+    },
+    {
+      "id": "ST08",
+      "reviewCaseHash": "sha256:7057a87dbeee54835eb4c645fa767630260a2c69d792df2e4566ae057db64661",
+      "expected": {
+        "purpose": "internal_verification",
+        "required": [
+          "event completion",
+          "current consent",
+          "Customer follow-up remains conditional"
+        ],
+        "customerGate": "deferred"
+      }
+    },
+    {
+      "id": "EN11",
+      "reviewCaseHash": "sha256:fc706d7568ab6751d083432ca5aa31a4b800583e68b24cc61dde7544b728b5ca",
+      "expected": {
+        "purposes": {
+          "surge-protection": "internal_preparation",
+          "pendant-lighting": "internal_verification"
+        },
+        "separate": true
+      }
+    },
+    {
+      "id": "EN12",
+      "reviewCaseHash": "sha256:73864cb882d3ccb215a9f6c977a8f6c1f8176e897f158a6bf1e487991765edfe",
+      "expected": {
+        "purposes": {
+          "flickering-fixture-service-recovery": "internal_verification",
+          "ev-charger-pricing": "internal_preparation"
+        },
+        "separate": true
+      }
+    },
+    {
+      "id": "EN31",
+      "reviewCaseHash": "sha256:b5ea85e2b8eb09cb0ea46beaea1d3d5de3ddaaffbe3c4556094bc065058eea8c",
+      "expected": {
+        "purpose": "internal_verification",
+        "required": [
+          "current job status",
+          "pricing before additional work"
+        ],
+        "customerGate": "before_work"
+      }
+    }
+  ]
+}

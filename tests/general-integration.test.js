@@ -4,7 +4,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { readFile } from 'node:fs/promises';
 import { GeneralFindingLedger } from '../src/staging/general-ledger.js';
 import { inspectFinding,generalProjection } from '../src/staging/review-policy.js';
-import { materializeCorrected } from '../src/findings-v0.3.2.js';
+import { materializeCorrected } from '../src/findings-v0.3.3.js';
 import { prepareHistory } from '../src/findings.js';
 const env={DEPLOYMENT_ENVIRONMENT:'staging',CERTIFICATION_MODE:'local',STAGING_PORTAL_ID:'fixture-portal',STAGING_CONTACT_ID:'fixture-contact',ENABLE_LOCAL_GENERAL_TEST_EXECUTION:'true'};
 const actor={role:'Approver',subject:'local-test-operator',kind:'LOCAL_SYNTHETIC'};

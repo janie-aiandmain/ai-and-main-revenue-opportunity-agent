@@ -1,7 +1,7 @@
 import { createHash,randomUUID } from 'node:crypto';
 import { CorrectionLedger } from '../correction-ledger.js';
 import { prepareHistory,canonical } from '../findings.js';
-import { reviewedProjection,materialExecutable,TASK_CLASS } from '../correction-policy.js';
+import { reviewedProjection,materialExecutable,TASK_CLASS } from '../correction-policy-v2.js';
 import { BLOCKED_CASES,CONTROL_CASES,FINAL_PAYLOAD_CONTRACT } from './policy.js';
 import { taskMatches } from './hubspot-client.js';
 import { StagingBlocker } from './blockers.js';

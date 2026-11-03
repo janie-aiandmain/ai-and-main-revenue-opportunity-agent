@@ -6,7 +6,7 @@ import { verifyOperator } from './auth.js';
 import { durableDatabase } from './sql-adapter.js';
 import { GeneralFindingLedger } from './general-ledger.js';
 import { DesignatedNoteSource } from './note-source.js';
-import { reasonCorrected } from '../findings-v0.3.2.js';
+import { reasonCorrected } from '../findings-v0.3.3.js';
 import { operatorConsole } from './operator-console.js';
 import { HubSpotCertificationClient } from './hubspot-client.js';
 const json=(body,status=200)=>Response.json(body,{status,headers:{'cache-control':'no-store'}});

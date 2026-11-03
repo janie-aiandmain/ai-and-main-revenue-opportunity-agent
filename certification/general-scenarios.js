@@ -12,7 +12,7 @@ export async function certifyGeneral({fixture,must,call,restart,options,dueAt}){
  fixture.setContext(history,raw);
  const evaluated=await must(endpoint+'evaluate',{});assert.equal(evaluated.findings.length,2);
  const select=result=>result.findings.find(f=>f.modelFinding.opportunityType==='cross-sell');
- const review=async f=>must(endpoint+'review',{findingId:f.findingId,sourceHash:f.sourceHash,candidateHash:f.candidateHash,decision:'REVIEW',attestHumanReview:true,spec:{intent:'prepare_quote',priority:'MEDIUM',taskDueAt:dueAt,timing:{kind:'none'},attestations:{sourceRead:true,evidenceComplete:true,scopeBounded:true,timingVerified:true}}});
+ const review=async f=>must(endpoint+'review',{findingId:f.findingId,sourceHash:f.sourceHash,candidateHash:f.candidateHash,decision:'REVIEW',attestHumanReview:true,spec:{actionPurpose:'internal_preparation',intent:'prepare_quote',priority:'MEDIUM',taskDueAt:dueAt,timing:{kind:'internal_task'},attestations:{sourceRead:true,evidenceComplete:true,scopeBounded:true,timingVerified:true}}});
  const approve=r=>must(endpoint+'approve',{operationId:r.operationId,payloadHash:r.payloadHash,actionVersion:r.actionVersion,reviewId:r.reviewId});
  const reviewed=await review(select(evaluated));assert.equal(reviewed.humanSignoff,'NOT_HUMAN_SIGNOFF');
  const grant=await approve(reviewed);
