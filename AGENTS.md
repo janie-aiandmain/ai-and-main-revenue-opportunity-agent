@@ -305,3 +305,18 @@ evidence/deadline/scope correctness, exact-payload approval and duplicate-write
 recovery, and distinguish local proof from real HubSpot evidence. Implementing
 that proposal or enabling a bounded test task is not authorized by the inspection
 request. Preserve all original evidence and pending human decisions.
+
+## Authorized bounded demo remote recovery
+
+The user subsequently authorized implementing/deploying the existing demo recovery
+path and up to three labeled synthetic HubSpot tasks on portal 247646122/contact
+582095692487 after both credential identities and the marker pass. See
+docs/demo-recovery.md. Reuse the already provisioned CertificationLedger only via
+its verified supported external binding; no new namespace/environment or scope
+expansion. Do not resume Access. Normal/repeat, injected response loss plus hosted
+restart/read-only reconciliation, and material-payload old-approval rejection
+are the authorized control scenarios. They do not approve the seven semantic
+cases. Persist intent before POST, never retry uncertain creates, keep all general
+writeback flags false, and close test execution/fault controls and remove the
+short-lived operator capability afterward. Report actual IDs/hashes/traces/counts
+and distinguish injection from a genuine network outage.

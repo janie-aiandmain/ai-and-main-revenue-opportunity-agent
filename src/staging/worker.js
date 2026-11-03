@@ -1,5 +1,6 @@
 import { StagingBlocker,identityBlocker } from './blockers.js';
 import { DurableObject } from 'cloudflare:workers';
+import { DemoRecoveryLedger,DEMO_CONTRACT } from '../demo/recovery-ledger.js';
 import application from '../index.js';
 import { verifyOperator } from './auth.js';
 import { durableDatabase } from './sql-adapter.js';
@@ -10,10 +11,23 @@ import { operatorConsole } from './operator-console.js';
 import { HubSpotCertificationClient } from './hubspot-client.js';
 const json=(body,status=200)=>Response.json(body,{status,headers:{'cache-control':'no-store'}});
 export class CertificationLedger extends DurableObject {
-  constructor(ctx,env){super(ctx,env);this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.recoverChecking();}
+  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.recoverChecking();}
   async fetch(request){
     const path=new URL(request.url).pathname;
     let input;try{input=await request.json();}catch{return json({status:'invalid_json'},400);}
+    // Private namespace binding only. The public owner Worker never forwards this path.
+    if(path==='/internal/demo-recovery-v1'){
+      if(input.contract!==DEMO_CONTRACT)return json({status:'demo_contract_mismatch'},403);
+      try{
+        this.demoLedger??=new DemoRecoveryLedger(durableDatabase(this.demoContext.storage));
+        this.demoLedger.initialize(input.runId);
+        if(input.action==='restart'){
+          this.demoLedger.beforeRestart(input.operationId);
+          this.demoContext.abort('Operator-authorized synthetic recovery restart');
+        }
+        return json(this.demoLedger.dispatch(input));
+      }catch(error){return json({status:/^[a-z0-9_]+$/.test(error.message)?error.message:'demo_ledger_blocked'},409);}
+    }
     const actor=input.actor;
     if(!actor||!['Viewer','Approver','Admin'].includes(actor.role))return json({status:'verified_actor_required'},403);
     const l=this.ledger;

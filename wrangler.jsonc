@@ -1,11 +1,34 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "ai-and-main-revenue-opportunity-agent",
-  "main": "src/index.js",
+  "main": "src/demo/worker.js",
   "compatibility_date": "2026-10-09",
   "workers_dev": true,
   "keep_vars": true,
   "observability": {
     "enabled": true
+  },
+  "account_id": "cda2ab71dd8127c8031c945a738b86e2",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "preview_urls": false,
+  "vars": {
+    "CRM_WRITEBACK_ENABLED": "false",
+    "ENABLE_TEST_TASK_WRITES": "false",
+    "ENABLE_GENERAL_EXECUTION": "false",
+    "GENERAL_RELEASE_APPROVED": "false",
+    "DEMO_RECOVERY_ENABLED": "false",
+    "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+    "DEMO_RECOVERY_FAULT_ENABLED": "false"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "DEMO_RECOVERY_LEDGER",
+        "class_name": "CertificationLedger",
+        "script_name": "ai-and-main-revenue-opportunity-staging"
+      }
+    ]
   }
 }
