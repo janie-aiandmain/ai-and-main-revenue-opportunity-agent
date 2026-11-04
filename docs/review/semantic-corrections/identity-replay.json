@@ -1,0 +1,288 @@
+{
+  "kind": "OFFLINE_CROSS_VERSION_IDENTITY_REPLAY_NOT_HOSTED_OR_REPEATED_RUN_STUDY",
+  "priorPrompt": "reasoning-v0.3.2",
+  "freshPrompt": "reasoning-v0.3.3",
+  "cases": 31,
+  "positiveSlots": 12,
+  "reusedSlots": 12,
+  "rawKeyDrift": [
+    {
+      "id": "ST08",
+      "oldKey": "pendant-light-installation",
+      "newKey": "two-pendant-lights-installation",
+      "oldModelFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+      "newModelFindingId": "finding_dee2e8df03c76f3a5262b757e2bfc7f039375613ef794577a93475d237c08ec3",
+      "rawKeyChanged": true,
+      "identityReused": true,
+      "durableOpportunityId": "op_c1dfa4b9-005d-43b1-9a21-6fb2f9afe72e"
+    },
+    {
+      "id": "EN17",
+      "oldKey": "surge-protection",
+      "newKey": "surge-protection-pricing",
+      "oldModelFindingId": "finding_8e2d566a72aba4266a1e6ae8f76f9c1131c524484131a995bbbdc7de57a979b0",
+      "newModelFindingId": "finding_b633592c237fb191c71de50a8eb2c7e3b4cbad34a0b9f996201c93cf640e249b",
+      "rawKeyChanged": true,
+      "identityReused": true,
+      "durableOpportunityId": "op_4954f27b-102d-4048-b69f-4274858bdeff"
+    },
+    {
+      "id": "EN31",
+      "oldKey": "garage-outlets",
+      "newKey": "three-garage-outlets",
+      "oldModelFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+      "newModelFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+      "rawKeyChanged": true,
+      "identityReused": true,
+      "durableOpportunityId": "op_c2a093a1-f5e8-4c7c-9a20-cbc135c31f95"
+    }
+  ],
+  "identityReviewCases": [],
+  "registryOpportunities": 12,
+  "newModelCalls": 0,
+  "hubspotCalls": 0,
+  "rows": [
+    {
+      "id": "ST01",
+      "slots": []
+    },
+    {
+      "id": "ST02",
+      "slots": []
+    },
+    {
+      "id": "ST03",
+      "slots": [
+        {
+          "oldKey": "garage-three-outlets",
+          "newKey": "garage-three-outlets",
+          "oldModelFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "newModelFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "rawKeyChanged": false,
+          "identityReused": true,
+          "durableOpportunityId": "op_da121fb4-3709-4f86-81cd-aa4287cedbe1"
+        }
+      ]
+    },
+    {
+      "id": "ST04",
+      "slots": [
+        {
+          "oldKey": "flickering-new-fixture-service-recovery",
+          "newKey": "flickering-new-fixture-service-recovery",
+          "oldModelFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "newModelFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "rawKeyChanged": false,
+          "identityReused": true,
+          "durableOpportunityId": "op_0c9c41e1-46f3-4b68-8ae0-6aafc5c38075"
+        }
+      ]
+    },
+    {
+      "id": "ST05",
+      "slots": []
+    },
+    {
+      "id": "ST06",
+      "slots": []
+    },
+    {
+      "id": "ST07",
+      "slots": [
+        {
+          "oldKey": "whole-home-surge-protection",
+          "newKey": "whole-home-surge-protection",
+          "oldModelFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "newModelFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "rawKeyChanged": false,
+          "identityReused": true,
+          "durableOpportunityId": "op_caf7a13b-7d1a-4e7a-8967-d68df8eac3a9"
+        }
+      ]
+    },
+    {
+      "id": "ST08",
+      "slots": [
+        {
+          "oldKey": "pendant-light-installation",
+          "newKey": "two-pendant-lights-installation",
+          "oldModelFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+          "newModelFindingId": "finding_dee2e8df03c76f3a5262b757e2bfc7f039375613ef794577a93475d237c08ec3",
+          "rawKeyChanged": true,
+          "identityReused": true,
+          "durableOpportunityId": "op_c1dfa4b9-005d-43b1-9a21-6fb2f9afe72e"
+        }
+      ]
+    },
+    {
+      "id": "ST09",
+      "slots": []
+    },
+    {
+      "id": "EN10",
+      "slots": []
+    },
+    {
+      "id": "EN11",
+      "slots": [
+        {
+          "oldKey": "surge-protection",
+          "newKey": "surge-protection",
+          "oldModelFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+          "newModelFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+          "rawKeyChanged": false,
+          "identityReused": true,
+          "durableOpportunityId": "op_66419295-6b97-4146-91b4-1b791dc4d7a5"
+        },
+        {
+          "oldKey": "pendant-lighting",
+          "newKey": "pendant-lighting",
+          "oldModelFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+          "newModelFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+          "rawKeyChanged": false,
+          "identityReused": true,
+          "durableOpportunityId": "op_8e648524-8e20-4f5e-b7a7-c8b59eb23be8"
+        }
+      ]
+    },
+    {
+      "id": "EN12",
+      "slots": [
+        {
+          "oldKey": "flickering-fixture-service-recovery",
+          "newKey": "flickering-fixture-service-recovery",
+          "oldModelFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "newModelFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "rawKeyChanged": false,
+          "identityReused": true,
+          "durableOpportunityId": "op_3827885d-e21b-472d-9fc2-1d0044052986"
+        },
+        {
+          "oldKey": "ev-charger-pricing",
+          "newKey": "ev-charger-pricing",
+          "oldModelFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "newModelFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "rawKeyChanged": false,
+          "identityReused": true,
+          "durableOpportunityId": "op_04591d0b-babd-4ff9-b75b-12d5d3dc78c7"
+        }
+      ]
+    },
+    {
+      "id": "EN13",
+      "slots": []
+    },
+    {
+      "id": "EN14",
+      "slots": []
+    },
+    {
+      "id": "EN15",
+      "slots": []
+    },
+    {
+      "id": "EN16",
+      "slots": []
+    },
+    {
+      "id": "EN17",
+      "slots": [
+        {
+          "oldKey": "surge-protection",
+          "newKey": "surge-protection-pricing",
+          "oldModelFindingId": "finding_8e2d566a72aba4266a1e6ae8f76f9c1131c524484131a995bbbdc7de57a979b0",
+          "newModelFindingId": "finding_b633592c237fb191c71de50a8eb2c7e3b4cbad34a0b9f996201c93cf640e249b",
+          "rawKeyChanged": true,
+          "identityReused": true,
+          "durableOpportunityId": "op_4954f27b-102d-4048-b69f-4274858bdeff"
+        }
+      ]
+    },
+    {
+      "id": "EN18",
+      "slots": []
+    },
+    {
+      "id": "EN19",
+      "slots": []
+    },
+    {
+      "id": "EN20",
+      "slots": []
+    },
+    {
+      "id": "EN21",
+      "slots": []
+    },
+    {
+      "id": "EN22",
+      "slots": []
+    },
+    {
+      "id": "EN23",
+      "slots": []
+    },
+    {
+      "id": "EN24",
+      "slots": [
+        {
+          "oldKey": "surge-protection-pricing",
+          "newKey": "surge-protection-pricing",
+          "oldModelFindingId": "finding_de51321a47a2ad7c7e72143e6d3e924a98a6948d2b2991e2024e97da0fb09b63",
+          "newModelFindingId": "finding_de51321a47a2ad7c7e72143e6d3e924a98a6948d2b2991e2024e97da0fb09b63",
+          "rawKeyChanged": false,
+          "identityReused": true,
+          "durableOpportunityId": "op_eeec2fd0-32da-42f6-b1ca-52f2125696c9"
+        }
+      ]
+    },
+    {
+      "id": "EN25",
+      "slots": []
+    },
+    {
+      "id": "EN26",
+      "slots": []
+    },
+    {
+      "id": "EN27",
+      "slots": []
+    },
+    {
+      "id": "EN28",
+      "slots": []
+    },
+    {
+      "id": "EN29",
+      "slots": []
+    },
+    {
+      "id": "EN30",
+      "slots": [
+        {
+          "oldKey": "surge-protection",
+          "newKey": "surge-protection",
+          "oldModelFindingId": "finding_4ccd6c77ebf65d4b0ab69bb5487699fcac1d3dd43ffd8d18d0be302a6ef88eda",
+          "newModelFindingId": "finding_4ccd6c77ebf65d4b0ab69bb5487699fcac1d3dd43ffd8d18d0be302a6ef88eda",
+          "rawKeyChanged": false,
+          "identityReused": true,
+          "durableOpportunityId": "op_5d8970b5-c57c-4ce3-90b3-550d550678e2"
+        }
+      ]
+    },
+    {
+      "id": "EN31",
+      "slots": [
+        {
+          "oldKey": "garage-outlets",
+          "newKey": "three-garage-outlets",
+          "oldModelFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+          "newModelFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+          "rawKeyChanged": true,
+          "identityReused": true,
+          "durableOpportunityId": "op_c2a093a1-f5e8-4c7c-9a20-cbc135c31f95"
+        }
+      ]
+    }
+  ]
+}

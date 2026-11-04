@@ -1,0 +1,23 @@
+
+> ai-and-main-revenue-opportunity-agent@0.1.0 check
+> wrangler deploy --dry-run
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.156.2 (update available 4.157.0)
+───────────────────────────────────────────────
+Total Upload: 58.16 KiB / gzip: 14.66 KiB
+Your Worker has access to the following bindings:
+Binding                                                                                                            Resource                  
+env.DEMO_RECOVERY_LEDGER (CertificationLedger, defined in ai-and-main-revenue-opportunity-staging)                 Durable Object            
+env.CRM_WRITEBACK_ENABLED ("false")                                                                                Environment Variable      
+env.ENABLE_TEST_TASK_WRITES ("false")                                                                              Environment Variable      
+env.ENABLE_GENERAL_EXECUTION ("false")                                                                             Environment Variable      
+env.GENERAL_RELEASE_APPROVED ("false")                                                                             Environment Variable      
+env.DEMO_RECOVERY_ENABLED ("false")                                                                                Environment Variable      
+env.DEMO_RECOVERY_EXECUTION_ENABLED ("false")                                                                      Environment Variable      
+env.DEMO_RECOVERY_FAULT_ENABLED ("false")                                                                          Environment Variable      
+
+--dry-run: exiting now.

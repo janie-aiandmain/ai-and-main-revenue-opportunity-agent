@@ -1,0 +1,160 @@
+{
+  "kind": "EXECUTED_VALIDATION_SUMMARY_NOT_RELEASE_CERTIFICATION",
+  "sourceCommit": "25b262672b16c3c41b216925724d3e074064d9be",
+  "deterministicTests": {
+    "command": "npm test",
+    "tests": 122,
+    "passed": 122,
+    "failed": 0,
+    "log": "tests-final.txt"
+  },
+  "builds": [
+    {
+      "command": "WRANGLER_LOG_PATH=/tmp/semantic-demo-wrangler.log WRANGLER_SEND_METRICS=false npm run check",
+      "exitCode": 0,
+      "dryRun": true,
+      "log": "demo-build-final.txt"
+    },
+    {
+      "command": "WRANGLER_LOG_PATH=/tmp/semantic-owner-wrangler.log WRANGLER_SEND_METRICS=false npm run staging:check",
+      "exitCode": 0,
+      "dryRun": true,
+      "log": "namespace-owner-build-final.txt"
+    }
+  ],
+  "beforeFix": {
+    "fixture": "fixtures/absolute-timing-boundaries-v1.json",
+    "actualPurpose": "internal_preparation",
+    "expectedPurpose": "internal_verification",
+    "reproductionLog": "absolute-date-before-fix.txt",
+    "correctionCommit": "22fbdecfe88218b73b3303ac96c1f4be9ede16de"
+  },
+  "priorV032": {
+    "evidenceCommit": "c1603282adea6ddcbfb4bd94efcf3b41cf41fc71",
+    "artifact": "docs/integration/model-v0.3.2-run1.json",
+    "summary": {
+      "planned": 47,
+      "attempted": 47,
+      "valid": 47,
+      "decisionPasses": 47,
+      "qualityFailures": [
+        {
+          "id": "ST07",
+          "issues": [
+            {
+              "code": "historical_deadline_repeated_in_action",
+              "noteId": "note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862"
+            }
+          ]
+        },
+        {
+          "id": "UV03",
+          "issues": [
+            {
+              "code": "historical_deadline_repeated_in_action",
+              "noteId": "note_6766be521a21ce3ce57b5b29edd8c0671deac6486f36f52eb403905558fb2584"
+            }
+          ]
+        }
+      ],
+      "humanSignoffs": 0
+    }
+  },
+  "finalModel": {
+    "calls": 49,
+    "valid": 49,
+    "original31DecisionPasses": 31,
+    "original31ClassificationPasses": 31,
+    "original31OpportunityTypePasses": 31,
+    "original31HumanReviewPasses": 31,
+    "unseen16ActionabilityPasses": 16,
+    "absoluteDateBoundaryPasses": 2,
+    "inspectionPassingCases": 48,
+    "inspectionFailingCases": [
+      "UV14"
+    ],
+    "humanDecisionCorrectionCasesPassing": 7,
+    "humanDecisionCorrectionFindingsPassing": 9,
+    "falsePositivesOriginal31": 0,
+    "expectedNegativeContexts": 21,
+    "falsePositiveRate": 0.0,
+    "falseNegativesOriginal31": 0,
+    "expectedPositiveContexts": 10,
+    "falseNegativeRate": 0.0,
+    "newHumanSignoffs": 0,
+    "inputTokens": 87367,
+    "outputTokens": 5959,
+    "overallSemanticSafetyClaim": "NOT_ESTABLISHED; automated checks are limited and new output review remains pending"
+  },
+  "cycleModelCalls": 96,
+  "repeatedRunConsistency": "NOT_MEASURED_THIS_CYCLE; preliminary/final proposal versions differ",
+  "offlineIdentityReplay": {
+    "cases": 31,
+    "opportunitySlots": 12,
+    "reused": 12,
+    "identityReviewCases": [],
+    "rawKeyDrift": [
+      {
+        "id": "ST08",
+        "oldKey": "pendant-light-installation",
+        "newKey": "two-pendant-lights-installation",
+        "oldModelFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+        "newModelFindingId": "finding_dee2e8df03c76f3a5262b757e2bfc7f039375613ef794577a93475d237c08ec3",
+        "rawKeyChanged": true,
+        "identityReused": true,
+        "durableOpportunityId": "op_c1dfa4b9-005d-43b1-9a21-6fb2f9afe72e"
+      },
+      {
+        "id": "EN17",
+        "oldKey": "surge-protection",
+        "newKey": "surge-protection-pricing",
+        "oldModelFindingId": "finding_8e2d566a72aba4266a1e6ae8f76f9c1131c524484131a995bbbdc7de57a979b0",
+        "newModelFindingId": "finding_b633592c237fb191c71de50a8eb2c7e3b4cbad34a0b9f996201c93cf640e249b",
+        "rawKeyChanged": true,
+        "identityReused": true,
+        "durableOpportunityId": "op_4954f27b-102d-4048-b69f-4274858bdeff"
+      },
+      {
+        "id": "EN31",
+        "oldKey": "garage-outlets",
+        "newKey": "three-garage-outlets",
+        "oldModelFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+        "newModelFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+        "rawKeyChanged": true,
+        "identityReused": true,
+        "durableOpportunityId": "op_c2a093a1-f5e8-4c7c-9a20-cbc135c31f95"
+      }
+    ],
+    "scope": "Source-anchored replay on the same synthetic sources; not hosted or an unseen-source identity guarantee"
+  },
+  "localWorker": {
+    "kind": "EXECUTED_LOCAL_WORKER_CERTIFICATION_NOT_HOSTED_HUBSPOT",
+    "restarts": 7,
+    "fixtureTaskCount": 4,
+    "generalScenarioCreateAttempts": 1,
+    "syntheticOutcomeCount": 1,
+    "duplicateOutcomeRecorded": [
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "realHubSpotTaskIds": [],
+    "newModelCalls": 0,
+    "humanSignoffs": 0,
+    "faults": "Deliberate local response loss/visibility simulations, not genuine network outage"
+  },
+  "deployedCorrections": false,
+  "hubspotCallsThisCycle": 0,
+  "crmWritesThisCycle": 0,
+  "executionApprovalsThisCycle": 0,
+  "highestRemainingPriority": "UV14 model omitted a source restriction from its evidence despite correct action wording; preserve the guard block and improve qualifier evidence coverage with fresh validation before release.",
+  "limitations": [
+    "Heuristic inspectors and decision grading do not replace semantic review.",
+    "No fresh five-run stability campaign.",
+    "No new hosted model-to-write demonstration or live end-to-end approval verification.",
+    "Customer timezone is unknown; source-relative wording is not a final executable deadline.",
+    "Local task/outcome receipts are synthetic, not verified business revenue."
+  ]
+}

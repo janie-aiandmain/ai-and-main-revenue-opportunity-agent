@@ -1,0 +1,31 @@
+✖ explicit absolute customer dates cannot be hidden by an internal pricing preparation date (6.575167ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 72.564626
+
+✖ failing tests:
+
+test at tests/semantic-corrections.test.js:63:1
+✖ explicit absolute customer dates cannot be hidden by an internal pricing preparation date (6.575167ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'internal_preparation'
+  - 'internal_verification'
+              ^
+  
+      at TestContext.<anonymous> (file:///workspace/ai-and-main-revenue-opportunity-agent/tests/semantic-corrections.test.js:67:89)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'internal_preparation',
+    expected: 'internal_verification',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

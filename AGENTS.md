@@ -359,3 +359,20 @@ or new hosted control run are authorized. Source timestamp/history, current-job
 verification, exact invoice restriction and non-renewed decision windows must be
 preserved. Internal review cannot certify completion/consent or authorize customer
 contact. Version output/prompt changes and preserve original baseline/fixtures.
+
+## Completed semantic correction validation
+
+See docs/review/semantic-corrections/README.md and manifest.json for the completed
+cycle. The original nine finding decisions are five PASS / four CONCERN; new
+outputs do not inherit them. reasoning-v0.3.3 retains findings-v0.2 and the model/
+effort settings; internal-task-proposal-v2.1 and finding-review-v2.1 distinguish
+internal verification/preparation from customer action. Current-job checks,
+historical timing, exact invoice restriction, separate pricing and renovation/
+consent gates are implemented. The final 49-call run passes automated decision
+checks, but UV14 omits restriction evidence and stays blocked. Preserve that raw
+failure and its regression fixture; do not repair captures or weaken expectations.
+All 122 local tests and both dry-run builds pass. Local fixture recovery and
+cross-version identity replay are not newly hosted certification. No semantic
+corrections were deployed and no new HubSpot tasks or final approvals were created.
+All general/test/fault flags remain false. Future execution requires its own exact
+final-payload approval; this documentation does not renew the closed hosted run.

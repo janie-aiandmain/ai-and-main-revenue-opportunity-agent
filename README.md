@@ -5,6 +5,16 @@ signals in CRM service activity. HubSpot remains the system of record. The agent
 supports evidence-backed reasoning, bounded recommendations, human approval and
 CRM-native follow-up; it does not replace the CRM.
 
+Current result: the [semantic correction evidence package](docs/review/semantic-corrections/README.md)
+records the user's five PASS / four CONCERN decisions and implements the requested
+internal-verification, historical-timing and scope corrections. All 122 tests and
+both Worker dry-run builds pass. The final 49-case model run passes decision checks
+but retains one blocked evidence omission (UV14). Corrected outputs await human
+review; final execution approvals are separate. No deployment or HubSpot write
+occurred in this cycle, and all live general/test/fault execution remains disabled.
+Earlier sections below preserve the sequence of historical evidence; the linked
+correction package is the current validation result.
+
 ## Practicum phases
 
 1. Read-only CRM connection
@@ -27,10 +37,11 @@ The first milestone uses a HubSpot developer test account and a Cloudflare Worke
 - `/writeback-test` — lab approval interface
 - `/writeback-task` — disabled in source during staging certification
 
-The legacy write path is now closed unconditionally in source. This has not been
-deployed to production; deployed writeback state is unverified. The shared approval
-token is a historical lab mechanism. The separate staging certification path and
-its limits are documented below. This is not enterprise or production readiness.
+The legacy write path is closed unconditionally in source. The latest read-only
+demo deployment observation is in the current correction package; all seven
+general/test/fault flags were false. The shared approval token is a historical lab
+mechanism. The separate certification path and its limits are documented below.
+This is not enterprise or production readiness.
 
 ## Local development
 
@@ -94,7 +105,7 @@ The legacy writeback lab is disabled and cannot approve v0.2 finding proposals.
 Use `npm run regression:findings -- --live --non-production` for the separate
 synthetic comparison. Prior v0.1 baseline artifacts are retained unchanged.
 
-## Staging certification
+## Historical staging certification evidence
 
 See the [gate evidence package](docs/certification/README.md) and
 [pending human-review checklist](docs/certification/human-review.md). The separate
@@ -110,7 +121,7 @@ Cloudflare/HubSpot certification is blocked by missing isolated access and netwo
 configuration. No HubSpot request, production deployment or verified business
 revenue claim was made. Production promotion remains stopped for review.
 
-## Current controlled prototype and hosted setup
+## Historical integration and hosted setup evidence
 
 See the [current correction/integration evidence](docs/integration/README.md),
 [seven cases awaiting human decisions](docs/integration/seven-case-review.md), and
@@ -153,12 +164,14 @@ The [bounded hosted recovery demonstration](docs/demo-recovery-evidence/README.m
 now verifies two actual synthetic HubSpot tasks, including injected response loss
 followed by hosted restart/reconciliation with no duplicate create, and stale
 approval rejection. Both credential portal identities and the designated marker
-passed. All test/fault/general execution is now disabled; semantic reviews remain
-pending. This does not establish recovery from a genuine network outage.
+passed. All test/fault/general execution is now disabled. The user's subsequent
+semantic decisions are recorded in the current correction package; new corrected
+outputs remain pending review. This does not establish recovery from a genuine
+network outage.
 
 The [seven-case human review packet](docs/review/seven-cases/README.md) provides a
-compact table, verbatim task bodies, explicit timing/scope blockers, separate
-finding recommendations and pending human-verdict fields. Its
+compact table, original verbatim task bodies, explicit timing/scope blockers,
+separate finding recommendations and the recorded human-verdict ledger. Its
 [GitHub evidence index](docs/review/seven-cases/evidence-index.md) links each hosted,
 local and model result to its recording and implementation commits. No semantic
 PASS is inferred from recovery controls; general writeback remains disabled.

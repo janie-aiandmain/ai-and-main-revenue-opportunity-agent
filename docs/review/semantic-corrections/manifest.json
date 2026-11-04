@@ -1,0 +1,43 @@
+{
+  "kind": "SEMANTIC_CORRECTIONS_EVIDENCE_MANIFEST",
+  "preparedAt": "2026-11-04T15:07:04.686682+00:00",
+  "sourceCommits": {
+    "humanDecisions": "38bc0691fe6442c36f75609a566cc1f96ca7a044",
+    "initialCorrection": "96a8d7f9cf27c004a9d0e340398eaebac4e78a96",
+    "calendarGuard": "22fbdecfe88218b73b3303ac96c1f4be9ede16de",
+    "integrationAndCapturedFailure": "25b262672b16c3c41b216925724d3e074064d9be"
+  },
+  "promptVersion": "reasoning-v0.3.3",
+  "schemaVersion": "findings-v0.2",
+  "proposalVersion": "internal-task-proposal-v2.1",
+  "reviewPolicy": "finding-review-v2.1",
+  "promptHash": "9f03c4a4f700e386def81eac10a231d2d3ef5b85eca8bddfafdaf3af28434c69",
+  "requestHash": "c3d526465d5041266574799e5101e8537896a9b5228b50fc117601c01b60f984",
+  "schemaHash": "7bda1bfdc27882023d180cca14e751941401feee18a1d9eb6fca63717519964d",
+  "model": "gpt-5.6-terra",
+  "reasoning": {
+    "effort": "low"
+  },
+  "cycleModelCalls": 96,
+  "correctedHumanReviews": "PENDING_NOT_INHERITED",
+  "finalExecutionApprovals": 0,
+  "hubspotWrites": 0,
+  "correctionsDeployed": false,
+  "artifactCommit": "Use the Git commit containing this manifest; no self-referential hash is embedded.",
+  "files": {
+    "README.md": "c309e58055e9b79e11c454fe9056a9ef418c4f332bef1bf62b584b0cd7071f84",
+    "absolute-date-before-fix.txt": "d2daab318020d678e5bf7cb71e8caf4c949a890db497fa8bdf3ac23645080aee",
+    "corrected-proposals.json": "0678b827a01d4b0d1301bd85c96a3dfbef4b94c9b43fa5168e70982d0ff1e4e5",
+    "corrected-tasks.md": "6605523e4d8c7670b47e08b32e22a5fbd2239b7ef757e02490d31f47277abdf9",
+    "demo-build-final.txt": "01f62bc0419ef93179601358bf96614852b092709cede5443de9aeb2adb86559",
+    "deployed-writeback-state.json": "95d8aef5589e01c632db7a65779c5b9eb03c3bdc162ad70fad2e24248d6383a9",
+    "identity-replay.json": "69b2c8f7ed63214fc60bebecbd1e46c9c3f5a8176d67e0502ff8671a38442c8c",
+    "local-worker-final.json": "654734ba284fd2408c403a11ce1637bdabe6425c9a609b596d0631f8b536ce45",
+    "local-worker-preliminary.json": "b1b6e58207cd0105052019b91eed27ba7f36c22264e4a37094945a94623d7b11",
+    "model-final-49.json": "e1e43ed4435e18d1309b483e7e34f2e995e8c4f1b264b558eb97126a3e6c5d0d",
+    "model-preliminary-47.json": "4af0cf8a6c57f5536bcff41b3deb1f543a728281ccc0e305267be42e2569589a",
+    "namespace-owner-build-final.txt": "ea4628dc9e1d08e80bae3a4f929ebfb39f5ece4051ca1c0011e5e027165d1e31",
+    "tests-final.txt": "8dbd27a8c5e3bf419e36fac9473eeb1151b5879b50e2e2a215c88d007ebc22fd",
+    "validation-summary.json": "39329f1c04675eb70ed9ff290dc9a1576297044cfa2d882743cf36785f0953ef"
+  }
+}
