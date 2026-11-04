@@ -1,0 +1,40 @@
+{
+  "version": "absolute-timing-boundaries-v1",
+  "synthetic": true,
+  "createdBeforeModelRun": true,
+  "reason": "Regression for an operator due date hiding an explicit customer calendar-date condition. Both historical and future source dates require review without an invented timezone.",
+  "cases": [
+    {
+      "id": "ABS01",
+      "category": "absolute-calendar-date",
+      "context": {
+        "customer": "Synthetic ABS01",
+        "serviceHistory": [
+          {
+            "timestamp": "2026-10-30T10:00:00Z",
+            "note": "Customer requests pricing for a surge protector by 2023-04-18."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "expectedActionPurpose": "internal_verification",
+      "sourceDate": "2023-04-18"
+    },
+    {
+      "id": "ABS02",
+      "category": "absolute-calendar-date",
+      "context": {
+        "customer": "Synthetic ABS02",
+        "serviceHistory": [
+          {
+            "timestamp": "2026-10-30T10:00:00Z",
+            "note": "Customer requests pricing for a surge protector by 2026-12-01."
+          }
+        ]
+      },
+      "expectedActionable": true,
+      "expectedActionPurpose": "internal_verification",
+      "sourceDate": "2026-12-01"
+    }
+  ]
+}

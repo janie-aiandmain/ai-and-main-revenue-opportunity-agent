@@ -2,16 +2,19 @@
 import {sourceAnchors,TASK_CLASS} from '../correction-policy.js';
 import {canonical} from '../findings.js';
 import {createHash} from 'node:crypto';
-export const INTERNAL_TASK_POLICY='internal-task-policy-v1';
-export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2';
+export const INTERNAL_TASK_POLICY='internal-task-policy-v1.1';
+export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2.1';
 const digest=v=>'sha256:'+createHash('sha256').update(canonical(v)).digest('hex');
 const relative=/\b(?:today|tomorrow|this week|by (?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)|end of (?:the )?day)\b/ig;
 const before=/\bbefore\b.{0,60}\b(?:work|continu|proceed|start|install)/i;
 const deferred=/\b(?:after|once|when|until)\b.{0,100}\b(?:complete|finished|done|renovation|remodel|permit|approval|parts)/i;
+export function explicitSourceDates(text){
+ return [...text.matchAll(/\b(?:by|before|after|until|on|deadline|no later than)\b[^.!?\n]{0,80}?\b(20\d{2}-\d{2}-\d{2})\b/ig)].map(m=>({wording:m[0],date:m[1]}));
+}
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 export function internalPlan(finding,history,inspection,now){
  const evidence=sourceAnchors(history,finding.evidence).map(a=>({noteId:a.noteId,timestamp:a.timestamp,quote:a.sourceText.slice(a.start,a.end)}));
- const text=evidence.map(e=>e.quote).join('\n'),hasTiming=evidence.some(e=>new RegExp(relative.source,'i').test(e.quote));
+ const text=evidence.map(e=>e.quote).join('\n'),hasTiming=evidence.some(e=>new RegExp(relative.source,'i').test(e.quote)||explicitSourceDates(e.quote).length>0);
  const preparation=['strong cross-sell opportunity','follow-up revenue opportunity'].includes(finding.classification)&&/\b(?:pric\w*|quot\w*|estimate|cost)\b/i.test(text)&&!inspection.executionBlocks.length&&!hasTiming&&!deferred.test(text)&&!before.test(text);
  const actionPurpose=preparation?'internal_preparation':'internal_verification';
  let instruction=preparation?'Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.':'Internally verify the current request and relevant records. Do not contact the customer or authorize work.';
@@ -20,6 +23,7 @@ export function internalPlan(finding,history,inspection,now){
  else if(finding.opportunityType==='retention')instruction='Internally verify the current status of the reported service issue and current customer request. Do not assume the complaint remains unresolved. No customer contact or billing action.';
  else if(hasTiming)instruction='Internally verify current interest and timing using current records. The source decision window or relative request is historical or unresolved and is not renewed. No customer contact.';
  const sourceTiming=evidence.flatMap(e=>[...e.quote.matchAll(new RegExp(relative.source,'ig'))].map(m=>({noteId:e.noteId,sourceTimestamp:e.timestamp,wording:m[0],status:e.timestamp.slice(0,10)<now.slice(0,10)?'HISTORICAL_NOT_RENEWED':'SOURCE_RELATIVE_UNRESOLVED',customerTimezone:'UNKNOWN',taskDeadline:false})));
+ for(const e of evidence)for(const date of explicitSourceDates(e.quote))sourceTiming.push({noteId:e.noteId,sourceTimestamp:e.timestamp,wording:date.wording,date:date.date,status:date.date<now.slice(0,10)?'HISTORICAL_ABSOLUTE_DATE_NOT_RENEWED':'ABSOLUTE_SOURCE_DATE_REQUIRES_REVIEW',customerTimezone:'UNKNOWN',taskDeadline:false});
  const gates=inspection.executionBlocks.map(b=>({...b,appliesTo:'customer_action',satisfiedByInternalVerification:false}));
  const restrictions=evidence.filter(e=>/\b(?:do not|don.t|until|before|after|once|when|only|without)\b/i.test(e.quote));
  return {actionPurpose,instruction,evidence,sourceTiming,customerActionGates:gates,sourceRestrictions:restrictions,customerActionPermitted:false};

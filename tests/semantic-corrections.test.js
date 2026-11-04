@@ -56,6 +56,15 @@ test('internal verification cannot hide omitted evidence, free-form overrides, o
 });
 test('new proposal versions are stable for unchanged sources and remain unapproved drafts without a due time',async()=>{
  const {history,result}=await corrected('EN12');const raw={findings:result.findings.map(({findingId,proposedAction,...f})=>f)};const next=await materializeCorrected(raw,history,'synthetic:EN12','2026-11-03T18:00:00.000Z');
- assert.equal(result.proposalVersion,'internal-task-proposal-v2');assert.equal(REVIEW_POLICY,'finding-review-v2');assert.deepEqual(result.findings.map(f=>f.proposedAction.actionVersion),next.findings.map(f=>f.proposedAction.actionVersion));
+ assert.equal(result.proposalVersion,'internal-task-proposal-v2.1');assert.equal(REVIEW_POLICY,'finding-review-v2.1');assert.deepEqual(result.findings.map(f=>f.proposedAction.actionVersion),next.findings.map(f=>f.proposedAction.actionVersion));
  for(const f of result.findings){assert.equal(f.proposedAction.executionBlocked,true);assert.equal(f.proposedAction.material.operatorTaskDueAt,null);assert.equal(f.proposedAction.authorityRequirements.humanApprovalRequired,true);assert.throws(()=>materialExecutable(f.proposedAction.material,time),/due_date/);}
+});
+
+test('explicit absolute customer dates cannot be hidden by an internal pricing preparation date',async()=>{
+ for(const date of ['2023-04-18','2026-12-01']){
+  const text='Customer requests pricing for a surge protector by '+date+'.',h=await prepareHistory({serviceHistory:[{timestamp:'2026-10-30T10:00:00Z',note:text}]});
+  const f={opportunityKey:'surge-protector',classification:'strong cross-sell opportunity',opportunityType:'cross-sell',confidence:'high',humanReviewRequired:true,evidence:[{noteId:h[0].noteId,quote:text}],reasoningSummary:'Synthetic pricing request.',recommendedNextAction:'Internally verify current interest and the explicit source timing.'};
+  const r=await materializeCorrected({findings:[f]},h,'synthetic:absolute',time);assert.equal(r.findings[0].proposedAction.actionPurpose,'internal_verification');assert.ok(r.findings[0].proposedAction.material.sourceTimingConstraints.some(t=>t.wording.includes(date)));
+  assert.throws(()=>generalProjection(r.findings[0],h,internalSpec('internal_preparation'),'ctx',time,r.findings),/verification_required/);
+ }
 });
