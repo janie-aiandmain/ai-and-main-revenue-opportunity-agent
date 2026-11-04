@@ -1,0 +1,157 @@
+{
+  "version": "semantic-correction-uv14-omission-v1",
+  "synthetic": true,
+  "sourceCapture": "docs/review/semantic-corrections/evidence/model-final-v0.3.3-49.json",
+  "sourceCaptureSha256": "e1e43ed4435e18d1309b483e7e34f2e995e8c4f1b264b558eb97126a3e6c5d0d",
+  "sourceImplementationCommit": "22fbdecfe88218b73b3303ac96c1f4be9ede16de",
+  "context": {
+    "customer": "Synthetic held-out UV14",
+    "serviceHistory": [
+      {
+        "timestamp": "2025-02-13T10:00:00Z",
+        "note": "Customer requests charger pricing. Do not schedule an assessment; send the request to a human for pricing review only."
+      }
+    ]
+  },
+  "capturedRow": {
+    "id": "UV14",
+    "suite": "unseen16",
+    "returnedModel": "gpt-5.6-terra",
+    "usage": {
+      "input_tokens": 1756,
+      "input_tokens_details": {
+        "cache_write_tokens": 121,
+        "cached_tokens": 1632
+      },
+      "output_tokens": 148,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 1904
+    },
+    "actual": {
+      "schemaVersion": "findings-v0.2",
+      "promptVersion": "reasoning-v0.3.3",
+      "findings": [
+        {
+          "findingId": "finding_f7351c59e4ebb81d43868ae5da66304eef9f3964bb8d693ad5d763339500727c",
+          "opportunityKey": "charger-pricing",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell",
+          "confidence": "high",
+          "evidence": [
+            {
+              "noteId": "note_fe100bfc8ea9c633e2d9b48c72a66b323a985835f9c1aebf8110223f517588fb",
+              "quote": "Customer requests charger pricing."
+            }
+          ],
+          "reasoningSummary": "Customer explicitly requested pricing for a charger.",
+          "recommendedNextAction": "Internal operator task: prepare the requested charger pricing for human review only; do not schedule an assessment.",
+          "humanReviewRequired": true,
+          "proposedAction": {
+            "schemaVersion": "internal-task-proposal-v2.1",
+            "actionPurpose": "internal_preparation",
+            "actionPayload": {
+              "type": "hubspot.follow_up_task.create",
+              "target": {
+                "contextKey": "synthetic:UV14"
+              },
+              "properties": {
+                "hs_task_subject": "Internal pricing preparation: charger pricing",
+                "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2025-02-13T10:00:00Z; note_fe100bfc8ea9c633e2d9b48c72a66b323a985835f9c1aebf8110223f517588fb] Customer requests charger pricing.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+                "hs_task_priority": "HIGH",
+                "hs_task_status": "NOT_STARTED",
+                "hs_task_type": "TODO"
+              }
+            },
+            "material": {
+              "policyVersion": "internal-task-policy-v1.1",
+              "proposalVersion": "internal-task-proposal-v2.1",
+              "actionClass": "hubspot.follow_up_task.create",
+              "targetContext": "synthetic:UV14",
+              "classification": "strong cross-sell opportunity",
+              "opportunityType": "cross-sell",
+              "intent": "prepare_quote",
+              "actionPurpose": "internal_preparation",
+              "scope": {
+                "sourceRequests": [
+                  "Customer requests charger pricing."
+                ]
+              },
+              "priority": "HIGH",
+              "evidence": [
+                {
+                  "noteId": "note_fe100bfc8ea9c633e2d9b48c72a66b323a985835f9c1aebf8110223f517588fb",
+                  "timestamp": "2025-02-13T10:00:00Z",
+                  "quote": "Customer requests charger pricing."
+                }
+              ],
+              "timing": {
+                "kind": "none"
+              },
+              "operatorTaskDueAt": null,
+              "sourceTimingConstraints": [],
+              "customerActionGates": [],
+              "sourceRestrictions": [],
+              "customerActionPermitted": false,
+              "humanApprovalRequired": true
+            },
+            "authorityRequirements": {
+              "policyVersion": "internal-task-policy-v1.1",
+              "humanApprovalRequired": true,
+              "allowedMutation": "hubspot.follow_up_task.create",
+              "customerActionPermitted": false
+            },
+            "qualityFailures": [
+              {
+                "code": "restriction_evidence_incomplete",
+                "noteId": "note_fe100bfc8ea9c633e2d9b48c72a66b323a985835f9c1aebf8110223f517588fb",
+                "quote": "Do not schedule an assessment; send the request to a human for pricing review only."
+              }
+            ],
+            "preparationBlocked": true,
+            "executionBlocked": true,
+            "missingFinalFields": [
+              "operatorTaskDueAt",
+              "CRM association",
+              "operation correlation",
+              "exact final-payload approval"
+            ],
+            "actionVersion": "sha256:3c9b0e923cbfa2b9b421c26a36108d85c865f6b4d78ea90ac25f9da055bc2ea0"
+          }
+        }
+      ],
+      "proposalVersion": "internal-task-proposal-v2.1"
+    },
+    "outputHash": "a552596945ad9edc47a39289ae84432a5db1e7b4912cb2ad998cf645139846b1",
+    "grade": {
+      "valid": true,
+      "decisionPassed": true
+    },
+    "inspections": [
+      {
+        "findingId": "finding_f7351c59e4ebb81d43868ae5da66304eef9f3964bb8d693ad5d763339500727c",
+        "policyVersion": "finding-review-v2.1",
+        "qualityFailures": [
+          {
+            "code": "restriction_evidence_incomplete",
+            "noteId": "note_fe100bfc8ea9c633e2d9b48c72a66b323a985835f9c1aebf8110223f517588fb",
+            "quote": "Do not schedule an assessment; send the request to a human for pricing review only."
+          }
+        ],
+        "executionBlocks": [],
+        "humanReview": "PENDING"
+      }
+    ],
+    "taskFailures": [],
+    "humanReviewOfThisOutput": {
+      "status": "PENDING",
+      "verdict": null
+    },
+    "priorHumanDecisionScope": "Original captured output only; not inherited"
+  },
+  "expectedBlock": "restriction_evidence_incomplete",
+  "humanVerdict": null,
+  "executionStatus": "BLOCKED",
+  "modelFailureNotRepairedOrRelabeled": true
+}

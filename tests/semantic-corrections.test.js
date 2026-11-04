@@ -68,3 +68,12 @@ test('explicit absolute customer dates cannot be hidden by an internal pricing p
   assert.throws(()=>generalProjection(r.findings[0],h,internalSpec('internal_preparation'),'ctx',time,r.findings),/verification_required/);
  }
 });
+
+test('fresh UV14 evidence omission remains immutable and blocks preparation even when pricing wording is bounded',async()=>{
+ const capture=JSON.parse(await readFile('fixtures/semantic-correction-uv14-omission-v1.json','utf8')),history=await prepareHistory(capture.context),f=capture.capturedRow.actual.findings[0];
+ assert.equal(capture.humanVerdict,null);assert.equal(capture.modelFailureNotRepairedOrRelabeled,true);
+ assert.ok(!f.evidence.some(e=>e.quote.includes('Do not schedule an assessment')));
+ assert.ok(inspectFinding(f,history,[f],time).qualityFailures.some(q=>q.code===capture.expectedBlock));
+ assert.equal(f.proposedAction.preparationBlocked,true);assert.equal(f.proposedAction.executionBlocked,true);
+ assert.throws(()=>generalProjection(f,history,internalSpec('internal_preparation'),'synthetic:UV14',time,[f]),/quality_blocked/);
+});

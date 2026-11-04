@@ -109,3 +109,18 @@ test('new independent evidence and edited source require an attributable identit
  const result=await a.l.resolveIdentity(input,actor,env,a.source);assert.equal(result.findings.length,2);assert.ok(result.findings.some(f=>f.findingId===original.finding.findingId));assert.equal(new Set(result.findings.map(f=>f.findingId)).size,2);assert.equal(result.humanSignoff,'NOT_HUMAN_SIGNOFF');
  assert.ok(result.findings.every(f=>f.reviewState==='PENDING'));assert.equal(a.posts(),0);assert.equal(a.l.db.prepare('SELECT revoked FROM cert_approvals WHERE id=?').get(original.grant.approvalId).revoked,1);
 }));
+
+test('internal renovation verification reaches exact review/approval without satisfying the customer follow-up gate',()=>lab(async a=>{
+ const packet=JSON.parse(await readFile('docs/review/seven-cases/review-packet.json','utf8')),c=packet.cases.find(c=>c.caseId==='ST08');
+ const h=await prepareHistory({serviceHistory:c.sourceEvidence});
+ const raw=c.findings.map(({capturedFinding:f})=>Object.fromEntries(Object.entries(f).filter(([k])=>!['findingId','proposedAction'].includes(k))));
+ a.set(h,raw);const [f]=await a.l.evaluate(env,a.source,a.reason);
+ const input={findingId:f.findingId,sourceHash:f.sourceHash,candidateHash:f.candidateHash,decision:'REVIEW',attestHumanReview:true,spec:{...spec(),actionPurpose:'internal_verification',intent:'verify_current_state',timing:{kind:'internal_task'}}};
+ const checked=await a.l.review(input,actor,env,a.source),reviewed=a.l.finishReview(input,actor,checked,env),grant=a.l.approveGeneral(reviewed,actor);
+ assert.match(reviewed.finalRequest.body.properties.hs_task_body,/Customer follow-up remains conditional/);
+ const material=JSON.parse(a.l.db.prepare('SELECT material_json FROM cert_operations WHERE id=?').get(reviewed.operationId).material_json);
+ assert.equal(material.customerActionPermitted,false);assert.ok(material.customerActionGates.some(g=>g.code==='deferred_event_requires_source_confirmation'&&g.satisfiedByInternalVerification===false));
+ await assert.rejects(a.l.executeGeneral(reviewed.operationId,grant.approvalId,actor,{...env,ENABLE_LOCAL_GENERAL_TEST_EXECUTION:'false'},a.source,a.reason,a.client),/release_blocked/);
+ assert.equal(a.posts(),0);
+ await assert.rejects(a.l.review({...input,spec:{...input.spec,actionPurpose:'internal_preparation',intent:'prepare_quote'}},actor,env,a.source),/verification_required/);
+}));
