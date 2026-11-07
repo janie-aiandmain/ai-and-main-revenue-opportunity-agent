@@ -11,7 +11,9 @@ import { operatorConsole } from './operator-console.js';
 import { HubSpotCertificationClient } from './hubspot-client.js';
 const json=(body,status=200)=>Response.json(body,{status,headers:{'cache-control':'no-store'}});
 export class CertificationLedger extends DurableObject {
-  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.recoverChecking();}
+  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.recoverChecking();if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
+  async ensureRetentionAlarm(){if(await this.demoContext.storage.getAlarm()===null)await this.demoContext.storage.setAlarm(Date.now()+86400000);}
+  async alarm(){this.ledger.pruneAuditMetadata(Number(this.env.AUDIT_RETENTION_DAYS||365));await this.demoContext.storage.setAlarm(Date.now()+86400000);}
   async fetch(request){
     const path=new URL(request.url).pathname;
     let input;try{input=await request.json();}catch{return json({status:'invalid_json'},400);}

@@ -10,7 +10,8 @@ export class StagingBlocker extends Error {
 export const missingCredential=name=>new StagingBlocker('missing_credential',{credential:name,check:'secure_binding',setupStep:9});
 export async function checkedJsonFetch(url,options,credential,check){
   let response;
-  try{response=await fetch(url,{...options,redirect:'error'});}catch(error){if(['TimeoutError','AbortError'].includes(error.name))throw new StagingBlocker('upstream_timeout',{credential,host:new URL(url).hostname,check:'request_timed_out_no_automatic_create_retry',setupStep:12});throw new StagingBlocker('blocked_network_access',{credential,host:new URL(url).hostname,check:'no_http_response',setupStep:11});}
+  try{response=await fetch(url,{...options,redirect:'manual'});}catch(error){if(['TimeoutError','AbortError'].includes(error.name))throw new StagingBlocker('upstream_timeout',{credential,host:new URL(url).hostname,check:'request_timed_out_no_automatic_create_retry',setupStep:12});throw new StagingBlocker('blocked_network_access',{credential,host:new URL(url).hostname,check:'no_http_response',setupStep:11});}
+  if(response.status>=300&&response.status<400)throw new StagingBlocker('upstream_redirect_rejected',{credential,host:new URL(url).hostname,check:'redirect_not_followed',httpStatus:response.status,setupStep:12});
   if(response.status===429){const raw=response.headers.get('retry-after'),seconds=raw&&/^\d+$/.test(raw)?Number(raw):null;throw new StagingBlocker('rate_limited',{credential,check,httpStatus:429,setupStep:12,...(Number.isFinite(seconds)?{retryAfterSeconds:Math.min(seconds,86400)}:{})});}
   if(response.status===401)throw new StagingBlocker('rejected_credential',{credential,check,httpStatus:401,setupStep:9});
   if(response.status===404&&new URL(url).pathname.startsWith('/crm/v3/objects/contacts/'))throw new StagingBlocker('contact_mismatch',{credential,check:'designated_contact_not_found',httpStatus:404,setupStep:3});

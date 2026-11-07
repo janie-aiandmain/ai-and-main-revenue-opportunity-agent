@@ -196,3 +196,9 @@ test('administrator can audit and abandon an uncertain operation without asserti
  await assert.rejects(l.execute(op.operationId,grant.approvalId,{async create(){throw Error('must_not_post');}},env));
  await assert.rejects(l.prepare({fixtureId:'CONTROL',dueAt:due()},env),/existing_effect/);
 }));
+test('audit retention removes expired resolved metadata while retaining uncertain history and no-retry tombstones',async()=>lab(async l=>{
+ const {op,grant}=await prepared(l);l.db.prepare("UPDATE cert_operations SET state='CONFIRMED',remote_id='fixture-task-1' WHERE id=?").run(op.operationId);l.db.prepare("UPDATE cert_trace SET at='2020-01-01T00:00:00Z' WHERE operation_id=?").run(op.operationId);l.db.prepare('UPDATE cert_approvals SET expires_at=1 WHERE id=?').run(grant.approvalId);
+ const uncertain=await l.prepare({fixtureId:'CONTROL_NO_MATCH',dueAt:due()},env);l.db.prepare("UPDATE cert_operations SET state='UNKNOWN' WHERE id=?").run(uncertain.operationId);l.db.prepare("UPDATE cert_trace SET at='2020-01-01T00:00:00Z' WHERE operation_id=?").run(uncertain.operationId);
+ const result=l.pruneAuditMetadata(365);assert.equal(result.unresolvedOperationsHeld,true);assert.equal(l.status(op.operationId).trace.length,0);assert.ok(l.status(uncertain.operationId).trace.length>0);assert.equal(l.status(op.operationId).remoteTaskId,'fixture-task-1');
+ await assert.rejects(l.prepare({fixtureId:'CONTROL',dueAt:due()},env),/existing_effect/);assert.throws(()=>l.pruneAuditMetadata(0),/invalid_audit/);
+}));

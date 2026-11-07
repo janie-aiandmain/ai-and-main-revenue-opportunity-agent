@@ -7,7 +7,7 @@ import {gradeFindings,hash} from '../regression/findings-core.js';
 const load=async p=>JSON.parse(await readFile(p,'utf8'));
 const corpus=await load('fixtures/enterprise-v2.json'),unseen=await load('fixtures/unseen-review-variations-v1.json'),boundaries=await load('fixtures/absolute-timing-boundaries-v1.json'),restrictions=await load('fixtures/release-restrictions-v1.json');
 const cases=new Map([...corpus.cases,...unseen.cases,...boundaries.cases,...restrictions.cases.map(c=>({...c,context:{customer:'Synthetic release restriction',serviceHistory:[{timestamp:c.timestamp,note:c.note}]}}))].map(c=>[c.id,c]));
-const files=(await readdir('reports')).filter(f=>/^release-(?:model-v0.3.4|targeted)-.*\.json$/.test(f));const rows=[];
+const files=(await readdir('reports')).filter(f=>/^release-(?:model-v0.3.4|targeted|affected)-.*\.json$/.test(f));const rows=[];
 for(const file of files){const report=await load('reports/'+file);for(const old of report.rows){if(!old.rawModelOutput)throw Error('raw_capture_missing');const c=cases.get(old.id),time=report.evaluationTime||report.time,history=await prepareHistory(c.context),raw=JSON.parse(old.rawModelOutput);const actual=await materializeCorrected(raw,history,'synthetic:'+c.id,time),inspections=actual.findings.map(f=>inspectFinding(f,history,actual.findings,time)),quality=inspections.flatMap(i=>i.qualityFailures);
 const grade=c.expectedFindings?await gradeFindings(c,actual,{materializer:(r,h,k)=>materializeCorrected(r,h,k,time)}):null;
 const decisionPassed=grade?grade.decisionPassed:c.types?JSON.stringify(actual.findings.map(f=>f.opportunityType).sort())===JSON.stringify([...c.types].sort()):(actual.findings.length>0)===c.expectedActionable;

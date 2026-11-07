@@ -12,7 +12,8 @@ export class StagingOperationLedger extends CorrectionLedger {
     CREATE TABLE IF NOT EXISTS cert_approvals(id TEXT PRIMARY KEY,operation_id TEXT NOT NULL,payload_hash TEXT NOT NULL,revision INTEGER NOT NULL,actor TEXT NOT NULL,kind TEXT NOT NULL,issued_at INTEGER NOT NULL,expires_at INTEGER NOT NULL,revoked INTEGER NOT NULL DEFAULT 0);
     CREATE TABLE IF NOT EXISTS cert_trace(sequence INTEGER PRIMARY KEY,operation_id TEXT NOT NULL,event TEXT NOT NULL,payload_hash TEXT,remote_id TEXT,at TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS cert_outcomes(external_ref TEXT PRIMARY KEY,operation_id TEXT NOT NULL,remote_task_id TEXT NOT NULL,amount_minor INTEGER NOT NULL,currency TEXT NOT NULL,verification_kind TEXT NOT NULL);
-  `);}
+  `);db.exec('CREATE TABLE IF NOT EXISTS retention_audit_clock(audit_id INTEGER PRIMARY KEY,recorded_at TEXT NOT NULL,legacy_first_observed INTEGER NOT NULL DEFAULT 0)');db.prepare('INSERT OR IGNORE INTO retention_audit_clock(audit_id,recorded_at,legacy_first_observed) SELECT id,?,1 FROM audit').run(new Date().toISOString());}
+  audit(event,op,reason){this.db.prepare('INSERT INTO audit(event,op_id,reason) VALUES(?,?,?)').run(event,op,reason);this.db.prepare('INSERT INTO retention_audit_clock(audit_id,recorded_at) VALUES(last_insert_rowid(),?)').run(new Date().toISOString());}
   trace(id,event,hash=null,remote=null){this.db.prepare('INSERT INTO cert_trace(operation_id,event,payload_hash,remote_id,at) VALUES(?,?,?,?,?)').run(id,event,hash,remote,new Date().toISOString());}
   blockedCase(id){return BLOCKED_CASES.includes(id);}
   status(id){const op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);if(!op)throw Error('unknown_operation');return {operationId:op.id,opportunityId:op.op_id,correlation:op.correlation,state:op.state,payloadContract:FINAL_PAYLOAD_CONTRACT,payloadHash:op.payload_hash,actionVersion:'final-action-v1:'+digest({payloadHash:op.payload_hash,materialHash:op.material_hash}),revision:op.revision,remoteTaskId:op.remote_id,finalRequest:JSON.parse(op.payload_json),trace:this.db.prepare('SELECT event,payload_hash,remote_id,at FROM cert_trace WHERE operation_id=? ORDER BY sequence').all(id)};}
@@ -102,6 +103,24 @@ export class StagingOperationLedger extends CorrectionLedger {
     return this.status(id);
   }
   recoverChecking(){for(const op of this.db.prepare("SELECT * FROM cert_operations WHERE state IN ('CHECKING','SENDING')").all()){this.db.prepare('UPDATE cert_operations SET state=? WHERE id=?').run(op.state==='SENDING'?'UNKNOWN':'APPROVED',op.id);this.trace(op.id,op.state==='SENDING'?'RESTART_RECOVERED_UNCERTAIN_NO_CREATE':'RESTART_RECOVERED_CHECKING_BEFORE_POST',op.payload_hash);}}
+  pruneAuditMetadata(days=365,now=Date.now()){
+    if(!Number.isInteger(days)||days<1||days>3650||!Number.isFinite(now))throw Error('invalid_audit_retention_days');
+    const cutoff=new Date(now-days*86400000).toISOString();
+    return this.tx(()=>{
+      // Preserve operation/correlation/hash/remote-ID tombstones and all unresolved
+      // write audit. Retention never turns an uncertain operation into a new create.
+      this.db.prepare("DELETE FROM cert_trace WHERE at<? AND operation_id IN (SELECT id FROM cert_operations WHERE state IN ('CONFIRMED','ABANDONED'))").run(cutoff);
+      this.db.prepare("DELETE FROM cert_approvals WHERE expires_at<? AND operation_id IN (SELECT id FROM cert_operations WHERE state IN ('CONFIRMED','ABANDONED'))").run(Date.parse(cutoff));
+      this.db.prepare("DELETE FROM audit WHERE id IN (SELECT c.audit_id FROM retention_audit_clock c JOIN audit a ON a.id=c.audit_id WHERE c.recorded_at<? AND NOT EXISTS (SELECT 1 FROM cert_operations o WHERE o.op_id=a.op_id AND o.state NOT IN ('CONFIRMED','ABANDONED')))").run(cutoff);
+      this.db.prepare('DELETE FROM retention_audit_clock WHERE audit_id NOT IN (SELECT id FROM audit)').run();
+      if(this.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='general_reviews'").get()){
+        this.db.prepare("DELETE FROM general_reviews WHERE created_at<? AND NOT EXISTS (SELECT 1 FROM cert_operations o WHERE o.op_id=general_reviews.op_id AND o.state NOT IN ('CONFIRMED','ABANDONED'))").run(cutoff);
+        this.db.prepare('DELETE FROM general_approval_bindings WHERE approval_id NOT IN (SELECT id FROM cert_approvals)').run();
+        this.db.prepare("DELETE FROM general_identity_reviews WHERE created_at<? AND NOT EXISTS (SELECT 1 FROM general_findings f JOIN cert_operations o ON o.op_id=f.op_id WHERE f.context_key=general_identity_reviews.context_key AND o.state NOT IN ('CONFIRMED','ABANDONED'))").run(cutoff);
+      }
+      return {auditRetentionDays:days,cutoff,unresolvedOperationsHeld:true,idempotencyTombstonesPreserved:true,operationalEvidencePruned:false};
+    });
+  }
   resolveUncertain(id,input,actor){
     if(actor?.role!=='Admin'||!actor.subject||!['LOCAL_SYNTHETIC','EXTERNAL_VERIFIED'].includes(actor.kind))throw Error('admin_required');
     if(input.resolution!=='ABANDON_UNCERTAIN'||typeof input.reference!=='string'||!/^[-a-zA-Z0-9_:./]{3,120}$/.test(input.reference))throw Error('audited_uncertain_resolution_required');
