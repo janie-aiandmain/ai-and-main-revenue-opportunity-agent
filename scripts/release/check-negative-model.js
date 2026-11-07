@@ -1,0 +1,9 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {reasonCorrected} from '../../src/release/reasoning.js';
+import {prepareHistory} from '../../src/findings.js';
+import {inspectFinding} from '../../src/staging/review-policy.js';
+if(process.argv.slice(2).join(' ')!=='--live --non-production')throw Error('explicit_live_nonproduction_opt_in_required');
+const fixture=JSON.parse(await readFile('fixtures/release-negative-qualifiers-v1.json','utf8')),c=fixture.cases.find(c=>c.id==='NV02'),time='2026-11-03T12:00:00Z',saved=globalThis.fetch,rows=[];let telemetry;
+globalThis.fetch=async(url,options)=>{if(url!=='https://api.openai.com/v1/responses')throw Error('unexpected_destination');const r=await saved(url,options);if(r.ok){const b=await r.clone().json();telemetry={returnedModel:b.model,usage:b.usage,rawModelOutput:(b.output||[]).filter(x=>x.type==='message').flatMap(x=>x.content||[]).find(x=>x.type==='output_text')?.text};}return r;};
+const out='reports/release-affected-negative-'+new Date().toISOString().replaceAll(/[:.]/g,'-')+'.json';
+try{for(let run=1;run<=3;run++){telemetry={};const actual=await reasonCorrected({EVAL_OPENAI_API_KEY:process.env.EVAL_OPENAI_API_KEY},c.context,'synthetic:'+c.id,time),history=await prepareHistory(c.context),quality=actual.findings.flatMap(f=>inspectFinding(f,history,actual.findings,time).qualityFailures),passed=actual.findings.length===1&&!quality.length&&actual.findings[0].evidence.some(e=>e.quote.includes(c.required));rows.push({id:c.id,repeat:run,...telemetry,actual,quality,passed,humanReview:'PENDING'});await writeFile(out,JSON.stringify({kind:'FRESH_NV02_REPETITIONS_AFTER_NEGATION_CORRECTION',sourceCommit:process.env.RELEASE_SOURCE_SHA,time,modelCalls:rows.length,hubspotCalls:0,rows},null,2)+'\n');console.log(JSON.stringify({run,passed}));}}finally{globalThis.fetch=saved;}process.exitCode=rows.every(r=>r.passed)?0:1;

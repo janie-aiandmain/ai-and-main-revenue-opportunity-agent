@@ -52,3 +52,8 @@ test('bare No and Never restrictions cannot disappear from a finding or its exac
  const r=await run('Customer requests charger pricing. '+clause,[f('Customer requests charger pricing.')]);assert.ok(r.findings[0].evidence.some(e=>e.quote===clause));assert.ok(r.findings[0].proposedAction.material.sourceRestrictions.some(e=>e.quote===clause));
  }
 });
+test('must not include appointment booking is a prohibition; positive booking remains blocked',async()=>{
+ const text='Customer requests charger pricing. Never book an appointment.';
+ const good=await run(text,[{...f('Customer requests charger pricing.'),evidence:[{noteId:'n',quote:'Customer requests charger pricing.'},{noteId:'n',quote:'Never book an appointment.'}],recommendedNextAction:'Internal pricing preparation only. Any later customer action must not include appointment booking.'}]);assert.equal(good.findings[0].proposedAction.preparationBlocked,false);
+ const bad=await run(text,[{...f('Customer requests charger pricing.'),recommendedNextAction:'Prepare pricing and include appointment booking.'}]);assert.equal(bad.findings[0].proposedAction.preparationBlocked,true);
+});

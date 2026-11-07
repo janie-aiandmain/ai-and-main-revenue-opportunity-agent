@@ -1,7 +1,7 @@
 // Conservative, versioned checks. These do not replace human semantic review.
 import { sourceAnchors,reviewedProjection,materialExecutable,TASK_CLASS,sourceDayEnd } from '../correction-policy-v2.js';
 import {internalProjection,explicitSourceDates} from './internal-task-policy.js';
-export const REVIEW_POLICY='finding-review-v2.5';
+export const REVIEW_POLICY='finding-review-v2.6';
 const restriction=/\b(?:do not|don't|must not|never|no|hold|pause|stop|only|unless|without|until|before|after|once|when)\b/i;
 const relative=/\b(?:today|tomorrow|this week|by (?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)|end of (?:the )?day)\b/i;
 const deferred=/\b(?:after|once|when|until)\b.{0,100}\b(?:complete|finished|done|ends?|renovation|remodel|permit|approval|parts)\b/i;
@@ -34,9 +34,9 @@ export function inspectFinding(finding,history,otherFindings=[],now=new Date().t
     if(deferred.test(n.note))executionBlocks.push({code:'deferred_event_requires_source_confirmation',noteId:n.noteId});
     if(beforeWork.test(n.note))executionBlocks.push({code:'before_work_state_requires_source_confirmation',noteId:n.noteId});
   }
-  const assertedAction=finding.recommendedNextAction.replace(/\b(?:do not|don't|never|no)\b[^.;]+/gi,'');
+  const assertedAction=finding.recommendedNextAction.replace(/\b(?:do not|don't|must not|shall not|should not|never|no)\b[^.;]+/gi,'');
   if(finding.opportunityType==='retention'&&/\b(?:still|currently|remains?)\b.{0,40}\bunresolved\b|\bunresolved (?:fixture|complaint|issue)\b/i.test(assertedAction)&&!/verify (?:whether|if).{0,100}unresolved/i.test(finding.recommendedNextAction))qualityFailures.push({code:'unverified_current_unresolved_state'});
-  const positiveAction=finding.recommendedNextAction.replace(/\b(?:do not|don't|never|no)\b[^.;]+/gi,'');
+  const positiveAction=finding.recommendedNextAction.replace(/\b(?:do not|don't|must not|shall not|should not|never|no)\b[^.;]+/gi,'');
   if(/(?:^|[.!?;:]\s*|\b(?:and|then)\s+)(?:contact|call|email|bill|invoice|charge|perform)\b|\b(?:contact|call|email|bill|invoice|charge|perform)\s+(?:(?:the|a|this|our)\s+)?(?:customer|client|homeowner|work|service|account|them)\b|\bwith (?:the )?customer\b|\b(?:change|update|move)\b.{0,30}\b(?:deal|stage|pipeline)\b/i.test(positiveAction))qualityFailures.push({code:'customer_or_crm_authority_not_internal'});
   if(step.test(positiveAction)&&!sourceStep.test(quotes))qualityFailures.push({code:'unrequested_scheduling_or_assessment'});
   return {policyVersion:REVIEW_POLICY,qualityFailures,executionBlocks,humanReview:'PENDING'};
