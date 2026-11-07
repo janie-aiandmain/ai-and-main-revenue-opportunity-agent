@@ -1,3 +1,4 @@
+import {demoTables,reserveDemoAttempt,consumeDemoFault} from '../release/demo-execution.js';
 import { createHash,randomUUID } from 'node:crypto';
 import { CorrectionLedger } from '../correction-ledger.js';
 import { prepareHistory,canonical } from '../findings.js';
@@ -12,11 +13,11 @@ export class StagingOperationLedger extends CorrectionLedger {
     CREATE TABLE IF NOT EXISTS cert_approvals(id TEXT PRIMARY KEY,operation_id TEXT NOT NULL,payload_hash TEXT NOT NULL,revision INTEGER NOT NULL,actor TEXT NOT NULL,kind TEXT NOT NULL,issued_at INTEGER NOT NULL,expires_at INTEGER NOT NULL,revoked INTEGER NOT NULL DEFAULT 0);
     CREATE TABLE IF NOT EXISTS cert_trace(sequence INTEGER PRIMARY KEY,operation_id TEXT NOT NULL,event TEXT NOT NULL,payload_hash TEXT,remote_id TEXT,at TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS cert_outcomes(external_ref TEXT PRIMARY KEY,operation_id TEXT NOT NULL,remote_task_id TEXT NOT NULL,amount_minor INTEGER NOT NULL,currency TEXT NOT NULL,verification_kind TEXT NOT NULL);
-  `);db.exec('CREATE TABLE IF NOT EXISTS retention_audit_clock(audit_id INTEGER PRIMARY KEY,recorded_at TEXT NOT NULL,legacy_first_observed INTEGER NOT NULL DEFAULT 0)');db.prepare('INSERT OR IGNORE INTO retention_audit_clock(audit_id,recorded_at,legacy_first_observed) SELECT id,?,1 FROM audit').run(new Date().toISOString());}
+  `);demoTables(db);db.exec('CREATE TABLE IF NOT EXISTS retention_audit_clock(audit_id INTEGER PRIMARY KEY,recorded_at TEXT NOT NULL,legacy_first_observed INTEGER NOT NULL DEFAULT 0)');db.prepare('INSERT OR IGNORE INTO retention_audit_clock(audit_id,recorded_at,legacy_first_observed) SELECT id,?,1 FROM audit').run(new Date().toISOString());}
   audit(event,op,reason){this.db.prepare('INSERT INTO audit(event,op_id,reason) VALUES(?,?,?)').run(event,op,reason);this.db.prepare('INSERT INTO retention_audit_clock(audit_id,recorded_at) VALUES(last_insert_rowid(),?)').run(new Date().toISOString());}
   trace(id,event,hash=null,remote=null){this.db.prepare('INSERT INTO cert_trace(operation_id,event,payload_hash,remote_id,at) VALUES(?,?,?,?,?)').run(id,event,hash,remote,new Date().toISOString());}
   blockedCase(id){return BLOCKED_CASES.includes(id);}
-  status(id){const op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);if(!op)throw Error('unknown_operation');return {operationId:op.id,opportunityId:op.op_id,correlation:op.correlation,state:op.state,payloadContract:FINAL_PAYLOAD_CONTRACT,payloadHash:op.payload_hash,actionVersion:'final-action-v1:'+digest({payloadHash:op.payload_hash,materialHash:op.material_hash}),revision:op.revision,remoteTaskId:op.remote_id,finalRequest:JSON.parse(op.payload_json),trace:this.db.prepare('SELECT event,payload_hash,remote_id,at FROM cert_trace WHERE operation_id=? ORDER BY sequence').all(id)};}
+  status(id){const op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);if(!op)throw Error('unknown_operation');return {operationId:op.id,opportunityId:op.op_id,correlation:op.correlation,state:op.state,payloadContract:FINAL_PAYLOAD_CONTRACT,payloadHash:op.payload_hash,actionVersion:'final-action-v1:'+digest({payloadHash:op.payload_hash,materialHash:op.material_hash}),revision:op.revision,remoteTaskId:op.remote_id,ledgerBootId:this.runtimeBootId||null,demoCreateAttempts:this.db.prepare('SELECT count(*) AS n FROM release_demo_attempts WHERE operation_id=?').get(id).n,finalRequest:JSON.parse(op.payload_json),trace:this.db.prepare('SELECT event,payload_hash,remote_id,at FROM cert_trace WHERE operation_id=? ORDER BY sequence').all(id)};}
   async prepare({fixtureId,dueAt},env){
     if(this.blockedCase(fixtureId))throw Error('human_review_pending:'+fixtureId);
     if(!CONTROL_CASES.includes(fixtureId))throw Error('designated_fixture_only');
@@ -34,7 +35,9 @@ export class StagingOperationLedger extends CorrectionLedger {
       const existing=this.db.prepare('SELECT * FROM cert_operations WHERE op_id=?').get(identity.opportunityId);
       if(existing&&!['PREPARED','APPROVED'].includes(existing.state))throw Error('existing_effect_must_be_reconciled');
       const id=existing?.id||'operation_'+randomUUID(),correlation=existing?.correlation||'ai-main-'+randomUUID();
-      const body={properties:{...projection.payload.properties,hs_task_body:projection.payload.properties.hs_task_body+'\n[AI_MAIN_CORRELATION:'+correlation+']'},associations:[{to:{id:env.STAGING_CONTACT_ID},types:[{associationCategory:'HUBSPOT_DEFINED',associationTypeId:204}]}]};
+      const synthetic=env.CERTIFICATION_MODE==='remote-demo';
+      const properties={...projection.payload.properties,...(synthetic?{hs_task_subject:'[AI & MAIN SYNTHETIC DEMO] '+projection.payload.properties.hs_task_subject}:{})};
+      const body={properties:{...properties,hs_task_body:properties.hs_task_body+(synthetic?'\nSynthetic demo only. No real customer action or financial outcome.':'')+'\n[AI_MAIN_CORRELATION:'+correlation+']'},associations:[{to:{id:env.STAGING_CONTACT_ID},types:[{associationCategory:'HUBSPOT_DEFINED',associationTypeId:204}]}]};
       const request={contractVersion:FINAL_PAYLOAD_CONTRACT,method:'POST',url:'https://api.hubapi.com/crm/v3/objects/tasks',portalId:env.STAGING_PORTAL_ID,body},json=canonical(request),payloadHash=digest(json),materialHash=digest(projection.material);
       const source=this.db.prepare('SELECT * FROM opportunities WHERE id=?').get(identity.opportunityId);
       if(existing){
@@ -72,14 +75,16 @@ export class StagingOperationLedger extends CorrectionLedger {
     if(op.state==='CHECKING')return this.status(id);
     this.tx(()=>{op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);if(op.state!=='APPROVED')throw Error('operation_not_approved');this.validate(op,this.db.prepare('SELECT * FROM cert_approvals WHERE id=?').get(approvalId),env);this.db.prepare("UPDATE cert_operations SET state='CHECKING' WHERE id=?").run(id);});
     try{await client.verifyIsolation();}catch(error){this.db.prepare("UPDATE cert_operations SET state='APPROVED' WHERE id=? AND state='CHECKING'").run(id);this.trace(id,'ISOLATION_READ_FAILED_NO_POST');if(error instanceof StagingBlocker)throw error;throw Error('isolation_not_verified');}
-    const body=this.tx(()=>{
+    let body;try{body=this.tx(()=>{
       op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);if(op.state!=='CHECKING')throw Error('operation_changed');
       const request=this.validate(op,this.db.prepare('SELECT * FROM cert_approvals WHERE id=?').get(approvalId),env);
+      reserveDemoAttempt(this,op,env);
       this.db.prepare("UPDATE cert_operations SET state='SENDING' WHERE id=?").run(id);this.trace(id,'POST_INTENT_DURABLY_PERSISTED',op.payload_hash);return canonical(request.body);
-    });
+    });}catch(error){this.db.prepare("UPDATE cert_operations SET state='APPROVED' WHERE id=? AND state='CHECKING'").run(id);throw error;}
     try{
       const created=await client.create(body);
       if(!created.id)throw Error('unconfirmed_response');
+      if(consumeDemoFault(this,op,env)){if(client.restartAfterInjectedLoss)await client.restartAfterInjectedLoss();throw Error('injected_application_response_loss');}
       this.db.prepare('UPDATE cert_operations SET remote_id=? WHERE id=?').run(String(created.id),id);
       this.trace(id,'REMOTE_ID_RECEIVED',op.payload_hash,String(created.id));
       return await this.reconcileRemote(id,client);

@@ -32,7 +32,9 @@
     "STAGING_CONTACT_ID": "582095692487",
     "AUDIT_RETENTION_DAYS": "365",
     "ACCESS_ISSUER": "https://falling-cell-9501.cloudflareaccess.com",
-    "ACCESS_AUDIENCE": "62c0aa3dd79f48d2f6f643ff077c0b4f590b1dd7665058c5e8f442e4ae112151"
+    "ACCESS_AUDIENCE": "62c0aa3dd79f48d2f6f643ff077c0b4f590b1dd7665058c5e8f442e4ae112151",
+    "DEMO_ONLY_EXECUTION_ENABLED": "false",
+    "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false"
   },
   "durable_objects": {
     "bindings": [

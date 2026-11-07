@@ -1,3 +1,4 @@
+import {demoExecution} from '../release/demo-execution.js';
 import {tenantConfiguration} from '../release/tenant.js';
 import { StagingBlocker,checkedJsonFetch,missingCredential } from './blockers.js';
 export class HubSpotCertificationClient {
@@ -7,7 +8,7 @@ export class HubSpotCertificationClient {
     if(!env.STAGING_HUBSPOT_READ_TOKEN)throw missingCredential('STAGING_HUBSPOT_READ_TOKEN');
     if(!env.STAGING_HUBSPOT_WRITE_TOKEN)throw missingCredential('STAGING_HUBSPOT_WRITE_TOKEN');
     const tenant=tenantConfiguration(env);this.synthetic=tenant.synthetic;
-    if(!readOnly&&env.ENABLE_TEST_TASK_WRITES!=='true')throw Error('staging_isolation_not_configured');
+    if(!readOnly&&env.ENABLE_TEST_TASK_WRITES!=='true'&&!demoExecution(env))throw Error('staging_isolation_not_configured');
     if(env.CERTIFICATION_MODE==='local'){
       const base=new URL(env.LOCAL_HUBSPOT_FIXTURE_URL);
       if(base.protocol!=='http:'||!['127.0.0.1','localhost'].includes(base.hostname)) throw Error('local_fixture_only');

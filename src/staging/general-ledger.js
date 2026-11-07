@@ -1,3 +1,4 @@
+import {demoExecution,armDemoFault} from '../release/demo-execution.js';
 import { createHash,randomUUID } from 'node:crypto';
 import { sourceAnchors,strongOverlap } from '../correction-policy.js';
 import { StagingOperationLedger,digest } from './operation-ledger.js';
@@ -185,6 +186,11 @@ export class GeneralFindingLedger extends StagingOperationLedger {
     if(op&&this.db.prepare('SELECT * FROM general_findings WHERE op_id=?').get(op.op_id))throw Error('general_execution_route_required');
     return super.execute(id,approvalId,client,env);
   }
+  armDemoResponseLoss(input,actor,env){
+    role(actor);if(actor.kind!=='EXTERNAL_VERIFIED')throw Error('verified_demo_operator_required');
+    const op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(input.operationId),grant=this.db.prepare('SELECT * FROM cert_approvals WHERE id=?').get(input.approvalId);
+    if(!op||!grant)throw Error('exact_approved_demo_operation_required');this.validate(op,grant,{...env,executionActor:actor});return armDemoFault(this,op,env);
+  }
   async executeGeneral(id,approvalId,actor,env,source,reason,client){
     role(actor);const op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);
     if(!op||!this.db.prepare('SELECT * FROM general_findings WHERE op_id=?').get(op.op_id))throw Error('general_operation_required');
@@ -194,9 +200,11 @@ export class GeneralFindingLedger extends StagingOperationLedger {
     const executionEnv={...env,executionActor:actor};
     if(['CONFIRMED','UNKNOWN','SENDING'].includes(op.state))return super.execute(id,approvalId,client,executionEnv);
     const local=env.CERTIFICATION_MODE==='local'&&env.ENABLE_LOCAL_GENERAL_TEST_EXECUTION==='true';
-    if(!local&&(env.ENABLE_GENERAL_EXECUTION!=='true'||env.GENERAL_RELEASE_APPROVED!=='true'||actor.kind!=='EXTERNAL_VERIFIED'))throw Error('general_execution_release_blocked');
+    const demo=demoExecution(env);
+    if(demo&&actor.kind!=='EXTERNAL_VERIFIED')throw Error('verified_demo_operator_required');
+    if(!local&&!demo&&(env.ENABLE_GENERAL_EXECUTION!=='true'||env.GENERAL_RELEASE_APPROVED!=='true'||actor.kind!=='EXTERNAL_VERIFIED'))throw Error('general_execution_release_blocked');
     await this.evaluate(env,source,reason);
-    const guarded={verifyIsolation:async()=>{await client.verifyIsolation();const h=await prepareHistory(await source.readContext());const current=this.db.prepare('SELECT * FROM general_findings WHERE op_id=?').get(op.op_id);if(digest(h)!==current.source_hash){this.revokeForFinding(op.op_id,'SOURCE_CHANGED_IMMEDIATELY_BEFORE_POST');throw Error('fresh_source_changed');}},create:body=>client.create(body),lookup:(...args)=>client.lookup(...args)};
+    const guarded={verifyIsolation:async()=>{await client.verifyIsolation();const h=await prepareHistory(await source.readContext());const current=this.db.prepare('SELECT * FROM general_findings WHERE op_id=?').get(op.op_id);if(digest(h)!==current.source_hash){this.revokeForFinding(op.op_id,'SOURCE_CHANGED_IMMEDIATELY_BEFORE_POST');throw Error('fresh_source_changed');}},create:body=>client.create(body),...(client.restartAfterInjectedLoss?{restartAfterInjectedLoss:()=>client.restartAfterInjectedLoss()}:{}),lookup:(...args)=>client.lookup(...args)};
     return super.execute(id,approvalId,guarded,executionEnv);
   }
 }

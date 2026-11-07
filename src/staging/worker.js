@@ -12,7 +12,7 @@ import { operatorConsole } from './operator-console.js';
 import { HubSpotCertificationClient } from './hubspot-client.js';
 const json=(body,status=200)=>Response.json(body,{status,headers:{'cache-control':'no-store'}});
 export class CertificationLedger extends DurableObject {
-  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.bootId=crypto.randomUUID();this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.recoverChecking();if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
+  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.bootId=crypto.randomUUID();this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.runtimeBootId=this.bootId;this.ledger.recoverChecking();if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
   async ensureRetentionAlarm(){if(await this.demoContext.storage.getAlarm()===null)await this.demoContext.storage.setAlarm(Date.now()+86400000);}
   async alarm(){this.ledger.pruneAuditMetadata(Number(this.env.AUDIT_RETENTION_DAYS||365));await this.demoContext.storage.setAlarm(Date.now()+86400000);}
   async fetch(request){
@@ -60,7 +60,8 @@ export class CertificationLedger extends DurableObject {
           return json(l.finishReview(input,actor,checked,this.env));
         }
         if(path==='/certification/general/approve')return json(l.approveGeneral(input,actor));
-        if(path==='/certification/general/execute')return json(await l.executeGeneral(input.operationId,input.approvalId,actor,this.env,source,reason,new HubSpotCertificationClient(this.env)));
+        if(path==='/certification/general/arm-response-loss')return json(l.armDemoResponseLoss(input,actor,this.env));
+        if(path==='/certification/general/execute'){const client=new HubSpotCertificationClient(this.env);if(this.env.CERTIFICATION_MODE==='remote-demo'&&this.env.DEMO_RESPONSE_LOSS_TEST_ENABLED==='true')client.restartAfterInjectedLoss=()=>this.demoContext.abort('Operator-authorized injected response discard; not a network outage');return json(await l.executeGeneral(input.operationId,input.approvalId,actor,this.env,source,reason,client));}
         return json({status:'not_found'},404);
       }
       if(path==='/certification/prepare')return json(await l.prepare(input,this.env));
