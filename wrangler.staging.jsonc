@@ -48,5 +48,12 @@
   "keep_vars": false,
   "version_metadata": {
     "binding": "RELEASE_VERSION"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "invocation_logs": false
+    }
   }
 }

@@ -4,6 +4,7 @@ import { DemoRecoveryLedger,DEMO_CONTRACT } from '../demo/recovery-ledger.js';
 import application from '../index.js';
 import { verifyOperator } from './auth.js';
 import { durableDatabase } from './sql-adapter.js';
+import {digest} from './operation-ledger.js';
 import { GeneralFindingLedger } from './general-ledger.js';
 import { DesignatedNoteSource } from './note-source.js';
 import { reasonCorrected } from '../release/reasoning.js';
@@ -11,7 +12,7 @@ import { operatorConsole } from './operator-console.js';
 import { HubSpotCertificationClient } from './hubspot-client.js';
 const json=(body,status=200)=>Response.json(body,{status,headers:{'cache-control':'no-store'}});
 export class CertificationLedger extends DurableObject {
-  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.recoverChecking();if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
+  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.bootId=crypto.randomUUID();this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.recoverChecking();if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
   async ensureRetentionAlarm(){if(await this.demoContext.storage.getAlarm()===null)await this.demoContext.storage.setAlarm(Date.now()+86400000);}
   async alarm(){this.ledger.pruneAuditMetadata(Number(this.env.AUDIT_RETENTION_DAYS||365));await this.demoContext.storage.setAlarm(Date.now()+86400000);}
   async fetch(request){
@@ -42,7 +43,9 @@ export class CertificationLedger extends DurableObject {
         await client.verifyIsolation();
         const context=await new DesignatedNoteSource(this.env).readContext();
         await client.request('/crm/v3/objects/tasks?limit=1&properties=hs_task_body');
-        return json({kind:'READ_ONLY_ISOLATION_AND_IDENTITY_PREFLIGHT',identityKind:actor.kind,role:actor.role,portalId:this.env.STAGING_PORTAL_ID,contactId:this.env.STAGING_CONTACT_ID,readCredentialPortalVerified:true,writeCredentialPortalVerified:true,noteCount:context.serviceHistory.length,taskReadVerified:true,writesEnabled:this.env.ENABLE_TEST_TASK_WRITES==='true',generalExecutionEnabled:this.env.ENABLE_GENERAL_EXECUTION==='true',semanticApproval:false,productionCertification:false});
+        const receipt={kind:'READ_ONLY_ISOLATION_AND_IDENTITY_PREFLIGHT',identityKind:actor.kind,role:actor.role,portalId:this.env.STAGING_PORTAL_ID,contactId:this.env.STAGING_CONTACT_ID,readCredentialPortalVerified:true,writeCredentialPortalVerified:true,noteCount:context.serviceHistory.length,taskReadVerified:true,writesEnabled:this.env.ENABLE_TEST_TASK_WRITES==='true',generalExecutionEnabled:this.env.ENABLE_GENERAL_EXECUTION==='true',semanticApproval:false,productionCertification:false,ownerSourceCommit:this.env.RELEASE_SOURCE_SHA||null,ownerDeploymentVersion:this.env.RELEASE_VERSION?.id||null,ledgerBootId:this.bootId};
+        console.log(JSON.stringify({event:'AI_MAIN_SAFE_PREFLIGHT',receipt,subjectHash:digest(actor.subject)}));
+        return json(receipt);
       }
       if(path==='/certification/general/findings')return json({findings:l.findings(l.contextKey(this.env))});
       if(path==='/certification/general/identity-candidates')return json({pendingIdentity:l.pendingIdentity(this.env)});

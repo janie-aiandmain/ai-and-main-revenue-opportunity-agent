@@ -19,6 +19,7 @@ export async function operatorGateway(request,env){
  const action=path.slice('/certification/'.length);if(!reads.has(action)&&!writes.has(action))return json({status:'not_found'},404);
  if(request.method!=='POST')return json({status:'post_required'},405);
  if(writes.has(action)&&!['Approver','Admin'].includes(actor.role))return json({status:'approver_required'},403);
+ if(action==='general/execute'&&(env.ENABLE_GENERAL_EXECUTION!=='true'||env.GENERAL_RELEASE_APPROVED!=='true'))return json({status:'general_execution_release_blocked_at_gateway'},403);
  if(action==='resolve-uncertain'&&actor.role!=='Admin')return json({status:'admin_required'},403);
  if(action==='session')return json({role:actor.role,identityKind:actor.kind,customerWritebackEnabled:env.ENABLE_GENERAL_EXECUTION==='true'&&env.GENERAL_RELEASE_APPROVED==='true'});
  const text=await request.text();if(new TextEncoder().encode(text).length>16000)return json({status:'request_too_large'},413);

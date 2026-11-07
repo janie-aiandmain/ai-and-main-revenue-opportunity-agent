@@ -6,7 +6,11 @@
   "workers_dev": true,
   "keep_vars": true,
   "observability": {
-    "enabled": true
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "invocation_logs": false
+    }
   },
   "account_id": "cda2ab71dd8127c8031c945a738b86e2",
   "compatibility_flags": [

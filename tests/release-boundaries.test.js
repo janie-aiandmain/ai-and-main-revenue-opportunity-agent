@@ -37,3 +37,7 @@ test('task lookup enumerates only the permitted contact, completes paging and do
  assert.equal((await c.lookup('c','one')).length,2);assert.ok(calls.some(p=>p.includes('after=next')));assert.ok(calls.every(p=>!p.startsWith('/crm/v3/objects/tasks?')));
  c.request=async()=>({results:[],paging:{next:{after:'again'}}});await assert.rejects(c.lookup('c'),/lookup_limit_incomplete/);
 });
+test('a closed demo gateway cannot forward an execute even if its ledger owner were misconfigured open',async()=>{
+ let forwarded=0;const binding={idFromName(){return 'test';},get(){return {fetch(){forwarded++;return Response.json({state:'SENDING'});}};}};
+ const r=await operatorGateway(req('/certification/general/execute','test-approver',{operationId:'op',approvalId:'grant'}),{...env,ENABLE_GENERAL_EXECUTION:'false',GENERAL_RELEASE_APPROVED:'false',DEMO_RECOVERY_LEDGER:binding});assert.equal(r.status,403);assert.equal(forwarded,0);
+});
