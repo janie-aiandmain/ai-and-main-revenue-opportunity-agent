@@ -1,3 +1,4 @@
+import {DemoHubSpot,PORTAL,CONTACT,MARKER} from '../demo/hubspot.js';
 import {verifyOperator,verifyIdentity} from '../staging/auth.js';
 import {identityBlocker} from '../staging/blockers.js';
 import {operatorConsole} from '../staging/operator-console.js';
@@ -27,5 +28,19 @@ export async function operatorGateway(request,env){
  const binding=env.CERTIFICATION_LEDGER||env.DEMO_RECOVERY_LEDGER;
  if(!binding||!env.STAGING_PORTAL_ID||!env.STAGING_CONTACT_ID)return json({status:'durable_tenant_not_configured'},503);
  const stub=binding.get(binding.idFromName('release-portal:'+env.STAGING_PORTAL_ID+':contact:'+env.STAGING_CONTACT_ID));
- return stub.fetch(new Request('https://private-ledger'+path,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...body,actor})}));
+ const response=await stub.fetch(new Request('https://private-ledger'+path,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...body,actor})}));
+ if(action==='preflight'&&env.CERTIFICATION_MODE==='remote-demo'){
+  const result=await response.json();
+  // Diagnose already-existing credentials in the original holder. Never extract
+  // values, copy credentials, or substitute them into the ledger owner's path.
+  const original={kind:'READ_ONLY_EXISTING_DEMO_CREDENTIAL_CHECK',checks:[],writes:0};
+  try{const client=new DemoHubSpot(env);
+   for(const [credential,writer] of [['HUBSPOT_ACCESS_TOKEN',false],['HUBSPOT_WRITE_TOKEN',true]]){
+    try{const account=await(await client.get('/account-info/v3/details',writer)).json();original.checks.push({credential,status:String(account.portalId)===PORTAL?'PASS':'portal_mismatch',portalId:String(account.portalId)});}catch(e){original.checks.push({credential,status:/^hubspot_[a-z0-9_]+$/.test(e.message)?e.message:'credential_check_blocked'});}
+   }
+   if(original.checks.every(c=>c.status==='PASS')){const contact=await(await client.get('/crm/v3/objects/contacts/'+CONTACT+'?properties=firstname')).json();original.contactMarkerVerified=String(contact.id)===CONTACT&&contact.properties?.firstname===MARKER;}
+  }catch{original.blocker='existing_demo_credentials_not_available';}
+  return json({...result,originalDemoCredentialProof:original,credentialLocations:{workflow:'ai-and-main-revenue-opportunity-staging → Settings → Variables and Secrets',existingDemo:'ai-and-main-revenue-opportunity-agent → Settings → Variables and Secrets'},credentialsNotSubstituted:true},response.status);
+ }
+ return response;
 }
