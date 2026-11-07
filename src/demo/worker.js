@@ -12,7 +12,7 @@ async function authorized(request,env){
  if(request.headers.get('Origin')&&request.headers.get('Origin')!==new URL(request.url).origin)throw Error('cross_origin_forbidden');
 }
 export async function demoFetch(request,env){
- const path=new URL(request.url).pathname;if(!path.startsWith('/demo-recovery/')){if(path==='/health')return json({service:'AI & MAIN Revenue Opportunity Agent',mode:'controlled_single_tenant_demo',crmWritesEnabled:false,sourceCommit:env.RELEASE_SOURCE_SHA||null,deploymentVersion:env.RELEASE_VERSION?.id||null,materializationVersion:'source-evidence-v0.3.5',humanReleaseAccepted:false});return operatorGateway(request,env);}
+ const path=new URL(request.url).pathname;if(!path.startsWith('/demo-recovery/')){if(path==='/health')return json({service:'AI & MAIN Revenue Opportunity Agent',mode:'controlled_single_tenant_demo',crmWritesEnabled:false,sourceCommit:env.RELEASE_SOURCE_SHA||null,deploymentVersion:env.RELEASE_VERSION?.id||null,materializationVersion:'source-evidence-v0.3.6',humanReleaseAccepted:false});return operatorGateway(request,env);}
  try{
   await authorized(request,env);if(request.method!=='POST')return json({status:'post_required'},405);
   const text=await request.text();if(text.length>6000)throw Error('request_too_large');const input=JSON.parse(text);

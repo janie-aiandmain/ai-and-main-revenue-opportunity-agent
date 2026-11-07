@@ -47,3 +47,8 @@ test('ST04 historical call attribution and current invoice-status verification d
   const bad=await run(source,[{...raw,recommendedNextAction:action}]);assert.equal(bad.findings[0].proposedAction.preparationBlocked,true);
  }
 });
+test('bare No and Never restrictions cannot disappear from a finding or its exact task evidence',async()=>{
+ for(const clause of ['No site visits.','Never book an appointment.','No deposit or payment collection.']){
+ const r=await run('Customer requests charger pricing. '+clause,[f('Customer requests charger pricing.')]);assert.ok(r.findings[0].evidence.some(e=>e.quote===clause));assert.ok(r.findings[0].proposedAction.material.sourceRestrictions.some(e=>e.quote===clause));
+ }
+});

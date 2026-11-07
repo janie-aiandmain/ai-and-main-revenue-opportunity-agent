@@ -1,0 +1,11 @@
+{
+ "version":"release-negative-qualifiers-v1",
+ "synthetic":true,
+ "authoredBeforeCalls":true,
+ "cases":[
+  {"id":"NV01","context":{"customer":"Synthetic negative qualifier","serviceHistory":[{"timestamp":"2026-10-30T12:00:00Z","note":"Customer requests charger pricing. No site visits."}]},"expectedActionable":true,"required":"No site visits."},
+  {"id":"NV02","context":{"customer":"Synthetic negative qualifier","serviceHistory":[{"timestamp":"2026-10-30T12:00:00Z","note":"Customer requests charger pricing. Never book an appointment."}]},"expectedActionable":true,"required":"Never book an appointment."},
+  {"id":"NV03","context":{"customer":"Synthetic negative qualifier","serviceHistory":[{"timestamp":"2026-10-30T12:00:00Z","note":"Customer requests charger pricing. No deposit or payment collection."}]},"expectedActionable":true,"required":"No deposit or payment collection."},
+  {"id":"NV04","context":{"customer":"Synthetic negative qualifier","serviceHistory":[{"timestamp":"2026-10-30T12:00:00Z","note":"Customer requests charger pricing. Never replace the requested service with a panel upgrade."}]},"expectedActionable":true,"required":"Never replace the requested service with a panel upgrade."}
+ ]
+}

@@ -6,7 +6,7 @@ import {internalPlan} from '../staging/internal-task-policy.js';
 import {inspectFinding} from '../staging/review-policy.js';
 import {completeEvidence,EVIDENCE_POLICY} from './evidence.js';
 export {EVIDENCE_POLICY};
-export const PROMPT_VERSION='reasoning-v0.3.3',SCHEMA_VERSION='findings-v0.2',MATERIALIZATION_VERSION='source-evidence-v0.3.5';
+export const PROMPT_VERSION='reasoning-v0.3.3',SCHEMA_VERSION='findings-v0.2',MATERIALIZATION_VERSION='source-evidence-v0.3.6';
 export async function materializeCorrected(raw,history,key,time=new Date().toISOString()){
  // Validate original model spans and distinctness before completing source clauses.
  await materializeFindings(raw,history,key);

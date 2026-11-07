@@ -1,8 +1,8 @@
 // Deterministic source closure, not model self-repair or human adjudication.
 // Append a bare adjacent qualifier only when the cited note has exactly one need.
 // Multi-need or instruction-bearing boundaries stay conservative and reviewable.
-export const EVIDENCE_POLICY='source-clause-closure-v1';
-const qualifier=/^(?:do not|don't|must not|no (?:more|further)|hold|pause|stop|only|unless|without|until|before|after|once|when)\b/i;
+export const EVIDENCE_POLICY='source-clause-closure-v1.1';
+const qualifier=/^(?:do not|don't|must not|never|no|hold|pause|stop|only|unless|without|until|before|after|once|when)\b/i;
 const instruction=/\b(?:ignore (?:previous|all)|system\s*:|mark (?:this )?approved|change (?:the )?deal stage)\b/i;
 export function sourceSentences(text){
  return [...text.matchAll(/\S[\s\S]*?(?:[.!?](?=\s|$)|\n|$)/g)].map(m=>{const quote=m[0].trim(),start=m.index+m[0].indexOf(quote);return {quote,start,end:start+quote.length};}).filter(x=>x.quote);

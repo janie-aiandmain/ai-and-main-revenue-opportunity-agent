@@ -1,8 +1,8 @@
 // Conservative, versioned checks. These do not replace human semantic review.
 import { sourceAnchors,reviewedProjection,materialExecutable,TASK_CLASS,sourceDayEnd } from '../correction-policy-v2.js';
 import {internalProjection,explicitSourceDates} from './internal-task-policy.js';
-export const REVIEW_POLICY='finding-review-v2.4';
-const restriction=/\b(?:do not|don't|must not|no (?:more|further)|hold|pause|stop|only|unless|without|until|before|after|once|when)\b/i;
+export const REVIEW_POLICY='finding-review-v2.5';
+const restriction=/\b(?:do not|don't|must not|never|no|hold|pause|stop|only|unless|without|until|before|after|once|when)\b/i;
 const relative=/\b(?:today|tomorrow|this week|by (?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)|end of (?:the )?day)\b/i;
 const deferred=/\b(?:after|once|when|until)\b.{0,100}\b(?:complete|finished|done|ends?|renovation|remodel|permit|approval|parts)\b/i;
 const beforeWork=/\bbefore\b.{0,50}\b(?:work|proceed|start|continu|install)/i;

@@ -27,7 +27,9 @@ block the affected finding. Human review never follows from machine scores.
 | Final semantic/release acceptance | Compact revised-output package; prior original decisions retained | [Original user decisions](../review/seven-cases/human-verdicts.json) | BLOCKED human judgment; never synthesized |
 
 Bound for this cycle: at most three new labelled synthetic HubSpot tasks on the
-designated contact, at most 150 fresh model calls before reassessing results.
+designated contact, initially 150 fresh model calls before reassessment. After the reproduced bare
+No/Never evidence omission, the reassessed cycle cap is 210 calls: 53 fresh corpus/
+restriction calls plus up to seven hosted-validation calls beyond the first 150.
 No automatic retry creates after uncertainty. All test writes disabled after a
 hosted run; no live customer deployment or main merge. These bounds are narrower
 than the supplied task authority, not an expansion of CRM permissions.

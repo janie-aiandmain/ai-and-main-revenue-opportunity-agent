@@ -2,8 +2,8 @@
 import {sourceAnchors,TASK_CLASS} from '../correction-policy.js';
 import {canonical} from '../findings.js';
 import {createHash} from 'node:crypto';
-export const INTERNAL_TASK_POLICY='internal-task-policy-v1.1';
-export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2.1';
+export const INTERNAL_TASK_POLICY='internal-task-policy-v1.2';
+export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2.2';
 const digest=v=>'sha256:'+createHash('sha256').update(canonical(v)).digest('hex');
 const relative=/\b(?:today|tomorrow|this week|by (?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)|end of (?:the )?day)\b/ig;
 const before=/\bbefore\b.{0,60}\b(?:work|continu|proceed|start|install)/i;
@@ -25,7 +25,7 @@ export function internalPlan(finding,history,inspection,now){
  const sourceTiming=evidence.flatMap(e=>[...e.quote.matchAll(new RegExp(relative.source,'ig'))].map(m=>({noteId:e.noteId,sourceTimestamp:e.timestamp,wording:m[0],status:e.timestamp.slice(0,10)<now.slice(0,10)?'HISTORICAL_NOT_RENEWED':'SOURCE_RELATIVE_UNRESOLVED',customerTimezone:'UNKNOWN',taskDeadline:false})));
  for(const e of evidence)for(const date of explicitSourceDates(e.quote))sourceTiming.push({noteId:e.noteId,sourceTimestamp:e.timestamp,wording:date.wording,date:date.date,status:date.date<now.slice(0,10)?'HISTORICAL_ABSOLUTE_DATE_NOT_RENEWED':'ABSOLUTE_SOURCE_DATE_REQUIRES_REVIEW',customerTimezone:'UNKNOWN',taskDeadline:false});
  const gates=inspection.executionBlocks.map(b=>({...b,appliesTo:'customer_action',satisfiedByInternalVerification:false}));
- const restrictions=evidence.filter(e=>/\b(?:do not|don.t|until|before|after|once|when|only|without)\b/i.test(e.quote));
+ const restrictions=evidence.filter(e=>/\b(?:do not|don.t|never|no|must not|unless|until|before|after|once|when|only|without)\b/i.test(e.quote));
  return {actionPurpose,instruction,evidence,sourceTiming,customerActionGates:gates,sourceRestrictions:restrictions,customerActionPermitted:false};
 }
 export function internalProjection(finding,history,inspection,{priority,taskDueAt},contextKey,now,requestedPurpose){
