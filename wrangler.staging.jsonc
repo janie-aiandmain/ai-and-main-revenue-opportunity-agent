@@ -10,13 +10,17 @@
   "preview_urls": false,
   "vars": {
     "DEPLOYMENT_ENVIRONMENT": "staging",
-    "CERTIFICATION_MODE": "remote-staging",
+    "CERTIFICATION_MODE": "remote-demo",
     "ENABLE_TEST_TASK_WRITES": "false",
     "CRM_WRITEBACK_ENABLED": "false",
     "ENABLE_GENERAL_EXECUTION": "false",
     "GENERAL_RELEASE_APPROVED": "false",
     "ACCESS_ISSUER": "https://falling-cell-9501.cloudflareaccess.com",
-    "ACCESS_AUDIENCE": "f3d28533ee59378b47a60ea0747a3e9ee6743f6c338ea859b21f371b6c1d0548"
+    "ACCESS_AUDIENCE": "f3d28533ee59378b47a60ea0747a3e9ee6743f6c338ea859b21f371b6c1d0548",
+    "STAGING_ISOLATION_APPROVED": "true",
+    "STAGING_PORTAL_ID": "247646122",
+    "STAGING_CONTACT_ID": "582095692487",
+    "AUDIT_RETENTION_DAYS": "365"
   },
   "durable_objects": {
     "bindings": [
@@ -41,5 +45,8 @@
       "EVAL_OPENAI_API_KEY"
     ]
   },
-  "keep_vars": false
+  "keep_vars": false,
+  "version_metadata": {
+    "binding": "RELEASE_VERSION"
+  }
 }

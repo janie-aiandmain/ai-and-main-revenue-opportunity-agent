@@ -1,7 +1,7 @@
 // Conservative, versioned checks. These do not replace human semantic review.
 import { sourceAnchors,reviewedProjection,materialExecutable,TASK_CLASS,sourceDayEnd } from '../correction-policy-v2.js';
 import {internalProjection,explicitSourceDates} from './internal-task-policy.js';
-export const REVIEW_POLICY='finding-review-v2.1';
+export const REVIEW_POLICY='finding-review-v2.3';
 const restriction=/\b(?:do not|don't|must not|no (?:more|further)|hold|pause|stop|only|unless|without|until|before|after|once|when)\b/i;
 const relative=/\b(?:today|tomorrow|this week|by (?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)|end of (?:the )?day)\b/i;
 const deferred=/\b(?:after|once|when|until)\b.{0,100}\b(?:complete|finished|done|ends?|renovation|remodel|permit|approval|parts)\b/i;
@@ -34,8 +34,10 @@ export function inspectFinding(finding,history,otherFindings=[],now=new Date().t
     if(deferred.test(n.note))executionBlocks.push({code:'deferred_event_requires_source_confirmation',noteId:n.noteId});
     if(beforeWork.test(n.note))executionBlocks.push({code:'before_work_state_requires_source_confirmation',noteId:n.noteId});
   }
-  if(finding.opportunityType==='retention'&&/\b(?:still|currently|remains?)\b.{0,40}\bunresolved\b|\bunresolved (?:fixture|complaint|issue)\b/i.test(finding.recommendedNextAction)&&!/verify (?:whether|if).{0,100}unresolved/i.test(finding.recommendedNextAction))qualityFailures.push({code:'unverified_current_unresolved_state'});
+  const assertedAction=finding.recommendedNextAction.replace(/\b(?:do not|don't|never|no)\b[^.;]+/gi,'');
+  if(finding.opportunityType==='retention'&&/\b(?:still|currently|remains?)\b.{0,40}\bunresolved\b|\bunresolved (?:fixture|complaint|issue)\b/i.test(assertedAction)&&!/verify (?:whether|if).{0,100}unresolved/i.test(finding.recommendedNextAction))qualityFailures.push({code:'unverified_current_unresolved_state'});
   const positiveAction=finding.recommendedNextAction.replace(/\b(?:do not|don't|never|no)\b[^.;]+/gi,'');
+  if(/\b(?:contact|call|email|bill|invoice|charge|perform)\b|\bwith (?:the )?customer\b|\b(?:change|update|move)\b.{0,30}\b(?:deal|stage|pipeline)\b/i.test(positiveAction))qualityFailures.push({code:'customer_or_crm_authority_not_internal'});
   if(step.test(positiveAction)&&!sourceStep.test(quotes))qualityFailures.push({code:'unrequested_scheduling_or_assessment'});
   return {policyVersion:REVIEW_POLICY,qualityFailures,executionBlocks,humanReview:'PENDING'};
 }
@@ -63,10 +65,7 @@ export function generalProjection(finding,history,spec,contextKey,now=new Date()
     if(relative.test(n.note)&&n.timestamp.slice(0,10)!==now.slice(0,10))throw Error('historical_deadline_requires_new_source_intent');
     if(relative.test(n.note)&&!(timing.kind==='source_day'&&timing.noteId===n.noteId&&/\btoday\b/i.test(n.note)))throw Error('relative_deadline_requires_source_day_or_new_dated_source');
     if(/\b(?:by|before|deadline|no later than)\b/i.test(n.note)&&[...n.note.matchAll(/\b(20\d{2}-\d{2}-\d{2})\b/g)].some(m=>m[1]<now.slice(0,10)))throw Error('historical_absolute_deadline_requires_new_source_intent');
-    for(const date of explicitSourceDates(n.note)){
-      executionBlocks.push({code:'absolute_source_date_requires_review',noteId:n.noteId,sourceDate:date.date,sourceWording:date.wording});
-      if(!quotes.includes(date.wording))qualityFailures.push({code:'absolute_deadline_evidence_incomplete',noteId:n.noteId});
-    }
+    if(explicitSourceDates(n.note).length)throw Error('absolute_source_date_requires_internal_verification');
     if(deferred.test(n.note)){
       if(timing.kind!=='after_event'||timing.sourceNoteId!==n.noteId||!timing.completionEvidenceRef)throw Error('deferred_event_unverified');
       const completion=history.find(s=>s.noteId===timing.completionEvidenceRef);

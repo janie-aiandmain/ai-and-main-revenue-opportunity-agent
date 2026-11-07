@@ -124,3 +124,15 @@ test('internal renovation verification reaches exact review/approval without sat
  assert.equal(a.posts(),0);
  await assert.rejects(a.l.review({...input,spec:{...input.spec,actionPurpose:'internal_preparation',intent:'prepare_quote'}},actor,env,a.source),/verification_required/);
 }));
+test('a different verified subject cannot replay another operator exact approval',()=>lab(async a=>{
+ const {reviewed,grant}=await a.prepare();await assert.rejects(a.l.executeGeneral(reviewed.operationId,grant.approvalId,{...actor,subject:'different-operator'},env,a.source,a.reason,a.client),/approval_identity_changed/);assert.equal(a.posts(),0);
+ assert.equal(a.l.db.prepare('SELECT revoked FROM cert_approvals WHERE id=?').get(grant.approvalId).revoked,1);
+}));
+test('a legacy customer-action projection with an absolute source date rejects clearly rather than referencing undefined state',()=>{
+ const text='Customer requests pricing by 2026-12-01.';const h=[note(text)];const c=candidate(text);
+ assert.throws(()=>generalProjection(c,h,{...spec(),timing:{kind:'absolute',dueAt:'2026-12-01T12:00:00Z'}},'ctx',new Date().toISOString()),/absolute_source_date_requires_internal_verification/);
+});
+test('synonymous model narration cannot change a source-rendered exact internal task or duplicate its opportunity',()=>lab(async a=>{
+ const {finding,reviewed,grant}=await a.prepare();a.set((await a.source.readContext()).serviceHistory,[{...candidate(),recommendedNextAction:'Internal operator: prepare requested surge protection pricing for review.'}]);
+ const result=await a.l.executeGeneral(reviewed.operationId,grant.approvalId,actor,env,a.source,a.reason,a.client);assert.equal(result.state,'CONFIRMED');assert.equal(result.payloadHash,reviewed.payloadHash);assert.equal(a.posts(),1);assert.equal(a.l.findings(a.l.contextKey(env))[0].findingId,finding.findingId);
+}));

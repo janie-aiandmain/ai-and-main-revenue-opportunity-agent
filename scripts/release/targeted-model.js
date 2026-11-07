@@ -1,0 +1,21 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {reasonCorrected,materializeCorrected} from '../../src/release/reasoning.js';
+import {prepareHistory,canonical} from '../../src/findings.js';
+import {inspectFinding} from '../../src/staging/review-policy.js';
+import {hash,gradeFindings} from '../regression/findings-core.js';
+import {completeEvidence} from '../../src/release/evidence.js';
+if(process.argv.slice(2).join(' ')!=='--live --non-production')throw Error('explicit_live_nonproduction_opt_in_required');
+const corpus=JSON.parse(await readFile('fixtures/enterprise-v2.json','utf8')),unseen=JSON.parse(await readFile('fixtures/unseen-review-variations-v1.json','utf8')),newCases=JSON.parse(await readFile('fixtures/release-restrictions-v1.json','utf8'));
+const ids=['ST03','ST04','ST07','ST08','EN11','EN12','EN31','UV14'];
+const plan=[...ids.flatMap(id=>Array.from({length:4},(_,i)=>({...([...corpus.cases,...unseen.cases].find(c=>c.id===id)),repeat:i+2,suite:'repeated_original'}))),...newCases.cases.flatMap(c=>Array.from({length:3},(_,i)=>({...c,context:{customer:'Synthetic release restriction',serviceHistory:[{timestamp:c.timestamp,note:c.note}]},repeat:i+1,suite:'new_restriction'})))];
+const filename='reports/release-targeted-'+new Date().toISOString().replaceAll(/[:.]/g,'-')+'.json',time='2026-11-07T12:00:00Z',rows=[],original=globalThis.fetch;let metadata;
+globalThis.fetch=async(url,opts)=>{if(url!=='https://api.openai.com/v1/responses')throw Error('unexpected_destination');const r=await original(url,opts);if(r.ok){const b=await r.clone().json();metadata={usage:b.usage,returnedModel:b.model,rawModelOutput:(b.output||[]).filter(x=>x.type==='message').flatMap(x=>x.content||[]).find(x=>x.type==='output_text')?.text};}return r;};
+const save=()=>writeFile(filename,JSON.stringify({kind:'FRESH_TARGETED_RELEASE_REPETITIONS_NOT_HUMAN_APPROVAL',time,sourceCommit:process.env.RELEASE_SOURCE_SHA||null,planned:plan.length,hubspotCalls:0,newHumanApprovals:0,rows},null,2)+'\n');
+await mkdir('reports',{recursive:true});
+try{for(const c of plan){metadata={};try{const actual=await reasonCorrected({EVAL_OPENAI_API_KEY:process.env.EVAL_OPENAI_API_KEY},c.context,'synthetic:'+c.id,time),history=await prepareHistory(c.context),quality=actual.findings.flatMap(f=>inspectFinding(f,history,actual.findings,time).qualityFailures),evidence=actual.findings.flatMap(f=>f.evidence.map(e=>e.quote)).join('\n');const missing=(c.required||[]).filter(s=>!evidence.includes(s));
+const grade=c.expectedFindings?await gradeFindings(c,actual,{materializer:(r,h,k)=>materializeCorrected(r,h,k,time)}):null;
+const types=actual.findings.map(f=>f.opportunityType).sort(),decisionPassed=grade?grade.decisionPassed:c.types?canonical(types)===canonical([...c.types].sort()):actual.findings.length>0;
+const raw=JSON.parse(metadata.rawModelOutput),completion=completeEvidence(raw,history);
+rows.push({id:c.id,repeat:c.repeat,suite:c.suite,...metadata,actual,outputHash:hash(actual),decisionPassed,quality,missingRequiredEvidence:missing,completionTrace:completion.trace,passed:decisionPassed&&!quality.length&&!missing.length,humanReview:'PENDING'});
+}catch(e){rows.push({id:c.id,repeat:c.repeat,error:e.code||'model_or_output_failure',passed:false});}await save();console.log(JSON.stringify({done:rows.length,planned:plan.length,id:c.id,repeat:c.repeat,passed:rows.at(-1).passed,error:rows.at(-1).error||null}));}}finally{globalThis.fetch=original;}
+await save();console.log(JSON.stringify({filename,calls:rows.length,pass:rows.filter(r=>r.passed).length,failures:rows.filter(r=>!r.passed).map(r=>({id:r.id,repeat:r.repeat,quality:r.quality,missing:r.missingRequiredEvidence,error:r.error}))}));process.exitCode=rows.every(r=>r.passed)?0:1;

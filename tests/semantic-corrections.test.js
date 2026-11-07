@@ -56,7 +56,7 @@ test('internal verification cannot hide omitted evidence, free-form overrides, o
 });
 test('new proposal versions are stable for unchanged sources and remain unapproved drafts without a due time',async()=>{
  const {history,result}=await corrected('EN12');const raw={findings:result.findings.map(({findingId,proposedAction,...f})=>f)};const next=await materializeCorrected(raw,history,'synthetic:EN12','2026-11-03T18:00:00.000Z');
- assert.equal(result.proposalVersion,'internal-task-proposal-v2.1');assert.equal(REVIEW_POLICY,'finding-review-v2.1');assert.deepEqual(result.findings.map(f=>f.proposedAction.actionVersion),next.findings.map(f=>f.proposedAction.actionVersion));
+ assert.equal(result.proposalVersion,'internal-task-proposal-v2.1');assert.equal(REVIEW_POLICY,'finding-review-v2.3');assert.deepEqual(result.findings.map(f=>f.proposedAction.actionVersion),next.findings.map(f=>f.proposedAction.actionVersion));
  for(const f of result.findings){assert.equal(f.proposedAction.executionBlocked,true);assert.equal(f.proposedAction.material.operatorTaskDueAt,null);assert.equal(f.proposedAction.authorityRequirements.humanApprovalRequired,true);assert.throws(()=>materialExecutable(f.proposedAction.material,time),/due_date/);}
 });
 

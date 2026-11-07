@@ -94,13 +94,26 @@ export class StagingOperationLedger extends CorrectionLedger {
     if(digest(op.payload_json)!==op.payload_hash)throw Error('corrupt_operation_manual_resolution_required');
     try{
       await client.verifyIsolation();
-      const matches=(await client.lookup(op.correlation,op.remote_id)).filter(t=>taskMatches(t,JSON.parse(op.payload_json).body,op.correlation));
-      if(matches.length!==1){this.trace(id,matches.length?'MULTIPLE_MATCHES_MANUAL_RESOLUTION':'NO_PROVEN_MATCH_BLOCKED',op.payload_hash);return this.status(id);}
+      const candidates=await client.lookup(op.correlation,op.remote_id);
+      const matches=candidates.filter(t=>taskMatches(t,JSON.parse(op.payload_json).body,op.correlation));
+      if(candidates.length!==1||matches.length!==1){this.trace(id,matches.length?'MULTIPLE_MATCHES_MANUAL_RESOLUTION':'NO_PROVEN_MATCH_BLOCKED',op.payload_hash);return this.status(id);}
       this.db.prepare("UPDATE cert_operations SET state='CONFIRMED',remote_id=? WHERE id=?").run(String(matches[0].id),id);this.trace(id,'EXISTING_TASK_RECONCILED_NO_CREATE',op.payload_hash,String(matches[0].id));
     }catch(error){this.trace(id,'LOOKUP_UNAVAILABLE_BLOCKED',op.payload_hash);if(error instanceof StagingBlocker)return {...this.status(id),blocker:error.toJSON()};}
     return this.status(id);
   }
   recoverChecking(){for(const op of this.db.prepare("SELECT * FROM cert_operations WHERE state IN ('CHECKING','SENDING')").all()){this.db.prepare('UPDATE cert_operations SET state=? WHERE id=?').run(op.state==='SENDING'?'UNKNOWN':'APPROVED',op.id);this.trace(op.id,op.state==='SENDING'?'RESTART_RECOVERED_UNCERTAIN_NO_CREATE':'RESTART_RECOVERED_CHECKING_BEFORE_POST',op.payload_hash);}}
+  resolveUncertain(id,input,actor){
+    if(actor?.role!=='Admin'||!actor.subject||!['LOCAL_SYNTHETIC','EXTERNAL_VERIFIED'].includes(actor.kind))throw Error('admin_required');
+    if(input.resolution!=='ABANDON_UNCERTAIN'||typeof input.reference!=='string'||!/^[-a-zA-Z0-9_:./]{3,120}$/.test(input.reference))throw Error('audited_uncertain_resolution_required');
+    return this.tx(()=>{
+      const op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);if(!op||op.state!=='UNKNOWN')throw Error('uncertain_operation_required');
+      this.db.prepare('UPDATE cert_approvals SET revoked=1 WHERE operation_id=?').run(id);
+      this.db.prepare("UPDATE cert_operations SET state='ABANDONED' WHERE id=?").run(id);
+      this.trace(id,'ADMIN_ABANDONED_UNCERTAIN_NO_RETRY',op.payload_hash);
+      this.audit('uncertain_operation_abandoned',op.op_id,JSON.stringify({subject:actor.subject,kind:actor.kind,reference:input.reference,noRemoteEffectClaim:false}));
+      return this.status(id);
+    });
+  }
   async recordVerifiedOutcome(id,externalRef,client){
     const op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);if(!op||op.state!=='CONFIRMED')throw Error('confirmed_task_required_for_certification_outcome');
     const event=await client.verifiedFixtureOutcome(externalRef);

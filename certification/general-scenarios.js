@@ -23,7 +23,7 @@ export async function certifyGeneral({fixture,must,call,restart,options,dueAt}){
  options.bindings.ENABLE_TEST_TASK_WRITES='false';await restart();
  const readonly=await must('/certification/preflight',{});assert.equal(readonly.writesEnabled,false);assert.equal(readonly.semanticApproval,false);assert.equal(readonly.readCredentialPortalVerified,true);assert.equal(readonly.writeCredentialPortalVerified,true);
  options.bindings.ENABLE_TEST_TASK_WRITES='true';options.bindings.ENABLE_LOCAL_GENERAL_TEST_EXECUTION='true';await restart();
- const altered=structuredClone(raw);altered.find(f=>f.opportunityType==='cross-sell').recommendedNextAction='Human review pricing, with separate verification of the requested scope.';
+ const altered=structuredClone(raw);altered.find(f=>f.opportunityType==='cross-sell').recommendedNextAction='Schedule a site assessment to verify the EV charger scope before pricing.';
  fixture.setContext(history,altered);
  const invalidated=await call(endpoint+'execute',{operationId:reviewed.operationId,approvalId:grant.approvalId});assert.equal(invalidated.status,409);assert.equal(fixture.attempts(reviewed.correlation),0);
  fixture.setContext(history,raw);const returned=await must(endpoint+'evaluate',{});

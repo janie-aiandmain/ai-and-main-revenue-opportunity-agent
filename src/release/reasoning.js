@@ -2,14 +2,28 @@ import {checkedJsonFetch,missingCredential} from '../staging/blockers.js';
 import contract from '../findings-request-v0.3.3.json' with {type:'json'};
 import {prepareHistory,materializeFindings} from '../findings.js';
 import {materializeCorrected as previous} from '../findings-v0.3.3.js';
+import {internalPlan} from '../staging/internal-task-policy.js';
+import {inspectFinding} from '../staging/review-policy.js';
 import {completeEvidence,EVIDENCE_POLICY} from './evidence.js';
 export {EVIDENCE_POLICY};
-export const PROMPT_VERSION='reasoning-v0.3.3',SCHEMA_VERSION='findings-v0.2',MATERIALIZATION_VERSION='source-evidence-v0.3.4';
+export const PROMPT_VERSION='reasoning-v0.3.3',SCHEMA_VERSION='findings-v0.2',MATERIALIZATION_VERSION='source-evidence-v0.3.5';
 export async function materializeCorrected(raw,history,key,time=new Date().toISOString()){
  // Validate original model spans and distinctness before completing source clauses.
  await materializeFindings(raw,history,key);
  const closed=completeEvidence(raw,history);
- return {...await previous(closed.raw,history,key,time),materializationVersion:MATERIALIZATION_VERSION,evidencePolicyVersion:EVIDENCE_POLICY};
+ const provisional=await previous(closed.raw,history,key,time);
+ const finalRaw={findings:provisional.findings.map(f=>{
+   const inspection=inspectFinding(f,history,provisional.findings,time);
+   // Never launder unsupported authority/intent/evidence through safe wording.
+   const unsafe=inspection.qualityFailures.some(x=>x.code!=='historical_deadline_repeated_in_action');
+   const {findingId,proposedAction,...rawFinding}=f;
+   if(unsafe)return rawFinding;
+   const plan=internalPlan(f,history,inspection,time);
+   const timing=plan.sourceTiming.map(t=>'Source '+t.sourceTimestamp+': '+JSON.stringify(t.wording)+(t.status.startsWith('HISTORICAL')?' is historical, not renewed.':' is unresolved source timing; customer timezone is unknown.')+' Verify current interest and timing.');
+   const restrictions=plan.sourceRestrictions.map(e=>'Customer context: '+JSON.stringify(e.quote));
+   return {...rawFinding,recommendedNextAction:[plan.instruction,...timing,...restrictions,'Internal task only. No customer action is authorized.'].join(' ')};
+ })};
+ return {...await previous(finalRaw,history,key,time),materializationVersion:MATERIALIZATION_VERSION,evidencePolicyVersion:EVIDENCE_POLICY};
 }
 export async function reasonCorrected(env,context,key,time=new Date().toISOString()){
  if(!env.EVAL_OPENAI_API_KEY)throw missingCredential('EVAL_OPENAI_API_KEY');

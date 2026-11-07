@@ -29,9 +29,10 @@ export class CertificationLedger extends DurableObject {
       }catch(error){return json({status:/^[a-z0-9_]+$/.test(error.message)?error.message:'demo_ledger_blocked'},409);}
     }
     const actor=input.actor;
-    if(!actor||!['Viewer','Approver','Admin'].includes(actor.role))return json({status:'verified_actor_required'},403);
+    if(!actor||!['Viewer','Approver','Admin'].includes(actor.role)||(this.env.CERTIFICATION_MODE!=='local'&&actor.kind!=='EXTERNAL_VERIFIED'))return json({status:'verified_actor_required'},403);
     const l=this.ledger;
     try{
+      if(path==='/certification/session')return json({role:actor.role,identityKind:actor.kind,customerWritebackEnabled:this.env.ENABLE_GENERAL_EXECUTION==='true'&&this.env.GENERAL_RELEASE_APPROVED==='true'});
       if(path==='/certification/status')return json(l.status(input.operationId));
       if(path==='/certification/metrics')return json(l.metrics());
       if(path==='/certification/preflight'){
@@ -59,7 +60,8 @@ export class CertificationLedger extends DurableObject {
       }
       if(path==='/certification/prepare')return json(await l.prepare(input,this.env));
       if(path==='/certification/approve')return json(l.approve(input.operationId,input.payloadHash,actor));
-      const client=new HubSpotCertificationClient(this.env);
+      if(path==='/certification/resolve-uncertain')return json(l.resolveUncertain(input.operationId,input,actor));
+      const client=new HubSpotCertificationClient(this.env,{readOnly:path!=='/certification/execute'});
       if(path==='/certification/execute')return json(await l.execute(input.operationId,input.approvalId,client,this.env));
       if(path==='/certification/reconcile')return json(await l.reconcileRemote(input.operationId,client));
       if(path==='/certification/outcome')return json(await l.recordVerifiedOutcome(input.operationId,input.externalRef,client));

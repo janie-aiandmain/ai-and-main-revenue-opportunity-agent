@@ -18,6 +18,7 @@ export async function startFixture(path){
     if(url.pathname==='/account-info/v3/details'){identityReads.push({credential:writerIdentityRead?'write_identity_only':'read',portalId:'test-portal-001'});return send({portalId:'test-portal-001'});}
     if(url.pathname.startsWith('/crm/v3/objects/contacts/'))return send({id:'fixture-contact-001',properties:{firstname:'AI_MAIN_CERTIFICATION_ONLY'}});
     if(url.pathname.startsWith('/crm/v4/objects/contacts/')&&url.pathname.includes('/associations/notes'))return send({results:noteContext.map(n=>({toObjectId:n.noteId}))});
+    if(url.pathname.startsWith('/crm/v4/objects/contacts/')&&url.pathname.includes('/associations/tasks')){if(readsUnavailable)return send({error:'fixture_lookup_unavailable'},503);return send({results:db.prepare('SELECT * FROM tasks').all().filter(r=>!hidden.has(r.correlation)).map(r=>({toObjectId:r.id}))});}
     if(url.pathname.startsWith('/crm/v3/objects/notes/')){
       const note=noteContext.find(n=>n.noteId===decodeURIComponent(url.pathname.split('/').at(-1)));
       return note?send({id:note.noteId,properties:{hs_timestamp:note.timestamp,hs_note_body:note.note}}):send({error:'missing_note'},404);

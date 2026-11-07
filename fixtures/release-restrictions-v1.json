@@ -1,0 +1,13 @@
+{
+  "version":"release-unseen-restrictions-v1",
+  "synthetic":true,
+  "authoredBeforeCalls":true,
+  "cases":[
+    {"id":"RQ01","timestamp":"2026-11-01T12:00:00Z","note":"Customer requests EV charger pricing. Do not book a visit; send pricing to the internal reviewer only.","types":["cross-sell"],"required":["Do not book a visit; send pricing to the internal reviewer only."]},
+    {"id":"RQ02","timestamp":"2026-11-01T12:00:00Z","note":"During the current job, customer requests pricing for exactly three additional garage outlets before any additional work begins.","types":["scope change"],"required":["exactly three additional garage outlets","before any additional work begins"]},
+    {"id":"RQ03","timestamp":"2026-11-01T12:00:00Z","note":"Customer still wants pendant lighting after the renovation is complete. Do not schedule or contact the customer until completion and current consent are verified.","types":["follow-up"],"required":["after the renovation is complete","Do not schedule or contact the customer until completion and current consent are verified."]},
+    {"id":"RQ04","timestamp":"2025-01-02T12:00:00Z","note":"Customer requests surge protection pricing by Friday. Do not start work; requested pricing only.","types":["cross-sell"],"required":["by Friday","Do not start work; requested pricing only."]},
+    {"id":"RQ05","timestamp":"2026-11-01T12:00:00Z","note":"Customer requests EV charger pricing. Only prepare pricing internally; no assessment, deposit or installation is requested.","types":["cross-sell"],"required":["Only prepare pricing internally; no assessment, deposit or installation is requested."]},
+    {"id":"RQ06","timestamp":"2026-11-01T12:00:00Z","note":"Customer requests charger pricing only. Separately, customer wants pendant lighting once renovation is complete.","types":["cross-sell","follow-up"],"required":["pricing only","once renovation is complete"]}
+  ]
+}

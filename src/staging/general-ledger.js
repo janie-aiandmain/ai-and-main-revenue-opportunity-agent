@@ -101,7 +101,7 @@ export class GeneralFindingLedger extends StagingOperationLedger {
     const operation=this.db.prepare('SELECT * FROM cert_operations WHERE op_id=?').get(op);
     if(operation){this.db.prepare('UPDATE cert_approvals SET revoked=1 WHERE operation_id=?').run(operation.id);if(['PREPARED','APPROVED'].includes(operation.state))this.db.prepare("UPDATE cert_operations SET state='PREPARED',revision=revision+1 WHERE id=?").run(operation.id);this.trace(operation.id,reason,operation.payload_hash);}
   }
-  findings(key){return this.db.prepare('SELECT * FROM general_findings WHERE context_key=?').all(key).map(r=>({findingId:r.op_id,modelFinding:JSON.parse(r.raw_json),candidateHash:r.candidate_hash,sourceHash:r.source_hash,inspection:JSON.parse(r.inspection_json),reviewState:r.review_state}));}
+  findings(key){return this.db.prepare('SELECT * FROM general_findings WHERE context_key=?').all(key).map(r=>({findingId:r.op_id,modelFinding:JSON.parse(r.raw_json),candidateHash:r.candidate_hash,sourceHash:r.source_hash,inspection:JSON.parse(r.inspection_json),reviewState:r.review_state,operation:(()=>{const op=this.db.prepare('SELECT id,state,remote_id FROM cert_operations WHERE op_id=?').get(r.op_id);return op?{operationId:op.id,state:op.state,remoteTaskId:op.remote_id}:null;})()}));}
   async evaluate(env,source,reason){
     const ticket=this.beginEvaluation(env);
     try{const context=await source.readContext();const history=await prepareHistory(context);const result=await reason(context,ticket.key);return this.acceptEvaluation(ticket,history,result);}
@@ -184,6 +184,8 @@ export class GeneralFindingLedger extends StagingOperationLedger {
   async executeGeneral(id,approvalId,actor,env,source,reason,client){
     role(actor);const op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);
     if(!op||!this.db.prepare('SELECT * FROM general_findings WHERE op_id=?').get(op.op_id))throw Error('general_operation_required');
+    const grant=this.db.prepare('SELECT * FROM cert_approvals WHERE id=?').get(approvalId);
+    if(!grant||grant.operation_id!==op.id||grant.actor!==actor.subject||grant.kind!==actor.kind){if(grant&&grant.operation_id===op.id)this.db.prepare('UPDATE cert_approvals SET revoked=1 WHERE id=?').run(grant.id);throw Error('approval_identity_changed');}
     if(['CONFIRMED','UNKNOWN','SENDING'].includes(op.state))return super.execute(id,approvalId,client,env);
     const local=env.CERTIFICATION_MODE==='local'&&env.ENABLE_LOCAL_GENERAL_TEST_EXECUTION==='true';
     if(!local&&(env.ENABLE_GENERAL_EXECUTION!=='true'||env.GENERAL_RELEASE_APPROVED!=='true'||actor.kind!=='EXTERNAL_VERIFIED'))throw Error('general_execution_release_blocked');

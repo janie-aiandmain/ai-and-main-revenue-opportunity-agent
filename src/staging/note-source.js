@@ -1,17 +1,16 @@
+import {tenantConfiguration} from '../release/tenant.js';
 import { StagingBlocker,checkedJsonFetch,missingCredential } from './blockers.js';
 // Only the designated non-production contact is readable through this adapter.
 import { prepareHistory } from '../findings.js';
 export class DesignatedNoteSource {
   constructor(env){
     if(!env.STAGING_HUBSPOT_READ_TOKEN)throw missingCredential('STAGING_HUBSPOT_READ_TOKEN');
-    if(env.DEPLOYMENT_ENVIRONMENT!=='staging'||!env.STAGING_PORTAL_ID||!env.STAGING_CONTACT_ID||!env.STAGING_HUBSPOT_READ_TOKEN)throw Error('staging_note_source_unconfigured');
+    const tenant=tenantConfiguration(env);this.synthetic=tenant.synthetic;
     this.env=env;
     if(env.CERTIFICATION_MODE==='local'){
       const u=new URL(env.LOCAL_HUBSPOT_FIXTURE_URL);
       if(u.protocol!=='http:'||!['127.0.0.1','localhost'].includes(u.hostname))throw Error('local_note_fixture_only');this.base=u.origin;
     }else{
-      if(env.CERTIFICATION_MODE!=='remote-staging'||env.LOCAL_HUBSPOT_FIXTURE_URL||env.STAGING_ISOLATION_APPROVED!=='true'||!env.PRODUCTION_PORTAL_ID||env.PRODUCTION_PORTAL_ID===env.STAGING_PORTAL_ID)throw Error('hosted_note_isolation_unverified');
-      if(![env.PRODUCTION_PORTAL_ID,env.STAGING_PORTAL_ID,env.STAGING_CONTACT_ID].every(id=>/^\d+$/.test(id)))throw Error('verified_numeric_portal_and_contact_ids_required');
       this.base='https://api.hubapi.com';
     }
   }
@@ -19,7 +18,7 @@ export class DesignatedNoteSource {
   async readContext(){
     const portal=await this.get('/account-info/v3/details');if(String(portal.portalId)!==this.env.STAGING_PORTAL_ID)throw new StagingBlocker('portal_mismatch',{credential:'STAGING_HUBSPOT_READ_TOKEN',check:'expected_nonproduction_note_portal',setupStep:2});
     const contact=await this.get('/crm/v3/objects/contacts/'+encodeURIComponent(this.env.STAGING_CONTACT_ID)+'?properties=firstname');
-    if(String(contact.id)!==this.env.STAGING_CONTACT_ID||contact.properties?.firstname!=='AI_MAIN_CERTIFICATION_ONLY')throw new StagingBlocker('contact_mismatch',{check:'designated_contact_id_and_synthetic_marker',setupStep:3});
+    if(String(contact.id)!==this.env.STAGING_CONTACT_ID||(this.synthetic&&contact.properties?.firstname!=='AI_MAIN_CERTIFICATION_ONLY'))throw new StagingBlocker('contact_mismatch',{check:'designated_contact_id_and_synthetic_marker',setupStep:3});
     const ids=new Set();let after='';
     for(let page=0;page<10;page++){
       const result=await this.get('/crm/v4/objects/contacts/'+encodeURIComponent(this.env.STAGING_CONTACT_ID)+'/associations/notes?limit=100'+(after?'&after='+encodeURIComponent(after):''));

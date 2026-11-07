@@ -183,3 +183,16 @@ test('separate write credential tenant is verified by a read-only identity check
   assert.equal(calls.length,2);assert.ok(calls.every(c=>c.method==='GET'&&c.url.endsWith('/account-info/v3/details')));
   assert.throws(()=>new HubSpotCertificationClient({...env,STAGING_HUBSPOT_WRITE_TOKEN:env.STAGING_HUBSPOT_READ_TOKEN}),/separate/);
 });
+test('one exact and one mismatched correlated task are ambiguous and stay UNKNOWN',async()=>lab(async l=>{
+ const {op}=await prepared(l);l.db.prepare("UPDATE cert_operations SET state='UNKNOWN' WHERE id=?").run(op.operationId);
+ const correct=receipt(op),mismatch={...receipt(op,'fixture-task-2'),properties:{...op.finalRequest.body.properties,hs_task_priority:'LOW'}};
+ const client={async verifyIsolation(){},async lookup(){return [correct,mismatch];}};
+ assert.equal((await l.reconcileRemote(op.operationId,client)).state,'UNKNOWN');
+}));
+test('administrator can audit and abandon an uncertain operation without asserting no remote effect or permitting another create',async()=>lab(async l=>{
+ const {op,grant}=await prepared(l);l.db.prepare("UPDATE cert_operations SET state='UNKNOWN' WHERE id=?").run(op.operationId);
+ assert.throws(()=>l.resolveUncertain(op.operationId,{resolution:'ABANDON_UNCERTAIN',reference:'ticket-001'},{...actor,role:'Approver'}),/admin_required/);
+ const closed=l.resolveUncertain(op.operationId,{resolution:'ABANDON_UNCERTAIN',reference:'ticket-001'},{...actor,role:'Admin'});assert.equal(closed.state,'ABANDONED');assert.equal(closed.remoteTaskId,null);assert.ok(closed.trace.some(t=>t.event==='ADMIN_ABANDONED_UNCERTAIN_NO_RETRY'));
+ await assert.rejects(l.execute(op.operationId,grant.approvalId,{async create(){throw Error('must_not_post');}},env));
+ await assert.rejects(l.prepare({fixtureId:'CONTROL',dueAt:due()},env),/existing_effect/);
+}));

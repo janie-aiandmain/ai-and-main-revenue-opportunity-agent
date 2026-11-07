@@ -1,0 +1,359 @@
+{
+  "kind": "IMMUTABLE_REPEATED_RUN_FAILURES_BEFORE_RELEASE_STANDARDIZATION",
+  "sourceCapture": "reports/release-targeted-2026-11-07T15-53-37-405Z.json",
+  "sourceSha256": "7bef7aa5de7d5bc90be389d267518efa5619ebbee10b89ce57ec695ef4ea095c",
+  "cases": [
+    {
+      "id": "ST07",
+      "repeat": 5,
+      "suite": "repeated_original",
+      "usage": {
+        "input_tokens": 1747,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1744
+        },
+        "output_tokens": 221,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1968
+      },
+      "returnedModel": "gpt-5.6-terra",
+      "rawModelOutput": "{\"findings\":[{\"classification\":\"strong cross-sell opportunity\",\"confidence\":\"high\",\"opportunityType\":\"cross-sell\",\"evidence\":[{\"noteId\":\"note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862\",\"quote\":\"Customer asked whether we install whole-home surge protection and requested pricing so they can decide this week.\"}],\"reasoningSummary\":\"Customer directly requested pricing for whole-home surge protection. The stated decision timing was tied to the October 26, 2026 note and is historical, not renewed.\",\"recommendedNextAction\":\"Internal: prepare the requested whole-home surge protection pricing for human review. The customer said they could \u201cdecide this week\u201d in the 2026-10-26T14:00:00Z note; verify current interest and timing before any later customer action.\",\"humanReviewRequired\":true,\"opportunityKey\":\"whole-home-surge-protection\"}]}",
+      "actual": {
+        "schemaVersion": "findings-v0.2",
+        "promptVersion": "reasoning-v0.3.3",
+        "findings": [
+          {
+            "findingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+            "opportunityKey": "whole-home-surge-protection",
+            "classification": "strong cross-sell opportunity",
+            "opportunityType": "cross-sell",
+            "confidence": "high",
+            "evidence": [
+              {
+                "noteId": "note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862",
+                "quote": "Customer asked whether we install whole-home surge protection and requested pricing so they can decide this week."
+              }
+            ],
+            "reasoningSummary": "Customer directly requested pricing for whole-home surge protection. The stated decision timing was tied to the October 26, 2026 note and is historical, not renewed.",
+            "recommendedNextAction": "Internal: prepare the requested whole-home surge protection pricing for human review. The customer said they could \u201cdecide this week\u201d in the 2026-10-26T14:00:00Z note; verify current interest and timing before any later customer action.",
+            "humanReviewRequired": true,
+            "proposedAction": {
+              "schemaVersion": "internal-task-proposal-v2.1",
+              "actionPurpose": "internal_verification",
+              "actionPayload": {
+                "type": "hubspot.follow_up_task.create",
+                "target": {
+                  "contextKey": "synthetic:ST07"
+                },
+                "properties": {
+                  "hs_task_subject": "Internal verification: whole home surge protection",
+                  "hs_task_body": "Internally verify current interest and timing using current records. The source decision window or relative request is historical or unresolved and is not renewed. No customer contact.\nAction purpose: internal_verification. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-26T14:00:00Z; note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862] Customer asked whether we install whole-home surge protection and requested pricing so they can decide this week.\nSource-relative timing: [{\"customerTimezone\":\"UNKNOWN\",\"noteId\":\"note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862\",\"sourceTimestamp\":\"2026-10-26T14:00:00Z\",\"status\":\"HISTORICAL_NOT_RENEWED\",\"taskDeadline\":false,\"wording\":\"this week\"}]\nCustomer-action gates (not satisfied by this task): [{\"appliesTo\":\"customer_action\",\"code\":\"historical_or_unresolved_deadline\",\"noteId\":\"note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862\",\"satisfiedByInternalVerification\":false}]\nExact source restrictions: \nInternal task due: NOT SET \u2014 final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+                  "hs_task_priority": "HIGH",
+                  "hs_task_status": "NOT_STARTED",
+                  "hs_task_type": "TODO"
+                }
+              },
+              "material": {
+                "policyVersion": "internal-task-policy-v1.1",
+                "proposalVersion": "internal-task-proposal-v2.1",
+                "actionClass": "hubspot.follow_up_task.create",
+                "targetContext": "synthetic:ST07",
+                "classification": "strong cross-sell opportunity",
+                "opportunityType": "cross-sell",
+                "intent": "verify_current_state",
+                "actionPurpose": "internal_verification",
+                "scope": {
+                  "sourceRequests": [
+                    "Customer asked whether we install whole-home surge protection and requested pricing so they can decide this week."
+                  ]
+                },
+                "priority": "HIGH",
+                "evidence": [
+                  {
+                    "noteId": "note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862",
+                    "timestamp": "2026-10-26T14:00:00Z",
+                    "quote": "Customer asked whether we install whole-home surge protection and requested pricing so they can decide this week."
+                  }
+                ],
+                "timing": {
+                  "kind": "none"
+                },
+                "operatorTaskDueAt": null,
+                "sourceTimingConstraints": [
+                  {
+                    "noteId": "note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862",
+                    "sourceTimestamp": "2026-10-26T14:00:00Z",
+                    "wording": "this week",
+                    "status": "HISTORICAL_NOT_RENEWED",
+                    "customerTimezone": "UNKNOWN",
+                    "taskDeadline": false
+                  }
+                ],
+                "customerActionGates": [
+                  {
+                    "code": "historical_or_unresolved_deadline",
+                    "noteId": "note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862",
+                    "appliesTo": "customer_action",
+                    "satisfiedByInternalVerification": false
+                  }
+                ],
+                "sourceRestrictions": [],
+                "customerActionPermitted": false,
+                "humanApprovalRequired": true
+              },
+              "authorityRequirements": {
+                "policyVersion": "internal-task-policy-v1.1",
+                "humanApprovalRequired": true,
+                "allowedMutation": "hubspot.follow_up_task.create",
+                "customerActionPermitted": false
+              },
+              "qualityFailures": [
+                {
+                  "code": "historical_deadline_repeated_in_action",
+                  "noteId": "note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862"
+                }
+              ],
+              "preparationBlocked": true,
+              "executionBlocked": true,
+              "missingFinalFields": [
+                "operatorTaskDueAt",
+                "CRM association",
+                "operation correlation",
+                "exact final-payload approval"
+              ],
+              "actionVersion": "sha256:46a0244de01a315e150f3f7ef11fc122982490e87e229ea2d67cbec2df6ca6ab"
+            }
+          }
+        ],
+        "proposalVersion": "internal-task-proposal-v2.1",
+        "materializationVersion": "source-evidence-v0.3.4",
+        "evidencePolicyVersion": "source-clause-closure-v1"
+      },
+      "outputHash": "63a37f454b9ca57d4f0cc3204e27050ac31c3909801dccb2759a0c860feede44",
+      "decisionPassed": true,
+      "quality": [
+        {
+          "code": "historical_deadline_repeated_in_action",
+          "noteId": "note_f9b36832442e1181f2c99cb24258dce3e7cd88835426782ceee8ed4092cb4862"
+        }
+      ],
+      "missingRequiredEvidence": [],
+      "completionTrace": [],
+      "passed": false,
+      "humanReview": "PENDING"
+    },
+    {
+      "id": "EN12",
+      "repeat": 2,
+      "suite": "repeated_original",
+      "usage": {
+        "input_tokens": 1758,
+        "input_tokens_details": {
+          "cache_write_tokens": 123,
+          "cached_tokens": 1632
+        },
+        "output_tokens": 336,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 2094
+      },
+      "returnedModel": "gpt-5.6-terra",
+      "rawModelOutput": "{\"findings\":[{\"classification\":\"retention or service-recovery opportunity\",\"confidence\":\"high\",\"opportunityType\":\"retention\",\"evidence\":[{\"noteId\":\"note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666\",\"quote\":\"Customer reports a flickering fixture and requests service recovery.\"}],\"reasoningSummary\":\"Customer reported a fixture issue and explicitly requested service recovery; current resolution status requires verification.\",\"recommendedNextAction\":\"Internal operator task: verify CURRENT STATUS of the reported flickering fixture and the service-recovery request. Any later customer action is conditional on that review; do not assume the issue remains unresolved.\",\"humanReviewRequired\":true,\"opportunityKey\":\"flickering-fixture-service-recovery\"},{\"classification\":\"strong cross-sell opportunity\",\"confidence\":\"high\",\"opportunityType\":\"cross-sell\",\"evidence\":[{\"noteId\":\"note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666\",\"quote\":\"Separately asks for pricing for an EV charger; the charger request is unrelated to the fault.\"}],\"reasoningSummary\":\"Customer explicitly requested pricing for an EV charger, separate from the fixture fault.\",\"recommendedNextAction\":\"Internal operator task: prepare the requested EV charger pricing. Any later customer action is conditional on human review of the prepared pricing request.\",\"humanReviewRequired\":true,\"opportunityKey\":\"ev-charger-pricing\"}]}",
+      "actual": {
+        "schemaVersion": "findings-v0.2",
+        "promptVersion": "reasoning-v0.3.3",
+        "findings": [
+          {
+            "findingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+            "opportunityKey": "flickering-fixture-service-recovery",
+            "classification": "retention or service-recovery opportunity",
+            "opportunityType": "retention",
+            "confidence": "high",
+            "evidence": [
+              {
+                "noteId": "note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666",
+                "quote": "Customer reports a flickering fixture and requests service recovery."
+              }
+            ],
+            "reasoningSummary": "Customer reported a fixture issue and explicitly requested service recovery; current resolution status requires verification.",
+            "recommendedNextAction": "Internal operator task: verify CURRENT STATUS of the reported flickering fixture and the service-recovery request. Any later customer action is conditional on that review; do not assume the issue remains unresolved.",
+            "humanReviewRequired": true,
+            "proposedAction": {
+              "schemaVersion": "internal-task-proposal-v2.1",
+              "actionPurpose": "internal_verification",
+              "actionPayload": {
+                "type": "hubspot.follow_up_task.create",
+                "target": {
+                  "contextKey": "synthetic:EN12"
+                },
+                "properties": {
+                  "hs_task_subject": "Internal verification: flickering fixture service recovery",
+                  "hs_task_body": "Internally verify the current status of the reported service issue and current customer request. Do not assume the complaint remains unresolved. No customer contact or billing action.\nAction purpose: internal_verification. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-29T12:00:00Z; note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666] Customer reports a flickering fixture and requests service recovery.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: NOT SET \u2014 final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+                  "hs_task_priority": "HIGH",
+                  "hs_task_status": "NOT_STARTED",
+                  "hs_task_type": "TODO"
+                }
+              },
+              "material": {
+                "policyVersion": "internal-task-policy-v1.1",
+                "proposalVersion": "internal-task-proposal-v2.1",
+                "actionClass": "hubspot.follow_up_task.create",
+                "targetContext": "synthetic:EN12",
+                "classification": "retention or service-recovery opportunity",
+                "opportunityType": "retention",
+                "intent": "verify_current_state",
+                "actionPurpose": "internal_verification",
+                "scope": {
+                  "sourceRequests": [
+                    "Customer reports a flickering fixture and requests service recovery."
+                  ]
+                },
+                "priority": "HIGH",
+                "evidence": [
+                  {
+                    "noteId": "note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666",
+                    "timestamp": "2026-10-29T12:00:00Z",
+                    "quote": "Customer reports a flickering fixture and requests service recovery."
+                  }
+                ],
+                "timing": {
+                  "kind": "none"
+                },
+                "operatorTaskDueAt": null,
+                "sourceTimingConstraints": [],
+                "customerActionGates": [],
+                "sourceRestrictions": [],
+                "customerActionPermitted": false,
+                "humanApprovalRequired": true
+              },
+              "authorityRequirements": {
+                "policyVersion": "internal-task-policy-v1.1",
+                "humanApprovalRequired": true,
+                "allowedMutation": "hubspot.follow_up_task.create",
+                "customerActionPermitted": false
+              },
+              "qualityFailures": [
+                {
+                  "code": "unverified_current_unresolved_state"
+                }
+              ],
+              "preparationBlocked": true,
+              "executionBlocked": true,
+              "missingFinalFields": [
+                "operatorTaskDueAt",
+                "CRM association",
+                "operation correlation",
+                "exact final-payload approval"
+              ],
+              "actionVersion": "sha256:00b9440a801f5d80dc474d5ec9ab84858c0502ad5314f923966595f48149c6ee"
+            }
+          },
+          {
+            "findingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+            "opportunityKey": "ev-charger-pricing",
+            "classification": "strong cross-sell opportunity",
+            "opportunityType": "cross-sell",
+            "confidence": "high",
+            "evidence": [
+              {
+                "noteId": "note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666",
+                "quote": "Separately asks for pricing for an EV charger; the charger request is unrelated to the fault."
+              }
+            ],
+            "reasoningSummary": "Customer explicitly requested pricing for an EV charger, separate from the fixture fault.",
+            "recommendedNextAction": "Internal operator task: prepare the requested EV charger pricing. Any later customer action is conditional on human review of the prepared pricing request.",
+            "humanReviewRequired": true,
+            "proposedAction": {
+              "schemaVersion": "internal-task-proposal-v2.1",
+              "actionPurpose": "internal_preparation",
+              "actionPayload": {
+                "type": "hubspot.follow_up_task.create",
+                "target": {
+                  "contextKey": "synthetic:EN12"
+                },
+                "properties": {
+                  "hs_task_subject": "Internal pricing preparation: ev charger pricing",
+                  "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-29T12:00:00Z; note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666] Separately asks for pricing for an EV charger; the charger request is unrelated to the fault.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: NOT SET \u2014 final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+                  "hs_task_priority": "HIGH",
+                  "hs_task_status": "NOT_STARTED",
+                  "hs_task_type": "TODO"
+                }
+              },
+              "material": {
+                "policyVersion": "internal-task-policy-v1.1",
+                "proposalVersion": "internal-task-proposal-v2.1",
+                "actionClass": "hubspot.follow_up_task.create",
+                "targetContext": "synthetic:EN12",
+                "classification": "strong cross-sell opportunity",
+                "opportunityType": "cross-sell",
+                "intent": "prepare_quote",
+                "actionPurpose": "internal_preparation",
+                "scope": {
+                  "sourceRequests": [
+                    "Separately asks for pricing for an EV charger; the charger request is unrelated to the fault."
+                  ]
+                },
+                "priority": "HIGH",
+                "evidence": [
+                  {
+                    "noteId": "note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666",
+                    "timestamp": "2026-10-29T12:00:00Z",
+                    "quote": "Separately asks for pricing for an EV charger; the charger request is unrelated to the fault."
+                  }
+                ],
+                "timing": {
+                  "kind": "none"
+                },
+                "operatorTaskDueAt": null,
+                "sourceTimingConstraints": [],
+                "customerActionGates": [],
+                "sourceRestrictions": [],
+                "customerActionPermitted": false,
+                "humanApprovalRequired": true
+              },
+              "authorityRequirements": {
+                "policyVersion": "internal-task-policy-v1.1",
+                "humanApprovalRequired": true,
+                "allowedMutation": "hubspot.follow_up_task.create",
+                "customerActionPermitted": false
+              },
+              "qualityFailures": [],
+              "preparationBlocked": false,
+              "executionBlocked": true,
+              "missingFinalFields": [
+                "operatorTaskDueAt",
+                "CRM association",
+                "operation correlation",
+                "exact final-payload approval"
+              ],
+              "actionVersion": "sha256:98c5a701bb915679b68d05c9b5d45d018a60ef083c07ef8a5ea4601f4910dbe8"
+            }
+          }
+        ],
+        "proposalVersion": "internal-task-proposal-v2.1",
+        "materializationVersion": "source-evidence-v0.3.4",
+        "evidencePolicyVersion": "source-clause-closure-v1"
+      },
+      "outputHash": "f3377b70e2d71735e58dd066a0f9ba68d961a6bab1af11f6c808b1e0ae1d77b8",
+      "decisionPassed": true,
+      "quality": [
+        {
+          "code": "unverified_current_unresolved_state"
+        }
+      ],
+      "missingRequiredEvidence": [],
+      "completionTrace": [],
+      "passed": false,
+      "humanReview": "PENDING"
+    }
+  ],
+  "humanReview": "PENDING",
+  "distinction": {
+    "ST07": "Raw model omitted explicit historical/not-renewed qualification; old guard blocked it.",
+    "EN12": "Guard false positive on an explicit negation: do not assume the issue remains unresolved."
+  }
+}

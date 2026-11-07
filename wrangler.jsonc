@@ -20,7 +20,15 @@
     "GENERAL_RELEASE_APPROVED": "false",
     "DEMO_RECOVERY_ENABLED": "false",
     "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
-    "DEMO_RECOVERY_FAULT_ENABLED": "false"
+    "DEMO_RECOVERY_FAULT_ENABLED": "false",
+    "DEPLOYMENT_ENVIRONMENT": "staging",
+    "CERTIFICATION_MODE": "remote-demo",
+    "STAGING_ISOLATION_APPROVED": "true",
+    "STAGING_PORTAL_ID": "247646122",
+    "STAGING_CONTACT_ID": "582095692487",
+    "AUDIT_RETENTION_DAYS": "365",
+    "ACCESS_ISSUER": "https://falling-cell-9501.cloudflareaccess.com",
+    "ACCESS_AUDIENCE": "f3d28533ee59378b47a60ea0747a3e9ee6743f6c338ea859b21f371b6c1d0548"
   },
   "durable_objects": {
     "bindings": [
@@ -30,5 +38,8 @@
         "script_name": "ai-and-main-revenue-opportunity-staging"
       }
     ]
+  },
+  "version_metadata": {
+    "binding": "RELEASE_VERSION"
   }
 }
