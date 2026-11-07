@@ -116,6 +116,7 @@ export class StagingOperationLedger extends CorrectionLedger {
       if(this.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='general_reviews'").get()){
         this.db.prepare("DELETE FROM general_reviews WHERE created_at<? AND NOT EXISTS (SELECT 1 FROM cert_operations o WHERE o.op_id=general_reviews.op_id AND o.state NOT IN ('CONFIRMED','ABANDONED'))").run(cutoff);
         this.db.prepare('DELETE FROM general_approval_bindings WHERE approval_id NOT IN (SELECT id FROM cert_approvals)').run();
+        this.db.prepare('DELETE FROM general_approval_identity WHERE approval_id NOT IN (SELECT id FROM cert_approvals)').run();
         this.db.prepare("DELETE FROM general_identity_reviews WHERE created_at<? AND NOT EXISTS (SELECT 1 FROM general_findings f JOIN cert_operations o ON o.op_id=f.op_id WHERE f.context_key=general_identity_reviews.context_key AND o.state NOT IN ('CONFIRMED','ABANDONED'))").run(cutoff);
       }
       return {auditRetentionDays:days,cutoff,unresolvedOperationsHeld:true,idempotencyTombstonesPreserved:true,operationalEvidencePruned:false};

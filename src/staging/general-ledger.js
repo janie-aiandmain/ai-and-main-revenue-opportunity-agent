@@ -7,9 +7,10 @@ import {INTERNAL_PROPOSAL_VERSION} from './internal-task-policy.js';
 import { inspectFinding,generalProjection } from './review-policy.js';
 import request from '../findings-request-v0.3.3.json' with {type:'json'};
 import {EVIDENCE_POLICY,MATERIALIZATION_VERSION} from '../release/reasoning.js';
-const contractHash=digest({request,reviewPolicy:REVIEW_POLICY,proposalVersion:INTERNAL_PROPOSAL_VERSION,evidencePolicy:EVIDENCE_POLICY,materializationVersion:MATERIALIZATION_VERSION});
+const contractHash=digest({request,reviewPolicy:REVIEW_POLICY,proposalVersion:INTERNAL_PROPOSAL_VERSION,evidencePolicy:EVIDENCE_POLICY,materializationVersion:MATERIALIZATION_VERSION,approvalIdentityPolicy:'verified-subject-domain-role-v1'});
 const plainHash=value=>createHash('sha256').update(canonical(value)).digest('hex');
 const compactAnchors=(history,evidence)=>sourceAnchors(history,evidence).map(a=>({noteId:a.noteId,start:a.start,end:a.end,sourceHash:plainHash({text:a.sourceText,timestamp:a.timestamp}),text:a.sourceText.slice(a.start,a.end)}));
+const actorAuthority=actor=>digest({subject:actor.subject,role:actor.role,kind:actor.kind,issuer:actor.issuer||null,audience:actor.audience||null});
 const role=actor=>{if(!actor||!['Approver','Admin'].includes(actor.role)||!['LOCAL_SYNTHETIC','EXTERNAL_VERIFIED'].includes(actor.kind)||!actor.subject)throw Error('verified_operator_required');};
 export class GeneralFindingLedger extends StagingOperationLedger {
   constructor(db,env){super(db);this.env=env;db.exec(`
@@ -17,6 +18,7 @@ export class GeneralFindingLedger extends StagingOperationLedger {
     CREATE TABLE IF NOT EXISTS general_identity_reviews(id TEXT PRIMARY KEY,actor TEXT NOT NULL,identity_kind TEXT NOT NULL,context_key TEXT NOT NULL,generation INTEGER NOT NULL,source_hash TEXT NOT NULL,bindings_json TEXT NOT NULL,created_at TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS general_contexts(context_key TEXT PRIMARY KEY,generation INTEGER NOT NULL,state TEXT NOT NULL,source_hash TEXT,contract_hash TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS general_findings(op_id TEXT PRIMARY KEY,context_key TEXT NOT NULL,candidate_hash TEXT NOT NULL,source_hash TEXT NOT NULL,raw_json TEXT NOT NULL,inspection_json TEXT NOT NULL,review_state TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS general_approval_identity(approval_id TEXT PRIMARY KEY,authority_hash TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS general_approval_bindings(approval_id TEXT PRIMARY KEY,review_id TEXT NOT NULL,action_version TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS general_reviews(id TEXT PRIMARY KEY,op_id TEXT NOT NULL,operation_id TEXT,actor TEXT NOT NULL,identity_kind TEXT NOT NULL,source_hash TEXT NOT NULL,candidate_hash TEXT NOT NULL,contract_hash TEXT NOT NULL,spec_json TEXT NOT NULL,payload_hash TEXT,decision TEXT NOT NULL,created_at TEXT NOT NULL);
   `);}
@@ -159,6 +161,7 @@ export class GeneralFindingLedger extends StagingOperationLedger {
   }
   validate(op,approval,env){
     const request=super.validate(op,approval,env),review=this.assertReviewCurrent(op);
+    if(env.executionActor){const binding=this.db.prepare('SELECT * FROM general_approval_identity WHERE approval_id=?').get(approval.id);if(!binding||binding.authority_hash!==actorAuthority(env.executionActor))throw Error('approval_identity_changed');if(env.executionActor.expiresAt!==undefined&&env.executionActor.expiresAt<=Date.now())throw Error('operator_session_expired_before_submission');}
     if(review){const binding=this.db.prepare('SELECT * FROM general_approval_bindings WHERE approval_id=?').get(approval.id);if(!binding||binding.review_id!==review.id||binding.action_version!==this.status(op.id).actionVersion)throw Error('approval_review_or_action_version_mismatch');}
     return request;
   }
@@ -174,6 +177,7 @@ export class GeneralFindingLedger extends StagingOperationLedger {
     if(!review||review.id!==input.reviewId||this.status(op.id).actionVersion!==input.actionVersion)throw Error('exact_review_and_action_version_required');
     const grant=super.approve(op.id,input.payloadHash,actor);
     this.db.prepare('INSERT INTO general_approval_bindings VALUES(?,?,?)').run(grant.approvalId,review.id,input.actionVersion);
+    this.db.prepare('INSERT INTO general_approval_identity VALUES(?,?)').run(grant.approvalId,actorAuthority(actor));
     return {...grant,reviewId:review.id,actionVersion:input.actionVersion};
   }
   async execute(id,approvalId,client,env){
@@ -185,13 +189,15 @@ export class GeneralFindingLedger extends StagingOperationLedger {
     role(actor);const op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);
     if(!op||!this.db.prepare('SELECT * FROM general_findings WHERE op_id=?').get(op.op_id))throw Error('general_operation_required');
     const grant=this.db.prepare('SELECT * FROM cert_approvals WHERE id=?').get(approvalId);
-    if(!grant||grant.operation_id!==op.id||grant.actor!==actor.subject||grant.kind!==actor.kind){if(grant&&grant.operation_id===op.id)this.db.prepare('UPDATE cert_approvals SET revoked=1 WHERE id=?').run(grant.id);throw Error('approval_identity_changed');}
-    if(['CONFIRMED','UNKNOWN','SENDING'].includes(op.state))return super.execute(id,approvalId,client,env);
+    const identityBinding=grant&&this.db.prepare('SELECT * FROM general_approval_identity WHERE approval_id=?').get(grant.id);
+    if(!grant||grant.operation_id!==op.id||grant.actor!==actor.subject||grant.kind!==actor.kind||!identityBinding||identityBinding.authority_hash!==actorAuthority(actor)){if(grant&&grant.operation_id===op.id)this.db.prepare('UPDATE cert_approvals SET revoked=1 WHERE id=?').run(grant.id);throw Error('approval_identity_changed');}
+    const executionEnv={...env,executionActor:actor};
+    if(['CONFIRMED','UNKNOWN','SENDING'].includes(op.state))return super.execute(id,approvalId,client,executionEnv);
     const local=env.CERTIFICATION_MODE==='local'&&env.ENABLE_LOCAL_GENERAL_TEST_EXECUTION==='true';
     if(!local&&(env.ENABLE_GENERAL_EXECUTION!=='true'||env.GENERAL_RELEASE_APPROVED!=='true'||actor.kind!=='EXTERNAL_VERIFIED'))throw Error('general_execution_release_blocked');
     await this.evaluate(env,source,reason);
     const guarded={verifyIsolation:async()=>{await client.verifyIsolation();const h=await prepareHistory(await source.readContext());const current=this.db.prepare('SELECT * FROM general_findings WHERE op_id=?').get(op.op_id);if(digest(h)!==current.source_hash){this.revokeForFinding(op.op_id,'SOURCE_CHANGED_IMMEDIATELY_BEFORE_POST');throw Error('fresh_source_changed');}},create:body=>client.create(body),lookup:(...args)=>client.lookup(...args)};
-    return super.execute(id,approvalId,guarded,env);
+    return super.execute(id,approvalId,guarded,executionEnv);
   }
 }
 export { contractHash };

@@ -29,12 +29,12 @@ export async function verifyIdentity(request,env){
   const signature=Uint8Array.from(atob(parts[2].replaceAll('-','+').replaceAll('_','/')),c=>c.charCodeAt(0));
   if(!await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,signature,new TextEncoder().encode(parts[0]+'.'+parts[1]))) throw Error('invalid_identity_signature');
   if(env.CERTIFICATION_MODE!=='local'&&p.iss==='https://certification.invalid') throw Error('test_identity_forbidden');
-  return {subject:p.sub,issuer:p.iss,audience:env.ACCESS_AUDIENCE,kind:env.CERTIFICATION_MODE==='local'?'LOCAL_SYNTHETIC':'EXTERNAL_VERIFIED'};
+  return {subject:p.sub,issuer:p.iss,audience:env.ACCESS_AUDIENCE,expiresAt:p.exp*1000,kind:env.CERTIFICATION_MODE==='local'?'LOCAL_SYNTHETIC':'EXTERNAL_VERIFIED'};
 }
 export async function verifyOperator(request,env){
   const identity=await verifyIdentity(request,env);
   if(!env.APPROVER_SUBJECTS_JSON)throw Error('identity_not_configured');
   const roles=JSON.parse(env.APPROVER_SUBJECTS_JSON),role=roles[identity.subject];
   if(!['Viewer','Approver','Admin'].includes(role))throw Error('role_denied');
-  return {subject:identity.subject,role,kind:identity.kind};
+  return {subject:identity.subject,role,kind:identity.kind,issuer:identity.issuer,audience:identity.audience,expiresAt:identity.expiresAt};
 }

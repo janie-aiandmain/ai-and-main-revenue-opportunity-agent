@@ -136,3 +136,11 @@ test('synonymous model narration cannot change a source-rendered exact internal 
  const {finding,reviewed,grant}=await a.prepare();a.set((await a.source.readContext()).serviceHistory,[{...candidate(),recommendedNextAction:'Internal operator: prepare requested surge protection pricing for review.'}]);
  const result=await a.l.executeGeneral(reviewed.operationId,grant.approvalId,actor,env,a.source,a.reason,a.client);assert.equal(result.state,'CONFIRMED');assert.equal(result.payloadHash,reviewed.payloadHash);assert.equal(a.posts(),1);assert.equal(a.l.findings(a.l.contextKey(env))[0].findingId,finding.findingId);
 }));
+test('changed issuer, audience or operator role cannot reuse an existing exact-payload approval',async()=>{
+ for(const change of [{issuer:'https://another.invalid'},{audience:'another-app'},{role:'Admin'}])await lab(async a=>{const {reviewed,grant}=await a.prepare();await assert.rejects(a.l.executeGeneral(reviewed.operationId,grant.approvalId,{...actor,...change},env,a.source,a.reason,a.client),/approval_identity_changed/);assert.equal(a.posts(),0);});
+});
+test('operator session expiration during the fresh source check is enforced immediately before POST',()=>lab(async a=>{
+ const {reviewed,grant}=await a.prepare();const session={...actor,expiresAt:Date.now()+10000};
+ const client={...a.client,async verifyIsolation(){session.expiresAt=Date.now()-1;}};
+ await assert.rejects(a.l.executeGeneral(reviewed.operationId,grant.approvalId,session,env,a.source,a.reason,client),/session_expired/);assert.equal(a.posts(),0);
+}));
