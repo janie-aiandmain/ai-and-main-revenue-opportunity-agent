@@ -9,7 +9,12 @@ export async function verifyIdentity(request,env){
   if(!env.ACCESS_ISSUER||!env.ACCESS_AUDIENCE) throw Error('identity_not_configured');
   const parts=header.slice(7).split('.');if(parts.length!==3) throw Error('invalid_identity');
   const [h,p]=parts.slice(0,2).map(decode);
-  if(h.alg!=='RS256'||!h.kid||p.iss!==env.ACCESS_ISSUER||!(Array.isArray(p.aud)?p.aud:[p.aud]).includes(env.ACCESS_AUDIENCE)||!p.sub||!Number.isFinite(p.exp)||p.exp<=Date.now()/1000||p.nbf&&p.nbf>Date.now()/1000) throw Error('invalid_identity');
+  if(h.alg!=='RS256'||!h.kid)throw Error('identity_algorithm_or_key_id');
+  if(p.iss!==env.ACCESS_ISSUER)throw Error('identity_issuer_mismatch');
+  if(!(Array.isArray(p.aud)?p.aud:[p.aud]).includes(env.ACCESS_AUDIENCE))throw Error('identity_audience_mismatch');
+  if(!p.sub||typeof p.sub!=='string')throw Error('identity_subject_missing');
+  if(!Number.isFinite(p.exp)||p.exp<=Date.now()/1000)throw Error('identity_expired');
+  if(p.nbf&&p.nbf>Date.now()/1000)throw Error('identity_not_yet_valid');
   let jwks;
   if(env.CERTIFICATION_MODE==='local'){
     if(env.ACCESS_ISSUER!=='https://certification.invalid') throw Error('invalid_local_issuer');

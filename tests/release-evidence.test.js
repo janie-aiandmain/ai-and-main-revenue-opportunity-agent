@@ -39,3 +39,11 @@ test('a model omission of the word historical cannot renew a deadline in the dis
  const r=await run(source,[{...f(source),recommendedNextAction:'Internally prepare pricing; the 2026-11-01 source says decide this week. Verify current interest.'}]);
  assert.match(r.findings[0].recommendedNextAction,/historical.*not renewed/i);assert.match(r.findings[0].recommendedNextAction,/2026-11-01/);
 });
+test('ST04 historical call attribution and current invoice-status verification do not grant communication or billing authority',async()=>{
+ const source='Customer is unhappy that the fixture is flickering and wants a manager to call today. Do not send another invoice until this is resolved.';
+ const raw={...f(source),classification:'retention or service-recovery opportunity',opportunityType:'retention',recommendedNextAction:'Internal operator task: verify current issue status and current invoice status. Historical request to call today was recorded on 2026-11-01; verify current interest and timing. Customer context: "Do not send another invoice until this is resolved."'};
+ const r=await run(source,[raw]);assert.equal(r.findings[0].proposedAction.preparationBlocked,false);assert.equal(r.findings[0].proposedAction.material.customerActionPermitted,false);assert.match(r.findings[0].recommendedNextAction,/historical, not renewed/);
+ for(const action of ['Call the customer.','Internal: email the client.','Prepare pricing and charge a deposit.','Change the deal stage.']){
+  const bad=await run(source,[{...raw,recommendedNextAction:action}]);assert.equal(bad.findings[0].proposedAction.preparationBlocked,true);
+ }
+});

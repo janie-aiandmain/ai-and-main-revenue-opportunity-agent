@@ -32,7 +32,7 @@ test('Access-injected JWT receives the same signature/issuer/audience/role check
  const token=data+'.'+sign('RSA-SHA256',Buffer.from(data),pair.privateKey).toString('base64url');
  const verified=await verifyOperator(new Request('https://staging/',{headers:{'Cf-Access-Jwt-Assertion':token}}),env);assert.equal(verified.role,'Viewer');
  await assert.rejects(verifyOperator(new Request('https://staging/',{headers:{'Cf-Access-Jwt-Assertion':token,Authorization:'Bearer different'}}),env),/ambiguous/);
- await assert.rejects(verifyOperator(new Request('https://staging/',{headers:{'Cf-Access-Jwt-Assertion':token}}),{...env,ACCESS_AUDIENCE:'wrong'}),/invalid/);
+ await assert.rejects(verifyOperator(new Request('https://staging/',{headers:{'Cf-Access-Jwt-Assertion':token}}),{...env,ACCESS_AUDIENCE:'wrong'}),/identity_audience_mismatch/);
 });
 test('hosted reasoning cannot redirect the evaluation credential to a local fixture',async t=>{
  let calls=0;t.mock.method(globalThis,'fetch',()=>{calls++;throw Error('must_not_call');});

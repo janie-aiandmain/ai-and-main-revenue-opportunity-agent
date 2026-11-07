@@ -27,5 +27,6 @@ export function identityBlocker(error){
   if(error.message==='authentication_required')return new StagingBlocker('missing_credential',{credential:'Access JWT',check:'identity_assertion',setupStep:5});
   if(error.message==='role_denied')return new StagingBlocker('insufficient_permission',{credential:'Access JWT',check:'subject_role_mapping',setupStep:6});
   if(['identity_not_configured','invalid_identity_configuration'].includes(error.message))return new StagingBlocker('missing_configuration',{check:'Access issuer/audience/subject mapping',setupStep:5});
-  return new StagingBlocker('rejected_credential',{credential:'Access JWT',check:'signature_issuer_audience_expiry',setupStep:5});
+  const known=new Set(['identity_algorithm_or_key_id','identity_issuer_mismatch','identity_audience_mismatch','identity_subject_missing','identity_expired','identity_not_yet_valid','identity_key_missing','invalid_identity_signature','ambiguous_identity']);
+  return new StagingBlocker('rejected_credential',{credential:'Access JWT',check:known.has(error.message)?error.message:'signature_issuer_audience_expiry',setupStep:5});
 }
