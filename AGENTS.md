@@ -376,3 +376,17 @@ cross-version identity replay are not newly hosted certification. No semantic
 corrections were deployed and no new HubSpot tasks or final approvals were created.
 All general/test/fault flags remain false. Future execution requires its own exact
 final-payload approval; this documentation does not renew the closed hosted run.
+
+## Controlling customer-release implementation request
+
+The user subsequently authorized docs/release/controlling-request.md: recursively
+fix/validate the existing synthetic demo for the acceptance matrix in
+ docs/release/acceptance.md. Code, commits/pushes, necessary model evaluations and
+bounded labelled synthetic task tests/deployments in the existing demo are now
+authorized. Earlier no-deploy/no-test-write restrictions applied to prior cycles;
+keep general customer writeback closed until the actual release gates pass. No
+new resources, permissions, key rotation, destructive actions or merge to main.
+Preserve immutable captures and prior human decisions; revised outputs and final
+release require real human acceptance. Never label AI/test actors human. Current
+cycle test limits are three real synthetic tasks and 150 model calls; preserve
+uncertain results, reconcile or block instead of creating again.
