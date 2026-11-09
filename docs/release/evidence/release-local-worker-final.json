@@ -1,0 +1,1792 @@
+{
+  "generalIntegration": {
+    "kind": "ACTUAL_LOCAL_WORKER_PIPELINE_WITH_CAPTURED_MODEL_BOUNDARY_NOT_HOSTED_CERTIFICATION",
+    "zeroFindingsVerified": true,
+    "initialFindings": {
+      "findings": [
+        {
+          "findingId": "op_7126e81a-f58d-48d2-bf0d-661440d12c44",
+          "modelFinding": {
+            "findingId": "finding_d5967636b0a597d52636c8c42494832d5d585ed0a1369a9cd822bd42c61bad5b",
+            "opportunityKey": "flickering-fixture-service-recovery",
+            "classification": "retention or service-recovery opportunity",
+            "opportunityType": "retention",
+            "confidence": "high",
+            "evidence": [
+              {
+                "noteId": "note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666",
+                "quote": "Customer reports a flickering fixture and requests service recovery."
+              }
+            ],
+            "reasoningSummary": "Customer explicitly reports a fixture issue and requests service recovery.",
+            "recommendedNextAction": "Internally verify the current status of the reported service issue and current customer request. Do not assume the complaint remains unresolved. No customer contact or billing action. Internal task only. No customer action is authorized.",
+            "humanReviewRequired": true,
+            "proposedAction": {
+              "schemaVersion": "internal-task-proposal-v2.2",
+              "actionPurpose": "internal_verification",
+              "actionPayload": {
+                "type": "hubspot.follow_up_task.create",
+                "target": {
+                  "contextKey": "hubspot:test-portal-001:contact:fixture-contact-001"
+                },
+                "properties": {
+                  "hs_task_subject": "Internal verification: flickering fixture service recovery",
+                  "hs_task_body": "Internally verify the current status of the reported service issue and current customer request. Do not assume the complaint remains unresolved. No customer contact or billing action.\nAction purpose: internal_verification. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-29T12:00:00.000Z; note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666] Customer reports a flickering fixture and requests service recovery.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+                  "hs_task_priority": "HIGH",
+                  "hs_task_status": "NOT_STARTED",
+                  "hs_task_type": "TODO"
+                }
+              },
+              "material": {
+                "policyVersion": "internal-task-policy-v1.2",
+                "proposalVersion": "internal-task-proposal-v2.2",
+                "actionClass": "hubspot.follow_up_task.create",
+                "targetContext": "hubspot:test-portal-001:contact:fixture-contact-001",
+                "classification": "retention or service-recovery opportunity",
+                "opportunityType": "retention",
+                "intent": "verify_current_state",
+                "actionPurpose": "internal_verification",
+                "scope": {
+                  "sourceRequests": [
+                    "Customer reports a flickering fixture and requests service recovery."
+                  ]
+                },
+                "priority": "HIGH",
+                "evidence": [
+                  {
+                    "noteId": "note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666",
+                    "timestamp": "2026-10-29T12:00:00.000Z",
+                    "quote": "Customer reports a flickering fixture and requests service recovery."
+                  }
+                ],
+                "timing": {
+                  "kind": "none"
+                },
+                "operatorTaskDueAt": null,
+                "sourceTimingConstraints": [],
+                "customerActionGates": [],
+                "sourceRestrictions": [],
+                "customerActionPermitted": false,
+                "humanApprovalRequired": true
+              },
+              "authorityRequirements": {
+                "policyVersion": "internal-task-policy-v1.2",
+                "humanApprovalRequired": true,
+                "allowedMutation": "hubspot.follow_up_task.create",
+                "customerActionPermitted": false
+              },
+              "qualityFailures": [],
+              "preparationBlocked": false,
+              "executionBlocked": true,
+              "missingFinalFields": [
+                "operatorTaskDueAt",
+                "CRM association",
+                "operation correlation",
+                "exact final-payload approval"
+              ],
+              "actionVersion": "sha256:8c25b95dcd6a5d7583ce0931d5ce5a7d0a487f87eeee55aa281d696e3b2fcfe6"
+            }
+          },
+          "candidateHash": "4c5ef144a4bb242c7a38821eca179d2e33cd46c57cfa7c89c45c08d983f3a581",
+          "sourceHash": "sha256:feb79a1f4fad6d067908681da04251dce7502df878ab7d2a819603077aaa2d4c",
+          "inspection": {
+            "policyVersion": "finding-review-v2.6",
+            "qualityFailures": [],
+            "executionBlocks": [],
+            "humanReview": "PENDING"
+          },
+          "reviewState": "PENDING",
+          "operation": null
+        },
+        {
+          "findingId": "op_b0e55fc1-c45a-41ff-99ba-e50d59f7a93a",
+          "modelFinding": {
+            "findingId": "finding_d9d8f9c14d0948b634a08b005383ec943ad1cecafa64ee3f49c36c40ad71637f",
+            "opportunityKey": "ev-charger-pricing",
+            "classification": "strong cross-sell opportunity",
+            "opportunityType": "cross-sell",
+            "confidence": "high",
+            "evidence": [
+              {
+                "noteId": "note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666",
+                "quote": "Separately asks for pricing for an EV charger; the charger request is unrelated to the fault."
+              }
+            ],
+            "reasoningSummary": "Customer explicitly requested EV charger pricing, separately from the service-recovery issue.",
+            "recommendedNextAction": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps. Internal task only. No customer action is authorized.",
+            "humanReviewRequired": true,
+            "proposedAction": {
+              "schemaVersion": "internal-task-proposal-v2.2",
+              "actionPurpose": "internal_preparation",
+              "actionPayload": {
+                "type": "hubspot.follow_up_task.create",
+                "target": {
+                  "contextKey": "hubspot:test-portal-001:contact:fixture-contact-001"
+                },
+                "properties": {
+                  "hs_task_subject": "Internal pricing preparation: ev charger pricing",
+                  "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-29T12:00:00.000Z; note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666] Separately asks for pricing for an EV charger; the charger request is unrelated to the fault.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+                  "hs_task_priority": "HIGH",
+                  "hs_task_status": "NOT_STARTED",
+                  "hs_task_type": "TODO"
+                }
+              },
+              "material": {
+                "policyVersion": "internal-task-policy-v1.2",
+                "proposalVersion": "internal-task-proposal-v2.2",
+                "actionClass": "hubspot.follow_up_task.create",
+                "targetContext": "hubspot:test-portal-001:contact:fixture-contact-001",
+                "classification": "strong cross-sell opportunity",
+                "opportunityType": "cross-sell",
+                "intent": "prepare_quote",
+                "actionPurpose": "internal_preparation",
+                "scope": {
+                  "sourceRequests": [
+                    "Separately asks for pricing for an EV charger; the charger request is unrelated to the fault."
+                  ]
+                },
+                "priority": "HIGH",
+                "evidence": [
+                  {
+                    "noteId": "note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666",
+                    "timestamp": "2026-10-29T12:00:00.000Z",
+                    "quote": "Separately asks for pricing for an EV charger; the charger request is unrelated to the fault."
+                  }
+                ],
+                "timing": {
+                  "kind": "none"
+                },
+                "operatorTaskDueAt": null,
+                "sourceTimingConstraints": [],
+                "customerActionGates": [],
+                "sourceRestrictions": [],
+                "customerActionPermitted": false,
+                "humanApprovalRequired": true
+              },
+              "authorityRequirements": {
+                "policyVersion": "internal-task-policy-v1.2",
+                "humanApprovalRequired": true,
+                "allowedMutation": "hubspot.follow_up_task.create",
+                "customerActionPermitted": false
+              },
+              "qualityFailures": [],
+              "preparationBlocked": false,
+              "executionBlocked": true,
+              "missingFinalFields": [
+                "operatorTaskDueAt",
+                "CRM association",
+                "operation correlation",
+                "exact final-payload approval"
+              ],
+              "actionVersion": "sha256:e7145d0434ccc8997ebaa8b0d346a4a82a929817c51a59519d3cbd8e9b55aac5"
+            }
+          },
+          "candidateHash": "48d64d8176c6361e78ae7ea111e196ae110485af2b663aa72b60ac68f5139afe",
+          "sourceHash": "sha256:feb79a1f4fad6d067908681da04251dce7502df878ab7d2a819603077aaa2d4c",
+          "inspection": {
+            "policyVersion": "finding-review-v2.6",
+            "qualityFailures": [],
+            "executionBlocks": [],
+            "humanReview": "PENDING"
+          },
+          "reviewState": "PENDING",
+          "operation": null
+        }
+      ]
+    },
+    "simulatedReview": {
+      "reviewId": "review_9f1cd281-c77b-4e4b-8a86-149bed40e42a",
+      "identityKind": "LOCAL_SYNTHETIC",
+      "humanSignoff": "NOT_HUMAN_SIGNOFF",
+      "operationId": "operation_aa12eae6-c852-4834-ae5c-e32d6ceb3902",
+      "opportunityId": "op_b0e55fc1-c45a-41ff-99ba-e50d59f7a93a",
+      "correlation": "ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631",
+      "state": "PREPARED",
+      "payloadContract": "hubspot-final-payload-v1",
+      "payloadHash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+      "actionVersion": "final-action-v1:sha256:d2489c7be72dda48569710f2411292d6e721566f001977c27d29c8eaf5515954",
+      "revision": 1,
+      "remoteTaskId": null,
+      "ledgerBootId": "0b60ddf6-5d19-4734-8792-4ba789754353",
+      "demoCreateAttempts": 0,
+      "finalRequest": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "fixture-contact-001"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-29T12:00:00.000Z; note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666] Separately asks for pricing for an EV charger; the charger request is unrelated to the fault.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: 2026-11-07T19:23:55.838Z. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.\n[AI_MAIN_CORRELATION:ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "Internal pricing preparation: ev charger pricing",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-07T19:23:55.838Z"
+          }
+        },
+        "contractVersion": "hubspot-final-payload-v1",
+        "method": "POST",
+        "portalId": "test-portal-001",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "trace": [
+        {
+          "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:05.522Z"
+        }
+      ]
+    },
+    "releaseBlock": {
+      "status": 409,
+      "data": {
+        "status": "general_execution_release_blocked"
+      }
+    },
+    "readOnlyPreflight": {
+      "kind": "READ_ONLY_ISOLATION_AND_IDENTITY_PREFLIGHT",
+      "identityKind": "LOCAL_SYNTHETIC",
+      "role": "Approver",
+      "portalId": "test-portal-001",
+      "contactId": "fixture-contact-001",
+      "readCredentialPortalVerified": true,
+      "writeCredentialPortalVerified": true,
+      "noteCount": 1,
+      "taskReadVerified": true,
+      "writesEnabled": false,
+      "generalExecutionEnabled": false,
+      "semanticApproval": false,
+      "productionCertification": false,
+      "ownerSourceCommit": null,
+      "ownerDeploymentVersion": null,
+      "ledgerBootId": "c2fb58a4-b71d-4266-bbda-3cde790bef70"
+    },
+    "legacyBypassRejected": true,
+    "materialChangeRejected": {
+      "status": 409,
+      "data": {
+        "status": "operation_not_approved"
+      }
+    },
+    "finalReview": {
+      "reviewId": "review_789e5298-8729-4308-a3dc-6c7e8a56809e",
+      "identityKind": "LOCAL_SYNTHETIC",
+      "humanSignoff": "NOT_HUMAN_SIGNOFF",
+      "operationId": "operation_aa12eae6-c852-4834-ae5c-e32d6ceb3902",
+      "opportunityId": "op_b0e55fc1-c45a-41ff-99ba-e50d59f7a93a",
+      "correlation": "ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631",
+      "state": "PREPARED",
+      "payloadContract": "hubspot-final-payload-v1",
+      "payloadHash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+      "actionVersion": "final-action-v1:sha256:d2489c7be72dda48569710f2411292d6e721566f001977c27d29c8eaf5515954",
+      "revision": 4,
+      "remoteTaskId": null,
+      "ledgerBootId": "87ee865d-60cc-48d1-8d80-61c2a43ab8ad",
+      "demoCreateAttempts": 0,
+      "finalRequest": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "fixture-contact-001"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-29T12:00:00.000Z; note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666] Separately asks for pricing for an EV charger; the charger request is unrelated to the fault.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: 2026-11-07T19:23:55.838Z. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.\n[AI_MAIN_CORRELATION:ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "Internal pricing preparation: ev charger pricing",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-07T19:23:55.838Z"
+          }
+        },
+        "contractVersion": "hubspot-final-payload-v1",
+        "method": "POST",
+        "portalId": "test-portal-001",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "trace": [
+        {
+          "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:05.522Z"
+        },
+        {
+          "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:05.525Z"
+        },
+        {
+          "event": "FRESH_FINDING_OR_SOURCE_CHANGED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.755Z"
+        },
+        {
+          "event": "FRESH_FINDING_OR_SOURCE_CHANGED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.764Z"
+        },
+        {
+          "event": "NEW_OPERATOR_REVIEW_REQUIRES_APPROVAL",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.782Z"
+        }
+      ]
+    },
+    "freshGrant": {
+      "approvalId": "approval_b515f584-4031-46ed-b5d9-b76b39a62ddb",
+      "payloadHash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+      "kind": "LOCAL_SYNTHETIC",
+      "reviewId": "review_789e5298-8729-4308-a3dc-6c7e8a56809e",
+      "actionVersion": "final-action-v1:sha256:d2489c7be72dda48569710f2411292d6e721566f001977c27d29c8eaf5515954"
+    },
+    "afterLoss": {
+      "operationId": "operation_aa12eae6-c852-4834-ae5c-e32d6ceb3902",
+      "opportunityId": "op_b0e55fc1-c45a-41ff-99ba-e50d59f7a93a",
+      "correlation": "ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631",
+      "state": "UNKNOWN",
+      "payloadContract": "hubspot-final-payload-v1",
+      "payloadHash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+      "actionVersion": "final-action-v1:sha256:d2489c7be72dda48569710f2411292d6e721566f001977c27d29c8eaf5515954",
+      "revision": 4,
+      "remoteTaskId": null,
+      "ledgerBootId": "87ee865d-60cc-48d1-8d80-61c2a43ab8ad",
+      "demoCreateAttempts": 0,
+      "finalRequest": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "fixture-contact-001"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-29T12:00:00.000Z; note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666] Separately asks for pricing for an EV charger; the charger request is unrelated to the fault.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: 2026-11-07T19:23:55.838Z. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.\n[AI_MAIN_CORRELATION:ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "Internal pricing preparation: ev charger pricing",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-07T19:23:55.838Z"
+          }
+        },
+        "contractVersion": "hubspot-final-payload-v1",
+        "method": "POST",
+        "portalId": "test-portal-001",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "trace": [
+        {
+          "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:05.522Z"
+        },
+        {
+          "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:05.525Z"
+        },
+        {
+          "event": "FRESH_FINDING_OR_SOURCE_CHANGED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.755Z"
+        },
+        {
+          "event": "FRESH_FINDING_OR_SOURCE_CHANGED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.764Z"
+        },
+        {
+          "event": "NEW_OPERATOR_REVIEW_REQUIRES_APPROVAL",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.782Z"
+        },
+        {
+          "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.786Z"
+        },
+        {
+          "event": "POST_INTENT_DURABLY_PERSISTED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.796Z"
+        },
+        {
+          "event": "RESPONSE_LOST_OR_UNCONFIRMED_BLOCKED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.798Z"
+        }
+      ],
+      "blocker": {
+        "code": "blocked_network_access",
+        "credential": "STAGING_HUBSPOT_WRITE_TOKEN",
+        "check": "no_http_response",
+        "setupStep": 11,
+        "setupAction": "Allow the exact host in the relevant runtime network policy and refresh that environment; do not bypass the proxy.",
+        "host": "127.0.0.1",
+        "permissionsExpanded": false
+      }
+    },
+    "afterRestart": {
+      "operationId": "operation_aa12eae6-c852-4834-ae5c-e32d6ceb3902",
+      "opportunityId": "op_b0e55fc1-c45a-41ff-99ba-e50d59f7a93a",
+      "correlation": "ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631",
+      "state": "UNKNOWN",
+      "payloadContract": "hubspot-final-payload-v1",
+      "payloadHash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+      "actionVersion": "final-action-v1:sha256:d2489c7be72dda48569710f2411292d6e721566f001977c27d29c8eaf5515954",
+      "revision": 4,
+      "remoteTaskId": null,
+      "ledgerBootId": "95fa5bac-0dee-4aaf-987b-147fced2f39f",
+      "demoCreateAttempts": 0,
+      "finalRequest": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "fixture-contact-001"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-29T12:00:00.000Z; note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666] Separately asks for pricing for an EV charger; the charger request is unrelated to the fault.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: 2026-11-07T19:23:55.838Z. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.\n[AI_MAIN_CORRELATION:ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "Internal pricing preparation: ev charger pricing",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-07T19:23:55.838Z"
+          }
+        },
+        "contractVersion": "hubspot-final-payload-v1",
+        "method": "POST",
+        "portalId": "test-portal-001",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "trace": [
+        {
+          "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:05.522Z"
+        },
+        {
+          "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:05.525Z"
+        },
+        {
+          "event": "FRESH_FINDING_OR_SOURCE_CHANGED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.755Z"
+        },
+        {
+          "event": "FRESH_FINDING_OR_SOURCE_CHANGED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.764Z"
+        },
+        {
+          "event": "NEW_OPERATOR_REVIEW_REQUIRES_APPROVAL",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.782Z"
+        },
+        {
+          "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.786Z"
+        },
+        {
+          "event": "POST_INTENT_DURABLY_PERSISTED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.796Z"
+        },
+        {
+          "event": "RESPONSE_LOST_OR_UNCONFIRMED_BLOCKED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.798Z"
+        },
+        {
+          "event": "RECONCILIATION_STARTED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:11.901Z"
+        },
+        {
+          "event": "NO_PROVEN_MATCH_BLOCKED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:11.907Z"
+        }
+      ]
+    },
+    "recovered": {
+      "operationId": "operation_aa12eae6-c852-4834-ae5c-e32d6ceb3902",
+      "opportunityId": "op_b0e55fc1-c45a-41ff-99ba-e50d59f7a93a",
+      "correlation": "ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631",
+      "state": "CONFIRMED",
+      "payloadContract": "hubspot-final-payload-v1",
+      "payloadHash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+      "actionVersion": "final-action-v1:sha256:d2489c7be72dda48569710f2411292d6e721566f001977c27d29c8eaf5515954",
+      "revision": 4,
+      "remoteTaskId": "fixture-task-4",
+      "ledgerBootId": "95fa5bac-0dee-4aaf-987b-147fced2f39f",
+      "demoCreateAttempts": 0,
+      "finalRequest": {
+        "body": {
+          "associations": [
+            {
+              "to": {
+                "id": "fixture-contact-001"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 204
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-29T12:00:00.000Z; note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666] Separately asks for pricing for an EV charger; the charger request is unrelated to the fault.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: 2026-11-07T19:23:55.838Z. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.\n[AI_MAIN_CORRELATION:ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631]",
+            "hs_task_priority": "MEDIUM",
+            "hs_task_status": "NOT_STARTED",
+            "hs_task_subject": "Internal pricing preparation: ev charger pricing",
+            "hs_task_type": "TODO",
+            "hs_timestamp": "2026-11-07T19:23:55.838Z"
+          }
+        },
+        "contractVersion": "hubspot-final-payload-v1",
+        "method": "POST",
+        "portalId": "test-portal-001",
+        "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+      },
+      "trace": [
+        {
+          "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:05.522Z"
+        },
+        {
+          "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:05.525Z"
+        },
+        {
+          "event": "FRESH_FINDING_OR_SOURCE_CHANGED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.755Z"
+        },
+        {
+          "event": "FRESH_FINDING_OR_SOURCE_CHANGED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.764Z"
+        },
+        {
+          "event": "NEW_OPERATOR_REVIEW_REQUIRES_APPROVAL",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.782Z"
+        },
+        {
+          "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.786Z"
+        },
+        {
+          "event": "POST_INTENT_DURABLY_PERSISTED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.796Z"
+        },
+        {
+          "event": "RESPONSE_LOST_OR_UNCONFIRMED_BLOCKED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:08.798Z"
+        },
+        {
+          "event": "RECONCILIATION_STARTED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:11.901Z"
+        },
+        {
+          "event": "NO_PROVEN_MATCH_BLOCKED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:11.907Z"
+        },
+        {
+          "event": "RECONCILIATION_STARTED",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": null,
+          "at": "2026-11-07T17:24:11.911Z"
+        },
+        {
+          "event": "EXISTING_TASK_RECONCILED_NO_CREATE",
+          "payload_hash": "sha256:9d3dd59a9ff78e30ecbaede0ba30a3fec1cb44907b1c562a0f1988a73b35e6bd",
+          "remote_id": "fixture-task-4",
+          "at": "2026-11-07T17:24:11.916Z"
+        }
+      ]
+    },
+    "postCount": 1,
+    "modelFixtureCalls": 7,
+    "newModelCalls": 0,
+    "humanSignoffs": 0,
+    "metrics": {
+      "estimateKind": "SYNTHETIC_TEST_ESTIMATE_NOT_REVENUE",
+      "estimateCurrency": "USD",
+      "estimatedOpportunityValueMinor": 400000,
+      "confirmedTaskCount": 4,
+      "verifiedTestOutcomes": [
+        {
+          "external_ref": "synthetic-outcome-1",
+          "remote_task_id": "fixture-task-1",
+          "amount_minor": 25000,
+          "currency": "USD",
+          "verification_kind": "LOCAL_FIXTURE_NOT_BUSINESS_REVENUE"
+        }
+      ],
+      "revenueRescued": null
+    }
+  },
+  "kind": "EXECUTED_LOCAL_WORKER_CERTIFICATION_NOT_HOSTED_HUBSPOT",
+  "runtime": "Miniflare/workerd with Durable Object SQLite",
+  "separateService": "Independent HTTP fixture with its own SQLite effects",
+  "restarts": 7,
+  "flaggedCases": [
+    {
+      "id": "ST03",
+      "status": "LOCAL_BLOCK_VERIFIED",
+      "response": {
+        "status": "human_review_pending:ST03",
+        "humanReview": "PENDING"
+      },
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "ST04",
+      "status": "LOCAL_BLOCK_VERIFIED",
+      "response": {
+        "status": "human_review_pending:ST04",
+        "humanReview": "PENDING"
+      },
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "ST07",
+      "status": "LOCAL_BLOCK_VERIFIED",
+      "response": {
+        "status": "human_review_pending:ST07",
+        "humanReview": "PENDING"
+      },
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "ST08",
+      "status": "LOCAL_BLOCK_VERIFIED",
+      "response": {
+        "status": "human_review_pending:ST08",
+        "humanReview": "PENDING"
+      },
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "EN11",
+      "status": "LOCAL_BLOCK_VERIFIED",
+      "response": {
+        "status": "human_review_pending:EN11",
+        "humanReview": "PENDING"
+      },
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "EN12",
+      "status": "LOCAL_BLOCK_VERIFIED",
+      "response": {
+        "status": "human_review_pending:EN12",
+        "humanReview": "PENDING"
+      },
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    },
+    {
+      "id": "EN31",
+      "status": "LOCAL_BLOCK_VERIFIED",
+      "response": {
+        "status": "human_review_pending:EN31",
+        "humanReview": "PENDING"
+      },
+      "humanReview": {
+        "status": "PENDING",
+        "verdict": null
+      }
+    }
+  ],
+  "identityChecks": {
+    "unauthenticatedRejected": true,
+    "expiredTokenRejected": true,
+    "forgedTokenRejected": true,
+    "accessHeaderSignatureVerified": true,
+    "ambiguousHeadersRejected": true,
+    "crossOriginRejected": true,
+    "operatorConsoleResponseAndScriptSyntaxVerified": true,
+    "viewerBodyRoleSpoofRejected": true,
+    "viewerApprovalRejected": true,
+    "issuer": "ephemeral synthetic RS256 test identity; no human sign-off"
+  },
+  "scenarios": {
+    "lostResponse": {
+      "initial": {
+        "operationId": "operation_df418152-03d0-45c9-a677-47339ab0c3c0",
+        "opportunityId": "op_ab915034-d39e-4847-b589-4f65a5b1632b",
+        "correlation": "ai-main-b15bf97f-0f66-42dc-b7f3-da6b117a8029",
+        "state": "PREPARED",
+        "payloadContract": "hubspot-final-payload-v1",
+        "payloadHash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+        "actionVersion": "final-action-v1:sha256:b6ef32fbeae29db0bd1780f6c3b9825380fa65ce4318b0c907cf73b8dc5f73df",
+        "revision": 1,
+        "remoteTaskId": null,
+        "ledgerBootId": "ced38e90-fdbd-4949-be32-0f069e7ced5a",
+        "demoCreateAttempts": 0,
+        "finalRequest": {
+          "body": {
+            "associations": [
+              {
+                "to": {
+                  "id": "fixture-contact-001"
+                },
+                "types": [
+                  {
+                    "associationCategory": "HUBSPOT_DEFINED",
+                    "associationTypeId": 204
+                  }
+                ]
+              }
+            ],
+            "properties": {
+              "hs_task_body": "Review the customer request and prepare pricing for human follow-up.\nScope: {\"recordPurpose\":\"certification_only\",\"service\":\"surge_protection\"}\nTiming: {\"basisRef\":\"explicit_certification_operator_due_date\",\"dueAt\":\"2026-11-07T19:23:55.838Z\",\"kind\":\"absolute\"}\nCustomer decision horizon: null\nCustomer constraints: No customer communication; designated certification task only.\nEvidence: Synthetic certification contact requests surge protection pricing.\nAgent authority: follow-up task creation only. No customer communication, billing, contact, deal or pipeline mutation.\n[AI_MAIN_CORRELATION:ai-main-b15bf97f-0f66-42dc-b7f3-da6b117a8029]",
+              "hs_task_priority": "MEDIUM",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_subject": "Human follow-up: prepare quote",
+              "hs_task_type": "TODO",
+              "hs_timestamp": "2026-11-07T19:23:55.838Z"
+            }
+          },
+          "contractVersion": "hubspot-final-payload-v1",
+          "method": "POST",
+          "portalId": "test-portal-001",
+          "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+        },
+        "trace": [
+          {
+            "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.908Z"
+          }
+        ]
+      },
+      "afterLoss": {
+        "operationId": "operation_df418152-03d0-45c9-a677-47339ab0c3c0",
+        "opportunityId": "op_ab915034-d39e-4847-b589-4f65a5b1632b",
+        "correlation": "ai-main-b15bf97f-0f66-42dc-b7f3-da6b117a8029",
+        "state": "UNKNOWN",
+        "payloadContract": "hubspot-final-payload-v1",
+        "payloadHash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+        "actionVersion": "final-action-v1:sha256:b6ef32fbeae29db0bd1780f6c3b9825380fa65ce4318b0c907cf73b8dc5f73df",
+        "revision": 1,
+        "remoteTaskId": null,
+        "ledgerBootId": "ced38e90-fdbd-4949-be32-0f069e7ced5a",
+        "demoCreateAttempts": 0,
+        "finalRequest": {
+          "body": {
+            "associations": [
+              {
+                "to": {
+                  "id": "fixture-contact-001"
+                },
+                "types": [
+                  {
+                    "associationCategory": "HUBSPOT_DEFINED",
+                    "associationTypeId": 204
+                  }
+                ]
+              }
+            ],
+            "properties": {
+              "hs_task_body": "Review the customer request and prepare pricing for human follow-up.\nScope: {\"recordPurpose\":\"certification_only\",\"service\":\"surge_protection\"}\nTiming: {\"basisRef\":\"explicit_certification_operator_due_date\",\"dueAt\":\"2026-11-07T19:23:55.838Z\",\"kind\":\"absolute\"}\nCustomer decision horizon: null\nCustomer constraints: No customer communication; designated certification task only.\nEvidence: Synthetic certification contact requests surge protection pricing.\nAgent authority: follow-up task creation only. No customer communication, billing, contact, deal or pipeline mutation.\n[AI_MAIN_CORRELATION:ai-main-b15bf97f-0f66-42dc-b7f3-da6b117a8029]",
+              "hs_task_priority": "MEDIUM",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_subject": "Human follow-up: prepare quote",
+              "hs_task_type": "TODO",
+              "hs_timestamp": "2026-11-07T19:23:55.838Z"
+            }
+          },
+          "contractVersion": "hubspot-final-payload-v1",
+          "method": "POST",
+          "portalId": "test-portal-001",
+          "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+        },
+        "trace": [
+          {
+            "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.908Z"
+          },
+          {
+            "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.914Z"
+          },
+          {
+            "event": "POST_INTENT_DURABLY_PERSISTED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.923Z"
+          },
+          {
+            "event": "RESPONSE_LOST_OR_UNCONFIRMED_BLOCKED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.924Z"
+          }
+        ],
+        "blocker": {
+          "code": "blocked_network_access",
+          "credential": "STAGING_HUBSPOT_WRITE_TOKEN",
+          "check": "no_http_response",
+          "setupStep": 11,
+          "setupAction": "Allow the exact host in the relevant runtime network policy and refresh that environment; do not bypass the proxy.",
+          "host": "127.0.0.1",
+          "permissionsExpanded": false
+        }
+      },
+      "whileHidden": {
+        "operationId": "operation_df418152-03d0-45c9-a677-47339ab0c3c0",
+        "opportunityId": "op_ab915034-d39e-4847-b589-4f65a5b1632b",
+        "correlation": "ai-main-b15bf97f-0f66-42dc-b7f3-da6b117a8029",
+        "state": "UNKNOWN",
+        "payloadContract": "hubspot-final-payload-v1",
+        "payloadHash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+        "actionVersion": "final-action-v1:sha256:b6ef32fbeae29db0bd1780f6c3b9825380fa65ce4318b0c907cf73b8dc5f73df",
+        "revision": 1,
+        "remoteTaskId": null,
+        "ledgerBootId": "efd4ce79-6843-4ba9-b4e6-4aa91d1de2d3",
+        "demoCreateAttempts": 0,
+        "finalRequest": {
+          "body": {
+            "associations": [
+              {
+                "to": {
+                  "id": "fixture-contact-001"
+                },
+                "types": [
+                  {
+                    "associationCategory": "HUBSPOT_DEFINED",
+                    "associationTypeId": 204
+                  }
+                ]
+              }
+            ],
+            "properties": {
+              "hs_task_body": "Review the customer request and prepare pricing for human follow-up.\nScope: {\"recordPurpose\":\"certification_only\",\"service\":\"surge_protection\"}\nTiming: {\"basisRef\":\"explicit_certification_operator_due_date\",\"dueAt\":\"2026-11-07T19:23:55.838Z\",\"kind\":\"absolute\"}\nCustomer decision horizon: null\nCustomer constraints: No customer communication; designated certification task only.\nEvidence: Synthetic certification contact requests surge protection pricing.\nAgent authority: follow-up task creation only. No customer communication, billing, contact, deal or pipeline mutation.\n[AI_MAIN_CORRELATION:ai-main-b15bf97f-0f66-42dc-b7f3-da6b117a8029]",
+              "hs_task_priority": "MEDIUM",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_subject": "Human follow-up: prepare quote",
+              "hs_task_type": "TODO",
+              "hs_timestamp": "2026-11-07T19:23:55.838Z"
+            }
+          },
+          "contractVersion": "hubspot-final-payload-v1",
+          "method": "POST",
+          "portalId": "test-portal-001",
+          "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+        },
+        "trace": [
+          {
+            "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.908Z"
+          },
+          {
+            "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.914Z"
+          },
+          {
+            "event": "POST_INTENT_DURABLY_PERSISTED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.923Z"
+          },
+          {
+            "event": "RESPONSE_LOST_OR_UNCONFIRMED_BLOCKED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.924Z"
+          },
+          {
+            "event": "RECONCILIATION_STARTED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.027Z"
+          },
+          {
+            "event": "NO_PROVEN_MATCH_BLOCKED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.030Z"
+          }
+        ]
+      },
+      "recovered": {
+        "operationId": "operation_df418152-03d0-45c9-a677-47339ab0c3c0",
+        "opportunityId": "op_ab915034-d39e-4847-b589-4f65a5b1632b",
+        "correlation": "ai-main-b15bf97f-0f66-42dc-b7f3-da6b117a8029",
+        "state": "CONFIRMED",
+        "payloadContract": "hubspot-final-payload-v1",
+        "payloadHash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+        "actionVersion": "final-action-v1:sha256:b6ef32fbeae29db0bd1780f6c3b9825380fa65ce4318b0c907cf73b8dc5f73df",
+        "revision": 1,
+        "remoteTaskId": "fixture-task-1",
+        "ledgerBootId": "efd4ce79-6843-4ba9-b4e6-4aa91d1de2d3",
+        "demoCreateAttempts": 0,
+        "finalRequest": {
+          "body": {
+            "associations": [
+              {
+                "to": {
+                  "id": "fixture-contact-001"
+                },
+                "types": [
+                  {
+                    "associationCategory": "HUBSPOT_DEFINED",
+                    "associationTypeId": 204
+                  }
+                ]
+              }
+            ],
+            "properties": {
+              "hs_task_body": "Review the customer request and prepare pricing for human follow-up.\nScope: {\"recordPurpose\":\"certification_only\",\"service\":\"surge_protection\"}\nTiming: {\"basisRef\":\"explicit_certification_operator_due_date\",\"dueAt\":\"2026-11-07T19:23:55.838Z\",\"kind\":\"absolute\"}\nCustomer decision horizon: null\nCustomer constraints: No customer communication; designated certification task only.\nEvidence: Synthetic certification contact requests surge protection pricing.\nAgent authority: follow-up task creation only. No customer communication, billing, contact, deal or pipeline mutation.\n[AI_MAIN_CORRELATION:ai-main-b15bf97f-0f66-42dc-b7f3-da6b117a8029]",
+              "hs_task_priority": "MEDIUM",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_subject": "Human follow-up: prepare quote",
+              "hs_task_type": "TODO",
+              "hs_timestamp": "2026-11-07T19:23:55.838Z"
+            }
+          },
+          "contractVersion": "hubspot-final-payload-v1",
+          "method": "POST",
+          "portalId": "test-portal-001",
+          "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+        },
+        "trace": [
+          {
+            "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.908Z"
+          },
+          {
+            "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.914Z"
+          },
+          {
+            "event": "POST_INTENT_DURABLY_PERSISTED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.923Z"
+          },
+          {
+            "event": "RESPONSE_LOST_OR_UNCONFIRMED_BLOCKED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:55.924Z"
+          },
+          {
+            "event": "RECONCILIATION_STARTED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.027Z"
+          },
+          {
+            "event": "NO_PROVEN_MATCH_BLOCKED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.030Z"
+          },
+          {
+            "event": "RECONCILIATION_STARTED",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.034Z"
+          },
+          {
+            "event": "EXISTING_TASK_RECONCILED_NO_CREATE",
+            "payload_hash": "sha256:333499e422d0d1d4da0f46e03af43ba1aebd9626b0b5ce75467fa17dd1857666",
+            "remote_id": "fixture-task-1",
+            "at": "2026-11-07T17:23:59.037Z"
+          }
+        ]
+      },
+      "postCount": 1
+    },
+    "noProvenMatch": {
+      "operation": {
+        "operationId": "operation_eaff5e28-26db-4831-8405-b58e0d9ed6b7",
+        "opportunityId": "op_c2a23fee-a5e4-4e6b-a002-88141602a93c",
+        "correlation": "ai-main-735ec6ab-ef7c-40b3-ac19-77dd1b0dca3c",
+        "state": "UNKNOWN",
+        "payloadContract": "hubspot-final-payload-v1",
+        "payloadHash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+        "actionVersion": "final-action-v1:sha256:62f8532aba35824458ab9e8ec4f1ccb88dc385cacaece8e975f17a34b4983205",
+        "revision": 1,
+        "remoteTaskId": null,
+        "ledgerBootId": "b4c350ba-9d1f-496a-8230-87a196ccb0aa",
+        "demoCreateAttempts": 0,
+        "finalRequest": {
+          "body": {
+            "associations": [
+              {
+                "to": {
+                  "id": "fixture-contact-001"
+                },
+                "types": [
+                  {
+                    "associationCategory": "HUBSPOT_DEFINED",
+                    "associationTypeId": 204
+                  }
+                ]
+              }
+            ],
+            "properties": {
+              "hs_task_body": "Review the customer request and prepare pricing for human follow-up.\nScope: {\"recordPurpose\":\"certification_only\",\"service\":\"surge_protection\"}\nTiming: {\"basisRef\":\"explicit_certification_operator_due_date\",\"dueAt\":\"2026-11-07T19:23:55.838Z\",\"kind\":\"absolute\"}\nCustomer decision horizon: null\nCustomer constraints: No customer communication; designated certification task only.\nEvidence: Synthetic certification contact requests surge protection pricing.\nAgent authority: follow-up task creation only. No customer communication, billing, contact, deal or pipeline mutation.\n[AI_MAIN_CORRELATION:ai-main-735ec6ab-ef7c-40b3-ac19-77dd1b0dca3c]",
+              "hs_task_priority": "MEDIUM",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_subject": "Human follow-up: prepare quote",
+              "hs_task_type": "TODO",
+              "hs_timestamp": "2026-11-07T19:23:55.838Z"
+            }
+          },
+          "contractVersion": "hubspot-final-payload-v1",
+          "method": "POST",
+          "portalId": "test-portal-001",
+          "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+        },
+        "trace": [
+          {
+            "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.042Z"
+          },
+          {
+            "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.045Z"
+          },
+          {
+            "event": "POST_INTENT_DURABLY_PERSISTED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.049Z"
+          },
+          {
+            "event": "RESPONSE_LOST_OR_UNCONFIRMED_BLOCKED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.051Z"
+          },
+          {
+            "event": "RECONCILIATION_STARTED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.150Z"
+          },
+          {
+            "event": "NO_PROVEN_MATCH_BLOCKED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.154Z"
+          }
+        ]
+      },
+      "lookupUnavailable": {
+        "operationId": "operation_eaff5e28-26db-4831-8405-b58e0d9ed6b7",
+        "opportunityId": "op_c2a23fee-a5e4-4e6b-a002-88141602a93c",
+        "correlation": "ai-main-735ec6ab-ef7c-40b3-ac19-77dd1b0dca3c",
+        "state": "UNKNOWN",
+        "payloadContract": "hubspot-final-payload-v1",
+        "payloadHash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+        "actionVersion": "final-action-v1:sha256:62f8532aba35824458ab9e8ec4f1ccb88dc385cacaece8e975f17a34b4983205",
+        "revision": 1,
+        "remoteTaskId": null,
+        "ledgerBootId": "b4c350ba-9d1f-496a-8230-87a196ccb0aa",
+        "demoCreateAttempts": 0,
+        "finalRequest": {
+          "body": {
+            "associations": [
+              {
+                "to": {
+                  "id": "fixture-contact-001"
+                },
+                "types": [
+                  {
+                    "associationCategory": "HUBSPOT_DEFINED",
+                    "associationTypeId": 204
+                  }
+                ]
+              }
+            ],
+            "properties": {
+              "hs_task_body": "Review the customer request and prepare pricing for human follow-up.\nScope: {\"recordPurpose\":\"certification_only\",\"service\":\"surge_protection\"}\nTiming: {\"basisRef\":\"explicit_certification_operator_due_date\",\"dueAt\":\"2026-11-07T19:23:55.838Z\",\"kind\":\"absolute\"}\nCustomer decision horizon: null\nCustomer constraints: No customer communication; designated certification task only.\nEvidence: Synthetic certification contact requests surge protection pricing.\nAgent authority: follow-up task creation only. No customer communication, billing, contact, deal or pipeline mutation.\n[AI_MAIN_CORRELATION:ai-main-735ec6ab-ef7c-40b3-ac19-77dd1b0dca3c]",
+              "hs_task_priority": "MEDIUM",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_subject": "Human follow-up: prepare quote",
+              "hs_task_type": "TODO",
+              "hs_timestamp": "2026-11-07T19:23:55.838Z"
+            }
+          },
+          "contractVersion": "hubspot-final-payload-v1",
+          "method": "POST",
+          "portalId": "test-portal-001",
+          "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+        },
+        "trace": [
+          {
+            "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.042Z"
+          },
+          {
+            "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.045Z"
+          },
+          {
+            "event": "POST_INTENT_DURABLY_PERSISTED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.049Z"
+          },
+          {
+            "event": "RESPONSE_LOST_OR_UNCONFIRMED_BLOCKED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.051Z"
+          },
+          {
+            "event": "RECONCILIATION_STARTED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.150Z"
+          },
+          {
+            "event": "NO_PROVEN_MATCH_BLOCKED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.154Z"
+          },
+          {
+            "event": "RECONCILIATION_STARTED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.158Z"
+          },
+          {
+            "event": "LOOKUP_UNAVAILABLE_BLOCKED",
+            "payload_hash": "sha256:a47d06fee595c8a84b4ea8095733a12e25b625f15cb3cfdc982f349c54d5e952",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.160Z"
+          }
+        ],
+        "blocker": {
+          "code": "upstream_unavailable",
+          "credential": "STAGING_HUBSPOT_READ_TOKEN",
+          "check": "/crm/v4/objects/contacts/fixture-contact-001/associations/tasks?limit=100",
+          "setupStep": 11,
+          "setupAction": "Allow the exact host in the relevant runtime network policy and refresh that environment; do not bypass the proxy.",
+          "httpStatus": 503,
+          "permissionsExpanded": false
+        }
+      },
+      "postCount": 1,
+      "remoteTaskId": null
+    },
+    "restartDuringPost": {
+      "recovered": {
+        "operationId": "operation_03ab06a0-4cd7-4b46-ab5f-35cd11142a96",
+        "opportunityId": "op_911c812a-0a0c-4420-9ac3-a05ca67a25fe",
+        "correlation": "ai-main-ab521b31-3124-402d-bb1b-f5e78cc2f689",
+        "state": "CONFIRMED",
+        "payloadContract": "hubspot-final-payload-v1",
+        "payloadHash": "sha256:7f7e337742a65976c30446a0bd524df1c7527e5d82a39022232be5e6cf577d38",
+        "actionVersion": "final-action-v1:sha256:7b31f6538c11e30a9151442453a8bb4ec6787f7a78601a57590f9cff9201fec8",
+        "revision": 1,
+        "remoteTaskId": "fixture-task-2",
+        "ledgerBootId": "c4b47f70-8239-4af5-98e0-a872669681e9",
+        "demoCreateAttempts": 0,
+        "finalRequest": {
+          "body": {
+            "associations": [
+              {
+                "to": {
+                  "id": "fixture-contact-001"
+                },
+                "types": [
+                  {
+                    "associationCategory": "HUBSPOT_DEFINED",
+                    "associationTypeId": 204
+                  }
+                ]
+              }
+            ],
+            "properties": {
+              "hs_task_body": "Review the customer request and prepare pricing for human follow-up.\nScope: {\"recordPurpose\":\"certification_only\",\"service\":\"surge_protection\"}\nTiming: {\"basisRef\":\"explicit_certification_operator_due_date\",\"dueAt\":\"2026-11-07T19:23:55.838Z\",\"kind\":\"absolute\"}\nCustomer decision horizon: null\nCustomer constraints: No customer communication; designated certification task only.\nEvidence: Synthetic certification contact requests surge protection pricing.\nAgent authority: follow-up task creation only. No customer communication, billing, contact, deal or pipeline mutation.\n[AI_MAIN_CORRELATION:ai-main-ab521b31-3124-402d-bb1b-f5e78cc2f689]",
+              "hs_task_priority": "MEDIUM",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_subject": "Human follow-up: prepare quote",
+              "hs_task_type": "TODO",
+              "hs_timestamp": "2026-11-07T19:23:55.838Z"
+            }
+          },
+          "contractVersion": "hubspot-final-payload-v1",
+          "method": "POST",
+          "portalId": "test-portal-001",
+          "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+        },
+        "trace": [
+          {
+            "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+            "payload_hash": "sha256:7f7e337742a65976c30446a0bd524df1c7527e5d82a39022232be5e6cf577d38",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.165Z"
+          },
+          {
+            "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+            "payload_hash": "sha256:7f7e337742a65976c30446a0bd524df1c7527e5d82a39022232be5e6cf577d38",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.168Z"
+          },
+          {
+            "event": "POST_INTENT_DURABLY_PERSISTED",
+            "payload_hash": "sha256:7f7e337742a65976c30446a0bd524df1c7527e5d82a39022232be5e6cf577d38",
+            "remote_id": null,
+            "at": "2026-11-07T17:23:59.173Z"
+          },
+          {
+            "event": "RESTART_RECOVERED_UNCERTAIN_NO_CREATE",
+            "payload_hash": "sha256:7f7e337742a65976c30446a0bd524df1c7527e5d82a39022232be5e6cf577d38",
+            "remote_id": null,
+            "at": "2026-11-07T17:24:02.330Z"
+          },
+          {
+            "event": "RECONCILIATION_STARTED",
+            "payload_hash": "sha256:7f7e337742a65976c30446a0bd524df1c7527e5d82a39022232be5e6cf577d38",
+            "remote_id": null,
+            "at": "2026-11-07T17:24:02.331Z"
+          },
+          {
+            "event": "EXISTING_TASK_RECONCILED_NO_CREATE",
+            "payload_hash": "sha256:7f7e337742a65976c30446a0bd524df1c7527e5d82a39022232be5e6cf577d38",
+            "remote_id": "fixture-task-2",
+            "at": "2026-11-07T17:24:02.336Z"
+          }
+        ]
+      },
+      "postCount": 1
+    },
+    "changedPayload": {
+      "oldHash": "sha256:cce07f44a48d376cff9bf58471b518a85b12de79ae70281f15695168f052751d",
+      "newHash": "sha256:90dfc1024c339533960d083e0246cc91d6f47565f52ffa74c9497e6b2cfadb77",
+      "oldApprovalRejected": true,
+      "confirmed": {
+        "operationId": "operation_b321db36-83fe-4f5e-9636-8d9a6273d604",
+        "opportunityId": "op_0856fe29-21e9-4fc2-9fa9-d82d1c182346",
+        "correlation": "ai-main-70379463-ab05-47e0-93a9-cb2340f5fdaa",
+        "state": "CONFIRMED",
+        "payloadContract": "hubspot-final-payload-v1",
+        "payloadHash": "sha256:90dfc1024c339533960d083e0246cc91d6f47565f52ffa74c9497e6b2cfadb77",
+        "actionVersion": "final-action-v1:sha256:18e6cea634ed9a950b5eacc77867170e38c28e317ed3a92318f23e32b7b95a19",
+        "revision": 2,
+        "remoteTaskId": "fixture-task-3",
+        "ledgerBootId": "c4b47f70-8239-4af5-98e0-a872669681e9",
+        "demoCreateAttempts": 0,
+        "finalRequest": {
+          "body": {
+            "associations": [
+              {
+                "to": {
+                  "id": "fixture-contact-001"
+                },
+                "types": [
+                  {
+                    "associationCategory": "HUBSPOT_DEFINED",
+                    "associationTypeId": 204
+                  }
+                ]
+              }
+            ],
+            "properties": {
+              "hs_task_body": "Review the customer request and prepare pricing for human follow-up.\nScope: {\"recordPurpose\":\"certification_only\",\"service\":\"surge_protection\"}\nTiming: {\"basisRef\":\"explicit_certification_operator_due_date\",\"dueAt\":\"2026-11-07T20:23:55.838Z\",\"kind\":\"absolute\"}\nCustomer decision horizon: null\nCustomer constraints: No customer communication; designated certification task only.\nEvidence: Synthetic certification contact requests surge protection pricing.\nAgent authority: follow-up task creation only. No customer communication, billing, contact, deal or pipeline mutation.\n[AI_MAIN_CORRELATION:ai-main-70379463-ab05-47e0-93a9-cb2340f5fdaa]",
+              "hs_task_priority": "MEDIUM",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_subject": "Human follow-up: prepare quote",
+              "hs_task_type": "TODO",
+              "hs_timestamp": "2026-11-07T20:23:55.838Z"
+            }
+          },
+          "contractVersion": "hubspot-final-payload-v1",
+          "method": "POST",
+          "portalId": "test-portal-001",
+          "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+        },
+        "trace": [
+          {
+            "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+            "payload_hash": "sha256:cce07f44a48d376cff9bf58471b518a85b12de79ae70281f15695168f052751d",
+            "remote_id": null,
+            "at": "2026-11-07T17:24:02.342Z"
+          },
+          {
+            "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+            "payload_hash": "sha256:cce07f44a48d376cff9bf58471b518a85b12de79ae70281f15695168f052751d",
+            "remote_id": null,
+            "at": "2026-11-07T17:24:02.345Z"
+          },
+          {
+            "event": "APPROVAL_INVALIDATED",
+            "payload_hash": "sha256:90dfc1024c339533960d083e0246cc91d6f47565f52ffa74c9497e6b2cfadb77",
+            "remote_id": null,
+            "at": "2026-11-07T17:24:02.349Z"
+          },
+          {
+            "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+            "payload_hash": "sha256:90dfc1024c339533960d083e0246cc91d6f47565f52ffa74c9497e6b2cfadb77",
+            "remote_id": null,
+            "at": "2026-11-07T17:24:02.355Z"
+          },
+          {
+            "event": "POST_INTENT_DURABLY_PERSISTED",
+            "payload_hash": "sha256:90dfc1024c339533960d083e0246cc91d6f47565f52ffa74c9497e6b2cfadb77",
+            "remote_id": null,
+            "at": "2026-11-07T17:24:02.359Z"
+          },
+          {
+            "event": "REMOTE_ID_RECEIVED",
+            "payload_hash": "sha256:90dfc1024c339533960d083e0246cc91d6f47565f52ffa74c9497e6b2cfadb77",
+            "remote_id": "fixture-task-3",
+            "at": "2026-11-07T17:24:02.360Z"
+          },
+          {
+            "event": "RECONCILIATION_STARTED",
+            "payload_hash": "sha256:90dfc1024c339533960d083e0246cc91d6f47565f52ffa74c9497e6b2cfadb77",
+            "remote_id": null,
+            "at": "2026-11-07T17:24:02.360Z"
+          },
+          {
+            "event": "EXISTING_TASK_RECONCILED_NO_CREATE",
+            "payload_hash": "sha256:90dfc1024c339533960d083e0246cc91d6f47565f52ffa74c9497e6b2cfadb77",
+            "remote_id": "fixture-task-3",
+            "at": "2026-11-07T17:24:02.364Z"
+          }
+        ]
+      }
+    }
+  },
+  "metricsBeforeVerifiedOutcome": {
+    "estimateKind": "SYNTHETIC_TEST_ESTIMATE_NOT_REVENUE",
+    "estimateCurrency": "USD",
+    "estimatedOpportunityValueMinor": 400000,
+    "confirmedTaskCount": 3,
+    "verifiedTestOutcomes": [],
+    "revenueRescued": null
+  },
+  "metricsAfterVerifiedOutcome": {
+    "estimateKind": "SYNTHETIC_TEST_ESTIMATE_NOT_REVENUE",
+    "estimateCurrency": "USD",
+    "estimatedOpportunityValueMinor": 400000,
+    "confirmedTaskCount": 3,
+    "verifiedTestOutcomes": [
+      {
+        "external_ref": "synthetic-outcome-1",
+        "remote_task_id": "fixture-task-1",
+        "amount_minor": 25000,
+        "currency": "USD",
+        "verification_kind": "LOCAL_FIXTURE_NOT_BUSINESS_REVENUE"
+      }
+    ],
+    "revenueRescued": null
+  },
+  "outcomeAttempts": [
+    {
+      "recorded": true
+    },
+    {
+      "recorded": false
+    },
+    {
+      "recorded": false
+    },
+    {
+      "recorded": false
+    },
+    {
+      "recorded": false
+    }
+  ],
+  "fixtureTasks": [
+    {
+      "id": "fixture-task-1",
+      "correlation": "ai-main-b15bf97f-0f66-42dc-b7f3-da6b117a8029",
+      "body": {
+        "associations": [
+          {
+            "to": {
+              "id": "fixture-contact-001"
+            },
+            "types": [
+              {
+                "associationCategory": "HUBSPOT_DEFINED",
+                "associationTypeId": 204
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "hs_task_body": "Review the customer request and prepare pricing for human follow-up.\nScope: {\"recordPurpose\":\"certification_only\",\"service\":\"surge_protection\"}\nTiming: {\"basisRef\":\"explicit_certification_operator_due_date\",\"dueAt\":\"2026-11-07T19:23:55.838Z\",\"kind\":\"absolute\"}\nCustomer decision horizon: null\nCustomer constraints: No customer communication; designated certification task only.\nEvidence: Synthetic certification contact requests surge protection pricing.\nAgent authority: follow-up task creation only. No customer communication, billing, contact, deal or pipeline mutation.\n[AI_MAIN_CORRELATION:ai-main-b15bf97f-0f66-42dc-b7f3-da6b117a8029]",
+          "hs_task_priority": "MEDIUM",
+          "hs_task_status": "NOT_STARTED",
+          "hs_task_subject": "Human follow-up: prepare quote",
+          "hs_task_type": "TODO",
+          "hs_timestamp": "2026-11-07T19:23:55.838Z"
+        }
+      }
+    },
+    {
+      "id": "fixture-task-2",
+      "correlation": "ai-main-ab521b31-3124-402d-bb1b-f5e78cc2f689",
+      "body": {
+        "associations": [
+          {
+            "to": {
+              "id": "fixture-contact-001"
+            },
+            "types": [
+              {
+                "associationCategory": "HUBSPOT_DEFINED",
+                "associationTypeId": 204
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "hs_task_body": "Review the customer request and prepare pricing for human follow-up.\nScope: {\"recordPurpose\":\"certification_only\",\"service\":\"surge_protection\"}\nTiming: {\"basisRef\":\"explicit_certification_operator_due_date\",\"dueAt\":\"2026-11-07T19:23:55.838Z\",\"kind\":\"absolute\"}\nCustomer decision horizon: null\nCustomer constraints: No customer communication; designated certification task only.\nEvidence: Synthetic certification contact requests surge protection pricing.\nAgent authority: follow-up task creation only. No customer communication, billing, contact, deal or pipeline mutation.\n[AI_MAIN_CORRELATION:ai-main-ab521b31-3124-402d-bb1b-f5e78cc2f689]",
+          "hs_task_priority": "MEDIUM",
+          "hs_task_status": "NOT_STARTED",
+          "hs_task_subject": "Human follow-up: prepare quote",
+          "hs_task_type": "TODO",
+          "hs_timestamp": "2026-11-07T19:23:55.838Z"
+        }
+      }
+    },
+    {
+      "id": "fixture-task-3",
+      "correlation": "ai-main-70379463-ab05-47e0-93a9-cb2340f5fdaa",
+      "body": {
+        "associations": [
+          {
+            "to": {
+              "id": "fixture-contact-001"
+            },
+            "types": [
+              {
+                "associationCategory": "HUBSPOT_DEFINED",
+                "associationTypeId": 204
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "hs_task_body": "Review the customer request and prepare pricing for human follow-up.\nScope: {\"recordPurpose\":\"certification_only\",\"service\":\"surge_protection\"}\nTiming: {\"basisRef\":\"explicit_certification_operator_due_date\",\"dueAt\":\"2026-11-07T20:23:55.838Z\",\"kind\":\"absolute\"}\nCustomer decision horizon: null\nCustomer constraints: No customer communication; designated certification task only.\nEvidence: Synthetic certification contact requests surge protection pricing.\nAgent authority: follow-up task creation only. No customer communication, billing, contact, deal or pipeline mutation.\n[AI_MAIN_CORRELATION:ai-main-70379463-ab05-47e0-93a9-cb2340f5fdaa]",
+          "hs_task_priority": "MEDIUM",
+          "hs_task_status": "NOT_STARTED",
+          "hs_task_subject": "Human follow-up: prepare quote",
+          "hs_task_type": "TODO",
+          "hs_timestamp": "2026-11-07T20:23:55.838Z"
+        }
+      }
+    },
+    {
+      "id": "fixture-task-4",
+      "correlation": "ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631",
+      "body": {
+        "associations": [
+          {
+            "to": {
+              "id": "fixture-contact-001"
+            },
+            "types": [
+              {
+                "associationCategory": "HUBSPOT_DEFINED",
+                "associationTypeId": 204
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-29T12:00:00.000Z; note_5db5b363d8dc5596323d251041cd9804b37fa8ee7ab67578a958167dc0c21666] Separately asks for pricing for an EV charger; the charger request is unrelated to the fault.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: 2026-11-07T19:23:55.838Z. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.\n[AI_MAIN_CORRELATION:ai-main-ef7083fe-8dda-43f1-804f-8fac57e20631]",
+          "hs_task_priority": "MEDIUM",
+          "hs_task_status": "NOT_STARTED",
+          "hs_task_subject": "Internal pricing preparation: ev charger pricing",
+          "hs_task_type": "TODO",
+          "hs_timestamp": "2026-11-07T19:23:55.838Z"
+        }
+      }
+    }
+  ],
+  "tenantIdentityReads": [
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "read",
+      "portalId": "test-portal-001"
+    },
+    {
+      "credential": "write_identity_only",
+      "portalId": "test-portal-001"
+    }
+  ],
+  "realHubSpotTaskIds": [],
+  "hostedGate": "PENDING_ACCESS_AND_HUMAN_REVIEW",
+  "productionWritebackEnabled": false,
+  "productionRuntimeState": "Not remotely inspected or changed",
+  "newModelCalls": 0
+}

@@ -1,0 +1,13 @@
+{
+  "kind": "USER_SUPPLIED_VERIFIED_SUBJECT_ROLE_MAPPING",
+  "at": "2026-11-07T16:38:17.266Z",
+  "subjectHash": "73fec8d9377d480aa231f2a21e16e669a8e12d540f4a307ee694d4498b4b9dcf",
+  "role": "Approver",
+  "priorRole": null,
+  "otherMappingsPreserved": true,
+  "activeVersion": "2fd8d2b3-0248-41ae-8475-9a8bcfbce9fd",
+  "allExecutionFlagsFalse": true,
+  "semanticApproval": false,
+  "finalExecutionApproval": false,
+  "secretValuesChanged": false
+}

@@ -388,5 +388,6 @@ keep general customer writeback closed until the actual release gates pass. No
 new resources, permissions, key rotation, destructive actions or merge to main.
 Preserve immutable captures and prior human decisions; revised outputs and final
 release require real human acceptance. Never label AI/test actors human. Current
-cycle test limits are three real synthetic tasks and 150 model calls; preserve
+cycle test limits are three real synthetic tasks and, after the documented
+reassessment, 210 model calls (206 consumed at the release evidence checkpoint); preserve
 uncertain results, reconcile or block instead of creating again.

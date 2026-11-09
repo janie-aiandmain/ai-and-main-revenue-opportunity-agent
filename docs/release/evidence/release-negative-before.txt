@@ -1,0 +1,35 @@
+✔ UV14 cause: source-bound qualifier completion includes the omitted exact restriction, not a repaired model capture (16.626363ms)
+✔ quantities and scope within the cited source sentence are retained without guessing (2.770311ms)
+✔ unseen restriction closure preserves billing hold and conditional scope with an internal-only task (4.350422ms)
+✔ independent needs do not absorb each other or an ambiguous shared restriction (1.791881ms)
+✔ source closure is idempotent and does not add uncited standalone customer needs or injected commands (2.506722ms)
+✔ a model omission of the word historical cannot renew a deadline in the displayed bounded recommendation (1.554352ms)
+✔ ST04 historical call attribution and current invoice-status verification do not grant communication or billing authority (4.891921ms)
+✖ bare No and Never restrictions cannot disappear from a finding or its exact task evidence (4.913644ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 102.469146
+
+✖ failing tests:
+
+test at tests/release-evidence.test.js:50:1
+✖ bare No and Never restrictions cannot disappear from a finding or its exact task evidence (4.913644ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.findings[0].evidence.some(e=>e.quote===clause))
+  
+      at TestContext.<anonymous> (file:///workspace/ai-and-main-revenue-opportunity-agent/tests/release-evidence.test.js:52:115)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

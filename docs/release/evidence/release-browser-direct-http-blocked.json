@@ -1,0 +1,12 @@
+{
+  "kind": "EXECUTED_LOCAL_CHROMIUM_WORKER_FIXTURE_NOT_HOSTED",
+  "humanSignoffs": 0,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "assertions": [
+    "console_loaded_with_ephemeral_signed_test_identity"
+  ],
+  "failure": "browser_condition_timeout",
+  "visibleUiText": "AI & MAIN agent operator console\n\nFinding oversight · human approval required\n\nThis console reviews agent findings and exact task proposals. HubSpot remains the system of record.\n\nOpen designated synthetic record in HubSpot\n\nEvaluate designated notesRefresh findings\n\nblocked_network_access: Allow the exact host in the relevant runtime network policy and refresh that environment; do not bypass the proxy.\n\nNo findings. Evaluation reads only the designated synthetic staging context.",
+  "fixtureModelCalls": 0
+}

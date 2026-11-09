@@ -1,0 +1,390 @@
+{
+  "kind": "FRESH_NV02_REPETITIONS_AFTER_NEGATION_CORRECTION",
+  "sourceCommit": "73ceea9b36e4984ba9f7fd36285644e13c1d6d79",
+  "time": "2026-11-03T12:00:00Z",
+  "modelCalls": 3,
+  "hubspotCalls": 0,
+  "rows": [
+    {
+      "id": "NV02",
+      "repeat": 1,
+      "returnedModel": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 1742,
+        "input_tokens_details": {
+          "cache_write_tokens": 107,
+          "cached_tokens": 1632
+        },
+        "output_tokens": 214,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1956
+      },
+      "rawModelOutput": "{\"findings\":[{\"classification\":\"strong cross-sell opportunity\",\"confidence\":\"high\",\"opportunityType\":\"cross-sell\",\"evidence\":[{\"noteId\":\"note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b\",\"quote\":\"Customer requests charger pricing.\"},{\"noteId\":\"note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b\",\"quote\":\"Never book an appointment.\"}],\"reasoningSummary\":\"Customer explicitly requested charger pricing and specified that an appointment must not be booked.\",\"recommendedNextAction\":\"Internal preparation and human review of the requested charger pricing only, preserving the customer instruction: \\\"Never book an appointment.\\\"\",\"humanReviewRequired\":true,\"opportunityKey\":\"charger-pricing\"}]}",
+      "actual": {
+        "schemaVersion": "findings-v0.2",
+        "promptVersion": "reasoning-v0.3.3",
+        "findings": [
+          {
+            "findingId": "finding_d3eef4ba38bf0ed4b0c1b9e91d0be479bf3ee33bd61d96492a5b1d1e9b23b298",
+            "opportunityKey": "charger-pricing",
+            "classification": "strong cross-sell opportunity",
+            "opportunityType": "cross-sell",
+            "confidence": "high",
+            "evidence": [
+              {
+                "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                "quote": "Customer requests charger pricing."
+              },
+              {
+                "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                "quote": "Never book an appointment."
+              }
+            ],
+            "reasoningSummary": "Customer explicitly requested charger pricing and specified that an appointment must not be booked.",
+            "recommendedNextAction": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps. Customer context: \"Never book an appointment.\" Internal task only. No customer action is authorized.",
+            "humanReviewRequired": true,
+            "proposedAction": {
+              "schemaVersion": "internal-task-proposal-v2.2",
+              "actionPurpose": "internal_preparation",
+              "actionPayload": {
+                "type": "hubspot.follow_up_task.create",
+                "target": {
+                  "contextKey": "synthetic:NV02"
+                },
+                "properties": {
+                  "hs_task_subject": "Internal pricing preparation: charger pricing",
+                  "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-30T12:00:00Z; note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b] Customer requests charger pricing.\n[2026-10-30T12:00:00Z; note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b] Never book an appointment.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: Never book an appointment.\nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+                  "hs_task_priority": "HIGH",
+                  "hs_task_status": "NOT_STARTED",
+                  "hs_task_type": "TODO"
+                }
+              },
+              "material": {
+                "policyVersion": "internal-task-policy-v1.2",
+                "proposalVersion": "internal-task-proposal-v2.2",
+                "actionClass": "hubspot.follow_up_task.create",
+                "targetContext": "synthetic:NV02",
+                "classification": "strong cross-sell opportunity",
+                "opportunityType": "cross-sell",
+                "intent": "prepare_quote",
+                "actionPurpose": "internal_preparation",
+                "scope": {
+                  "sourceRequests": [
+                    "Customer requests charger pricing.",
+                    "Never book an appointment."
+                  ]
+                },
+                "priority": "HIGH",
+                "evidence": [
+                  {
+                    "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                    "timestamp": "2026-10-30T12:00:00Z",
+                    "quote": "Customer requests charger pricing."
+                  },
+                  {
+                    "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                    "timestamp": "2026-10-30T12:00:00Z",
+                    "quote": "Never book an appointment."
+                  }
+                ],
+                "timing": {
+                  "kind": "none"
+                },
+                "operatorTaskDueAt": null,
+                "sourceTimingConstraints": [],
+                "customerActionGates": [],
+                "sourceRestrictions": [
+                  {
+                    "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                    "timestamp": "2026-10-30T12:00:00Z",
+                    "quote": "Never book an appointment."
+                  }
+                ],
+                "customerActionPermitted": false,
+                "humanApprovalRequired": true
+              },
+              "authorityRequirements": {
+                "policyVersion": "internal-task-policy-v1.2",
+                "humanApprovalRequired": true,
+                "allowedMutation": "hubspot.follow_up_task.create",
+                "customerActionPermitted": false
+              },
+              "qualityFailures": [],
+              "preparationBlocked": false,
+              "executionBlocked": true,
+              "missingFinalFields": [
+                "operatorTaskDueAt",
+                "CRM association",
+                "operation correlation",
+                "exact final-payload approval"
+              ],
+              "actionVersion": "sha256:f34ebf54e116a63fd16fb2f95fc614b23281a9cfbe9552888a41828f89730457"
+            }
+          }
+        ],
+        "proposalVersion": "internal-task-proposal-v2.2",
+        "materializationVersion": "source-evidence-v0.3.6",
+        "evidencePolicyVersion": "source-clause-closure-v1.1"
+      },
+      "quality": [],
+      "passed": true,
+      "humanReview": "PENDING"
+    },
+    {
+      "id": "NV02",
+      "repeat": 2,
+      "returnedModel": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 1742,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1739
+        },
+        "output_tokens": 213,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1955
+      },
+      "rawModelOutput": "{\"findings\":[{\"classification\":\"strong cross-sell opportunity\",\"confidence\":\"high\",\"opportunityType\":\"cross-sell\",\"evidence\":[{\"noteId\":\"note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b\",\"quote\":\"Customer requests charger pricing.\"},{\"noteId\":\"note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b\",\"quote\":\"Never book an appointment.\"}],\"reasoningSummary\":\"Customer explicitly requested charger pricing and specified that no appointment should be booked.\",\"recommendedNextAction\":\"Internal preparation and human review of the requested charger pricing only. Preserve the customer context: \\\"Never book an appointment.\\\"\",\"humanReviewRequired\":true,\"opportunityKey\":\"charger-pricing\"}]}",
+      "actual": {
+        "schemaVersion": "findings-v0.2",
+        "promptVersion": "reasoning-v0.3.3",
+        "findings": [
+          {
+            "findingId": "finding_d3eef4ba38bf0ed4b0c1b9e91d0be479bf3ee33bd61d96492a5b1d1e9b23b298",
+            "opportunityKey": "charger-pricing",
+            "classification": "strong cross-sell opportunity",
+            "opportunityType": "cross-sell",
+            "confidence": "high",
+            "evidence": [
+              {
+                "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                "quote": "Customer requests charger pricing."
+              },
+              {
+                "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                "quote": "Never book an appointment."
+              }
+            ],
+            "reasoningSummary": "Customer explicitly requested charger pricing and specified that no appointment should be booked.",
+            "recommendedNextAction": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps. Customer context: \"Never book an appointment.\" Internal task only. No customer action is authorized.",
+            "humanReviewRequired": true,
+            "proposedAction": {
+              "schemaVersion": "internal-task-proposal-v2.2",
+              "actionPurpose": "internal_preparation",
+              "actionPayload": {
+                "type": "hubspot.follow_up_task.create",
+                "target": {
+                  "contextKey": "synthetic:NV02"
+                },
+                "properties": {
+                  "hs_task_subject": "Internal pricing preparation: charger pricing",
+                  "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-30T12:00:00Z; note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b] Customer requests charger pricing.\n[2026-10-30T12:00:00Z; note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b] Never book an appointment.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: Never book an appointment.\nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+                  "hs_task_priority": "HIGH",
+                  "hs_task_status": "NOT_STARTED",
+                  "hs_task_type": "TODO"
+                }
+              },
+              "material": {
+                "policyVersion": "internal-task-policy-v1.2",
+                "proposalVersion": "internal-task-proposal-v2.2",
+                "actionClass": "hubspot.follow_up_task.create",
+                "targetContext": "synthetic:NV02",
+                "classification": "strong cross-sell opportunity",
+                "opportunityType": "cross-sell",
+                "intent": "prepare_quote",
+                "actionPurpose": "internal_preparation",
+                "scope": {
+                  "sourceRequests": [
+                    "Customer requests charger pricing.",
+                    "Never book an appointment."
+                  ]
+                },
+                "priority": "HIGH",
+                "evidence": [
+                  {
+                    "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                    "timestamp": "2026-10-30T12:00:00Z",
+                    "quote": "Customer requests charger pricing."
+                  },
+                  {
+                    "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                    "timestamp": "2026-10-30T12:00:00Z",
+                    "quote": "Never book an appointment."
+                  }
+                ],
+                "timing": {
+                  "kind": "none"
+                },
+                "operatorTaskDueAt": null,
+                "sourceTimingConstraints": [],
+                "customerActionGates": [],
+                "sourceRestrictions": [
+                  {
+                    "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                    "timestamp": "2026-10-30T12:00:00Z",
+                    "quote": "Never book an appointment."
+                  }
+                ],
+                "customerActionPermitted": false,
+                "humanApprovalRequired": true
+              },
+              "authorityRequirements": {
+                "policyVersion": "internal-task-policy-v1.2",
+                "humanApprovalRequired": true,
+                "allowedMutation": "hubspot.follow_up_task.create",
+                "customerActionPermitted": false
+              },
+              "qualityFailures": [],
+              "preparationBlocked": false,
+              "executionBlocked": true,
+              "missingFinalFields": [
+                "operatorTaskDueAt",
+                "CRM association",
+                "operation correlation",
+                "exact final-payload approval"
+              ],
+              "actionVersion": "sha256:f5f7c8da0b433200dbcae5d6096040ed4db2c729d6aafad19779350ad2085c08"
+            }
+          }
+        ],
+        "proposalVersion": "internal-task-proposal-v2.2",
+        "materializationVersion": "source-evidence-v0.3.6",
+        "evidencePolicyVersion": "source-clause-closure-v1.1"
+      },
+      "quality": [],
+      "passed": true,
+      "humanReview": "PENDING"
+    },
+    {
+      "id": "NV02",
+      "repeat": 3,
+      "returnedModel": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 1742,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1739
+        },
+        "output_tokens": 221,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1963
+      },
+      "rawModelOutput": "{\"findings\":[{\"classification\":\"strong cross-sell opportunity\",\"confidence\":\"high\",\"opportunityType\":\"cross-sell\",\"evidence\":[{\"noteId\":\"note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b\",\"quote\":\"Customer requests charger pricing.\"},{\"noteId\":\"note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b\",\"quote\":\"Never book an appointment.\"}],\"reasoningSummary\":\"Customer explicitly requested charger pricing and specified that an appointment must not be booked.\",\"recommendedNextAction\":\"Internal operator task: prepare the requested charger pricing only. Preserve the customer context: \\\"Never book an appointment.\\\" Any later customer action requires separate human review.\",\"humanReviewRequired\":true,\"opportunityKey\":\"charger-pricing\"}]}",
+      "actual": {
+        "schemaVersion": "findings-v0.2",
+        "promptVersion": "reasoning-v0.3.3",
+        "findings": [
+          {
+            "findingId": "finding_d3eef4ba38bf0ed4b0c1b9e91d0be479bf3ee33bd61d96492a5b1d1e9b23b298",
+            "opportunityKey": "charger-pricing",
+            "classification": "strong cross-sell opportunity",
+            "opportunityType": "cross-sell",
+            "confidence": "high",
+            "evidence": [
+              {
+                "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                "quote": "Customer requests charger pricing."
+              },
+              {
+                "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                "quote": "Never book an appointment."
+              }
+            ],
+            "reasoningSummary": "Customer explicitly requested charger pricing and specified that an appointment must not be booked.",
+            "recommendedNextAction": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps. Customer context: \"Never book an appointment.\" Internal task only. No customer action is authorized.",
+            "humanReviewRequired": true,
+            "proposedAction": {
+              "schemaVersion": "internal-task-proposal-v2.2",
+              "actionPurpose": "internal_preparation",
+              "actionPayload": {
+                "type": "hubspot.follow_up_task.create",
+                "target": {
+                  "contextKey": "synthetic:NV02"
+                },
+                "properties": {
+                  "hs_task_subject": "Internal pricing preparation: charger pricing",
+                  "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-10-30T12:00:00Z; note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b] Customer requests charger pricing.\n[2026-10-30T12:00:00Z; note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b] Never book an appointment.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: Never book an appointment.\nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+                  "hs_task_priority": "HIGH",
+                  "hs_task_status": "NOT_STARTED",
+                  "hs_task_type": "TODO"
+                }
+              },
+              "material": {
+                "policyVersion": "internal-task-policy-v1.2",
+                "proposalVersion": "internal-task-proposal-v2.2",
+                "actionClass": "hubspot.follow_up_task.create",
+                "targetContext": "synthetic:NV02",
+                "classification": "strong cross-sell opportunity",
+                "opportunityType": "cross-sell",
+                "intent": "prepare_quote",
+                "actionPurpose": "internal_preparation",
+                "scope": {
+                  "sourceRequests": [
+                    "Customer requests charger pricing.",
+                    "Never book an appointment."
+                  ]
+                },
+                "priority": "HIGH",
+                "evidence": [
+                  {
+                    "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                    "timestamp": "2026-10-30T12:00:00Z",
+                    "quote": "Customer requests charger pricing."
+                  },
+                  {
+                    "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                    "timestamp": "2026-10-30T12:00:00Z",
+                    "quote": "Never book an appointment."
+                  }
+                ],
+                "timing": {
+                  "kind": "none"
+                },
+                "operatorTaskDueAt": null,
+                "sourceTimingConstraints": [],
+                "customerActionGates": [],
+                "sourceRestrictions": [
+                  {
+                    "noteId": "note_60b84506ae9e972b2fb386a972cf8fd3d8bd38cf11d1c2c7d71a24f36429859b",
+                    "timestamp": "2026-10-30T12:00:00Z",
+                    "quote": "Never book an appointment."
+                  }
+                ],
+                "customerActionPermitted": false,
+                "humanApprovalRequired": true
+              },
+              "authorityRequirements": {
+                "policyVersion": "internal-task-policy-v1.2",
+                "humanApprovalRequired": true,
+                "allowedMutation": "hubspot.follow_up_task.create",
+                "customerActionPermitted": false
+              },
+              "qualityFailures": [],
+              "preparationBlocked": false,
+              "executionBlocked": true,
+              "missingFinalFields": [
+                "operatorTaskDueAt",
+                "CRM association",
+                "operation correlation",
+                "exact final-payload approval"
+              ],
+              "actionVersion": "sha256:f34ebf54e116a63fd16fb2f95fc614b23281a9cfbe9552888a41828f89730457"
+            }
+          }
+        ],
+        "proposalVersion": "internal-task-proposal-v2.2",
+        "materializationVersion": "source-evidence-v0.3.6",
+        "evidencePolicyVersion": "source-clause-closure-v1.1"
+      },
+      "quality": [],
+      "passed": true,
+      "humanReview": "PENDING"
+    }
+  ]
+}

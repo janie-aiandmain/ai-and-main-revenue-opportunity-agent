@@ -1,0 +1,77 @@
+{
+  "kind": "RESUMED_READ_ONLY_DEPLOYMENT_INSPECTION",
+  "checkedAt": "2026-11-09T19:10:08.894Z",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "activeVersion": "a33dd699-3de1-47a4-98b6-09179a9c5e94",
+      "deployedAt": "2026-11-07T16:49:01.295819Z",
+      "sourceCommit": "c0f2f406f98731f4153627dbafec7f50d9404698",
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      },
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "GENERAL_RELEASE_APPROVED": "false"
+      },
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "approverMappingPresent": true,
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850",
+          "className": "CertificationLedger"
+        }
+      ]
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "activeVersion": "9a7c9590-da6a-478a-ba92-005d413d9435",
+      "deployedAt": "2026-11-07T16:40:59.211488Z",
+      "sourceCommit": "e01150d96cba3f49cd9ddb463d1554ac882fa89c",
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      },
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "GENERAL_RELEASE_APPROVED": "false"
+      },
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "approverMappingPresent": false,
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850",
+          "className": "CertificationLedger"
+        }
+      ]
+    }
+  ],
+  "hubspotCalls": 0,
+  "mutations": 0,
+  "unauthenticatedOperator": {
+    "status": 302,
+    "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+  }
+}

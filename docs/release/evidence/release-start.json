@@ -1,0 +1,211 @@
+{
+  "sanitization": "Removed author_email account metadata only",
+  "originalWorkspaceFileSha256": "927035da141282f41466fce9b0de69569edc7a5ef54effb211540e1a910fee63",
+  "receipt": {
+    "checkedAt": "2026-11-07T15:40:35.654Z",
+    "kind": "READ_ONLY_RELEASE_START",
+    "workers": [
+      {
+        "name": "ai-and-main-revenue-opportunity-agent",
+        "deployments": [
+          {
+            "id": "28f830e3-37e8-4d1d-8419-761acd708ec6",
+            "source": "api",
+            "strategy": "percentage",
+            "annotations": {
+              "workers/triggered_by": "secret"
+            },
+            "versions": [
+              {
+                "version_id": "50ddf101-5484-413a-975a-12865e35e14d",
+                "percentage": 100
+              }
+            ],
+            "created_on": "2026-11-03T21:25:31.872909Z"
+          }
+        ],
+        "subdomain": {
+          "enabled": true,
+          "previews_enabled": false
+        },
+        "bindings": [
+          {
+            "name": "CRM_WRITEBACK_ENABLED",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "DEMO_RECOVERY_ENABLED",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "DEMO_RECOVERY_EXECUTION_ENABLED",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "DEMO_RECOVERY_EXPIRES_AT",
+            "type": "plain_text"
+          },
+          {
+            "name": "DEMO_RECOVERY_FAULT_ENABLED",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "DEMO_RECOVERY_LEDGER",
+            "type": "durable_object_namespace",
+            "class_name": "CertificationLedger",
+            "namespace_id": "16dca25759494a33813d2800f3f1a850"
+          },
+          {
+            "name": "DEMO_RECOVERY_RUN_ID",
+            "type": "plain_text"
+          },
+          {
+            "name": "ENABLE_GENERAL_EXECUTION",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "ENABLE_TEST_TASK_WRITES",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "EVAL_OPENAI_API_KEY",
+            "type": "plain_text"
+          },
+          {
+            "name": "GENERAL_RELEASE_APPROVED",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "HUBSPOT_ACCESS_TOKEN",
+            "type": "secret_text"
+          },
+          {
+            "name": "HUBSPOT_WRITE_TOKEN",
+            "type": "secret_text"
+          },
+          {
+            "name": "OPENAI_API_KEY",
+            "type": "secret_text"
+          },
+          {
+            "name": "STAGING_HUBSPOT_READ_TOKEN",
+            "type": "secret_text"
+          },
+          {
+            "name": "STAGING_HUBSPOT_WRITE_TOKEN",
+            "type": "secret_text"
+          },
+          {
+            "name": "WRITEBACK_APPROVAL_TOKEN",
+            "type": "secret_text"
+          }
+        ]
+      },
+      {
+        "name": "ai-and-main-revenue-opportunity-staging",
+        "deployments": [
+          {
+            "id": "32031339-d832-4168-8300-ff828af980c7",
+            "source": "wrangler",
+            "strategy": "percentage",
+            "annotations": {
+              "workers/triggered_by": "deployment"
+            },
+            "versions": [
+              {
+                "version_id": "6d662aff-3484-4ea4-b330-5f7edce22b25",
+                "percentage": 100
+              }
+            ],
+            "created_on": "2026-11-03T21:24:13.601938Z"
+          }
+        ],
+        "subdomain": {
+          "enabled": false,
+          "previews_enabled": false
+        },
+        "bindings": [
+          {
+            "name": "ACCESS_AUDIENCE",
+            "text": "f3d28533ee59378b47a60ea0747a3e9ee6743f6c338ea859b21f371b6c1d0548",
+            "type": "plain_text"
+          },
+          {
+            "name": "ACCESS_ISSUER",
+            "text": "https://falling-cell-9501.cloudflareaccess.com",
+            "type": "plain_text"
+          },
+          {
+            "name": "CERTIFICATION_LEDGER",
+            "type": "durable_object_namespace",
+            "class_name": "CertificationLedger",
+            "namespace_id": "16dca25759494a33813d2800f3f1a850"
+          },
+          {
+            "name": "CERTIFICATION_MODE",
+            "text": "remote-staging",
+            "type": "plain_text"
+          },
+          {
+            "name": "CRM_WRITEBACK_ENABLED",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "DEPLOYMENT_ENVIRONMENT",
+            "text": "staging",
+            "type": "plain_text"
+          },
+          {
+            "name": "ENABLE_GENERAL_EXECUTION",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "ENABLE_TEST_TASK_WRITES",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "EVAL_OPENAI_API_KEY",
+            "type": "secret_text"
+          },
+          {
+            "name": "GENERAL_RELEASE_APPROVED",
+            "text": "false",
+            "type": "plain_text"
+          },
+          {
+            "name": "STAGING_HUBSPOT_READ_TOKEN",
+            "type": "secret_text"
+          },
+          {
+            "name": "STAGING_HUBSPOT_WRITE_TOKEN",
+            "type": "secret_text"
+          }
+        ]
+      }
+    ],
+    "health": {
+      "status": 200,
+      "body": {
+        "status": "ready",
+        "service": "AI & MAIN Revenue Opportunity Agent",
+        "release": "2026-11-02-revenue-opportunity-agent-v0.8",
+        "mode": "read-only deployment practicum",
+        "hubspotReadSecretConfigured": true,
+        "hubspotWriteSecretConfigured": true,
+        "openAISecretConfigured": true,
+        "crmWritesEnabled": false,
+        "writebackApprovalTokenConfigured": true
+      }
+    }
+  }
+}

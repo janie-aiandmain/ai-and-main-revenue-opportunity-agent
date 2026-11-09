@@ -1,0 +1,2610 @@
+{
+  "kind": "OFFLINE_REPROCESSING_IDENTITY_REPLAY_NOT_HOSTED",
+  "modelCalls": 0,
+  "hubspotCalls": 0,
+  "rows": [
+    {
+      "id": "ST01",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST02",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST03",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-three-outlets",
+          "rawFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "durableFindingId": "op_8da869af-18ca-4aa2-a440-277e15949fc5",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "ST04",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-new-fixture-service-recovery",
+          "rawFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "durableFindingId": "op_7d703e53-751d-4cb0-8863-aec8e18fe92a",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "ST05",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST06",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST07",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "whole-home-surge-protection",
+          "rawFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "durableFindingId": "op_ba0ba975-02f0-4eba-afb5-4d031b428a1a",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ST08",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-installation",
+          "rawFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+          "durableFindingId": "op_ed2c4e00-987c-4673-8274-9ab42b899af1",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "ST09",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN10",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN11",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+          "durableFindingId": "op_4ee309a5-95a4-4760-8e64-0598359260a0",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        },
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+          "durableFindingId": "op_70c692c1-bd47-4d1e-89c3-bb41e829d15e",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN12",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-fixture-service-recovery",
+          "rawFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "durableFindingId": "op_457be85f-8fc7-488a-b295-7f7c5da75f44",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        },
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "durableFindingId": "op_f5839fb0-d023-406f-bad7-14959fec00d7",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN13",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN14",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN15",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN16",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN17",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_b633592c237fb191c71de50a8eb2c7e3b4cbad34a0b9f996201c93cf640e249b",
+          "durableFindingId": "op_eaad81ce-ef1d-4c53-a795-4be970bbf6e0",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN18",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN19",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN20",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN21",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN22",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN23",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN24",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_f7b32447e2ff34ce22f389543e0d0fcfbc7adba5708b7dac40feec205a432c1d",
+          "durableFindingId": "op_a839f3d5-b276-449d-a14e-f6a1a6c68b96",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN25",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN26",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN27",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN28",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN29",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN30",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_4ccd6c77ebf65d4b0ab69bb5487699fcac1d3dd43ffd8d18d0be302a6ef88eda",
+          "durableFindingId": "op_72103c82-a12b-4388-a9d8-9b744bfdbd16",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN31",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-outlets",
+          "rawFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+          "durableFindingId": "op_43f04aaf-cf3b-43ca-b812-4d7e9cec7543",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "UV01",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "rattling-ventilation-fan-service-recovery",
+          "rawFindingId": "finding_1b1c48a12e08d9bfbd095c71479f11e3192de928bd2fe62a3fc0b6e400c4269d",
+          "durableFindingId": "op_a7fd170b-f4ee-4362-823f-adfba6600d50",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "UV02",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-outlet-pricing",
+          "rawFindingId": "finding_bb01d63b592837f509c8ba5ae7b319b888b743b36cd72ad175e434c369bdc513",
+          "durableFindingId": "op_2506a3d3-945c-4b6b-8f79-d87af6fd35b4",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV03",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "new-garden-lights",
+          "rawFindingId": "finding_490867924861940c6cbb9faa4393798ae956e84ae8d6e4edf94f05f55f0ab06b",
+          "durableFindingId": "op_e03590c0-7a48-478f-a2e5-f7c77e13bcd5",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV04",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "UV05",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "generator-pricing",
+          "rawFindingId": "finding_aff1c462c9e7eea7300df8d40c7dc8f1ffa0f7f82c517aabae44c8a0d0240d4a",
+          "durableFindingId": "op_ebf9c97a-e75d-435d-ad1d-a16d08616d52",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV06",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "buzzing-panel-complaint",
+          "rawFindingId": "finding_3f8233badfe2b06c8201e4d18f1555ed469ceb06341f72a1149bacc2d1cba9f0",
+          "durableFindingId": "op_3288e127-f7fd-4317-8d1c-3ce35b29b9f3",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "UV07",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "two-exterior-outlets",
+          "rawFindingId": "finding_b4a6fc3cb17c1880b64848049cce30d536b640252e0f3d1dc590e32c4271796d",
+          "durableFindingId": "op_9ee14365-000a-489c-ab03-7c7c102ef81e",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV08",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "UV09",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "stair-lighting",
+          "rawFindingId": "finding_9d6182c262f7d81eb96a8e5501862620251f8c81d0f7beb1954f8292a9708ff3",
+          "durableFindingId": "op_01ee1079-45d6-4642-812a-ddca461e86fb",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "UV10",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-permit-approval",
+          "rawFindingId": "finding_38cb3a20beff72264de0b4933bd700291be5359261cda5311ea59ac321c1dfe8",
+          "durableFindingId": "op_81abe9cc-727c-4271-8780-993eb43477ca",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "UV11",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-pricing",
+          "rawFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+          "durableFindingId": "op_ba0215e6-7178-4209-a178-8f2eebb1cc00",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV12",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "UV13",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_8d9559eb4fb1b169101fb7683492198d97b38fa92efdc3810ba6981610aac75d",
+          "durableFindingId": "op_46968b29-ee17-4b34-a4ae-ac4d44be91c1",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV14",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_f7351c59e4ebb81d43868ae5da66304eef9f3964bb8d693ad5d763339500727c",
+          "durableFindingId": "op_1879a929-dfe0-4650-8319-5073bf83f43f",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV15",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-charger-site-assessment",
+          "rawFindingId": "finding_77021372a49a55eb96b857c782f2cea0bafd961687027909c71d4a1f95204cd8",
+          "durableFindingId": "op_03721073-5f21-4024-b611-daabf886e322",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV16",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ABS01",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protector-pricing",
+          "rawFindingId": "finding_930693e37fe28278b2eb3b8915314a236b9a6d6e5403cf5bef1fc0a482a3eb8c",
+          "durableFindingId": "op_8c84fa0a-1c6e-4c93-af8c-3b9b93c7ef92",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ABS02",
+      "captureFile": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protector-pricing",
+          "rawFindingId": "finding_83310196e98b75e0ec075acd586e6d3ab19ec3caffc4d085eb3854f111655243",
+          "durableFindingId": "op_44cf7394-5b8d-4d4a-9713-b8919f4cd1eb",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ01",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_d8c6d391d03ea09362d3163739d02217abf4a1dafde64c297735580f717a2c84",
+          "durableFindingId": "op_c7399103-a50a-4375-a3c9-6117bfc62857",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ02",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "three-additional-garage-outlets",
+          "rawFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+          "durableFindingId": "op_2aa334fa-70c9-4c9d-ac24-d67757023fc6",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "RQ03",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_78c12c3a768c858da0843c861f6e2abf051271ddea2efbbaf07e7b73e8161fff",
+          "durableFindingId": "op_f528e13e-acd6-4892-936b-c733e1c2b165",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "RQ04",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_78e746b6d20d9488c07b116bbe5872693497680587a61011133517a0cd685775",
+          "durableFindingId": "op_7496e09a-3994-4b64-b6b9-39cfdd32a1f6",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ05",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_dd5c28ad4f06ac785d9d48b7387a1be425a8e2f34f1d3f7356a4337da47b2b7e",
+          "durableFindingId": "op_6a1e9573-23b2-4df7-b84e-a403ffe21d1f",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ06",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_4eb9f840854f9bba3c80b9b8e63f8572f989da2043d34e18582f1a998cfb120e",
+          "durableFindingId": "op_4cbb410e-fa50-4cb3-a286-75fa5ed06448",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        },
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_ea446b98170c9f6a529e35b20841a3acd6c21e733a1190256acdfe43c82e1981",
+          "durableFindingId": "op_59e9cae9-13b1-4d10-99bf-a39d9a6ae3b8",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "ST03",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-three-outlets",
+          "rawFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "durableFindingId": "op_8da869af-18ca-4aa2-a440-277e15949fc5",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "ST04",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-new-fixture-service-recovery",
+          "rawFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "durableFindingId": "op_7d703e53-751d-4cb0-8863-aec8e18fe92a",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "ST07",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "whole-home-surge-protection",
+          "rawFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "durableFindingId": "op_ba0ba975-02f0-4eba-afb5-4d031b428a1a",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ST08",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-installation",
+          "rawFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+          "durableFindingId": "op_ed2c4e00-987c-4673-8274-9ab42b899af1",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "EN11",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting-after-renovation",
+          "rawFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+          "durableFindingId": "op_4ee309a5-95a4-4760-8e64-0598359260a0",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        },
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_7491f2d85c3de6d9894176f656e823ada9401ec9b6c36f134f9cec3637922ca4",
+          "durableFindingId": "op_70c692c1-bd47-4d1e-89c3-bb41e829d15e",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN12",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-fixture-service-recovery",
+          "rawFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "durableFindingId": "op_457be85f-8fc7-488a-b295-7f7c5da75f44",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        },
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "durableFindingId": "op_f5839fb0-d023-406f-bad7-14959fec00d7",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN31",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "three-garage-outlets",
+          "rawFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+          "durableFindingId": "op_43f04aaf-cf3b-43ca-b812-4d7e9cec7543",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "UV14",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_f7351c59e4ebb81d43868ae5da66304eef9f3964bb8d693ad5d763339500727c",
+          "durableFindingId": "op_1879a929-dfe0-4650-8319-5073bf83f43f",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ01",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_d8c6d391d03ea09362d3163739d02217abf4a1dafde64c297735580f717a2c84",
+          "durableFindingId": "op_c7399103-a50a-4375-a3c9-6117bfc62857",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ02",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "three-additional-garage-outlets",
+          "rawFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+          "durableFindingId": "op_2aa334fa-70c9-4c9d-ac24-d67757023fc6",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "RQ03",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_78c12c3a768c858da0843c861f6e2abf051271ddea2efbbaf07e7b73e8161fff",
+          "durableFindingId": "op_f528e13e-acd6-4892-936b-c733e1c2b165",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "RQ04",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_78e746b6d20d9488c07b116bbe5872693497680587a61011133517a0cd685775",
+          "durableFindingId": "op_7496e09a-3994-4b64-b6b9-39cfdd32a1f6",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ05",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_dd5c28ad4f06ac785d9d48b7387a1be425a8e2f34f1d3f7356a4337da47b2b7e",
+          "durableFindingId": "op_6a1e9573-23b2-4df7-b84e-a403ffe21d1f",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ06",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_4eb9f840854f9bba3c80b9b8e63f8572f989da2043d34e18582f1a998cfb120e",
+          "durableFindingId": "op_4cbb410e-fa50-4cb3-a286-75fa5ed06448",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        },
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_ea446b98170c9f6a529e35b20841a3acd6c21e733a1190256acdfe43c82e1981",
+          "durableFindingId": "op_59e9cae9-13b1-4d10-99bf-a39d9a6ae3b8",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "ST03",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-three-outlets",
+          "rawFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "durableFindingId": "op_8da869af-18ca-4aa2-a440-277e15949fc5",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "ST04",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-new-fixture-service-recovery",
+          "rawFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "durableFindingId": "op_7d703e53-751d-4cb0-8863-aec8e18fe92a",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "ST07",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "whole-home-surge-protection",
+          "rawFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "durableFindingId": "op_ba0ba975-02f0-4eba-afb5-4d031b428a1a",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ST08",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lights-installation",
+          "rawFindingId": "finding_785e83b41dc45ef05c11535d0447a462b876aad00b72b6b8802056f321d5d8b2",
+          "durableFindingId": "op_ed2c4e00-987c-4673-8274-9ab42b899af1",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "EN11",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+          "durableFindingId": "op_4ee309a5-95a4-4760-8e64-0598359260a0",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        },
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+          "durableFindingId": "op_70c692c1-bd47-4d1e-89c3-bb41e829d15e",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN12",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-fixture-service-recovery",
+          "rawFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "durableFindingId": "op_457be85f-8fc7-488a-b295-7f7c5da75f44",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        },
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "durableFindingId": "op_f5839fb0-d023-406f-bad7-14959fec00d7",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN31",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "three-garage-outlets",
+          "rawFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+          "durableFindingId": "op_43f04aaf-cf3b-43ca-b812-4d7e9cec7543",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "UV14",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_f7351c59e4ebb81d43868ae5da66304eef9f3964bb8d693ad5d763339500727c",
+          "durableFindingId": "op_1879a929-dfe0-4650-8319-5073bf83f43f",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ01",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_d8c6d391d03ea09362d3163739d02217abf4a1dafde64c297735580f717a2c84",
+          "durableFindingId": "op_c7399103-a50a-4375-a3c9-6117bfc62857",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ02",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "three-additional-garage-outlets",
+          "rawFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+          "durableFindingId": "op_2aa334fa-70c9-4c9d-ac24-d67757023fc6",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "RQ03",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_78c12c3a768c858da0843c861f6e2abf051271ddea2efbbaf07e7b73e8161fff",
+          "durableFindingId": "op_f528e13e-acd6-4892-936b-c733e1c2b165",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "RQ04",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_78e746b6d20d9488c07b116bbe5872693497680587a61011133517a0cd685775",
+          "durableFindingId": "op_7496e09a-3994-4b64-b6b9-39cfdd32a1f6",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ05",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_dd5c28ad4f06ac785d9d48b7387a1be425a8e2f34f1d3f7356a4337da47b2b7e",
+          "durableFindingId": "op_6a1e9573-23b2-4df7-b84e-a403ffe21d1f",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "RQ06",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_4eb9f840854f9bba3c80b9b8e63f8572f989da2043d34e18582f1a998cfb120e",
+          "durableFindingId": "op_4cbb410e-fa50-4cb3-a286-75fa5ed06448",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        },
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_ea446b98170c9f6a529e35b20841a3acd6c21e733a1190256acdfe43c82e1981",
+          "durableFindingId": "op_59e9cae9-13b1-4d10-99bf-a39d9a6ae3b8",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "ST03",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 4,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-three-outlets",
+          "rawFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "durableFindingId": "op_8da869af-18ca-4aa2-a440-277e15949fc5",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "ST04",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 4,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-new-fixture-service-recovery",
+          "rawFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "durableFindingId": "op_7d703e53-751d-4cb0-8863-aec8e18fe92a",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "ST07",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 4,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "whole-home-surge-protection",
+          "rawFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "durableFindingId": "op_ba0ba975-02f0-4eba-afb5-4d031b428a1a",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ST08",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 4,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-installation",
+          "rawFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+          "durableFindingId": "op_ed2c4e00-987c-4673-8274-9ab42b899af1",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "EN11",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 4,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+          "durableFindingId": "op_4ee309a5-95a4-4760-8e64-0598359260a0",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        },
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+          "durableFindingId": "op_70c692c1-bd47-4d1e-89c3-bb41e829d15e",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN12",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 4,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-fixture-service-recovery",
+          "rawFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "durableFindingId": "op_457be85f-8fc7-488a-b295-7f7c5da75f44",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        },
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "durableFindingId": "op_f5839fb0-d023-406f-bad7-14959fec00d7",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN31",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 4,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "three-garage-outlets",
+          "rawFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+          "durableFindingId": "op_43f04aaf-cf3b-43ca-b812-4d7e9cec7543",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "UV14",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 4,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_f7351c59e4ebb81d43868ae5da66304eef9f3964bb8d693ad5d763339500727c",
+          "durableFindingId": "op_1879a929-dfe0-4650-8319-5073bf83f43f",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ST03",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 5,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "three-garage-outlets",
+          "rawFindingId": "finding_e872af3baf44de8d998e28abce29d8e5858947df641cc357ffe5473a48140d5c",
+          "durableFindingId": "op_8da869af-18ca-4aa2-a440-277e15949fc5",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "ST04",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 5,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-new-fixture-service-recovery",
+          "rawFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "durableFindingId": "op_7d703e53-751d-4cb0-8863-aec8e18fe92a",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "ST07",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 5,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "whole-home-surge-protection",
+          "rawFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "durableFindingId": "op_ba0ba975-02f0-4eba-afb5-4d031b428a1a",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ST08",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 5,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "two-pendant-lights-installation",
+          "rawFindingId": "finding_dee2e8df03c76f3a5262b757e2bfc7f039375613ef794577a93475d237c08ec3",
+          "durableFindingId": "op_ed2c4e00-987c-4673-8274-9ab42b899af1",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "EN11",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 5,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+          "durableFindingId": "op_4ee309a5-95a4-4760-8e64-0598359260a0",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        },
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+          "durableFindingId": "op_70c692c1-bd47-4d1e-89c3-bb41e829d15e",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN12",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 5,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-fixture-service-recovery",
+          "rawFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "durableFindingId": "op_457be85f-8fc7-488a-b295-7f7c5da75f44",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        },
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "durableFindingId": "op_f5839fb0-d023-406f-bad7-14959fec00d7",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN31",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 5,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-outlets",
+          "rawFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+          "durableFindingId": "op_43f04aaf-cf3b-43ca-b812-4d7e9cec7543",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "UV14",
+      "captureFile": "release-targeted-2026-11-07T15-53-37-405Z.json",
+      "run": 5,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_f7351c59e4ebb81d43868ae5da66304eef9f3964bb8d693ad5d763339500727c",
+          "durableFindingId": "op_1879a929-dfe0-4650-8319-5073bf83f43f",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ST01",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST02",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST03",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-three-outlets",
+          "rawFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "durableFindingId": "op_8da869af-18ca-4aa2-a440-277e15949fc5",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "ST04",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-new-fixture-service-recovery",
+          "rawFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "durableFindingId": "op_7d703e53-751d-4cb0-8863-aec8e18fe92a",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "ST05",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST06",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST07",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "whole-home-surge-protection",
+          "rawFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "durableFindingId": "op_ba0ba975-02f0-4eba-afb5-4d031b428a1a",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ST08",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "two-pendant-lights-installation",
+          "rawFindingId": "finding_dee2e8df03c76f3a5262b757e2bfc7f039375613ef794577a93475d237c08ec3",
+          "durableFindingId": "op_ed2c4e00-987c-4673-8274-9ab42b899af1",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "ST09",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN10",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN11",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+          "durableFindingId": "op_4ee309a5-95a4-4760-8e64-0598359260a0",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        },
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+          "durableFindingId": "op_70c692c1-bd47-4d1e-89c3-bb41e829d15e",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN12",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-fixture-service-recovery",
+          "rawFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "durableFindingId": "op_457be85f-8fc7-488a-b295-7f7c5da75f44",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        },
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "durableFindingId": "op_f5839fb0-d023-406f-bad7-14959fec00d7",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN13",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN14",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN15",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN16",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN17",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_8e2d566a72aba4266a1e6ae8f76f9c1131c524484131a995bbbdc7de57a979b0",
+          "durableFindingId": "op_eaad81ce-ef1d-4c53-a795-4be970bbf6e0",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN18",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN19",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN20",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN21",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN22",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN23",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN24",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_de51321a47a2ad7c7e72143e6d3e924a98a6948d2b2991e2024e97da0fb09b63",
+          "durableFindingId": "op_a839f3d5-b276-449d-a14e-f6a1a6c68b96",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN25",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN26",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN27",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN28",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN29",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN30",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_4ccd6c77ebf65d4b0ab69bb5487699fcac1d3dd43ffd8d18d0be302a6ef88eda",
+          "durableFindingId": "op_72103c82-a12b-4388-a9d8-9b744bfdbd16",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN31",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-outlets",
+          "rawFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+          "durableFindingId": "op_43f04aaf-cf3b-43ca-b812-4d7e9cec7543",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "UV01",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "rattling-ventilation-fan-service-recovery",
+          "rawFindingId": "finding_1b1c48a12e08d9bfbd095c71479f11e3192de928bd2fe62a3fc0b6e400c4269d",
+          "durableFindingId": "op_a7fd170b-f4ee-4362-823f-adfba6600d50",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "UV02",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-outlet-pricing",
+          "rawFindingId": "finding_bb01d63b592837f509c8ba5ae7b319b888b743b36cd72ad175e434c369bdc513",
+          "durableFindingId": "op_2506a3d3-945c-4b6b-8f79-d87af6fd35b4",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV03",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garden-lights",
+          "rawFindingId": "finding_bc596e079ba62fbb77d5da28a1017bb882f77e1299c7c06bc6e5249a1dfa4a77",
+          "durableFindingId": "op_e03590c0-7a48-478f-a2e5-f7c77e13bcd5",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV04",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "UV05",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "generator-pricing",
+          "rawFindingId": "finding_aff1c462c9e7eea7300df8d40c7dc8f1ffa0f7f82c517aabae44c8a0d0240d4a",
+          "durableFindingId": "op_ebf9c97a-e75d-435d-ad1d-a16d08616d52",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV06",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "buzzing-panel-complaint",
+          "rawFindingId": "finding_3f8233badfe2b06c8201e4d18f1555ed469ceb06341f72a1149bacc2d1cba9f0",
+          "durableFindingId": "op_3288e127-f7fd-4317-8d1c-3ce35b29b9f3",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "UV07",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "two-exterior-outlets",
+          "rawFindingId": "finding_b4a6fc3cb17c1880b64848049cce30d536b640252e0f3d1dc590e32c4271796d",
+          "durableFindingId": "op_9ee14365-000a-489c-ab03-7c7c102ef81e",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV08",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "UV09",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "stair-lighting",
+          "rawFindingId": "finding_9d6182c262f7d81eb96a8e5501862620251f8c81d0f7beb1954f8292a9708ff3",
+          "durableFindingId": "op_01ee1079-45d6-4642-812a-ddca461e86fb",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "UV10",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-permit-approval",
+          "rawFindingId": "finding_38cb3a20beff72264de0b4933bd700291be5359261cda5311ea59ac321c1dfe8",
+          "durableFindingId": "op_81abe9cc-727c-4271-8780-993eb43477ca",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "UV11",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-pricing",
+          "rawFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+          "durableFindingId": "op_ba0215e6-7178-4209-a178-8f2eebb1cc00",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "UV12",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "UV13",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_8d9559eb4fb1b169101fb7683492198d97b38fa92efdc3810ba6981610aac75d",
+          "durableFindingId": "op_46968b29-ee17-4b34-a4ae-ac4d44be91c1",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV14",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_f7351c59e4ebb81d43868ae5da66304eef9f3964bb8d693ad5d763339500727c",
+          "durableFindingId": "op_1879a929-dfe0-4650-8319-5073bf83f43f",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV15",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-charger-site-assessment",
+          "rawFindingId": "finding_77021372a49a55eb96b857c782f2cea0bafd961687027909c71d4a1f95204cd8",
+          "durableFindingId": "op_03721073-5f21-4024-b611-daabf886e322",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV16",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ABS01",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protector-pricing",
+          "rawFindingId": "finding_930693e37fe28278b2eb3b8915314a236b9a6d6e5403cf5bef1fc0a482a3eb8c",
+          "durableFindingId": "op_8c84fa0a-1c6e-4c93-af8c-3b9b93c7ef92",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ABS02",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protector-pricing",
+          "rawFindingId": "finding_83310196e98b75e0ec075acd586e6d3ab19ec3caffc4d085eb3854f111655243",
+          "durableFindingId": "op_44cf7394-5b8d-4d4a-9713-b8919f4cd1eb",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ST04",
+      "captureFile": "release-affected-2026-11-07T16-26-46-182Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-new-fixture-service-recovery",
+          "rawFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "durableFindingId": "op_7d703e53-751d-4cb0-8863-aec8e18fe92a",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "ST01",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST02",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST03",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-three-outlets",
+          "rawFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "durableFindingId": "op_8da869af-18ca-4aa2-a440-277e15949fc5",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "ST04",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-new-fixture-service-recovery",
+          "rawFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "durableFindingId": "op_7d703e53-751d-4cb0-8863-aec8e18fe92a",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "ST05",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST06",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ST07",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "whole-home-surge-protection",
+          "rawFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "durableFindingId": "op_ba0ba975-02f0-4eba-afb5-4d031b428a1a",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ST08",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-installation",
+          "rawFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+          "durableFindingId": "op_ed2c4e00-987c-4673-8274-9ab42b899af1",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "ST09",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN10",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN11",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+          "durableFindingId": "op_4ee309a5-95a4-4760-8e64-0598359260a0",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        },
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+          "durableFindingId": "op_70c692c1-bd47-4d1e-89c3-bb41e829d15e",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN12",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-fixture-service-recovery",
+          "rawFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "durableFindingId": "op_457be85f-8fc7-488a-b295-7f7c5da75f44",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        },
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "durableFindingId": "op_f5839fb0-d023-406f-bad7-14959fec00d7",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN13",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN14",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN15",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN16",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN17",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_8e2d566a72aba4266a1e6ae8f76f9c1131c524484131a995bbbdc7de57a979b0",
+          "durableFindingId": "op_eaad81ce-ef1d-4c53-a795-4be970bbf6e0",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN18",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN19",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN20",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN21",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN22",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN23",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN24",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_de51321a47a2ad7c7e72143e6d3e924a98a6948d2b2991e2024e97da0fb09b63",
+          "durableFindingId": "op_a839f3d5-b276-449d-a14e-f6a1a6c68b96",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN25",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN26",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN27",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN28",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN29",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "EN30",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_4ccd6c77ebf65d4b0ab69bb5487699fcac1d3dd43ffd8d18d0be302a6ef88eda",
+          "durableFindingId": "op_72103c82-a12b-4388-a9d8-9b744bfdbd16",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "EN31",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-outlets",
+          "rawFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+          "durableFindingId": "op_43f04aaf-cf3b-43ca-b812-4d7e9cec7543",
+          "classification": "scope-change opportunity",
+          "opportunityType": "scope change"
+        }
+      ]
+    },
+    {
+      "id": "UV01",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "rattling-ventilation-fan",
+          "rawFindingId": "finding_48a183f182c42289dfd1b76f178d14ffe405f838e4af2802d805aa549764887a",
+          "durableFindingId": "op_a7fd170b-f4ee-4362-823f-adfba6600d50",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "UV02",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-outlet-pricing",
+          "rawFindingId": "finding_bb01d63b592837f509c8ba5ae7b319b888b743b36cd72ad175e434c369bdc513",
+          "durableFindingId": "op_2506a3d3-945c-4b6b-8f79-d87af6fd35b4",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV03",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garden-lights",
+          "rawFindingId": "finding_bc596e079ba62fbb77d5da28a1017bb882f77e1299c7c06bc6e5249a1dfa4a77",
+          "durableFindingId": "op_e03590c0-7a48-478f-a2e5-f7c77e13bcd5",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV04",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "UV05",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "generator-pricing",
+          "rawFindingId": "finding_aff1c462c9e7eea7300df8d40c7dc8f1ffa0f7f82c517aabae44c8a0d0240d4a",
+          "durableFindingId": "op_ebf9c97a-e75d-435d-ad1d-a16d08616d52",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV06",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "buzzing-panel-complaint",
+          "rawFindingId": "finding_3f8233badfe2b06c8201e4d18f1555ed469ceb06341f72a1149bacc2d1cba9f0",
+          "durableFindingId": "op_3288e127-f7fd-4317-8d1c-3ce35b29b9f3",
+          "classification": "retention or service-recovery opportunity",
+          "opportunityType": "retention"
+        }
+      ]
+    },
+    {
+      "id": "UV07",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "two-exterior-outlets",
+          "rawFindingId": "finding_b4a6fc3cb17c1880b64848049cce30d536b640252e0f3d1dc590e32c4271796d",
+          "durableFindingId": "op_9ee14365-000a-489c-ab03-7c7c102ef81e",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV08",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "UV09",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "stair-lighting",
+          "rawFindingId": "finding_9d6182c262f7d81eb96a8e5501862620251f8c81d0f7beb1954f8292a9708ff3",
+          "durableFindingId": "op_01ee1079-45d6-4642-812a-ddca461e86fb",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "UV10",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-permit-approval",
+          "rawFindingId": "finding_38cb3a20beff72264de0b4933bd700291be5359261cda5311ea59ac321c1dfe8",
+          "durableFindingId": "op_81abe9cc-727c-4271-8780-993eb43477ca",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "UV11",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-pricing",
+          "rawFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+          "durableFindingId": "op_ba0215e6-7178-4209-a178-8f2eebb1cc00",
+          "classification": "follow-up revenue opportunity",
+          "opportunityType": "follow-up"
+        }
+      ]
+    },
+    {
+      "id": "UV12",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "UV13",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_8d9559eb4fb1b169101fb7683492198d97b38fa92efdc3810ba6981610aac75d",
+          "durableFindingId": "op_46968b29-ee17-4b34-a4ae-ac4d44be91c1",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV14",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_f7351c59e4ebb81d43868ae5da66304eef9f3964bb8d693ad5d763339500727c",
+          "durableFindingId": "op_1879a929-dfe0-4650-8319-5073bf83f43f",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV15",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "ev-charger-site-assessment-pricing",
+          "rawFindingId": "finding_2c95c660ddf47d82a038901072ecc49f0bd77c42d9d4aa4c87c7163845e196ea",
+          "durableFindingId": "op_03721073-5f21-4024-b611-daabf886e322",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "UV16",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": []
+    },
+    {
+      "id": "ABS01",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protector-pricing",
+          "rawFindingId": "finding_930693e37fe28278b2eb3b8915314a236b9a6d6e5403cf5bef1fc0a482a3eb8c",
+          "durableFindingId": "op_8c84fa0a-1c6e-4c93-af8c-3b9b93c7ef92",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "ABS02",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "surge-protector-pricing",
+          "rawFindingId": "finding_83310196e98b75e0ec075acd586e6d3ab19ec3caffc4d085eb3854f111655243",
+          "durableFindingId": "op_44cf7394-5b8d-4d4a-9713-b8919f4cd1eb",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "NV01",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_70c7f8e9e76f99e52635ecd1ecd4129dc829228450a8a91677ba3f28d1b7d3ed",
+          "durableFindingId": "op_87fd8b12-50be-44ed-932c-729c06e9348b",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "NV02",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_d3eef4ba38bf0ed4b0c1b9e91d0be479bf3ee33bd61d96492a5b1d1e9b23b298",
+          "durableFindingId": "op_46d8f55e-83d2-443c-a45e-aa61a307d437",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "NV03",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_c5714f66f467a3546d9bf89394eb62d36020aa282738f4ccdde134f95439a086",
+          "durableFindingId": "op_2212a905-ebc4-464c-bf9e-1055029bf14a",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "NV04",
+      "captureFile": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_b2a4bf0943d5147e87e0af2ab75485d167f1238e76c4f78e9dbbaa018218deee",
+          "durableFindingId": "op_c46b7fc1-d8bc-4f30-8c52-e7969ecef0ca",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "NV02",
+      "captureFile": "release-affected-negative-2026-11-07T17-02-36-169Z.json",
+      "run": 1,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_d3eef4ba38bf0ed4b0c1b9e91d0be479bf3ee33bd61d96492a5b1d1e9b23b298",
+          "durableFindingId": "op_46d8f55e-83d2-443c-a45e-aa61a307d437",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "NV02",
+      "captureFile": "release-affected-negative-2026-11-07T17-02-36-169Z.json",
+      "run": 2,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_d3eef4ba38bf0ed4b0c1b9e91d0be479bf3ee33bd61d96492a5b1d1e9b23b298",
+          "durableFindingId": "op_46d8f55e-83d2-443c-a45e-aa61a307d437",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    },
+    {
+      "id": "NV02",
+      "captureFile": "release-affected-negative-2026-11-07T17-02-36-169Z.json",
+      "run": 3,
+      "identityReused": true,
+      "bindings": [
+        {
+          "rawKey": "charger-pricing",
+          "rawFindingId": "finding_d3eef4ba38bf0ed4b0c1b9e91d0be479bf3ee33bd61d96492a5b1d1e9b23b298",
+          "durableFindingId": "op_46d8f55e-83d2-443c-a45e-aa61a307d437",
+          "classification": "strong cross-sell opportunity",
+          "opportunityType": "cross-sell"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "executions": 205,
+    "distinctPositiveNeeds": 37,
+    "durableIdentities": 37,
+    "extraIdentities": 0,
+    "identityReviewRequired": [],
+    "identityChanges": [],
+    "rawKeyRenamesPreserved": true
+  }
+}

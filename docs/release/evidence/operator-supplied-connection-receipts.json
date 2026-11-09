@@ -1,0 +1,39 @@
+{
+  "kind": "CHAT_ATTRIBUTED_OPERATOR_BROWSER_RECEIPTS_NOT_CODEX_DIRECT_OBSERVATION",
+  "receiptTime": "Not supplied by operator; message sequence only",
+  "receipts": [
+    {
+      "order": 1,
+      "status": "rejected_credential",
+      "credential": "STAGING_HUBSPOT_READ_TOKEN",
+      "check": "/account-info/v3/details",
+      "httpStatus": 401,
+      "originalDemoCredentialProof": {
+        "checks": [
+          {
+            "credential": "HUBSPOT_ACCESS_TOKEN",
+            "status": "PASS",
+            "portalId": "247646122"
+          },
+          {
+            "credential": "HUBSPOT_WRITE_TOKEN",
+            "status": "PASS",
+            "portalId": "247646122"
+          }
+        ],
+        "writes": 0,
+        "contactMarkerVerified": true
+      },
+      "credentialsNotSubstituted": true
+    },
+    {
+      "order": 2,
+      "status": "missing_credential",
+      "credential": "STAGING_HUBSPOT_WRITE_TOKEN",
+      "limitations": "Short blocker text supplied; no complete renewed read-portal/contact receipt. Does not establish write credential validity."
+    }
+  ],
+  "nextAction": "Configure the existing Writeback Lab credential value as STAGING_HUBSPOT_WRITE_TOKEN Secret on the namespace-owner Worker, then repeat authenticated read-only preflight.",
+  "humanSemanticApproval": false,
+  "finalExecutionApproval": false
+}

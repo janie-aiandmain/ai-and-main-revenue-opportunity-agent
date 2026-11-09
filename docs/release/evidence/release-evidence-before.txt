@@ -1,0 +1,73 @@
+✖ UV14 cause: source-bound qualifier completion includes the omitted exact restriction, not a repaired model capture (10.494937ms)
+✖ quantities and scope within the cited source sentence are retained without guessing (3.923486ms)
+✖ unseen restriction closure preserves billing hold and conditional scope with an internal-only task (1.616596ms)
+✔ independent needs do not absorb each other or an ambiguous shared restriction (7.951279ms)
+✔ source closure is idempotent and does not add uncited standalone customer needs or injected commands (2.575316ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 2
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 86.056631
+
+✖ failing tests:
+
+test at tests/release-evidence.test.js:8:1
+✖ UV14 cause: source-bound qualifier completion includes the omitted exact restriction, not a repaired model capture (10.494937ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(result.findings[0].evidence.some(e=>e.quote==='Do not schedule an assessment; send the request to a human for pricing review only.'))
+  
+      at TestContext.<anonymous> (file:///workspace/ai-and-main-revenue-opportunity-agent/tests/release-evidence.test.js:11:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/release-evidence.test.js:15:1
+✖ quantities and scope within the cited source sentence are retained without guessing (3.923486ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      {
+        noteId: 'n',
+  +     quote: 'Customer requests pricing'
+  -     quote: 'Customer requests pricing for exactly three garage outlets before any additional work begins.'
+      }
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/ai-and-main-revenue-opportunity-agent/tests/release-evidence.test.js:18:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { noteId: 'n', quote: 'Customer requests pricing' } ],
+    expected: [ { noteId: 'n', quote: 'Customer requests pricing for exactly three garage outlets before any additional work begins.' } ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/release-evidence.test.js:20:1
+✖ unseen restriction closure preserves billing hold and conditional scope with an internal-only task (1.616596ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.findings[0].evidence.some(e=>e.quote===clause))
+  
+      at TestContext.<anonymous> (file:///workspace/ai-and-main-revenue-opportunity-agent/tests/release-evidence.test.js:23:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

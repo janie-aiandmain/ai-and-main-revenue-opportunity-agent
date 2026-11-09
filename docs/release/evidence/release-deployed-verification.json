@@ -1,0 +1,127 @@
+{
+  "kind": "ACTUAL_ACTIVE_CODE_AND_CONFIGURATION_VERIFICATION",
+  "checkedAt": "2026-11-07T16:44:03.776Z",
+  "expectedSource": "e01150d96cba3f49cd9ddb463d1554ac882fa89c",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "activeVersion": "53482e84-2564-47c1-af64-d44d5f70de42",
+      "percentage": 100,
+      "sourceCommit": "e01150d96cba3f49cd9ddb463d1554ac882fa89c",
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      },
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "GENERAL_RELEASE_APPROVED": "false"
+      },
+      "allExecutionFlagsFalse": true,
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "approverMappingVerified": true,
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "a6c77e14f4773a402406ea519e0f11d7a754182f3ed7b0218f3f839074bd488c",
+          "bytes": 41218
+        }
+      ],
+      "localModules": [
+        {
+          "name": "worker.js",
+          "sha256": "a6c77e14f4773a402406ea519e0f11d7a754182f3ed7b0218f3f839074bd488c",
+          "bytes": 41218
+        }
+      ],
+      "codeMatches": true
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "activeVersion": "9a7c9590-da6a-478a-ba92-005d413d9435",
+      "percentage": 100,
+      "sourceCommit": "e01150d96cba3f49cd9ddb463d1554ac882fa89c",
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      },
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "GENERAL_RELEASE_APPROVED": "false"
+      },
+      "allExecutionFlagsFalse": true,
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "approverMappingVerified": null,
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "6939d6ff0551bec7422e0181cb7db8878d7683e61cdffbc1474751f222b845cf",
+          "bytes": 202418
+        }
+      ],
+      "localModules": [
+        {
+          "name": "worker.js",
+          "sha256": "6939d6ff0551bec7422e0181cb7db8878d7683e61cdffbc1474751f222b845cf",
+          "bytes": 202418
+        }
+      ],
+      "codeMatches": true
+    }
+  ],
+  "hubspotCalls": 0,
+  "unauthenticatedChecks": [
+    {
+      "path": "/identity",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/operator",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/certification/general/findings",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/writeback-task",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    }
+  ]
+}

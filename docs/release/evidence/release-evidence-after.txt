@@ -1,0 +1,13 @@
+✔ UV14 cause: source-bound qualifier completion includes the omitted exact restriction, not a repaired model capture (15.764569ms)
+✔ quantities and scope within the cited source sentence are retained without guessing (2.495084ms)
+✔ unseen restriction closure preserves billing hold and conditional scope with an internal-only task (3.912809ms)
+✔ independent needs do not absorb each other or an ambiguous shared restriction (2.609217ms)
+✔ source closure is idempotent and does not add uncited standalone customer needs or injected commands (1.730688ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.908906

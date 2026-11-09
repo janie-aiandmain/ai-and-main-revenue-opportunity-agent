@@ -1,0 +1,47 @@
+{
+  "kind": "RELEASE_VALIDATION_WITH_SEPARATE_AUTOMATED_AND_HUMAN_STATUS",
+  "codeCommit": "dcf6abc69b53d34c423034e88328aa4ece079dd7",
+  "modelCalls": 206,
+  "modelCallCap": 210,
+  "newHubSpotTasksThisCycle": 0,
+  "independentProviderCaptures": 205,
+  "uniqueCases": 59,
+  "finalPolicyAutomatedPasses": 205,
+  "finalPolicyAutomatedFailures": [],
+  "repeatedGroups": 56,
+  "stableSemanticDecisionGroups": 55,
+  "semanticConsistencyRate": 0.9821428571428571,
+  "unstableSemanticCases": [
+    "UV11"
+  ],
+  "rawKeyDriftCases": [
+    "ST03",
+    "ST08",
+    "EN11",
+    "EN17",
+    "EN24",
+    "EN31",
+    "UV01",
+    "UV03",
+    "UV15"
+  ],
+  "exactDraftVersionStableGroups": 26,
+  "exactRecommendationStableGroups": 55,
+  "deterministicTests": {
+    "passed": 151,
+    "failed": 0
+  },
+  "demoDryRunBuild": "PASS",
+  "namespaceOwnerDryRunBuild": "PASS",
+  "humanSemanticAcceptanceOfRevisedOutputs": "PENDING",
+  "finalReleaseAcceptance": "PENDING",
+  "latestHostedWorkflow": "BLOCKED_CREDENTIAL_PREFLIGHT_AND_FINAL_SOURCE_NOT_DEPLOYED",
+  "limitations": [
+    "Replay passes apply final deterministic policy to captured independent provider outputs; these are not 205 new calls with final policy.",
+    "Heuristic automated evidence/authority checks do not establish full human semantic correctness or calibrated confidence.",
+    "UV11 varies between current pricing preparation and conservative internal verification of an older renovation gate.",
+    "Same-source offline durable identity reuse does not establish universal identity stability after arbitrary source edits.",
+    "Local SQLite/HTTP/browser tasks are not HubSpot tasks; injected response loss is not a naturally occurring network outage.",
+    "Targeted capture reports base commit 64ec9e5 while review-policy edits were in progress; it is not an exact committed tree snapshot."
+  ]
+}

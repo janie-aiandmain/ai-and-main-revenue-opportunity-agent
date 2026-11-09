@@ -1,0 +1,50 @@
+{
+  "kind": "READ_ONLY_ACCESS_RECHECK",
+  "checkedAt": "2026-11-07T16:02:25.206Z",
+  "checks": [
+    {
+      "path": "/access/apps?per_page=100",
+      "status": 200,
+      "codes": [],
+      "applications": []
+    },
+    {
+      "path": "/access/users?per_page=100",
+      "status": 403,
+      "codes": [
+        10000
+      ]
+    },
+    {
+      "path": "/workers/scripts/ai-and-main-revenue-opportunity-staging/subdomain",
+      "status": 200,
+      "codes": [],
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      }
+    }
+  ],
+  "unauthenticated": [
+    {
+      "path": "/health",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/operator",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/certification/general/findings",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/writeback-task",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    }
+  ]
+}
