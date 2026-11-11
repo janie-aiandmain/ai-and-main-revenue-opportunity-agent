@@ -1,0 +1,15 @@
+{
+  "kind": "HOSTED_UNCERTAIN_STATE_AND_DISABLED_CLOSURE",
+  "hostedExecutedSource": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+  "remoteTaskConfirmed": false,
+  "remoteRecoveryVerified": false,
+  "modelCallsTotal": 208,
+  "files": {
+    "closed-code-and-configuration.json": "0ef288a403b1335e1d45bd43314c53ef8812c855ba6e733c48cc157c6fac6f0b",
+    "demo-close-deployment.txt": "97ea3547485469ae2ce85a48dc2d228fa3e4942ddc2c4f76087ed4055328458b",
+    "interruption-and-closure.md": "8fa94c70627444e12468e0278671d3854b70c0f5d23e46cd1ff98943181280cc",
+    "operator-after-interruption.json": "7579064f0ee7605d2ae6a9afc9b73b56de7721d07741ea77f9486fb46bdea78d",
+    "owner-close-deployment.txt": "f3300eec876c6ec266fe38ee255acdf264bf707f9a51b3d0b2cc4f62430af142",
+    "window-closed.json": "094897f59fc73072a3a7e42d424fd7d32777d3b18c7a7b64a3d54c650dae6884"
+  }
+}

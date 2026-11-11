@@ -1,0 +1,43 @@
+{
+  "kind": "BOUNDED_SYNTHETIC_TASK_RECOVERY_WINDOW",
+  "createdAt": "2026-11-11T21:12:49.911988+00:00",
+  "expiresAt": "2026-11-11T22:12:49.911988Z",
+  "runId": "release-a42c1151-fac2-49fb-a74f-2917f53ea416",
+  "maximumCreateAttempts": 1,
+  "sourceCommit": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "findingId": "op_902d4bd6-5675-4612-b3eb-71e7612bfd5e",
+  "operationId": "operation_20a11253-37c0-4c7c-b045-e73e457d37ce",
+  "approvalId": "approval_24149546-c59e-4594-9f21-2e22674f3e42",
+  "approvedPayloadHash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+  "generalWritebackEnabled": false,
+  "realTaskCreatedBySetup": false,
+  "applicationFaultNotNaturalOutage": true,
+  "state": "CLOSED_VERIFIED_WAITING_READ_ONLY_RECONCILIATION",
+  "deployments": [
+    {
+      "target": "owner",
+      "exitCode": 0
+    },
+    {
+      "target": "demo",
+      "exitCode": 0
+    }
+  ],
+  "closeDeployments": [
+    {
+      "target": "demo",
+      "exitCode": 0
+    },
+    {
+      "target": "owner",
+      "exitCode": 0
+    }
+  ],
+  "closeRequestedAt": "2026-11-11T21:23:14.921091+00:00",
+  "closedVersions": {
+    "ai-and-main-revenue-opportunity-agent": "965c8478-6da1-4dc8-83f5-11a7da45be32",
+    "ai-and-main-revenue-opportunity-staging": "e6cf1615-ca7b-4d98-aebf-fe07c94632c6"
+  }
+}

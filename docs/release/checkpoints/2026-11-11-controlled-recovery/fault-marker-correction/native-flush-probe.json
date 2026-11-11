@@ -1,0 +1,36 @@
+{
+  "kind": "LOCAL_ACTUAL_WORKER_SQLITE_ABORT_DURABILITY_PROBE_NOT_HOSTED",
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "rows": [
+    {
+      "flush": "no",
+      "interruption": "http_500",
+      "beforeBoot": "de1a8d10-1f8c-42a0-946a-7f36172973d9",
+      "boot": "a37bbbd2-12d8-4443-b104-ed4bc82a2675",
+      "syncSupported": true,
+      "markers": [
+        {
+          "stage": "INTENT_DURABLE"
+        }
+      ],
+      "bootChanged": true
+    },
+    {
+      "flush": "yes",
+      "interruption": "http_500",
+      "beforeBoot": "3e330aea-becb-4ea6-b931-4bc9465f9c7a",
+      "boot": "0df2d077-3d10-4360-b5cd-4751026d1c26",
+      "syncSupported": true,
+      "markers": [
+        {
+          "stage": "INTENT_DURABLE"
+        },
+        {
+          "stage": "POST_CREATE_DISCARD_SIMULATED_NO_REMOTE_CALL"
+        }
+      ],
+      "bootChanged": true
+    }
+  ]
+}

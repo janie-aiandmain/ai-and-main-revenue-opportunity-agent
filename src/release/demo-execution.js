@@ -1,5 +1,12 @@
 // A temporary, authenticated synthetic-test exception. Never customer authority.
 export const DEMO_EXECUTION_POLICY='authenticated-synthetic-task-test-v1';
+export const DEMO_RESPONSE_LOSS_POLICY='durable-discard-before-reset-v1';
+export async function commitDemoFaultAndRestart(ctx){
+ // ctx.abort() rolls back unflushed SQLite writes. Preserve the consumed
+ // one-use control and post-create discard trace before deliberately resetting.
+ await ctx.storage.sync();
+ ctx.abort('Operator-authorized injected response discard; not a network outage ['+DEMO_RESPONSE_LOSS_POLICY+']');
+}
 export function demoExecution(env){
  if(env.DEMO_ONLY_EXECUTION_ENABLED!=='true')return null;
  if(env.CERTIFICATION_MODE!=='remote-demo'||env.CRM_WRITEBACK_ENABLED!=='false'||env.ENABLE_GENERAL_EXECUTION!=='false'||env.GENERAL_RELEASE_APPROVED!=='false'||env.ENABLE_TEST_TASK_WRITES!=='false'||env.STAGING_PORTAL_ID!=='247646122'||env.STAGING_CONTACT_ID!=='582095692487')throw Error('bounded_demo_only_configuration_required');

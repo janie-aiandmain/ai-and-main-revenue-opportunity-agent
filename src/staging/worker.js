@@ -10,6 +10,7 @@ import { DesignatedNoteSource } from './note-source.js';
 import { reasonCorrected } from '../release/reasoning.js';
 import { operatorConsole } from './operator-console.js';
 import { HubSpotCertificationClient } from './hubspot-client.js';
+import { commitDemoFaultAndRestart } from '../release/demo-execution.js';
 const json=(body,status=200)=>Response.json(body,{status,headers:{'cache-control':'no-store'}});
 export class CertificationLedger extends DurableObject {
   constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.bootId=crypto.randomUUID();this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.runtimeBootId=this.bootId;this.ledger.recoverChecking();if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
@@ -62,7 +63,7 @@ export class CertificationLedger extends DurableObject {
         if(path==='/certification/general/approve')return json(l.approveGeneral(input,actor));
         if(path==='/certification/general/resume-approval')return json(await l.resumeApproval(input,actor,this.env,source));
         if(path==='/certification/general/arm-response-loss')return json(l.armDemoResponseLoss(input,actor,this.env));
-        if(path==='/certification/general/execute'){const client=new HubSpotCertificationClient(this.env);if(this.env.CERTIFICATION_MODE==='remote-demo'&&this.env.DEMO_RESPONSE_LOSS_TEST_ENABLED==='true')client.restartAfterInjectedLoss=()=>this.demoContext.abort('Operator-authorized injected response discard; not a network outage');return json(await l.executeGeneral(input.operationId,input.approvalId,actor,this.env,source,reason,client));}
+        if(path==='/certification/general/execute'){const client=new HubSpotCertificationClient(this.env);if(this.env.CERTIFICATION_MODE==='remote-demo'&&this.env.DEMO_RESPONSE_LOSS_TEST_ENABLED==='true')client.restartAfterInjectedLoss=()=>commitDemoFaultAndRestart(this.demoContext);return json(await l.executeGeneral(input.operationId,input.approvalId,actor,this.env,source,reason,client));}
         return json({status:'not_found'},404);
       }
       if(path==='/certification/prepare')return json(await l.prepare(input,this.env));
