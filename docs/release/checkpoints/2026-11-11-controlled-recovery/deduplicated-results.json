@@ -1,0 +1,29 @@
+{
+  "kind": "DEDUPLICATED_EVIDENCE_PACKAGE_TASK_RESULT_NOT_FINANCIAL_OUTCOME",
+  "records": [
+    {
+      "operationId": "operation_20a11253-37c0-4c7c-b045-e73e457d37ce",
+      "findingId": "op_902d4bd6-5675-4612-b3eb-71e7612bfd5e",
+      "correlation": "ai-main-23c10cff-db09-4a4a-b992-7768d56a44d5",
+      "remoteTaskId": "420072115944",
+      "portalId": "247646122",
+      "contactId": "582095692487",
+      "payloadHash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+      "applicationReservedCreateAttempts": 1,
+      "reconciledState": "CONFIRMED",
+      "repeatedReadReturnedSameTask": true,
+      "taskResultEvidence": [
+        "operator-reconciled.json",
+        "operator-repeat-reconcile.json"
+      ],
+      "opportunityValue": null,
+      "verifiedRevenueOutcome": null,
+      "revenueRescued": null,
+      "financialAttributionRecords": []
+    }
+  ],
+  "distinctConfirmedTaskResults": 1,
+  "financialOutcomeVerification": "NOT_ESTABLISHED_SYNTHETIC_TEST",
+  "remoteFinancialLedgerQueried": false,
+  "limitation": "This is a deduplicated evidence-package result, not a dump of the remote financial ledger. Task creation does not establish revenue."
+}

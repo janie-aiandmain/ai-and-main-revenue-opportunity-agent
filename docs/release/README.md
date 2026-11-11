@@ -1,123 +1,118 @@
-# Release validation checkpoint
+# Release validation status
 
-The current supported description is **controlled prototype with tested local
-safeguards**. The revised workflow is not yet a hosted, accepted customer release.
-Use the [acceptance matrix](acceptance.md), [operations guide](OPERATIONS.md), and
-[pending human review](HUMAN-REVIEW.md) together.
+**A controlled prototype with tested local safeguards and one verified hosted
+recovery scenario.** Customer-release acceptance has not been granted. General
+writeback and every demo/fault execution control are disabled.
 
-**November 11 update:** the [resumption checkpoint](checkpoints/2026-11-11/README.md)
-records passing operator-supplied credential preflight and actual deployment/code
-hash verification of source **dd992fc** on both existing Workers, with every
-execution flag false. The designated contact has no associated source notes
-(`noteCount: 0`); a synthetic note and a new authenticated preflight receipt are
-needed before hosted evaluation. No new model call or HubSpot write occurred.
-The older hosted-state/blocker descriptions below are historical.
+The [complete hosted results](checkpoints/2026-11-11-controlled-recovery/RESULTS.md),
+[acceptance matrix](acceptance.md), [operations guide](OPERATIONS.md), and
+[pending human review](HUMAN-REVIEW.md) define the supported result and limits.
+HubSpot remains the system of record; this console supervises findings and exact
+bounded follow-up tasks.
 
-**Hosted finding update:** the [first general hosted evaluation and exact task
-preview](checkpoints/2026-11-11-hosted-finding/README.md) now succeed with one
-synthetic source note. Pricing-only scope, restrictions and source timestamp are
-preserved. The complete prepared payload hash was independently verified; final
-execution approval, task creation and current-finding recovery remain pending.
-Tracked model consumption is now **207/210**, including one reported hosted call.
+## Current demo and actual result
 
-**Approval UI correction:** source **203f48c** is now deployed and code-verified.
-After an off-screen confirmation caused confusion, the console now shows inline
-status/receipts and can resume the same saved approval after a refresh. The
-[hosted resumption receipt](checkpoints/2026-11-11-approval-feedback/deployment/README.md)
-preserves the original review, hash/version and 24-hour expiry. All **155 tests**,
-the actual local browser flow and both builds passed. No HubSpot task has yet
-been created for this finding; current-operation recovery remains pending.
+[Operator console](https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/operator)
+— synthetic portal **247646122**, designated contact **582095692487**.
 
-**Interrupted-test update:** the [controlled run](checkpoints/2026-11-11-controlled-recovery/interruption-and-closure.md)
-has now reserved one create attempt, persisted intent and restarted into
-**UNKNOWN** with the approved hash unchanged. Both demo controls were closed
-and verified false before requesting read-only reconciliation. The remote task
-ID and exact match are still pending; task existence is not yet confirmed.
-The trace lacks an explicit discard marker. A captured failure and a
-[local storage-flush correction](checkpoints/2026-11-11-controlled-recovery/fault-marker-correction/README.md)
-are preserved; **156 tests** and both builds pass for that correction, which is
-not yet deployed. Hosted execution/reconciliation remains on source **203f48c**.
-Tracked model use is **208/210**. Earlier statements of zero attempts above are
-historical; no additional create is permitted to resolve the uncertainty.
+| Check | Executed result |
+| --- | --- |
+| Hosted source → finding → review → approval | One synthetic pricing-only need, complete evidence/restrictions and externally verified Approver |
+| Complete final request | Independently recomputed payload hash matches; due time, association, correlation, task properties and action version bound |
+| Actual HubSpot effect | **Task 420072115944**, one application reserved create attempt, one exact associated match |
+| Restart/redeployment recovery | UNKNOWN → CONFIRMED by read-only reconciliation after execution was closed and the Worker redeployed |
+| Repeated reconciliation | Same operation/task returned; no new create path |
+| Financial outcome | None established; task/estimate is not revenue rescued |
+| Final current configuration | All 9 demo / 6 owner execution/fault flags false; owner hostname and all previews off; Access redirects verified |
 
-Implementation source: [dcf6abc](https://github.com/janie-aiandmain/ai-and-main-revenue-opportunity-agent/commit/dcf6abc69b53d34c423034e88328aa4ece079dd7).
-The commit containing this checkpoint records its evidence; it does not imply
-that source was deployed. The [manifest](evidence/manifest.json) hashes each
-artifact, identifies the prompt/request versions, and preserves raw captures.
+The approved payload hash is
+`sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6`.
+The operation is `operation_20a11253-37c0-4c7c-b045-e73e457d37ce`.
+The [full confirmed receipt](checkpoints/2026-11-11-controlled-recovery/operator-reconciled.json)
+and [repeat summary](checkpoints/2026-11-11-controlled-recovery/operator-repeat-reconcile.json)
+are operator-supplied authenticated UI evidence. Actual code/configuration checks
+were performed directly through Cloudflare; no independent certification is implied.
 
-## Executed results
+## Deployed source and tests
 
-| Evidence | Result | Boundary |
-| --- | --- | --- |
-| [Deterministic suite](evidence/release-all-tests.txt) | 151 passed, 0 failed | Local tests, including native Fetch behavior; no new HubSpot tasks |
-| [Demo](evidence/release-resume-demo-build.txt) / [owner](evidence/release-resume-owner-build.txt) dry-run builds | Both passed | Build checks, not deployment checks |
-| [Local Worker pipeline](evidence/release-local-worker-final.json) | 7 restarts, durable recovery and duplicate prevention exercised | Separate local HTTP/SQLite fixture; 4 fixture tasks, not HubSpot IDs |
-| [Browser flow](evidence/release-browser-local.json) | Preview → approval → submission → repeat creates one fixture task | Local Chromium/workerd with synthetic signed identity; no human approval |
-| [Independent model captures](evidence/manifest.json) | 205 retained outputs; 206 calls including one credential test | Non-production OpenAI project; no CRM calls by runners |
-| [Final-policy replay](evidence/release-final-policy-replay.json) | 205/205 automated checks; 59 unique cases | Deterministic rematerialization of saved outputs, not 205 new calls |
-| Repeated semantic decisions | 55/56 groups stable: **98.21%** | At least 3 independent outputs per group; UV11 varies |
-| [Durable identity replay](evidence/release-identity-replay.json) | 37 needs → 37 identities across 205 executions; 0 extra IDs | Unchanged sources, local SQLite; not proof for arbitrary source edits |
-| [Earlier hosted recovery](../demo-recovery-evidence/README.md) | Actual task IDs **415102198520**, **415333966522** | Earlier control implementation; deliberate response loss, not a genuine outage |
-| Current-cycle hosted end-to-end task | **Not executed**; 0 new HubSpot tasks | Credential preflight and final-source deployment remain outstanding |
+The successful task/recovery run executed source **203f48c96cb8e8c16ee4dc54fb4a7b9d92943240**.
+The later diagnostic-flush correction now executes source
+**34a7b4257c3c491c8a89f34e29ff0c01fbdd9ee8**:
 
-On the original 31-case corpus, classification/type/human-review checks passed
-for all 122 captured executions. There were 0 false positives / 63 negative
-executions and 0 false negatives / 59 positive executions. The latest full run
-has 0/21 false positives and 0/10 false negatives. These repeated examples are
-not independent real-world prevalence estimates.
+- Demo deployment: `91d1135c-054e-4614-aa45-74401ba060d0`.
+- Owner deployment: `76c27653-bb40-45cb-8ef1-50883e6a0976`.
+- Existing namespace: `16dca25759494a33813d2800f3f1a850`, `CertificationLedger`.
+- [Actual active modules](checkpoints/2026-11-11-controlled-recovery/fault-marker-correction/deployment/active-code-verification.json)
+  match the local bundles; Secrets, identity mapping and storage are preserved.
+- **156 deterministic tests passed**, both builds passed, and the prior actual
+  local browser flow passed visible approval/error/receipt, reload/resumption,
+  and synthetic submit/repeat with one local fixture task.
 
-Final-policy automated checks found no authority/injection escapes or ungrounded
-quotes in the retained corpus. This is a bounded automated result, not complete
-human semantic validation or a calibrated hallucination rate. Raw failures and
-false-positive guards remain preserved alongside the passing replay. The
-original UV14 omission remains in its immutable fixture; the source-clause closure
-and new restriction counterexamples exercise the correction without editing it.
+The response-loss control was deliberately selected for the hosted test; no
+naturally occurring outage is claimed. Its post-create discard marker was lost
+on immediate reset in the executed source. That audit gap remains in an
+immutable fixture. An actual local workerd probe reproduced rollback of unflushed
+writes; the corrected helper flushes storage before reset. The correction is
+local-tested and deployed closed, **not exercised in another hosted post-create
+fault**. Historical evidence is not relabelled as using the newer fix.
 
-## Variation and grading limits
+## Model evidence and unchanged contracts
 
-**UV11 remains a quality concern:** newer evidence says renovation is complete
-and asks for pricing now. Captures alternate between current pricing preparation
-and conservative verification retaining the older renovation gate. Both remain
-internal-only and human-reviewed, but the conservative variant can delay a valid
-opportunity. It must not be presented as identical semantic behavior.
+Tracked cycle use is **208/210 calls**: 206 prior calls, one initial hosted
+finding and one mandatory fresh pre-submit evaluation. No paid model calls were
+used for UI/storage corrections or reconciliation. Hosted provider/token-usage
+telemetry was not captured; the two hosted invocations follow the executed code
+paths and operator receipts.
 
-Raw opportunity keys and their derived finding IDs vary for **ST03, ST08, EN11,
-EN17, EN24, EN31, UV01, UV03, UV15**. They are preserved verbatim. Source-anchored
-durable IDs were stable in the same-source replay; no key renames were hidden by
-normalization. Exact draft action versions were stable in only **26/56** repeated
-groups; exact recommendations in **55/56**. Draft versions are distinct from the
-complete final payload hash/version bound by execution approval.
+Contracts remain **reasoning-v0.3.3**, **findings-v0.2**, **source-evidence-v0.3.6**,
+**gpt-5.6-terra / low**, **internal-task-proposal-v2.2**,
+**finding-review-v2.6**, and **hubspot-final-payload-v1**. The prompt/request hashes
+are unchanged in the [model evidence manifest](evidence/manifest.json).
 
-Automated grading checks explicit expectations, evidence grounding, authority
-and source restrictions. It does not establish full semantic equivalence,
-confidence calibration, or universal correctness on unseen notes. NV01, NV03 and
-NV04 have only one captured run each. The targeted report's `sourceCommit`
-identifies base `64ec9e5` with review-policy edits in progress; it is not an exact
-committed-tree provenance claim. Legacy `v0.3.4` report filenames are retained;
-the final full capture's actual materializer is v0.3.6.
+| Prior retained final-policy evaluation | Measurement |
+| --- | --- |
+| Captured provider outputs / unique cases | 205 / 59 |
+| Final-policy automated replay checks | 205/205 passed; replay is not 205 new calls |
+| Original 31-case classification/type/review checks | 122/122 captured executions passed after final-policy replay |
+| False positives / negatives on original-corpus executions | 0/63 negative executions; 0/59 positive executions |
+| Latest full original-corpus run | FP 0/21 negatives; FN 0/10 positives |
+| Repeated decision-signature stability | 55/56 groups with at least 3 independent outputs: **98.21%** |
+| Exact draft action-version stability | 26/56 groups; separate from persisted exact final-payload approval |
+| Exact recommendation stability | 55/56 groups |
+| Same-source offline durable identity replay | 37 needs → 37 IDs across 205 executions; no extra identity |
 
-## Hosted state and immediate blocker
+No unblocked authority/injection escape was observed by these final automated
+checks. They are heuristic, synthetic and bounded; they do not establish complete
+human semantic correctness, calibrated confidence or real-world error rates.
+Raw pre-correction failures remain preserved. NV01/NV03/NV04 have one captured
+run each. Targeted-run provenance names base commit 64ec9e5 with review-policy
+edits in progress, not an exact committed tree. Legacy v0.3.4 report filenames
+are retained; their row metadata identifies the actual materializer.
 
-At the [November 9 read-only inspection](evidence/release-resumed-state.json),
-the [demo](https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/operator)
-ran version `a33dd699-3de1-47a4-98b6-09179a9c5e94`, source `c0f2f40`;
-the namespace owner ran `9a7c9590-da6a-478a-ba92-005d413d9435`, source `e01150d`.
-Both retain namespace `16dca25759494a33813d2800f3f1a850` / `CertificationLedger`.
-The owner hostname and previews were disabled; demo unauthenticated `/operator`
-redirected to Access. All deployed execution flags were false. These are timestamped
-observations; subsequent dashboard saves can create newer versions.
+Raw opportunity keys and derived raw finding IDs drift for **ST03, ST08, EN11,
+EN17, EN24, EN31, UV01, UV03 and UV15**. They remain verbatim in the evidence;
+no key renames are hidden by normalization. Same-source durable identity replay
+is not a universal guarantee across edited sources or ambiguous new needs.
+Original [single-finding and multi-finding baselines](../baselines/README.md)
+and [their comparison](../baselines/multi-finding-comparison.md) are retained.
 
-The latest [operator-supplied browser blocker](evidence/operator-supplied-connection-receipts.json)
-is **missing_credential: STAGING_HUBSPOT_WRITE_TOKEN**. The prior read binding
-returned 401; the original demo credential pair and synthetic contact marker
-passed in that earlier receipt. The latest short blocker does not independently
-prove the renewed full read/contact check. Configure the existing Writeback Lab
-credential value securely on the namespace-owner Worker, then repeat authenticated
-read-only preflight. No new key, scope expansion, or writes are needed to check it.
+## Outstanding review and supported limits
 
-The highest-priority measured output remediation is **UV11 chronology-aware
-selection of current pricing preparation versus a superseded deferral gate**.
-Preserve the captured variants and require affected fresh validation after a
-generation change. Do not begin that change by silently weakening expectations
-or marking the conservative variant human-approved. First preserve this evidence
-and obtain the genuinely outstanding semantic/release decisions.
+- The [nine revised captured drafts](HUMAN-REVIEW.md) need actual human semantic
+  verdicts. Original five PASS/four CONCERN decisions remain bound to old hashes;
+  the live synthetic task's approval does not approve those drafts or a release.
+- **UV11 varies materially.** [Exact dates and variants](UV11-REVIEW.md) distinguish
+  documented renovation completion from uncertain current interest: source notes
+  are February 2025, evaluations November 2026. Neither renewed historical “now”
+  nor an unsupported still-unfinished renovation should be assumed. This is the
+  highest-priority remaining model/semantic issue for the next correction cycle.
+- The corrected discard-marker protocol needs a separately approved future
+  hosted verification. No second create may be made for this confirmed operation.
+- Source edits/new-need ambiguity require explicit identity adjudication through
+  the protected API; a dedicated console form is not yet provided.
+- Customer-specific single-tenant onboarding/IT review and final human release
+  acceptance remain pending. No production writeback, automatic promotion or
+  merge to main is authorized by these test results.
+
+The [results/checklist](checkpoints/2026-11-11-controlled-recovery/RESULTS.md)
+separates hosted demonstrations, local tests, missing evidence and proposed work.

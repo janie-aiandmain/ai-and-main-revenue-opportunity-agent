@@ -1,0 +1,12 @@
+{
+  "kind": "DISABLED_MARKER_FIX_DEPLOYMENT_EVIDENCE",
+  "executedRecoverySource": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+  "currentDeployedSource": "34a7b4257c3c491c8a89f34e29ff0c01fbdd9ee8",
+  "recordingCommit": "The Git commit containing this manifest",
+  "files": {
+    "README.md": "6408b66505b45779d4c56102d359bf058fec487e903fbc9ba14a7e587713051d",
+    "active-code-verification.json": "0ab75c333b23c80b45574d7f936a088133c04e808243ff6ab4341b5e10bce58e",
+    "demo-deployment.txt": "d641a7ce53391f1e7b0bf348e23288faff2333b02eec68e361c168cceab4ae5d",
+    "owner-deployment.txt": "84911695882d9a25cd24ac4de48668566a52cab0b1784bc330d917e355b1f6a0"
+  }
+}

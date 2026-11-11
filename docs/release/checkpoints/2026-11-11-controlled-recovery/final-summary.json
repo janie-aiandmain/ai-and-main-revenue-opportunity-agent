@@ -1,0 +1,35 @@
+{
+  "kind": "COMPLETED_BOUNDED_HOSTED_RECOVERY_WITH_EXPLICIT_LIMITATIONS",
+  "executedRecoverySource": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+  "currentDeployedSource": "34a7b4257c3c491c8a89f34e29ff0c01fbdd9ee8",
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "operationId": "operation_20a11253-37c0-4c7c-b045-e73e457d37ce",
+  "remoteTaskId": "420072115944",
+  "payloadHash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+  "applicationReservedCreateAttempts": 1,
+  "remoteRecoveryVerifiedForThisOperation": true,
+  "repeatedReadSameTask": true,
+  "repeatedPOSTNewlyTestedForThisOperation": false,
+  "testWindowClosedAndVerified": true,
+  "allExecutionAndFaultFlagsFalse": true,
+  "explicitOriginalDiscardMarkerPresent": false,
+  "correctedDiscardMarkerProtocol": "durable-discard-before-reset-v1",
+  "markerCorrectionStatus": "LOCAL_ACTUAL_WORKER_TESTED_AND_DEPLOYED_CLOSED_NOT_NEW_HOSTED_POST_CREATE_TEST",
+  "tests": {
+    "passed": 156,
+    "failed": 0
+  },
+  "bothBuildsPassed": true,
+  "cumulativeTrackedModelCalls": 208,
+  "cycleModelCallCap": 210,
+  "newVerifiedRevenueOutcome": null,
+  "customerReleaseApproved": false,
+  "revisedHumanSemanticVerdicts": "PENDING",
+  "singleHighestRemainingModelIssue": "UV11: distinguish documented renovation completion, historical timing and uncertain current interest.",
+  "nextHumanReviewArtifacts": [
+    "../../HUMAN-REVIEW.md",
+    "../../UV11-REVIEW.md"
+  ],
+  "recordingCommit": "The commit containing this final package"
+}
