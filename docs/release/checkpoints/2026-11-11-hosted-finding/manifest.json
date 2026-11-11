@@ -1,0 +1,17 @@
+{
+  "kind": "HOSTED_FINDING_AND_EXACT_PREVIEW_EVIDENCE",
+  "deployedSource": "dd992fc88a9bd13093ecc6e93fc1f7fdea3b31b8",
+  "recordingCommit": "The commit containing this checkpoint",
+  "newHostedModelInvocationsReported": 1,
+  "cumulativeModelInvocations": 207,
+  "cycleModelCallCap": 210,
+  "finalExecutionApproval": false,
+  "newHubSpotTasks": 0,
+  "files": {
+    "README.md": "bad7a44f90635e5644e958e33da9631a6b029e30de12b8ac8df3275bc2c28ca0",
+    "assessment.json": "a52b59e276be1b9b1dfcc2de1b14a8e98f900d278a2e38be1b8e553aef0156e0",
+    "operator-finding.json": "73f22c74dabdf0a14e4a0fb0f8ff9515ed30760c0482b688c5d9b58dec6af7bf",
+    "prepared-request-check.json": "5f1ffc5088eccfa140b13d93eb72e1217ab2c8ed75cd2df5741c2212af4ecd2a",
+    "prepared-request.json": "1af1c8d8c10f1905672b58d4482c3207456336fce31155515f12fac0d704614e"
+  }
+}

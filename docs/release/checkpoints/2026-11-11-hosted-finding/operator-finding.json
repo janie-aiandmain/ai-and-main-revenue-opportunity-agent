@@ -1,0 +1,40 @@
+{
+  "kind": "OPERATOR_SUPPLIED_HOSTED_FINDING_DISPLAY",
+  "attribution": "User copied the authenticated operator-console result into this conversation after clicking Evaluate designated notes once. Not a direct Codex-authenticated request or raw provider response.",
+  "recordedAt": "2026-11-11T20:40:33.258716+00:00",
+  "deployedSource": "dd992fc88a9bd13093ecc6e93fc1f7fdea3b31b8",
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "finding": {
+    "findingId": "op_902d4bd6-5675-4612-b3eb-71e7612bfd5e",
+    "classification": "strong cross-sell opportunity",
+    "opportunityType": "cross-sell",
+    "confidence": "high",
+    "reviewState": "PENDING",
+    "evidence": [
+      {
+        "timestamp": "2026-11-11T20:35:43.354Z",
+        "quote": "Fictional customer requested pricing for one Level 2 EV charger installation."
+      },
+      {
+        "timestamp": "2026-11-11T20:35:43.354Z",
+        "quote": "No deadline or price was agreed."
+      },
+      {
+        "timestamp": "2026-11-11T20:35:43.354Z",
+        "quote": "Pricing information only; no site visit, appointment, installation, or other work was requested or authorized."
+      }
+    ],
+    "recommendedNextAction": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps. Customer context: \"No deadline or price was agreed.\" Customer context: \"Pricing information only; no site visit, appointment, installation, or other work was requested or authorized.\" Internal task only. No customer action is authorized."
+  },
+  "displayedInputs": {
+    "internalTaskDueAt": null,
+    "priority": "MEDIUM",
+    "actionPurpose": "internal_preparation"
+  },
+  "displayedOperationState": "No prepared or approved task.",
+  "userSemanticDecision": "PENDING",
+  "finalExecutionApproval": false,
+  "providerResponseAvailable": false,
+  "providerUsageAvailable": false
+}

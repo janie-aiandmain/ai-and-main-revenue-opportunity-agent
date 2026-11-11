@@ -1,0 +1,29 @@
+{
+  "kind": "ASSISTANT_ASSESSMENT_NOT_HUMAN_SIGNOFF",
+  "case": "ONE_DESIGNATED_SYNTHETIC_PRICING_REQUEST",
+  "expectedFindingCount": 1,
+  "observedFindingCount": 1,
+  "classificationMatchesExpected": true,
+  "opportunityTypeMatchesExpected": true,
+  "sourceQuantityPreserved": "one Level 2 EV charger installation",
+  "evidenceRestrictionsPreserved": true,
+  "sourceTimestampDisplayed": true,
+  "historicalDeadlineInvented": false,
+  "priceInvented": false,
+  "recommendedCustomerAction": false,
+  "recommendedInternalAction": "Prepare requested pricing internally for human review",
+  "confidenceCalibrationEstablished": false,
+  "semanticApproval": false,
+  "finalExecutionApproval": false,
+  "taskCreated": false,
+  "remoteRecoveryVerifiedByThisResult": false,
+  "hostedModelInvocationsReported": 1,
+  "cycleModelCallCap": 210,
+  "limitations": [
+    "One positive control; no population accuracy or false-positive estimate follows.",
+    "The supplied UI text is not the full provider JSON or token-usage receipt.",
+    "This validates the observed model output separately from approval enforcement or HubSpot writes.",
+    "The original captured semantic decisions and UV11 concern remain separate and unchanged."
+  ],
+  "cumulativeModelInvocations": 207
+}

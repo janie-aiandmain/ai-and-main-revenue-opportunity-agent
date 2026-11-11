@@ -13,6 +13,13 @@ execution flag false. The designated contact has no associated source notes
 needed before hosted evaluation. No new model call or HubSpot write occurred.
 The older hosted-state/blocker descriptions below are historical.
 
+**Hosted finding update:** the [first general hosted evaluation and exact task
+preview](checkpoints/2026-11-11-hosted-finding/README.md) now succeed with one
+synthetic source note. Pricing-only scope, restrictions and source timestamp are
+preserved. The complete prepared payload hash was independently verified; final
+execution approval, task creation and current-finding recovery remain pending.
+Tracked model consumption is now **207/210**, including one reported hosted call.
+
 Implementation source: [dcf6abc](https://github.com/janie-aiandmain/ai-and-main-revenue-opportunity-agent/commit/dcf6abc69b53d34c423034e88328aa4ece079dd7).
 The commit containing this checkpoint records its evidence; it does not imply
 that source was deployed. The [manifest](evidence/manifest.json) hashes each

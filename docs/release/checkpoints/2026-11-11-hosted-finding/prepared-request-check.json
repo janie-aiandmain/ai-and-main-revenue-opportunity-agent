@@ -1,0 +1,19 @@
+{
+  "kind": "OFFLINE_HASH_AND_BOUNDARY_CHECK_OF_SUPPLIED_REQUEST",
+  "payloadHashRecomputed": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+  "payloadHashMatches": true,
+  "actionVersionRecomputed": false,
+  "actionVersionLimitation": "The complete material hash is not part of this UI receipt; the action version is reported, not independently recomputed.",
+  "taskCreationOnly": true,
+  "designatedPortalAndContactOnly": true,
+  "syntheticLabelInsideApprovedPayload": true,
+  "sourceNoteId": "420030479039",
+  "correlation": "ai-main-23c10cff-db09-4a4a-b992-7768d56a44d5",
+  "taskDueUTC": "2026-11-12T20:41:00.000Z",
+  "taskDueEastern": "2026-11-12T15:41:00-05:00",
+  "timingBasis": "Operator-selected internal staff target; no customer deadline or agreed price.",
+  "operatorSourceReviewReported": true,
+  "finalExecutionApproval": false,
+  "remoteTaskId": null,
+  "hubspotCreates": 0
+}
