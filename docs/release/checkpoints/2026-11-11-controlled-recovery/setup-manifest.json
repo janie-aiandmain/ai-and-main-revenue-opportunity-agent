@@ -1,0 +1,19 @@
+{
+  "kind": "SYNTHETIC_RECOVERY_SETUP_ONLY",
+  "sourceCommit": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+  "runId": "release-a42c1151-fac2-49fb-a74f-2917f53ea416",
+  "maximumCreateAttempts": 1,
+  "realHubSpotTasksCreatedBySetup": 0,
+  "generalWritebackEnabled": false,
+  "remoteRecoveryVerified": false,
+  "files": {
+    "README.md": "b1cc1c439f9a87aa8077e45c794ec6ea6b3ecabf88629d08a8cd6b194f85563d",
+    "close-window.py": "41be3a6130acbb88dafed7bf1476c9d86a394a1cff940f20a8bccc72bc08087d",
+    "demo-open-deployment.txt": "a5bd5f80cf9149abc8f803bf2ac658747a15ff0f7b802ba81fe327066abefb50",
+    "operator-before-submit.json": "2ad4d9ed011e29f3e48cc5e9f469adec2a24c59846618014904af425a4b5fac8",
+    "owner-open-deployment.txt": "e36bd28a8b3a9c9310b92c24bf90252d8b803eccd0ae5000780aebefadfb3c67",
+    "verify-window.mjs": "cc632914d56681dc9a0976509c13c65086650321766389ccc8f1f86e9ac2f5fb",
+    "window-code-and-configuration.json": "3660fe7f3859d35860aebffa067199f66c3e8d84ab61cb2c082d86f9f72e0aee",
+    "window-open.json": "2c9a6cbd5926534d8b3efab81bf74bfb0c598afc86d484360bee17be5b219374"
+  }
+}

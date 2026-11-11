@@ -1,0 +1,75 @@
+{
+  "kind": "OPERATOR_SUPPLIED_HOSTED_DURABLE_BASELINE",
+  "recordedAt": "2026-11-11T21:19:45.697845+00:00",
+  "attribution": "Full operation-evidence JSON supplied by the authenticated operator in this chat before submission.",
+  "receipt": {
+    "operationId": "operation_20a11253-37c0-4c7c-b045-e73e457d37ce",
+    "opportunityId": "op_902d4bd6-5675-4612-b3eb-71e7612bfd5e",
+    "correlation": "ai-main-23c10cff-db09-4a4a-b992-7768d56a44d5",
+    "state": "APPROVED",
+    "payloadContract": "hubspot-final-payload-v1",
+    "payloadHash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+    "actionVersion": "final-action-v1:sha256:aaa3acc1739959c702f2b24f95ccdcd316a4819c5333c28914cec9d4784f184b",
+    "revision": 1,
+    "remoteTaskId": null,
+    "ledgerBootId": "161ad1fd-9ad7-4304-991c-502b28a0f5fe",
+    "demoCreateAttempts": 0,
+    "finalRequest": {
+      "body": {
+        "associations": [
+          {
+            "to": {
+              "id": "582095692487"
+            },
+            "types": [
+              {
+                "associationCategory": "HUBSPOT_DEFINED",
+                "associationTypeId": 204
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-11-11T20:35:43.354Z; 420030479039] Fictional customer requested pricing for one Level 2 EV charger installation.\n[2026-11-11T20:35:43.354Z; 420030479039] No deadline or price was agreed.\n[2026-11-11T20:35:43.354Z; 420030479039] Pricing information only; no site visit, appointment, installation, or other work was requested or authorized.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: No deadline or price was agreed.\nPricing information only; no site visit, appointment, installation, or other work was requested or authorized.\nInternal task due: 2026-11-12T20:41:00.000Z. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.\nSynthetic demo only. No real customer action or financial outcome.\n[AI_MAIN_CORRELATION:ai-main-23c10cff-db09-4a4a-b992-7768d56a44d5]",
+          "hs_task_priority": "MEDIUM",
+          "hs_task_status": "NOT_STARTED",
+          "hs_task_subject": "[AI & MAIN SYNTHETIC DEMO] Internal pricing preparation: level 2 ev charger installation",
+          "hs_task_type": "TODO",
+          "hs_timestamp": "2026-11-12T20:41:00.000Z"
+        }
+      },
+      "contractVersion": "hubspot-final-payload-v1",
+      "method": "POST",
+      "portalId": "247646122",
+      "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+    },
+    "trace": [
+      {
+        "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+        "payload_hash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+        "remote_id": null,
+        "at": "2026-11-11T20:42:23.350Z"
+      },
+      {
+        "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+        "payload_hash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+        "remote_id": null,
+        "at": "2026-11-11T20:49:49.117Z"
+      },
+      {
+        "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+        "payload_hash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+        "remote_id": null,
+        "at": "2026-11-11T20:50:00.701Z"
+      },
+      {
+        "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+        "payload_hash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+        "remote_id": null,
+        "at": "2026-11-11T20:51:04.537Z"
+      }
+    ]
+  },
+  "payloadHashIndependentlyRecomputed": true,
+  "threeApprovalClicksButZeroCreates": true
+}

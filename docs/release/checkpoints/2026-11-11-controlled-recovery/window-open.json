@@ -1,0 +1,28 @@
+{
+  "kind": "BOUNDED_SYNTHETIC_TASK_RECOVERY_WINDOW",
+  "createdAt": "2026-11-11T21:12:49.911988+00:00",
+  "expiresAt": "2026-11-11T22:12:49.911988Z",
+  "runId": "release-a42c1151-fac2-49fb-a74f-2917f53ea416",
+  "maximumCreateAttempts": 1,
+  "sourceCommit": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "findingId": "op_902d4bd6-5675-4612-b3eb-71e7612bfd5e",
+  "operationId": "operation_20a11253-37c0-4c7c-b045-e73e457d37ce",
+  "approvalId": "approval_24149546-c59e-4594-9f21-2e22674f3e42",
+  "approvedPayloadHash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+  "generalWritebackEnabled": false,
+  "realTaskCreatedBySetup": false,
+  "applicationFaultNotNaturalOutage": true,
+  "state": "VERIFIED_OPEN_WAITING_OPERATOR_BASELINE",
+  "deployments": [
+    {
+      "target": "owner",
+      "exitCode": 0
+    },
+    {
+      "target": "demo",
+      "exitCode": 0
+    }
+  ]
+}

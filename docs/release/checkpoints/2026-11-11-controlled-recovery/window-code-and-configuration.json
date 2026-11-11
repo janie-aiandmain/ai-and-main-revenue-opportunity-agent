@@ -1,0 +1,180 @@
+{
+  "kind": "CONTROLLED_SYNTHETIC_WINDOW_CODE_AND_CONFIGURATION_VERIFICATION",
+  "checkedAt": "2026-11-11T21:14:01.328Z",
+  "expectedSource": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "activeVersion": "8f86acd9-2441-4f1b-a7c1-006b879f4177",
+      "percentage": 100,
+      "sourceCommit": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      },
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "true",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "true",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "GENERAL_RELEASE_APPROVED": "false"
+      },
+      "windowConfiguration": {
+        "DEMO_RELEASE_EXPIRES_AT": "2026-11-11T22:12:49.911988Z",
+        "DEMO_RELEASE_MAX_CREATES": "1",
+        "DEMO_RELEASE_RUN_ID": "release-a42c1151-fac2-49fb-a74f-2917f53ea416"
+      },
+      "allExecutionFlagsFalse": false,
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "approverMappingVerified": true,
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "8d2c959421e68bdc221dbe6452e6fd1fddb52a48134b49a627a881695154f099",
+          "bytes": 49115
+        }
+      ],
+      "localModules": [
+        {
+          "name": "worker.js",
+          "sha256": "8d2c959421e68bdc221dbe6452e6fd1fddb52a48134b49a627a881695154f099",
+          "bytes": 49115
+        }
+      ],
+      "codeMatches": true
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "activeVersion": "c1ea1921-eed7-4a67-bcfd-7acca90ae913",
+      "percentage": 100,
+      "sourceCommit": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      },
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "true",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "true",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "GENERAL_RELEASE_APPROVED": "false"
+      },
+      "windowConfiguration": {
+        "DEMO_RELEASE_EXPIRES_AT": "2026-11-11T22:12:49.911988Z",
+        "DEMO_RELEASE_MAX_CREATES": "1",
+        "DEMO_RELEASE_RUN_ID": "release-a42c1151-fac2-49fb-a74f-2917f53ea416"
+      },
+      "allExecutionFlagsFalse": false,
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "approverMappingVerified": null,
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "a16071571ce5e036aaf341c65f0e10fec1482eb8b29457187a8d36469d86d46a",
+          "bytes": 215569
+        }
+      ],
+      "localModules": [
+        {
+          "name": "worker.js",
+          "sha256": "a16071571ce5e036aaf341c65f0e10fec1482eb8b29457187a8d36469d86d46a",
+          "bytes": 215569
+        }
+      ],
+      "codeMatches": true
+    }
+  ],
+  "hubspotCalls": 0,
+  "unauthenticatedChecks": [
+    {
+      "path": "/identity",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/operator",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/certification/general/findings",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/writeback-task",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    }
+  ],
+  "windowVerification": {
+    "runId": "release-a42c1151-fac2-49fb-a74f-2917f53ea416",
+    "maximumCreateAttempts": 1,
+    "expiresAt": "2026-11-11T22:12:49.911988Z",
+    "checks": [
+      {
+        "name": "ai-and-main-revenue-opportunity-agent",
+        "codeMatches": true,
+        "sourceMatches": true,
+        "fullTraffic": true,
+        "generalFlagsDisabled": true,
+        "onlyTwoDemoControlsEnabled": true,
+        "runMatches": true,
+        "oneAttemptMaximum": true,
+        "expiryMatches": true,
+        "expiryBounded": true,
+        "namespaceUnchanged": true,
+        "previewsDisabled": true
+      },
+      {
+        "name": "ai-and-main-revenue-opportunity-staging",
+        "codeMatches": true,
+        "sourceMatches": true,
+        "fullTraffic": true,
+        "generalFlagsDisabled": true,
+        "onlyTwoDemoControlsEnabled": true,
+        "runMatches": true,
+        "oneAttemptMaximum": true,
+        "expiryMatches": true,
+        "expiryBounded": true,
+        "namespaceUnchanged": true,
+        "previewsDisabled": true
+      }
+    ],
+    "hostnamesCorrect": true,
+    "approverMappingPreserved": true,
+    "accessRedirectsVerified": true,
+    "passed": true
+  }
+}
