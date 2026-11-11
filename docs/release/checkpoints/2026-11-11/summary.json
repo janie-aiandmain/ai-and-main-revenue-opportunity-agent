@@ -1,0 +1,32 @@
+{
+  "kind": "RESUMED_HARDENING_CHECKPOINT",
+  "recordedAt": "2026-11-11T20:35:26.207175+00:00",
+  "deployedSource": "dd992fc88a9bd13093ecc6e93fc1f7fdea3b31b8",
+  "demoDeployment": "19e5a563-6565-45e2-9dbe-66f90aa5b84b",
+  "ownerDeployment": "2eab5efc-7b62-4aee-956d-61793d141b63",
+  "actualModuleHashesMatch": true,
+  "namespaceId": "16dca25759494a33813d2800f3f1a850",
+  "allExecutionFlagsFalse": true,
+  "ownerHostnameEnabled": false,
+  "previewsEnabled": false,
+  "tests": {
+    "pass": 151,
+    "fail": 0,
+    "initialSandboxProcessFailurePreserved": true
+  },
+  "dryRunBuilds": {
+    "demo": "PASS",
+    "owner": "PASS"
+  },
+  "credentialPreflight": "PASS_OPERATOR_SUPPLIED_BEFORE_DEPLOYMENT",
+  "authenticatedPreflightAfterDeployment": "PENDING",
+  "noteCountAtPreflight": 0,
+  "hubspotWritesThisResume": 0,
+  "newModelCalls": 0,
+  "priorCycleModelCalls": 206,
+  "cycleModelCallCap": 210,
+  "finalExecutionApprovalsCreated": 0,
+  "semanticApprovalsCreated": 0,
+  "codexEnvironmentDraftChanged": false,
+  "nextBlocker": "Designated contact had no associated notes. Operator must add the labelled synthetic source note and rerun read-only preflight. The agent has no note-creation mutation."
+}

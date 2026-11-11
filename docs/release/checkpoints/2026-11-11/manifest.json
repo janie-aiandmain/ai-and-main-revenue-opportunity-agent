@@ -1,0 +1,23 @@
+{
+  "kind": "READ_ONLY_PREFLIGHT_AND_DISABLED_DEMO_DEPLOYMENT_EVIDENCE",
+  "executedSource": "dd992fc88a9bd13093ecc6e93fc1f7fdea3b31b8",
+  "recordingCommit": "The Git commit containing this checkpoint; not self-referential",
+  "humanSemanticApproval": false,
+  "finalExecutionApproval": false,
+  "newModelCalls": 0,
+  "newHubSpotTasks": 0,
+  "files": {
+    "README.md": "cf8fa6e37cae8cbe805a68c135cdbc9071e439be06aa490c6788338ca74b44d6",
+    "active-code-verification.json": "20c9e1ec22113b674a7289ab172cf20866bccb4314fb643bad7ab939beb68639",
+    "before-deployment.json": "2b881bb13722a40359e5344a09e812e9289aae1a757f704f08930a20c1b80499",
+    "demo-deployment.txt": "235fbf3cdc6785d4c43737b87d90d59ed6f0593dbf744188da2874897fc11298",
+    "demo-dry-run.txt": "2b85fc8863211d3813036bd4c5f9eaf3c37a73de5c3470024169404f7813e046",
+    "operator-preflight-before-deployment.json": "8bbfe81e0aa4914e363fd96ccdd3b00adf87b5f88e75e17e78442b7d7e6a21f1",
+    "owner-deployment.txt": "459ab747bd396894113390d5307ac6b9ab03ea46017013b9504ab08c19eb9e75",
+    "owner-dry-run.txt": "925f2b6a7a36cecc705cc0a0787cd2e4087f9bbc4e35bd8b169ef8b595fe34c9",
+    "sandbox-test-process-failure.txt": "a820b9975e4c1df206070f6a3634df3efc32ac0cb29447853f6ba8b50e01a91f",
+    "summary.json": "65c003b5985e8373a153b414b35e42d5afcdd5dfeb8001a26562b83f71f0e018",
+    "synthetic-source-note.txt": "3fe9533b7112a7f630cdf69eb8b7dffbd202e67533236bc766f9e1285cfcb920",
+    "tests-151-passed.txt": "b176c053c471d00282a3a71ecd080dd89fc7cbae85f4c55a295e357b0e70aea2"
+  }
+}

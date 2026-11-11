@@ -5,6 +5,14 @@ safeguards**. The revised workflow is not yet a hosted, accepted customer releas
 Use the [acceptance matrix](acceptance.md), [operations guide](OPERATIONS.md), and
 [pending human review](HUMAN-REVIEW.md) together.
 
+**November 11 update:** the [resumption checkpoint](checkpoints/2026-11-11/README.md)
+records passing operator-supplied credential preflight and actual deployment/code
+hash verification of source **dd992fc** on both existing Workers, with every
+execution flag false. The designated contact has no associated source notes
+(`noteCount: 0`); a synthetic note and a new authenticated preflight receipt are
+needed before hosted evaluation. No new model call or HubSpot write occurred.
+The older hosted-state/blocker descriptions below are historical.
+
 Implementation source: [dcf6abc](https://github.com/janie-aiandmain/ai-and-main-revenue-opportunity-agent/commit/dcf6abc69b53d34c423034e88328aa4ece079dd7).
 The commit containing this checkpoint records its evidence; it does not imply
 that source was deployed. The [manifest](evidence/manifest.json) hashes each

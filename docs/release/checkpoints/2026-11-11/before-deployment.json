@@ -1,0 +1,121 @@
+{
+  "kind": "RESUMED_READ_ONLY_ACCOUNT_AND_BINDING_INSPECTION",
+  "checkedAt": "2026-11-11T20:29:18.100619+00:00",
+  "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+  "accountMatches": true,
+  "hubspotCalls": 0,
+  "crmWrites": 0,
+  "cloudflareMutations": 0,
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "activeVersions": [
+        {
+          "versionId": "a33dd699-3de1-47a4-98b6-09179a9c5e94",
+          "percentage": 100,
+          "sourceCommit": "c0f2f406f98731f4153627dbafec7f50d9404698",
+          "flags": {
+            "CRM_WRITEBACK_ENABLED": "false",
+            "DEMO_RECOVERY_ENABLED": "false",
+            "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+            "DEMO_RECOVERY_FAULT_ENABLED": "false",
+            "ENABLE_GENERAL_EXECUTION": "false",
+            "ENABLE_TEST_TASK_WRITES": "false",
+            "GENERAL_RELEASE_APPROVED": "false"
+          },
+          "allPresentExecutionFlagsFalse": true,
+          "absentFlags": [
+            "DEMO_ONLY_EXECUTION_ENABLED",
+            "DEMO_RESPONSE_LOSS_TEST_ENABLED"
+          ],
+          "credentialBindingTypes": {
+            "EVAL_OPENAI_API_KEY": "secret_text",
+            "HUBSPOT_ACCESS_TOKEN": "secret_text",
+            "HUBSPOT_WRITE_TOKEN": "secret_text",
+            "STAGING_HUBSPOT_READ_TOKEN": "secret_text",
+            "STAGING_HUBSPOT_WRITE_TOKEN": "secret_text"
+          },
+          "approverMappingVerified": true,
+          "namespaceBindings": [
+            {
+              "name": "DEMO_RECOVERY_LEDGER",
+              "class_name": "CertificationLedger",
+              "namespace_id": "16dca25759494a33813d2800f3f1a850"
+            }
+          ]
+        }
+      ],
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      },
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ]
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "activeVersions": [
+        {
+          "versionId": "75d67345-b799-4d34-9983-f521516783d7",
+          "percentage": 100,
+          "sourceCommit": "e01150d96cba3f49cd9ddb463d1554ac882fa89c",
+          "flags": {
+            "CRM_WRITEBACK_ENABLED": "false",
+            "ENABLE_GENERAL_EXECUTION": "false",
+            "ENABLE_TEST_TASK_WRITES": "false",
+            "GENERAL_RELEASE_APPROVED": "false"
+          },
+          "allPresentExecutionFlagsFalse": true,
+          "absentFlags": [
+            "DEMO_RECOVERY_ENABLED",
+            "DEMO_RECOVERY_EXECUTION_ENABLED",
+            "DEMO_RECOVERY_FAULT_ENABLED",
+            "DEMO_ONLY_EXECUTION_ENABLED",
+            "DEMO_RESPONSE_LOSS_TEST_ENABLED"
+          ],
+          "credentialBindingTypes": {
+            "EVAL_OPENAI_API_KEY": "secret_text",
+            "STAGING_HUBSPOT_READ_TOKEN": "secret_text",
+            "STAGING_HUBSPOT_WRITE_TOKEN": "secret_text"
+          },
+          "approverMappingVerified": false,
+          "namespaceBindings": [
+            {
+              "name": "CERTIFICATION_LEDGER",
+              "class_name": "CertificationLedger",
+              "namespace_id": "16dca25759494a33813d2800f3f1a850"
+            }
+          ]
+        }
+      ],
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      },
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ]
+    }
+  ],
+  "unauthenticatedChecks": [
+    {
+      "path": "/identity",
+      "status": 403,
+      "redirectHost": null
+    },
+    {
+      "path": "/operator",
+      "status": 403,
+      "redirectHost": null
+    }
+  ]
+}

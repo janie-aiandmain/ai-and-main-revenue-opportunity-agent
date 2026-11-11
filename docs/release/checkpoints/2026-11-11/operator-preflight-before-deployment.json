@@ -1,0 +1,46 @@
+{
+  "kind": "OPERATOR_SUPPLIED_AUTHENTICATED_BROWSER_RECEIPT",
+  "attribution": "User supplied the displayed JSON in this chat on 2026-11-11; not a direct Codex-authenticated request",
+  "recordedAt": "2026-11-11T20:33:53.403821+00:00",
+  "executionApproval": false,
+  "receipt": {
+    "kind": "READ_ONLY_ISOLATION_AND_IDENTITY_PREFLIGHT",
+    "identityKind": "EXTERNAL_VERIFIED",
+    "role": "Approver",
+    "portalId": "247646122",
+    "contactId": "582095692487",
+    "readCredentialPortalVerified": true,
+    "writeCredentialPortalVerified": true,
+    "noteCount": 0,
+    "taskReadVerified": true,
+    "writesEnabled": false,
+    "generalExecutionEnabled": false,
+    "semanticApproval": false,
+    "productionCertification": false,
+    "ownerSourceCommit": "e01150d96cba3f49cd9ddb463d1554ac882fa89c",
+    "ownerDeploymentVersion": "75d67345-b799-4d34-9983-f521516783d7",
+    "ledgerBootId": "b0e78a7d-29b1-43d0-90e6-00a1a9b9d4a3",
+    "originalDemoCredentialProof": {
+      "kind": "READ_ONLY_EXISTING_DEMO_CREDENTIAL_CHECK",
+      "checks": [
+        {
+          "credential": "HUBSPOT_ACCESS_TOKEN",
+          "status": "PASS",
+          "portalId": "247646122"
+        },
+        {
+          "credential": "HUBSPOT_WRITE_TOKEN",
+          "status": "PASS",
+          "portalId": "247646122"
+        }
+      ],
+      "writes": 0,
+      "contactMarkerVerified": true
+    },
+    "credentialLocations": {
+      "workflow": "ai-and-main-revenue-opportunity-staging \u2192 Settings \u2192 Variables and Secrets",
+      "existingDemo": "ai-and-main-revenue-opportunity-agent \u2192 Settings \u2192 Variables and Secrets"
+    },
+    "credentialsNotSubstituted": true
+  }
+}

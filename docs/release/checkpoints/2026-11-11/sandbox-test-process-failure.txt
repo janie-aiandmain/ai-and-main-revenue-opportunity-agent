@@ -1,0 +1,59 @@
+
+> ai-and-main-revenue-opportunity-agent@0.1.0 test
+> node --test tests/*.test.js
+
+✔ tests/certification.test.js (222.182002ms)
+✖ tests/correction.test.js (321.942952ms)
+✔ tests/demo-execution.test.js (112.964412ms)
+✖ tests/demo-recovery.test.js (666.357434ms)
+✔ tests/findings.test.js (294.382765ms)
+✔ tests/general-integration.test.js (256.900549ms)
+
+  #  /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node[1885]: void node::InternalCallbackScope::Close() at ../src/api/callback.cc:165
+  #  Assertion failed: (env_->execution_async_id()) == (0)
+
+----- Native stack trace -----
+
+ 1: 0x921e57 node::Assert(node::AssertionInfo const&) [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 2: 0x7f97ee node::InternalCallbackScope::Close() [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 3: 0x7f9821 node::InternalCallbackScope::~InternalCallbackScope() [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 4: 0x9cc01d  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 5: 0x9ce75c node::PerIsolatePlatformData::FlushForegroundTasksInternal() [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 6: 0x19e2283  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 7: 0x19f908a  [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 8: 0x19e34b7 uv_run [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+ 9: 0x7fd735 node::SpinEventLoopInternal(node::Environment*) [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+10: 0x982f8a node::NodeMainInstance::Run() [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+11: 0x8c12c5 node::Start(int, char**) [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+12: 0x7f887b499ca8  [/lib/x86_64-linux-gnu/libc.so.6]
+13: 0x7f887b499d65 __libc_start_main [/lib/x86_64-linux-gnu/libc.so.6]
+14: 0x7e5f4e _start [/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node]
+✖ tests/native-fetch.test.js (431.177443ms)
+✔ tests/regression.test.js (347.418624ms)
+✔ tests/release-boundaries.test.js (161.102706ms)
+✔ tests/release-evidence.test.js (113.949081ms)
+✔ tests/semantic-corrections.test.js (123.376087ms)
+✔ tests/stability.test.js (238.146471ms)
+✔ tests/staging-setup.test.js (178.984082ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 10
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1239.97927
+
+✖ failing tests:
+
+test at tests/correction.test.js:1:1
+✖ tests/correction.test.js (321.942952ms)
+  'test failed'
+
+test at tests/demo-recovery.test.js:1:1
+✖ tests/demo-recovery.test.js (666.357434ms)
+  'test failed'
+
+test at tests/native-fetch.test.js:1:1
+✖ tests/native-fetch.test.js (431.177443ms)
+  'test failed'
