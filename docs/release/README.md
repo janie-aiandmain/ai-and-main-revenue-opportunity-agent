@@ -28,6 +28,18 @@ preserves the original review, hash/version and 24-hour expiry. All **155 tests*
 the actual local browser flow and both builds passed. No HubSpot task has yet
 been created for this finding; current-operation recovery remains pending.
 
+**Interrupted-test update:** the [controlled run](checkpoints/2026-11-11-controlled-recovery/interruption-and-closure.md)
+has now reserved one create attempt, persisted intent and restarted into
+**UNKNOWN** with the approved hash unchanged. Both demo controls were closed
+and verified false before requesting read-only reconciliation. The remote task
+ID and exact match are still pending; task existence is not yet confirmed.
+The trace lacks an explicit discard marker. A captured failure and a
+[local storage-flush correction](checkpoints/2026-11-11-controlled-recovery/fault-marker-correction/README.md)
+are preserved; **156 tests** and both builds pass for that correction, which is
+not yet deployed. Hosted execution/reconciliation remains on source **203f48c**.
+Tracked model use is **208/210**. Earlier statements of zero attempts above are
+historical; no additional create is permitted to resolve the uncertainty.
+
 Implementation source: [dcf6abc](https://github.com/janie-aiandmain/ai-and-main-revenue-opportunity-agent/commit/dcf6abc69b53d34c423034e88328aa4ece079dd7).
 The commit containing this checkpoint records its evidence; it does not imply
 that source was deployed. The [manifest](evidence/manifest.json) hashes each
