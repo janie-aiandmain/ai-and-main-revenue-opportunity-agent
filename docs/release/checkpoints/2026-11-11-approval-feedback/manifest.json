@@ -1,0 +1,19 @@
+{
+  "kind": "APPROVAL_FEEDBACK_AND_SAME_GRANT_RESUME_CORRECTION",
+  "implementationCommit": "The first Git commit containing this correction",
+  "deployedVerification": "Pending; recorded separately after deployment",
+  "policyVersion": "same-operator-exact-approval-resume-v1",
+  "paidModelCalls": 0,
+  "realHubSpotTaskCreates": 0,
+  "files": {
+    "README.md": "1d9a588dd7d0af5d7906aa2df6ee47511c48cefb345caff89f4006b77b7f0ec5",
+    "browser-before.json": "60665e4455ababac52b89a2d9b154c466828fd9ebe2348984631820bf7cee077",
+    "browser-final.json": "d2ef8d43acffb4e20b921c980fbc0dda4a07ee6325ffea235aecd1f9ce3c0d83",
+    "demo-dry-run.txt": "699e5927728736b1952c515a8aec6e75102cb8bd17747f889bca9dbd2286de92",
+    "operator-reported-approved-state.json": "0d742e6034a5d4e896a86130b44b11bdcc09f1146a972019afc6a77622a967b5",
+    "owner-dry-run.txt": "a41ac4dd901bd6ca3aa61de287b526291a271cc97dbe871eff2fa7d507cd4ccc",
+    "resume-before.txt": "f3f1e4cbf9e9458e09240a08dfdfb2cd8a45e97e91d5777c91d3ff1789a88d3a",
+    "resume-focused-tests.txt": "135cd4f32bc436af5c7db3002dd7cb8929d4ec190cb07a47b55e4aa545fd0368",
+    "tests-155-passed.txt": "d6c4def178148575f65496a6a2942d97b1a141b8aef82820d82edcdff4ee8cd7"
+  }
+}

@@ -28,6 +28,31 @@ test('general notes → finding → attributable simulated review → exact appr
  await a.l.executeGeneral(reviewed.operationId,grant.approvalId,actor,env,a.source,a.reason,a.client);assert.equal(a.posts(),1);
  assert.equal(a.l.metrics().estimatedOpportunityValueMinor,0);assert.equal(a.l.metrics().revenueRescued,null);assert.equal(a.l.metrics().verifiedTestOutcomes.length,0);
 }));
+test('saved approval resumes with the same actor, exact request and original expiry without a new approval or task',()=>lab(async a=>{
+ const {reviewed,grant}=await a.prepare(),before=a.l.db.prepare('SELECT * FROM cert_approvals WHERE id=?').get(grant.approvalId);
+ const resumed=await a.l.resumeApproval({operationId:reviewed.operationId},actor,env,a.source);
+ assert.equal(resumed.approval.approvalId,grant.approvalId);assert.equal(resumed.payloadHash,reviewed.payloadHash);assert.equal(resumed.actionVersion,reviewed.actionVersion);
+ assert.equal(resumed.reviewId,reviewed.reviewId);assert.deepEqual(resumed.finalRequest,reviewed.finalRequest);assert.equal(Date.parse(resumed.approval.expiresAt),before.expires_at);
+ assert.deepEqual(a.l.db.prepare('SELECT * FROM cert_approvals WHERE id=?').get(grant.approvalId),before);
+ assert.equal(a.l.db.prepare('SELECT count(*) AS n FROM cert_approvals').get().n,1);assert.equal(a.posts(),0);
+}));
+test('saved approval cannot resume for another subject, role, authority domain, expired session or expired grant',()=>lab(async a=>{
+ const {reviewed,grant}=await a.prepare();
+ for(const patch of [{subject:'other'},{role:'Viewer'},{role:'Admin'},{issuer:'https://other.invalid'},{audience:'other'},{expiresAt:Date.now()-1}])await assert.rejects(a.l.resumeApproval({operationId:reviewed.operationId},{...actor,...patch},env,a.source));
+ a.l.db.prepare('UPDATE cert_approvals SET expires_at=? WHERE id=?').run(Date.now()-1,grant.approvalId);
+ await assert.rejects(a.l.resumeApproval({operationId:reviewed.operationId},actor,env,a.source));assert.equal(a.posts(),0);
+}));
+test('saved approval checks fresh source and rejects revoked or concurrently revoked grants',async()=>{
+ await lab(async a=>{const {reviewed,grant}=await a.prepare();const history=(await a.source.readContext()).serviceHistory;a.set([{...history[0],note:history[0].note+' Customer withdrew the request.'}],[]);
+  await assert.rejects(a.l.resumeApproval({operationId:reviewed.operationId},actor,env,a.source),/source_changed/);assert.equal(a.l.db.prepare('SELECT revoked FROM cert_approvals WHERE id=?').get(grant.approvalId).revoked,1);assert.equal(a.posts(),0);});
+ await lab(async a=>{const {reviewed,grant}=await a.prepare();const source={async readContext(){const c=await a.source.readContext();a.l.db.prepare('UPDATE cert_approvals SET revoked=1 WHERE id=?').run(grant.approvalId);return c;}};
+  await assert.rejects(a.l.resumeApproval({operationId:reviewed.operationId},actor,env,source));assert.equal(a.posts(),0);});
+});
+test('a materially revised prepared payload cannot resume its prior approval',()=>lab(async a=>{
+ const {finding,reviewed,grant}=await a.prepare(),input={findingId:finding.findingId,sourceHash:finding.sourceHash,candidateHash:finding.candidateHash,decision:'REVIEW',attestHumanReview:true,spec:{...spec(),priority:'LOW'}};
+ const changed=a.l.finishReview(input,actor,await a.l.review(input,actor,env,a.source),env);assert.notEqual(changed.payloadHash,reviewed.payloadHash);
+ await assert.rejects(a.l.resumeApproval({operationId:reviewed.operationId},actor,env,a.source));assert.equal(a.l.db.prepare('SELECT revoked FROM cert_approvals WHERE id=?').get(grant.approvalId).revoked,1);assert.equal(a.posts(),0);
+}));
 test('material fresh recommendation change revokes review and approval before any POST',()=>lab(async a=>{
  const {reviewed,grant}=await a.prepare();a.set((await a.source.readContext()).serviceHistory, [{...candidate(),recommendedNextAction:'Review pricing, but first verify the revised scope with the customer.'}]);
  await assert.rejects(a.l.executeGeneral(reviewed.operationId,grant.approvalId,actor,env,a.source,a.reason,a.client));assert.equal(a.posts(),0);

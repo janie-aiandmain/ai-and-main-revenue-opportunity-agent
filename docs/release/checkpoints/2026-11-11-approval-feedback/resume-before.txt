@@ -1,0 +1,68 @@
+✔ general notes → finding → attributable simulated review → exact approval → one task, no estimated revenue (31.280965ms)
+✖ saved approval resumes with the same actor, exact request and original expiry without a new approval or task (5.98566ms)
+✖ saved approval cannot resume for another subject, role, authority domain, expired session or expired grant (6.623966ms)
+✖ saved approval checks fresh source and rejects revoked or concurrently revoked grants (5.569294ms)
+✖ a materially revised prepared payload cannot resume its prior approval (4.175744ms)
+✔ material fresh recommendation change revokes review and approval before any POST (6.247703ms)
+✔ classification/evidence/source changes and withdrawal cannot reuse an old approval (13.41247ms)
+✔ general approval/execute cannot bypass release/fresh-evaluation guards through legacy certification routes (4.296855ms)
+✔ exact action version, latest review ID, attestations and approver role are mandatory (3.716455ms)
+✔ simultaneous source/model evaluation suspends approvals and stale completion cannot overwrite the newer evaluation (5.730326ms)
+✔ two independent findings from one note retain distinct durable IDs and exact task operations (15.14561ms)
+✔ omitted restrictions and unrequested assessments fail even if the model decision/type are correct (0.891898ms)
+✔ old today/tomorrow/week/day deadlines cannot be renewed by selecting a new task due date (0.284527ms)
+✔ deferred event and before-work state require actual source confirmation, not a boolean override (0.353431ms)
+✔ all original failure fixtures and baseline artifacts remain byte-identical to prior certification (20.990458ms)
+✔ an edited source or failed fresh model revokes the real staging approval, not only sandbox grants (5.929895ms)
+✔ preserved ST04 review-versus-resolution weakening is detected and never approved as wording (2.874201ms)
+✔ a previously approved explicit task deadline cannot be reused after that deadline expires (3.315613ms)
+✔ new independent evidence and edited source require an attributable identity decision without merging or allocating duplicates (6.169185ms)
+✔ internal renovation verification reaches exact review/approval without satisfying the customer follow-up gate (5.160621ms)
+✔ a different verified subject cannot replay another operator exact approval (2.764377ms)
+✔ a legacy customer-action projection with an absolute source date rejects clearly rather than referencing undefined state (0.407912ms)
+✔ synonymous model narration cannot change a source-rendered exact internal task or duplicate its opportunity (5.183476ms)
+✔ changed issuer, audience or operator role cannot reuse an existing exact-payload approval (8.083246ms)
+✔ operator session expiration during the fresh source check is enforced immediately before POST (5.308032ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 21
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 248.135688
+
+✖ failing tests:
+
+test at tests/general-integration.test.js:31:1
+✖ saved approval resumes with the same actor, exact request and original expiry without a new approval or task (5.98566ms)
+  TypeError: a.l.resumeApproval is not a function
+      at file:///workspace/ai-and-main-revenue-opportunity-agent/tests/general-integration.test.js:33:26
+      at async lab (file:///workspace/ai-and-main-revenue-opportunity-agent/tests/general-integration.test.js:23:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/general-integration.test.js:39:1
+✖ saved approval cannot resume for another subject, role, authority domain, expired session or expired grant (6.623966ms)
+  TypeError: a.l.resumeApproval is not a function
+      at file:///workspace/ai-and-main-revenue-opportunity-agent/tests/general-integration.test.js:41:174
+      at async lab (file:///workspace/ai-and-main-revenue-opportunity-agent/tests/general-integration.test.js:23:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/general-integration.test.js:45:1
+✖ saved approval checks fresh source and rejects revoked or concurrently revoked grants (5.569294ms)
+  TypeError: a.l.resumeApproval is not a function
+      at file:///workspace/ai-and-main-revenue-opportunity-agent/tests/general-integration.test.js:47:28
+      at async lab (file:///workspace/ai-and-main-revenue-opportunity-agent/tests/general-integration.test.js:23:6)
+      at async TestContext.<anonymous> (file:///workspace/ai-and-main-revenue-opportunity-agent/tests/general-integration.test.js:46:2)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/general-integration.test.js:51:1
+✖ a materially revised prepared payload cannot resume its prior approval (4.175744ms)
+  TypeError: a.l.resumeApproval is not a function
+      at file:///workspace/ai-and-main-revenue-opportunity-agent/tests/general-integration.test.js:54:27
+      at async lab (file:///workspace/ai-and-main-revenue-opportunity-agent/tests/general-integration.test.js:23:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

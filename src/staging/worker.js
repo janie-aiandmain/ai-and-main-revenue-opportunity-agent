@@ -60,6 +60,7 @@ export class CertificationLedger extends DurableObject {
           return json(l.finishReview(input,actor,checked,this.env));
         }
         if(path==='/certification/general/approve')return json(l.approveGeneral(input,actor));
+        if(path==='/certification/general/resume-approval')return json(await l.resumeApproval(input,actor,this.env,source));
         if(path==='/certification/general/arm-response-loss')return json(l.armDemoResponseLoss(input,actor,this.env));
         if(path==='/certification/general/execute'){const client=new HubSpotCertificationClient(this.env);if(this.env.CERTIFICATION_MODE==='remote-demo'&&this.env.DEMO_RESPONSE_LOSS_TEST_ENABLED==='true')client.restartAfterInjectedLoss=()=>this.demoContext.abort('Operator-authorized injected response discard; not a network outage');return json(await l.executeGeneral(input.operationId,input.approvalId,actor,this.env,source,reason,client));}
         return json({status:'not_found'},404);

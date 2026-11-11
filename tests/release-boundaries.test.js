@@ -17,6 +17,7 @@ test('only a cryptographically verified subject can read its own identity before
 });
 test('viewer body spoofing, direct legacy routes and cross-origin requests cannot grant write authority',async()=>{
  assert.equal((await operatorGateway(req('/certification/general/evaluate','test-viewer',{actor:{role:'Admin'}}),env)).status,403);
+ assert.equal((await operatorGateway(req('/certification/general/resume-approval','test-viewer',{actor:{role:'Admin'}}),env)).status,403);
  assert.equal((await operatorGateway(req('/writeback-task','test-approver',{}),env)).status,403);
  const r=req('/certification/general/evaluate','test-approver',{});r.headers.set('Origin','https://evil.invalid');assert.equal((await operatorGateway(r,env)).status,403);
  assert.equal((await operatorGateway(req('/ai-shadow-evaluate','test-approver'),env)).status,404);

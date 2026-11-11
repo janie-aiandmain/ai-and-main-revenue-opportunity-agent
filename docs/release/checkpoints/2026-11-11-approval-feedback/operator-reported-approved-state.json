@@ -1,0 +1,12 @@
+{
+  "kind": "OPERATOR_SUPPLIED_OPERATION_STATUS",
+  "recordedAt": "2026-11-11T21:04:24.402061+00:00",
+  "attribution": "User supplied the displayed operation status after reporting no visible approval confirmation. Not a direct Codex-authenticated request.",
+  "receipt": {
+    "operationId": "operation_20a11253-37c0-4c7c-b045-e73e457d37ce",
+    "state": "APPROVED",
+    "remoteTaskId": null
+  },
+  "fullGrantReceiptSupplied": false,
+  "newTaskClaim": false
+}

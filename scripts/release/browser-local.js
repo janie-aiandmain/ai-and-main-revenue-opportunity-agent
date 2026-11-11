@@ -30,7 +30,27 @@ try{
  const due=new Date(Date.now()+7200000).toISOString().slice(0,16);await evaluate(`document.querySelector('input[type=checkbox]').checked=true;document.querySelector('input[type=datetime-local]').value=${JSON.stringify(due)};`);await click('Prepare for review');await until("document.body.innerText.includes('Final task for your approval')");
  assert.equal(await evaluate("document.body.innerText.includes('No customer action is authorized')"),true);evidence.assertions.push('ordinary_preview_shows_exact_due_scope_and_authority');
  const shot=await cdp('Page.captureScreenshot',{format:'png',captureBeyondViewport:true});await writeFile('reports/release-browser-preview.png',Buffer.from(shot.data,'base64'));
- await click('Approve exact task');await until("document.body.innerText.includes('Exact task approved')");await click('Submit approved task');await until("document.body.innerText.includes('Task confirmed in HubSpot')");await click('Submit approved task');await new Promise(r=>setTimeout(r,200));assert.equal(fixture.allTasks().length,1);evidence.assertions.push('approve_submit_repeat_creates_one_local_fixture_task');
+ // A click near the bottom of a long preview must expose both rejection and
+ // success locally. A message elsewhere in document.body is insufficient.
+ await evaluate("Array.from(document.querySelectorAll('button')).find(b=>b.textContent==='Approve exact task').scrollIntoView({block:'center'})");
+ const expiredBody=enc({alg:'RS256',kid:jwk.kid})+'.'+enc({sub:'browser-local-approver',iss:'https://certification.invalid',aud:'browser-local',exp:Math.floor(Date.now()/1000)-60}),expiredToken=expiredBody+'.'+sign('RSA-SHA256',Buffer.from(expiredBody),pair.privateKey).toString('base64url');
+ await cdp('Network.setExtraHTTPHeaders',{headers:{Authorization:'Bearer '+expiredToken}});
+ await click('Approve exact task');await until("document.getElementById('message').textContent.includes('rejected_credential')");
+ assert.equal(fixture.allTasks().length,0);evidence.assertions.push('expired_identity_approval_creates_no_task');
+ assert.equal(await evaluate("Array.from(document.querySelector('article').querySelectorAll('[role=status]')).some(e=>e.textContent.includes('rejected_credential')&&e.getBoundingClientRect().bottom>0&&e.getBoundingClientRect().top<innerHeight)"),true,'approval rejection must be visible beside the finding controls');
+ evidence.assertions.push('approval_rejection_visible_beside_controls');
+ await cdp('Network.setExtraHTTPHeaders',{headers:{Authorization:'Bearer '+token}});
+ await click('Approve exact task');await until("document.body.innerText.includes('Exact task approved')");
+ assert.equal(await evaluate("Array.from(document.querySelector('article').querySelectorAll('[role=status]')).some(e=>e.textContent.includes('Exact task approved')&&e.getBoundingClientRect().bottom>0&&e.getBoundingClientRect().top<innerHeight)"),true,'approval confirmation must be visible beside the finding controls');
+ assert.equal(await evaluate("document.querySelector('article').innerText.includes('Approval receipt')"),true);
+ assert.equal(fixture.allTasks().length,0);evidence.assertions.push('approval_success_visible_with_receipt_and_no_create');
+ const firstReceipt=await evaluate("JSON.parse(document.querySelector('details[data-approval-receipt] pre').textContent)");
+ await cdp('Page.reload');await until("document.body.innerText.includes('Resume saved approval')");
+ await click('Resume saved approval');await until("document.body.innerText.includes('Saved approval resumed')");
+ const resumedReceipt=await evaluate("JSON.parse(document.querySelector('details[data-approval-receipt] pre').textContent)");
+ assert.equal(resumedReceipt.approvalId,firstReceipt.approvalId);assert.equal(resumedReceipt.payloadHash,firstReceipt.payloadHash);assert.equal(resumedReceipt.actionVersion,firstReceipt.actionVersion);assert.equal(fixture.allTasks().length,0);
+ evidence.assertions.push('reload_resumes_same_approval_and_exact_payload_without_new_grant_or_task');
+ await click('Submit approved task');await until("document.body.innerText.includes('Task confirmed in HubSpot')");await click('Submit approved task');await new Promise(r=>setTimeout(r,200));assert.equal(fixture.allTasks().length,1);evidence.assertions.push('approve_submit_repeat_creates_one_local_fixture_task');
  evidence.fixtureTaskIds=fixture.allTasks().map(x=>x.id);evidence.fixtureCreateCount=1;evidence.browser='Chromium headless';evidence.complete=true;
 }catch(error){evidence.failure=error.message;evidence.visibleUiText=await visibleText().catch(()=>null);evidence.fixtureModelCalls=fixture?.modelCalls();process.exitCode=1;}
-finally{ws?.close();if(browser&&browser.exitCode===null){const exited=new Promise(resolve=>browser.once('exit',resolve));browser.kill('SIGTERM');await Promise.race([exited,new Promise(resolve=>setTimeout(resolve,3000))]);}await mf?.dispose();await fixture?.close();try{await rm(dir,{recursive:true,force:true,maxRetries:8,retryDelay:200});}catch{evidence.cleanupWarning='temporary_chrome_profile_removal_deferred';}await writeFile('reports/release-browser-local.json',JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify(evidence));}
+finally{ws?.close();if(browser&&browser.exitCode===null){const exited=new Promise(resolve=>browser.once('exit',resolve));browser.kill('SIGTERM');await Promise.race([exited,new Promise(resolve=>setTimeout(resolve,3000))]);}await mf?.dispose();await fixture?.close();try{await rm(dir,{recursive:true,force:true,maxRetries:8,retryDelay:200});}catch{evidence.cleanupWarning='temporary_chrome_profile_removal_deferred';}await writeFile(process.env.RELEASE_BROWSER_EVIDENCE_PATH||'reports/release-browser-local.json',JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify(evidence));}

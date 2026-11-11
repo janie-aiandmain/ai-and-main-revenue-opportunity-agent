@@ -13,6 +13,7 @@ const plainHash=value=>createHash('sha256').update(canonical(value)).digest('hex
 const compactAnchors=(history,evidence)=>sourceAnchors(history,evidence).map(a=>({noteId:a.noteId,start:a.start,end:a.end,sourceHash:plainHash({text:a.sourceText,timestamp:a.timestamp}),text:a.sourceText.slice(a.start,a.end)}));
 const actorAuthority=actor=>digest({subject:actor.subject,role:actor.role,kind:actor.kind,issuer:actor.issuer||null,audience:actor.audience||null});
 const role=actor=>{if(!actor||!['Approver','Admin'].includes(actor.role)||!['LOCAL_SYNTHETIC','EXTERNAL_VERIFIED'].includes(actor.kind)||!actor.subject)throw Error('verified_operator_required');};
+export const APPROVAL_RESUME_POLICY='same-operator-exact-approval-resume-v1';
 export class GeneralFindingLedger extends StagingOperationLedger {
   constructor(db,env){super(db);this.env=env;db.exec(`
     CREATE TABLE IF NOT EXISTS general_identity_candidates(context_key TEXT PRIMARY KEY,generation INTEGER NOT NULL,source_hash TEXT NOT NULL,result_json TEXT NOT NULL);
@@ -180,6 +181,27 @@ export class GeneralFindingLedger extends StagingOperationLedger {
     this.db.prepare('INSERT INTO general_approval_bindings VALUES(?,?,?)').run(grant.approvalId,review.id,input.actionVersion);
     this.db.prepare('INSERT INTO general_approval_identity VALUES(?,?)').run(grant.approvalId,actorAuthority(actor));
     return {...grant,reviewId:review.id,actionVersion:input.actionVersion};
+  }
+  async resumeApproval(input,actor,env,source){
+    role(actor);
+    const op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(input.operationId);
+    const finding=op&&this.db.prepare('SELECT * FROM general_findings WHERE op_id=?').get(op.op_id);
+    if(!op||op.state!=='APPROVED'||finding?.context_key!==this.contextKey(env))throw Error('approved_general_operation_required');
+    const grant=this.db.prepare('SELECT * FROM cert_approvals WHERE operation_id=? AND actor=? AND kind=? ORDER BY issued_at DESC,rowid DESC LIMIT 1').get(op.id,actor.subject,actor.kind);
+    if(!grant)throw Error('same_operator_approval_required');
+    // No grant is issued, renewed or recovered across a changed authority domain.
+    this.validate(op,grant,{...env,executionActor:actor});
+    const history=await prepareHistory(await source.readContext());
+    const current=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(op.id);
+    const currentFinding=this.db.prepare('SELECT * FROM general_findings WHERE op_id=?').get(op.op_id);
+    if(digest(history)!==currentFinding?.source_hash){this.revokeForFinding(op.op_id,'SOURCE_CHANGED_DURING_APPROVAL_RESUME');throw Error('source_changed_refresh_required');}
+    const currentGrant=this.db.prepare('SELECT * FROM cert_approvals WHERE id=?').get(grant.id);
+    if(current?.state!=='APPROVED')throw Error('approved_general_operation_required');
+    this.validate(current,currentGrant,{...env,executionActor:actor});
+    const review=this.assertReviewCurrent(current),status=this.status(current.id);
+    return {...status,reviewId:review.id,reviewSpec:JSON.parse(review.spec_json),resumePolicy:APPROVAL_RESUME_POLICY,
+      approval:{approvalId:currentGrant.id,payloadHash:current.payload_hash,reviewId:review.id,actionVersion:status.actionVersion,kind:currentGrant.kind,issuedAt:new Date(currentGrant.issued_at).toISOString(),expiresAt:new Date(currentGrant.expires_at).toISOString()},
+      newApprovalCreated:false,taskSubmitted:false};
   }
   async execute(id,approvalId,client,env){
     const op=this.db.prepare('SELECT * FROM cert_operations WHERE id=?').get(id);

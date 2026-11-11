@@ -5,7 +5,7 @@ import {identityBlocker} from '../staging/blockers.js';
 import {operatorConsole} from '../staging/operator-console.js';
 const json=(b,s=200)=>Response.json(b,{status:s,headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});
 const reads=new Set(['status','metrics','preflight','session','general/findings','general/identity-candidates']);
-const writes=new Set(['general/evaluate','general/identity-review','general/review','general/approve','general/execute','general/arm-response-loss','reconcile','resolve-uncertain']);
+const writes=new Set(['general/evaluate','general/identity-review','general/review','general/approve','general/resume-approval','general/execute','general/arm-response-loss','reconcile','resolve-uncertain']);
 export async function operatorGateway(request,env){
  const path=new URL(request.url).pathname;
  if(['/writeback-task','/writeback-test','/writeback-preview'].includes(path))return json({status:'legacy_writeback_disabled'},403);

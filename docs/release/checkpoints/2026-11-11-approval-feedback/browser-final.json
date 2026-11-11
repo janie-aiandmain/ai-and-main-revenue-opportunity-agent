@@ -1,0 +1,23 @@
+{
+  "kind": "EXECUTED_LOCAL_CHROMIUM_WORKER_FIXTURE_NOT_HOSTED",
+  "humanSignoffs": 0,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "assertions": [
+    "console_loaded_with_ephemeral_signed_test_identity",
+    "source_restriction_completed_and_visible",
+    "ordinary_preview_shows_exact_due_scope_and_authority",
+    "expired_identity_approval_creates_no_task",
+    "approval_rejection_visible_beside_controls",
+    "approval_success_visible_with_receipt_and_no_create",
+    "reload_resumes_same_approval_and_exact_payload_without_new_grant_or_task",
+    "approve_submit_repeat_creates_one_local_fixture_task"
+  ],
+  "transport": "Actual Chromium HTTP to Miniflare/workerd, no bridge",
+  "fixtureTaskIds": [
+    "fixture-task-1"
+  ],
+  "fixtureCreateCount": 1,
+  "browser": "Chromium headless",
+  "complete": true
+}
