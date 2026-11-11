@@ -1,0 +1,131 @@
+{
+  "kind": "ACTUAL_ACTIVE_CODE_AND_CONFIGURATION_VERIFICATION",
+  "checkedAt": "2026-11-11T21:06:12.150Z",
+  "expectedSource": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "activeVersion": "7530b791-6658-467c-b881-9ab52414a03b",
+      "percentage": 100,
+      "sourceCommit": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      },
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "GENERAL_RELEASE_APPROVED": "false"
+      },
+      "allExecutionFlagsFalse": true,
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "approverMappingVerified": true,
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "8d2c959421e68bdc221dbe6452e6fd1fddb52a48134b49a627a881695154f099",
+          "bytes": 49115
+        }
+      ],
+      "localModules": [
+        {
+          "name": "worker.js",
+          "sha256": "8d2c959421e68bdc221dbe6452e6fd1fddb52a48134b49a627a881695154f099",
+          "bytes": 49115
+        }
+      ],
+      "codeMatches": true
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "activeVersion": "ca11035b-7fef-49e9-b55d-0d4033610c22",
+      "percentage": 100,
+      "sourceCommit": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      },
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "GENERAL_RELEASE_APPROVED": "false"
+      },
+      "allExecutionFlagsFalse": true,
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "approverMappingVerified": null,
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "a16071571ce5e036aaf341c65f0e10fec1482eb8b29457187a8d36469d86d46a",
+          "bytes": 215569
+        }
+      ],
+      "localModules": [
+        {
+          "name": "worker.js",
+          "sha256": "a16071571ce5e036aaf341c65f0e10fec1482eb8b29457187a8d36469d86d46a",
+          "bytes": 215569
+        }
+      ],
+      "codeMatches": true
+    }
+  ],
+  "hubspotCalls": 0,
+  "unauthenticatedChecks": [
+    {
+      "path": "/identity",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/operator",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/certification/general/findings",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    },
+    {
+      "path": "/writeback-task",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com"
+    }
+  ]
+}

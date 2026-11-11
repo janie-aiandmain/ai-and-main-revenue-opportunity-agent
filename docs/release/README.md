@@ -20,6 +20,14 @@ preserved. The complete prepared payload hash was independently verified; final
 execution approval, task creation and current-finding recovery remain pending.
 Tracked model consumption is now **207/210**, including one reported hosted call.
 
+**Approval UI correction:** source **203f48c** is now deployed and code-verified.
+After an off-screen confirmation caused confusion, the console now shows inline
+status/receipts and can resume the same saved approval after a refresh. The
+[hosted resumption receipt](checkpoints/2026-11-11-approval-feedback/deployment/README.md)
+preserves the original review, hash/version and 24-hour expiry. All **155 tests**,
+the actual local browser flow and both builds passed. No HubSpot task has yet
+been created for this finding; current-operation recovery remains pending.
+
 Implementation source: [dcf6abc](https://github.com/janie-aiandmain/ai-and-main-revenue-opportunity-agent/commit/dcf6abc69b53d34c423034e88328aa4ece079dd7).
 The commit containing this checkpoint records its evidence; it does not imply
 that source was deployed. The [manifest](evidence/manifest.json) hashes each

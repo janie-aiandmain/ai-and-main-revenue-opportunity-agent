@@ -1,0 +1,23 @@
+{
+  "kind": "OPERATOR_SUPPLIED_HOSTED_SAME_APPROVAL_RESUMPTION",
+  "attribution": "User pasted the authenticated console Approval receipt after clicking Resume saved approval. Not a direct Codex-authenticated request.",
+  "recordedAt": "2026-11-11T21:09:46.486357+00:00",
+  "receipt": {
+    "operationId": "operation_20a11253-37c0-4c7c-b045-e73e457d37ce",
+    "approvalId": "approval_24149546-c59e-4594-9f21-2e22674f3e42",
+    "reviewId": "review_d45035dc-a248-41d3-8a85-0e63f567d373",
+    "payloadHash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+    "actionVersion": "final-action-v1:sha256:aaa3acc1739959c702f2b24f95ccdcd316a4819c5333c28914cec9d4784f184b",
+    "identityKind": "EXTERNAL_VERIFIED",
+    "issuedAt": "2026-11-11T20:51:04.537Z",
+    "expiresAt": "2026-11-12T20:51:04.537Z",
+    "state": "APPROVED",
+    "taskSubmitted": false
+  },
+  "matchesPreviouslyPreparedPayloadHash": true,
+  "matchesPreviouslyPreparedActionVersion": true,
+  "matchesPreviouslyPreparedReviewId": true,
+  "original24HourValidityPreserved": true,
+  "newTaskCreated": false,
+  "modelCalls": 0
+}

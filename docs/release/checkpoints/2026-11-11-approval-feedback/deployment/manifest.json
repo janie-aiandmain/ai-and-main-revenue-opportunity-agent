@@ -1,0 +1,14 @@
+{
+  "kind": "VERIFIED_DISABLED_DEPLOYMENT_AND_HOSTED_APPROVAL_RESUMPTION",
+  "sourceCommit": "203f48c96cb8e8c16ee4dc54fb4a7b9d92943240",
+  "recordingCommit": "The commit containing this deployment checkpoint",
+  "modelCalls": 0,
+  "newHubSpotTasks": 0,
+  "files": {
+    "README.md": "a313231b3d60877f9a0ec37c36ff9cc1dee932c757e1f7fd9e357984414fa928",
+    "active-code-verification.json": "81069789b168bba3b63cb79549ee9f8fa99e10ec3d7e077f33abe800a1470e25",
+    "demo-deployment.txt": "723b6e15ef4f60de29b2614e7a725815df4d1d0d69cd271f7bad0f24ca0fc664",
+    "operator-resumed-approval.json": "9ccdde4a76820d961476c099bc2d9fba00299804619cac2fe7925f585ef1bec6",
+    "owner-deployment.txt": "2cf53c84ab5a2f073d3d68af245e5b3d69729848b8f81380ad5c8d98927afba7"
+  }
+}

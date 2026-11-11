@@ -68,6 +68,14 @@ verified actor identity and 24-hour validity. Material changes invalidate it.
 The Worker rechecks current source and grant immediately before POST. A semantic
 PASS on a captured draft is never execution approval for that final request.
 
+The console displays approval status and an expandable receipt beside the task
+controls. After a refresh, use **Resume saved approval** to recheck the same
+operator/authority domain, current source, exact request/review and original
+expiry. It returns the existing grant; it does not approve again, renew expiry
+or create a task. Changed or expired source/identity/review/payload/timing remains
+blocked and requires a fresh decision. See the [executed correction and hosted
+receipt](checkpoints/2026-11-11-approval-feedback/deployment/README.md).
+
 Blocked findings remain blocked. Source identity ambiguity requires explicit
 finding-identity review through the protected API; the current console does not
 yet provide a dedicated identity-adjudication form. This is a supported-use/UX
