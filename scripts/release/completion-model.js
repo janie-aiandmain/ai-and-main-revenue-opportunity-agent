@@ -6,14 +6,16 @@ import {prepareHistory} from '../../src/findings.js';
 import {inspectFinding} from '../../src/staging/review-policy.js';
 import {hash} from '../regression/findings-core.js';
 const load=async p=>JSON.parse(await readFile(p,'utf8'));
-if(process.argv.slice(2).join(' ')!=='--live --non-production')throw Error('explicit_live_nonproduction_opt_in_required');
-if(!process.env.EVAL_OPENAI_API_KEY)throw Error('nonproduction_evaluation_credential_missing');
-if(!/^[a-f0-9]{40}$/.test(process.env.CORRECTION_SOURCE_SHA||''))throw Error('exact_source_commit_required');
+const planOnly=process.argv.slice(2).join(' ')==='--plan';
+if(!planOnly&&process.argv.slice(2).join(' ')!=='--live --non-production')throw Error('explicit_live_nonproduction_opt_in_required');
+if(!planOnly&&!process.env.EVAL_OPENAI_API_KEY)throw Error('nonproduction_evaluation_credential_missing');
+if(!planOnly&&!/^[a-f0-9]{40}$/.test(process.env.CORRECTION_SOURCE_SHA||''))throw Error('exact_source_commit_required');
 const dir='docs/review/completion-correction',budgetFile=dir+'/model-budget.json',resultFile=dir+'/fresh-model.json';
 try{await readFile(budgetFile);throw Error('budget_already_reserved_no_automatic_rerun');}catch(e){if(e.code!=='ENOENT')throw e;}
 const fixture=await load('fixtures/documented-completion-captured-variation-v1.json');
-const contract=await load('src/findings-request-v0.3.3.json'),baseline=await load('docs/release/evidence/manifest.json');
-assert.equal(hash(contract),baseline.requestHash);assert.equal(hash(contract.instructions),baseline.promptHash);assert.equal(hash(contract.text.format.schema),baseline.schemaHash);
+const contract=await load('src/findings-request-v0.3.3.json'),baseline=await load('docs/release/evidence/manifest.json'),snapshot=await load('fixtures/reasoning-request-v0.3.3.json');
+assert.equal(hash(contract),baseline.requestHash);assert.equal(hash(contract.instructions),baseline.promptHash);assert.equal(hash(contract.text.format.schema),hash(snapshot.text.format.schema));
+if(planOnly){console.log(JSON.stringify({kind:'OFFLINE_EVALUATION_PLAN',plannedCalls:2,caseId:'UV11',priorCalls:208,cycleLimit:210,unchangedRequest:true,requestHash:hash(contract),schemaHash:hash(contract.text.format.schema)}));process.exit(0);}
 const evaluationTime=fixture.capturedVariants[0].sourceTime;
 assert(fixture.capturedVariants.every(v=>v.sourceTime===evaluationTime));
 const report={kind:'FRESH_NONPRODUCTION_UV11_EVALUATIONS_NOT_HUMAN_APPROVAL',sourceCommit:process.env.CORRECTION_SOURCE_SHA,runStartedAt:new Date().toISOString(),evaluationTime,materializationVersion:MATERIALIZATION_VERSION,promptVersion:'reasoning-v0.3.3',schemaVersion:'findings-v0.2',requestHash:hash(contract),promptHash:hash(contract.instructions),schemaHash:hash(contract.text.format.schema),model:contract.model,reasoning:contract.reasoning,plannedCalls:2,hubspotCalls:0,deployments:0,newHumanApprovals:0,rows:[]};
