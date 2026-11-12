@@ -1,0 +1,19 @@
+{
+  "kind": "USER_REQUESTED_REVIEW_ROUTING_POLICY",
+  "recordedAt": "2026-11-12T23:40:07.129150+00:00",
+  "attribution": "Explicit user instructions and clarification in this conversation",
+  "requestedValues": {
+    "priority": "high/urgent",
+    "hs_task_status": "team_onsite",
+    "hs_task_type": "immediate_review"
+  },
+  "clarification": "Basically I want in progress work with scope change requests to be tagged differently so that there is an immediate set of eyes on it",
+  "sourceReason": "since the evidence stated the crew was already onsite",
+  "referencedCase": "ST03/garage-three-outlets",
+  "referencedOutputHash": "044e84ab8edebe1d3b239ef67ef389b8ac23bc27786cdc2943f4f112d16df924",
+  "referencedReviewHash": "aef6bb7de54343db4adc48e568548963a48c293577bc46cca6c08391bc970029",
+  "referencedPacketSha256": "f1a565084d7ef456b1cce213f84198a6bfcab6953322a49c89198b0bb08e2017",
+  "appliedInterpretation": "Internal immediate_review routing and source-context team_onsite tag; HIGH default priority. HubSpot task status remains NOT_STARTED and type TODO. No assertion of current onsite status or execution approval.",
+  "humanSemanticVerdict": null,
+  "finalExecutionApproval": false
+}

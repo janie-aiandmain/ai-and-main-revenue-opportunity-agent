@@ -1,0 +1,48 @@
+{
+  "kind": "IN_PROGRESS_SCOPE_REVIEW_SOURCE_ONLY_CONTRACTS",
+  "baselineCommit": "b9f2e12aa23aa2748e0184f995a252b0d2d25501",
+  "routingPolicy": "in-progress-scope-review-v1",
+  "materializer": "source-evidence-v0.3.9",
+  "internalTaskPolicy": "internal-task-policy-v1.4",
+  "proposalVersion": "internal-task-proposal-v2.4",
+  "reviewPolicy": "finding-review-v2.7",
+  "providerPrompt": {
+    "version": "reasoning-v0.3.3",
+    "sha256": "9f03c4a4f700e386def81eac10a231d2d3ef5b85eca8bddfafdaf3af28434c69",
+    "unchanged": true
+  },
+  "schema": {
+    "version": "findings-v0.2",
+    "sha256": "7bda1bfdc27882023d180cca14e751941401feee18a1d9eb6fca63717519964d",
+    "unchanged": true
+  },
+  "requestSha256": "c3d526465d5041266574799e5101e8537896a9b5228b50fc117601c01b60f984",
+  "model": "gpt-5.6-terra",
+  "reasoning": {
+    "effort": "low"
+  },
+  "approvalContractHash": {
+    "before": "sha256:2983364b810e560d1be1f5adfa0c84bb6d9604ed1ddf3bbee9c03abe0c96dd54",
+    "after": "sha256:ddd99a2d8fac28a9a5f6444b7997023a7a89446edd9b5b42e15fd8fa72520bf0"
+  },
+  "hubspotTaskFields": {
+    "hs_task_priority": "HIGH default; operator may modify before exact approval",
+    "hs_task_status": "NOT_STARTED",
+    "hs_task_type": "TODO"
+  },
+  "internalLabels": {
+    "queue": "immediate_review",
+    "sourceContext": [
+      "team_onsite",
+      "in_progress_work"
+    ],
+    "currentJobStatus": "UNVERIFIED"
+  },
+  "freshModelValidation": "PENDING_EXHAUSTED_210_CALL_BUDGET",
+  "sourceFiles": {
+    "src/staging/scope-review.js": "92cd09c23d618977250515a37939a4272036c0261945968e7146ff5070db5988",
+    "src/staging/internal-task-policy.js": "5a8f6075db967a5a6c259dcd2be211e66687c51681764709261d77e51045fdbb",
+    "src/staging/operator-console.js": "baefc17c0cc2c5e20afdf127325d1252f1d9bf65b2833bb65ec37593278f4e17",
+    "src/release/reasoning.js": "da25d81264e8f3b0c0ab53f3db73d5c94cea310d0105ab89722dd64091b6de16"
+  }
+}

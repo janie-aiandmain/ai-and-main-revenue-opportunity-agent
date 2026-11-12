@@ -1,0 +1,35 @@
+{
+  "kind": "IMMEDIATE_SCOPE_REVIEW_EVIDENCE",
+  "baselineCommit": "b9f2e12aa23aa2748e0184f995a252b0d2d25501",
+  "testsPassed": 188,
+  "retainedCaptureReplayPassed": 207,
+  "browser": "PASS_LOCAL_FIXTURE_RENDER",
+  "builds": {
+    "demo": "PASS_DRY_RUN",
+    "owner": "PASS_DRY_RUN"
+  },
+  "modelCalls": 0,
+  "hubspotCalls": 0,
+  "taskCreates": 0,
+  "deployments": 0,
+  "configurationChanges": 0,
+  "semanticApproval": false,
+  "finalExecutionApproval": false,
+  "freshModelValidation": "PENDING",
+  "preservedPriorFiles": 127,
+  "files": {
+    "README.md": "8906a0ade52ceaa531bb50ea078837041a0d54819127e9867dba64d439c6199f",
+    "browser.json": "7c847315e0b2be43ae419724f885e4f4078ee21d0a58d7e085723ad3b0664da8",
+    "browser.txt": "5bc6f964a9e95886c044109e129a0a2519fe03649eb51d5f6deef1e76f5d755a",
+    "console-preview.png": "356af9fe6177cc48d0a52f3cd311d6e764c47f6e8c258d46927486486ced6bff",
+    "contracts.json": "1ebc398d1af4225c77e8a3f1bec2d223180c84d55f43a083d47acd9d57572c74",
+    "demo-build.txt": "f26546a7ce07d7870e027370f5c59c801bf461c3fe5532e5d6af3dd2cf52b000",
+    "focused-tests.txt": "de5287af57a7ef06f2f4baee159737f03002c2b0f2973b4be4d2b48d215bb13c",
+    "owner-build.txt": "3e5c6af837ab1625303de7c7bfe65f241b2f116b84ec8f08ec881cb84e22ad3c",
+    "previews.json": "f5e753727b92fb87a706da74563d189a3e2cb701a9ba6d7a378ea4ec849c8376",
+    "replay.json": "37e2e5d0730536ee3ca0b93f270334205ab1e9cf2b7dc77cbea72ee1bb4531c2",
+    "replay.txt": "fcd8e841a6faa45730f90be335284adee80cebb82d4f1031b88c48a6d41c040c",
+    "tests.txt": "601f3e8d20f1be4eed98f924ed3fd04074d2110c968abb5061414cdcf01ee8c5",
+    "user-policy-event.json": "c5aa9a499d6ca21cc643ddafa33be8378453ef24831ebfc2a965a23aceb2d8e0"
+  }
+}

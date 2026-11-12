@@ -1,5 +1,10 @@
 # AI & MAIN Revenue Opportunity Agent
 
+Latest source refinement: [immediate review for in-progress scope requests](docs/review/in-progress-scope/README.md)
+adds a prominent flag, first-card ordering and HIGH default priority, with dated
+onsite/job context kept separate from HubSpot task status. It is locally validated
+and not deployed; task execution and fresh model validation remain pending.
+
 An intelligence and orchestration layer that finds missed revenue and retention
 signals in CRM service activity. HubSpot remains the system of record. The agent
 supports evidence-backed reasoning, bounded recommendations, human approval and

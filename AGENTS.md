@@ -422,3 +422,16 @@ Keep the diagnostic command failing while its EN11/EN12 coverage limits remain;
 do not weaken original expectations, hide failures, remove routes automatically,
 or infer deployed state from local fixtures. No CRM/model calls, tasks,
 deployments, configuration/credential/permission changes or merge to main.
+
+## In-progress scope-change attention routing
+
+The user subsequently requested HIGH/urgent attention for in-progress scope
+requests and clarified that onsite/job context should be tagged so an operator
+reviews it immediately. See docs/review/in-progress-scope/README.md. Implemented
+as internal immediate_review routing and source-reported team_onsite/in_progress_work
+context, not custom HubSpot task status/type enums or proof of current crew
+presence. Preserve valid NOT_STARTED/TODO task fields and pricing-before-work
+gates. Policy v1.4 / proposal v2.4 / materializer v0.3.9 are source-only; previous
+cached approvals cannot transfer. This modification request is not semantic PASS
+or execution approval. Keep deployment/CRM/model calls closed; budget remains
+210/210 and fresh model validation remains pending. Preserve prior evidence.

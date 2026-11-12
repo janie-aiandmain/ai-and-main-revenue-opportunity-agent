@@ -1,5 +1,11 @@
 # Pending human semantic and release review
 
+**Latest scope-routing revision:** [in-progress scope review](../review/in-progress-scope/README.md)
+adds an immediate-review flag and HIGH default priority for source-supported
+active-job scope requests. [ST03/EN31 revised drafts](../review/in-progress-scope/previews.json)
+remain pending semantic review; onsite-at-source is not a current job-state or
+execution approval. No deployment occurred.
+
 **Latest packet:** [current exact review table](../review/semantic-diagnostic-cycle/REVIEW.md)
 includes output/review hashes, uncertainties and pending verdict fields for the
 nine findings and UV11 variants. The user selected Cross-sell classification for

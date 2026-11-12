@@ -2,8 +2,9 @@
 import {sourceAnchors,TASK_CLASS} from '../correction-policy.js';
 import {canonical} from '../findings.js';
 import {createHash} from 'node:crypto';
-export const INTERNAL_TASK_POLICY='internal-task-policy-v1.3';
-export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2.3';
+import {scopeReviewRouting} from './scope-review.js';
+export const INTERNAL_TASK_POLICY='internal-task-policy-v1.4';
+export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2.4';
 const digest=v=>'sha256:'+createHash('sha256').update(canonical(v)).digest('hex');
 // Terminal "pricing now" is timing; "customer now requests" can describe a reversal.
 const relative=/\b(?:now(?=\s*(?:[.!?;]|$))|today|tomorrow|this week|by (?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)|end of (?:the )?day)\b/ig;
@@ -28,7 +29,8 @@ export function internalPlan(finding,history,inspection,now){
  for(const e of evidence)for(const date of explicitSourceDates(e.quote))sourceTiming.push({noteId:e.noteId,sourceTimestamp:e.timestamp,wording:date.wording,date:date.date,status:date.date<now.slice(0,10)?'HISTORICAL_ABSOLUTE_DATE_NOT_RENEWED':'ABSOLUTE_SOURCE_DATE_REQUIRES_REVIEW',customerTimezone:'UNKNOWN',taskDeadline:false});
  const gates=inspection.executionBlocks.map(b=>({...b,appliesTo:'customer_action',satisfiedByInternalVerification:false}));
  const restrictions=evidence.filter(e=>/\b(?:do not|don.t|never|no|must not|unless|until|before|after|once|when|only|without)\b/i.test(e.quote));
- return {actionPurpose,instruction,evidence,sourceTiming,customerActionGates:gates,sourceRestrictions:restrictions,customerActionPermitted:false,...(inspection.documentedCompletion?{documentedCompletion:inspection.documentedCompletion}:{})};
+ const reviewRouting=scopeReviewRouting(finding,evidence,history,now);
+ return {actionPurpose,instruction,evidence,sourceTiming,customerActionGates:gates,sourceRestrictions:restrictions,customerActionPermitted:false,...(inspection.documentedCompletion?{documentedCompletion:inspection.documentedCompletion}:{}),...(reviewRouting?{reviewRouting}:{})};
 }
 export function internalProjection(finding,history,inspection,{priority,taskDueAt},contextKey,now,requestedPurpose){
  const plan=internalPlan(finding,history,inspection,now);
@@ -37,14 +39,15 @@ export function internalProjection(finding,history,inspection,{priority,taskDueA
  if(requestedPurpose==='internal_preparation'&&plan.actionPurpose!=='internal_preparation')throw Error('internal_verification_required_before_preparation');
  if(!Number.isFinite(Date.parse(now))||plan.evidence.some(e=>!Number.isFinite(Date.parse(e.timestamp))||Date.parse(e.timestamp)>Date.parse(now)))throw Error('invalid_or_future_source_evidence');
  const instruction=requestedPurpose===plan.actionPurpose?plan.instruction:'Internally verify the current pricing request and its scope. No customer contact or additional service steps.';
- const material={policyVersion:INTERNAL_TASK_POLICY,proposalVersion:INTERNAL_PROPOSAL_VERSION,actionClass:TASK_CLASS,targetContext:contextKey,classification:finding.classification,opportunityType:finding.opportunityType,intent:requestedPurpose==='internal_verification'?'verify_current_state':'prepare_quote',actionPurpose:requestedPurpose,scope:{sourceRequests:plan.evidence.map(e=>e.quote)},priority,evidence:plan.evidence,timing:{kind:'none'},operatorTaskDueAt:taskDueAt??null,sourceTimingConstraints:plan.sourceTiming,customerActionGates:plan.customerActionGates,sourceRestrictions:plan.sourceRestrictions,customerActionPermitted:false,humanApprovalRequired:true,...(plan.documentedCompletion?{documentedCompletion:plan.documentedCompletion}:{})};
+ const material={policyVersion:INTERNAL_TASK_POLICY,proposalVersion:INTERNAL_PROPOSAL_VERSION,actionClass:TASK_CLASS,targetContext:contextKey,classification:finding.classification,opportunityType:finding.opportunityType,intent:requestedPurpose==='internal_verification'?'verify_current_state':'prepare_quote',actionPurpose:requestedPurpose,scope:{sourceRequests:plan.evidence.map(e=>e.quote)},priority,evidence:plan.evidence,timing:{kind:'none'},operatorTaskDueAt:taskDueAt??null,sourceTimingConstraints:plan.sourceTiming,customerActionGates:plan.customerActionGates,sourceRestrictions:plan.sourceRestrictions,customerActionPermitted:false,humanApprovalRequired:true,...(plan.documentedCompletion?{documentedCompletion:plan.documentedCompletion}:{}),...(plan.reviewRouting?{reviewRouting:plan.reviewRouting}:{})};
  const body=[instruction,'Action purpose: '+requestedPurpose+'. This task is internal only; it grants no customer action.','Source evidence (verbatim text, with original UTC timestamps):',...plan.evidence.map(e=>'['+e.timestamp+'; '+e.noteId+'] '+e.quote),'Source-relative timing: '+canonical(plan.sourceTiming),'Customer-action gates (not satisfied by this task): '+canonical(plan.customerActionGates),'Exact source restrictions: '+plan.sourceRestrictions.map(e=>e.quote).join('\n'),'Internal task due: '+(taskDueAt||'NOT SET — final task approval blocked')+'. Operator-selected task timing does not renew a customer deadline.','Authority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.'].join('\n');
- const payload={type:TASK_CLASS,target:{contextKey},properties:{hs_task_subject:(requestedPurpose==='internal_verification'?'Internal verification: ':'Internal pricing preparation: ')+finding.opportunityKey.replaceAll('-',' '),hs_task_body:escape(body),hs_task_priority:priority,hs_task_status:'NOT_STARTED',hs_task_type:'TODO',...(taskDueAt?{hs_timestamp:new Date(taskDueAt).toISOString()}:{})}};
+ const routedBody=plan.reviewRouting?'Operator routing: IMMEDIATE INTERNAL REVIEW — source reports in-progress work with a scope-change request. Confirm current job status; this label is not work approval.\n'+body:body;
+ const payload={type:TASK_CLASS,target:{contextKey},properties:{hs_task_subject:(requestedPurpose==='internal_verification'?'Internal verification: ':'Internal pricing preparation: ')+finding.opportunityKey.replaceAll('-',' '),hs_task_body:escape(routedBody),hs_task_priority:priority,hs_task_status:'NOT_STARTED',hs_task_type:'TODO',...(taskDueAt?{hs_timestamp:new Date(taskDueAt).toISOString()}:{})}};
  return {material,payload};
 }
 export function internalProposal(finding,history,inspection,contextKey,now){
- const purpose=internalPlan(finding,history,inspection,now).actionPurpose;
- const priority=['strong cross-sell opportunity','retention or service-recovery opportunity'].includes(finding.classification)?'HIGH':'MEDIUM';
+ const plan=internalPlan(finding,history,inspection,now),purpose=plan.actionPurpose;
+ const priority=plan.reviewRouting?.priority||(['strong cross-sell opportunity','retention or service-recovery opportunity'].includes(finding.classification)?'HIGH':'MEDIUM');
  const projection=internalProjection(finding,history,inspection,{priority},contextKey,now,purpose);
  const authorityRequirements={policyVersion:INTERNAL_TASK_POLICY,humanApprovalRequired:true,allowedMutation:TASK_CLASS,customerActionPermitted:false};
  const {proposedAction,...raw}=finding;

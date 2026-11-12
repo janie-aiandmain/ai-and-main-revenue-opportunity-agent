@@ -1,0 +1,24 @@
+✔ ST03 and EN31 receive an immediate-review flag and HIGH priority, without invalid CRM status/type values (31.868938ms)
+✔ the rule generalizes to other active jobs instead of matching case IDs or a specific service (10.245517ms)
+✔ future, negated, completed and non-scope work are not presented as in-progress scope requests (11.650338ms)
+✔ newer closure evidence suppresses an old active-job routing cue without asserting present onsite status (15.904949ms)
+✔ fresh source timestamps still do not prove that the crew remains onsite or authorize extra work (2.03892ms)
+✔ five explicit human PASS and four CONCERN verdicts bind original hashes and never grant final approval (13.318189ms)
+✔ ST03 and EN31 explicitly verify current job state and retain price-before-work without honoring injection (36.573648ms)
+✔ ST04 retains exact invoice condition and source-relative historical today, without asserting present unresolved state (5.235974ms)
+✔ ST07 preserves historical decision window and verifies interest, never making an operator due date a customer deadline (6.235796ms)
+✔ ST08 internal verification is preparable before completion, while customer follow-up remains blocked (3.626239ms)
+✔ EN11 pricing does not inherit lighting deferral; each independent need retains its own evidence and gates (3.063382ms)
+✔ EN12 retains separate recovery verification and EV pricing only; no charger type or consultation added (3.430627ms)
+✔ internal verification cannot hide omitted evidence, free-form overrides, or material authority tampering (2.711517ms)
+✔ new proposal versions are stable for unchanged sources and remain unapproved drafts without a due time (6.056273ms)
+✔ explicit absolute customer dates cannot be hidden by an internal pricing preparation date (4.199409ms)
+✔ fresh UV14 evidence omission remains immutable and blocks preparation even when pricing wording is bounded (2.095864ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 235.858239

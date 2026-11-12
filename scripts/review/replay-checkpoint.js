@@ -6,6 +6,7 @@ import {prepareHistory,canonical} from '../../src/findings.js';
 import {inspectFinding} from '../../src/staging/review-policy.js';
 import {gradeFindings,hash} from '../regression/findings-core.js';
 const load=async p=>JSON.parse(await readFile(p,'utf8'));
+if(MATERIALIZATION_VERSION!=='source-evidence-v0.3.8')throw Error('historical_output_directory_protected_use_scripts_review_scope_replay_js');
 const dir='docs/review/semantic-diagnostic-cycle';await mkdir(dir,{recursive:true});
 const baseline=await load('docs/review/completion-correction/replay.json');
 const latest=await load('docs/review/completion-correction/fresh-model.json');
