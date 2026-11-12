@@ -1,0 +1,99 @@
+{
+  "kind": "VERSIONED_SOURCE_ONLY_CORRECTION_CONTRACTS",
+  "evaluatedSourceCommit": "014bc371a28d151fbda482733d79254213b3ab42",
+  "prompt": {
+    "version": "reasoning-v0.3.3",
+    "sha256": "9f03c4a4f700e386def81eac10a231d2d3ef5b85eca8bddfafdaf3af28434c69",
+    "changed": false
+  },
+  "schema": {
+    "version": "findings-v0.2",
+    "sha256": "7bda1bfdc27882023d180cca14e751941401feee18a1d9eb6fca63717519964d",
+    "changed": false
+  },
+  "request": {
+    "sha256": "c3d526465d5041266574799e5101e8537896a9b5228b50fc117601c01b60f984",
+    "changed": false
+  },
+  "model": "gpt-5.6-terra",
+  "reasoning": {
+    "effort": "low"
+  },
+  "providerReturnedModels": [
+    "gpt-5.6-terra"
+  ],
+  "materializationVersion": {
+    "before": "source-evidence-v0.3.6",
+    "after": "source-evidence-v0.3.7"
+  },
+  "internalTaskPolicy": {
+    "before": "internal-task-policy-v1.2",
+    "after": "internal-task-policy-v1.3"
+  },
+  "proposalVersion": {
+    "before": "internal-task-proposal-v2.2",
+    "after": "internal-task-proposal-v2.3"
+  },
+  "reviewPolicy": {
+    "before": "finding-review-v2.6",
+    "after": "finding-review-v2.7"
+  },
+  "completionPolicy": "documented-renovation-completion-v1",
+  "finalPayloadContract": {
+    "version": "hubspot-final-payload-v1",
+    "changed": false
+  },
+  "approvalContractHash": {
+    "before": "sha256:63fdabc7037ab6a7b57e399fa26e00d72b003605d154cd09f51d5b7779e769ed",
+    "after": "sha256:366a1e27457394d6902f728b323520fc132d4b8023b2803f786677e200867bae",
+    "changed": true
+  },
+  "sourceFiles": {
+    "src/staging/completion-policy.js": "7b6184662f35d8678060d88d3a807cf2e2555d20719a8fa23b9e0afafaef23f6",
+    "src/staging/internal-task-policy.js": "f9e69b7ab54ae0d6ae74ee0a6ec34bfb9c28ec6abb7f676a95c89d1a7a6b938a",
+    "src/staging/review-policy.js": "e83c0fcf16111feaa20c8c25fb36a4901a530a7fd2b54b221ae743e98e765857",
+    "src/release/reasoning.js": "70296c5467cb0b1d33b9b94adeda9f8a4435871760f368fd11ae0cdaee93e582",
+    "src/correction-policy-v2.js": "906d7fc4b6e8f3885da0de1279b7b484ac817d7308ffea3170118c5ca14fd2d1",
+    "src/staging/general-ledger.js": "936a44b03b3a6502cfc344d89393352127621a8808cf98f645a7c904b4104d62"
+  },
+  "configurations": {
+    "wrangler.jsonc": {
+      "sha256": "f58052f0852dc045777eb7fcb8182647eb23ed859cfbd3d09a3cd8418929bfcc",
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false"
+      }
+    },
+    "wrangler.staging.jsonc": {
+      "sha256": "91c0123b41843b72d5b7d043f23c50334a408b553ca34b6db41f85fbf1c0ca1a",
+      "flags": {
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false"
+      }
+    },
+    "wrangler.certification.jsonc": {
+      "sha256": "7ec90ac2f23f7111acad0f26105048846055d60a24bb3d68e2e81f9152edce62",
+      "flags": {
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false"
+      }
+    }
+  },
+  "deployed": false,
+  "hubspotCalls": 0,
+  "newTasks": 0,
+  "newHumanApprovals": 0
+}

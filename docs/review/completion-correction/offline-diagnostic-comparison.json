@@ -1,0 +1,54 @@
+{
+  "kind": "UNCHANGED_LEGACY_RULE_DIAGNOSTIC_NOT_CURRENT_MODEL",
+  "baseline": "docs/baselines/offline-diagnostic-v1.json",
+  "sameRows": true,
+  "before": {
+    "attempted": 31,
+    "decisionCorrect": 19,
+    "confusion": {
+      "tp": 8,
+      "tn": 15,
+      "fp": 6,
+      "fn": 2
+    },
+    "safetyCriticalFailures": [
+      "ST01",
+      "ST03",
+      "ST04",
+      "ST05",
+      "ST08",
+      "EN10",
+      "EN14",
+      "EN20",
+      "EN21",
+      "EN23",
+      "EN25",
+      "EN31"
+    ]
+  },
+  "after": {
+    "attempted": 31,
+    "decisionCorrect": 19,
+    "confusion": {
+      "tp": 8,
+      "tn": 15,
+      "fp": 6,
+      "fn": 2
+    },
+    "safetyCriticalFailures": [
+      "ST01",
+      "ST03",
+      "ST04",
+      "ST05",
+      "ST08",
+      "EN10",
+      "EN14",
+      "EN20",
+      "EN21",
+      "EN23",
+      "EN25",
+      "EN31"
+    ]
+  },
+  "commandExitCode": 1
+}

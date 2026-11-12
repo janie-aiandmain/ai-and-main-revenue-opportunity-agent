@@ -391,3 +391,17 @@ release require real human acceptance. Never label AI/test actors human. Current
 cycle test limits are three real synthetic tasks and, after the documented
 reassessment, 210 model calls (206 consumed at the release evidence checkpoint); preserve
 uncertain results, reconcile or block instead of creating again.
+
+## Current source-only semantic completion correction
+
+The user subsequently authorized preserving and validating the ST03/ST04/ST07/
+ST08/EN11/EN12/EN31 safeguards, including retaining documented renovation
+completion while internally verifying current interest. See
+docs/review/completion-correction/README.md. This correction cycle forbids HubSpot
+calls, task creation, deployments, configuration/credential/permission changes and
+merge to main. All tracked write/test/fault/release flags remain false. Preserve
+original fixtures, captures and human verdicts byte-for-byte; new outputs remain
+pending human semantic review and need separate final execution approval. The two
+fresh affected evaluations consumed the remaining budget: 210/210 tracked calls.
+Do not delete/reset the call-reservation file or silently start more evaluations
+under that exhausted cap. Offline replay is not a new model execution or approval.

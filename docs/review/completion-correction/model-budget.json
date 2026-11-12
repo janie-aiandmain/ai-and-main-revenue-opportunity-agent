@@ -1,0 +1,19 @@
+{
+  "kind": "PERSISTED_PRE_REQUEST_CALL_RESERVATIONS",
+  "recordedPriorCalls": 208,
+  "cycleLimit": 210,
+  "reservations": [
+    {
+      "caseId": "UV11",
+      "repeat": 1,
+      "reservedBeforeRequestAt": "2026-11-12T19:29:01.703Z",
+      "requestBodyHash": "a049e46822b37b1a5e08ea1425a105f35fe51da19049bb7df146c2247ab3da74"
+    },
+    {
+      "caseId": "UV11",
+      "repeat": 2,
+      "reservedBeforeRequestAt": "2026-11-12T19:29:07.750Z",
+      "requestBodyHash": "a049e46822b37b1a5e08ea1425a105f35fe51da19049bb7df146c2247ab3da74"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "kind": "SOURCE_ONLY_CORRECTION_EVIDENCE_PACKAGE",
+  "baselineCommit": "220fa9bf537cb4c1989f27afbdc193ba2d3ffe97",
+  "implementationCommit": "e5431a39593a5c06ee0af0e449c2bf80651133bb",
+  "freshEvaluationSourceCommit": "014bc371a28d151fbda482733d79254213b3ab42",
+  "tests": {
+    "passed": 167,
+    "failed": 0
+  },
+  "builds": {
+    "demoDryRun": "PASS",
+    "ownerDryRun": "PASS"
+  },
+  "offlineReplay": {
+    "passed": 205,
+    "total": 205,
+    "onlyBehaviorChangedCase": "UV11"
+  },
+  "freshModel": {
+    "attempted": 2,
+    "valid": 2,
+    "passed": 2,
+    "cycleCalls": 210,
+    "remainingBudget": 0
+  },
+  "legacyDiagnostic": {
+    "status": "FAIL_UNCHANGED_BASELINE",
+    "correct": 19,
+    "total": 31,
+    "falsePositives": 6,
+    "falseNegatives": 2
+  },
+  "preservedOriginalEvidenceFiles": 73,
+  "hubspotCalls": 0,
+  "tasksCreated": 0,
+  "deployments": 0,
+  "configurationChanges": 0,
+  "humanApprovals": 0,
+  "files": {
+    "README.md": "83ed59b40b6239c756ba402df979ee5c54f4a5e18afe1213cf8c6278cc3dfb11",
+    "REVIEW.md": "2c390be5ac07740af515a33ff2e6aebc0f3a74c8ab0cbf17baff2dcdd62c5e08",
+    "approval-tests.txt": "3fdaa61ef805252697cd8a340eea9ac6e4470f637fb8297a938fde2b69279865",
+    "before-test.txt": "2e31024377235d2ae1d1e3a7dedb93e59398e6708f977ed21aa64cf0c7967376",
+    "contracts.json": "46543b694082c33f9c339fdee86ac409a8a9cf3ffd9e1f5a6a9564d21a9038a6",
+    "demo-build.txt": "0e3e6b42c14bbe7da30d03c75b692b6601fa74ee09696bb5cdcf2578c1f4eabb",
+    "fresh-model.json": "50b72d829396c4ffac8ee3d333788fab1fb75c9fa960107d8ac801038fa2ba38",
+    "identity-replay.json": "8123cf0d73ff0acc6bae5d0f5f8445f287f2e15dc987efab98a4666173154f82",
+    "identity-summary.txt": "c46dafc375d14e0ae73d24ee27f94cb2d2299e37858f03dbd76f4133e7b49fc5",
+    "model-budget.json": "4b3ff5dd31d53de2b23cb2cdd0446ad0e1c067a13e925d9208346c08d06f22f9",
+    "model-plan.json": "22caed6d7517706324405178ea2c1d62fd064399a2bc7e2fb95af3986049de21",
+    "model-preflight-blocked.txt": "617385103a3e25d5266a6ba9ff970e5070819834e868e7090e856e13287f08c0",
+    "model-run.txt": "df44315ea9fdcc5c9d0ddfafb4c15d3aa043d210605d9fa48bb39e29c6f3c5a1",
+    "offline-diagnostic-comparison.json": "44eb2ded4c8ffd12207b4f9493816d2d19b88313611a81ac6ed8ac4218f18d1b",
+    "offline-diagnostic.json": "803b2248028f81ea8d9cae3155e3a43464d3c3b3becd412366a0f4c784288aaa",
+    "offline-diagnostic.txt": "ed8fcca1f523e33429aae6c96be73e4f205a8a0889a5cdb4fa8a22cc30f0967c",
+    "owner-build.txt": "8728811d29d070e0ba1bf8c02879841129b5efda784ab47508ab671a64e2002c",
+    "policy-decision.json": "93956bd1081f128cd58147847e9c81fd202b55cc5cb7303f78789f0a9edbfbde",
+    "preserved-evidence-sha256.json": "efc4a6c527ad86c391bd8bfa77ac4597ff39e67f8b1332064967c0716476a1fe",
+    "replay-summary.txt": "1c004a4126b89d94888d4dcf5d118b0aab620bfae33f706c6f338aa1f8deb547",
+    "replay.json": "91e89d7646ff27d15712b82e4e697004ea04da1755b7c7e48d9b31e8b1fbe5fc",
+    "revised-proposals.json": "2a0f1350188a5b472eee0ee95c22dc9fb99fc649b16ebb5fbab8a10c4800f812",
+    "tests.txt": "9fb77789a8ac5f5d2adc83506c4a194ee181dcdcd2238274d459a02bb53095fb",
+    "uv11-five-capture-metrics.json": "456df889000259f711573a8b8db75848a0e323827049a6062b9e1dfc477b607b"
+  }
+}

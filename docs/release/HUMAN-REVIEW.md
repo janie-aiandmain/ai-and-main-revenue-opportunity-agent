@@ -1,5 +1,11 @@
 # Pending human semantic and release review
 
+**Current source correction:** see the [new review packet](../review/completion-correction/REVIEW.md)
+and [validation results](../review/completion-correction/README.md). The original
+drafts below remain a preserved review snapshot. The UV11 policy decision is now
+recorded and implemented locally; revised outputs still require human semantic
+review. No task execution or release approval follows from that policy decision.
+
 The [original nine decisions](../review/seven-cases/human-verdicts.json) remain five PASS and four CONCERN on their original hashes. The following **new drafts** do not inherit those decisions. This packet requests semantic judgment only; all final execution approvals remain absent. No additional HubSpot writes are needed for review.
 
 Each table link opens the exact draft body, source context, evidence quotes, priority, draft action version and hashes. All nine are **BLOCKED for execution**: final operator task timing, CRM association, operation correlation and exact final-payload approval have not been supplied. Missing customer timing is not filled by inference. Internal verification does not satisfy a customer-action gate.

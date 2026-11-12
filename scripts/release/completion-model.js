@@ -11,7 +11,7 @@ if(!planOnly&&process.argv.slice(2).join(' ')!=='--live --non-production')throw 
 if(!planOnly&&!process.env.EVAL_OPENAI_API_KEY)throw Error('nonproduction_evaluation_credential_missing');
 if(!planOnly&&!/^[a-f0-9]{40}$/.test(process.env.CORRECTION_SOURCE_SHA||''))throw Error('exact_source_commit_required');
 const dir='docs/review/completion-correction',budgetFile=dir+'/model-budget.json',resultFile=dir+'/fresh-model.json';
-try{await readFile(budgetFile);throw Error('budget_already_reserved_no_automatic_rerun');}catch(e){if(e.code!=='ENOENT')throw e;}
+if(!planOnly){try{await readFile(budgetFile);throw Error('budget_already_reserved_no_automatic_rerun');}catch(e){if(e.code!=='ENOENT')throw e;}}
 const fixture=await load('fixtures/documented-completion-captured-variation-v1.json');
 const contract=await load('src/findings-request-v0.3.3.json'),baseline=await load('docs/release/evidence/manifest.json'),snapshot=await load('fixtures/reasoning-request-v0.3.3.json');
 assert.equal(hash(contract),baseline.requestHash);assert.equal(hash(contract.instructions),baseline.promptHash);assert.equal(hash(contract.text.format.schema),hash(snapshot.text.format.schema));

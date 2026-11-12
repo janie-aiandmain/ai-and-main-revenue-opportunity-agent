@@ -42,6 +42,15 @@ test('missing, third-party, negated or conditional completion does not clear the
   assert.equal(p.material.customerActionPermitted,false);
  }
 });
+test('unseen direct customer completion phrasings retain the fact without inferring current interest',async()=>{
+ for(const text of ['Client reports their remodel has been finished and requests pendant-light pricing now.','Homeowner confirms the renovation was done and asks for pendant-light pricing now.','Customer reports their renovation is completed and requests a pendant-light quote now.']){
+  const {result}=await sample([deferral,text]),p=result.findings[0].proposedAction;
+  assert.equal(p.material.documentedCompletion.quote,text);
+  assert.equal(p.material.documentedCompletion.status,'DOCUMENTED_AT_SOURCE_NOT_CURRENT_CONSENT');
+  assert.equal(p.actionPurpose,'internal_verification');assert.equal(p.material.customerActionPermitted,false);
+  assert.ok(!p.material.customerActionGates.some(g=>g.code==='deferred_event_requires_source_confirmation'));
+ }
+});
 test('completion for another need or completion older than deferral cannot satisfy the finding gate',async()=>{
  for(const notes of [[deferral,completion.replace('pendant-light','panel')],[completion,deferral]]){
   const {result}=await sample(notes),p=result.findings[0].proposedAction;

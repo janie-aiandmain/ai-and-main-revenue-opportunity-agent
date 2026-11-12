@@ -1,0 +1,3 @@
+{"caseId":"UV11","repeat":1,"passed":true,"attempts":1}
+{"caseId":"UV11","repeat":2,"passed":true,"attempts":2}
+{"attempted":2,"valid":2,"passed":2,"cycleCalls":210,"remainingBudget":0}

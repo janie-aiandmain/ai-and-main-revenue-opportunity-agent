@@ -1,0 +1,44 @@
+{
+  "captures": 5,
+  "freshCalls": 2,
+  "currentInterestVerification": 5,
+  "documentedCompletionRetained": 5,
+  "historicalNowNotRenewed": 5,
+  "customerAuthorityEscapes": 0,
+  "classifications": [
+    "strong cross-sell opportunity",
+    "follow-up revenue opportunity"
+  ],
+  "opportunityTypes": [
+    "cross-sell",
+    "follow-up"
+  ],
+  "opportunityKeys": [
+    "pendant-light-pricing"
+  ],
+  "findingIds": [
+    "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e"
+  ],
+  "distinctEvidenceSourceSets": 2,
+  "distinctExactRecommendations": 2,
+  "distinctExactDraftActionVersions": 4,
+  "purposeConsistency": true,
+  "fullDecisionConsistency": false,
+  "semanticHumanApprovals": 0,
+  "finalExecutionApprovals": 0,
+  "rawFreshQualityWarnings": [
+    {
+      "repeat": 1,
+      "quality": []
+    },
+    {
+      "repeat": 2,
+      "quality": []
+    }
+  ],
+  "usage": {
+    "inputTokens": 3630,
+    "outputTokens": 329,
+    "totalTokens": 3959
+  }
+}

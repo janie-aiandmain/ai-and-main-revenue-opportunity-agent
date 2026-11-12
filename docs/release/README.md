@@ -1,5 +1,16 @@
 # Release validation status
 
+**Latest source-only correction:** [completed correction and validation](../review/completion-correction/README.md)
+preserves the seven cases' safeguards and implements the UV11 current-interest
+policy. Source now uses materializer v0.3.7 / internal policy v1.3 / proposal v2.3 /
+review v2.7; prompt/schema/model settings are unchanged. All 167 local tests, both
+dry-run builds, 205 retained-capture replays and two fresh UV11 evaluations passed.
+The separate legacy rules diagnostic remains 19/31, unchanged from its original
+baseline. The cycle budget is now 210/210 calls. No deployment or HubSpot call was
+made for this correction; the deployed evidence described below remains historical
+and is not relabelled as exercising this new source. [Revised review](../review/completion-correction/REVIEW.md)
+and separate final execution/release approvals remain pending.
+
 **A controlled prototype with tested local safeguards and one verified hosted
 recovery scenario.** Customer-release acceptance has not been granted. General
 writeback and every demo/fault execution control are disabled.
@@ -101,11 +112,13 @@ and [their comparison](../baselines/multi-finding-comparison.md) are retained.
 - The [nine revised captured drafts](HUMAN-REVIEW.md) need actual human semantic
   verdicts. Original five PASS/four CONCERN decisions remain bound to old hashes;
   the live synthetic task's approval does not approve those drafts or a release.
-- **UV11 varies materially.** [Exact dates and variants](UV11-REVIEW.md) distinguish
+- **UV11 originally varied materially.** [Exact dates and variants](UV11-REVIEW.md) distinguish
   documented renovation completion from uncertain current interest: source notes
   are February 2025, evaluations November 2026. Neither renewed historical “now”
   nor an unsupported still-unfinished renovation should be assumed. This is the
-  highest-priority remaining model/semantic issue for the next correction cycle.
+  corrected next-step policy is now locally validated in the
+  [new correction report](../review/completion-correction/README.md). Classification
+  and evidence-set variation remain disclosed; new semantic acceptance is pending.
 - The corrected discard-marker protocol needs a separately approved future
   hosted verification. No second create may be made for this confirmed operation.
 - Source edits/new-need ambiguity require explicit identity adjudication through

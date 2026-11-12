@@ -1,0 +1,34 @@
+✔ general notes → finding → attributable simulated review → exact approval → one task, no estimated revenue (97.877357ms)
+✔ saved approval resumes with the same actor, exact request and original expiry without a new approval or task (17.229837ms)
+✔ saved approval cannot resume for another subject, role, authority domain, expired session or expired grant (15.843662ms)
+✔ saved approval checks fresh source and rejects revoked or concurrently revoked grants (27.941752ms)
+✔ a materially revised prepared payload cannot resume its prior approval (19.812632ms)
+✔ a stored prior reasoning policy cannot reuse approval even when source and raw finding are unchanged (34.593924ms)
+✔ material fresh recommendation change revokes review and approval before any POST (18.77617ms)
+✔ classification/evidence/source changes and withdrawal cannot reuse an old approval (23.595406ms)
+✔ general approval/execute cannot bypass release/fresh-evaluation guards through legacy certification routes (7.319478ms)
+✔ exact action version, latest review ID, attestations and approver role are mandatory (8.334481ms)
+✔ simultaneous source/model evaluation suspends approvals and stale completion cannot overwrite the newer evaluation (8.194071ms)
+✔ two independent findings from one note retain distinct durable IDs and exact task operations (33.310633ms)
+✔ omitted restrictions and unrequested assessments fail even if the model decision/type are correct (4.464788ms)
+✔ old today/tomorrow/week/day deadlines cannot be renewed by selecting a new task due date (0.871618ms)
+✔ deferred event and before-work state require actual source confirmation, not a boolean override (0.91987ms)
+✔ all original failure fixtures and baseline artifacts remain byte-identical to prior certification (75.680164ms)
+✔ an edited source or failed fresh model revokes the real staging approval, not only sandbox grants (12.110104ms)
+✔ preserved ST04 review-versus-resolution weakening is detected and never approved as wording (3.164262ms)
+✔ a previously approved explicit task deadline cannot be reused after that deadline expires (17.011767ms)
+✔ new independent evidence and edited source require an attributable identity decision without merging or allocating duplicates (42.053106ms)
+✔ internal renovation verification reaches exact review/approval without satisfying the customer follow-up gate (25.595033ms)
+✔ a different verified subject cannot replay another operator exact approval (13.755664ms)
+✔ a legacy customer-action projection with an absolute source date rejects clearly rather than referencing undefined state (0.949244ms)
+✔ synonymous model narration cannot change a source-rendered exact internal task or duplicate its opportunity (18.134844ms)
+✔ changed issuer, audience or operator role cannot reuse an existing exact-payload approval (27.494602ms)
+✔ operator session expiration during the fresh source check is enforced immediately before POST (19.95174ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 916.278802

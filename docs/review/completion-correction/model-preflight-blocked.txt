@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ '7bda1bfdc27882023d180cca14e751941401feee18a1d9eb6fca63717519964d'
+- undefined
+
+    at file:///workspace/ai-and-main-revenue-opportunity-agent/scripts/release/completion-model.js:16:120 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '7bda1bfdc27882023d180cca14e751941401feee18a1d9eb6fca63717519964d',
+  expected: undefined,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

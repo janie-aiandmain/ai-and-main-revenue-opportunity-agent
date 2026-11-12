@@ -39,6 +39,8 @@ const result={kind:'OFFLINE_REPLAY_OF_205_RETAINED_CAPTURES_NOT_NEW_MODEL_CALLS'
 await writeFile(output+'/replay.json',JSON.stringify(result,null,2)+'\n');
 const baselineProposals=await load('docs/release/evidence/revised-proposals.json');
 const revised=baselineProposals.proposals.map(p=>{const row=rows.find(r=>r.id===p.caseId&&r.captureFile===p.providerCapture&&r.rawOutputHash===p.rawOutputHash),finding=row.actual.findings.find(f=>f.opportunityKey===p.finding.opportunityKey);assert(finding);return {...p,materializedOutputHash:row.outputHash,finding,reviewItemHash:hash({caseId:p.caseId,outputHash:row.outputHash,finding}),humanSemanticVerdict:'PENDING_FOR_THIS_OUTPUT',finalExecutionApproval:false};});
-await writeFile(output+'/revised-proposals.json',JSON.stringify({kind:'NEW_REVIEW_DRAFTS_NO_INHERITED_HUMAN_APPROVAL',MATERIALIZATION_VERSION,proposals:revised,UV11:rows.filter(r=>r.id==='UV11')},null,2)+'\n');
+const packet={kind:'NEW_REVIEW_DRAFTS_NO_INHERITED_HUMAN_APPROVAL',MATERIALIZATION_VERSION,proposals:revised,UV11:rows.filter(r=>r.id==='UV11')};
+try{const fresh=await load(output+'/fresh-model.json');assert.equal(fresh.materializationVersion,MATERIALIZATION_VERSION);packet.UV11Fresh=fresh.rows;}catch(error){if(error.code!=='ENOENT')throw error;}
+await writeFile(output+'/revised-proposals.json',JSON.stringify(packet,null,2)+'\n');
 console.log(JSON.stringify(result.summary,null,2));
 if(result.summary.failures.length||!result.summary.unaffectedCasesBehaviorUnchanged)process.exitCode=1;

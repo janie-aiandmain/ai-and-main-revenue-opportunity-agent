@@ -1,5 +1,11 @@
 # UV11 semantic review — source chronology and current interest
 
+**Subsequent user policy:** “Verify current interest internally; retain documented
+renovation completion.” The [recorded policy decision](../review/completion-correction/policy-decision.json)
+and [correction results](../review/completion-correction/README.md) supersede the
+request for a policy choice below. The three original variants remain preserved;
+the decision does not mark them or their revised outputs human-approved.
+
 This is a semantic/policy review, not task execution or customer-release approval.
 
 **Original source:**

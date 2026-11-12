@@ -1,5 +1,13 @@
 # Release acceptance matrix
 
+Latest branch-only correction: [semantic correction evidence](../review/completion-correction/README.md)
+records 167 passing tests, both dry-run builds, 205 retained-capture replays and
+two fresh UV11 calls (210/210 cycle budget). The old rules-only diagnostic remains
+19/31 and failing, identical to its original baseline. UV11's internal next step
+is corrected; classification variation and genuine revised-output review remain
+pending. This source was not deployed; hosted rows below describe the earlier
+executed versions and are not proof of the new source.
+
 Controlling request: [customer-release brief](controlling-request.md). Starting source
 `b72e9ca0c0b33dd60ee166c5c1a5d2a105344970`; single-tenant existing synthetic demo,
 portal 247646122/contact 582095692487. No independent certification claim.

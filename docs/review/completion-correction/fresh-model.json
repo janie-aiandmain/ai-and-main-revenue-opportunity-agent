@@ -1,0 +1,339 @@
+{
+  "kind": "FRESH_NONPRODUCTION_UV11_EVALUATIONS_NOT_HUMAN_APPROVAL",
+  "sourceCommit": "014bc371a28d151fbda482733d79254213b3ab42",
+  "runStartedAt": "2026-11-12T19:29:01.675Z",
+  "evaluationTime": "2026-11-03T12:00:00.000Z",
+  "materializationVersion": "source-evidence-v0.3.7",
+  "promptVersion": "reasoning-v0.3.3",
+  "schemaVersion": "findings-v0.2",
+  "requestHash": "c3d526465d5041266574799e5101e8537896a9b5228b50fc117601c01b60f984",
+  "promptHash": "9f03c4a4f700e386def81eac10a231d2d3ef5b85eca8bddfafdaf3af28434c69",
+  "schemaHash": "7bda1bfdc27882023d180cca14e751941401feee18a1d9eb6fca63717519964d",
+  "model": "gpt-5.6-terra",
+  "reasoning": {
+    "effort": "low"
+  },
+  "plannedCalls": 2,
+  "hubspotCalls": 0,
+  "deployments": 0,
+  "newHumanApprovals": 0,
+  "rows": [
+    {
+      "id": "UV11",
+      "repeat": 1,
+      "responseId": "resp_084e1e187f649b09006af61380494887d2a4778d9535b883e7",
+      "providerCreatedAt": 1794511744,
+      "returnedModel": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 1815,
+        "input_tokens_details": {
+          "cache_write_tokens": 1812,
+          "cached_tokens": 0
+        },
+        "output_tokens": 161,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1976
+      },
+      "rawModelOutput": "{\"findings\":[{\"classification\":\"strong cross-sell opportunity\",\"confidence\":\"high\",\"opportunityType\":\"cross-sell\",\"evidence\":[{\"noteId\":\"note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786\",\"quote\":\"Customer confirms the renovation is complete and asks for pendant-light pricing now.\"}],\"reasoningSummary\":\"Customer confirmed the prior deferral trigger and explicitly requested pendant-light pricing.\",\"recommendedNextAction\":\"Internal preparation and human review of the requested pendant-light pricing only; verify current interest before any later customer action.\",\"humanReviewRequired\":true,\"opportunityKey\":\"pendant-light-pricing\"}]}",
+      "actual": {
+        "schemaVersion": "findings-v0.2",
+        "promptVersion": "reasoning-v0.3.3",
+        "findings": [
+          {
+            "findingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+            "opportunityKey": "pendant-light-pricing",
+            "classification": "strong cross-sell opportunity",
+            "opportunityType": "cross-sell",
+            "confidence": "high",
+            "evidence": [
+              {
+                "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                "quote": "Customer confirms the renovation is complete and asks for pendant-light pricing now."
+              }
+            ],
+            "reasoningSummary": "Customer confirmed the prior deferral trigger and explicitly requested pendant-light pricing.",
+            "recommendedNextAction": "Internally verify current interest and consent using current records. Retain the documented renovation completion reported at 2025-02-13T10:00:00Z. No customer contact, scheduling or work is authorized. Source 2025-02-13T10:00:00Z: \"now\" is historical, not renewed. Verify current interest and timing. Internal task only. No customer action is authorized.",
+            "humanReviewRequired": true,
+            "proposedAction": {
+              "schemaVersion": "internal-task-proposal-v2.3",
+              "actionPurpose": "internal_verification",
+              "actionPayload": {
+                "type": "hubspot.follow_up_task.create",
+                "target": {
+                  "contextKey": "synthetic:UV11"
+                },
+                "properties": {
+                  "hs_task_subject": "Internal verification: pendant light pricing",
+                  "hs_task_body": "Internally verify current interest and consent using current records. Retain the documented renovation completion reported at 2025-02-13T10:00:00Z. No customer contact, scheduling or work is authorized.\nAction purpose: internal_verification. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2025-02-13T10:00:00Z; note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786] Customer confirms the renovation is complete and asks for pendant-light pricing now.\nSource-relative timing: [{\"customerTimezone\":\"UNKNOWN\",\"noteId\":\"note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786\",\"sourceTimestamp\":\"2025-02-13T10:00:00Z\",\"status\":\"HISTORICAL_NOT_RENEWED\",\"taskDeadline\":false,\"wording\":\"now\"}]\nCustomer-action gates (not satisfied by this task): [{\"appliesTo\":\"customer_action\",\"code\":\"historical_or_unresolved_deadline\",\"noteId\":\"note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786\",\"satisfiedByInternalVerification\":false},{\"appliesTo\":\"customer_action\",\"code\":\"current_interest_requires_source_confirmation\",\"noteId\":\"note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786\",\"satisfiedByInternalVerification\":false}]\nExact source restrictions: \nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+                  "hs_task_priority": "HIGH",
+                  "hs_task_status": "NOT_STARTED",
+                  "hs_task_type": "TODO"
+                }
+              },
+              "material": {
+                "policyVersion": "internal-task-policy-v1.3",
+                "proposalVersion": "internal-task-proposal-v2.3",
+                "actionClass": "hubspot.follow_up_task.create",
+                "targetContext": "synthetic:UV11",
+                "classification": "strong cross-sell opportunity",
+                "opportunityType": "cross-sell",
+                "intent": "verify_current_state",
+                "actionPurpose": "internal_verification",
+                "scope": {
+                  "sourceRequests": [
+                    "Customer confirms the renovation is complete and asks for pendant-light pricing now."
+                  ]
+                },
+                "priority": "HIGH",
+                "evidence": [
+                  {
+                    "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                    "timestamp": "2025-02-13T10:00:00Z",
+                    "quote": "Customer confirms the renovation is complete and asks for pendant-light pricing now."
+                  }
+                ],
+                "timing": {
+                  "kind": "none"
+                },
+                "operatorTaskDueAt": null,
+                "sourceTimingConstraints": [
+                  {
+                    "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                    "sourceTimestamp": "2025-02-13T10:00:00Z",
+                    "wording": "now",
+                    "status": "HISTORICAL_NOT_RENEWED",
+                    "customerTimezone": "UNKNOWN",
+                    "taskDeadline": false
+                  }
+                ],
+                "customerActionGates": [
+                  {
+                    "code": "historical_or_unresolved_deadline",
+                    "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                    "appliesTo": "customer_action",
+                    "satisfiedByInternalVerification": false
+                  },
+                  {
+                    "code": "current_interest_requires_source_confirmation",
+                    "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                    "appliesTo": "customer_action",
+                    "satisfiedByInternalVerification": false
+                  }
+                ],
+                "sourceRestrictions": [],
+                "customerActionPermitted": false,
+                "humanApprovalRequired": true,
+                "documentedCompletion": {
+                  "policyVersion": "documented-renovation-completion-v1",
+                  "event": "renovation",
+                  "status": "DOCUMENTED_AT_SOURCE_NOT_CURRENT_CONSENT",
+                  "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                  "sourceTimestamp": "2025-02-13T10:00:00Z",
+                  "quote": "Customer confirms the renovation is complete and asks for pendant-light pricing now.",
+                  "resolvedDeferralNoteIds": []
+                }
+              },
+              "authorityRequirements": {
+                "policyVersion": "internal-task-policy-v1.3",
+                "humanApprovalRequired": true,
+                "allowedMutation": "hubspot.follow_up_task.create",
+                "customerActionPermitted": false
+              },
+              "qualityFailures": [],
+              "preparationBlocked": false,
+              "executionBlocked": true,
+              "missingFinalFields": [
+                "operatorTaskDueAt",
+                "CRM association",
+                "operation correlation",
+                "exact final-payload approval"
+              ],
+              "actionVersion": "sha256:45d80e812142bd0ae1c3f4bdc48fe783f318ba20607dc0e24dd150151afe3282"
+            }
+          }
+        ],
+        "proposalVersion": "internal-task-proposal-v2.3",
+        "materializationVersion": "source-evidence-v0.3.7",
+        "evidencePolicyVersion": "source-clause-closure-v1.1"
+      },
+      "outputHash": "1bc5a2849c52da173ac612a9a791a5afea214546270bed502e0c07c3d5f882b0",
+      "quality": [],
+      "checks": {
+        "oneIndependentFinding": true,
+        "currentInterestVerification": true,
+        "documentedCompletionRetained": true,
+        "historicalNowNotRenewed": true,
+        "noCustomerAuthority": true,
+        "pendingReviewAndExecutionBlocked": true,
+        "qualityClear": true
+      },
+      "passed": true,
+      "humanSemanticVerdict": "PENDING",
+      "finalExecutionApproval": false
+    },
+    {
+      "id": "UV11",
+      "repeat": 2,
+      "responseId": "resp_08f9bebbd57c11f7006af61383ec3c87d2b4f0bed3b0633257",
+      "providerCreatedAt": 1794511747,
+      "returnedModel": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 1815,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1812
+        },
+        "output_tokens": 168,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1983
+      },
+      "rawModelOutput": "{\"findings\":[{\"classification\":\"strong cross-sell opportunity\",\"confidence\":\"high\",\"opportunityType\":\"cross-sell\",\"evidence\":[{\"noteId\":\"note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786\",\"quote\":\"Customer confirms the renovation is complete and asks for pendant-light pricing now.\"}],\"reasoningSummary\":\"Customer confirmed the deferral trigger is complete and explicitly requested pendant-light pricing.\",\"recommendedNextAction\":\"Internal operator: verify current records and prepare the requested pendant-light pricing only. Any later customer action is conditional on human review of current intent.\",\"humanReviewRequired\":true,\"opportunityKey\":\"pendant-light-pricing\"}]}",
+      "actual": {
+        "schemaVersion": "findings-v0.2",
+        "promptVersion": "reasoning-v0.3.3",
+        "findings": [
+          {
+            "findingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+            "opportunityKey": "pendant-light-pricing",
+            "classification": "strong cross-sell opportunity",
+            "opportunityType": "cross-sell",
+            "confidence": "high",
+            "evidence": [
+              {
+                "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                "quote": "Customer confirms the renovation is complete and asks for pendant-light pricing now."
+              }
+            ],
+            "reasoningSummary": "Customer confirmed the deferral trigger is complete and explicitly requested pendant-light pricing.",
+            "recommendedNextAction": "Internally verify current interest and consent using current records. Retain the documented renovation completion reported at 2025-02-13T10:00:00Z. No customer contact, scheduling or work is authorized. Source 2025-02-13T10:00:00Z: \"now\" is historical, not renewed. Verify current interest and timing. Internal task only. No customer action is authorized.",
+            "humanReviewRequired": true,
+            "proposedAction": {
+              "schemaVersion": "internal-task-proposal-v2.3",
+              "actionPurpose": "internal_verification",
+              "actionPayload": {
+                "type": "hubspot.follow_up_task.create",
+                "target": {
+                  "contextKey": "synthetic:UV11"
+                },
+                "properties": {
+                  "hs_task_subject": "Internal verification: pendant light pricing",
+                  "hs_task_body": "Internally verify current interest and consent using current records. Retain the documented renovation completion reported at 2025-02-13T10:00:00Z. No customer contact, scheduling or work is authorized.\nAction purpose: internal_verification. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2025-02-13T10:00:00Z; note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786] Customer confirms the renovation is complete and asks for pendant-light pricing now.\nSource-relative timing: [{\"customerTimezone\":\"UNKNOWN\",\"noteId\":\"note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786\",\"sourceTimestamp\":\"2025-02-13T10:00:00Z\",\"status\":\"HISTORICAL_NOT_RENEWED\",\"taskDeadline\":false,\"wording\":\"now\"}]\nCustomer-action gates (not satisfied by this task): [{\"appliesTo\":\"customer_action\",\"code\":\"historical_or_unresolved_deadline\",\"noteId\":\"note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786\",\"satisfiedByInternalVerification\":false},{\"appliesTo\":\"customer_action\",\"code\":\"current_interest_requires_source_confirmation\",\"noteId\":\"note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786\",\"satisfiedByInternalVerification\":false}]\nExact source restrictions: \nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+                  "hs_task_priority": "HIGH",
+                  "hs_task_status": "NOT_STARTED",
+                  "hs_task_type": "TODO"
+                }
+              },
+              "material": {
+                "policyVersion": "internal-task-policy-v1.3",
+                "proposalVersion": "internal-task-proposal-v2.3",
+                "actionClass": "hubspot.follow_up_task.create",
+                "targetContext": "synthetic:UV11",
+                "classification": "strong cross-sell opportunity",
+                "opportunityType": "cross-sell",
+                "intent": "verify_current_state",
+                "actionPurpose": "internal_verification",
+                "scope": {
+                  "sourceRequests": [
+                    "Customer confirms the renovation is complete and asks for pendant-light pricing now."
+                  ]
+                },
+                "priority": "HIGH",
+                "evidence": [
+                  {
+                    "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                    "timestamp": "2025-02-13T10:00:00Z",
+                    "quote": "Customer confirms the renovation is complete and asks for pendant-light pricing now."
+                  }
+                ],
+                "timing": {
+                  "kind": "none"
+                },
+                "operatorTaskDueAt": null,
+                "sourceTimingConstraints": [
+                  {
+                    "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                    "sourceTimestamp": "2025-02-13T10:00:00Z",
+                    "wording": "now",
+                    "status": "HISTORICAL_NOT_RENEWED",
+                    "customerTimezone": "UNKNOWN",
+                    "taskDeadline": false
+                  }
+                ],
+                "customerActionGates": [
+                  {
+                    "code": "historical_or_unresolved_deadline",
+                    "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                    "appliesTo": "customer_action",
+                    "satisfiedByInternalVerification": false
+                  },
+                  {
+                    "code": "current_interest_requires_source_confirmation",
+                    "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                    "appliesTo": "customer_action",
+                    "satisfiedByInternalVerification": false
+                  }
+                ],
+                "sourceRestrictions": [],
+                "customerActionPermitted": false,
+                "humanApprovalRequired": true,
+                "documentedCompletion": {
+                  "policyVersion": "documented-renovation-completion-v1",
+                  "event": "renovation",
+                  "status": "DOCUMENTED_AT_SOURCE_NOT_CURRENT_CONSENT",
+                  "noteId": "note_851000525fd7b796cb077c4fe636539080b9ff681f30e047057f5b188fb61786",
+                  "sourceTimestamp": "2025-02-13T10:00:00Z",
+                  "quote": "Customer confirms the renovation is complete and asks for pendant-light pricing now.",
+                  "resolvedDeferralNoteIds": []
+                }
+              },
+              "authorityRequirements": {
+                "policyVersion": "internal-task-policy-v1.3",
+                "humanApprovalRequired": true,
+                "allowedMutation": "hubspot.follow_up_task.create",
+                "customerActionPermitted": false
+              },
+              "qualityFailures": [],
+              "preparationBlocked": false,
+              "executionBlocked": true,
+              "missingFinalFields": [
+                "operatorTaskDueAt",
+                "CRM association",
+                "operation correlation",
+                "exact final-payload approval"
+              ],
+              "actionVersion": "sha256:f64fb7ebab85dc2f2b08a2af602d1a9457b48a52d8bede504ccd520e52b1d80d"
+            }
+          }
+        ],
+        "proposalVersion": "internal-task-proposal-v2.3",
+        "materializationVersion": "source-evidence-v0.3.7",
+        "evidencePolicyVersion": "source-clause-closure-v1.1"
+      },
+      "outputHash": "47f7ab34915473c39e9070264773c7a7800af7b16c2f69fdd5bc94870c92d777",
+      "quality": [],
+      "checks": {
+        "oneIndependentFinding": true,
+        "currentInterestVerification": true,
+        "documentedCompletionRetained": true,
+        "historicalNowNotRenewed": true,
+        "noCustomerAuthority": true,
+        "pendingReviewAndExecutionBlocked": true,
+        "qualityClear": true
+      },
+      "passed": true,
+      "humanSemanticVerdict": "PENDING",
+      "finalExecutionApproval": false
+    }
+  ],
+  "summary": {
+    "attempted": 2,
+    "valid": 2,
+    "passed": 2,
+    "cycleCalls": 210,
+    "remainingBudget": 0
+  }
+}

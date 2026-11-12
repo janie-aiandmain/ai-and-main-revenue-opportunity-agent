@@ -1,0 +1,470 @@
+{
+  "captures": 205,
+  "uniqueCases": 59,
+  "passed": 205,
+  "failures": [],
+  "changedCases": [
+    "UV11"
+  ],
+  "unaffectedCasesBehaviorUnchanged": true,
+  "originalCorpusExecutions": 122,
+  "originalCorpusDecisionPasses": 122,
+  "confusion": {
+    "tp": 59,
+    "tn": 63,
+    "fp": 0,
+    "fn": 0
+  },
+  "consistency": [
+    {
+      "id": "ST04",
+      "captures": 8,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "NV02",
+      "captures": 4,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "ST01",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "ST02",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "ST03",
+      "captures": 7,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": false,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "ST05",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "ST06",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "ST07",
+      "captures": 7,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "ST08",
+      "captures": 7,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": false,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "ST09",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN10",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN11",
+      "captures": 7,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": false,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN12",
+      "captures": 7,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN13",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN14",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN15",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN16",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN17",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": false,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN18",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN19",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN20",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN21",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN22",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN23",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN24",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": false,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN25",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN26",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN27",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN28",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN29",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN30",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "EN31",
+      "captures": 7,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": false,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV01",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": false,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV02",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV03",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": false,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV04",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV05",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV06",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV07",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV08",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV09",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV10",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV11",
+      "captures": 3,
+      "decisionStable": false,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": false
+    },
+    {
+      "id": "UV12",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV13",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV14",
+      "captures": 7,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV15",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": false,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "UV16",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "ABS01",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "ABS02",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "RQ01",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "RQ02",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "RQ03",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "RQ04",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "RQ05",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    },
+    {
+      "id": "RQ06",
+      "captures": 3,
+      "decisionStable": true,
+      "purposeStable": true,
+      "rawKeysStable": true,
+      "exactRecommendationsStable": true
+    }
+  ],
+  "decisionConsistencyRate": 0.9821428571428571,
+  "newHumanApprovals": 0
+}
