@@ -5,8 +5,9 @@ import {materializeCorrected as previous} from '../findings-v0.3.3.js';
 import {internalPlan} from '../staging/internal-task-policy.js';
 import {inspectFinding} from '../staging/review-policy.js';
 import {completeEvidence,EVIDENCE_POLICY} from './evidence.js';
+import {completedPricingClassification,COMPLETED_PRICING_CLASSIFICATION_POLICY} from '../staging/completion-policy.js';
 export {EVIDENCE_POLICY};
-export const PROMPT_VERSION='reasoning-v0.3.3',SCHEMA_VERSION='findings-v0.2',MATERIALIZATION_VERSION='source-evidence-v0.3.7';
+export const PROMPT_VERSION='reasoning-v0.3.3',SCHEMA_VERSION='findings-v0.2',MATERIALIZATION_VERSION='source-evidence-v0.3.8';
 export async function materializeCorrected(raw,history,key,time=new Date().toISOString()){
  // Validate original model spans and distinctness before completing source clauses.
  await materializeFindings(raw,history,key);
@@ -18,12 +19,13 @@ export async function materializeCorrected(raw,history,key,time=new Date().toISO
    const unsafe=inspection.qualityFailures.some(x=>x.code!=='historical_deadline_repeated_in_action');
    const {findingId,proposedAction,...rawFinding}=f;
    if(unsafe)return rawFinding;
-   const plan=internalPlan(f,history,inspection,time);
+   const classified=completedPricingClassification(rawFinding,inspection);
+   const plan=internalPlan(classified,history,inspection,time);
    const timing=plan.sourceTiming.map(t=>'Source '+t.sourceTimestamp+': '+JSON.stringify(t.wording)+(t.status.startsWith('HISTORICAL')?' is historical, not renewed.':' is unresolved source timing; customer timezone is unknown.')+' Verify current interest and timing.');
    const restrictions=plan.sourceRestrictions.map(e=>'Customer context: '+JSON.stringify(e.quote));
-   return {...rawFinding,recommendedNextAction:[plan.instruction,...timing,...restrictions,'Internal task only. No customer action is authorized.'].join(' ')};
+   return {...classified,recommendedNextAction:[plan.instruction,...timing,...restrictions,'Internal task only. No customer action is authorized.'].join(' ')};
  })};
- return {...await previous(finalRaw,history,key,time),materializationVersion:MATERIALIZATION_VERSION,evidencePolicyVersion:EVIDENCE_POLICY};
+ return {...await previous(finalRaw,history,key,time),materializationVersion:MATERIALIZATION_VERSION,evidencePolicyVersion:EVIDENCE_POLICY,classificationPolicyVersion:COMPLETED_PRICING_CLASSIFICATION_POLICY};
 }
 export async function reasonCorrected(env,context,key,time=new Date().toISOString()){
  if(!env.EVAL_OPENAI_API_KEY)throw missingCredential('EVAL_OPENAI_API_KEY');

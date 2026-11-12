@@ -405,3 +405,20 @@ pending human semantic review and need separate final execution approval. The tw
 fresh affected evaluations consumed the remaining budget: 210/210 tracked calls.
 Do not delete/reset the call-reservation file or silently start more evaluations
 under that exhausted cap. Offline replay is not a new model execution or approval.
+
+## Semantic review and supported diagnostic correction
+
+The next user-authorized source-only cycle is documented in
+docs/review/semantic-diagnostic-cycle/README.md. The user explicitly chose
+Cross-sell for UV11 classification; record it as policy only, not semantic PASS or
+execution approval. Materializer v0.3.8 applies the narrow completed-renovation
+pricing label policy; fresh model validation is PENDING and no new calls are
+allowed under the exhausted 210-call cap. All revised semantic verdicts remain
+pending. Record future actual verdicts append-only with exact reviewed hashes.
+Rules remain a supported offline diagnostic and an authenticated staging-owner
+legacy fallback, not the general finding engine. Frozen v0.2 preserves 19/31;
+v0.3 fixes classification/review checks without claiming multi-finding coverage.
+Keep the diagnostic command failing while its EN11/EN12 coverage limits remain;
+do not weaken original expectations, hide failures, remove routes automatically,
+or infer deployed state from local fixtures. No CRM/model calls, tasks,
+deployments, configuration/credential/permission changes or merge to main.

@@ -1,0 +1,85 @@
+{
+  "kind": "SEMANTIC_REVIEW_AND_SUPPORTED_DIAGNOSTIC_SOURCE_ONLY_EVIDENCE",
+  "baselineCommit": "6b2560479de513f41f20fa9f52778ec0454f8a0f",
+  "scope": {
+    "hubspotCalls": 0,
+    "modelCalls": 0,
+    "tasksCreated": 0,
+    "deployments": 0,
+    "cloudflareMutations": 0,
+    "newHumanSemanticApprovals": 0,
+    "finalExecutionApprovals": 0,
+    "newUserPolicyDecisions": 1
+  },
+  "tests": {
+    "passed": 182,
+    "failed": 0
+  },
+  "commands": {
+    "npm test": 0,
+    "node scripts/review/replay-checkpoint.js": 0,
+    "npm run regression:offline": 1,
+    "npm run regression:offline:legacy": 1,
+    "npm run check": 0,
+    "npm run staging:check": 0,
+    "read-only Cloudflare inspection": 0
+  },
+  "diagnostic": {
+    "before": {
+      "correct": 19,
+      "total": 31,
+      "fp": 6,
+      "negative": 21,
+      "fn": 2,
+      "positive": 10
+    },
+    "after": {
+      "correctTwoFieldChecks": 31,
+      "total": 31,
+      "fp": 0,
+      "negative": 21,
+      "fn": 0,
+      "positive": 10
+    },
+    "remainingContractLimitations": [
+      "EN11",
+      "EN12"
+    ],
+    "releaseEligible": false
+  },
+  "retainedCaptureReplay": {
+    "passed": 207,
+    "total": 207,
+    "freshModelCalls": 0
+  },
+  "freshModelValidation": "PENDING_EXHAUSTED_210_CALL_BUDGET",
+  "protectedCheckpointFiles": 100,
+  "files": {
+    "DIAGNOSTIC-FAILURES.md": "864026e48b88c692fd63acac2e19bd6755f843f9364c2d0b4e6f9a60c7f4d831",
+    "README.md": "1d64c124d642c15786ef14eab62037a73f78f769ef6ce3eede6054b2d7b36fba",
+    "REVIEW.md": "b1bb55d3ccbd00eefa55ff2ec1c70f69d59d8112e80bae84ecec644753b6103b",
+    "UV11-label-policy-comparison.json": "9c61bbeea85b87f6c20039b57e9e74c96bc9c1c4747f9073c1cd99ba5482e72f",
+    "active-deployment-readonly.json": "67be1222a0af10d4d7e53849e614d477946473be8dc871f29640fc46c4b43420",
+    "active-route-proof.json": "60d7ebd19cb47fc383251dfdf0524efdba11f43244fb79d1f8b754751787a92d",
+    "contracts.json": "82c16f5135f71fa25a39db1ba0d5925abfe2a77401ed4834d70ba047ec29bddc",
+    "demo-build.txt": "e140219500513c2b98ccaffa89d0a128d5318a55678dd62b76aeb4b4ea93f3b8",
+    "diagnostic-after.json": "6f2ab721db9460ea040b51cb4921a186ebfa99538530f2a1da78525df391b0b3",
+    "diagnostic-after.txt": "82d6f90c8e242c7456b47f07781f3cfe3ceaea57a1b67acb789f059882ff3c8b",
+    "diagnostic-before.json": "d72d901134b277de53e0b021992803bed60fdbf730a813f6e528d1099a7b5684",
+    "diagnostic-before.txt": "8da1a1c6260f804e2098e28433b7d0a2c19bb856c3106fa860e8c96ae794f5ce",
+    "diagnostic-failures.json": "f49e3eb8da05e4c2b290309a91103d717e51173249bfb25eb548cc7e72beed52",
+    "frozen-source-proof.json": "f0bed88d71f9b827664faaf05ed3c9ce8ea74619dd9f0df5a55488564cfb985c",
+    "human-decisions.json": "6d10852623c877c4a5659ef11e71d32c83d4b2bd203f5a8826ccaba25ce09f29",
+    "identity-replay.json": "70e7e5c974ae41859fbffa356e98041ceac527093432b998eda86842f7bfcdbd",
+    "identity-replay.txt": "c46dafc375d14e0ae73d24ee27f94cb2d2299e37858f03dbd76f4133e7b49fc5",
+    "legacy-replay.json": "c8a99074644b71f181d044c82c1eb291ba952ee0f4af867851109db415f10028",
+    "legacy-replay.txt": "de45cd11de16d7fa39a3cecf963454c742c593b7ed96e10c2cfdf9f5e3a9f5a5",
+    "owner-build.txt": "1db560104efb7f8b80b4ca0f16e5435456dbf2ba85af289d8925b6dbd9c1543d",
+    "preserved-checkpoint-sha256.json": "a15d9c951ce35fccd2fa3a0c802a71bdfe4ded5bf76aad1ecd0b4d0eae70832f",
+    "reachability-tests.txt": "50ee00fda975d955f968f87bfdc5a618924cfb94df0dda0669e1756eca8e0034",
+    "retained-capture-replay.json": "624a61b3cb19feeb3d0417215015034d380f8300a8ec3286462788210d829759",
+    "retained-capture-replay.txt": "a7ce7cb64c4bcfa5f7b6e67fbdb2b2544c968c2a6f0896b07138f0563f72c088",
+    "review-packet.json": "f1a565084d7ef456b1cce213f84198a6bfcab6953322a49c89198b0bb08e2017",
+    "tests.txt": "0063a2fcbd209e501f777f7a68f86b06e3c4ffb94f8e1345af25ed48ffc48b9f"
+  }
+}

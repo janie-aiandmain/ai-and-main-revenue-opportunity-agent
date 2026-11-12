@@ -1,6 +1,15 @@
 # Release validation status
 
-**Latest source-only correction:** [completed correction and validation](../review/completion-correction/README.md)
+**Latest source-only cycle:** [semantic review and diagnostic results](../review/semantic-diagnostic-cycle/README.md).
+The supported rules diagnostic now passes 31/31 classification/review checks with
+0/21 false positives and 0/10 false negatives; its command still exits nonzero
+for EN11/EN12's unsupported independent-finding coverage. The frozen old baseline
+remains 19/31. UV11's user-selected Cross-sell policy is versioned in materializer
+v0.3.8; retained-capture replay is not fresh model validation of this change.
+Budget remains 210/210. Review verdicts, new model validation, exact task approval
+and release acceptance remain separate/pending. No deployment was performed.
+
+**Previous checkpoint 6b25604:** [completed correction and validation](../review/completion-correction/README.md)
 preserves the seven cases' safeguards and implements the UV11 current-interest
 policy. Source now uses materializer v0.3.7 / internal policy v1.3 / proposal v2.3 /
 review v2.7; prompt/schema/model settings are unchanged. All 167 local tests, both

@@ -56,7 +56,8 @@ test('a materially revised prepared payload cannot resume its prior approval',()
 test('a stored prior reasoning policy cannot reuse approval even when source and raw finding are unchanged',()=>lab(async a=>{
  const {finding,reviewed,grant}=await a.prepare();
  // Simulate the persisted contract from the deployment preceding this policy.
- a.l.db.prepare('UPDATE general_contexts SET contract_hash=? WHERE context_key=?').run('sha256:prior-source-evidence-v0.3.6',a.l.contextKey(env));
+ const checkpoint=JSON.parse(await readFile('docs/review/completion-correction/contracts.json','utf8'));
+ a.l.db.prepare('UPDATE general_contexts SET contract_hash=? WHERE context_key=?').run(checkpoint.approvalContractHash.after,a.l.contextKey(env));
  await assert.rejects(a.l.resumeApproval({operationId:reviewed.operationId},actor,env,a.source),/review_stale/);
  const [fresh]=await a.l.evaluate(env,a.source,a.reason);
  assert.equal(fresh.findingId,finding.findingId);

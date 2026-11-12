@@ -1,5 +1,10 @@
 # UV11 semantic review — source chronology and current interest
 
+**Latest classification policy:** the user explicitly chose **Cross-sell**.
+[Current review and recorded decision](../review/semantic-diagnostic-cycle/REVIEW.md)
+preserve the historical completion/current-interest boundary. Semantic verdicts
+and final execution approval remain pending; new model validation is not complete.
+
 **Subsequent user policy:** “Verify current interest internally; retain documented
 renovation completion.” The [recorded policy decision](../review/completion-correction/policy-decision.json)
 and [correction results](../review/completion-correction/README.md) supersede the

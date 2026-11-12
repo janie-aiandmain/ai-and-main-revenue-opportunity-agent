@@ -1,6 +1,12 @@
 // A narrow source rule, not inferred event completion or current customer consent.
 import {sourceAnchors} from '../correction-policy.js';
 export const COMPLETION_POLICY='documented-renovation-completion-v1';
+// User-selected label policy; it does not establish fresh intent or authority.
+export const COMPLETED_PRICING_CLASSIFICATION_POLICY='completed-renovation-pricing-classification-v1';
+export function completedPricingClassification(finding,inspection){
+ if(!inspection.documentedCompletion||!['strong cross-sell opportunity','follow-up revenue opportunity'].includes(finding.classification)||!['cross-sell','follow-up'].includes(finding.opportunityType))return finding;
+ return {...finding,classification:'strong cross-sell opportunity',opportunityType:'cross-sell'};
+}
 const deferral=/\b(?:after|once|when|until)\b.{0,100}\b(?:complete|finished|done|renovation|remodel)\b/i;
 const confirmed=/^\s*(?:customer|client|homeowner)\s+(?:confirms?|reports?)\s+(?:the|their)\s+(renovation|remodel)\s+(?:is|was|has been)\s+(?:complete|completed|finished|done)\s+and\s+(?:asks?|requests?)\s+(?:for\s+)?([^.!?]+)[.!?]?\s*$/i;
 const excluded=/\b(?:not|never|no|cancel\w*|declin\w*|pending|might|maybe|possibly|if|unless)\b/i;

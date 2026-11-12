@@ -1,0 +1,274 @@
+{
+  "kind": "READ_ONLY_ACTIVE_DEPLOYMENT_CODE_AND_BINDING_NAMES",
+  "checkedAt": "2026-11-12T21:25:39.510Z",
+  "cloudflareWrites": 0,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "activeVersion": "91d1135c-054e-4614-aa45-74401ba060d0",
+      "sourceCommit": "34a7b4257c3c491c8a89f34e29ff0c01fbdd9ee8",
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "GENERAL_RELEASE_APPROVED": "false"
+      },
+      "allExecutionFlagsFalse": true,
+      "legacyReaderBindingPresent": true,
+      "bindingNames": [
+        {
+          "name": "ACCESS_AUDIENCE",
+          "type": "plain_text"
+        },
+        {
+          "name": "ACCESS_ISSUER",
+          "type": "plain_text"
+        },
+        {
+          "name": "APPROVER_SUBJECTS_JSON",
+          "type": "plain_text"
+        },
+        {
+          "name": "AUDIT_RETENTION_DAYS",
+          "type": "plain_text"
+        },
+        {
+          "name": "CERTIFICATION_MODE",
+          "type": "plain_text"
+        },
+        {
+          "name": "CRM_WRITEBACK_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_ONLY_EXECUTION_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_RECOVERY_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_RECOVERY_EXECUTION_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_RECOVERY_EXPIRES_AT",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_RECOVERY_FAULT_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "type": "durable_object_namespace"
+        },
+        {
+          "name": "DEMO_RECOVERY_RUN_ID",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_RELEASE_EXPIRES_AT",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_RELEASE_MAX_CREATES",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_RELEASE_RUN_ID",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_RESPONSE_LOSS_TEST_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEPLOYMENT_ENVIRONMENT",
+          "type": "plain_text"
+        },
+        {
+          "name": "ENABLE_GENERAL_EXECUTION",
+          "type": "plain_text"
+        },
+        {
+          "name": "ENABLE_TEST_TASK_WRITES",
+          "type": "plain_text"
+        },
+        {
+          "name": "EVAL_OPENAI_API_KEY",
+          "type": "secret_text"
+        },
+        {
+          "name": "GENERAL_RELEASE_APPROVED",
+          "type": "plain_text"
+        },
+        {
+          "name": "HUBSPOT_ACCESS_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "HUBSPOT_WRITE_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "OPENAI_API_KEY",
+          "type": "secret_text"
+        },
+        {
+          "name": "RELEASE_SOURCE_SHA",
+          "type": "plain_text"
+        },
+        {
+          "name": "RELEASE_VERSION",
+          "type": "version_metadata"
+        },
+        {
+          "name": "STAGING_CONTACT_ID",
+          "type": "plain_text"
+        },
+        {
+          "name": "STAGING_HUBSPOT_READ_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "STAGING_HUBSPOT_WRITE_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "STAGING_ISOLATION_APPROVED",
+          "type": "plain_text"
+        },
+        {
+          "name": "STAGING_PORTAL_ID",
+          "type": "plain_text"
+        },
+        {
+          "name": "WRITEBACK_APPROVAL_TOKEN",
+          "type": "secret_text"
+        }
+      ],
+      "modules": [
+        {
+          "name": "worker.js",
+          "sha256": "8d2c959421e68bdc221dbe6452e6fd1fddb52a48134b49a627a881695154f099",
+          "bytes": 49115,
+          "privateLocalPath": "/tmp/semantic-cycle-active-code/ai-and-main-revenue-opportunity-agent-0.js"
+        }
+      ]
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "activeVersion": "76c27653-bb40-45cb-8ef1-50883e6a0976",
+      "sourceCommit": "34a7b4257c3c491c8a89f34e29ff0c01fbdd9ee8",
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "GENERAL_RELEASE_APPROVED": "false"
+      },
+      "allExecutionFlagsFalse": true,
+      "legacyReaderBindingPresent": false,
+      "bindingNames": [
+        {
+          "name": "ACCESS_AUDIENCE",
+          "type": "plain_text"
+        },
+        {
+          "name": "ACCESS_ISSUER",
+          "type": "plain_text"
+        },
+        {
+          "name": "AUDIT_RETENTION_DAYS",
+          "type": "plain_text"
+        },
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "type": "durable_object_namespace"
+        },
+        {
+          "name": "CERTIFICATION_MODE",
+          "type": "plain_text"
+        },
+        {
+          "name": "CRM_WRITEBACK_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_ONLY_EXECUTION_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEMO_RESPONSE_LOSS_TEST_ENABLED",
+          "type": "plain_text"
+        },
+        {
+          "name": "DEPLOYMENT_ENVIRONMENT",
+          "type": "plain_text"
+        },
+        {
+          "name": "ENABLE_GENERAL_EXECUTION",
+          "type": "plain_text"
+        },
+        {
+          "name": "ENABLE_TEST_TASK_WRITES",
+          "type": "plain_text"
+        },
+        {
+          "name": "EVAL_OPENAI_API_KEY",
+          "type": "secret_text"
+        },
+        {
+          "name": "GENERAL_RELEASE_APPROVED",
+          "type": "plain_text"
+        },
+        {
+          "name": "RELEASE_SOURCE_SHA",
+          "type": "plain_text"
+        },
+        {
+          "name": "RELEASE_VERSION",
+          "type": "version_metadata"
+        },
+        {
+          "name": "STAGING_CONTACT_ID",
+          "type": "plain_text"
+        },
+        {
+          "name": "STAGING_HUBSPOT_READ_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "STAGING_HUBSPOT_WRITE_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "STAGING_ISOLATION_APPROVED",
+          "type": "plain_text"
+        },
+        {
+          "name": "STAGING_PORTAL_ID",
+          "type": "plain_text"
+        }
+      ],
+      "modules": [
+        {
+          "name": "worker.js",
+          "sha256": "cb465c98044871d2f6c06aeec95202fda2c7a31cc16dc2e016d24f5e6dfcf73a",
+          "bytes": 215848,
+          "privateLocalPath": "/tmp/semantic-cycle-active-code/ai-and-main-revenue-opportunity-staging-0.js"
+        }
+      ]
+    }
+  ]
+}

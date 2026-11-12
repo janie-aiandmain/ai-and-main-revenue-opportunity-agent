@@ -1,6 +1,12 @@
 # Pending human semantic and release review
 
-**Current source correction:** see the [new review packet](../review/completion-correction/REVIEW.md)
+**Latest packet:** [current exact review table](../review/semantic-diagnostic-cycle/REVIEW.md)
+includes output/review hashes, uncertainties and pending verdict fields for the
+nine findings and UV11 variants. The user selected Cross-sell classification for
+UV11; that policy choice is recorded separately from semantic/execution approval.
+The new materializer is v0.3.8 and fresh model validation remains pending.
+
+**Previous checkpoint 6b25604:** see the [earlier review packet](../review/completion-correction/REVIEW.md)
 and [validation results](../review/completion-correction/README.md). The original
 drafts below remain a preserved review snapshot. The UV11 policy decision is now
 recorded and implemented locally; revised outputs still require human semantic

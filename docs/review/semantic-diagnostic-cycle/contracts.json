@@ -1,0 +1,64 @@
+{
+  "kind": "SOURCE_ONLY_POLICY_AND_DIAGNOSTIC_VERSION_MANIFEST",
+  "baselineCommit": "6b2560479de513f41f20fa9f52778ec0454f8a0f",
+  "providerPrompt": {
+    "version": "reasoning-v0.3.3",
+    "sha256": "9f03c4a4f700e386def81eac10a231d2d3ef5b85eca8bddfafdaf3af28434c69",
+    "unchanged": true
+  },
+  "schema": {
+    "version": "findings-v0.2",
+    "sha256": "7bda1bfdc27882023d180cca14e751941401feee18a1d9eb6fca63717519964d",
+    "unchanged": true
+  },
+  "requestSha256": "c3d526465d5041266574799e5101e8537896a9b5228b50fc117601c01b60f984",
+  "model": "gpt-5.6-terra",
+  "reasoning": {
+    "effort": "low"
+  },
+  "materializer": {
+    "before": "source-evidence-v0.3.7",
+    "after": "source-evidence-v0.3.8"
+  },
+  "classificationPolicy": "completed-renovation-pricing-classification-v1",
+  "completionPolicy": "documented-renovation-completion-v1",
+  "internalTaskPolicy": "internal-task-policy-v1.3",
+  "proposalVersion": "internal-task-proposal-v2.3",
+  "reviewPolicy": "finding-review-v2.7",
+  "diagnostic": {
+    "before": "deterministic diagnostic rules v0.2",
+    "after": "deterministic diagnostic rules v0.3",
+    "inputBefore": "flattened note text",
+    "inputAfter": "dated serviceHistory",
+    "output": "single read-only summary; no finding/action contract"
+  },
+  "approvalContractHash": {
+    "before": "sha256:366a1e27457394d6902f728b323520fc132d4b8023b2803f786677e200867bae",
+    "after": "sha256:2983364b810e560d1be1f5adfa0c84bb6d9604ed1ddf3bbee9c03abe0c96dd54",
+    "changed": true
+  },
+  "freshModelValidation": {
+    "status": "PENDING",
+    "reason": "210_CALL_BUDGET_EXHAUSTED",
+    "callsThisCycle": 0,
+    "trackedCycleTotal": 210
+  },
+  "sourceFiles": {
+    "src/diagnostics/legacy-rules-v0.2.js": "ef5ef89c69820e9d27422f965bc0d05521d1fd1c152741ce405ba4b9b20c684c",
+    "src/diagnostics/rules-v0.3.js": "4d5c61ff581863f00d7d2e5aa83d469f286d8d78a0a98e45ce1cc8311a8048a4",
+    "src/index.js": "ade02619d1959b4f9477dcf3968597895f6ea9e5eeb09b7205a55a20c0e11be6",
+    "src/release/reasoning.js": "180af68c7690d334234c168c2369693d93d2d812d85a3b9ba3a6a0fdbcffaf24",
+    "src/staging/completion-policy.js": "f0e7877237e9753fdc44c4caecb263ce5da94a9b99d113f5eece4409c7c1a6dc",
+    "scripts/regression/offline.js": "5dada1bf1a609d8f31985bef704c23aa7814284a461543a94341c2fdeaf4e787"
+  },
+  "configurationSha256": {
+    "wrangler.jsonc": "f58052f0852dc045777eb7fcb8182647eb23ed859cfbd3d09a3cd8418929bfcc",
+    "wrangler.staging.jsonc": "91c0123b41843b72d5b7d043f23c50334a408b553ca34b6db41f85fbf1c0ca1a",
+    "wrangler.certification.jsonc": "7ec90ac2f23f7111acad0f26105048846055d60a24bb3d68e2e81f9152edce62"
+  },
+  "deployed": false,
+  "hubspotCalls": 0,
+  "tasksCreated": 0,
+  "newHumanSemanticApprovals": 0,
+  "finalExecutionApprovals": 0
+}

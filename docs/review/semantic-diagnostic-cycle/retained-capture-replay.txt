@@ -1,0 +1,1 @@
+{"captures":207,"uniqueCases":59,"passed":207,"failures":[],"originalCorpusExecutions":122,"originalCorpusDecisionPasses":122,"confusion":{"tp":59,"tn":63,"fp":0,"fn":0},"changedFindingCases":["UV11"],"unrelatedFindingBodiesUnchanged":true,"newHumanApprovals":0}

@@ -5,15 +5,16 @@ signals in CRM service activity. HubSpot remains the system of record. The agent
 supports evidence-backed reasoning, bounded recommendations, human approval and
 CRM-native follow-up; it does not replace the CRM.
 
-Current result: the [semantic correction evidence package](docs/review/semantic-corrections/README.md)
-records the user's five PASS / four CONCERN decisions and implements the requested
-internal-verification, historical-timing and scope corrections. All 122 tests and
-both Worker dry-run builds pass. The final 49-case model run passes decision checks
-but retains one blocked evidence omission (UV14). Corrected outputs await human
-review; final execution approvals are separate. No deployment or HubSpot write
-occurred in this cycle, and all live general/test/fault execution remains disabled.
-Earlier sections below preserve the sequence of historical evidence; the linked
-correction package is the current validation result.
+Current source-only status: [semantic review and diagnostic evidence](docs/review/semantic-diagnostic-cycle/README.md).
+The rules diagnostic's classification/review checks improved from 19/31 to 31/31;
+its command still fails because a single summary cannot cover EN11/EN12's two
+independent findings. Frozen v0.2 remains reproducible. The user selected
+Cross-sell for UV11; materializer v0.3.8 applies that narrow policy with internal
+current-interest verification. Fresh model validation of this changed generator
+is pending; the 210-call budget is exhausted. Revised human semantic verdicts and
+final execution approvals remain pending. No deployment, CRM/model call, task or
+configuration change occurred. All tracked write/test/fault/release flags remain
+false. Earlier sections preserve historical evidence and are not new certification.
 
 ## Practicum phases
 
@@ -25,7 +26,13 @@ correction package is the current validation result.
 
 The first milestone uses a HubSpot developer test account and a Cloudflare Worker. Credentials must be stored as Cloudflare secrets and must never be committed to GitHub.
 
-## Current lab endpoints
+## Historical application endpoints
+
+These are routes of `src/index.js`, not routes enabled by the current main demo
+gateway. The configured demo rejects legacy diagnostics; the staging-owner source
+still has an authenticated read-only fallback to this application, requiring its
+legacy reader binding. [Reachability and limits](docs/review/semantic-diagnostic-cycle/README.md)
+distinguish that source path from fresh verification of a deployed hostname.
 
 - `/health` — confirms the Worker is running
 - `/hubspot-test` — will test read-only HubSpot access once the secret and scopes are configured

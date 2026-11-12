@@ -1,0 +1,19 @@
+✔ frozen v0.2 exactly reproduces the original 19/31 diagnostic rows (30.501264ms)
+✔ v0.3 fixes the original two-field checks without claiming independent finding coverage (15.597253ms)
+✔ new service requests do not override negation or employee-only, third-party and hypothetical commentary (0.859271ms)
+✔ source timestamps govern reversals even when the note array is reversed (0.542916ms)
+✔ unknown or conflicting chronology abstains rather than inventing a current request (0.379247ms)
+✔ an unrelated withdrawal cannot erase another need and ambiguous shared scope remains blocked (0.566962ms)
+✔ duplicate evidence is not mistaken for separate needs during an unscoped withdrawal (0.4902ms)
+✔ deferred work, active scope and recovery produce internal verification without renewed timing or execution authority (0.720297ms)
+✔ injected policy and fake approval cannot replace actual customer intent or expand diagnostic authority (0.534785ms)
+✔ configured demo denies legacy diagnostics even with a valid identity and legacy reader binding (96.091565ms)
+✔ actual staging fetch dispatcher reaches the legacy diagnostic only after authentication and with its legacy reader (161.085356ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 524.068503

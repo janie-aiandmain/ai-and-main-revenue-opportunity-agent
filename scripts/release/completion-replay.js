@@ -6,6 +6,7 @@ import {prepareHistory,canonical} from '../../src/findings.js';
 import {inspectFinding} from '../../src/staging/review-policy.js';
 import {gradeFindings,hash} from '../regression/findings-core.js';
 const load=async p=>JSON.parse(await readFile(p,'utf8'));
+if(MATERIALIZATION_VERSION!=='source-evidence-v0.3.7')throw Error('historical_output_directory_protected_use_scripts_review_replay_checkpoint_js');
 const output='docs/review/completion-correction';await mkdir(output,{recursive:true});
 const before=await load('docs/release/evidence/release-final-policy-replay.json');
 const suites=await Promise.all(['enterprise-v2','unseen-review-variations-v1','absolute-timing-boundaries-v1','release-restrictions-v1','release-negative-qualifiers-v1'].map(n=>load('fixtures/'+n+'.json')));

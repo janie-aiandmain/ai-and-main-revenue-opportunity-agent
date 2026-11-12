@@ -1,3 +1,4 @@
+import {evaluateRevenueOpportunity, DIAGNOSTIC_POLICY} from './diagnostics/rules-v0.3.js';
 import legacyCorpus from "../fixtures/legacy-v1.json" with { type: "json" };
 import { reasonAboutRevenueOpportunity } from "./reasoning.js";
 import { reasonAboutRevenueFindings } from "./findings.js";
@@ -146,14 +147,14 @@ async function shadowEvaluate(env) {
       email: contact.email,
       mode: "shadow",
       crmWritePerformed: false,
-      ...evaluateRevenueOpportunity(combinedNotes),
+      ...evaluateRevenueOpportunity({serviceHistory:contact.notes.map(note=>({timestamp:note.timestamp,note:stripHtml(note.body)}))}),
     }));
 
     return json({
       status: "shadow_evaluation_complete",
       source: "HubSpot",
       readOnly: true,
-      methodology: "deterministic diagnostic rules v0.2",
+      methodology: DIAGNOSTIC_POLICY,
       note: "Only contacts with substantive service-note context are evaluated. No CRM write is performed.",
       recordsScanned: context.contacts.length,
       recordsEvaluated: evaluations.length,
@@ -766,61 +767,6 @@ function evaluateEligibility(contact, noteText) {
   return { eligible: true, reason: "Substantive service-note context available." };
 }
 
-function evaluateRevenueOpportunity(noteText) {
-  const text = (noteText || "").toLowerCase().trim();
-
-  if (!text) {
-    return {
-      classification: "no opportunity",
-      confidence: "low",
-      evidence: "No service-note content was available for evaluation.",
-      recommendedNextAction: "No action. Wait for new customer activity.",
-      humanReviewRequired: false,
-    };
-  }
-
-  const explicitNoNeed = /(no additional work|nothing else|issue resolved|everything is working well|no further work)/i.test(text);
-  const deferredIntent = /(still wants|wanted to finish|finish the current project first|later|after this project|follow up)/i.test(text);
-  const strongIntent = /(asked whether|asked if|wants pricing|wants a quote|request.*pricing|interested in|wants.*installed|also install|additional service)/i.test(text);
-
-  if (explicitNoNeed && !strongIntent && !deferredIntent) {
-    return {
-      classification: "no opportunity",
-      confidence: "high",
-      evidence: excerpt(noteText),
-      recommendedNextAction: "No revenue follow-up. Keep the customer in normal relationship cadence.",
-      humanReviewRequired: false,
-    };
-  }
-
-  if (strongIntent) {
-    return {
-      classification: "strong cross-sell opportunity",
-      confidence: "high",
-      evidence: excerpt(noteText),
-      recommendedNextAction: "Prepare a relevant follow-up and pricing conversation for human approval.",
-      humanReviewRequired: true,
-    };
-  }
-
-  if (deferredIntent) {
-    return {
-      classification: "follow-up revenue opportunity",
-      confidence: "medium-high",
-      evidence: excerpt(noteText),
-      recommendedNextAction: "Schedule a timely follow-up based on the customer's stated timing.",
-      humanReviewRequired: true,
-    };
-  }
-
-  return {
-    classification: "no clear opportunity",
-    confidence: "medium",
-    evidence: excerpt(noteText),
-    recommendedNextAction: "No automated action. Surface only if a human reviewer sees additional context.",
-    humanReviewRequired: false,
-  };
-}
 
 function mapContact(contact) {
   return {
@@ -897,5 +843,5 @@ function json(data, status = 200) {
   });
 }
 
-// Expose the existing diagnostic rules for offline baseline measurement.
+// Current diagnostic; frozen v0.2 remains available for historical comparison.
 export { evaluateRevenueOpportunity };

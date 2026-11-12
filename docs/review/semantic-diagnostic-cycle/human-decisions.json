@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "append-only-semantic-review-events-v1",
+  "events": [
+    {
+      "eventType": "USER_CLASSIFICATION_POLICY_DECISION",
+      "caseId": "UV11",
+      "selectedPolicy": "cross-sell",
+      "verbatimUserResponse": "Cross-sell",
+      "recordedAt": "2026-11-12T21:10:33.544619+00:00",
+      "reviewerAttribution": "Explicit user answer to the UV11 classification question in this conversation",
+      "identityAssurance": "Chat-attributed user choice; no external identity inferred",
+      "reviewPacket": "docs/review/completion-correction/revised-proposals.json",
+      "reviewPacketSha256": "2a0f1350188a5b472eee0ee95c22dc9fb99fc649b16ebb5fbab8a10c4800f812",
+      "referencedOutputHashes": [
+        "47f7ab34915473c39e9070264773c7a7800af7b16c2f69fdd5bc94870c92d777",
+        "fcb27a61c736b10507f8272eebd3590e835caed329cc970bb3ae32a9ca5577a4",
+        "f72e524261263ee4106398ba9d89d2af572bd33ba21876ddbc224ddb5ea5ce86",
+        "1bc5a2849c52da173ac612a9a791a5afea214546270bed502e0c07c3d5f882b0",
+        "47f7ab34915473c39e9070264773c7a7800af7b16c2f69fdd5bc94870c92d777"
+      ],
+      "scope": "CLASSIFICATION_POLICY_ONLY",
+      "humanSemanticVerdict": null,
+      "finalExecutionApproval": false,
+      "releaseApproval": false,
+      "eventId": "policy-decision-008c80be1a145961c3cdda521813b918e7e22c3085be7bc6c6c6ef0f53f8ec50"
+    }
+  ],
+  "semanticVerdicts": [],
+  "newHumanSemanticApprovals": 0,
+  "finalExecutionApprovals": 0
+}

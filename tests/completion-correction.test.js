@@ -16,6 +16,7 @@ test('all three captured UV11 variants retain documented completion but require 
  for(const old of captured.capturedVariants){
   const r=await materializeCorrected({findings:old.actual.findings.map(raw)},history,'synthetic:UV11',time),f=r.findings[0],p=f.proposedAction;
   assert.equal(p.actionPurpose,'internal_verification');
+  assert.equal(f.classification,'strong cross-sell opportunity');assert.equal(f.opportunityType,'cross-sell');
   assert.equal(p.material.documentedCompletion.sourceTimestamp,'2025-02-13T10:00:00Z');
   assert.match(f.recommendedNextAction,/verify current interest/i);
   assert.match(f.recommendedNextAction,/documented renovation completion/);

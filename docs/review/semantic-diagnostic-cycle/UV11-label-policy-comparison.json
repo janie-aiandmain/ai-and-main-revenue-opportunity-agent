@@ -1,0 +1,127 @@
+{
+  "kind": "OFFLINE_POLICY_REPLAY_NOT_NEW_MODEL_CORRECTNESS",
+  "freshModelValidation": "PENDING",
+  "newModelCalls": 0,
+  "changes": [
+    {
+      "capture": "release-model-v0.3.4-2026-11-07T15-44-21-321Z.json",
+      "run": 1,
+      "rawLabel": {
+        "opportunityKey": "pendant-light-pricing",
+        "classification": "strong cross-sell opportunity",
+        "opportunityType": "cross-sell"
+      },
+      "before": {
+        "classification": "strong cross-sell opportunity",
+        "type": "cross-sell",
+        "priority": "HIGH",
+        "draftVersion": "sha256:f64fb7ebab85dc2f2b08a2af602d1a9457b48a52d8bede504ccd520e52b1d80d"
+      },
+      "after": {
+        "classification": "strong cross-sell opportunity",
+        "type": "cross-sell",
+        "priority": "HIGH",
+        "draftVersion": "sha256:f64fb7ebab85dc2f2b08a2af602d1a9457b48a52d8bede504ccd520e52b1d80d"
+      },
+      "recommendationChanged": false,
+      "evidenceChanged": false,
+      "rawIdChanged": false
+    },
+    {
+      "capture": "release-model-v0.3.4-2026-11-07T16-07-28-159Z.json",
+      "run": 1,
+      "rawLabel": {
+        "opportunityKey": "pendant-light-pricing",
+        "classification": "follow-up revenue opportunity",
+        "opportunityType": "follow-up"
+      },
+      "before": {
+        "classification": "follow-up revenue opportunity",
+        "type": "follow-up",
+        "priority": "MEDIUM",
+        "draftVersion": "sha256:f6d7235046361eee600480ae7b14cb31fbf9781b0ab776988d61e4958042e31b"
+      },
+      "after": {
+        "classification": "strong cross-sell opportunity",
+        "type": "cross-sell",
+        "priority": "HIGH",
+        "draftVersion": "sha256:bcf5f7b149cceeede285d5813bb2bb2d0cf7c0290d91c52a291ecfc17ef37b3b"
+      },
+      "recommendationChanged": false,
+      "evidenceChanged": false,
+      "rawIdChanged": false
+    },
+    {
+      "capture": "release-model-v0.3.4-2026-11-07T16-54-46-329Z.json",
+      "run": 1,
+      "rawLabel": {
+        "opportunityKey": "pendant-light-pricing",
+        "classification": "follow-up revenue opportunity",
+        "opportunityType": "follow-up"
+      },
+      "before": {
+        "classification": "follow-up revenue opportunity",
+        "type": "follow-up",
+        "priority": "MEDIUM",
+        "draftVersion": "sha256:f45478107e0159f60c1cc989fe61d7b16f483303f4ead9dea0cff987df890a68"
+      },
+      "after": {
+        "classification": "strong cross-sell opportunity",
+        "type": "cross-sell",
+        "priority": "HIGH",
+        "draftVersion": "sha256:d29df9ccfdcfa8234bf1fdc8a25e3a4ac620d14ea6b218a9ea5e8394f99f7d48"
+      },
+      "recommendationChanged": false,
+      "evidenceChanged": false,
+      "rawIdChanged": false
+    },
+    {
+      "capture": "completion-correction/fresh-model.json",
+      "run": 1,
+      "rawLabel": {
+        "opportunityKey": "pendant-light-pricing",
+        "classification": "strong cross-sell opportunity",
+        "opportunityType": "cross-sell"
+      },
+      "before": {
+        "classification": "strong cross-sell opportunity",
+        "type": "cross-sell",
+        "priority": "HIGH",
+        "draftVersion": "sha256:45d80e812142bd0ae1c3f4bdc48fe783f318ba20607dc0e24dd150151afe3282"
+      },
+      "after": {
+        "classification": "strong cross-sell opportunity",
+        "type": "cross-sell",
+        "priority": "HIGH",
+        "draftVersion": "sha256:45d80e812142bd0ae1c3f4bdc48fe783f318ba20607dc0e24dd150151afe3282"
+      },
+      "recommendationChanged": false,
+      "evidenceChanged": false,
+      "rawIdChanged": false
+    },
+    {
+      "capture": "completion-correction/fresh-model.json",
+      "run": 2,
+      "rawLabel": {
+        "opportunityKey": "pendant-light-pricing",
+        "classification": "strong cross-sell opportunity",
+        "opportunityType": "cross-sell"
+      },
+      "before": {
+        "classification": "strong cross-sell opportunity",
+        "type": "cross-sell",
+        "priority": "HIGH",
+        "draftVersion": "sha256:f64fb7ebab85dc2f2b08a2af602d1a9457b48a52d8bede504ccd520e52b1d80d"
+      },
+      "after": {
+        "classification": "strong cross-sell opportunity",
+        "type": "cross-sell",
+        "priority": "HIGH",
+        "draftVersion": "sha256:f64fb7ebab85dc2f2b08a2af602d1a9457b48a52d8bede504ccd520e52b1d80d"
+      },
+      "recommendationChanged": false,
+      "evidenceChanged": false,
+      "rawIdChanged": false
+    }
+  ]
+}

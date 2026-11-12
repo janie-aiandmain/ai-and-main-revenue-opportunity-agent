@@ -1,5 +1,12 @@
 # Release acceptance matrix
 
+Latest source-only cycle: [semantic review and diagnostic correction](../review/semantic-diagnostic-cycle/README.md).
+The corrected diagnostic passes 31 classification/review checks but still fails
+the independent-finding coverage gate for EN11/EN12. UV11's user-selected
+Cross-sell label is applied by materializer v0.3.8; fresh model validation of this
+changed generator is PENDING. Neither offline replay nor the policy choice grants
+human semantic, task execution or release acceptance. No deployment occurred.
+
 Latest branch-only correction: [semantic correction evidence](../review/completion-correction/README.md)
 records 167 passing tests, both dry-run builds, 205 retained-capture replays and
 two fresh UV11 calls (210/210 cycle budget). The old rules-only diagnostic remains

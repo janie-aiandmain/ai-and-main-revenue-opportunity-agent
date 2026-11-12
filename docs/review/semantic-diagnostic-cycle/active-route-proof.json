@@ -1,0 +1,26 @@
+{
+  "kind": "BOUNDED_STATIC_EXCERPTS_FROM_ACTUAL_ACTIVE_MODULES",
+  "workerRequestsExecuted": 0,
+  "hubspotCalls": 0,
+  "cloudflareWrites": 0,
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "activeVersion": "91d1135c-054e-4614-aa45-74401ba060d0",
+      "moduleSha256": "8d2c959421e68bdc221dbe6452e6fd1fddb52a48134b49a627a881695154f099",
+      "legacyReaderBindingPresent": true,
+      "evidenceLine": 349,
+      "codeExcerpt": "    const b = identityBlocker(error);\n    return json({ status: b.code, blocker: b.toJSON() }, b.code === \"insufficient_permission\" ? 403 : 401);\n  }\n  if (path === \"/operator\" || path === \"/\") return request.method === \"GET\" ? operatorConsole(env) : json({ status: \"get_required\" }, 405);\n  if (!path.startsWith(\"/certification/\")) return json({ status: \"legacy_diagnostic_disabled_use_operator\" }, 404);\n  const action = path.slice(\"/certification/\".length);\n  if (!reads.has(action) && !writes.has(action)) return json({ status: \"not_found\" }, 404);",
+      "interpretation": "Main demo rejects legacy diagnostics; frozen v0.2 rules are absent from this active bundle."
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "activeVersion": "76c27653-bb40-45cb-8ef1-50883e6a0976",
+      "moduleSha256": "cb465c98044871d2f6c06aeec95202fda2c7a31cc16dc2e016d24f5e6dfcf73a",
+      "legacyReaderBindingPresent": false,
+      "evidenceLine": 3026,
+      "codeExcerpt": "    }\n    if (path === \"/operator\") return request.method === \"GET\" ? operatorConsole(env) : json2({ status: \"get_required\" }, 405);\n    if (!path.startsWith(\"/certification/\")) {\n      if (request.method !== \"GET\") return json2({ status: \"read_only_application\" }, 405);\n      return index_default.fetch(request, env);\n    }\n    if (request.method !== \"POST\") return json2({ status: \"post_required\" }, 405);",
+      "interpretation": "Authenticated read-only fallback exists; active legacy reader binding is absent. No real CRM invocation tested."
+    }
+  ]
+}
