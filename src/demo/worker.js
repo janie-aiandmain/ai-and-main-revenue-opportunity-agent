@@ -2,6 +2,7 @@ import {operatorGateway} from '../release/gateway.js';
 import application from '../index.js';
 import {DEMO_CONTRACT,DEMO_CASES,hash} from './recovery-ledger.js';
 import {DemoHubSpot,exactTaskMatch} from './hubspot.js';
+import {MATERIALIZATION_VERSION} from '../release/reasoning.js';
 const json=(body,status=200)=>Response.json(body,{status,headers:{'cache-control':'no-store'}});
 const flags=['CRM_WRITEBACK_ENABLED','ENABLE_TEST_TASK_WRITES','ENABLE_GENERAL_EXECUTION','GENERAL_RELEASE_APPROVED'];
 async function authorized(request,env){
@@ -12,7 +13,7 @@ async function authorized(request,env){
  if(request.headers.get('Origin')&&request.headers.get('Origin')!==new URL(request.url).origin)throw Error('cross_origin_forbidden');
 }
 export async function demoFetch(request,env){
- const path=new URL(request.url).pathname;if(!path.startsWith('/demo-recovery/')){if(path==='/health')return json({service:'AI & MAIN Revenue Opportunity Agent',mode:'controlled_single_tenant_demo',crmWritesEnabled:false,sourceCommit:env.RELEASE_SOURCE_SHA||null,deploymentVersion:env.RELEASE_VERSION?.id||null,materializationVersion:'source-evidence-v0.3.6',humanReleaseAccepted:false});return operatorGateway(request,env);}
+ const path=new URL(request.url).pathname;if(!path.startsWith('/demo-recovery/')){if(path==='/health')return json({service:'AI & MAIN Revenue Opportunity Agent',mode:'controlled_single_tenant_demo',crmWritesEnabled:false,sourceCommit:env.RELEASE_SOURCE_SHA||null,deploymentVersion:env.RELEASE_VERSION?.id||null,materializationVersion:MATERIALIZATION_VERSION,humanReleaseAccepted:false});return operatorGateway(request,env);}
  try{
   await authorized(request,env);if(request.method!=='POST')return json({status:'post_required'},405);
   const text=await request.text();if(text.length>6000)throw Error('request_too_large');const input=JSON.parse(text);

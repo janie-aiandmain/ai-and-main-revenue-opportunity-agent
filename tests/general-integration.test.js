@@ -53,6 +53,18 @@ test('a materially revised prepared payload cannot resume its prior approval',()
  const changed=a.l.finishReview(input,actor,await a.l.review(input,actor,env,a.source),env);assert.notEqual(changed.payloadHash,reviewed.payloadHash);
  await assert.rejects(a.l.resumeApproval({operationId:reviewed.operationId},actor,env,a.source));assert.equal(a.l.db.prepare('SELECT revoked FROM cert_approvals WHERE id=?').get(grant.approvalId).revoked,1);assert.equal(a.posts(),0);
 }));
+test('a stored prior reasoning policy cannot reuse approval even when source and raw finding are unchanged',()=>lab(async a=>{
+ const {finding,reviewed,grant}=await a.prepare();
+ // Simulate the persisted contract from the deployment preceding this policy.
+ a.l.db.prepare('UPDATE general_contexts SET contract_hash=? WHERE context_key=?').run('sha256:prior-source-evidence-v0.3.6',a.l.contextKey(env));
+ await assert.rejects(a.l.resumeApproval({operationId:reviewed.operationId},actor,env,a.source),/review_stale/);
+ const [fresh]=await a.l.evaluate(env,a.source,a.reason);
+ assert.equal(fresh.findingId,finding.findingId);
+ assert.equal(fresh.reviewState,'PENDING');
+ assert.equal(a.l.db.prepare('SELECT revoked FROM cert_approvals WHERE id=?').get(grant.approvalId).revoked,1);
+ assert.throws(()=>a.l.approveGeneral(reviewed,actor),/review_stale/);
+ assert.equal(a.posts(),0);
+}));
 test('material fresh recommendation change revokes review and approval before any POST',()=>lab(async a=>{
  const {reviewed,grant}=await a.prepare();a.set((await a.source.readContext()).serviceHistory, [{...candidate(),recommendedNextAction:'Review pricing, but first verify the revised scope with the customer.'}]);
  await assert.rejects(a.l.executeGeneral(reviewed.operationId,grant.approvalId,actor,env,a.source,a.reason,a.client));assert.equal(a.posts(),0);

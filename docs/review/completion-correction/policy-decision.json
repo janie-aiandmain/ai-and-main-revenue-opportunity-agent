@@ -1,0 +1,14 @@
+{
+  "kind": "USER_POLICY_DECISION_NOT_SEMANTIC_OR_EXECUTION_APPROVAL",
+  "caseId": "UV11",
+  "decision": "Verify current interest internally; retain documented renovation completion.",
+  "attribution": "Explicit user response in this conversation",
+  "identityAssurance": "Chat-attributed decision; no external identity inferred",
+  "recordedAt": "2026-11-12T19:26:27.144254+00:00",
+  "userSuppliedDecisionTimestamp": null,
+  "reviewArtifact": "docs/release/uv11-review.json",
+  "reviewArtifactSha256": "278fb79b6252225efff71a02873e525249320a74a28de58415df6789a23991b2",
+  "humanSemanticVerdict": "PENDING_FOR_REVISED_OUTPUTS",
+  "finalExecutionApproval": false,
+  "releaseApproval": false
+}

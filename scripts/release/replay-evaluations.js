@@ -1,6 +1,6 @@
 // Re-materialize exact, independently generated captures. Never claim fresh calls.
 import {readFile,writeFile,readdir} from 'node:fs/promises';
-import {materializeCorrected} from '../../src/release/reasoning.js';
+import {materializeCorrected,MATERIALIZATION_VERSION} from '../../src/release/reasoning.js';
 import {prepareHistory} from '../../src/findings.js';
 import {inspectFinding} from '../../src/staging/review-policy.js';
 import {gradeFindings,hash} from '../regression/findings-core.js';
@@ -17,5 +17,5 @@ rows.push({id:old.id,run:old.repeat||1,captureFile:file,sourceTime:time,rawOutpu
 }}
 const consistency=[];
 for(const id of new Set(rows.map(r=>r.id))){const group=rows.filter(r=>r.id===id);if(group.length<3)continue;const signatures=group.map(r=>JSON.stringify(r.actual.findings.map(f=>({type:f.opportunityType,classification:f.classification,humanReview:f.humanReviewRequired,noteIds:f.evidence.map(e=>e.noteId).sort(),purpose:f.proposedAction.actionPurpose})).sort((a,b)=>a.type.localeCompare(b.type))));const rawKeys=[...new Set(group.map(r=>JSON.stringify(r.actual.findings.map(f=>f.opportunityKey).sort())))];consistency.push({id,independentCaptures:group.length,semanticDecisionStable:new Set(signatures).size===1,allPass:group.every(r=>r.passed),rawKeys,rawKeyStable:rawKeys.length===1,exactDraftVersionsStable:new Set(group.map(r=>JSON.stringify(r.actual.findings.map(f=>f.proposedAction.actionVersion).sort()))).size===1,exactRecommendationsStable:new Set(group.map(r=>JSON.stringify(r.actual.findings.map(f=>f.recommendedNextAction).sort()))).size===1});}
-const result={kind:'OFFLINE_FINAL_POLICY_REPLAY_OF_INDEPENDENT_MODEL_CAPTURES_NOT_NEW_CALLS',newModelCalls:0,providerPromptUnchanged:true,materializationVersion:'source-evidence-v0.3.6',rows,summary:{captures:rows.length,passed:rows.filter(r=>r.passed).length,failures:rows.filter(r=>!r.passed).map(r=>({id:r.id,capture:r.captureFile,quality:r.quality,missing:r.missingRequiredEvidence})),consistency,semanticConsistencyRate:consistency.filter(r=>r.semanticDecisionStable).length/consistency.length,rawKeyDriftCases:consistency.filter(r=>!r.rawKeyStable).map(r=>r.id),newHumanApprovals:0}};
+const result={kind:'OFFLINE_FINAL_POLICY_REPLAY_OF_INDEPENDENT_MODEL_CAPTURES_NOT_NEW_CALLS',newModelCalls:0,providerPromptUnchanged:true,materializationVersion:MATERIALIZATION_VERSION,rows,summary:{captures:rows.length,passed:rows.filter(r=>r.passed).length,failures:rows.filter(r=>!r.passed).map(r=>({id:r.id,capture:r.captureFile,quality:r.quality,missing:r.missingRequiredEvidence})),consistency,semanticConsistencyRate:consistency.filter(r=>r.semanticDecisionStable).length/consistency.length,rawKeyDriftCases:consistency.filter(r=>!r.rawKeyStable).map(r=>r.id),newHumanApprovals:0}};
 await writeFile('reports/release-final-policy-replay.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result.summary,null,2));process.exitCode=result.summary.failures.length?1:0;

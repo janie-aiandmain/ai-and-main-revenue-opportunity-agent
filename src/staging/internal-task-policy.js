@@ -2,10 +2,11 @@
 import {sourceAnchors,TASK_CLASS} from '../correction-policy.js';
 import {canonical} from '../findings.js';
 import {createHash} from 'node:crypto';
-export const INTERNAL_TASK_POLICY='internal-task-policy-v1.2';
-export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2.2';
+export const INTERNAL_TASK_POLICY='internal-task-policy-v1.3';
+export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2.3';
 const digest=v=>'sha256:'+createHash('sha256').update(canonical(v)).digest('hex');
-const relative=/\b(?:today|tomorrow|this week|by (?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)|end of (?:the )?day)\b/ig;
+// Terminal "pricing now" is timing; "customer now requests" can describe a reversal.
+const relative=/\b(?:now(?=\s*(?:[.!?;]|$))|today|tomorrow|this week|by (?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)|end of (?:the )?day)\b/ig;
 const before=/\bbefore\b.{0,60}\b(?:work|continu|proceed|start|install)/i;
 const deferred=/\b(?:after|once|when|until)\b.{0,100}\b(?:complete|finished|done|renovation|remodel|permit|approval|parts)/i;
 export function explicitSourceDates(text){
@@ -19,6 +20,7 @@ export function internalPlan(finding,history,inspection,now){
  const actionPurpose=preparation?'internal_preparation':'internal_verification';
  let instruction=preparation?'Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.':'Internally verify the current request and relevant records. Do not contact the customer or authorize work.';
  if(before.test(text))instruction='Internally verify the current job status and whether additional work has already started. Preserve pricing before additional work. Do not authorize work, scheduling or customer contact.';
+ else if(inspection.documentedCompletion)instruction='Internally verify current interest and consent using current records. Retain the documented renovation completion reported at '+inspection.documentedCompletion.sourceTimestamp+'. No customer contact, scheduling or work is authorized.';
  else if(deferred.test(text))instruction='Internally verify documented event completion and current consent. Customer follow-up remains conditional on both; if evidence is missing, leave it blocked. No customer contact or scheduling.';
  else if(finding.opportunityType==='retention')instruction='Internally verify the current status of the reported service issue and current customer request. Do not assume the complaint remains unresolved. No customer contact or billing action.';
  else if(hasTiming)instruction='Internally verify current interest and timing using current records. The source decision window or relative request is historical or unresolved and is not renewed. No customer contact.';
@@ -26,7 +28,7 @@ export function internalPlan(finding,history,inspection,now){
  for(const e of evidence)for(const date of explicitSourceDates(e.quote))sourceTiming.push({noteId:e.noteId,sourceTimestamp:e.timestamp,wording:date.wording,date:date.date,status:date.date<now.slice(0,10)?'HISTORICAL_ABSOLUTE_DATE_NOT_RENEWED':'ABSOLUTE_SOURCE_DATE_REQUIRES_REVIEW',customerTimezone:'UNKNOWN',taskDeadline:false});
  const gates=inspection.executionBlocks.map(b=>({...b,appliesTo:'customer_action',satisfiedByInternalVerification:false}));
  const restrictions=evidence.filter(e=>/\b(?:do not|don.t|never|no|must not|unless|until|before|after|once|when|only|without)\b/i.test(e.quote));
- return {actionPurpose,instruction,evidence,sourceTiming,customerActionGates:gates,sourceRestrictions:restrictions,customerActionPermitted:false};
+ return {actionPurpose,instruction,evidence,sourceTiming,customerActionGates:gates,sourceRestrictions:restrictions,customerActionPermitted:false,...(inspection.documentedCompletion?{documentedCompletion:inspection.documentedCompletion}:{})};
 }
 export function internalProjection(finding,history,inspection,{priority,taskDueAt},contextKey,now,requestedPurpose){
  const plan=internalPlan(finding,history,inspection,now);
@@ -35,7 +37,7 @@ export function internalProjection(finding,history,inspection,{priority,taskDueA
  if(requestedPurpose==='internal_preparation'&&plan.actionPurpose!=='internal_preparation')throw Error('internal_verification_required_before_preparation');
  if(!Number.isFinite(Date.parse(now))||plan.evidence.some(e=>!Number.isFinite(Date.parse(e.timestamp))||Date.parse(e.timestamp)>Date.parse(now)))throw Error('invalid_or_future_source_evidence');
  const instruction=requestedPurpose===plan.actionPurpose?plan.instruction:'Internally verify the current pricing request and its scope. No customer contact or additional service steps.';
- const material={policyVersion:INTERNAL_TASK_POLICY,proposalVersion:INTERNAL_PROPOSAL_VERSION,actionClass:TASK_CLASS,targetContext:contextKey,classification:finding.classification,opportunityType:finding.opportunityType,intent:requestedPurpose==='internal_verification'?'verify_current_state':'prepare_quote',actionPurpose:requestedPurpose,scope:{sourceRequests:plan.evidence.map(e=>e.quote)},priority,evidence:plan.evidence,timing:{kind:'none'},operatorTaskDueAt:taskDueAt??null,sourceTimingConstraints:plan.sourceTiming,customerActionGates:plan.customerActionGates,sourceRestrictions:plan.sourceRestrictions,customerActionPermitted:false,humanApprovalRequired:true};
+ const material={policyVersion:INTERNAL_TASK_POLICY,proposalVersion:INTERNAL_PROPOSAL_VERSION,actionClass:TASK_CLASS,targetContext:contextKey,classification:finding.classification,opportunityType:finding.opportunityType,intent:requestedPurpose==='internal_verification'?'verify_current_state':'prepare_quote',actionPurpose:requestedPurpose,scope:{sourceRequests:plan.evidence.map(e=>e.quote)},priority,evidence:plan.evidence,timing:{kind:'none'},operatorTaskDueAt:taskDueAt??null,sourceTimingConstraints:plan.sourceTiming,customerActionGates:plan.customerActionGates,sourceRestrictions:plan.sourceRestrictions,customerActionPermitted:false,humanApprovalRequired:true,...(plan.documentedCompletion?{documentedCompletion:plan.documentedCompletion}:{})};
  const body=[instruction,'Action purpose: '+requestedPurpose+'. This task is internal only; it grants no customer action.','Source evidence (verbatim text, with original UTC timestamps):',...plan.evidence.map(e=>'['+e.timestamp+'; '+e.noteId+'] '+e.quote),'Source-relative timing: '+canonical(plan.sourceTiming),'Customer-action gates (not satisfied by this task): '+canonical(plan.customerActionGates),'Exact source restrictions: '+plan.sourceRestrictions.map(e=>e.quote).join('\n'),'Internal task due: '+(taskDueAt||'NOT SET — final task approval blocked')+'. Operator-selected task timing does not renew a customer deadline.','Authority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.'].join('\n');
  const payload={type:TASK_CLASS,target:{contextKey},properties:{hs_task_subject:(requestedPurpose==='internal_verification'?'Internal verification: ':'Internal pricing preparation: ')+finding.opportunityKey.replaceAll('-',' '),hs_task_body:escape(body),hs_task_priority:priority,hs_task_status:'NOT_STARTED',hs_task_type:'TODO',...(taskDueAt?{hs_timestamp:new Date(taskDueAt).toISOString()}:{})}};
  return {material,payload};
