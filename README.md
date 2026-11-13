@@ -1,5 +1,9 @@
 # AI & MAIN Revenue Opportunity Agent
 
+Email sender follow-up: [selected From / Reply-To and remaining setup](docs/review/email-sender/README.md).
+The disabled demo template uses alerts@aiandmain.ai, with replies and alerts going
+to janie@aiandmain.ai. Domain verification and the sending Secret remain unverified.
+
 Latest source cycle: [supported multi-finding gate and operator email alerts](docs/review/workflow-email/README.md).
 `regression:offline` now exercises the supported finding workflow; the limited
 rules commands remain separately available with their original failures visible.

@@ -1,0 +1,12 @@
+{
+  "kind": "EMAIL_SENDER_FOLLOWUP_EVIDENCE",
+  "files": {
+    "README.md": "7d4c4835ebed6eb4eda1f353cd1c7a3dfd1ccd9e7e5484c716c6906145de8dea",
+    "demo-build.txt": "42541427dd458fe7b793b1f4d95db46047642f2a3b839ac0ce6a8bad81e53264",
+    "offline.txt": "ab6e7d8758c2850391eeb66e0483f0d2df5177b595fa597fc1df01b835938a33",
+    "owner-build.txt": "e737c16a8b6d944145a9f04dd778452c2582194341b88feeb31c7e205ad2f684",
+    "results.json": "0eceb7bf1337786cd4ca122b8ea4dd058aacf71b67ee52f30eb29a7ad83ed66c",
+    "tests.txt": "db407cfd21c90cb4259df6ca16d351fdd9cadd9d5e1540e0401ee7e7f253dc21",
+    "user-decision.json": "f4dd7d56a23b1d25240e7490aa40c4b95a516dc8316e0d30110b04b0f6f81795"
+  }
+}

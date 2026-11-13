@@ -7,7 +7,7 @@ import {materializeCorrected} from '../src/release/reasoning.js';
 import {prepareHistory} from '../src/findings.js';
 import {emailConfig} from '../src/staging/email-notifications.js';
 const clock=Date.parse('2026-11-13T12:00:00Z');
-const env={STAGING_PORTAL_ID:'synthetic-portal',STAGING_CONTACT_ID:'synthetic-contact',OPERATOR_EMAIL_ENABLED:'true',OPERATOR_EMAIL_PROVIDER:'resend',OPERATOR_EMAIL_FROM:'alerts@example.test',OPERATOR_EMAIL_TO:'operator@example.test',OPERATOR_EMAIL_API_KEY:'synthetic-not-a-real-key',OPERATOR_CONSOLE_URL:'https://demo.example.test/operator'};
+const env={STAGING_PORTAL_ID:'synthetic-portal',STAGING_CONTACT_ID:'synthetic-contact',OPERATOR_EMAIL_ENABLED:'true',OPERATOR_EMAIL_PROVIDER:'resend',OPERATOR_EMAIL_FROM:'alerts@example.test',OPERATOR_EMAIL_TO:'operator@example.test',OPERATOR_EMAIL_REPLY_TO:'replies@example.test',OPERATOR_EMAIL_API_KEY:'synthetic-not-a-real-key',OPERATOR_CONSOLE_URL:'https://demo.example.test/operator'};
 const text='Customer requests Level 2 EV charger pricing.';
 const candidate=(quote=text,key='charger-pricing',patch={})=>({opportunityKey:key,classification:'strong cross-sell opportunity',opportunityType:'cross-sell',confidence:'high',evidence:[{noteId:'n',quote}],reasoningSummary:'Synthetic request.',recommendedNextAction:'Internal pricing preparation only. No customer contact.',humanReviewRequired:true,...patch});
 function open(path=':memory:',settings=env){
@@ -19,11 +19,19 @@ function open(path=':memory:',settings=env){
  };
  return {raw,db,ledger,outbox:ledger.emailOutbox,accept};
 }
+test('Reply-To is optional for other clients and absent settings never emit a malformed provider field',async()=>{
+ const settings={...env};delete settings.OPERATOR_EMAIL_REPLY_TO;
+ const a=open(':memory:',settings);try{
+  await a.accept();const request=JSON.parse(a.raw.prepare('SELECT request_json FROM operator_email_outbox').get().request_json);
+  assert.equal('reply_to' in request,false);assert.equal('replyTo' in emailConfig(settings),false);
+ }finally{a.raw.close();}
+});
 test('HIGH and Immediate Review each enqueue once; both together produce one email, with minimal metadata',async()=>{
  const a=open();try{
   const [f]=await a.accept();await a.accept();assert.equal(a.outbox.status().length,1);
   assert.equal(a.outbox.status()[0].state,'PENDING');assert.equal(a.raw.prepare('SELECT count(*) n FROM cert_approvals').get().n,0);
   const request=JSON.parse(a.raw.prepare('SELECT request_json FROM operator_email_outbox').get().request_json);
+  assert.equal(request.from,'alerts@example.test');assert.deepEqual(request.to,['operator@example.test']);assert.equal(request.reply_to,'replies@example.test');
   assert(!request.text.includes(text));assert(!request.text.includes('synthetic-contact'));assert(!request.text.includes('synthetic-portal'));
   assert.match(request.text,/No|no task/);assert.match(request.text,/2026-11-12T12:00:00Z/);assert.match(request.text,new RegExp(f.findingId));
  }finally{a.raw.close();}
@@ -43,7 +51,7 @@ test('a lower-priority finding produces no email; disabled delivery and invalid 
   a.raw.close();a=open();await a.accept();let calls=0;const fetcher=async()=>{calls++;throw Error('should_not_send');};
   await a.outbox.deliver({...env,OPERATOR_EMAIL_ENABLED:'false'},{fetcher,now:()=>clock});
   assert.equal((await a.outbox.deliver({...env,OPERATOR_EMAIL_API_KEY:''},{fetcher,now:()=>clock})).blocker,'operator_email_configuration_incomplete');assert.equal(calls,0);
-  for(const patch of [{OPERATOR_EMAIL_TO:'bad\r\nBcc: other@example.test'},{OPERATOR_EMAIL_PROVIDER:'other'},{OPERATOR_CONSOLE_URL:'https://user:secret@example.test/operator'},{OPERATOR_CONSOLE_URL:'https://demo.example.test/operator?token=secret'}])assert.throws(()=>emailConfig({...env,...patch}));
+  for(const patch of [{OPERATOR_EMAIL_TO:'bad\r\nBcc: other@example.test'},{OPERATOR_EMAIL_REPLY_TO:'bad\r\nBcc: other@example.test'},{OPERATOR_EMAIL_REPLY_TO:''},{OPERATOR_EMAIL_FROM:'bad\nother@example.test'},{OPERATOR_EMAIL_PROVIDER:'other'},{OPERATOR_CONSOLE_URL:'https://user:secret@example.test/operator'},{OPERATOR_CONSOLE_URL:'https://demo.example.test/operator?token=secret'}])assert.throws(()=>emailConfig({...env,...patch}));
  }finally{a.raw.close();}
 });
 test('same opportunity with synonymous key wording keeps durable identity and does not send a second alert',async()=>{
@@ -131,7 +139,9 @@ test('temporary errors back off; credential rejection and recipient changes bloc
    let calls=0;await a.outbox.deliver(env,{now:()=>clock+1,fetcher:async()=>{calls++;}});assert.equal(calls,0);
   }finally{a.raw.close();}
  }
- const a=open();try{await a.accept();let calls=0;await a.outbox.deliver({...env,OPERATOR_EMAIL_TO:'other@example.test'},{now:()=>clock,fetcher:async()=>{calls++;}});assert.equal(calls,0);assert.equal(a.outbox.status()[0].errorCode,'email_route_changed');}finally{a.raw.close();}
+ for(const patch of [{OPERATOR_EMAIL_TO:'other@example.test'},{OPERATOR_EMAIL_REPLY_TO:'other@example.test'}]){
+  const a=open();try{await a.accept();let calls=0;await a.outbox.deliver({...env,...patch},{now:()=>clock,fetcher:async()=>{calls++;}});assert.equal(calls,0);assert.equal(a.outbox.status()[0].errorCode,'email_route_changed');}finally{a.raw.close();}
+ }
 });
 test('failed or in-progress evaluation cannot send a previously queued alert',async()=>{
  const a=open();try{

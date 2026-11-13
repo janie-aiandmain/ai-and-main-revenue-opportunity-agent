@@ -1,14 +1,15 @@
 // Operator alerts only. No customer content, CRM write authority or model calls.
 import {digest} from './operation-ledger.js';
-export const NOTIFICATION_POLICY='operator-email-alerts-v1';
+export const NOTIFICATION_POLICY='operator-email-alerts-v1.1';
 const WINDOW=23*60*60*1000; // Below Resend's documented 24h idempotency retention.
 const address=s=>typeof s==='string'&&/^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(s)&&s.length<255;
 export function emailConfig(env){
  if(env.OPERATOR_EMAIL_ENABLED!=='true')return null;
  if(env.OPERATOR_EMAIL_PROVIDER!=='resend'||!address(env.OPERATOR_EMAIL_FROM)||!address(env.OPERATOR_EMAIL_TO)||!env.OPERATOR_EMAIL_API_KEY)throw Error('operator_email_configuration_incomplete');
+ if(env.OPERATOR_EMAIL_REPLY_TO!==undefined&&!address(env.OPERATOR_EMAIL_REPLY_TO))throw Error('operator_email_reply_to_invalid');
  const url=new URL(env.OPERATOR_CONSOLE_URL);
  if(url.protocol!=='https:'||url.username||url.password||url.search||url.hash||url.pathname!=='/operator')throw Error('operator_email_console_url_invalid');
- return {from:env.OPERATOR_EMAIL_FROM,to:env.OPERATOR_EMAIL_TO,consoleUrl:url.href};
+ return {from:env.OPERATOR_EMAIL_FROM,to:env.OPERATOR_EMAIL_TO,consoleUrl:url.href,...(env.OPERATOR_EMAIL_REPLY_TO?{replyTo:env.OPERATOR_EMAIL_REPLY_TO}:{})};
 }
 function snapshot(finding,priority){
  const f=finding.modelFinding,a=f.proposedAction,m=a.material,urgent=m.reviewRouting?.queue==='immediate_review';
@@ -37,7 +38,7 @@ export class OperatorEmailOutbox {
   if(!s.eligible||env.OPERATOR_EMAIL_ENABLED!=='true')return;
   let config;try{config=emailConfig(env);}catch{return;}
   const id='alert_'+digest({contextKey,findingId:finding.findingId,revision,fingerprint}).slice(7);
-  const request={from:config.from,to:[config.to],subject:'AI & MAIN — '+(s.urgent?'IMMEDIATE REVIEW':'HIGH priority')+' finding',text:[
+  const request={from:config.from,to:[config.to],...(config.replyTo?{reply_to:config.replyTo}:{}),subject:'AI & MAIN — '+(s.urgent?'IMMEDIATE REVIEW':'HIGH priority')+' finding',text:[
    s.urgent?'Immediate internal review: source reports a scope-change request during in-progress work.':'A HIGH-priority agent finding needs operator review.',
    'Finding: '+finding.findingId,'Classification: '+s.classification,'Source timestamps (UTC): '+s.sourceTimestamps.join(', '),
    'Historical evidence does not establish current job status, current interest or a new deadline.',

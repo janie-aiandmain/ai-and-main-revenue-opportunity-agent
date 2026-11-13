@@ -22,6 +22,14 @@ do not deploy, send real email, call HubSpot, alter credentials/permissions or s
 fresh model calls in this source-only cycle. No new infrastructure is required.
 Keep all write/test/fault/release flags false and preserve earlier evidence.
 
+The user subsequently selected alerts@aiandmain.ai as From, janie@aiandmain.ai as
+Reply-To, and retained janie@aiandmain.ai as recipient. The disabled demo template
+records those ordinary settings. operator-email-alerts-v1.1 includes optional,
+validated Reply-To in both the persisted provider request and route hash. Changing
+it blocks an old pending request rather than reusing its idempotency key with new
+headers. Sender/domain verification and a sending Secret remain unverified;
+this selection does not authorize deployment, live mail or CRM execution.
+
 Work on the `enterprise-hardening` branch unless explicitly instructed otherwise. Do not merge to `main` automatically.
 
 ## Product boundary

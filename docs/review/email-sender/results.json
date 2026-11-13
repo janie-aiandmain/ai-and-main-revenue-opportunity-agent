@@ -1,0 +1,53 @@
+{
+  "kind": "EMAIL_SENDER_REPLY_TO_SOURCE_ONLY_VALIDATION",
+  "baselineCommit": "3094bb2939994954071b58dd44544bb040ddc189",
+  "notificationPolicy": "operator-email-alerts-v1.1",
+  "from": "alerts@aiandmain.ai",
+  "replyTo": "janie@aiandmain.ai",
+  "recipient": "janie@aiandmain.ai",
+  "senderDomainVerified": "UNVERIFIED",
+  "sendingCredential": "UNVERIFIED",
+  "enabled": false,
+  "commands": [
+    {
+      "command": "npm test",
+      "exit": 0,
+      "passed": 206
+    },
+    {
+      "command": "npm run regression:offline",
+      "exit": 0,
+      "executions": 207,
+      "passed": 207
+    },
+    {
+      "command": "npm run check",
+      "exit": 0,
+      "kind": "DRY_RUN"
+    },
+    {
+      "command": "npm run staging:check",
+      "exit": 0,
+      "kind": "DRY_RUN"
+    }
+  ],
+  "realEmailsSent": 0,
+  "modelCalls": 0,
+  "hubspotCalls": 0,
+  "deployments": 0,
+  "wranglerChanges": false,
+  "findingOutputChanges": 0,
+  "previousEvidenceManifestVerified": true,
+  "sourceSha256": {
+    "src/staging/email-notifications.js": "13db39fe6efb51f1bd541c7bbfc6c6d7eb73b01df83950257eecd459002a7601",
+    "config/email-notifications.demo.json": "290d2a5029fa29c8190180545a0d12f19643d8697756b31466850a33b2f4a545",
+    "tests/email-notifications.test.js": "d6b11e6eba94288adf685f5b06c1e234967d7a27d7949690ad4792342caf4ea5",
+    "tests/native-email-alarm.test.js": "e6ddb23e6912b6ad5548c73efad0eb7be7ebbb96788b00d57f61b81fbfd29e09"
+  },
+  "limitations": [
+    "All mail-provider responses are synthetic/intercepted, including the native Worker alarm test.",
+    "No domain/DNS/provider credential check was performed.",
+    "Human semantics, fresh model validation and execution/release acceptance remain separate and pending."
+  ],
+  "logFormatting": "Trailing whitespace removed only from new command logs."
+}
