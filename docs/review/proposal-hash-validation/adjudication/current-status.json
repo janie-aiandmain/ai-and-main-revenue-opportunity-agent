@@ -1,0 +1,967 @@
+{
+  "kind": "HASH_BOUND_USER_SEMANTIC_DECISION_STATUS",
+  "eventId": "fresh-semantic-packet-076a48ba3f20650afbd7c6893cc8b55e6f988c513f8c48a8fa0acb0c5ecc0e4d",
+  "packetCommit": "834cd69c7817012779dc8cf86b099c9f7bcd5acb",
+  "sourceReportHash": "ac722851f2f89306f1a1ebe512e4da61a2d4d3f147ebc91e402b41c62eb9fab6",
+  "scope": "HUMAN_SEMANTIC_ONLY",
+  "acceptedExecutions": 32,
+  "acceptedFindingInstances": 33,
+  "verdict": "PASS",
+  "outputs": [
+    {
+      "reviewId": "hash-validation-01",
+      "caseId": "ST03",
+      "repeat": 1,
+      "outputHash": "1c9d5b2ae7f32304a9fd1e55a799918befcb9407ee813366d9a9725dd4dbf15b",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "16c7652b701e10fa27f2839724a070c73b34dd5e3f04e84abe3e9290cd40188f"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-02",
+      "caseId": "ST03",
+      "repeat": 2,
+      "outputHash": "f92c946840ddb437406573a9f29289aa45456315f23f81eef0620efd03b109ac",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "7ee67976a3e9a4e35dad6e967261a00e882e71090cc70cede7bf45875b77e9a4"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-03",
+      "caseId": "ST03",
+      "repeat": 3,
+      "outputHash": "45a13929745a67faa974c26526b263f825896d86cbf6dfc7ab428d5083ed3ce8",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "18d2173690ea6fcee9b56046c4d1dd237fcf9116d9cefc7f5fafb40984842e17"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-04",
+      "caseId": "ST04",
+      "repeat": 1,
+      "outputHash": "4de216ee9187620f9977f559c6ff246b4eb61dd98ae53bc9fdb0751aa33c2b3c",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "fa0bddecc5c1158687a5403b3aa0268a1dd36dadb99d9f20398bfd800a79d140"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-05",
+      "caseId": "ST04",
+      "repeat": 2,
+      "outputHash": "8db11e539233ab382702040b49536250afeff1543ad48a0b42f02e44be46081c",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "71e9251a7249fa629f3e64b8eb9c90b3efaf46b649bb503fc40c2262d8552d73"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-06",
+      "caseId": "ST04",
+      "repeat": 3,
+      "outputHash": "74b526bdeffd53249ab5f1cea16c8aa65dc5ac3b4b12f3ea98b215ffc80c8fd1",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "84c8abfc27bdabc34b497311958909ba68bdcd490da715cf333407a085f8497e"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-07",
+      "caseId": "ST07",
+      "repeat": 1,
+      "outputHash": "58e6fe052652e4c61f4c7ade9e226389285b2b6ab27f540b69abb3f8e7061935",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "3015c31c59047e8592417221ab057c46f897ac746be277a1e0c4ed60a774d41f"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-08",
+      "caseId": "ST07",
+      "repeat": 2,
+      "outputHash": "e419e18e6d2d62cd8776ba1eefaf32741ccdb28c6a5aec9a52e18df699dbd78a",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "2b0f309760b140e986dd07be34af47fbdfce5259ad8c530387371ad2154bf0f3"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-09",
+      "caseId": "ST07",
+      "repeat": 3,
+      "outputHash": "239552bae3c1613e1e3701e95f764763b1fa1669f16d80393c7c46fdc1c4ad90",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "1a94fb465023a09b32d15b457dbbbdb4450ba4c9e43c8100578f7df36dba05ee"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-10",
+      "caseId": "ST08",
+      "repeat": 1,
+      "outputHash": "38c655b85b7d74f1a85ca29ff26cc2397a135f8057ee6e1af03661f9ff474bcd",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "530383ce32795cea54046125167f558e1b414f46eadd540e8523d8e370c2a43d"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-11",
+      "caseId": "ST08",
+      "repeat": 2,
+      "outputHash": "38c655b85b7d74f1a85ca29ff26cc2397a135f8057ee6e1af03661f9ff474bcd",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "f0163514d0e655336a8de3ca25310e6d6802ebcd27387e13c7bed5dbbf8c3615"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-12",
+      "caseId": "ST08",
+      "repeat": 3,
+      "outputHash": "6363d6085485b56f8abd7c278ed82cf598307bf8b6f19fc113dd0b93f8fd4970",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "a3e133b6d16a52f5bcb206a9009e3e8305ad454b5d2645ee845ae30dfc21d556"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-13",
+      "caseId": "EN11",
+      "repeat": 1,
+      "outputHash": "a0d9b9633d3f32d7d109e56e8dba4f14d7a2b294e54a4eabee0bc412b30ba9a3",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "b25cd84570fb384b20d1b6322fd23db2b74572f4c09fd1c0675d054d2819b402",
+        "54f92413a6a028d9e3ecc67bf6b4d0cbdce1b4c5503f02931170d248242d552c"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-14",
+      "caseId": "EN11",
+      "repeat": 2,
+      "outputHash": "53722372a0df377145f29cae61d91c3c2d2445486e28b8a3cd85fdec1a477db1",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "10a69a6444d4c75b7e522e2790a8aaf3b4f54eb9a3c494a393d6c84b012fd821",
+        "828e5252b5a0d78580cbb4373970708524d918e3210536f300de15d638f7ba79"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-15",
+      "caseId": "EN11",
+      "repeat": 3,
+      "outputHash": "eea5076f78ccc78b5f638b60eaacb19666cd51244d30df1b7dc0a3a40ba6e5e8",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "fbcf7a64816f3e6a8ade05f77083f075bc509866d5549b296eb89c08e1a02a5e",
+        "60ca29c4b95d45032217e11920c13a8d969d2de17f21941a15f0da0719e3e5e9"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-16",
+      "caseId": "EN12",
+      "repeat": 1,
+      "outputHash": "a682e25781f46fc61e6a2f7248c1974868761dbd58300c218633c306fe9d630f",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "c966ad23eca673bc49e81de27f3200983394b4b05021eced64b822a10eccc04d",
+        "7357c9cd38fc1770dadf3467e2cf7729b97363298ad10b47f9e95027453bb528"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-17",
+      "caseId": "EN12",
+      "repeat": 2,
+      "outputHash": "3bed46ecf6e91d930a586af2f679e6cfc674dab74422446b48e7a3a285af7bc3",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "b4e6ae0b05ac360553ab72a09213219e8de6ca6d1b44c7abe32ed3ecda3c55e0",
+        "844540d2ca555a5d5188d7c66332114b9a13f9c9aa330d0578373b55934d93a6"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-18",
+      "caseId": "EN12",
+      "repeat": 3,
+      "outputHash": "fa52703148c2702d6bf80a276a11833e60ef00a42bf9ad28ccbc752dfb062ef3",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "c7d33debc90b4f9d5666cfcaae097f509037f549e3a8612858ce202adb031582",
+        "5b39b3e5341517efc1bd797a00387465c0cf9eb4426ad831258d752fe8f1cda9"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-19",
+      "caseId": "EN31",
+      "repeat": 1,
+      "outputHash": "7d0b819ba859e0da51fb2a365bcb7b3f5fd0ce69054193e1f95b72a6701ca81b",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "501a5ab6d6f230e1b8ec636ae33760089ac4f009e3f761909b86c6bc51c9ef64"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-20",
+      "caseId": "EN31",
+      "repeat": 2,
+      "outputHash": "f14940c3b115ec1df1f43221bfce1103843173efe7d4550f9863eafbc1d19079",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "0b516fb3391a4152fb1a22539c3b2d7b50ccdfc6fad66d1f0e233e8df65458aa"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-21",
+      "caseId": "EN31",
+      "repeat": 3,
+      "outputHash": "d2fb0ea0ce3016390d79ca0a5f7fd15c1b53efa58705487cf41f7925023472ea",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "238d4944252c95d59c5b1216da8189ac464ca4264e125038adae75463d598255"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-22",
+      "caseId": "UV11",
+      "repeat": 1,
+      "outputHash": "162ca8b9b33d9c624f90a222e8d18d6a9ebb2bae36c17bc7e3d955cfef47570e",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "a7ec8625a04d077ba5493f58cfa0b375a5942b6e8ee03a8ad0fad4601cbf4b45"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-23",
+      "caseId": "UV11",
+      "repeat": 2,
+      "outputHash": "d7c3cb22dc0ad8f58170c2a914cbc857262852ae0e590693f549803635595d01",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "27792b889d3cc9e4eb5fac3387f6ce2c00eadd1d9f6be41167f784b20e7f7a87"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-24",
+      "caseId": "UV11",
+      "repeat": 3,
+      "outputHash": "7c4c86dfda48f9db97e468f4607210b498b6debc5f918cf0dcec66a42cf3cd99",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "a8732d194c35d01dd984aecf8f560595ca41f63e81689acf407a619519b2baf1"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-25",
+      "caseId": "RQ02",
+      "repeat": 1,
+      "outputHash": "57e77f34690fdb1c51d1637a2396c6b8e4f6976105448e3497586df596d6e26e",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "be253ccee52f3e16acba709fca5221e3c5c8a0ad8632b409a51287ab8398caf1"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-26",
+      "caseId": "RQ02",
+      "repeat": 2,
+      "outputHash": "bfee3bd1aaebea92d846faceada78a4864e635553b1ab39b705f3b02e9c903ec",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "b1359b1ab4e4f5123bd319ed112368f2681291702b5611202120bd7b90afb992"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-27",
+      "caseId": "RQ02",
+      "repeat": 3,
+      "outputHash": "44c048cd51130be7f5a8f778f3fb634c3ede6bb2ab42fe24048b0c5c30691643",
+      "noFindingProposed": false,
+      "verdict": "PASS",
+      "reviewedFindingHashes": [
+        "b9349d65390477d10758017342130c115197b3eb582176ec8f442842a85cd1c8"
+      ]
+    },
+    {
+      "reviewId": "hash-validation-28",
+      "caseId": "ST01",
+      "repeat": 1,
+      "outputHash": "c7acae25fdbc6355a14b03bd2f634888af3f77fad01d19427f8490d4409d434a",
+      "noFindingProposed": true,
+      "verdict": "PASS",
+      "reviewedFindingHashes": []
+    },
+    {
+      "reviewId": "hash-validation-29",
+      "caseId": "ST02",
+      "repeat": 1,
+      "outputHash": "c7acae25fdbc6355a14b03bd2f634888af3f77fad01d19427f8490d4409d434a",
+      "noFindingProposed": true,
+      "verdict": "PASS",
+      "reviewedFindingHashes": []
+    },
+    {
+      "reviewId": "hash-validation-30",
+      "caseId": "ST05",
+      "repeat": 1,
+      "outputHash": "c7acae25fdbc6355a14b03bd2f634888af3f77fad01d19427f8490d4409d434a",
+      "noFindingProposed": true,
+      "verdict": "PASS",
+      "reviewedFindingHashes": []
+    },
+    {
+      "reviewId": "hash-validation-31",
+      "caseId": "ST09",
+      "repeat": 1,
+      "outputHash": "c7acae25fdbc6355a14b03bd2f634888af3f77fad01d19427f8490d4409d434a",
+      "noFindingProposed": true,
+      "verdict": "PASS",
+      "reviewedFindingHashes": []
+    },
+    {
+      "reviewId": "hash-validation-32",
+      "caseId": "EN20",
+      "repeat": 1,
+      "outputHash": "c7acae25fdbc6355a14b03bd2f634888af3f77fad01d19427f8490d4409d434a",
+      "noFindingProposed": true,
+      "verdict": "PASS",
+      "reviewedFindingHashes": []
+    }
+  ],
+  "findings": [
+    {
+      "reviewId": "hash-validation-01/garage-three-outlets",
+      "callId": "hash-validation-01",
+      "caseId": "ST03",
+      "repeat": 1,
+      "outputHash": "1c9d5b2ae7f32304a9fd1e55a799918befcb9407ee813366d9a9725dd4dbf15b",
+      "reviewItemHash": "16c7652b701e10fa27f2839724a070c73b34dd5e3f04e84abe3e9290cd40188f",
+      "modelKeyDerivedFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+      "opportunityKey": "garage-three-outlets",
+      "classification": "scope-change opportunity",
+      "opportunityType": "scope change",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:5e3f1b08b017cb62640b0853fc305fad3a2ac96103766c6b8555c62af60593c2",
+      "proposedDraftPayloadHash": "d8d2414c52295e1de969b814d5e0f76e28ff227baf79660fe20b0aa134c33835",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-02/garage-three-outlets",
+      "callId": "hash-validation-02",
+      "caseId": "ST03",
+      "repeat": 2,
+      "outputHash": "f92c946840ddb437406573a9f29289aa45456315f23f81eef0620efd03b109ac",
+      "reviewItemHash": "7ee67976a3e9a4e35dad6e967261a00e882e71090cc70cede7bf45875b77e9a4",
+      "modelKeyDerivedFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+      "opportunityKey": "garage-three-outlets",
+      "classification": "scope-change opportunity",
+      "opportunityType": "scope change",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:5e3f1b08b017cb62640b0853fc305fad3a2ac96103766c6b8555c62af60593c2",
+      "proposedDraftPayloadHash": "d8d2414c52295e1de969b814d5e0f76e28ff227baf79660fe20b0aa134c33835",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-03/garage-three-outlets",
+      "callId": "hash-validation-03",
+      "caseId": "ST03",
+      "repeat": 3,
+      "outputHash": "45a13929745a67faa974c26526b263f825896d86cbf6dfc7ab428d5083ed3ce8",
+      "reviewItemHash": "18d2173690ea6fcee9b56046c4d1dd237fcf9116d9cefc7f5fafb40984842e17",
+      "modelKeyDerivedFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+      "opportunityKey": "garage-three-outlets",
+      "classification": "scope-change opportunity",
+      "opportunityType": "scope change",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:5e3f1b08b017cb62640b0853fc305fad3a2ac96103766c6b8555c62af60593c2",
+      "proposedDraftPayloadHash": "d8d2414c52295e1de969b814d5e0f76e28ff227baf79660fe20b0aa134c33835",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-04/flickering-new-fixture-service-recovery",
+      "callId": "hash-validation-04",
+      "caseId": "ST04",
+      "repeat": 1,
+      "outputHash": "4de216ee9187620f9977f559c6ff246b4eb61dd98ae53bc9fdb0751aa33c2b3c",
+      "reviewItemHash": "fa0bddecc5c1158687a5403b3aa0268a1dd36dadb99d9f20398bfd800a79d140",
+      "modelKeyDerivedFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+      "opportunityKey": "flickering-new-fixture-service-recovery",
+      "classification": "retention or service-recovery opportunity",
+      "opportunityType": "retention",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:78c6df8316491c2a45b4d1d5ff3a024f74ec422fcafd51d297e65f9d3f2eeb2c",
+      "proposedDraftPayloadHash": "9f7b999adb29303bd48822b8d758dd2ad2ed32c9a3c9420ea7cdbff1d57312a4",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-05/flickering-new-fixture-service-recovery",
+      "callId": "hash-validation-05",
+      "caseId": "ST04",
+      "repeat": 2,
+      "outputHash": "8db11e539233ab382702040b49536250afeff1543ad48a0b42f02e44be46081c",
+      "reviewItemHash": "71e9251a7249fa629f3e64b8eb9c90b3efaf46b649bb503fc40c2262d8552d73",
+      "modelKeyDerivedFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+      "opportunityKey": "flickering-new-fixture-service-recovery",
+      "classification": "retention or service-recovery opportunity",
+      "opportunityType": "retention",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:78c6df8316491c2a45b4d1d5ff3a024f74ec422fcafd51d297e65f9d3f2eeb2c",
+      "proposedDraftPayloadHash": "9f7b999adb29303bd48822b8d758dd2ad2ed32c9a3c9420ea7cdbff1d57312a4",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-06/flickering-new-fixture-service-recovery",
+      "callId": "hash-validation-06",
+      "caseId": "ST04",
+      "repeat": 3,
+      "outputHash": "74b526bdeffd53249ab5f1cea16c8aa65dc5ac3b4b12f3ea98b215ffc80c8fd1",
+      "reviewItemHash": "84c8abfc27bdabc34b497311958909ba68bdcd490da715cf333407a085f8497e",
+      "modelKeyDerivedFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+      "opportunityKey": "flickering-new-fixture-service-recovery",
+      "classification": "retention or service-recovery opportunity",
+      "opportunityType": "retention",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:78c6df8316491c2a45b4d1d5ff3a024f74ec422fcafd51d297e65f9d3f2eeb2c",
+      "proposedDraftPayloadHash": "9f7b999adb29303bd48822b8d758dd2ad2ed32c9a3c9420ea7cdbff1d57312a4",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-07/whole-home-surge-protection",
+      "callId": "hash-validation-07",
+      "caseId": "ST07",
+      "repeat": 1,
+      "outputHash": "58e6fe052652e4c61f4c7ade9e226389285b2b6ab27f540b69abb3f8e7061935",
+      "reviewItemHash": "3015c31c59047e8592417221ab057c46f897ac746be277a1e0c4ed60a774d41f",
+      "modelKeyDerivedFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+      "opportunityKey": "whole-home-surge-protection",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:e44c62b606ef50545445a582e6e2c234a52c89215a854ad5d14f729894ba6ea8",
+      "proposedDraftPayloadHash": "3992cbb87b30d097d39a1b6869a15e595ea31db5fe070ad87676b21422544b3a",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-08/whole-home-surge-protection",
+      "callId": "hash-validation-08",
+      "caseId": "ST07",
+      "repeat": 2,
+      "outputHash": "e419e18e6d2d62cd8776ba1eefaf32741ccdb28c6a5aec9a52e18df699dbd78a",
+      "reviewItemHash": "2b0f309760b140e986dd07be34af47fbdfce5259ad8c530387371ad2154bf0f3",
+      "modelKeyDerivedFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+      "opportunityKey": "whole-home-surge-protection",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:e44c62b606ef50545445a582e6e2c234a52c89215a854ad5d14f729894ba6ea8",
+      "proposedDraftPayloadHash": "3992cbb87b30d097d39a1b6869a15e595ea31db5fe070ad87676b21422544b3a",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-09/whole-home-surge-protection",
+      "callId": "hash-validation-09",
+      "caseId": "ST07",
+      "repeat": 3,
+      "outputHash": "239552bae3c1613e1e3701e95f764763b1fa1669f16d80393c7c46fdc1c4ad90",
+      "reviewItemHash": "1a94fb465023a09b32d15b457dbbbdb4450ba4c9e43c8100578f7df36dba05ee",
+      "modelKeyDerivedFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+      "opportunityKey": "whole-home-surge-protection",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:e44c62b606ef50545445a582e6e2c234a52c89215a854ad5d14f729894ba6ea8",
+      "proposedDraftPayloadHash": "3992cbb87b30d097d39a1b6869a15e595ea31db5fe070ad87676b21422544b3a",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-10/pendant-light-installation",
+      "callId": "hash-validation-10",
+      "caseId": "ST08",
+      "repeat": 1,
+      "outputHash": "38c655b85b7d74f1a85ca29ff26cc2397a135f8057ee6e1af03661f9ff474bcd",
+      "reviewItemHash": "530383ce32795cea54046125167f558e1b414f46eadd540e8523d8e370c2a43d",
+      "modelKeyDerivedFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+      "opportunityKey": "pendant-light-installation",
+      "classification": "follow-up revenue opportunity",
+      "opportunityType": "follow-up",
+      "actionPurpose": "internal_verification",
+      "priority": "MEDIUM",
+      "actionVersion": "sha256:5b5c7f9787f944339677740123da2cb981248b81ce2008ad848af2d63533268a",
+      "proposedDraftPayloadHash": "8eb5eb73740faef986f716efe2bf817ca604750e6e12d4ce694e7af2585012d6",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-11/pendant-light-installation",
+      "callId": "hash-validation-11",
+      "caseId": "ST08",
+      "repeat": 2,
+      "outputHash": "38c655b85b7d74f1a85ca29ff26cc2397a135f8057ee6e1af03661f9ff474bcd",
+      "reviewItemHash": "f0163514d0e655336a8de3ca25310e6d6802ebcd27387e13c7bed5dbbf8c3615",
+      "modelKeyDerivedFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+      "opportunityKey": "pendant-light-installation",
+      "classification": "follow-up revenue opportunity",
+      "opportunityType": "follow-up",
+      "actionPurpose": "internal_verification",
+      "priority": "MEDIUM",
+      "actionVersion": "sha256:5b5c7f9787f944339677740123da2cb981248b81ce2008ad848af2d63533268a",
+      "proposedDraftPayloadHash": "8eb5eb73740faef986f716efe2bf817ca604750e6e12d4ce694e7af2585012d6",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-12/pendant-light-installation",
+      "callId": "hash-validation-12",
+      "caseId": "ST08",
+      "repeat": 3,
+      "outputHash": "6363d6085485b56f8abd7c278ed82cf598307bf8b6f19fc113dd0b93f8fd4970",
+      "reviewItemHash": "a3e133b6d16a52f5bcb206a9009e3e8305ad454b5d2645ee845ae30dfc21d556",
+      "modelKeyDerivedFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+      "opportunityKey": "pendant-light-installation",
+      "classification": "follow-up revenue opportunity",
+      "opportunityType": "follow-up",
+      "actionPurpose": "internal_verification",
+      "priority": "MEDIUM",
+      "actionVersion": "sha256:5b5c7f9787f944339677740123da2cb981248b81ce2008ad848af2d63533268a",
+      "proposedDraftPayloadHash": "8eb5eb73740faef986f716efe2bf817ca604750e6e12d4ce694e7af2585012d6",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-13/pendant-lighting-after-renovation",
+      "callId": "hash-validation-13",
+      "caseId": "EN11",
+      "repeat": 1,
+      "outputHash": "a0d9b9633d3f32d7d109e56e8dba4f14d7a2b294e54a4eabee0bc412b30ba9a3",
+      "reviewItemHash": "b25cd84570fb384b20d1b6322fd23db2b74572f4c09fd1c0675d054d2819b402",
+      "modelKeyDerivedFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+      "opportunityKey": "pendant-lighting-after-renovation",
+      "classification": "follow-up revenue opportunity",
+      "opportunityType": "follow-up",
+      "actionPurpose": "internal_verification",
+      "priority": "MEDIUM",
+      "actionVersion": "sha256:60b5e13e16f3585ea5878460244e239634433daffaf2b269fb963c3882165302",
+      "proposedDraftPayloadHash": "278bb02a4e4894233a79dc460de5bbef619d7c36b547a673ae15f7d4d3902860",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-13/surge-protection-pricing",
+      "callId": "hash-validation-13",
+      "caseId": "EN11",
+      "repeat": 1,
+      "outputHash": "a0d9b9633d3f32d7d109e56e8dba4f14d7a2b294e54a4eabee0bc412b30ba9a3",
+      "reviewItemHash": "54f92413a6a028d9e3ecc67bf6b4d0cbdce1b4c5503f02931170d248242d552c",
+      "modelKeyDerivedFindingId": "finding_7491f2d85c3de6d9894176f656e823ada9401ec9b6c36f134f9cec3637922ca4",
+      "opportunityKey": "surge-protection-pricing",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_preparation",
+      "priority": "HIGH",
+      "actionVersion": "sha256:5d87dd29ec9632cca20303a5d125971af1bbd596b7f2bc50ec896205d6e1c66b",
+      "proposedDraftPayloadHash": "5b7424d1a1432b8cae22f6e05f392848680b4eef096fc5e22e0e668242df832d",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-14/pendant-lighting-after-renovation",
+      "callId": "hash-validation-14",
+      "caseId": "EN11",
+      "repeat": 2,
+      "outputHash": "53722372a0df377145f29cae61d91c3c2d2445486e28b8a3cd85fdec1a477db1",
+      "reviewItemHash": "10a69a6444d4c75b7e522e2790a8aaf3b4f54eb9a3c494a393d6c84b012fd821",
+      "modelKeyDerivedFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+      "opportunityKey": "pendant-lighting-after-renovation",
+      "classification": "follow-up revenue opportunity",
+      "opportunityType": "follow-up",
+      "actionPurpose": "internal_verification",
+      "priority": "MEDIUM",
+      "actionVersion": "sha256:60b5e13e16f3585ea5878460244e239634433daffaf2b269fb963c3882165302",
+      "proposedDraftPayloadHash": "278bb02a4e4894233a79dc460de5bbef619d7c36b547a673ae15f7d4d3902860",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-14/surge-protection-pricing",
+      "callId": "hash-validation-14",
+      "caseId": "EN11",
+      "repeat": 2,
+      "outputHash": "53722372a0df377145f29cae61d91c3c2d2445486e28b8a3cd85fdec1a477db1",
+      "reviewItemHash": "828e5252b5a0d78580cbb4373970708524d918e3210536f300de15d638f7ba79",
+      "modelKeyDerivedFindingId": "finding_7491f2d85c3de6d9894176f656e823ada9401ec9b6c36f134f9cec3637922ca4",
+      "opportunityKey": "surge-protection-pricing",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_preparation",
+      "priority": "HIGH",
+      "actionVersion": "sha256:5d87dd29ec9632cca20303a5d125971af1bbd596b7f2bc50ec896205d6e1c66b",
+      "proposedDraftPayloadHash": "5b7424d1a1432b8cae22f6e05f392848680b4eef096fc5e22e0e668242df832d",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-15/pendant-lighting-after-renovation",
+      "callId": "hash-validation-15",
+      "caseId": "EN11",
+      "repeat": 3,
+      "outputHash": "eea5076f78ccc78b5f638b60eaacb19666cd51244d30df1b7dc0a3a40ba6e5e8",
+      "reviewItemHash": "fbcf7a64816f3e6a8ade05f77083f075bc509866d5549b296eb89c08e1a02a5e",
+      "modelKeyDerivedFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+      "opportunityKey": "pendant-lighting-after-renovation",
+      "classification": "follow-up revenue opportunity",
+      "opportunityType": "follow-up",
+      "actionPurpose": "internal_verification",
+      "priority": "MEDIUM",
+      "actionVersion": "sha256:60b5e13e16f3585ea5878460244e239634433daffaf2b269fb963c3882165302",
+      "proposedDraftPayloadHash": "278bb02a4e4894233a79dc460de5bbef619d7c36b547a673ae15f7d4d3902860",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-15/surge-protection-pricing",
+      "callId": "hash-validation-15",
+      "caseId": "EN11",
+      "repeat": 3,
+      "outputHash": "eea5076f78ccc78b5f638b60eaacb19666cd51244d30df1b7dc0a3a40ba6e5e8",
+      "reviewItemHash": "60ca29c4b95d45032217e11920c13a8d969d2de17f21941a15f0da0719e3e5e9",
+      "modelKeyDerivedFindingId": "finding_7491f2d85c3de6d9894176f656e823ada9401ec9b6c36f134f9cec3637922ca4",
+      "opportunityKey": "surge-protection-pricing",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_preparation",
+      "priority": "HIGH",
+      "actionVersion": "sha256:5d87dd29ec9632cca20303a5d125971af1bbd596b7f2bc50ec896205d6e1c66b",
+      "proposedDraftPayloadHash": "5b7424d1a1432b8cae22f6e05f392848680b4eef096fc5e22e0e668242df832d",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-16/flickering-fixture-service-recovery",
+      "callId": "hash-validation-16",
+      "caseId": "EN12",
+      "repeat": 1,
+      "outputHash": "a682e25781f46fc61e6a2f7248c1974868761dbd58300c218633c306fe9d630f",
+      "reviewItemHash": "c966ad23eca673bc49e81de27f3200983394b4b05021eced64b822a10eccc04d",
+      "modelKeyDerivedFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+      "opportunityKey": "flickering-fixture-service-recovery",
+      "classification": "retention or service-recovery opportunity",
+      "opportunityType": "retention",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:ac80f6f75ccb25a427345448e0df68e23d0cd23896d68327503a7b2e4b580aa3",
+      "proposedDraftPayloadHash": "dd399f7fec13dbc44b3f32f4b16ca79345318c1109727ef1be51b6c882815d9e",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-16/ev-charger-pricing",
+      "callId": "hash-validation-16",
+      "caseId": "EN12",
+      "repeat": 1,
+      "outputHash": "a682e25781f46fc61e6a2f7248c1974868761dbd58300c218633c306fe9d630f",
+      "reviewItemHash": "7357c9cd38fc1770dadf3467e2cf7729b97363298ad10b47f9e95027453bb528",
+      "modelKeyDerivedFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+      "opportunityKey": "ev-charger-pricing",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_preparation",
+      "priority": "HIGH",
+      "actionVersion": "sha256:bbba0063cd54c9a7d364202c1ef3643648a7b79aeeabb18456e994bc0e66e1ab",
+      "proposedDraftPayloadHash": "1a127ebda4a037ad91188271143e147deed6c07cabdb732fd370528e384be46f",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-17/flickering-fixture-service-recovery",
+      "callId": "hash-validation-17",
+      "caseId": "EN12",
+      "repeat": 2,
+      "outputHash": "3bed46ecf6e91d930a586af2f679e6cfc674dab74422446b48e7a3a285af7bc3",
+      "reviewItemHash": "b4e6ae0b05ac360553ab72a09213219e8de6ca6d1b44c7abe32ed3ecda3c55e0",
+      "modelKeyDerivedFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+      "opportunityKey": "flickering-fixture-service-recovery",
+      "classification": "retention or service-recovery opportunity",
+      "opportunityType": "retention",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:ac80f6f75ccb25a427345448e0df68e23d0cd23896d68327503a7b2e4b580aa3",
+      "proposedDraftPayloadHash": "dd399f7fec13dbc44b3f32f4b16ca79345318c1109727ef1be51b6c882815d9e",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-17/ev-charger-pricing",
+      "callId": "hash-validation-17",
+      "caseId": "EN12",
+      "repeat": 2,
+      "outputHash": "3bed46ecf6e91d930a586af2f679e6cfc674dab74422446b48e7a3a285af7bc3",
+      "reviewItemHash": "844540d2ca555a5d5188d7c66332114b9a13f9c9aa330d0578373b55934d93a6",
+      "modelKeyDerivedFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+      "opportunityKey": "ev-charger-pricing",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_preparation",
+      "priority": "HIGH",
+      "actionVersion": "sha256:bbba0063cd54c9a7d364202c1ef3643648a7b79aeeabb18456e994bc0e66e1ab",
+      "proposedDraftPayloadHash": "1a127ebda4a037ad91188271143e147deed6c07cabdb732fd370528e384be46f",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-18/flickering-fixture-service-recovery",
+      "callId": "hash-validation-18",
+      "caseId": "EN12",
+      "repeat": 3,
+      "outputHash": "fa52703148c2702d6bf80a276a11833e60ef00a42bf9ad28ccbc752dfb062ef3",
+      "reviewItemHash": "c7d33debc90b4f9d5666cfcaae097f509037f549e3a8612858ce202adb031582",
+      "modelKeyDerivedFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+      "opportunityKey": "flickering-fixture-service-recovery",
+      "classification": "retention or service-recovery opportunity",
+      "opportunityType": "retention",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:ac80f6f75ccb25a427345448e0df68e23d0cd23896d68327503a7b2e4b580aa3",
+      "proposedDraftPayloadHash": "dd399f7fec13dbc44b3f32f4b16ca79345318c1109727ef1be51b6c882815d9e",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-18/ev-charger-pricing",
+      "callId": "hash-validation-18",
+      "caseId": "EN12",
+      "repeat": 3,
+      "outputHash": "fa52703148c2702d6bf80a276a11833e60ef00a42bf9ad28ccbc752dfb062ef3",
+      "reviewItemHash": "5b39b3e5341517efc1bd797a00387465c0cf9eb4426ad831258d752fe8f1cda9",
+      "modelKeyDerivedFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+      "opportunityKey": "ev-charger-pricing",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_preparation",
+      "priority": "HIGH",
+      "actionVersion": "sha256:bbba0063cd54c9a7d364202c1ef3643648a7b79aeeabb18456e994bc0e66e1ab",
+      "proposedDraftPayloadHash": "1a127ebda4a037ad91188271143e147deed6c07cabdb732fd370528e384be46f",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-19/garage-outlets",
+      "callId": "hash-validation-19",
+      "caseId": "EN31",
+      "repeat": 1,
+      "outputHash": "7d0b819ba859e0da51fb2a365bcb7b3f5fd0ce69054193e1f95b72a6701ca81b",
+      "reviewItemHash": "501a5ab6d6f230e1b8ec636ae33760089ac4f009e3f761909b86c6bc51c9ef64",
+      "modelKeyDerivedFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+      "opportunityKey": "garage-outlets",
+      "classification": "scope-change opportunity",
+      "opportunityType": "scope change",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:41aef4176d6cc119f384a37fc7199c6487831c48592895f1276ae81b0c49dfef",
+      "proposedDraftPayloadHash": "3740179870b9e0bdbc6c77ef902f652f5e73fbffca963fd2358f204fc26787aa",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-20/three-garage-outlets",
+      "callId": "hash-validation-20",
+      "caseId": "EN31",
+      "repeat": 2,
+      "outputHash": "f14940c3b115ec1df1f43221bfce1103843173efe7d4550f9863eafbc1d19079",
+      "reviewItemHash": "0b516fb3391a4152fb1a22539c3b2d7b50ccdfc6fad66d1f0e233e8df65458aa",
+      "modelKeyDerivedFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+      "opportunityKey": "three-garage-outlets",
+      "classification": "scope-change opportunity",
+      "opportunityType": "scope change",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:0572f7058567fd49332f978e53fb39b9204c7f8a2155af0ee693d96b419eb8cb",
+      "proposedDraftPayloadHash": "af5afb64be0d38135ba26d7d6b6a22c07a520f31c170599af9d91b73f123937c",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-21/three-garage-outlets",
+      "callId": "hash-validation-21",
+      "caseId": "EN31",
+      "repeat": 3,
+      "outputHash": "d2fb0ea0ce3016390d79ca0a5f7fd15c1b53efa58705487cf41f7925023472ea",
+      "reviewItemHash": "238d4944252c95d59c5b1216da8189ac464ca4264e125038adae75463d598255",
+      "modelKeyDerivedFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+      "opportunityKey": "three-garage-outlets",
+      "classification": "scope-change opportunity",
+      "opportunityType": "scope change",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:0572f7058567fd49332f978e53fb39b9204c7f8a2155af0ee693d96b419eb8cb",
+      "proposedDraftPayloadHash": "af5afb64be0d38135ba26d7d6b6a22c07a520f31c170599af9d91b73f123937c",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-22/pendant-light-pricing",
+      "callId": "hash-validation-22",
+      "caseId": "UV11",
+      "repeat": 1,
+      "outputHash": "162ca8b9b33d9c624f90a222e8d18d6a9ebb2bae36c17bc7e3d955cfef47570e",
+      "reviewItemHash": "a7ec8625a04d077ba5493f58cfa0b375a5942b6e8ee03a8ad0fad4601cbf4b45",
+      "modelKeyDerivedFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+      "opportunityKey": "pendant-light-pricing",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:3e47e1ee03a98ac9536997f8766b7f9ff1aa5538b2f31d9981ccd8330167f239",
+      "proposedDraftPayloadHash": "a60697b2bb63c64abfc5dc2cc61f14fee7b95da16d1750c21bec1c9510da9bc2",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-23/pendant-light-pricing",
+      "callId": "hash-validation-23",
+      "caseId": "UV11",
+      "repeat": 2,
+      "outputHash": "d7c3cb22dc0ad8f58170c2a914cbc857262852ae0e590693f549803635595d01",
+      "reviewItemHash": "27792b889d3cc9e4eb5fac3387f6ce2c00eadd1d9f6be41167f784b20e7f7a87",
+      "modelKeyDerivedFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+      "opportunityKey": "pendant-light-pricing",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:3e47e1ee03a98ac9536997f8766b7f9ff1aa5538b2f31d9981ccd8330167f239",
+      "proposedDraftPayloadHash": "a60697b2bb63c64abfc5dc2cc61f14fee7b95da16d1750c21bec1c9510da9bc2",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-24/pendant-light-pricing",
+      "callId": "hash-validation-24",
+      "caseId": "UV11",
+      "repeat": 3,
+      "outputHash": "7c4c86dfda48f9db97e468f4607210b498b6debc5f918cf0dcec66a42cf3cd99",
+      "reviewItemHash": "a8732d194c35d01dd984aecf8f560595ca41f63e81689acf407a619519b2baf1",
+      "modelKeyDerivedFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+      "opportunityKey": "pendant-light-pricing",
+      "classification": "strong cross-sell opportunity",
+      "opportunityType": "cross-sell",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:3082b08aec0065022b4ef35bcd4b90eaff20f6ad685e043396bddc67057cfc7f",
+      "proposedDraftPayloadHash": "770f57dda80b12434ebbc12ee349b699e40bf987b150fc0221610b935e833742",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-25/garage-additional-outlets",
+      "callId": "hash-validation-25",
+      "caseId": "RQ02",
+      "repeat": 1,
+      "outputHash": "57e77f34690fdb1c51d1637a2396c6b8e4f6976105448e3497586df596d6e26e",
+      "reviewItemHash": "be253ccee52f3e16acba709fca5221e3c5c8a0ad8632b409a51287ab8398caf1",
+      "modelKeyDerivedFindingId": "finding_634a87b3fb29c0072cde9dc265dbf06e36aef1b8273cf9ef87393c3da8e692da",
+      "opportunityKey": "garage-additional-outlets",
+      "classification": "scope-change opportunity",
+      "opportunityType": "scope change",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:9a657ce2db2aa7f468ec2999bab10a36f1f5a61e45a1621fd8bd9523e2160c05",
+      "proposedDraftPayloadHash": "7f8a2ea9aae1c7084e5e3ec2c29e4535935ed99bfdd8b70b96ffb8ec74087a86",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-26/three-additional-garage-outlets",
+      "callId": "hash-validation-26",
+      "caseId": "RQ02",
+      "repeat": 2,
+      "outputHash": "bfee3bd1aaebea92d846faceada78a4864e635553b1ab39b705f3b02e9c903ec",
+      "reviewItemHash": "b1359b1ab4e4f5123bd319ed112368f2681291702b5611202120bd7b90afb992",
+      "modelKeyDerivedFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+      "opportunityKey": "three-additional-garage-outlets",
+      "classification": "scope-change opportunity",
+      "opportunityType": "scope change",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:ca17a58cd84396973e98a081e08c381eae885186cd6f7dc99ff61894456c9cb2",
+      "proposedDraftPayloadHash": "8f1ab64503fd9a1ddfa8a179433353e40abce6b6c1f6cb477240b5eb7006eb9c",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    },
+    {
+      "reviewId": "hash-validation-27/three-additional-garage-outlets",
+      "callId": "hash-validation-27",
+      "caseId": "RQ02",
+      "repeat": 3,
+      "outputHash": "44c048cd51130be7f5a8f778f3fb634c3ede6bb2ab42fe24048b0c5c30691643",
+      "reviewItemHash": "b9349d65390477d10758017342130c115197b3eb582176ec8f442842a85cd1c8",
+      "modelKeyDerivedFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+      "opportunityKey": "three-additional-garage-outlets",
+      "classification": "scope-change opportunity",
+      "opportunityType": "scope change",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "actionVersion": "sha256:ca17a58cd84396973e98a081e08c381eae885186cd6f7dc99ff61894456c9cb2",
+      "proposedDraftPayloadHash": "8f1ab64503fd9a1ddfa8a179433353e40abce6b6c1f6cb477240b5eb7006eb9c",
+      "verdict": "PASS",
+      "finalExecutionApproval": false
+    }
+  ],
+  "uv11ExactVariantsAccepted": [
+    1,
+    2,
+    3
+  ],
+  "broaderEvidenceOmissionPolicyApproved": false,
+  "exactVersionConsistencyTargetWaived": false,
+  "finalExecutionApproval": false,
+  "releaseAcceptance": false,
+  "emailActivationApproval": false,
+  "deploymentApproval": false
+}

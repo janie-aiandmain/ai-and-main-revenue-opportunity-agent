@@ -528,3 +528,14 @@ engineering test plan, not a user-specified new cumulative spending ceiling.
 Do not start unrelated evaluations or repetitive unplanned loops. Use only the
 existing non-production EVAL_OPENAI_API_KEY. Keep runtime generation, prompt,
 schema, settings and all write/test/fault/email/release flags unchanged/disabled.
+
+## User acceptance of the fresh proposal-v2.5 packet
+
+The user subsequently stated “I approve these” for the latest fresh packet at
+834cd69. See docs/review/proposal-hash-validation/adjudication/README.md and the
+append-only decision ledger. Semantic PASS binds only those 32 executions / 33
+finding instances, including the three UV11 variants; it does not transfer to
+future outputs, create an evidence-omission policy, waive stability targets or
+grant task execution, email activation, deployment or release acceptance. Keep
+original capture-time PENDING snapshots unchanged. No new model/CRM/email calls
+or deployments are included in recording this decision; usage remains 274 calls.

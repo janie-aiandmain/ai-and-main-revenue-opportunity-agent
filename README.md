@@ -5,7 +5,9 @@ The user reopened necessary non-production evaluation; the old 242 cumulative
 cap remains historical rather than blocking this task. All 32 automated checks
 pass, with no false proposal-version drift for identical authoritative inputs.
 EN31/RQ02 subject variation and UV11 evidence-selection variation remain visible;
-fresh semantic review and release acceptance are pending. No deployment or delivery.
+[your semantic approval is now recorded](docs/review/proposal-hash-validation/adjudication/README.md)
+for those exact fresh outputs. Final execution approval and release acceptance
+remain pending. No deployment or delivery.
 
 Current source correction: [proposal hash stability and approval migration evidence](docs/review/proposal-hash-correction/README.md).
 Proposal v2.5 excludes explanatory prose while binding the complete task draft and
