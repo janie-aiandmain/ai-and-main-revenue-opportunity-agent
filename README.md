@@ -1,11 +1,18 @@
 # AI & MAIN Revenue Opportunity Agent
 
+Latest validation: [32 fresh proposal-v2.5 evaluations and task-scoped usage accounting](docs/review/proposal-hash-validation/README.md).
+The user reopened necessary non-production evaluation; the old 242 cumulative
+cap remains historical rather than blocking this task. All 32 automated checks
+pass, with no false proposal-version drift for identical authoritative inputs.
+EN31/RQ02 subject variation and UV11 evidence-selection variation remain visible;
+fresh semantic review and release acceptance are pending. No deployment or delivery.
+
 Current source correction: [proposal hash stability and approval migration evidence](docs/review/proposal-hash-correction/README.md).
 Proposal v2.5 excludes explanatory prose while binding the complete task draft and
 authoritative decision material. Offline replay removes all ten identical-payload
 false-churn groups; EN11/EN31 subject differences still change versions. Revised
-contracts and outputs remain pending human review and fresh model validation.
-The 242-call allowance is exhausted; no new calls, deployment or delivery occurred.
+contracts and outputs remain pending human review. Its original replay evidence
+predates the freshly authorized validation linked above; it remains unchanged.
 
 Preserved v0.3.9 fresh validation: [32/32 automated passes and remaining stability limits](docs/review/current-v0.3.9/model-validation/RESULTS.md).
 Decisions, evidence, scope and local durable identity were stable; raw keys and

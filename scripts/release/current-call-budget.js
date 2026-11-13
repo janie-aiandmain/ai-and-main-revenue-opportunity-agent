@@ -1,8 +1,8 @@
-// Mechanical opt-in evaluation limit. Never stores credentials or request headers.
+// Mechanical finite-run limit, not a cumulative spending cap. No credentials/headers.
 import {open} from 'node:fs/promises';
 import {hash} from '../regression/findings-core.js';
 export async function openCallJournal(path,limit){
- if(!Number.isInteger(limit)||limit<1||limit>32)throw Error('invalid_additional_call_limit');
+ if(!Number.isSafeInteger(limit)||limit<1)throw Error('invalid_additional_call_limit');
  const file=await open(path,'wx',0o600);let count=0;
  return {get count(){return count;},async reserve(metadata){
   if(count>=limit)throw Error('additional_model_budget_exhausted');

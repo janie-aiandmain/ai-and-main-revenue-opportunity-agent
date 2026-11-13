@@ -5,6 +5,16 @@ import {openCallJournal,boundedModelFetch} from '../scripts/release/current-call
 import {hash} from '../scripts/regression/findings-core.js';
 const request={model:'synthetic-model',reasoning:{effort:'low'}},credential='synthetic-not-a-real-key';
 const options=()=>({method:'POST',redirect:'manual',headers:{Authorization:'Bearer '+credential},body:JSON.stringify({...request,input:'synthetic'})});
+test('a finite task matrix may exceed 32 without disabling reservation or per-run bounds',async()=>{
+ const dir=await mkdtemp('/tmp/current-eval-continuation-');let journal;
+ try{
+  for(const limit of [0,-1,1.5,Infinity,Number.MAX_SAFE_INTEGER+1])await assert.rejects(openCallJournal(dir+'/invalid.jsonl',limit),/invalid_additional_call_limit/);
+  journal=await openCallJournal(dir+'/reservations.jsonl',33);
+  for(let i=1;i<=33;i++)assert.equal((await journal.reserve({callId:'local-only-'+i})).sequence,i);
+  await assert.rejects(journal.reserve({callId:'outside-plan'}),/budget_exhausted/);
+  assert.equal((await readFile(dir+'/reservations.jsonl','utf8')).trim().split('\n').length,33);
+ }finally{await journal?.close();await rm(dir,{recursive:true,force:true});}
+});
 test('bounded evaluation persists each reservation before I/O, refuses excess calls and cannot reopen/truncate its history',async()=>{
  const dir=await mkdtemp('/tmp/current-eval-budget-'),path=dir+'/reservations.jsonl';let journal;
  try{

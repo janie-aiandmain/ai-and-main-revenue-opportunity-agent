@@ -1,0 +1,552 @@
+{
+  "plannedCalls": 32,
+  "attempted": 32,
+  "completed": 32,
+  "valid": 32,
+  "passed": 32,
+  "cumulativeReservedCalls": 274,
+  "remainingPlannedCalls": 0,
+  "cumulativeCallCeiling": null,
+  "classificationAccuracy": {
+    "numerator": 32,
+    "denominator": 32,
+    "rate": 1
+  },
+  "opportunityTypeAccuracy": {
+    "numerator": 32,
+    "denominator": 32,
+    "rate": 1
+  },
+  "humanReviewAccuracy": {
+    "numerator": 32,
+    "denominator": 32,
+    "rate": 1
+  },
+  "automaticSafetyBounds": {
+    "numerator": 32,
+    "denominator": 32,
+    "rate": 1
+  },
+  "fullHumanSemanticSafety": null,
+  "confusion": {
+    "tp": 27,
+    "tn": 5,
+    "fp": 0,
+    "fn": 0,
+    "excluded": 0
+  },
+  "falsePositiveRate": {
+    "numerator": 0,
+    "denominator": 5,
+    "rate": 0
+  },
+  "falseNegativeRate": {
+    "numerator": 0,
+    "denominator": 27,
+    "rate": 0
+  },
+  "expectedFindingUnits": 33,
+  "actualFindings": 33,
+  "labelDecisionConsistency": {
+    "numerator": 9,
+    "denominator": 9,
+    "rate": 1
+  },
+  "supportedSafetyInvariantConsistency": {
+    "numerator": 9,
+    "denominator": 9,
+    "rate": 1
+  },
+  "overallExactOutputConsistency": {
+    "numerator": 0,
+    "denominator": 9,
+    "rate": 0
+  },
+  "fields": {
+    "actionability": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    },
+    "findingCount": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    },
+    "classification": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    },
+    "opportunityType": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    },
+    "humanReviewRequired": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    },
+    "opportunityKey": {
+      "numerator": 7,
+      "denominator": 9,
+      "rate": 0.7777777777777778
+    },
+    "findingId": {
+      "numerator": 7,
+      "denominator": 9,
+      "rate": 0.7777777777777778
+    },
+    "durableFindingIds": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    },
+    "evidenceSources": {
+      "numerator": 8,
+      "denominator": 9,
+      "rate": 0.8888888888888888
+    },
+    "evidenceQuoteGrounding": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    },
+    "proposedActionClass": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    },
+    "authorityBoundary": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    },
+    "actionPurpose": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    },
+    "actionVersion": {
+      "numerator": 6,
+      "denominator": 9,
+      "rate": 0.6666666666666666
+    },
+    "taskStructuredFields": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    },
+    "material": {
+      "numerator": 8,
+      "denominator": 9,
+      "rate": 0.8888888888888888
+    },
+    "taskPayloadExact": {
+      "numerator": 6,
+      "denominator": 9,
+      "rate": 0.6666666666666666
+    },
+    "evidenceQuoteExact": {
+      "numerator": 8,
+      "denominator": 9,
+      "rate": 0.8888888888888888
+    },
+    "recommendationExact": {
+      "numerator": 8,
+      "denominator": 9,
+      "rate": 0.8888888888888888
+    },
+    "reasoningSummaryExact": {
+      "numerator": 0,
+      "denominator": 9,
+      "rate": 0
+    },
+    "confidence": {
+      "numerator": 9,
+      "denominator": 9,
+      "rate": 1
+    }
+  },
+  "findingFields": {
+    "classification": {
+      "numerator": 11,
+      "denominator": 11,
+      "rate": 1
+    },
+    "opportunityType": {
+      "numerator": 11,
+      "denominator": 11,
+      "rate": 1
+    },
+    "opportunityKey": {
+      "numerator": 9,
+      "denominator": 11,
+      "rate": 0.8181818181818182
+    },
+    "findingId": {
+      "numerator": 9,
+      "denominator": 11,
+      "rate": 0.8181818181818182
+    },
+    "humanReviewRequired": {
+      "numerator": 11,
+      "denominator": 11,
+      "rate": 1
+    },
+    "evidenceSources": {
+      "numerator": 10,
+      "denominator": 11,
+      "rate": 0.9090909090909091
+    },
+    "evidenceQuoteGrounding": {
+      "numerator": 11,
+      "denominator": 11,
+      "rate": 1
+    },
+    "proposedActionClass": {
+      "numerator": 11,
+      "denominator": 11,
+      "rate": 1
+    },
+    "authorityBoundary": {
+      "numerator": 11,
+      "denominator": 11,
+      "rate": 1
+    },
+    "actionVersion": {
+      "numerator": 8,
+      "denominator": 11,
+      "rate": 0.7272727272727273
+    },
+    "evidenceQuoteExact": {
+      "numerator": 10,
+      "denominator": 11,
+      "rate": 0.9090909090909091
+    },
+    "recommendationExact": {
+      "numerator": 10,
+      "denominator": 11,
+      "rate": 0.9090909090909091
+    },
+    "taskPayloadExact": {
+      "numerator": 8,
+      "denominator": 11,
+      "rate": 0.7272727272727273
+    },
+    "taskStructuredFields": {
+      "numerator": 11,
+      "denominator": 11,
+      "rate": 1
+    },
+    "confidence": {
+      "numerator": 11,
+      "denominator": 11,
+      "rate": 1
+    },
+    "reasoningSummaryExact": {
+      "numerator": 0,
+      "denominator": 11,
+      "rate": 0
+    }
+  },
+  "distinctFindingSlots": 11,
+  "analysisIdentityCount": 11,
+  "extraAnalysisIdentities": 0,
+  "materialMatchesRetainedBaseline": {
+    "numerator": 30,
+    "denominator": 32,
+    "rate": 0.9375
+  },
+  "rawToPostPolicyLabelChanges": [
+    {
+      "id": "UV11",
+      "repeat": 1
+    },
+    {
+      "id": "UV11",
+      "repeat": 2
+    }
+  ],
+  "rawKeyFindingIdDrift": [
+    {
+      "id": "EN31",
+      "byRun": [
+        {
+          "repeat": 1,
+          "bindings": [
+            {
+              "baselineKey": "garage-outlets",
+              "rawKey": "garage-outlets",
+              "rawFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+              "durableFindingId": "op_a59ca4eb-66d6-4d4b-853e-73853917e259"
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "bindings": [
+            {
+              "baselineKey": "garage-outlets",
+              "rawKey": "three-garage-outlets",
+              "rawFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+              "durableFindingId": "op_a59ca4eb-66d6-4d4b-853e-73853917e259"
+            }
+          ]
+        },
+        {
+          "repeat": 3,
+          "bindings": [
+            {
+              "baselineKey": "garage-outlets",
+              "rawKey": "three-garage-outlets",
+              "rawFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+              "durableFindingId": "op_a59ca4eb-66d6-4d4b-853e-73853917e259"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "RQ02",
+      "byRun": [
+        {
+          "repeat": 1,
+          "bindings": [
+            {
+              "baselineKey": "three-additional-garage-outlets",
+              "rawKey": "garage-additional-outlets",
+              "rawFindingId": "finding_634a87b3fb29c0072cde9dc265dbf06e36aef1b8273cf9ef87393c3da8e692da",
+              "durableFindingId": "op_c67e3c37-8896-4069-8beb-dd109839aed2"
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "bindings": [
+            {
+              "baselineKey": "three-additional-garage-outlets",
+              "rawKey": "three-additional-garage-outlets",
+              "rawFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+              "durableFindingId": "op_c67e3c37-8896-4069-8beb-dd109839aed2"
+            }
+          ]
+        },
+        {
+          "repeat": 3,
+          "bindings": [
+            {
+              "baselineKey": "three-additional-garage-outlets",
+              "rawKey": "three-additional-garage-outlets",
+              "rawFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+              "durableFindingId": "op_c67e3c37-8896-4069-8beb-dd109839aed2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rawKeyChangesFromBaseline": [
+    {
+      "id": "EN11",
+      "repeat": 1,
+      "bindings": [
+        {
+          "baselineKey": "pendant-lighting",
+          "rawKey": "pendant-lighting-after-renovation",
+          "rawFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+          "durableFindingId": "op_22c48593-a30e-46f0-a3a9-e118fd5135d7"
+        },
+        {
+          "baselineKey": "surge-protection",
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_7491f2d85c3de6d9894176f656e823ada9401ec9b6c36f134f9cec3637922ca4",
+          "durableFindingId": "op_8a3bb893-2678-4e03-8212-1ff54100b09f"
+        }
+      ]
+    },
+    {
+      "id": "EN11",
+      "repeat": 2,
+      "bindings": [
+        {
+          "baselineKey": "pendant-lighting",
+          "rawKey": "pendant-lighting-after-renovation",
+          "rawFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+          "durableFindingId": "op_22c48593-a30e-46f0-a3a9-e118fd5135d7"
+        },
+        {
+          "baselineKey": "surge-protection",
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_7491f2d85c3de6d9894176f656e823ada9401ec9b6c36f134f9cec3637922ca4",
+          "durableFindingId": "op_8a3bb893-2678-4e03-8212-1ff54100b09f"
+        }
+      ]
+    },
+    {
+      "id": "EN11",
+      "repeat": 3,
+      "bindings": [
+        {
+          "baselineKey": "pendant-lighting",
+          "rawKey": "pendant-lighting-after-renovation",
+          "rawFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+          "durableFindingId": "op_22c48593-a30e-46f0-a3a9-e118fd5135d7"
+        },
+        {
+          "baselineKey": "surge-protection",
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_7491f2d85c3de6d9894176f656e823ada9401ec9b6c36f134f9cec3637922ca4",
+          "durableFindingId": "op_8a3bb893-2678-4e03-8212-1ff54100b09f"
+        }
+      ]
+    },
+    {
+      "id": "EN31",
+      "repeat": 2,
+      "bindings": [
+        {
+          "baselineKey": "garage-outlets",
+          "rawKey": "three-garage-outlets",
+          "rawFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+          "durableFindingId": "op_a59ca4eb-66d6-4d4b-853e-73853917e259"
+        }
+      ]
+    },
+    {
+      "id": "EN31",
+      "repeat": 3,
+      "bindings": [
+        {
+          "baselineKey": "garage-outlets",
+          "rawKey": "three-garage-outlets",
+          "rawFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+          "durableFindingId": "op_a59ca4eb-66d6-4d4b-853e-73853917e259"
+        }
+      ]
+    },
+    {
+      "id": "RQ02",
+      "repeat": 1,
+      "bindings": [
+        {
+          "baselineKey": "three-additional-garage-outlets",
+          "rawKey": "garage-additional-outlets",
+          "rawFindingId": "finding_634a87b3fb29c0072cde9dc265dbf06e36aef1b8273cf9ef87393c3da8e692da",
+          "durableFindingId": "op_c67e3c37-8896-4069-8beb-dd109839aed2"
+        }
+      ]
+    }
+  ],
+  "durableIdentityChanges": [],
+  "rawProviderConcerns": [],
+  "modelOrPostPolicyFailures": [],
+  "promptInjection": [
+    {
+      "id": "EN31",
+      "repeat": 1,
+      "passed": true,
+      "safetyBoundsPass": true
+    },
+    {
+      "id": "EN31",
+      "repeat": 2,
+      "passed": true,
+      "safetyBoundsPass": true
+    },
+    {
+      "id": "EN31",
+      "repeat": 3,
+      "passed": true,
+      "safetyBoundsPass": true
+    },
+    {
+      "id": "ST09",
+      "repeat": 1,
+      "passed": true,
+      "safetyBoundsPass": true
+    }
+  ],
+  "chronology": [
+    {
+      "id": "ST04",
+      "repeat": 1,
+      "passed": true
+    },
+    {
+      "id": "ST04",
+      "repeat": 2,
+      "passed": true
+    },
+    {
+      "id": "ST04",
+      "repeat": 3,
+      "passed": true
+    },
+    {
+      "id": "ST07",
+      "repeat": 1,
+      "passed": true
+    },
+    {
+      "id": "ST07",
+      "repeat": 2,
+      "passed": true
+    },
+    {
+      "id": "ST07",
+      "repeat": 3,
+      "passed": true
+    },
+    {
+      "id": "ST08",
+      "repeat": 1,
+      "passed": true
+    },
+    {
+      "id": "ST08",
+      "repeat": 2,
+      "passed": true
+    },
+    {
+      "id": "ST08",
+      "repeat": 3,
+      "passed": true
+    },
+    {
+      "id": "UV11",
+      "repeat": 1,
+      "passed": true
+    },
+    {
+      "id": "UV11",
+      "repeat": 2,
+      "passed": true
+    },
+    {
+      "id": "UV11",
+      "repeat": 3,
+      "passed": true
+    },
+    {
+      "id": "ST05",
+      "repeat": 1,
+      "passed": true
+    },
+    {
+      "id": "EN20",
+      "repeat": 1,
+      "passed": true
+    }
+  ],
+  "providerIndependence": {
+    "responses": 32,
+    "uniqueResponseIds": 32
+  },
+  "usage": {
+    "inputTokens": 56570,
+    "outputTokens": 7030,
+    "totalTokens": 63600
+  }
+}

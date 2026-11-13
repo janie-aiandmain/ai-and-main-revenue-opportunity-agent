@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "append-only-semantic-review-events-v1",
+  "sourceReportHash": "ac722851f2f89306f1a1ebe512e4da61a2d4d3f147ebc91e402b41c62eb9fab6",
+  "scope": "HUMAN_SEMANTIC_ONLY",
+  "events": [],
+  "finalExecutionApproval": false,
+  "releaseAcceptance": false
+}

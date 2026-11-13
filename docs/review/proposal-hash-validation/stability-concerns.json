@@ -1,0 +1,277 @@
+{
+  "kind": "FRESH_CAPTURED_STABILITY_CONCERNS_NOT_HIDDEN",
+  "freshReportHash": "ac722851f2f89306f1a1ebe512e4da61a2d4d3f147ebc91e402b41c62eb9fab6",
+  "analysisHash": "4783418766a98823dae70e676109dbb4789284dff39238d212e27ab12d8fc1f4",
+  "identicalAuthorityAndPayloadGroups": [
+    {
+      "caseId": "ST03",
+      "need": "garage-three-outlets",
+      "inputHash": "5e3f1b08b017cb62640b0853fc305fad3a2ac96103766c6b8555c62af60593c2",
+      "runs": [
+        {
+          "repeat": 1,
+          "actionVersion": "sha256:5e3f1b08b017cb62640b0853fc305fad3a2ac96103766c6b8555c62af60593c2"
+        },
+        {
+          "repeat": 2,
+          "actionVersion": "sha256:5e3f1b08b017cb62640b0853fc305fad3a2ac96103766c6b8555c62af60593c2"
+        },
+        {
+          "repeat": 3,
+          "actionVersion": "sha256:5e3f1b08b017cb62640b0853fc305fad3a2ac96103766c6b8555c62af60593c2"
+        }
+      ],
+      "stable": true
+    },
+    {
+      "caseId": "ST04",
+      "need": "flickering-new-fixture-service-recovery",
+      "inputHash": "78c6df8316491c2a45b4d1d5ff3a024f74ec422fcafd51d297e65f9d3f2eeb2c",
+      "runs": [
+        {
+          "repeat": 1,
+          "actionVersion": "sha256:78c6df8316491c2a45b4d1d5ff3a024f74ec422fcafd51d297e65f9d3f2eeb2c"
+        },
+        {
+          "repeat": 2,
+          "actionVersion": "sha256:78c6df8316491c2a45b4d1d5ff3a024f74ec422fcafd51d297e65f9d3f2eeb2c"
+        },
+        {
+          "repeat": 3,
+          "actionVersion": "sha256:78c6df8316491c2a45b4d1d5ff3a024f74ec422fcafd51d297e65f9d3f2eeb2c"
+        }
+      ],
+      "stable": true
+    },
+    {
+      "caseId": "ST07",
+      "need": "whole-home-surge-protection",
+      "inputHash": "e44c62b606ef50545445a582e6e2c234a52c89215a854ad5d14f729894ba6ea8",
+      "runs": [
+        {
+          "repeat": 1,
+          "actionVersion": "sha256:e44c62b606ef50545445a582e6e2c234a52c89215a854ad5d14f729894ba6ea8"
+        },
+        {
+          "repeat": 2,
+          "actionVersion": "sha256:e44c62b606ef50545445a582e6e2c234a52c89215a854ad5d14f729894ba6ea8"
+        },
+        {
+          "repeat": 3,
+          "actionVersion": "sha256:e44c62b606ef50545445a582e6e2c234a52c89215a854ad5d14f729894ba6ea8"
+        }
+      ],
+      "stable": true
+    },
+    {
+      "caseId": "ST08",
+      "need": "pendant-light-installation",
+      "inputHash": "5b5c7f9787f944339677740123da2cb981248b81ce2008ad848af2d63533268a",
+      "runs": [
+        {
+          "repeat": 1,
+          "actionVersion": "sha256:5b5c7f9787f944339677740123da2cb981248b81ce2008ad848af2d63533268a"
+        },
+        {
+          "repeat": 2,
+          "actionVersion": "sha256:5b5c7f9787f944339677740123da2cb981248b81ce2008ad848af2d63533268a"
+        },
+        {
+          "repeat": 3,
+          "actionVersion": "sha256:5b5c7f9787f944339677740123da2cb981248b81ce2008ad848af2d63533268a"
+        }
+      ],
+      "stable": true
+    },
+    {
+      "caseId": "EN11",
+      "need": "pendant-lighting",
+      "inputHash": "60b5e13e16f3585ea5878460244e239634433daffaf2b269fb963c3882165302",
+      "runs": [
+        {
+          "repeat": 1,
+          "actionVersion": "sha256:60b5e13e16f3585ea5878460244e239634433daffaf2b269fb963c3882165302"
+        },
+        {
+          "repeat": 2,
+          "actionVersion": "sha256:60b5e13e16f3585ea5878460244e239634433daffaf2b269fb963c3882165302"
+        },
+        {
+          "repeat": 3,
+          "actionVersion": "sha256:60b5e13e16f3585ea5878460244e239634433daffaf2b269fb963c3882165302"
+        }
+      ],
+      "stable": true
+    },
+    {
+      "caseId": "EN11",
+      "need": "surge-protection",
+      "inputHash": "5d87dd29ec9632cca20303a5d125971af1bbd596b7f2bc50ec896205d6e1c66b",
+      "runs": [
+        {
+          "repeat": 1,
+          "actionVersion": "sha256:5d87dd29ec9632cca20303a5d125971af1bbd596b7f2bc50ec896205d6e1c66b"
+        },
+        {
+          "repeat": 2,
+          "actionVersion": "sha256:5d87dd29ec9632cca20303a5d125971af1bbd596b7f2bc50ec896205d6e1c66b"
+        },
+        {
+          "repeat": 3,
+          "actionVersion": "sha256:5d87dd29ec9632cca20303a5d125971af1bbd596b7f2bc50ec896205d6e1c66b"
+        }
+      ],
+      "stable": true
+    },
+    {
+      "caseId": "EN12",
+      "need": "flickering-fixture-service-recovery",
+      "inputHash": "ac80f6f75ccb25a427345448e0df68e23d0cd23896d68327503a7b2e4b580aa3",
+      "runs": [
+        {
+          "repeat": 1,
+          "actionVersion": "sha256:ac80f6f75ccb25a427345448e0df68e23d0cd23896d68327503a7b2e4b580aa3"
+        },
+        {
+          "repeat": 2,
+          "actionVersion": "sha256:ac80f6f75ccb25a427345448e0df68e23d0cd23896d68327503a7b2e4b580aa3"
+        },
+        {
+          "repeat": 3,
+          "actionVersion": "sha256:ac80f6f75ccb25a427345448e0df68e23d0cd23896d68327503a7b2e4b580aa3"
+        }
+      ],
+      "stable": true
+    },
+    {
+      "caseId": "EN12",
+      "need": "ev-charger-pricing",
+      "inputHash": "bbba0063cd54c9a7d364202c1ef3643648a7b79aeeabb18456e994bc0e66e1ab",
+      "runs": [
+        {
+          "repeat": 1,
+          "actionVersion": "sha256:bbba0063cd54c9a7d364202c1ef3643648a7b79aeeabb18456e994bc0e66e1ab"
+        },
+        {
+          "repeat": 2,
+          "actionVersion": "sha256:bbba0063cd54c9a7d364202c1ef3643648a7b79aeeabb18456e994bc0e66e1ab"
+        },
+        {
+          "repeat": 3,
+          "actionVersion": "sha256:bbba0063cd54c9a7d364202c1ef3643648a7b79aeeabb18456e994bc0e66e1ab"
+        }
+      ],
+      "stable": true
+    },
+    {
+      "caseId": "EN31",
+      "need": "garage-outlets",
+      "inputHash": "0572f7058567fd49332f978e53fb39b9204c7f8a2155af0ee693d96b419eb8cb",
+      "runs": [
+        {
+          "repeat": 2,
+          "actionVersion": "sha256:0572f7058567fd49332f978e53fb39b9204c7f8a2155af0ee693d96b419eb8cb"
+        },
+        {
+          "repeat": 3,
+          "actionVersion": "sha256:0572f7058567fd49332f978e53fb39b9204c7f8a2155af0ee693d96b419eb8cb"
+        }
+      ],
+      "stable": true
+    },
+    {
+      "caseId": "UV11",
+      "need": "pendant-light-pricing",
+      "inputHash": "3e47e1ee03a98ac9536997f8766b7f9ff1aa5538b2f31d9981ccd8330167f239",
+      "runs": [
+        {
+          "repeat": 1,
+          "actionVersion": "sha256:3e47e1ee03a98ac9536997f8766b7f9ff1aa5538b2f31d9981ccd8330167f239"
+        },
+        {
+          "repeat": 2,
+          "actionVersion": "sha256:3e47e1ee03a98ac9536997f8766b7f9ff1aa5538b2f31d9981ccd8330167f239"
+        }
+      ],
+      "stable": true
+    },
+    {
+      "caseId": "RQ02",
+      "need": "three-additional-garage-outlets",
+      "inputHash": "ca17a58cd84396973e98a081e08c381eae885186cd6f7dc99ff61894456c9cb2",
+      "runs": [
+        {
+          "repeat": 2,
+          "actionVersion": "sha256:ca17a58cd84396973e98a081e08c381eae885186cd6f7dc99ff61894456c9cb2"
+        },
+        {
+          "repeat": 3,
+          "actionVersion": "sha256:ca17a58cd84396973e98a081e08c381eae885186cd6f7dc99ff61894456c9cb2"
+        }
+      ],
+      "stable": true
+    }
+  ],
+  "identicalGroupCount": 11,
+  "falseChurnGroups": 0,
+  "unstableCases": [
+    {
+      "id": "EN31",
+      "changedFields": [
+        "opportunityKey",
+        "findingId",
+        "actionVersion",
+        "taskPayloadExact",
+        "reasoningSummaryExact"
+      ],
+      "callIds": [
+        "hash-validation-19",
+        "hash-validation-20",
+        "hash-validation-21"
+      ],
+      "explanation": "Raw opportunityKey/model-key-derived findingId and task subject differ. Complete payload differences must keep distinct versions.",
+      "humanSemanticVerdict": "PENDING",
+      "finalExecutionApproval": false
+    },
+    {
+      "id": "UV11",
+      "changedFields": [
+        "evidenceSources",
+        "actionVersion",
+        "material",
+        "taskPayloadExact",
+        "evidenceQuoteExact",
+        "recommendationExact",
+        "reasoningSummaryExact"
+      ],
+      "callIds": [
+        "hash-validation-22",
+        "hash-validation-23",
+        "hash-validation-24"
+      ],
+      "explanation": "Evidence selection changes: earlier deferred-context note appears in two runs and is absent in the third. Latest completion/current-interest limits remain. Human evidence-completeness review is pending.",
+      "humanSemanticVerdict": "PENDING",
+      "finalExecutionApproval": false
+    },
+    {
+      "id": "RQ02",
+      "changedFields": [
+        "opportunityKey",
+        "findingId",
+        "actionVersion",
+        "taskPayloadExact",
+        "reasoningSummaryExact"
+      ],
+      "callIds": [
+        "hash-validation-25",
+        "hash-validation-26",
+        "hash-validation-27"
+      ],
+      "explanation": "Raw opportunityKey/model-key-derived findingId and task subject differ. Complete payload differences must keep distinct versions.",
+      "humanSemanticVerdict": "PENDING",
+      "finalExecutionApproval": false
+    }
+  ],
+  "humanApproved": false,
+  "normalizedAway": false
+}
