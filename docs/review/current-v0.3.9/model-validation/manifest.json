@@ -1,0 +1,31 @@
+{
+  "kind": "COMPLETED_CURRENT_NONPRODUCTION_VALIDATION_EVIDENCE",
+  "runnerSourceCommit": "f36dd5ff84ef68c855c5948a4f5e346843b2d515",
+  "allPriorEvidencePreserved": true,
+  "files": {
+    "FRESH-REVIEW.md": "1383be2e33531a81cf34b8fcedf1d2fc97a3a8ad2e6a4de2d14cb0f394f20044",
+    "README.md": "205dd5dafa5a6692f0797867e69c24ab7a5a72694329068947f0cea9367fd008",
+    "RESULTS.md": "b90c3a32c586d842a6a44a292a63825eb61a8d2e88bcd869bb6e00144f6228f1",
+    "accounting-proof.json": "295836ca0d66c9cae247561ec0435fb76c499d70b8a5d1c001bb6d3b05bbf477",
+    "after-live-tests.txt": "03a49f851cc43f1ab9b9618c60c6480ad9d2e287c08c2fd1c33eb7ba2541ea67",
+    "analysis.json": "dc3d9e68091e2b055fc3c814eb84c5b0499418d039e71d210d5be0b3ce1e8b6e",
+    "analysis.txt": "19dce4463a0c398d7a8e4e1b15267c9fd0a543d516203cee6ae8b37c7326e4c7",
+    "authorization.json": "b9819ef3f6e1e29164077b56d27c0b9678a9c882b3de236c88867c6f973edc1f",
+    "before-live-tests.txt": "765e024322951be941524c8de6aa9026654b2d51d2bf33918820be35423af2e1",
+    "captured-failures.json": "a9cbc4020de8a53349fb8e7638e083a614fd62c7f4da9d21b982f318ad0e5bbd",
+    "checks.json": "b598b160418bdc5c97b7256141dfd631c961b9821a4456c404a047bd245573a9",
+    "execution.lock": "5ffe358c2bd19de9106857b8c7ec1a53ebe8c30faf2e4440b99d1c53bac358df",
+    "execution.txt": "9ca9432457773475f1464c5ada373648091fffd71075c78b86cb9a8d538048b4",
+    "fresh-human-decisions.json": "4cba9d357702ee205172113c4d7bf28356b35e91813885f4abcc49e9899ead07",
+    "fresh-model.json": "84c777a37d01dbb00e5dd44a237fd0953e6b39e353372f172e31a776fd6b1b28",
+    "plan-check.txt": "d481e78f402ec55c47609b9e9bd7387cc8928f3f1dc9b00e384cb2759f5050a7",
+    "provider-captures.jsonl": "6078a0c82814b62da72d79ef2c43fc7dd62d68e8e47215ded007d7d768b20dbc",
+    "reservations.jsonl": "24a35523c850031803a53be5790b3b6fefe80360bebea5429a53aa13094d0261",
+    "verification.txt": "752882d7ed7f4fa3062314bae853d4fe6cf36261497892966b107e2cb6f77e86",
+    "../../../../scripts/release/current-call-budget.js": "4fe6e04846a6212c9596a6d0bd84b7941d79c62d15f628dd95a3b31c699f58fa",
+    "../../../../scripts/release/current-model.js": "1c1357d4a0d720f3cab81eca6abdcec0b2c6db0977f60196ef025198a2c2cba0",
+    "../../../../scripts/release/analyze-current-model.js": "7355766edb87f56c74007e61a18ecbebb85e726314ab28a2274f3e9ed1674e10",
+    "../../../../scripts/release/verify-current-model.js": "393dc4831caecc74fcd12a17573f1265b55cc67b55d56c878fc9d86be0f94236",
+    "../../../../fixtures/current-model-stability-captured-variation-v1.json": "a59087043f9de4da3cbb9f3d67d982abadff6e899de875cf09d6cd45554f1332"
+  }
+}

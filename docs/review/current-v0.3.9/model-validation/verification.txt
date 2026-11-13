@@ -1,0 +1,1 @@
+{"proof":"PASS","priorRecordsUnchanged":true,"remainingAllowance":0,"replayedFreshOutputs":32,"protectedFiles":254}

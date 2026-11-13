@@ -54,6 +54,16 @@ flush every request before sending; retain all provider captures and failures.
 Do not automatically rerun an existing journal or consume extra probes/retries.
 No HubSpot, deployment, CRM writes or email activation is authorized by this run.
 
+The fixed run is now complete: 32/32 fresh automated passes, 242/242 cumulative
+reservations, no remaining additional allowance. See model-validation/RESULTS.md.
+Preserve all journals and the execution lock; do not rerun, reset or add calls
+without new explicit authorization. Fresh outputs remain PENDING human review.
+Decision/safety/material and local durable identity are stable, but raw key/ID and
+proposal-version consistency are below target. The new captured-variation fixture
+preserves that evidence. Do not implement the recommended version-hash remediation
+or deploy until these results are reviewed. Earlier 210-call annotations are
+historical; the new authorization and completed journals are the current accounting.
+
 Work on the `enterprise-hardening` branch unless explicitly instructed otherwise. Do not merge to `main` automatically.
 
 ## Product boundary

@@ -1,5 +1,11 @@
 # AI & MAIN Revenue Opportunity Agent
 
+Fresh current-generator validation: [32/32 automated passes and remaining stability limits](docs/review/current-v0.3.9/model-validation/RESULTS.md).
+Decisions, evidence, scope and local durable identity were stable; raw keys and
+proposal action versions still vary. These fresh outputs await separate human
+review. The additional 32-call allowance is fully used: 242 cumulative calls.
+No runtime generator change, deployment, CRM write or email send was performed.
+
 Current semantic review: [one consolidated v0.3.9 / proposal v2.4 packet](docs/review/current-v0.3.9/REVIEW.md)
 contains nine findings and five UV11 variants. The user has now
 [semantically approved all fourteen exact drafts](docs/review/current-v0.3.9/adjudication/README.md),
@@ -12,7 +18,7 @@ The disabled demo template uses alerts@aiandmain.ai, with replies and alerts goi
 to janie@aiandmain.ai. Domain verification is user-reported and the sending Secret
 is confirmed on the owner Worker; provider validity and delivery remain untested.
 
-Latest source cycle: [supported multi-finding gate and operator email alerts](docs/review/workflow-email/README.md).
+Previous source cycle: [supported multi-finding gate and operator email alerts](docs/review/workflow-email/README.md).
 `regression:offline` now exercises the supported finding workflow; the limited
 rules commands remain separately available with their original failures visible.
 HIGH or Immediate Review alerts have a durable, browser-independent email outbox.

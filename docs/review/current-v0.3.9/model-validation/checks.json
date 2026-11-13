@@ -1,0 +1,61 @@
+{
+  "kind": "CURRENT_VALIDATION_EXECUTED_CHECKS",
+  "modelCalls": 32,
+  "cumulativeReservedCalls": 242,
+  "remainingApprovedAllowance": 0,
+  "hubspotCalls": 0,
+  "emailProviderCalls": 0,
+  "deployments": 0,
+  "runtimeGeneratorChanges": 0,
+  "requestSettingsChanged": false,
+  "commands": [
+    {
+      "command": "node scripts/release/current-model.js --plan",
+      "exit": 0,
+      "networkCalls": 0
+    },
+    {
+      "command": "NODE_USE_ENV_PROXY=1 EVAL_VALIDATION_SOURCE_SHA=f36dd5ff84ef68c855c5948a4f5e346843b2d515 node scripts/release/current-model.js --live --non-production",
+      "exit": 0,
+      "modelCalls": 32
+    },
+    {
+      "command": "node scripts/release/analyze-current-model.js",
+      "exit": 0,
+      "modelCalls": 0
+    },
+    {
+      "command": "node scripts/release/verify-current-model.js",
+      "exit": 0,
+      "modelCalls": 0
+    },
+    {
+      "command": "npm test (before live)",
+      "exit": 0,
+      "passed": 212
+    },
+    {
+      "command": "npm test (after live)",
+      "exit": 0,
+      "passed": 212
+    }
+  ],
+  "startupTransportFailure": {
+    "occurredBeforeModelRun": true,
+    "reservationsCreated": false
+  },
+  "offlineProofRetries": [
+    "Sandbox child-process restriction; retried outside sandbox.",
+    "Existing large evidence exceeded default child-process buffer; increased local read buffer."
+  ],
+  "workerBuilds": {
+    "rerun": false,
+    "reason": "No Worker source/configuration/dependency change; preserved dry-run evidence applies."
+  },
+  "newFreshSemanticApprovals": 0,
+  "finalExecutionApproval": false,
+  "releaseAcceptance": false,
+  "overallExactConsistencyTargetMet": false,
+  "fullSemanticSafetyEstablished": false,
+  "highestPriorityRemediation": "Remove non-action explanatory prose from proposal version hashing while preserving changes for canonical material and complete payload. No remediation implemented."
+}

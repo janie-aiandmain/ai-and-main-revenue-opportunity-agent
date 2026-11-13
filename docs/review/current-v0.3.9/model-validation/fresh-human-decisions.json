@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "append-only-semantic-review-events-v1",
+  "sourceReport": "docs/review/current-v0.3.9/model-validation/fresh-model.json",
+  "sourceReportHash": "79d93b3b03f7dd2485c6934926005062cc7fefda00f381ae511d8f02939b46b4",
+  "scope": "HUMAN_SEMANTIC_ONLY",
+  "events": [],
+  "finalExecutionApproval": false,
+  "releaseAcceptance": false
+}

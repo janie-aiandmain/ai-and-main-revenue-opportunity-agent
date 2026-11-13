@@ -1,5 +1,11 @@
 # Fresh targeted validation of the reviewed current generator
 
+**Completed: 32/32 fresh calls passed automated workflow checks; total usage is
+242/242 reserved calls.** [Results and remaining variation](RESULTS.md) distinguish
+100% decision/safety-invariant consistency from unstable raw names and proposal
+versions. [Fresh outputs](FRESH-REVIEW.md) remain PENDING human semantic review.
+No deployment, HubSpot call or email occurred, and no additional allowance remains.
+
 The user explicitly authorized **up to 32 additional non-production model calls**,
 raising the cumulative maximum from 210 to 242. The [authorization event](authorization.json)
 binds the user's answer to the unchanged [published plan](../model-validation-plan.json)
@@ -47,5 +53,6 @@ Every fresh output remains **PENDING human semantic review**. The previously
 approved retained packet does not automatically approve these outputs. Any captured
 failure remains immutable evidence; no remediation is included in this run.
 
-Results, accounting, full captures, local checks and a fresh review artifact will
-be recorded here after execution. No production/CRM certification follows from it.
+Results, accounting, full captures, local checks and a fresh review artifact are
+recorded here. No production/CRM certification follows from it. Authorization and
+journals are retained; do not remove the lock or reset reservations to rerun.
