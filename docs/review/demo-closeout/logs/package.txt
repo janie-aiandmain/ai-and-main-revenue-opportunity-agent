@@ -1,0 +1,1 @@
+{"kind":"CURRENT_CLOSEOUT_SOURCE_CHECK","mode":"--package","captureReplays":64,"freshModelExecutions":32,"findingCards":11,"caseVersionConsistency":{"passed":9,"total":9},"findingVersionConsistency":{"passed":11,"total":11},"identitiesStored":11,"humanApprovalInferred":false}

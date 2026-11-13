@@ -1,5 +1,12 @@
 # AI & MAIN Revenue Opportunity Agent
 
+Current closeout: [source gates passed; 11 finding cards ready for review](docs/review/demo-closeout/README.md).
+Fresh proposal-version consistency is 9/9 cases and 11/11 findings after source
+subject and historical-context corrections. All 223 tests, the 207-capture gate
+and both dry-run builds pass. Review the compact v2.6 packet once; earlier v2.5
+approval stays bound to its original outputs. Hosted validation remains pending,
+and all activation flags stay disabled. No deployment, CRM write or email send.
+
 Latest validation: [32 fresh proposal-v2.5 evaluations and task-scoped usage accounting](docs/review/proposal-hash-validation/README.md).
 The user reopened necessary non-production evaluation; the old 242 cumulative
 cap remains historical rather than blocking this task. All 32 automated checks

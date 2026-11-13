@@ -554,3 +554,11 @@ task allowance with counted calls; no unrelated evaluations. Keep prompt/schema/
 model/settings, credentials, permissions and hosted configurations unchanged.
 Deployment, email activation, test/CRM execution and release acceptance remain
 separate and closed. Present one compact review after the source gates pass.
+
+That source cycle now passes 223 tests, 207 retained workflow executions, 64
+capture replays, 32 fresh evaluations and both Worker dry-runs. Fresh proposal
+consistency is 9/9 cases and 11/11 findings. Recorded usage is 306 calls. The
+11-card review plus five negative controls is PENDING real human decisions;
+do not transfer prior v2.5 acceptance. Freeze the passing source until a specific
+defect is identified. Hosted deployment/email/recovery checks are prepared, not
+executed or authorized by semantic review alone.

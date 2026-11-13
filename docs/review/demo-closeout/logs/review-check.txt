@@ -1,0 +1,5 @@
+
+> ai-and-main-revenue-opportunity-agent@0.1.0 review:current
+> node scripts/review/demo-closeout.js --check
+
+{"kind":"CURRENT_CLOSEOUT_SOURCE_CHECK","mode":"--check","captureReplays":64,"freshModelExecutions":32,"findingCards":11,"caseVersionConsistency":{"passed":9,"total":9},"findingVersionConsistency":{"passed":11,"total":11},"identitiesStored":11,"humanApprovalInferred":false}
