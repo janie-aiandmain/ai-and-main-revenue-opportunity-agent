@@ -1,0 +1,18 @@
+{
+  "kind": "TASK_SCOPED_SOURCE_CLOSEOUT_VALIDATION",
+  "authorized": true,
+  "scope": "Necessary non-production validation to close the measured source-stability gaps",
+  "userCloseoutRequest": "I want to efficiently bring this to a close and provide human review when the elements pass",
+  "priorAllowanceRequest": "why are we limiting the allowance? can we open it up to get this done",
+  "interpretation": "Uses the previously reopened necessary-validation allowance for this focused source closeout. The agent selects the finite matrix; no new numerical cap or semantic/execution/release approval is inferred.",
+  "recordedAt": "2026-11-13T22:43:07.954Z",
+  "cumulativeCallCeiling": null,
+  "planHash": "210ea401b5e08d1b37e5e889431692e3736b4ca7ff45a799b35641f0222da786",
+  "resetsPriorReservations": false,
+  "hubspotAllowed": false,
+  "emailDeliveryAllowed": false,
+  "deploymentAllowed": false,
+  "semanticApproval": false,
+  "executionApproval": false,
+  "releaseAcceptance": false
+}

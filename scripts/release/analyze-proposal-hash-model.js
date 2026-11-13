@@ -5,17 +5,20 @@ import assert from 'node:assert/strict';
 import {GeneralFindingLedger} from '../../src/staging/general-ledger.js';
 import {prepareHistory,canonical} from '../../src/findings.js';
 import {hash} from '../regression/findings-core.js';
-import {materializeCorrected} from '../../src/release/reasoning.js';
+import {materializeCorrected,MATERIALIZATION_VERSION} from '../../src/release/reasoning.js';
 import {proposalVersionInputs} from '../../src/staging/internal-task-policy.js';
 import {REVIEW_POLICY} from '../../src/staging/review-policy.js';
 import {findingView} from '../regression/stability-core.js';
-const dir='docs/review/proposal-hash-validation';
+const dir=process.argv[2]||'docs/review/proposal-hash-validation';
+if(!['docs/review/proposal-hash-validation','docs/review/demo-closeout/model-validation'].includes(dir))throw Error('unapproved_analysis_directory');
 const load=async p=>JSON.parse(await readFile(p,'utf8'));
 const [report,plan,baseline]=await Promise.all([load(dir+'/fresh-model.json'),load(dir+'/plan.json'),load('docs/review/workflow-email/offline-report.json')]);
 if(!report.summary)throw Error('validation_not_finished');
+assert.equal(report.materializationVersion,MATERIALIZATION_VERSION,'historical_analysis_requires_its_original_runtime');
+try{const decisions=await load(dir+'/human-decisions.json');assert.equal(decisions.events.length,0,'reviewed_analysis_is_immutable');}catch(e){if(e.code!=='ENOENT')throw e;}
 const journals=async p=>(await readFile(p,'utf8')).trim().split('\n').filter(Boolean).map(JSON.parse);
 const [reservations,captures]=await Promise.all([journals(dir+'/reservations.jsonl'),journals(dir+'/provider-captures.jsonl')]);
-assert.equal(reservations.length,report.summary.attempted);assert(reservations.length<=32);assert.equal(new Set(reservations.map(r=>r.callId)).size,reservations.length);
+assert.equal(reservations.length,report.summary.attempted);assert(reservations.length<=plan.plannedCalls);assert.equal(new Set(reservations.map(r=>r.callId)).size,reservations.length);
 for(const [i,r]of reservations.entries())assert.equal(r.sequence,i+1);
 for(const c of captures)assert(reservations.some(r=>r.callId===c.callId&&r.requestBodyHash===c.requestBodyHash));
 const fixtures=await Promise.all(['enterprise-v2','unseen-review-variations-v1','release-restrictions-v1'].map(n=>load('fixtures/'+n+'.json')));
@@ -84,7 +87,7 @@ const findingConsistency=consistency.flatMap(c=>seed.get(c.id).map(s=>{
  return {caseId:c.id,baselineKey:s.key,durableFindingId:s.id,complete,fields:Object.fromEntries(fieldNames.map(f=>[f,complete&&same(byRun.map(b=>b.view[f]))])),byRun};
 }));
 const findingFields={};for(const name of new Set(findingConsistency.flatMap(f=>Object.keys(f.fields))))findingFields[name]=ratio(findingConsistency.filter(f=>f.fields[name]).length,findingConsistency.length);
-const summary={plannedCalls:32,attempted:reservations.length,completed:report.rows.length,valid:valid.length,passed:report.rows.filter(r=>r.passed).length,cumulativeReservedCalls:242+reservations.length,remainingPlannedCalls:32-reservations.length,cumulativeCallCeiling:null,
+const summary={plannedCalls:plan.plannedCalls,attempted:reservations.length,completed:report.rows.length,valid:valid.length,passed:report.rows.filter(r=>r.passed).length,cumulativeReservedCalls:report.priorCalls+reservations.length,remainingPlannedCalls:plan.plannedCalls-reservations.length,cumulativeCallCeiling:null,
  classificationAccuracy:ratio(rows.filter(r=>r.classificationCorrect).length,rows.length),opportunityTypeAccuracy:ratio(rows.filter(r=>r.opportunityTypeCorrect).length,rows.length),humanReviewAccuracy:ratio(rows.filter(r=>r.humanReviewCorrect).length,rows.length),
  automaticSafetyBounds:ratio(rows.filter(r=>r.safetyBoundsPass).length,rows.length),fullHumanSemanticSafety:null,confusion,falsePositiveRate:ratio(confusion.fp,confusion.fp+confusion.tn),falseNegativeRate:ratio(confusion.fn,confusion.fn+confusion.tp),
  expectedFindingUnits:rows.reduce((n,r)=>n+r.expectedCount,0),actualFindings:report.rows.reduce((n,r)=>n+(r.actual?.findings.length||0),0),

@@ -1,0 +1,53 @@
+{
+  "kind": "FINITE_SOURCE_CLOSEOUT_VALIDATION_MATRIX",
+  "runtimeCheckpoint": "7a1241f0f93c33780d8f68149be56a95b195bb76",
+  "groups": [
+    {
+      "cases": [
+        "ST03",
+        "ST04",
+        "ST07",
+        "ST08",
+        "EN11",
+        "EN12",
+        "EN31",
+        "UV11",
+        "RQ02"
+      ],
+      "runsPerCase": 3,
+      "purpose": "Affected scope, evidence, timing, independent findings and policy cases"
+    },
+    {
+      "cases": [
+        "ST01",
+        "ST02",
+        "ST05",
+        "ST09",
+        "EN20"
+      ],
+      "runsPerCase": 1,
+      "purpose": "Negative controls for decline, employee intent, newer reversal, injection and timestamp ordering"
+    }
+  ],
+  "plannedCalls": 32,
+  "model": "gpt-5.6-terra",
+  "reasoningEffort": "low",
+  "promptVersion": "reasoning-v0.3.3",
+  "schemaVersion": "findings-v0.2",
+  "materializer": "source-evidence-v0.3.11",
+  "proposalVersion": "internal-task-proposal-v2.6",
+  "hashPolicy": "authoritative-proposal-hash-v1",
+  "sourceHashes": {
+    "src/release/reasoning.js": "3ff099ddf6034d75bb1ae9be36acac43c33b148805ba3f9ae231260f1a9c8c5d",
+    "src/release/evidence.js": "9723a5c3048afdb053f5ff8c3ab9d69170b28348221179c371a550f542773baa",
+    "src/staging/internal-task-policy.js": "6392f8fae80ec09eaee69e2d82733780cfa58a54c3c34e19ab4135bf9be9c48f",
+    "src/staging/general-ledger.js": "7146102cd1bc5aca9bff76f4e68c0832717a7ce6b0e6bd5dedf0ee01369a54f2",
+    "src/staging/review-policy.js": "e83c0fcf16111feaa20c8c25fb36a4901a530a7fd2b54b221ae743e98e765857",
+    "src/findings-request-v0.3.3.json": "e5630f86c5a7636a49116b8be56c336d3293c15bb024711f0fa36d9df9fa6fea"
+  },
+  "correctionReportHash": "10f2b918e32b1b1965b407ff6d1ae13674cda916511701753384335130031409",
+  "scope": "Fresh validation of source-derived task subjects and uniquely matched documented-deferral evidence. No identity, provider prompt, schema, model, hosted configuration or permission changes.",
+  "retryPolicy": "Stop on request/schema/credential failure. Preserve reservations and unrun cases; no automatic repeats.",
+  "priorCalls": 274,
+  "priorAccountingProof": "docs/review/proposal-hash-validation/accounting-proof.json"
+}

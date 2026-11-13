@@ -18,21 +18,24 @@ const version=x=>proposalActionVersion(x.finding,x.projection,x.authority,REVIEW
 const reverse=value=>Array.isArray(value)?value.map(reverse):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).reverse().map(([k,v])=>[k,reverse(v)])):value;
 test('proposal v2.5 hashes an explicit authoritative field set and excludes explanation/confidence/raw-ID metadata',async()=>{
  const x=await specimen(),before=version(x),inputs=proposalVersionInputs(x.finding,x.projection,x.authority,REVIEW_POLICY);
- assert.equal(INTERNAL_PROPOSAL_VERSION,'internal-task-proposal-v2.5');assert.equal(MATERIALIZATION_VERSION,'source-evidence-v0.3.10');assert.equal(inputs.hashPolicyVersion,INTERNAL_PROPOSAL_HASH_POLICY);
+ assert.equal(INTERNAL_PROPOSAL_VERSION,'internal-task-proposal-v2.6');assert.equal(MATERIALIZATION_VERSION,'source-evidence-v0.3.11');assert.equal(inputs.hashPolicyVersion,INTERNAL_PROPOSAL_HASH_POLICY);
  assert.deepEqual(Object.keys(inputs.findingDecision).sort(),['classification','evidence','humanReviewRequired','opportunityType','recommendedNextAction']);
  const changed=structuredClone(x);Object.assign(changed.finding,{reasoningSummary:'A different explanatory paraphrase.',confidence:'low',findingId:'another-model-facing-id',opportunityKey:'another-presentation-key',displayCaption:'presentation only'});
  assert.equal(version(changed),before);assert.equal(version(reverse(x)),before);assert.equal(x.finding.proposedAction.actionVersion,before);
  // This unit comparison holds the actual payload fixed. Normal key regeneration
  // changes the subject, which the next test proves is still versioned.
 });
-test('actual key-derived subject changes remain payload/version changes; explanatory paraphrases do not',async()=>{
+test('captured key-derived subject differences remain preserved; new source subjects ignore raw key paraphrases',async()=>{
  const x=await specimen(),changed=structuredClone(x.raw);changed.findings[0].reasoningSummary='A synonymous explanation of the same customer request.';
  const paraphrase=await materializeCorrected(changed,x.history,'synthetic:ST03',x.time);
  assert.equal(paraphrase.findings[0].proposedAction.actionVersion,version(x));
  changed.findings[0].opportunityKey='three-added-garage-outlets';
  const renamed=await materializeCorrected(changed,x.history,'synthetic:ST03',x.time);
- assert.notEqual(renamed.findings[0].proposedAction.actionPayload.properties.hs_task_subject,x.projection.payload.properties.hs_task_subject);
- assert.notEqual(renamed.findings[0].proposedAction.actionVersion,version(x));assert.equal(renamed.findings[0].opportunityKey,'three-added-garage-outlets');
+ assert.equal(renamed.findings[0].proposedAction.actionPayload.properties.hs_task_subject,x.projection.payload.properties.hs_task_subject);
+ assert.equal(renamed.findings[0].proposedAction.actionVersion,version(x));assert.equal(renamed.findings[0].opportunityKey,'three-added-garage-outlets');
+ assert.notEqual(renamed.findings[0].findingId,x.finding.findingId);
+ const prior=await load('docs/review/current-v0.3.9/model-validation/fresh-model.json'),variants=prior.rows.filter(r=>r.id==='EN31').map(r=>r.actual.findings[0].proposedAction);
+ assert(new Set(variants.map(a=>a.actionPayload.properties.hs_task_subject)).size>1);assert.equal(new Set(variants.map(a=>a.actionVersion)).size,3);
 });
 test('every authoritative decision/material/payload change remains bound, including new payload properties',async()=>{
  const x=await specimen(),before=version(x),mutations={
@@ -80,7 +83,7 @@ test('a genuine captured local v2.4 approval is rejected, revoked on reevaluatio
   assert.equal(raw.prepare('SELECT revoked FROM cert_approvals WHERE id=?').get(f.grant.approvalId).revoked,1);
   const input={...f.input,sourceHash:fresh.sourceHash,candidateHash:fresh.candidateHash};
   const reviewed=l.finishReview(input,f.actor,await l.review(input,f.actor,f.env,source),f.env);
-  assert.equal(reviewed.payloadHash,f.reviewed.payloadHash);assert.notEqual(reviewed.actionVersion,f.reviewed.actionVersion);
+  assert.notEqual(reviewed.payloadHash,f.reviewed.payloadHash);assert.notEqual(reviewed.actionVersion,f.reviewed.actionVersion);
   const grant=l.approveGeneral(reviewed,f.actor),newOp=raw.prepare('SELECT * FROM cert_operations WHERE id=?').get(reviewed.operationId);
   assert(l.validate(newOp,raw.prepare('SELECT * FROM cert_approvals WHERE id=?').get(grant.approvalId),f.env));
   // A later operator-selected due time changes the complete final request.

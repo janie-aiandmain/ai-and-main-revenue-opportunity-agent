@@ -7,11 +7,11 @@ import {inspectFinding} from '../staging/review-policy.js';
 import {completeEvidence,EVIDENCE_POLICY} from './evidence.js';
 import {completedPricingClassification,COMPLETED_PRICING_CLASSIFICATION_POLICY} from '../staging/completion-policy.js';
 export {EVIDENCE_POLICY};
-export const PROMPT_VERSION='reasoning-v0.3.3',SCHEMA_VERSION='findings-v0.2',MATERIALIZATION_VERSION='source-evidence-v0.3.10';
+export const PROMPT_VERSION='reasoning-v0.3.3',SCHEMA_VERSION='findings-v0.2',MATERIALIZATION_VERSION='source-evidence-v0.3.11';
 export async function materializeCorrected(raw,history,key,time=new Date().toISOString()){
  // Validate original model spans and distinctness before completing source clauses.
  await materializeFindings(raw,history,key);
- const closed=completeEvidence(raw,history);
+ const closed=completeEvidence(raw,history,time);
  const provisional=await previous(closed.raw,history,key,time);
  const finalRaw={findings:provisional.findings.map(f=>{
    const inspection=inspectFinding(f,history,provisional.findings,time);

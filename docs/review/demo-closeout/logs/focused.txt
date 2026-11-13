@@ -1,0 +1,28 @@
+✔ captured EN31/RQ02 key paraphrases preserve raw identities but now produce identical source-based subjects and versions (70.083268ms)
+✔ UV11 omission captures now all retain the exact dated deferral, completion and current-consent gate (22.87333ms)
+✔ unseen matching deferrals attach uniquely; other needs, quantity changes, ambiguity and newer reversals do not get silently merged (1.041533ms)
+✔ source subjects remain finding-specific, preserve quantities and escape markup without including embedded instructions (0.50679ms)
+✔ proposal v2.5 hashes an explicit authoritative field set and excludes explanation/confidence/raw-ID metadata (58.635141ms)
+✔ captured key-derived subject differences remain preserved; new source subjects ignore raw key paraphrases (29.949141ms)
+✔ every authoritative decision/material/payload change remains bound, including new payload properties (10.306656ms)
+✔ a genuine captured local v2.4 approval is rejected, revoked on reevaluation, and never silently transferred (18.566381ms)
+✔ all final HubSpot request bytes remain protected independently of proposal hashing (3.657037ms)
+✔ five explicit human PASS and four CONCERN verdicts bind original hashes and never grant final approval (11.711978ms)
+✔ ST03 and EN31 explicitly verify current job state and retain price-before-work without honoring injection (30.057431ms)
+✔ ST04 retains exact invoice condition and source-relative historical today, without asserting present unresolved state (6.959788ms)
+✔ ST07 preserves historical decision window and verifies interest, never making an operator due date a customer deadline (5.518524ms)
+✔ ST08 internal verification is preparable before completion, while customer follow-up remains blocked (3.100062ms)
+✔ EN11 pricing does not inherit lighting deferral; each independent need retains its own evidence and gates (3.509848ms)
+✔ EN12 retains separate recovery verification and EV pricing only; no charger type or consultation added (4.282838ms)
+✔ internal verification cannot hide omitted evidence, free-form overrides, or material authority tampering (3.448878ms)
+✔ new proposal versions are stable for unchanged sources and remain unapproved drafts without a due time (7.227866ms)
+✔ explicit absolute customer dates cannot be hidden by an internal pricing preparation date (5.353479ms)
+✔ fresh UV14 evidence omission remains immutable and blocks preparation even when pricing wording is bounded (2.292987ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 288.296149

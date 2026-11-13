@@ -539,3 +539,18 @@ future outputs, create an evidence-omission policy, waive stability targets or
 grant task execution, email activation, deployment or release acceptance. Keep
 original capture-time PENDING snapshots unchanged. No new model/CRM/email calls
 or deployments are included in recording this decision; usage remains 274 calls.
+
+## Focused controlled-demo closeout
+
+The user's subsequent request is to efficiently close the work and provide human
+review when checks pass. The focused source cycle is in docs/review/demo-closeout/.
+It addresses the measured EN31/RQ02 subject and UV11 evidence variability only:
+source-derived subjects retain raw keys/IDs unchanged, and uniquely matched dated
+deferrals remain with their documented completion/current-consent restrictions.
+Identity reconciliation is unchanged. New v2.6 / v1.6 / v0.3.11 outputs cannot
+inherit the v2.5 semantic approval. Preserve prior packets, captures, verdicts and
+journals. Necessary finite non-production validation uses the previously reopened
+task allowance with counted calls; no unrelated evaluations. Keep prompt/schema/
+model/settings, credentials, permissions and hosted configurations unchanged.
+Deployment, email activation, test/CRM execution and release acceptance remain
+separate and closed. Present one compact review after the source gates pass.

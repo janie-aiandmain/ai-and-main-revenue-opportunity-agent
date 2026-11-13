@@ -3,12 +3,13 @@ import {sourceAnchors,TASK_CLASS} from '../correction-policy.js';
 import {canonical} from '../findings.js';
 import {createHash} from 'node:crypto';
 import {scopeReviewRouting} from './scope-review.js';
-export const INTERNAL_TASK_POLICY='internal-task-policy-v1.5';
-export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2.5';
+export const INTERNAL_TASK_POLICY='internal-task-policy-v1.6';
+export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2.6';
+export const SUBJECT_POLICY='source-anchored-task-subject-v1';
 export const INTERNAL_PROPOSAL_HASH_POLICY='authoritative-proposal-hash-v1';
 const digest=v=>'sha256:'+createHash('sha256').update(canonical(v)).digest('hex');
 // Explicit action/decision fields, not the entire provider object. Raw identifiers
-// still affect the version wherever they appear in the complete action payload.
+// affect the version only wherever actually present in material/payload fields.
 export function proposalVersionInputs(finding,projection,authorityRequirements,reviewPolicyVersion){
  if(typeof reviewPolicyVersion!=='string'||!reviewPolicyVersion)throw Error('proposal_review_policy_required');
  return {hashPolicyVersion:INTERNAL_PROPOSAL_HASH_POLICY,proposalVersion:INTERNAL_PROPOSAL_VERSION,
@@ -25,6 +26,13 @@ export function explicitSourceDates(text){
  return [...text.matchAll(/\b(?:by|before|after|until|on|deadline|no later than)\b[^.!?\n]{0,80}?\b(20\d{2}-\d{2}-\d{2})\b/ig)].map(m=>({wording:m[0],date:m[1]}));
 }
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+export function sourceTaskSubject(finding,history,purpose){
+ const anchors=sourceAnchors(history,finding.evidence).sort((a,b)=>a.timestamp.localeCompare(b.timestamp)||a.noteId.localeCompare(b.noteId)||a.start-b.start);
+ const safe=anchors.filter(a=>!/\b(?:ignore (?:previous|all)|system\s*:|mark (?:this )?approved|change (?:the )?deal stage)\b/i.test(a.sourceText.slice(a.start,a.end)));
+ const chosen=safe[0];if(!chosen)throw Error('source_task_subject_required');
+ const label=chosen.sourceText.slice(chosen.start,chosen.end).replace(/\s+/g,' ').trim();
+ return (purpose==='internal_verification'?'Internal verification: ':'Internal pricing preparation: ')+escape(label.length>120?label.slice(0,119)+'…':label);
+}
 export function internalPlan(finding,history,inspection,now){
  const evidence=sourceAnchors(history,finding.evidence).map(a=>({noteId:a.noteId,timestamp:a.timestamp,quote:a.sourceText.slice(a.start,a.end)}));
  const text=evidence.map(e=>e.quote).join('\n'),hasTiming=evidence.some(e=>new RegExp(relative.source,'i').test(e.quote)||explicitSourceDates(e.quote).length>0);
@@ -53,7 +61,8 @@ export function internalProjection(finding,history,inspection,{priority,taskDueA
  const material={policyVersion:INTERNAL_TASK_POLICY,proposalVersion:INTERNAL_PROPOSAL_VERSION,actionClass:TASK_CLASS,targetContext:contextKey,classification:finding.classification,opportunityType:finding.opportunityType,intent:requestedPurpose==='internal_verification'?'verify_current_state':'prepare_quote',actionPurpose:requestedPurpose,scope:{sourceRequests:plan.evidence.map(e=>e.quote)},priority,evidence:plan.evidence,timing:{kind:'none'},operatorTaskDueAt:taskDueAt??null,sourceTimingConstraints:plan.sourceTiming,customerActionGates:plan.customerActionGates,sourceRestrictions:plan.sourceRestrictions,customerActionPermitted:false,humanApprovalRequired:true,...(plan.documentedCompletion?{documentedCompletion:plan.documentedCompletion}:{}),...(plan.reviewRouting?{reviewRouting:plan.reviewRouting}:{})};
  const body=[instruction,'Action purpose: '+requestedPurpose+'. This task is internal only; it grants no customer action.','Source evidence (verbatim text, with original UTC timestamps):',...plan.evidence.map(e=>'['+e.timestamp+'; '+e.noteId+'] '+e.quote),'Source-relative timing: '+canonical(plan.sourceTiming),'Customer-action gates (not satisfied by this task): '+canonical(plan.customerActionGates),'Exact source restrictions: '+plan.sourceRestrictions.map(e=>e.quote).join('\n'),'Internal task due: '+(taskDueAt||'NOT SET — final task approval blocked')+'. Operator-selected task timing does not renew a customer deadline.','Authority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.'].join('\n');
  const routedBody=plan.reviewRouting?'Operator routing: IMMEDIATE INTERNAL REVIEW — source reports in-progress work with a scope-change request. Confirm current job status; this label is not work approval.\n'+body:body;
- const payload={type:TASK_CLASS,target:{contextKey},properties:{hs_task_subject:(requestedPurpose==='internal_verification'?'Internal verification: ':'Internal pricing preparation: ')+finding.opportunityKey.replaceAll('-',' '),hs_task_body:escape(routedBody),hs_task_priority:priority,hs_task_status:'NOT_STARTED',hs_task_type:'TODO',...(taskDueAt?{hs_timestamp:new Date(taskDueAt).toISOString()}:{})}};
+ material.subjectPolicyVersion=SUBJECT_POLICY;
+ const payload={type:TASK_CLASS,target:{contextKey},properties:{hs_task_subject:sourceTaskSubject(finding,history,requestedPurpose),hs_task_body:escape(routedBody),hs_task_priority:priority,hs_task_status:'NOT_STARTED',hs_task_type:'TODO',...(taskDueAt?{hs_timestamp:new Date(taskDueAt).toISOString()}:{})}};
  return {material,payload};
 }
 export function internalProposal(finding,history,inspection,contextKey,now){
