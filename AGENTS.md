@@ -46,6 +46,14 @@ does not approve future outputs, raise the 210-call limit, deploy, activate emai
 or grant exact-payload task approval. Cloudflare now confirms the mail Secret on
 the owner; provider validity is untested and all checked execution flags are off.
 
+The user then explicitly answered "yes" to at most 32 additional non-production
+model calls (cumulative maximum 242). The original 210-call history and proposed
+plan remain unchanged; model-validation/authorization.json records the separate
+allowance. Use only the fixed plan and current reviewed generator. Reserve and
+flush every request before sending; retain all provider captures and failures.
+Do not automatically rerun an existing journal or consume extra probes/retries.
+No HubSpot, deployment, CRM writes or email activation is authorized by this run.
+
 Work on the `enterprise-hardening` branch unless explicitly instructed otherwise. Do not merge to `main` automatically.
 
 ## Product boundary

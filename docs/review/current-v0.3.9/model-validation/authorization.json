@@ -1,0 +1,22 @@
+{
+  "kind": "USER_AUTHORIZED_ADDITIONAL_MODEL_ALLOWANCE",
+  "authorized": true,
+  "verbatimUserResponse": "yes",
+  "inResponseTo": "Do you authorize up to 32 additional non-production model calls, raising the cumulative maximum to 242, with no HubSpot calls, deployment or CRM writes?",
+  "attribution": "Explicit user answer in current conversation",
+  "recordedAt": "2026-11-13T20:01:22.362Z",
+  "recordedPriorCalls": 210,
+  "maximumAdditionalCalls": 32,
+  "cumulativeMaximum": 242,
+  "planHash": "d53e6c2c1a5ab0c0183c746a715e24f5a607368a337fbf6068a61ac034033fb5",
+  "reviewPacketHash": "2e5bdf7e351c0d0eff1e511415e68b82744afae2a7523a1c1c842a88b36affd7",
+  "semanticApprovalCommit": "9e075fb311e3adea7df54dd5ed061695cf7fdbbd",
+  "scope": "FIXED_TARGETED_NONPRODUCTION_VALIDATION_ONLY",
+  "resetsPriorBudget": false,
+  "allowsAutomaticRerun": false,
+  "allowsHubSpotCalls": false,
+  "allowsDeployment": false,
+  "allowsEmailDelivery": false,
+  "allowsCrmWrites": false,
+  "eventId": "model-allowance-7c79688f41fc3e7bb0f72fbc50257ce3f41314728fde97a4abce02f96a60d7bd"
+}
