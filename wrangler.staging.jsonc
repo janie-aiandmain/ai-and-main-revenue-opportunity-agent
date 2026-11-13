@@ -22,7 +22,13 @@
     "STAGING_CONTACT_ID": "582095692487",
     "AUDIT_RETENTION_DAYS": "365",
     "DEMO_ONLY_EXECUTION_ENABLED": "false",
-    "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false"
+    "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+    "OPERATOR_EMAIL_ENABLED": "false",
+    "OPERATOR_EMAIL_PROVIDER": "resend",
+    "OPERATOR_EMAIL_FROM": "alerts@aiandmain.ai",
+    "OPERATOR_EMAIL_REPLY_TO": "janie@aiandmain.ai",
+    "OPERATOR_EMAIL_TO": "janie@aiandmain.ai",
+    "OPERATOR_CONSOLE_URL": "https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/operator"
   },
   "durable_objects": {
     "bindings": [
@@ -47,7 +53,7 @@
       "EVAL_OPENAI_API_KEY"
     ]
   },
-  "keep_vars": false,
+  "keep_vars": true,
   "version_metadata": {
     "binding": "RELEASE_VERSION"
   },

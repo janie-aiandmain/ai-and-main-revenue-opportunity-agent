@@ -562,3 +562,19 @@ consistency is 9/9 cases and 11/11 findings. Recorded usage is 306 calls. The
 do not transfer prior v2.5 acceptance. Freeze the passing source until a specific
 defect is identified. Hosted deployment/email/recovery checks are prepared, not
 executed or authorized by semantic review alone.
+
+## Approved semantic packet and authorized hosted closeout
+
+The user approved the v2.6 packet with “this set is approved”: all 11 finding
+cards/five negative controls at e70c0fa, bound in the append-only ledger. Preserve
+the original PENDING capture snapshots and every earlier verdict. The user then
+explicitly directed “move forward with these” for hosted deployment, email
+activation and task execution. See docs/review/demo-closeout/hosted/authorization.json.
+Proceed within the existing two demo Workers/namespace and synthetic portal/
+contact. Deploy closed first, preserve secrets/role/tenant settings, verify current
+identity and both credential portal IDs/marker, then perform bounded operator
+email and at most one new synthetic recovery task. A real operator must approve
+that task's complete final payload; chat approval is not that grant. Keep general
+writeback and release flags false. No new infrastructure, permission expansion,
+credential recreation, real-customer activity or main merge. Preserve the old
+confirmed operation and reconcile unknown effects rather than creating again.

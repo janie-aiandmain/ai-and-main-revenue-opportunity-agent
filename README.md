@@ -1,11 +1,13 @@
 # AI & MAIN Revenue Opportunity Agent
 
-Current closeout: [source gates passed; 11 finding cards ready for review](docs/review/demo-closeout/README.md).
+Current closeout: [source gates passed; semantic approval recorded](docs/review/demo-closeout/adjudication/README.md).
 Fresh proposal-version consistency is 9/9 cases and 11/11 findings after source
 subject and historical-context corrections. All 223 tests, the 207-capture gate
-and both dry-run builds pass. Review the compact v2.6 packet once; earlier v2.5
-approval stays bound to its original outputs. Hosted validation remains pending,
-and all activation flags stay disabled. No deployment, CRM write or email send.
+and both dry-run builds pass. The user approved all v2.6 cards/negative controls;
+earlier v2.5 acceptance remains bound to its original outputs. Bounded hosted
+deployment, operator email and one synthetic recovery test are now authorized;
+results are recorded separately. General writeback/release remain disabled and
+the synthetic task still needs exact final-payload approval in the console.
 
 Latest validation: [32 fresh proposal-v2.5 evaluations and task-scoped usage accounting](docs/review/proposal-hash-validation/README.md).
 The user reopened necessary non-production evaluation; the old 242 cumulative

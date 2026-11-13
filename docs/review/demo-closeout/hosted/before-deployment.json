@@ -1,0 +1,196 @@
+{
+  "kind": "READ_ONLY_HOSTED_SETTINGS_INSPECTION",
+  "checkedAt": "2026-11-13T23:11:40.487Z",
+  "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "accountVerifiedByAccountScopedApi": true,
+      "activeDeployment": "f50e4964-f85a-4616-8b38-109a81eb72aa",
+      "activeVersion": "52a07d4e-6efc-4bc1-8e60-20fead75908d",
+      "sourceCommit": "34a7b4257c3c491c8a89f34e29ff0c01fbdd9ee8",
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      },
+      "ordinaryNames": [
+        "ACCESS_AUDIENCE",
+        "ACCESS_ISSUER",
+        "AUDIT_RETENTION_DAYS",
+        "CERTIFICATION_MODE",
+        "CRM_WRITEBACK_ENABLED",
+        "DEMO_ONLY_EXECUTION_ENABLED",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED",
+        "DEPLOYMENT_ENVIRONMENT",
+        "ENABLE_GENERAL_EXECUTION",
+        "ENABLE_TEST_TASK_WRITES",
+        "GENERAL_RELEASE_APPROVED",
+        "RELEASE_SOURCE_SHA",
+        "STAGING_CONTACT_ID",
+        "STAGING_ISOLATION_APPROVED",
+        "STAGING_PORTAL_ID"
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "secretTypes": [
+        {
+          "name": "EVAL_OPENAI_API_KEY",
+          "type": "secret_text"
+        },
+        {
+          "name": "OPERATOR_EMAIL_API_KEY",
+          "type": "secret_text"
+        },
+        {
+          "name": "STAGING_HUBSPOT_READ_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "STAGING_HUBSPOT_WRITE_TOKEN",
+          "type": "secret_text"
+        }
+      ],
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "NOT_CONFIGURED",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "NOT_CONFIGURED",
+        "DEMO_RECOVERY_FAULT_ENABLED": "NOT_CONFIGURED",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "OPERATOR_EMAIL_ENABLED": "NOT_CONFIGURED"
+      },
+      "expectedApproverMapped": false,
+      "realmHash": "c3d55b25f1bde313b32f39fd40671bfe05fc15ee450243c7bd877ec0e44677cd",
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "configurationPrepared": true,
+      "roleMappingPreserved": true,
+      "secretValuesRead": false,
+      "configurationConflicts": []
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "accountVerifiedByAccountScopedApi": true,
+      "activeDeployment": "3b96641c-f04a-4bb8-8755-a858a0af8204",
+      "activeVersion": "601c030a-09c7-4ac7-901a-9ffa501e12fe",
+      "sourceCommit": "34a7b4257c3c491c8a89f34e29ff0c01fbdd9ee8",
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      },
+      "ordinaryNames": [
+        "ACCESS_AUDIENCE",
+        "ACCESS_ISSUER",
+        "APPROVER_SUBJECTS_JSON",
+        "AUDIT_RETENTION_DAYS",
+        "CERTIFICATION_MODE",
+        "CRM_WRITEBACK_ENABLED",
+        "DEMO_ONLY_EXECUTION_ENABLED",
+        "DEMO_RECOVERY_ENABLED",
+        "DEMO_RECOVERY_EXECUTION_ENABLED",
+        "DEMO_RECOVERY_EXPIRES_AT",
+        "DEMO_RECOVERY_FAULT_ENABLED",
+        "DEMO_RECOVERY_RUN_ID",
+        "DEMO_RELEASE_EXPIRES_AT",
+        "DEMO_RELEASE_MAX_CREATES",
+        "DEMO_RELEASE_RUN_ID",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED",
+        "DEPLOYMENT_ENVIRONMENT",
+        "ENABLE_GENERAL_EXECUTION",
+        "ENABLE_TEST_TASK_WRITES",
+        "GENERAL_RELEASE_APPROVED",
+        "RELEASE_SOURCE_SHA",
+        "STAGING_CONTACT_ID",
+        "STAGING_ISOLATION_APPROVED",
+        "STAGING_PORTAL_ID"
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "secretTypes": [
+        {
+          "name": "EVAL_OPENAI_API_KEY",
+          "type": "secret_text"
+        },
+        {
+          "name": "HUBSPOT_ACCESS_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "HUBSPOT_WRITE_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "OPENAI_API_KEY",
+          "type": "secret_text"
+        },
+        {
+          "name": "OPERATOR_EMAIL_API_KEY",
+          "type": "secret_text"
+        },
+        {
+          "name": "STAGING_HUBSPOT_READ_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "STAGING_HUBSPOT_WRITE_TOKEN",
+          "type": "secret_text"
+        },
+        {
+          "name": "WRITEBACK_APPROVAL_TOKEN",
+          "type": "secret_text"
+        }
+      ],
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "OPERATOR_EMAIL_ENABLED": "NOT_CONFIGURED"
+      },
+      "expectedApproverMapped": true,
+      "realmHash": "aa52b74ac8521dfd70e30576651d3d64b503f941a52a1cd1e7d2b128f58e1d08",
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850",
+          "scriptName": "ai-and-main-revenue-opportunity-staging"
+        }
+      ],
+      "configurationPrepared": true,
+      "roleMappingPreserved": true,
+      "secretValuesRead": false,
+      "configurationConflicts": []
+    }
+  ],
+  "configurationFilesPrivate": true,
+  "secretValuesPrinted": false,
+  "mutations": 0,
+  "hubspotCalls": 0,
+  "emailCalls": 0
+}

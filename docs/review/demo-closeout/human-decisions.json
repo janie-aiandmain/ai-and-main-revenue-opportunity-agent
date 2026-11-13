@@ -1,7 +1,340 @@
 {
   "schemaVersion": "append-only-semantic-review-events-v1",
   "packetHash": "e90e3c0ad66a0eb15b445e45d716dbfe0e85ff994c10642155fdc0534ea45ddf",
-  "events": [],
+  "events": [
+    {
+      "eventType": "USER_APPROVES_COMPLETE_SOURCE_CLOSEOUT_REVIEW",
+      "scope": "HUMAN_SEMANTIC_ONLY",
+      "packetCommit": "e70c0fa55f62ebcc37f146d0f2fb76555d407aa4",
+      "packetHash": "e90e3c0ad66a0eb15b445e45d716dbfe0e85ff994c10642155fdc0534ea45ddf",
+      "verbatimUserResponse": "this set is approved",
+      "reviewerAttribution": "Explicit user statement in current conversation following the linked v2.6 packet",
+      "identityAssurance": "Chat-attributed semantic acceptance; no external operator identity or execution grant inferred",
+      "recordedAt": "2026-11-13T23:11:19.039Z",
+      "verdict": "PASS",
+      "appliesToAllListedCardsAndNegativeControls": true,
+      "reviewedCards": [
+        {
+          "reviewId": "ST03",
+          "reviewItemHash": "123c6872f94ced473600f887064527964c98642e504b0b3759e66545e7ffaca6",
+          "actionVersion": "sha256:134b55f29cc9139ac0581a7cb94e92ef03d2a86f786aad8798ced4ae12622010",
+          "variants": [
+            {
+              "callId": "hash-validation-01",
+              "outputHash": "01ddfc1a7021df5baff90769172d08be7dc3426b1cd55d9997391b8d83315721",
+              "modelKeyDerivedFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+              "reviewItemHash": "e191e6f2250fc624377db89da5ce9108e2e5ec7860988d2e834f287f6af5a439"
+            },
+            {
+              "callId": "hash-validation-02",
+              "outputHash": "38fc89e02a97d26d8f50b9a1e69d19406aaf012e3faf520dc58b1674786bb4e8",
+              "modelKeyDerivedFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+              "reviewItemHash": "2f78db4fc73b5f4c471cebb9bcd4e80a4fd2251bb008ab107902f2c6f6295482"
+            },
+            {
+              "callId": "hash-validation-03",
+              "outputHash": "4dfa971d82e7ebb615be63850f00aae4047d21a3c84183c0484bd7bc66b7fd49",
+              "modelKeyDerivedFindingId": "finding_e872af3baf44de8d998e28abce29d8e5858947df641cc357ffe5473a48140d5c",
+              "reviewItemHash": "774b04de70bcd0523f9c79301da900b87d40b169d7abfab60f6bbaeb6a1d65dd"
+            }
+          ],
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "ST04",
+          "reviewItemHash": "2ae04c5e589859505e23c2e2baf4e8c2452a2ed9e0e39aaa3668b20b87d98dc0",
+          "actionVersion": "sha256:c40d51e9339812b58ede0ffe90ef23c2395a29f2a0c535d04fd9c1d50caf9a23",
+          "variants": [
+            {
+              "callId": "hash-validation-04",
+              "outputHash": "e53636e894bb600bf4a545b50a4a0a61c2329ace16e3bf65780e44e7d3c8d2ab",
+              "modelKeyDerivedFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+              "reviewItemHash": "d53ecd21c8732be4395d5f0c7a684e4e61f13e6451169a88dfb9c8bf54d87270"
+            },
+            {
+              "callId": "hash-validation-05",
+              "outputHash": "be512ac4adff2e1eb7d4c2c4887cf8c10ebb9318007676c15c1625bd786cedb1",
+              "modelKeyDerivedFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+              "reviewItemHash": "25e23583104d9cf8d92b60a068167a815164a1541a7569423a37dffa3dd0f9c6"
+            },
+            {
+              "callId": "hash-validation-06",
+              "outputHash": "d6bc97d2af906ecc97e031c9afdaa5ec13e4e76a98d17bf2f7ce1ef6b79982fa",
+              "modelKeyDerivedFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+              "reviewItemHash": "ae55a4f005bd6b9fee5f91952a7b25f4116ed56336f29c941166a527d58a3068"
+            }
+          ],
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "ST07",
+          "reviewItemHash": "bb245a592bb7e1842817eb6724a42b10a87ab7686e070b67939295592046c4af",
+          "actionVersion": "sha256:94aa3bb45a7894dd4efe1a97315a24c083b0576930f985863b8da8cfeb0d792c",
+          "variants": [
+            {
+              "callId": "hash-validation-07",
+              "outputHash": "53bf30a02fe42632f2a84b91d3c5e04dbe4ae6802a867ebd226be77f9661c6ce",
+              "modelKeyDerivedFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+              "reviewItemHash": "94c62a4b6ba59559e752f78d3ee787ae9dac2218474eaa6b93b4e8a9ab716aec"
+            },
+            {
+              "callId": "hash-validation-08",
+              "outputHash": "a7379df566e0d96908516df53cfb2030ae788ce96cc7e2647af696f4a6b8f1ce",
+              "modelKeyDerivedFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+              "reviewItemHash": "f08ea913424178bd578768b367ae0c58d07e4d40ac7b96b78791aae7f84615ee"
+            },
+            {
+              "callId": "hash-validation-09",
+              "outputHash": "53bf30a02fe42632f2a84b91d3c5e04dbe4ae6802a867ebd226be77f9661c6ce",
+              "modelKeyDerivedFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+              "reviewItemHash": "266b51c71c69c2f20e67d0ae065a40628ec7d1f5afde5352c1abec4794c4de69"
+            }
+          ],
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "ST08",
+          "reviewItemHash": "6816303c6228641be4ea7a4d762c25d301d7d8356e957f251fdf0e35aa59a40a",
+          "actionVersion": "sha256:be71af4a093298e2772045fcb84fb4861faf6e9f7b76859b3f8cd68d2d7dac86",
+          "variants": [
+            {
+              "callId": "hash-validation-10",
+              "outputHash": "06a868d1cbd0f2e7715ef43887ea26653c2c6221b13256890d517b5611fbce0e",
+              "modelKeyDerivedFindingId": "finding_dee2e8df03c76f3a5262b757e2bfc7f039375613ef794577a93475d237c08ec3",
+              "reviewItemHash": "b61b549cd49e6a9dc17d3baa3b08eae8d817cd3e0e6632711f8c516f355df2a6"
+            },
+            {
+              "callId": "hash-validation-11",
+              "outputHash": "67b46d6a223c1af3ad3ca2a8ed50d56027e28fbb0af476baff567412714710a6",
+              "modelKeyDerivedFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+              "reviewItemHash": "9662ae82f159d0fffc39ade21dc065e4262e24deee6d96c785469d8b597f4a81"
+            },
+            {
+              "callId": "hash-validation-12",
+              "outputHash": "85eaeb4c18689aca54305b0ed4e47082e459a33b850039ebe777b2f40b5c0583",
+              "modelKeyDerivedFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+              "reviewItemHash": "18ac9c6deb5d0a9e631b72684336864de236350faddbcada64da9b1f9c5be6b2"
+            }
+          ],
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "EN11-verification",
+          "reviewItemHash": "4d51f1c2c0621c7e11d35b3736e802659d500221251b2bec219cfc504fa27d50",
+          "actionVersion": "sha256:f15034914ff2c11cad2fa6ad6a0e67eeba2fb7ce85fa51cd6807c6d9fed6a4c2",
+          "variants": [
+            {
+              "callId": "hash-validation-13",
+              "outputHash": "c3d5ff201d59de5c60d16942ab6edf43df9c6717b867036d3b5e32ba148f0cbb",
+              "modelKeyDerivedFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+              "reviewItemHash": "5a5ea78ec9a48c1335c64a0d832778d883743433e8981f599bcc88a2aad88cf3"
+            },
+            {
+              "callId": "hash-validation-14",
+              "outputHash": "c9549d46150b68da97629beb64ee701974e497a39086d32afa0f7065f3efc3be",
+              "modelKeyDerivedFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+              "reviewItemHash": "31683f60ac90257ea47ea121e8664d5f7d075f0923f45491cf55ffeb41aeaa73"
+            },
+            {
+              "callId": "hash-validation-15",
+              "outputHash": "3de644cf122550ef9fc9f3636e7316a05210c0a07b44c171cc813d1d992ec99b",
+              "modelKeyDerivedFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+              "reviewItemHash": "1f99b27b726ba400e9a2e0e3196bb9c64c5e07df90f38ba98db7e9709de8c774"
+            }
+          ],
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "EN11-pricing",
+          "reviewItemHash": "59e3f53b9d037ea886ebd55fbc59e20bd1f7a72a8a928ab84c9a79730128951f",
+          "actionVersion": "sha256:42425defc5b7cbda4f614c7bad66d34a513e7bfd967171316d2595a0a22f9e85",
+          "variants": [
+            {
+              "callId": "hash-validation-13",
+              "outputHash": "c3d5ff201d59de5c60d16942ab6edf43df9c6717b867036d3b5e32ba148f0cbb",
+              "modelKeyDerivedFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+              "reviewItemHash": "5f0afa4db76cd6db70dc76403c6115c8c41edf13954d47319f3c7499c133d1ed"
+            },
+            {
+              "callId": "hash-validation-14",
+              "outputHash": "c9549d46150b68da97629beb64ee701974e497a39086d32afa0f7065f3efc3be",
+              "modelKeyDerivedFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+              "reviewItemHash": "70edc09f520c295eaae54f328068875fee3705e019e2e15ba774c0ab8d4ce620"
+            },
+            {
+              "callId": "hash-validation-15",
+              "outputHash": "3de644cf122550ef9fc9f3636e7316a05210c0a07b44c171cc813d1d992ec99b",
+              "modelKeyDerivedFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+              "reviewItemHash": "4f6ae22d736a7885614392fdc9f974af07a96709f8582498f61c6af92c26b06a"
+            }
+          ],
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "EN12-recovery",
+          "reviewItemHash": "76bf8fd2925edb52025ad9fe7b3d3a3be9cdb36ab67329dafc0b5b70a3a7516d",
+          "actionVersion": "sha256:fe36099b2a1d5f62272da8fa03fa5c32c040c9a92eb8938ccb11520f6823ec59",
+          "variants": [
+            {
+              "callId": "hash-validation-16",
+              "outputHash": "dad2c35305723dd0f395f7c2ff1e90fae4312190d8d2b11a3c3535a9c1393c20",
+              "modelKeyDerivedFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+              "reviewItemHash": "4a766cf94712f78b8b29efdf3a3ab4bd4bdfa2b01683a8a147fd4f43257d79a4"
+            },
+            {
+              "callId": "hash-validation-17",
+              "outputHash": "8ec79df6bab00d5989e8aa9eecc5181ffc55619166b4a46e62d7a92606d8f069",
+              "modelKeyDerivedFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+              "reviewItemHash": "3f8cfae8f0c2268b073a14755dc90827853b2159d533077556ef5d1841ebf1ff"
+            },
+            {
+              "callId": "hash-validation-18",
+              "outputHash": "36e44a7cba378168ea032164ce1bd1d51749a4a967d9630be6543ae56058d808",
+              "modelKeyDerivedFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+              "reviewItemHash": "61b7d5e47c3f904fef4fd393478c3b1ad379302ae4dd0d2581da515321a7e99a"
+            }
+          ],
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "EN12-pricing",
+          "reviewItemHash": "ed316c0181851514e5fa74cc13dc26ddade4f39317dfd63acdb10af7ec81db04",
+          "actionVersion": "sha256:5ec1c4040443b4f4bc6cbaf82d1b1c3edc09ee1d0877f6178aa7d9b314e14f65",
+          "variants": [
+            {
+              "callId": "hash-validation-16",
+              "outputHash": "dad2c35305723dd0f395f7c2ff1e90fae4312190d8d2b11a3c3535a9c1393c20",
+              "modelKeyDerivedFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+              "reviewItemHash": "920e96ed0cfbf61033c915789429de00e63a55780cfd4980b79d5cb178bff305"
+            },
+            {
+              "callId": "hash-validation-17",
+              "outputHash": "8ec79df6bab00d5989e8aa9eecc5181ffc55619166b4a46e62d7a92606d8f069",
+              "modelKeyDerivedFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+              "reviewItemHash": "3b361a2e4191de93df7487dad85952579a15d73ef0df50b85bc5a7ba8e3369b6"
+            },
+            {
+              "callId": "hash-validation-18",
+              "outputHash": "36e44a7cba378168ea032164ce1bd1d51749a4a967d9630be6543ae56058d808",
+              "modelKeyDerivedFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+              "reviewItemHash": "4c9904f7c314aaa521aedb76185a6dfb87bd1d22f7dd321aff5db1168abf399b"
+            }
+          ],
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "EN31",
+          "reviewItemHash": "b5744dae7ef74e1ff670eda3f84ba5cc4f3dca943a19abfc27470e15cc61de0f",
+          "actionVersion": "sha256:6f3bf995577e89218a73d1a9f5db7f3674c5a7c6917d1450b26b8b7f0751d346",
+          "variants": [
+            {
+              "callId": "hash-validation-19",
+              "outputHash": "084d52b4aa1452d307d438465e0ae4b9d360941a83bc54b2e86734c54ec4da10",
+              "modelKeyDerivedFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+              "reviewItemHash": "8502aecda2caf9216db65e9edcff732bbc717a5c50bfa896133ca46fab6bb5f3"
+            },
+            {
+              "callId": "hash-validation-20",
+              "outputHash": "c5f7ed3d4d616496b1a0d1e7b9c3dcb5bd6f35978edcd75ab0edf9ccdc099d11",
+              "modelKeyDerivedFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+              "reviewItemHash": "4db000c3ed3368431da95e7f49336004786747675d5b3f5f4ad2ce249fc59330"
+            },
+            {
+              "callId": "hash-validation-21",
+              "outputHash": "8430165241f813c9ef5d448fd6f1f7501a2ad3db1abcebbd16b53f4a833e9989",
+              "modelKeyDerivedFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+              "reviewItemHash": "8179dc4b29fa68ee5f37c36a0e3cc5af0bd56ef4de487528912b768f3d903689"
+            }
+          ],
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "UV11",
+          "reviewItemHash": "4099d33df738f6c3ef48bb0f41fb9513a19dc9b047f3b2ad3128667cb44cc134",
+          "actionVersion": "sha256:7bf0d5170ef1eaa9e45b9f7fea950c337178d2f51e63283b8f70305761926aaa",
+          "variants": [
+            {
+              "callId": "hash-validation-22",
+              "outputHash": "fe3ba4423fa6e9ad9aca386bf20ac85601a3b2ae46b6ab1a3b064596ee63e402",
+              "modelKeyDerivedFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+              "reviewItemHash": "a4f35642c4a706b5d98767153c9b3aa5032470a90ca3d11c950d7de9ace39613"
+            },
+            {
+              "callId": "hash-validation-23",
+              "outputHash": "ba1be82e1102a66be2be8a82c48830620959ad2fe8808c9fa7828104410e5af6",
+              "modelKeyDerivedFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+              "reviewItemHash": "775617c661174719cbeb442956411aa07176b295373fa976cf81bd0c0039cc31"
+            },
+            {
+              "callId": "hash-validation-24",
+              "outputHash": "ba1be82e1102a66be2be8a82c48830620959ad2fe8808c9fa7828104410e5af6",
+              "modelKeyDerivedFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+              "reviewItemHash": "e99a64af4f3e22efd9c11d6e10262235903bfd1e489b74d37e2391f6a23d6688"
+            }
+          ],
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "RQ02",
+          "reviewItemHash": "bd5d4d7f10a61aa0c21aac9fbf66586c5b34201ff68d9eec5339d9d6605fe213",
+          "actionVersion": "sha256:f6c46c061c60fa6a5494c4011abe1bbf2e2eb4bc3d00f1b5e101602b93a2f8ed",
+          "variants": [
+            {
+              "callId": "hash-validation-25",
+              "outputHash": "7cad7c97fead864e3031673b40df081e1dcfec8803878db7392f8a5a817a0376",
+              "modelKeyDerivedFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+              "reviewItemHash": "a9440d68e0aa0981a9f185f02b4a9286ef3f666b274081a01776511ea06d1a63"
+            },
+            {
+              "callId": "hash-validation-26",
+              "outputHash": "26470461ab9b8f44d9e63e25ec1c64b5edc3fd928ba97ecc7a10908cb2daeee0",
+              "modelKeyDerivedFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+              "reviewItemHash": "b6264dbb827ac8b84ab6c4df23a67904115ab7beb59d3da78af38376b8e3dcd4"
+            },
+            {
+              "callId": "hash-validation-27",
+              "outputHash": "7cad7c97fead864e3031673b40df081e1dcfec8803878db7392f8a5a817a0376",
+              "modelKeyDerivedFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+              "reviewItemHash": "fbf94b7c0264530b911b5c52abf9f6b2d20b2a3f500271a5c45be12f5f40b914"
+            }
+          ],
+          "verdict": "PASS"
+        }
+      ],
+      "reviewedNegativeControls": [
+        {
+          "reviewId": "ST01",
+          "outputHash": "dc16f78f42cda064eaa51d77b2467dae71545b485b0f606fee041f90cf1e3cfe",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "ST02",
+          "outputHash": "dc16f78f42cda064eaa51d77b2467dae71545b485b0f606fee041f90cf1e3cfe",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "ST05",
+          "outputHash": "dc16f78f42cda064eaa51d77b2467dae71545b485b0f606fee041f90cf1e3cfe",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "ST09",
+          "outputHash": "dc16f78f42cda064eaa51d77b2467dae71545b485b0f606fee041f90cf1e3cfe",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "EN20",
+          "outputHash": "dc16f78f42cda064eaa51d77b2467dae71545b485b0f606fee041f90cf1e3cfe",
+          "verdict": "PASS"
+        }
+      ],
+      "finalExecutionApproval": false,
+      "releaseAcceptance": false,
+      "deploymentApproval": false,
+      "emailActivationApproval": false,
+      "eventId": "closeout-semantic-ab31d1a64f8c25558ca981b70a18fa2330dac506342c9494363bf51224ab9dd6"
+    }
+  ],
   "scope": "HUMAN_SEMANTIC_ONLY",
   "finalExecutionApproval": false,
   "releaseAcceptance": false

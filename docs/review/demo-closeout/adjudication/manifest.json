@@ -1,0 +1,14 @@
+{
+  "kind": "SEMANTIC_APPROVAL_ADJUDICATION",
+  "packetCommit": "e70c0fa55f62ebcc37f146d0f2fb76555d407aa4",
+  "packetHash": "e90e3c0ad66a0eb15b445e45d716dbfe0e85ff994c10642155fdc0534ea45ddf",
+  "currentLedgerSha256": "97ea07d47a13fed0f1cf6bafebf1e216474635ffd97ab73260ef78a0c057131b",
+  "files": {
+    "README.md": "5c0123f8677ae3b3bd7ce02d253edd50d74f076e6217188ed57df151981819fa",
+    "decision-proof.json": "2e32400469e4464f2ab108af62b2db11f5d6378b413b44b745b22e95262d5e27"
+  },
+  "approvedCards": 11,
+  "negativeControls": 5,
+  "finalExecutionApproval": false,
+  "releaseAcceptance": false
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "USER_AUTHORIZED_BOUNDED_HOSTED_DEMO_CLOSEOUT",
+  "verbatimUserRequest": "move forward with these: Hosted deployment, email activation and task execution will remain separate and pending.",
+  "attribution": "Subsequent explicit user direction in current conversation",
+  "recordedAt": "2026-11-13T23:11:19.083Z",
+  "semanticPacketHash": "e90e3c0ad66a0eb15b445e45d716dbfe0e85ff994c10642155fdc0534ea45ddf",
+  "allowedWorkers": [
+    "ai-and-main-revenue-opportunity-agent",
+    "ai-and-main-revenue-opportunity-staging"
+  ],
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "closedDeploymentAuthorized": true,
+  "operatorEmailActivationAuthorized": true,
+  "emailRecipient": "janie@aiandmain.ai",
+  "emailFrom": "alerts@aiandmain.ai",
+  "emailReplyTo": "janie@aiandmain.ai",
+  "syntheticTaskAndRecoveryTestAuthorized": true,
+  "maximumNewTaskCreates": 1,
+  "requiresFreshCredentialPortalAndMarkerChecks": true,
+  "requiresVerifiedOperator": true,
+  "requiresExactFinalPayloadApproval": true,
+  "exactFinalPayloadApproved": false,
+  "generalWritebackAuthorized": false,
+  "realCustomerActionsAuthorized": false,
+  "permissionsOrNewCredentialsAuthorized": false,
+  "newInfrastructureAuthorized": false,
+  "mainMergeAuthorized": false,
+  "releaseAcceptance": false
+}
