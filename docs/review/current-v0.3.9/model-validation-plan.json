@@ -1,0 +1,66 @@
+{
+  "kind": "PROPOSED_TARGETED_NON_PRODUCTION_MODEL_VALIDATION",
+  "authorized": false,
+  "callsExecuted": 0,
+  "currentTrackedCalls": 210,
+  "maximumAdditionalCalls": 32,
+  "proposedCumulativeMaximum": 242,
+  "reservationRecordsModified": false,
+  "reviewPacketHash": "2e5bdf7e351c0d0eff1e511415e68b82744afae2a7523a1c1c842a88b36affd7",
+  "groups": [
+    {
+      "cases": [
+        "ST03",
+        "ST04",
+        "ST07",
+        "ST08",
+        "EN11",
+        "EN12",
+        "EN31",
+        "UV11",
+        "RQ02"
+      ],
+      "runsPerCase": 3,
+      "purpose": "Affected scope, evidence, timing, independent findings and policy cases"
+    },
+    {
+      "cases": [
+        "ST01",
+        "ST02",
+        "ST05",
+        "ST09",
+        "EN20"
+      ],
+      "runsPerCase": 1,
+      "purpose": "Negative controls for decline, employee intent, newer reversal, injection and timestamp ordering"
+    }
+  ],
+  "provider": "https://api.openai.com/v1/responses",
+  "credential": "EVAL_OPENAI_API_KEY non-production project only",
+  "model": "gpt-5.6-terra",
+  "reasoningEffort": "low",
+  "promptVersion": "reasoning-v0.3.3",
+  "schemaVersion": "findings-v0.2",
+  "materializer": "source-evidence-v0.3.9",
+  "proposalVersion": "internal-task-proposal-v2.4",
+  "requiresExplicitAdditionalAllowance": true,
+  "requiresReviewedSemanticChangesFirst": true,
+  "stopOn": [
+    "credential rejection",
+    "quota or network error",
+    "invalid provider/schema response"
+  ],
+  "retryPolicy": "No automatic retries outside the counted allowance. Preserve failures and unrun cases.",
+  "notAuthorized": [
+    "HubSpot calls",
+    "CRM writes",
+    "deployments",
+    "real email delivery",
+    "budget reset"
+  ],
+  "limitations": [
+    "Three targeted runs are not a new five-run certification.",
+    "Fresh outputs need separate exact-output semantic adjudication.",
+    "If generator changes after human review, regenerate a versioned plan before calls."
+  ]
+}

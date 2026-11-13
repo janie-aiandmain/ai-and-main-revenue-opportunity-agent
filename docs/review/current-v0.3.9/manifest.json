@@ -1,0 +1,18 @@
+{
+  "kind": "CURRENT_SEMANTIC_REVIEW_PACKAGE",
+  "runtimeSourceCheckpoint": "d0c08d3412a4110e33f9a7378012b0aa6e7a53e1",
+  "files": {
+    "README.md": "1c8289723be76b03eb0ffa4d6a02f656e04bc445a41350941f6d6ddeb525c50f",
+    "REVIEW.md": "54f9777f67e5ead559c633afaedcd4a050434bbf428816ff108bb72e144ff0b6",
+    "account-event.json": "d2ca2164789dd1672ae4053e200434364e740ce1de0d93e38149fd9f9dc2bf64",
+    "email-secret-presence.json": "9fd5dc81b06868a5efe254d2b0e8f7522f1d1b946d70b67c70eae528ebc49274",
+    "human-decisions.json": "86d006ccef32502043026d26de6380d97201352c860c22017080d81a224ad370",
+    "model-validation-plan.json": "f521647c97ef6f66e6880653ab8e9f52ba05fc7e5abf7ea2c358639397436857",
+    "offline.txt": "ab6e7d8758c2850391eeb66e0483f0d2df5177b595fa597fc1df01b835938a33",
+    "preserved-checkpoint-sha256.json": "a03f8ee6d3c2e69e7952e73d5c1e0751d1bffac444ade2cecff336cf3075e98b",
+    "results.json": "ab874791545cb0c20ff2dae4533b4c43f9bd65ab070fab4e23e09665e76c8097",
+    "review-check.txt": "2534e4672f13a902eb1dc6d88c0a6807529bd70b050838e59afe040ac4ca7363",
+    "review-packet.json": "9ed03174ba6d3008199523efe41062916ea2b8cc6e1d7d696a4eff90ba8d88bd",
+    "tests.txt": "16f022116dac789e6efc81be078a815d460a56d27e0302fa04ca476b643daa6a"
+  }
+}

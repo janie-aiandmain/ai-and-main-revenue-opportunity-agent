@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "append-only-semantic-review-events-v1",
+  "packet": "docs/review/current-v0.3.9/review-packet.json",
+  "packetHash": "2e5bdf7e351c0d0eff1e511415e68b82744afae2a7523a1c1c842a88b36affd7",
+  "scope": "HUMAN_SEMANTIC_ONLY",
+  "events": [],
+  "finalExecutionApproval": false,
+  "releaseAcceptance": false
+}

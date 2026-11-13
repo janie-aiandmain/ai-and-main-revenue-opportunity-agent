@@ -1,5 +1,9 @@
 # AI & MAIN Revenue Opportunity Agent
 
+Current semantic review: [one consolidated v0.3.9 / proposal v2.4 packet](docs/review/current-v0.3.9/REVIEW.md)
+contains nine findings and five UV11 variants, all PENDING. Review its exact dated
+evidence, recommendations, priorities and hashes; no old verdict transfers.
+
 Email sender follow-up: [selected From / Reply-To and remaining setup](docs/review/email-sender/README.md).
 The disabled demo template uses alerts@aiandmain.ai, with replies and alerts going
 to janie@aiandmain.ai. Domain verification and the sending Secret remain unverified.

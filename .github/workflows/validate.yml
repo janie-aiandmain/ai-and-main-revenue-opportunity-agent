@@ -21,6 +21,8 @@ jobs:
         run: npm test
       - name: Supported multi-finding offline gate (retained captures, no APIs)
         run: npm run regression:offline
+      - name: Current semantic review packet consistency (no human verdict inferred)
+        run: npm run review:current
       - name: Secondary diagnostic classification and review checks (coverage unsupported)
         run: npm run regression:diagnostic:report
       - name: Local Worker durable recovery certification

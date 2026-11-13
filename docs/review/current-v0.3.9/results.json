@@ -1,0 +1,58 @@
+{
+  "kind": "CONSOLIDATED_REVIEW_AND_PROPOSED_VALIDATION_SOURCE_ONLY",
+  "runtimeSourceCheckpoint": "d0c08d3412a4110e33f9a7378012b0aa6e7a53e1",
+  "reviewEntries": 14,
+  "revisedFindings": 9,
+  "retainedUv11Variants": 5,
+  "allHumanVerdicts": "PENDING",
+  "newHumanSemanticApprovals": 0,
+  "modelCalls": 0,
+  "hubspotCalls": 0,
+  "emailDeliveryCalls": 0,
+  "readOnlyCloudflareMetadataRequests": 3,
+  "credentialValuesRead": false,
+  "deployments": 0,
+  "mutationsPerformedByAssistant": 0,
+  "modelAllowanceChanged": false,
+  "runtimeSourcesChanged": false,
+  "previousFilesUnchanged": 312,
+  "commands": [
+    {
+      "command": "npm test",
+      "exit": 0,
+      "passed": 209
+    },
+    {
+      "command": "npm run regression:offline",
+      "exit": 0,
+      "executions": 207,
+      "passed": 207
+    },
+    {
+      "command": "npm run review:current",
+      "exit": 0,
+      "entries": 14
+    }
+  ],
+  "workerBuilds": {
+    "rerun": false,
+    "reason": "No Worker/runtime/configuration changes; prior demo and owner dry-run builds at checkpoint remain preserved."
+  },
+  "freshInference": "NOT_EXECUTED_NOT_AUTHORIZED",
+  "proposedAdditionalModelCalls": 32,
+  "budgetReservationRecordsModified": false,
+  "domainVerification": "USER_REPORTED_VERIFIED_NOT_INDEPENDENTLY_CHECKED",
+  "emailSecretStatus": "LOCATION_MISMATCH_PRESENT_ON_DEMO_ABSENT_ON_LEDGER_OWNER",
+  "credentialValidity": "NOT_TESTED",
+  "finalExecutionApproval": false,
+  "releaseAcceptance": false,
+  "emailDeliveryEnabled": false,
+  "generalWritebackEnabled": false,
+  "limitations": [
+    "Offline rematerialization uses retained synthetic evaluation clocks, not new provider outputs.",
+    "Assistant suggested verdicts are not user acceptance.",
+    "UV11 HIGH priority remains an explicit review concern; no policy is changed.",
+    "Email credential presence check does not prove provider validity or domain verification."
+  ],
+  "logFormatting": "Trailing whitespace removed only from new command logs."
+}

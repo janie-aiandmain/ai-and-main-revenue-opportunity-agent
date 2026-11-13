@@ -1,0 +1,13 @@
+{
+  "kind": "USER_REPORTED_EMAIL_DOMAIN_VERIFICATION",
+  "domain": "aiandmain.ai",
+  "verbatimUserStatement": "DNS and Domain has been verifieed",
+  "recordedAt": "2026-11-13T17:34:16.534059+00:00",
+  "attribution": "User in current chat",
+  "userReportedVerified": true,
+  "independentlyVerified": false,
+  "emailDeliveryEnabled": false,
+  "semanticApproval": false,
+  "finalExecutionApproval": false,
+  "releaseAcceptance": false
+}

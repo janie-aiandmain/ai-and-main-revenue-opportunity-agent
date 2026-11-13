@@ -30,6 +30,14 @@ it blocks an old pending request rather than reusing its idempotency key with ne
 headers. Sender/domain verification and a sending Secret remain unverified;
 this selection does not authorize deployment, live mail or CRM execution.
 
+Current semantic review is consolidated in docs/review/current-v0.3.9. Preserve
+that packet and the earlier captures/packets unchanged. Append only actual user
+verdicts bound to packetHash, reviewId, reviewItemHash and outputHash. All fourteen
+entries start PENDING; UV11's Cross-sell policy does not approve its HIGH priority.
+The accompanying 32-call model plan is PROPOSED ONLY: the user's 210-call cap has
+not changed and no reservation may be reset. The user's reported DNS/domain
+verification is an account event, not semantic/execution/release approval.
+
 Work on the `enterprise-hardening` branch unless explicitly instructed otherwise. Do not merge to `main` automatically.
 
 ## Product boundary
