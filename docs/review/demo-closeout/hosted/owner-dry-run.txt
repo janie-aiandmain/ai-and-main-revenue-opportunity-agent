@@ -1,0 +1,37 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.156.2 (update available 4.162.0)
+───────────────────────────────────────────────
+Total Upload: 243.11 KiB / gzip: 63.67 KiB
+Your Worker has access to the following bindings:
+Binding                                                                               Resource
+env.CERTIFICATION_LEDGER (CertificationLedger)                                        Durable Object
+env.RELEASE_VERSION                                                                   Worker Version Metadata
+env.ACCESS_AUDIENCE ("f3d28533ee59378b47a60ea0747a3e9ee6743...")                      Environment Variable
+env.ACCESS_ISSUER ("https://falling-cell-9501.cloudflarea...")                        Environment Variable
+env.AUDIT_RETENTION_DAYS ("365")                                                      Environment Variable
+env.CERTIFICATION_MODE ("remote-demo")                                                Environment Variable
+env.CRM_WRITEBACK_ENABLED ("false")                                                   Environment Variable
+env.DEMO_ONLY_EXECUTION_ENABLED ("false")                                             Environment Variable
+env.DEMO_RESPONSE_LOSS_TEST_ENABLED ("false")                                         Environment Variable
+env.DEPLOYMENT_ENVIRONMENT ("staging")                                                Environment Variable
+env.ENABLE_GENERAL_EXECUTION ("false")                                                Environment Variable
+env.ENABLE_TEST_TASK_WRITES ("false")                                                 Environment Variable
+env.GENERAL_RELEASE_APPROVED ("false")                                                Environment Variable
+env.RELEASE_SOURCE_SHA ("e70c0fa55f62ebcc37f146d0f2fb76555d407...")                   Environment Variable
+env.STAGING_CONTACT_ID ("582095692487")                                               Environment Variable
+env.STAGING_ISOLATION_APPROVED ("true")                                               Environment Variable
+env.STAGING_PORTAL_ID ("247646122")                                                   Environment Variable
+env.DEMO_RECOVERY_ENABLED ("false")                                                   Environment Variable
+env.DEMO_RECOVERY_EXECUTION_ENABLED ("false")                                         Environment Variable
+env.DEMO_RECOVERY_FAULT_ENABLED ("false")                                             Environment Variable
+env.OPERATOR_EMAIL_ENABLED ("false")                                                  Environment Variable
+env.OPERATOR_EMAIL_PROVIDER ("resend")                                                Environment Variable
+env.OPERATOR_EMAIL_FROM ("alerts@aiandmain.ai")                                       Environment Variable
+env.OPERATOR_EMAIL_REPLY_TO ("janie@aiandmain.ai")                                    Environment Variable
+env.OPERATOR_EMAIL_TO ("janie@aiandmain.ai")                                          Environment Variable
+env.OPERATOR_CONSOLE_URL ("https://ai-and-main-revenue-opportuni...")                 Environment Variable
+
+--dry-run: exiting now.

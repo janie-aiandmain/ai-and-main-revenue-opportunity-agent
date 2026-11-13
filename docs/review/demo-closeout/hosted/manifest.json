@@ -1,0 +1,24 @@
+{
+  "kind": "ACTUAL_CLOSED_HOSTED_DEPLOYMENT_PACKAGE",
+  "deployedSourceCommit": "32c14912520c6cb2175e20921caecbb8d03505b2",
+  "sha256": {
+    "README.md": "3ec0c9e4f69d8831f1d1cd9d9cc114757cf4df9627ba59e563d593cf2e1bfd80",
+    "authorization.json": "897ac81ace33d0927b81813cdd349978cdd605aeeb7d8c17b670e690b8fbc1b5",
+    "before-deployment.json": "f905f8824b7aa7d4a05d036a3d45b8f5ecc27333bbd24a8e607f614aebff84f3",
+    "closed-deployment-verification.json": "7865a11a86c5d0722fa70b4beb9eb1b74dafd73fe8d546fd26d7f10ecfb2121a",
+    "gateway-closed-deployment.txt": "916207448e2851260410fdbf9922f03ffaad6a9e11f5f4d774a2a65ef12ddefc",
+    "gateway-dry-run.txt": "800ae8af5f8da56923162678ce3ff308b8b49bdf81270c4b981a4d499b7c205c",
+    "owner-closed-deployment.txt": "9239b6cee6b81e7f45e75afa3fac4ca57da38bc90c411b9e3753bdb87a92cb99",
+    "owner-dry-run.txt": "4e016fa1eee082eafe7ddb60b8dbf4f72edf70cebe17b27b0f5638415c4e9102",
+    "reviewed-packet-check.txt": "a8e45e8d535557a80b12651ea6fae321685e689919657f42759d610b3caca3d8",
+    "status.json": "f1de3c262b8262211b0e834c76cd1bc8289e15afc9754a5a66b4f1996ab200a1"
+  },
+  "closedDeploymentVerified": true,
+  "authenticatedPreflight": "PENDING_OPERATOR",
+  "emailDelivery": "NOT_EXECUTED",
+  "newTaskCreates": 0,
+  "exactFinalPayloadApproval": false,
+  "remoteRecoveryThisPhase": false,
+  "generalWriteback": false,
+  "releaseAcceptance": false
+}

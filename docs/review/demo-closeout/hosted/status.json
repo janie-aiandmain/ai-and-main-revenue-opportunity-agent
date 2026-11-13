@@ -1,0 +1,19 @@
+{
+  "kind": "BOUNDED_HOSTED_DEMO_PROGRESS",
+  "deployedSourceCommit": "32c14912520c6cb2175e20921caecbb8d03505b2",
+  "closedDeployment": "PASS_ACTUAL_CODE_AND_CONFIGURATION_VERIFIED",
+  "accessUnauthenticatedRejection": "PASS_5_OF_5",
+  "namespace": "PRESERVED_16dca25759494a33813d2800f3f1a850",
+  "secretBindings": "PRESERVED_VALUES_NOT_READ",
+  "approverMapping": "PRESERVED_ON_GATEWAY",
+  "authenticatedIsolationPreflight": "PENDING_OPERATOR_RECEIPT",
+  "hostedModelFinding": "PENDING",
+  "emailActivation": "AUTHORIZED_CONFIGURED_DISABLED_PENDING_PREFLIGHT_AND_BASELINE",
+  "actualEmailDelivery": "NOT_EXECUTED",
+  "newTaskCreates": 0,
+  "taskExecution": "AUTHORIZED_BOUNDED_ONE_REQUIRES_EXACT_PAYLOAD_APPROVAL",
+  "remoteRecovery": "NOT_NEWLY_EXECUTED",
+  "generalWritebackEnabled": false,
+  "releaseAccepted": false,
+  "modelCallsThisHostedPhase": 0
+}
