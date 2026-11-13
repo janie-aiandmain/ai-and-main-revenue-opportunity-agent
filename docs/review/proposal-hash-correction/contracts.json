@@ -1,0 +1,158 @@
+{
+  "kind": "PROPOSAL_HASH_CONTRACT_CHANGE",
+  "checkpoint": "e9c0c57654938714c49d579204abb97f09716915",
+  "proposal": {
+    "before": "internal-task-proposal-v2.4",
+    "after": "internal-task-proposal-v2.5"
+  },
+  "taskPolicy": {
+    "before": "internal-task-policy-v1.4",
+    "after": "internal-task-policy-v1.5"
+  },
+  "materializer": {
+    "before": "source-evidence-v0.3.9",
+    "after": "source-evidence-v0.3.10"
+  },
+  "hashPolicy": {
+    "before": "implicit_whole_finding_v2.4",
+    "after": "authoritative-proposal-hash-v1",
+    "beforeSpecificationHash": "41ea2dfc298111c183201f18ba892788d43660d6f2f8886e11ccf5c9c84c71de",
+    "afterSpecificationHash": "208e5c59b85f6f1e5649b4c04a0232cb7cbe5fa1618aea9799294919b020ade5"
+  },
+  "oldInputs": {
+    "recipe": "sha256(canonical({proposalVersion,finding:raw,...projection,authorityRequirements}))",
+    "raw": "all finding properties except proposedAction",
+    "projection": [
+      "material",
+      "payload"
+    ],
+    "proposalVersion": "internal-task-proposal-v2.4"
+  },
+  "newInputs": {
+    "recipe": "sha256(canonical(proposalVersionInputs(finding,projection,authorityRequirements,reviewPolicyVersion)))",
+    "topLevel": [
+      "hashPolicyVersion",
+      "proposalVersion",
+      "reviewPolicyVersion",
+      "findingDecision",
+      "material",
+      "actionPayload",
+      "authorityRequirements"
+    ],
+    "findingDecision": [
+      "classification",
+      "opportunityType",
+      "evidence",
+      "recommendedNextAction",
+      "humanReviewRequired"
+    ],
+    "material": "complete projection.material, including task/proposal policy versions, quantities and scope, dated evidence, timing, gates, restrictions, priority and authority",
+    "actionPayload": "complete projection.payload, including all existing and future properties",
+    "authorityRequirements": "complete authorityRequirements",
+    "canonicalization": "recursive object-key sorting; array order and all string bytes preserved",
+    "hashPolicyVersion": "authoritative-proposal-hash-v1"
+  },
+  "removedDirectFindingInputs": [
+    "reasoningSummary",
+    "confidence",
+    "opportunityKey",
+    "findingId",
+    "other unrecognized provider/presentation fields"
+  ],
+  "exclusionsRationale": {
+    "reasoningSummary": "explanatory prose; not used by action generation, authority checks or source identity reconciliation",
+    "confidence": "informational; current action/priority/approval policies do not grant authority or select thresholds from this field",
+    "opportunityKeyAndFindingId": "raw identity metadata, not approval identity; raw keys remain fully hashed wherever they appear in task subjects or any payload/material field",
+    "unrecognizedFields": "explicit authoritative field allowlist replaces blanket provider-object hashing; any future authoritative field requires a contract/policy update"
+  },
+  "retainedAndAddedInputs": {
+    "recipe": "sha256(canonical(proposalVersionInputs(finding,projection,authorityRequirements,reviewPolicyVersion)))",
+    "topLevel": [
+      "hashPolicyVersion",
+      "proposalVersion",
+      "reviewPolicyVersion",
+      "findingDecision",
+      "material",
+      "actionPayload",
+      "authorityRequirements"
+    ],
+    "findingDecision": [
+      "classification",
+      "opportunityType",
+      "evidence",
+      "recommendedNextAction",
+      "humanReviewRequired"
+    ],
+    "material": "complete projection.material, including task/proposal policy versions, quantities and scope, dated evidence, timing, gates, restrictions, priority and authority",
+    "actionPayload": "complete projection.payload, including all existing and future properties",
+    "authorityRequirements": "complete authorityRequirements",
+    "canonicalization": "recursive object-key sorting; array order and all string bytes preserved",
+    "hashPolicyVersion": "authoritative-proposal-hash-v1"
+  },
+  "approvalContractHash": {
+    "before": "sha256:ddd99a2d8fac28a9a5f6444b7997023a7a89446edd9b5b42e15fd8fa72520bf0",
+    "after": "sha256:b30bd3fffc42aaaee49c7a55e5984f966fc196984953303d218ba6147fb68f04"
+  },
+  "finalPayloadContract": {
+    "before": "hubspot-final-payload-v1",
+    "after": "hubspot-final-payload-v1",
+    "mechanismChanged": false,
+    "approvalActionVersionRecipe": "final-action-v1:sha256(canonical({payloadHash,materialHash}))",
+    "completeRequestFields": [
+      "contractVersion",
+      "method",
+      "url",
+      "portalId",
+      "body including all properties, contact association and operation correlation"
+    ],
+    "incompatibleContractsRequireNewReview": true
+  },
+  "unchanged": {
+    "promptVersion": "reasoning-v0.3.3",
+    "schemaVersion": "findings-v0.2",
+    "reviewPolicy": "finding-review-v2.7",
+    "evidencePolicy": "source-clause-closure-v1.1",
+    "model": "gpt-5.6-terra",
+    "reasoning": {
+      "effort": "low"
+    },
+    "requestCanonicalHash": "eeb600726b9f630103889b0fd0c3f01c5da97ec637cb74c6ca5c82a8f9ac54ba",
+    "promptHash": "9f03c4a4f700e386def81eac10a231d2d3ef5b85eca8bddfafdaf3af28434c69",
+    "schemaHash": "a87b9e9f895351578d564ad1766eae60e9f3fabed4bda65eed03edf97266f873"
+  },
+  "sourceHashes": {
+    "src/staging/internal-task-policy.js": {
+      "before": "5a8f6075db967a5a6c259dcd2be211e66687c51681764709261d77e51045fdbb",
+      "after": "883e356214bbf9b351c1c39a85706a815a0f2042a8a817d3df874d37e0ab199e",
+      "changed": true
+    },
+    "src/release/reasoning.js": {
+      "before": "da25d81264e8f3b0c0ab53f3db73d5c94cea310d0105ab89722dd64091b6de16",
+      "after": "4858d3411a6b2ce2ed2f737419a7d56f27b1bf2b33d8c6f087f4460b1fd14eb5",
+      "changed": true
+    },
+    "src/staging/general-ledger.js": {
+      "before": "e36f932d8821e7dbcbae855f56fdceac299db152be09cc55b9c46c84c6e77f03",
+      "after": "7146102cd1bc5aca9bff76f4e68c0832717a7ce6b0e6bd5dedf0ee01369a54f2",
+      "changed": true
+    },
+    "src/staging/review-policy.js": {
+      "before": "e83c0fcf16111feaa20c8c25fb36a4901a530a7fd2b54b221ae743e98e765857",
+      "after": "e83c0fcf16111feaa20c8c25fb36a4901a530a7fd2b54b221ae743e98e765857",
+      "changed": false
+    },
+    "src/staging/operation-ledger.js": {
+      "before": "60417359287e6322646466e25778bda91e37c4bc73ece5a24ebcce69ba4cd37b",
+      "after": "60417359287e6322646466e25778bda91e37c4bc73ece5a24ebcce69ba4cd37b",
+      "changed": false
+    },
+    "src/findings-request-v0.3.3.json": {
+      "before": "e5630f86c5a7636a49116b8be56c336d3293c15bb024711f0fa36d9df9fa6fea",
+      "after": "e5630f86c5a7636a49116b8be56c336d3293c15bb024711f0fa36d9df9fa6fea",
+      "changed": false
+    }
+  },
+  "semanticApprovalTransferred": false,
+  "finalExecutionApproval": false,
+  "freshModelValidation": "PENDING_ADDITIONAL_AUTHORIZATION_242_OF_242_EXHAUSTED"
+}

@@ -1,0 +1,5 @@
+
+> ai-and-main-revenue-opportunity-agent@0.1.0 review:current
+> node scripts/review/check-proposal-hash-review.js
+
+{"kind":"CURRENT_CORRECTION_PACKET_CHECK","materializer":"source-evidence-v0.3.10","proposalVersion":"internal-task-proposal-v2.5","checked":32,"modelCalls":0,"humanApprovalInferred":false}

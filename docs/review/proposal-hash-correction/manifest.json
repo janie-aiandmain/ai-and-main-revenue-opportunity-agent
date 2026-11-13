@@ -1,0 +1,24 @@
+{
+  "kind": "PROPOSAL_HASH_CORRECTION_PACKAGE",
+  "checkpoint": "e9c0c57654938714c49d579204abb97f09716915",
+  "sha256": {
+    "README.md": "a2e5e8b9dc7e0dabcb713abcb030a5f7eb47cffb2f0ab2315fa86fc8ac4b749e",
+    "REVIEW.md": "f03ee9febfebb0d21cdbb6d8429491f60712ec7480055c9753b4ec4d98e200ef",
+    "contracts.json": "c5225ee863e6fafd774a4dae4738cdf20cff08d57258d65cbed60b2c97689a7e",
+    "human-decisions.json": "5954f369f5d851a6cc03412f081528784bf9c4743597ab69aed8726f054c6524",
+    "identity-replay.json": "87b57ce7633200f3c943d366307892620cfd7bceebad9806213566d7b7f6c32c",
+    "preservation.json": "52c714ed2f865fa79957f82fb551ab0687f187cbc8864594a202b6d681fbb4b8",
+    "replay.json": "fb707581d8c77062e7eaf7e134f1f19cc35be0626b22ebdbd1d09d31eaca6fa7",
+    "supported-workflow.json": "b2a76714b26e16afe66495a4e6fac6f97419c061ef0b6299780c51cb6f8a76b9",
+    "verification.json": "91a6ebca4de664767b79acb76e89386adfb1d032fc473e666af82dd1f0429831",
+    "logs/demo-build.txt": "66d91953d8ff040362030860378ee2700ec58eabb8cf5cd90f660f2ba1cbd950",
+    "logs/owner-build.txt": "69b723d856184bc8c80c42db1383e72bdbaf8cee55dbc41157b4800f2b833bd6",
+    "logs/preservation.txt": "693c2637d50b6dedddb6852f345e83c23bac220755fa05742d8d683fbae495f7",
+    "logs/review-packet.txt": "702fbddc58fc26930c094b5e237b779bd84032f226b4fabe19d87782815cd7a9",
+    "logs/tests.txt": "fe73049ea5629961e2cce320dfbf79c05e60c177704b50673f42794f5930e2db",
+    "logs/workflow.txt": "1bd1d74ad006f617241639091cb4a8338dfb444dfcb46b8ec699a282df55e9d9"
+  },
+  "reviewState": "PENDING",
+  "executionApproval": false,
+  "releaseAcceptance": false
+}

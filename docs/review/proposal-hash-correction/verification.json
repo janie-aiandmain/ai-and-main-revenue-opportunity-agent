@@ -1,0 +1,296 @@
+{
+  "kind": "EXECUTED_LOCAL_VERIFICATION_NOT_HOSTED_CERTIFICATION",
+  "checkpoint": "e9c0c57654938714c49d579204abb97f09716915",
+  "tools": {
+    "node": "v24.19.0",
+    "wrangler": "4.156.2",
+    "esbuild": "0.28.2",
+    "miniflare": "5.20261102.0-beta"
+  },
+  "commands": [
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "checked": 217,
+      "log": "logs/tests.txt",
+      "sha256": "fe73049ea5629961e2cce320dfbf79c05e60c177704b50673f42794f5930e2db"
+    },
+    {
+      "command": "npm run regression:offline",
+      "exitCode": 0,
+      "checked": 207,
+      "log": "logs/workflow.txt",
+      "sha256": "1bd1d74ad006f617241639091cb4a8338dfb444dfcb46b8ec699a282df55e9d9"
+    },
+    {
+      "command": "npm run review:current",
+      "exitCode": 0,
+      "checked": 32,
+      "log": "logs/review-packet.txt",
+      "sha256": "702fbddc58fc26930c094b5e237b779bd84032f226b4fabe19d87782815cd7a9"
+    },
+    {
+      "command": "WRANGLER_SEND_METRICS=false npm run check",
+      "exitCode": 0,
+      "checked": null,
+      "log": "logs/demo-build.txt",
+      "sha256": "66d91953d8ff040362030860378ee2700ec58eabb8cf5cd90f660f2ba1cbd950"
+    },
+    {
+      "command": "npm run staging:check",
+      "exitCode": 0,
+      "checked": null,
+      "log": "logs/owner-build.txt",
+      "sha256": "69b723d856184bc8c80c42db1383e72bdbaf8cee55dbc41157b4800f2b833bd6"
+    },
+    {
+      "command": "node scripts/review/verify-proposal-hash-checkpoint.js",
+      "exitCode": 0,
+      "checked": 394,
+      "log": "logs/preservation.txt",
+      "sha256": "693c2637d50b6dedddb6852f345e83c23bac220755fa05742d8d683fbae495f7"
+    }
+  ],
+  "captureReplay": {
+    "command": "node scripts/review/proposal-hash-replay.js",
+    "exitCode": 0,
+    "executions": 32,
+    "triplicateCapturesVerified": 27
+  },
+  "supportedWorkflow": {
+    "executions": 207,
+    "summary": {
+      "executions": 207,
+      "cases": 59,
+      "passed": 207,
+      "failures": [],
+      "missingCases": [],
+      "contractCoverage": [
+        {
+          "id": "EN11",
+          "expected": 2,
+          "runs": 7,
+          "passed": true
+        },
+        {
+          "id": "EN12",
+          "expected": 2,
+          "runs": 7,
+          "passed": true
+        }
+      ],
+      "baseCorpus": {
+        "cases": 31,
+        "executions": 122,
+        "passed": 122,
+        "confusion": {
+          "tp": 59,
+          "tn": 63,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "identityStable": true
+    }
+  },
+  "preservation": {
+    "protectedFiles": 394,
+    "unchanged": true,
+    "businessOutputChanges": 0,
+    "taskPayloadChanges": 0
+  },
+  "proposalConsistency": {
+    "originalFreshCapturesReplayed": 32,
+    "triplicateFixtureCapturesVerified": 27,
+    "workflowPassed": 32,
+    "businessOutputChanges": 0,
+    "payloadChanges": 0,
+    "rawIdentityChanges": 0,
+    "caseVersionConsistency": {
+      "before": {
+        "numerator": 0,
+        "denominator": 9,
+        "rate": 0
+      },
+      "after": {
+        "numerator": 7,
+        "denominator": 9,
+        "rate": 0.7777777777777778
+      }
+    },
+    "findingVersionConsistency": {
+      "before": {
+        "numerator": 0,
+        "denominator": 11,
+        "rate": 0
+      },
+      "after": {
+        "numerator": 8,
+        "denominator": 11,
+        "rate": 0.7272727272727273
+      }
+    },
+    "identicalAuthoritativePayloadGroups": 10,
+    "beforeFalseVersionChurn": 10,
+    "afterFalseVersionChurn": 0,
+    "remainingLegitimatePayloadVariation": [
+      "EN11",
+      "EN31"
+    ],
+    "remainingRawKeyIdVariation": [
+      {
+        "caseId": "EN11",
+        "baselineKey": "surge-protection",
+        "byRun": [
+          {
+            "repeat": 1,
+            "callId": "validation-13",
+            "rawKey": "surge-protection",
+            "rawFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+            "beforeVersion": "sha256:9451fb99eef1e67952785985353127ff80bbe3318dff181172561771dd5bc7b8",
+            "afterVersion": "sha256:dc5a421efa06f3b656c3a6ed4091562c0122cb234bcef21f00b52e3338ad815c",
+            "payloadHash": "418b53414b8c4c36805261352ea6bb24dc288ba32097cde8f09c0dabfa88ba6a",
+            "authoritativeInputHash": "def5be9dc4cffa1e632120d009655f39810c6e8c9b3577c0a01458c1642a14be"
+          },
+          {
+            "repeat": 2,
+            "callId": "validation-14",
+            "rawKey": "surge-protection-pricing",
+            "rawFindingId": "finding_7491f2d85c3de6d9894176f656e823ada9401ec9b6c36f134f9cec3637922ca4",
+            "beforeVersion": "sha256:b4a1e235f5c8b38f9cd845f594cd64f9217de2bf29c39562674b7d955db0babe",
+            "afterVersion": "sha256:5d87dd29ec9632cca20303a5d125971af1bbd596b7f2bc50ec896205d6e1c66b",
+            "payloadHash": "5b7424d1a1432b8cae22f6e05f392848680b4eef096fc5e22e0e668242df832d",
+            "authoritativeInputHash": "9f8c1a10919761ac7ed16a1cb6623bb3c7fc9f44d89d5727e13d659c805cb031"
+          },
+          {
+            "repeat": 3,
+            "callId": "validation-15",
+            "rawKey": "surge-protection-pricing",
+            "rawFindingId": "finding_7491f2d85c3de6d9894176f656e823ada9401ec9b6c36f134f9cec3637922ca4",
+            "beforeVersion": "sha256:d53cd26948b73196a6b69d5b8fd41eb4ae915991ae4f42289117c19618523b30",
+            "afterVersion": "sha256:5d87dd29ec9632cca20303a5d125971af1bbd596b7f2bc50ec896205d6e1c66b",
+            "payloadHash": "5b7424d1a1432b8cae22f6e05f392848680b4eef096fc5e22e0e668242df832d",
+            "authoritativeInputHash": "9f8c1a10919761ac7ed16a1cb6623bb3c7fc9f44d89d5727e13d659c805cb031"
+          }
+        ]
+      },
+      {
+        "caseId": "EN11",
+        "baselineKey": "pendant-lighting",
+        "byRun": [
+          {
+            "repeat": 1,
+            "callId": "validation-13",
+            "rawKey": "pendant-lighting",
+            "rawFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+            "beforeVersion": "sha256:833e1b71dcbf65eed1c2f4e91f2edbbadcbbdb09fdd7425542dc7441fa459d7c",
+            "afterVersion": "sha256:53f969c27156203dd57975f300ad437c9de963b5d6f4e4cf3e321b2ba7921adb",
+            "payloadHash": "fdea17c0b72a7d10ac4332fec47f1fbf99c2d3e579d52fd90f0a984c423f4973",
+            "authoritativeInputHash": "02d1fa4fea4a6b3d9e82f69279b1f6f3c7fc34d5723fe6d11cb424f0fe25072a"
+          },
+          {
+            "repeat": 2,
+            "callId": "validation-14",
+            "rawKey": "pendant-lighting-after-renovation",
+            "rawFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+            "beforeVersion": "sha256:e7b4203fd3f7e7250ae5423d6eb5f7e36d76617db8a3a7d48d26290b41513617",
+            "afterVersion": "sha256:60b5e13e16f3585ea5878460244e239634433daffaf2b269fb963c3882165302",
+            "payloadHash": "278bb02a4e4894233a79dc460de5bbef619d7c36b547a673ae15f7d4d3902860",
+            "authoritativeInputHash": "bc89b1ab85e4930a6adad218c16bc27c9d348c51b1a51662bcacafe1cba4d4d3"
+          },
+          {
+            "repeat": 3,
+            "callId": "validation-15",
+            "rawKey": "pendant-lighting-after-renovation",
+            "rawFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+            "beforeVersion": "sha256:9ae76fed914d24d48bf31578506d6a2a3b0c8f2ae8daa758b5dccedb8ad5a9fc",
+            "afterVersion": "sha256:60b5e13e16f3585ea5878460244e239634433daffaf2b269fb963c3882165302",
+            "payloadHash": "278bb02a4e4894233a79dc460de5bbef619d7c36b547a673ae15f7d4d3902860",
+            "authoritativeInputHash": "bc89b1ab85e4930a6adad218c16bc27c9d348c51b1a51662bcacafe1cba4d4d3"
+          }
+        ]
+      },
+      {
+        "caseId": "EN31",
+        "baselineKey": "garage-outlets",
+        "byRun": [
+          {
+            "repeat": 1,
+            "callId": "validation-19",
+            "rawKey": "three-garage-outlets",
+            "rawFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+            "beforeVersion": "sha256:7dbe26511ea3507894c429be0033f1a20f8d3fa968513eacbbaa5d7dc0ae87af",
+            "afterVersion": "sha256:0572f7058567fd49332f978e53fb39b9204c7f8a2155af0ee693d96b419eb8cb",
+            "payloadHash": "af5afb64be0d38135ba26d7d6b6a22c07a520f31c170599af9d91b73f123937c",
+            "authoritativeInputHash": "043d6d48450ffea50177991e34939adf893df32d31222f261841d74db9339acc"
+          },
+          {
+            "repeat": 2,
+            "callId": "validation-20",
+            "rawKey": "garage-outlets",
+            "rawFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+            "beforeVersion": "sha256:ce1c0e7391983435b50fc1f0acee44728d24abc317b84d2a660512caa381d798",
+            "afterVersion": "sha256:41aef4176d6cc119f384a37fc7199c6487831c48592895f1276ae81b0c49dfef",
+            "payloadHash": "3740179870b9e0bdbc6c77ef902f652f5e73fbffca963fd2358f204fc26787aa",
+            "authoritativeInputHash": "7f945a351b83b3107227f91eb82918042d4e33a2fb5efcece09d7ceea134ee1f"
+          },
+          {
+            "repeat": 3,
+            "callId": "validation-21",
+            "rawKey": "garage-three-outlets",
+            "rawFindingId": "finding_04ac06410d914109981b559475d24fd9541b5c6b7f0a2657410c0abc51c857be",
+            "beforeVersion": "sha256:3c21fca86093623486cb63e615018cf6b29ca0109db5ddc7016c322344e84bd1",
+            "afterVersion": "sha256:2088b97b4efc09800676c757b32226454e5527e48b824b4cb0d57e725fc80079",
+            "payloadHash": "c5e5b542b0d0d97c55b66e9906967f79b77c09de703a876c358b9d4463d08650",
+            "authoritativeInputHash": "27904436c60444f726bb4733aab8bda0ee545b067817fbb603d8b02118308e14"
+          }
+        ]
+      }
+    ],
+    "durableIdentities": 11,
+    "extraDurableIdentities": 0,
+    "modelCalls": 0,
+    "hubspotCalls": 0,
+    "emailCalls": 0,
+    "deployments": 0,
+    "freshModelValidation": "PENDING_ADDITIONAL_AUTHORIZATION_242_CALL_ALLOWANCE_EXHAUSTED",
+    "humanSemanticReview": "PENDING",
+    "finalExecutionApproval": false
+  },
+  "approvalTests": {
+    "newTestsPassed": 5,
+    "scope": "LOCAL_SYNTHETIC_IN_MEMORY",
+    "legacyGrantCapturedUnder": "internal-task-proposal-v2.4",
+    "incompatibleContractRejected": true,
+    "oldGrantRevoked": true,
+    "durableIdentityReused": true,
+    "newReviewRequired": true,
+    "finalPayloadChangeInvalidatesApproval": true,
+    "finalRequestTamperRejected": true,
+    "remoteCreateAttempts": 0
+  },
+  "initialIssues": [
+    {
+      "kind": "test_development",
+      "detail": "Intent counterexample initially repeated the current value; replaced with a different intent. Final test passes."
+    },
+    {
+      "kind": "sandbox_restriction",
+      "detail": "Git subprocess preservation check initially returned EPERM; passed with subprocess permissions."
+    },
+    {
+      "kind": "toolchain",
+      "detail": "Preinstalled Wrangler 4.157.0 replaced locally by locked 4.156.2 using npm ci; all final tests/builds rerun."
+    }
+  ],
+  "finalFailures": [],
+  "modelCalls": 0,
+  "hubspotCalls": 0,
+  "emailDeliveries": 0,
+  "deployments": 0,
+  "freshModelValidation": "PENDING_ADDITIONAL_AUTHORIZATION_242_OF_242_EXHAUSTED",
+  "humanSemanticAcceptance": false,
+  "finalExecutionApproval": false,
+  "releaseAcceptance": false,
+  "logFormatting": "Trailing table padding removed from new Wrangler log copies; command content/status unchanged."
+}

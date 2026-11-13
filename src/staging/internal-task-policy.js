@@ -3,9 +3,20 @@ import {sourceAnchors,TASK_CLASS} from '../correction-policy.js';
 import {canonical} from '../findings.js';
 import {createHash} from 'node:crypto';
 import {scopeReviewRouting} from './scope-review.js';
-export const INTERNAL_TASK_POLICY='internal-task-policy-v1.4';
-export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2.4';
+export const INTERNAL_TASK_POLICY='internal-task-policy-v1.5';
+export const INTERNAL_PROPOSAL_VERSION='internal-task-proposal-v2.5';
+export const INTERNAL_PROPOSAL_HASH_POLICY='authoritative-proposal-hash-v1';
 const digest=v=>'sha256:'+createHash('sha256').update(canonical(v)).digest('hex');
+// Explicit action/decision fields, not the entire provider object. Raw identifiers
+// still affect the version wherever they appear in the complete action payload.
+export function proposalVersionInputs(finding,projection,authorityRequirements,reviewPolicyVersion){
+ if(typeof reviewPolicyVersion!=='string'||!reviewPolicyVersion)throw Error('proposal_review_policy_required');
+ return {hashPolicyVersion:INTERNAL_PROPOSAL_HASH_POLICY,proposalVersion:INTERNAL_PROPOSAL_VERSION,
+  reviewPolicyVersion,
+  findingDecision:{classification:finding.classification,opportunityType:finding.opportunityType,evidence:finding.evidence,recommendedNextAction:finding.recommendedNextAction,humanReviewRequired:finding.humanReviewRequired},
+  material:projection.material,actionPayload:projection.payload,authorityRequirements};
+}
+export const proposalActionVersion=(finding,projection,authorityRequirements,reviewPolicyVersion)=>digest(proposalVersionInputs(finding,projection,authorityRequirements,reviewPolicyVersion));
 // Terminal "pricing now" is timing; "customer now requests" can describe a reversal.
 const relative=/\b(?:now(?=\s*(?:[.!?;]|$))|today|tomorrow|this week|by (?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)|end of (?:the )?day)\b/ig;
 const before=/\bbefore\b.{0,60}\b(?:work|continu|proceed|start|install)/i;
@@ -50,6 +61,5 @@ export function internalProposal(finding,history,inspection,contextKey,now){
  const priority=plan.reviewRouting?.priority||(['strong cross-sell opportunity','retention or service-recovery opportunity'].includes(finding.classification)?'HIGH':'MEDIUM');
  const projection=internalProjection(finding,history,inspection,{priority},contextKey,now,purpose);
  const authorityRequirements={policyVersion:INTERNAL_TASK_POLICY,humanApprovalRequired:true,allowedMutation:TASK_CLASS,customerActionPermitted:false};
- const {proposedAction,...raw}=finding;
- return {schemaVersion:INTERNAL_PROPOSAL_VERSION,actionPurpose:purpose,actionPayload:projection.payload,material:projection.material,authorityRequirements,qualityFailures:inspection.qualityFailures,preparationBlocked:inspection.qualityFailures.length>0,executionBlocked:true,missingFinalFields:['operatorTaskDueAt','CRM association','operation correlation','exact final-payload approval'],actionVersion:digest({proposalVersion:INTERNAL_PROPOSAL_VERSION,finding:raw,...projection,authorityRequirements})};
+ return {schemaVersion:INTERNAL_PROPOSAL_VERSION,hashPolicyVersion:INTERNAL_PROPOSAL_HASH_POLICY,actionPurpose:purpose,actionPayload:projection.payload,material:projection.material,authorityRequirements,qualityFailures:inspection.qualityFailures,preparationBlocked:inspection.qualityFailures.length>0,executionBlocked:true,missingFinalFields:['operatorTaskDueAt','CRM association','operation correlation','exact final-payload approval'],actionVersion:proposalActionVersion(finding,projection,authorityRequirements,inspection.policyVersion)};
 }

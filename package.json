@@ -29,7 +29,7 @@
     "staging:verify-production": "NODE_USE_ENV_PROXY=1 node scripts/staging/verify-production.js",
     "regression:diagnostic": "node scripts/regression/offline.js",
     "regression:diagnostic:report": "node scripts/regression/diagnostic-report.js",
-    "review:current": "node scripts/review/consolidate-current.js --check"
+    "review:current": "node scripts/review/check-proposal-hash-review.js"
   },
   "devDependencies": {
     "wrangler": "4.156.2",

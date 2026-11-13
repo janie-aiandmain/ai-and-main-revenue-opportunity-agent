@@ -1,12 +1,19 @@
 # AI & MAIN Revenue Opportunity Agent
 
-Fresh current-generator validation: [32/32 automated passes and remaining stability limits](docs/review/current-v0.3.9/model-validation/RESULTS.md).
+Current source correction: [proposal hash stability and approval migration evidence](docs/review/proposal-hash-correction/README.md).
+Proposal v2.5 excludes explanatory prose while binding the complete task draft and
+authoritative decision material. Offline replay removes all ten identical-payload
+false-churn groups; EN11/EN31 subject differences still change versions. Revised
+contracts and outputs remain pending human review and fresh model validation.
+The 242-call allowance is exhausted; no new calls, deployment or delivery occurred.
+
+Preserved v0.3.9 fresh validation: [32/32 automated passes and remaining stability limits](docs/review/current-v0.3.9/model-validation/RESULTS.md).
 Decisions, evidence, scope and local durable identity were stable; raw keys and
 proposal action versions still vary. These fresh outputs await separate human
 review. The additional 32-call allowance is fully used: 242 cumulative calls.
 No runtime generator change, deployment, CRM write or email send was performed.
 
-Current semantic review: [one consolidated v0.3.9 / proposal v2.4 packet](docs/review/current-v0.3.9/REVIEW.md)
+Preserved semantic review: [one consolidated v0.3.9 / proposal v2.4 packet](docs/review/current-v0.3.9/REVIEW.md)
 contains nine findings and five UV11 variants. The user has now
 [semantically approved all fourteen exact drafts](docs/review/current-v0.3.9/adjudication/README.md),
 including their presented UV11 priorities. The original packet remains an immutable

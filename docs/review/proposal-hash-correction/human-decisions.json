@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "append-only-semantic-review-events-v1",
+  "replayReportHash": "2055a4bce5c27946826bffe6ee09ba252fcb55639aa606aaf4084587b0d53b66",
+  "scope": "HUMAN_SEMANTIC_ONLY",
+  "events": [],
+  "finalExecutionApproval": false,
+  "releaseAcceptance": false
+}

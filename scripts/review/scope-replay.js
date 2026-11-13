@@ -6,6 +6,7 @@ import {prepareHistory,canonical} from '../../src/findings.js';
 import {inspectFinding} from '../../src/staging/review-policy.js';
 import {gradeFindings,hash} from '../regression/findings-core.js';
 const load=async p=>JSON.parse(await readFile(p,'utf8'));
+if(MATERIALIZATION_VERSION!=='source-evidence-v0.3.9')throw Error('historical_output_directory_protected_use_proposal_hash_replay');
 const before=await load('docs/review/semantic-diagnostic-cycle/retained-capture-replay.json');
 const suites=await Promise.all(['enterprise-v2','unseen-review-variations-v1','absolute-timing-boundaries-v1','release-restrictions-v1','release-negative-qualifiers-v1'].map(n=>load('fixtures/'+n+'.json')));
 const cases=new Map(suites.flatMap(s=>s.cases.map(c=>[c.id,{...c,context:c.context||{customer:'Synthetic restriction',serviceHistory:[{timestamp:c.timestamp,note:c.note}]}}])));

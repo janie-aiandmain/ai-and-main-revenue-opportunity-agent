@@ -1,0 +1,429 @@
+{
+  "kind": "LOCAL_ONLY_CURRENT_LEDGER_REPLAY",
+  "executions": 32,
+  "expectedNeeds": 11,
+  "storedIdentities": 11,
+  "extraIdentities": 0,
+  "modelCalls": 0,
+  "hubspotCalls": 0,
+  "emailCalls": 0,
+  "hosted": false,
+  "rows": [
+    {
+      "id": "ST03",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-three-outlets",
+          "rawFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "durableFindingId": "op_2ad35b1a-808d-4bb7-8910-919b2a0192cd"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST03",
+      "repeat": 2,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-three-outlets",
+          "rawFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "durableFindingId": "op_2ad35b1a-808d-4bb7-8910-919b2a0192cd"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST03",
+      "repeat": 3,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-three-outlets",
+          "rawFindingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "durableFindingId": "op_2ad35b1a-808d-4bb7-8910-919b2a0192cd"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST04",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-new-fixture-service-recovery",
+          "rawFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "durableFindingId": "op_48af61f0-e43d-4633-bbd8-5e09358b9ec0"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST04",
+      "repeat": 2,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-new-fixture-service-recovery",
+          "rawFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "durableFindingId": "op_48af61f0-e43d-4633-bbd8-5e09358b9ec0"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST04",
+      "repeat": 3,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-new-fixture-service-recovery",
+          "rawFindingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "durableFindingId": "op_48af61f0-e43d-4633-bbd8-5e09358b9ec0"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST07",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "whole-home-surge-protection",
+          "rawFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "durableFindingId": "op_d4a51883-fe90-407b-bc05-9274ca78412e"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST07",
+      "repeat": 2,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "whole-home-surge-protection",
+          "rawFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "durableFindingId": "op_d4a51883-fe90-407b-bc05-9274ca78412e"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST07",
+      "repeat": 3,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "whole-home-surge-protection",
+          "rawFindingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "durableFindingId": "op_d4a51883-fe90-407b-bc05-9274ca78412e"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST08",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-installation",
+          "rawFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+          "durableFindingId": "op_e068693a-a593-4253-a7c5-7f05fb6e2a21"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST08",
+      "repeat": 2,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-installation",
+          "rawFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+          "durableFindingId": "op_e068693a-a593-4253-a7c5-7f05fb6e2a21"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST08",
+      "repeat": 3,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-installation",
+          "rawFindingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+          "durableFindingId": "op_e068693a-a593-4253-a7c5-7f05fb6e2a21"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "EN11",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting",
+          "rawFindingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+          "durableFindingId": "op_e7ca0e1f-f5b9-4b55-adf3-4cc06eb4d772"
+        },
+        {
+          "rawKey": "surge-protection",
+          "rawFindingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+          "durableFindingId": "op_8752361b-2cbd-4c67-9ceb-ff0efec964fe"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "EN11",
+      "repeat": 2,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting-after-renovation",
+          "rawFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+          "durableFindingId": "op_e7ca0e1f-f5b9-4b55-adf3-4cc06eb4d772"
+        },
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_7491f2d85c3de6d9894176f656e823ada9401ec9b6c36f134f9cec3637922ca4",
+          "durableFindingId": "op_8752361b-2cbd-4c67-9ceb-ff0efec964fe"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "EN11",
+      "repeat": 3,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-lighting-after-renovation",
+          "rawFindingId": "finding_1ae2463f93784371cdaebed5b78489436bf3ef6b41e42870383dcd3c269dba5c",
+          "durableFindingId": "op_e7ca0e1f-f5b9-4b55-adf3-4cc06eb4d772"
+        },
+        {
+          "rawKey": "surge-protection-pricing",
+          "rawFindingId": "finding_7491f2d85c3de6d9894176f656e823ada9401ec9b6c36f134f9cec3637922ca4",
+          "durableFindingId": "op_8752361b-2cbd-4c67-9ceb-ff0efec964fe"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "EN12",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-fixture-service-recovery",
+          "rawFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "durableFindingId": "op_74a6786f-1d60-4bf4-bf1d-36bcb53097bd"
+        },
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "durableFindingId": "op_5457e5de-28b8-4de6-83b9-440a7c93bef9"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "EN12",
+      "repeat": 2,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-fixture-service-recovery",
+          "rawFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "durableFindingId": "op_74a6786f-1d60-4bf4-bf1d-36bcb53097bd"
+        },
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "durableFindingId": "op_5457e5de-28b8-4de6-83b9-440a7c93bef9"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "EN12",
+      "repeat": 3,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "flickering-fixture-service-recovery",
+          "rawFindingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "durableFindingId": "op_74a6786f-1d60-4bf4-bf1d-36bcb53097bd"
+        },
+        {
+          "rawKey": "ev-charger-pricing",
+          "rawFindingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "durableFindingId": "op_5457e5de-28b8-4de6-83b9-440a7c93bef9"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "EN31",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "three-garage-outlets",
+          "rawFindingId": "finding_a3d604a910471a8203684d247c5c6770572a271dd01dfd5925c716a45aa82160",
+          "durableFindingId": "op_dedebf65-9e61-4af1-afa3-08b714618db7"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "EN31",
+      "repeat": 2,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-outlets",
+          "rawFindingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+          "durableFindingId": "op_dedebf65-9e61-4af1-afa3-08b714618db7"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "EN31",
+      "repeat": 3,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "garage-three-outlets",
+          "rawFindingId": "finding_04ac06410d914109981b559475d24fd9541b5c6b7f0a2657410c0abc51c857be",
+          "durableFindingId": "op_dedebf65-9e61-4af1-afa3-08b714618db7"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "UV11",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-pricing",
+          "rawFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+          "durableFindingId": "op_b5415e94-6e57-4fb4-ade3-7ad45761d321"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "UV11",
+      "repeat": 2,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-pricing",
+          "rawFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+          "durableFindingId": "op_b5415e94-6e57-4fb4-ade3-7ad45761d321"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "UV11",
+      "repeat": 3,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "pendant-light-pricing",
+          "rawFindingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+          "durableFindingId": "op_b5415e94-6e57-4fb4-ade3-7ad45761d321"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "RQ02",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "three-additional-garage-outlets",
+          "rawFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+          "durableFindingId": "op_54930c3c-f4cf-44f2-b5cb-7d57bb02385b"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "RQ02",
+      "repeat": 2,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "three-additional-garage-outlets",
+          "rawFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+          "durableFindingId": "op_54930c3c-f4cf-44f2-b5cb-7d57bb02385b"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "RQ02",
+      "repeat": 3,
+      "durableIdentityReused": true,
+      "bindings": [
+        {
+          "rawKey": "three-additional-garage-outlets",
+          "rawFindingId": "finding_0083085df1d91cb16be2cf12fd62bc0f3ecb99329139302228006e955bff7ad0",
+          "durableFindingId": "op_54930c3c-f4cf-44f2-b5cb-7d57bb02385b"
+        }
+      ],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST01",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST02",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST05",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [],
+      "humanSignoff": false
+    },
+    {
+      "id": "ST09",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [],
+      "humanSignoff": false
+    },
+    {
+      "id": "EN20",
+      "repeat": 1,
+      "durableIdentityReused": true,
+      "bindings": [],
+      "humanSignoff": false
+    }
+  ]
+}

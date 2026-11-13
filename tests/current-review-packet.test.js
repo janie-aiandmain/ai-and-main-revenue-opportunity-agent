@@ -1,27 +1,25 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {createHash} from 'node:crypto';
 import {prepareHistory} from '../src/findings.js';
 import {sourceAnchors} from '../src/correction-policy.js';
 import {hash} from '../scripts/regression/findings-core.js';
-import {MATERIALIZATION_VERSION} from '../src/release/reasoning.js';
-import {INTERNAL_PROPOSAL_VERSION} from '../src/staging/internal-task-policy.js';
 const load=async p=>JSON.parse(await readFile(p,'utf8'));
 const path='docs/review/current-v0.3.9/review-packet.json';
-test('consolidated review binds all fourteen current drafts to exact output hashes and grounded source without inheriting old verdicts',async()=>{
+test('preserved v0.3.9 review binds fourteen historical drafts without relabelling their contracts or verdicts',async()=>{
  const packet=await load(path);assert.equal(packet.items.length,14);assert.equal(new Set(packet.items.map(i=>i.reviewId)).size,14);
- assert.equal(packet.materializer,MATERIALIZATION_VERSION);assert.equal(packet.proposalVersion,INTERNAL_PROPOSAL_VERSION);
+ assert.equal(packet.materializer,'source-evidence-v0.3.9');assert.equal(packet.proposalVersion,'internal-task-proposal-v2.4');
  for(const i of packet.items){
   assert.equal(i.humanVerdict,'PENDING');assert.equal(i.finalExecutionApproval,false);assert.equal(i.releaseAcceptance,false);
-  assert.equal(i.finding.proposedAction.schemaVersion,INTERNAL_PROPOSAL_VERSION);
+  assert.equal(i.finding.proposedAction.schemaVersion,'internal-task-proposal-v2.4');
   assert.equal(i.reviewItemHash,hash({caseId:i.caseId,outputHash:i.outputHash,finding:i.finding}));
   assert.notEqual(i.reviewItemHash,i.previousReviewItemHash);
   sourceAnchors(await prepareHistory(i.sourceContext),i.finding.evidence);
   assert.equal(i.finding.proposedAction.executionBlocked,true);
   assert.equal(i.finding.proposedAction.material.customerActionPermitted,false);
  }
- for(const [p,sha]of Object.entries(packet.sourceHashes))assert.equal(createHash('sha256').update(await readFile(p)).digest('hex'),sha,p);
+ const archived=(await load('docs/review/current-v0.3.9/model-validation/accounting-proof.json')).protectedSha256;
+ for(const [p,sha]of Object.entries(packet.sourceHashes))assert.equal(archived[p],sha,p);
 });
 test('current ST03/EN31 match the published urgent previews; UV11 preserves completion, history and the unresolved HIGH-priority decision',async()=>{
  const packet=await load(path),previews=(await load('docs/review/in-progress-scope/previews.json')).previews;

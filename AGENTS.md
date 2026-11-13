@@ -495,3 +495,21 @@ gates. Policy v1.4 / proposal v2.4 / materializer v0.3.9 are source-only; previo
 cached approvals cannot transfer. This modification request is not semantic PASS
 or execution approval. Keep deployment/CRM/model calls closed; budget remains
 210/210 and fresh model validation remains pending. Preserve prior evidence.
+
+## Authorized proposal-hash correction after the 242-call checkpoint
+
+The user's subsequent request authorizes the narrow source-only correction from
+e9c0c57654938714c49d579204abb97f09716915. See
+docs/review/proposal-hash-correction/README.md. Proposal v2.5 / task policy v1.5 /
+materializer v0.3.10 use authoritative-proposal-hash-v1; explanatory summaries and
+informational metadata are excluded from proposal versioning. Complete task
+payloads and authoritative evidence, recommendations, timing, restrictions and
+authority remain bound. Raw EN11/EN31 keys/IDs and their differing subjects must
+stay visible; no subject or identity remediation is included. Exact final-payload
+approval remains separate; incompatible old contracts require new review/approval.
+Preserve old evidence, journals and verdicts byte-for-byte. The additional
+allowance has already been consumed: 242/242 calls. No new model/HubSpot/email
+calls, deployment, credentials/permissions/configuration changes or main merge are
+authorized in this cycle. All write/test/fault/email/release flags remain disabled.
+Offline replay is not fresh inference, semantic acceptance or release approval.
+Revised outputs/contracts remain PENDING; old human acceptance does not transfer.

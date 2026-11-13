@@ -1,0 +1,271 @@
+{
+  "fixtureVersion": "proposal-v2.4-local-approval-v1",
+  "kind": "LOCAL_SYNTHETIC_COMPATIBILITY_FIXTURE_NOT_HUMAN_SIGNOFF",
+  "sourceCommit": "e9c0c57654938714c49d579204abb97f09716915",
+  "capturedAt": "2026-11-13T21:06:10.554Z",
+  "contractHash": "sha256:ddd99a2d8fac28a9a5f6444b7997023a7a89446edd9b5b42e15fd8fa72520bf0",
+  "materializer": "source-evidence-v0.3.9",
+  "env": {
+    "CERTIFICATION_MODE": "local",
+    "STAGING_PORTAL_ID": "hash-fixture-portal",
+    "STAGING_CONTACT_ID": "hash-fixture-contact",
+    "OPERATOR_EMAIL_ENABLED": "false",
+    "CRM_WRITEBACK_ENABLED": "false",
+    "ENABLE_TEST_TASK_WRITES": "false",
+    "ENABLE_GENERAL_EXECUTION": "false",
+    "GENERAL_RELEASE_APPROVED": "false"
+  },
+  "actor": {
+    "role": "Approver",
+    "kind": "LOCAL_SYNTHETIC",
+    "subject": "synthetic-contract-test"
+  },
+  "context": {
+    "customer": "Synthetic hash compatibility",
+    "serviceHistory": [
+      {
+        "noteId": "hash-note",
+        "timestamp": "2026-11-01T12:00:00Z",
+        "note": "Customer requests Level 2 EV charger pricing."
+      }
+    ]
+  },
+  "candidate": {
+    "opportunityKey": "level-2-ev-charger",
+    "classification": "strong cross-sell opportunity",
+    "opportunityType": "cross-sell",
+    "confidence": "high",
+    "evidence": [
+      {
+        "noteId": "hash-note",
+        "quote": "Customer requests Level 2 EV charger pricing."
+      }
+    ],
+    "reasoningSummary": "Synthetic explanatory text.",
+    "recommendedNextAction": "Internal pricing preparation only. No customer contact.",
+    "humanReviewRequired": true
+  },
+  "input": {
+    "findingId": "op_79604376-0106-42ad-89a7-ef7fa3d436ab",
+    "sourceHash": "sha256:6b283a6a5d35ac1066ac7858f123fb9b5cc06a0770d651a32d0ac9142bcb3573",
+    "candidateHash": "978d66a668b988eb4c2ffa05c1125d6ed4ee5a151bbc19d933672bda4b8aa5f8",
+    "decision": "REVIEW",
+    "attestHumanReview": true,
+    "spec": {
+      "actionPurpose": "internal_preparation",
+      "intent": "prepare_quote",
+      "priority": "MEDIUM",
+      "timing": {
+        "kind": "internal_task"
+      },
+      "taskDueAt": "2099-01-01T12:00:00.000Z",
+      "attestations": {
+        "sourceRead": true,
+        "evidenceComplete": true,
+        "scopeBounded": true,
+        "timingVerified": true
+      }
+    }
+  },
+  "reviewed": {
+    "reviewId": "review_5f31c575-0c77-490d-9baf-90cc578ee0e5",
+    "identityKind": "LOCAL_SYNTHETIC",
+    "humanSignoff": "NOT_HUMAN_SIGNOFF",
+    "operationId": "operation_94391b68-edf0-4555-a50a-8a9e92beedbf",
+    "opportunityId": "op_79604376-0106-42ad-89a7-ef7fa3d436ab",
+    "correlation": "ai-main-bf7fdccf-9c91-4053-92a8-de40bd9f595f",
+    "state": "PREPARED",
+    "payloadContract": "hubspot-final-payload-v1",
+    "payloadHash": "sha256:7c375fc0ea430ec904d827ce158c1f1d6223e2b9602e17cbf5e3cf8e242267b9",
+    "actionVersion": "final-action-v1:sha256:19bc6694d3d6740fe85b82715d9570dd03b34b78894aaf32a2423bb4526073fc",
+    "revision": 1,
+    "remoteTaskId": null,
+    "ledgerBootId": null,
+    "demoCreateAttempts": 0,
+    "finalRequest": {
+      "body": {
+        "associations": [
+          {
+            "to": {
+              "id": "hash-fixture-contact"
+            },
+            "types": [
+              {
+                "associationCategory": "HUBSPOT_DEFINED",
+                "associationTypeId": 204
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-11-01T12:00:00Z; hash-note] Customer requests Level 2 EV charger pricing.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: \nInternal task due: 2099-01-01T12:00:00.000Z. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.\n[AI_MAIN_CORRELATION:ai-main-bf7fdccf-9c91-4053-92a8-de40bd9f595f]",
+          "hs_task_priority": "MEDIUM",
+          "hs_task_status": "NOT_STARTED",
+          "hs_task_subject": "Internal pricing preparation: level 2 ev charger",
+          "hs_task_type": "TODO",
+          "hs_timestamp": "2099-01-01T12:00:00.000Z"
+        }
+      },
+      "contractVersion": "hubspot-final-payload-v1",
+      "method": "POST",
+      "portalId": "hash-fixture-portal",
+      "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+    },
+    "trace": [
+      {
+        "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+        "payload_hash": "sha256:7c375fc0ea430ec904d827ce158c1f1d6223e2b9602e17cbf5e3cf8e242267b9",
+        "remote_id": null,
+        "at": "2026-11-13T21:06:10.551Z"
+      }
+    ]
+  },
+  "grant": {
+    "approvalId": "approval_dfafecaf-146d-4a4e-8460-fd21e90536df",
+    "payloadHash": "sha256:7c375fc0ea430ec904d827ce158c1f1d6223e2b9602e17cbf5e3cf8e242267b9",
+    "kind": "LOCAL_SYNTHETIC",
+    "reviewId": "review_5f31c575-0c77-490d-9baf-90cc578ee0e5",
+    "actionVersion": "final-action-v1:sha256:19bc6694d3d6740fe85b82715d9570dd03b34b78894aaf32a2423bb4526073fc"
+  },
+  "tables": {
+    "opportunities": [
+      {
+        "id": "op_79604376-0106-42ad-89a7-ef7fa3d436ab",
+        "context_key": "hubspot:hash-fixture-portal:contact:hash-fixture-contact",
+        "anchors": "[{\"noteId\":\"hash-note\",\"start\":0,\"end\":45,\"sourceHash\":\"d26b908c853b1ca517a8ea0dc9af349c21e18f9c85a44beed8594bce90cd9d03\",\"text\":\"Customer requests Level 2 EV charger pricing.\"}]",
+        "aliases": "[\"level-2-ev-charger\"]",
+        "source_hash": "6b283a6a5d35ac1066ac7858f123fb9b5cc06a0770d651a32d0ac9142bcb3573",
+        "candidate_hash": "978d66a668b988eb4c2ffa05c1125d6ed4ee5a151bbc19d933672bda4b8aa5f8",
+        "decision_hash": "41a34ca1674605b51d9ed081f3653577ecc02319192bf793ee0dd07538fff689",
+        "reviewed_candidate_hash": null,
+        "version": null,
+        "revision": 1,
+        "state": "pending_review",
+        "projection": null,
+        "review_ref": null
+      }
+    ],
+    "approvals": [],
+    "sandbox_tasks": [],
+    "outcomes": [],
+    "audit": [],
+    "cert_operations": [
+      {
+        "id": "operation_94391b68-edf0-4555-a50a-8a9e92beedbf",
+        "op_id": "op_79604376-0106-42ad-89a7-ef7fa3d436ab",
+        "correlation": "ai-main-bf7fdccf-9c91-4053-92a8-de40bd9f595f",
+        "payload_json": "{\"body\":{\"associations\":[{\"to\":{\"id\":\"hash-fixture-contact\"},\"types\":[{\"associationCategory\":\"HUBSPOT_DEFINED\",\"associationTypeId\":204}]}],\"properties\":{\"hs_task_body\":\"Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\\nSource evidence (verbatim text, with original UTC timestamps):\\n[2026-11-01T12:00:00Z; hash-note] Customer requests Level 2 EV charger pricing.\\nSource-relative timing: []\\nCustomer-action gates (not satisfied by this task): []\\nExact source restrictions: \\nInternal task due: 2099-01-01T12:00:00.000Z. Operator-selected task timing does not renew a customer deadline.\\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.\\n[AI_MAIN_CORRELATION:ai-main-bf7fdccf-9c91-4053-92a8-de40bd9f595f]\",\"hs_task_priority\":\"MEDIUM\",\"hs_task_status\":\"NOT_STARTED\",\"hs_task_subject\":\"Internal pricing preparation: level 2 ev charger\",\"hs_task_type\":\"TODO\",\"hs_timestamp\":\"2099-01-01T12:00:00.000Z\"}},\"contractVersion\":\"hubspot-final-payload-v1\",\"method\":\"POST\",\"portalId\":\"hash-fixture-portal\",\"url\":\"https://api.hubapi.com/crm/v3/objects/tasks\"}",
+        "payload_hash": "sha256:7c375fc0ea430ec904d827ce158c1f1d6223e2b9602e17cbf5e3cf8e242267b9",
+        "material_json": "{\"policyVersion\":\"internal-task-policy-v1.4\",\"proposalVersion\":\"internal-task-proposal-v2.4\",\"actionClass\":\"hubspot.follow_up_task.create\",\"targetContext\":\"hubspot:hash-fixture-portal:contact:hash-fixture-contact\",\"classification\":\"strong cross-sell opportunity\",\"opportunityType\":\"cross-sell\",\"intent\":\"prepare_quote\",\"actionPurpose\":\"internal_preparation\",\"scope\":{\"sourceRequests\":[\"Customer requests Level 2 EV charger pricing.\"]},\"priority\":\"MEDIUM\",\"evidence\":[{\"noteId\":\"hash-note\",\"timestamp\":\"2026-11-01T12:00:00Z\",\"quote\":\"Customer requests Level 2 EV charger pricing.\"}],\"timing\":{\"kind\":\"none\"},\"operatorTaskDueAt\":\"2099-01-01T12:00:00.000Z\",\"sourceTimingConstraints\":[],\"customerActionGates\":[],\"sourceRestrictions\":[],\"customerActionPermitted\":false,\"humanApprovalRequired\":true,\"reviewPolicy\":\"finding-review-v2.7\"}",
+        "material_hash": "sha256:2dd3ed9644134e9d8bb1d3e4b2e156e829741587c986761c7ff9921d8f629abd",
+        "source_hash": "6b283a6a5d35ac1066ac7858f123fb9b5cc06a0770d651a32d0ac9142bcb3573",
+        "source_candidate_hash": "978d66a668b988eb4c2ffa05c1125d6ed4ee5a151bbc19d933672bda4b8aa5f8",
+        "source_revision": 1,
+        "revision": 1,
+        "state": "APPROVED",
+        "remote_id": null,
+        "estimated_minor": 0
+      }
+    ],
+    "cert_approvals": [
+      {
+        "id": "approval_dfafecaf-146d-4a4e-8460-fd21e90536df",
+        "operation_id": "operation_94391b68-edf0-4555-a50a-8a9e92beedbf",
+        "payload_hash": "sha256:7c375fc0ea430ec904d827ce158c1f1d6223e2b9602e17cbf5e3cf8e242267b9",
+        "revision": 1,
+        "actor": "synthetic-contract-test",
+        "kind": "LOCAL_SYNTHETIC",
+        "issued_at": 1794603970553,
+        "expires_at": 1794690370553,
+        "revoked": 0
+      }
+    ],
+    "cert_trace": [
+      {
+        "sequence": 1,
+        "operation_id": "operation_94391b68-edf0-4555-a50a-8a9e92beedbf",
+        "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+        "payload_hash": "sha256:7c375fc0ea430ec904d827ce158c1f1d6223e2b9602e17cbf5e3cf8e242267b9",
+        "remote_id": null,
+        "at": "2026-11-13T21:06:10.551Z"
+      },
+      {
+        "sequence": 2,
+        "operation_id": "operation_94391b68-edf0-4555-a50a-8a9e92beedbf",
+        "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+        "payload_hash": "sha256:7c375fc0ea430ec904d827ce158c1f1d6223e2b9602e17cbf5e3cf8e242267b9",
+        "remote_id": null,
+        "at": "2026-11-13T21:06:10.553Z"
+      }
+    ],
+    "cert_outcomes": [],
+    "release_demo_runs": [],
+    "release_demo_attempts": [],
+    "release_demo_faults": [],
+    "retention_audit_clock": [],
+    "general_identity_candidates": [],
+    "general_identity_reviews": [],
+    "general_contexts": [
+      {
+        "context_key": "hubspot:hash-fixture-portal:contact:hash-fixture-contact",
+        "generation": 1,
+        "state": "READY",
+        "source_hash": "sha256:6b283a6a5d35ac1066ac7858f123fb9b5cc06a0770d651a32d0ac9142bcb3573",
+        "contract_hash": "sha256:ddd99a2d8fac28a9a5f6444b7997023a7a89446edd9b5b42e15fd8fa72520bf0"
+      }
+    ],
+    "general_findings": [
+      {
+        "op_id": "op_79604376-0106-42ad-89a7-ef7fa3d436ab",
+        "context_key": "hubspot:hash-fixture-portal:contact:hash-fixture-contact",
+        "candidate_hash": "978d66a668b988eb4c2ffa05c1125d6ed4ee5a151bbc19d933672bda4b8aa5f8",
+        "source_hash": "sha256:6b283a6a5d35ac1066ac7858f123fb9b5cc06a0770d651a32d0ac9142bcb3573",
+        "raw_json": "{\"findingId\":\"finding_8923c83ed204e692a1fd23f4d3e1668940790fb68d772237c131fcdd1ae4367a\",\"opportunityKey\":\"level-2-ev-charger\",\"classification\":\"strong cross-sell opportunity\",\"opportunityType\":\"cross-sell\",\"confidence\":\"high\",\"evidence\":[{\"noteId\":\"hash-note\",\"quote\":\"Customer requests Level 2 EV charger pricing.\"}],\"reasoningSummary\":\"Synthetic explanatory text.\",\"recommendedNextAction\":\"Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps. Internal task only. No customer action is authorized.\",\"humanReviewRequired\":true,\"proposedAction\":{\"schemaVersion\":\"internal-task-proposal-v2.4\",\"actionPurpose\":\"internal_preparation\",\"actionPayload\":{\"type\":\"hubspot.follow_up_task.create\",\"target\":{\"contextKey\":\"hubspot:hash-fixture-portal:contact:hash-fixture-contact\"},\"properties\":{\"hs_task_subject\":\"Internal pricing preparation: level 2 ev charger\",\"hs_task_body\":\"Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\\nSource evidence (verbatim text, with original UTC timestamps):\\n[2026-11-01T12:00:00Z; hash-note] Customer requests Level 2 EV charger pricing.\\nSource-relative timing: []\\nCustomer-action gates (not satisfied by this task): []\\nExact source restrictions: \\nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.\",\"hs_task_priority\":\"HIGH\",\"hs_task_status\":\"NOT_STARTED\",\"hs_task_type\":\"TODO\"}},\"material\":{\"policyVersion\":\"internal-task-policy-v1.4\",\"proposalVersion\":\"internal-task-proposal-v2.4\",\"actionClass\":\"hubspot.follow_up_task.create\",\"targetContext\":\"hubspot:hash-fixture-portal:contact:hash-fixture-contact\",\"classification\":\"strong cross-sell opportunity\",\"opportunityType\":\"cross-sell\",\"intent\":\"prepare_quote\",\"actionPurpose\":\"internal_preparation\",\"scope\":{\"sourceRequests\":[\"Customer requests Level 2 EV charger pricing.\"]},\"priority\":\"HIGH\",\"evidence\":[{\"noteId\":\"hash-note\",\"timestamp\":\"2026-11-01T12:00:00Z\",\"quote\":\"Customer requests Level 2 EV charger pricing.\"}],\"timing\":{\"kind\":\"none\"},\"operatorTaskDueAt\":null,\"sourceTimingConstraints\":[],\"customerActionGates\":[],\"sourceRestrictions\":[],\"customerActionPermitted\":false,\"humanApprovalRequired\":true},\"authorityRequirements\":{\"policyVersion\":\"internal-task-policy-v1.4\",\"humanApprovalRequired\":true,\"allowedMutation\":\"hubspot.follow_up_task.create\",\"customerActionPermitted\":false},\"qualityFailures\":[],\"preparationBlocked\":false,\"executionBlocked\":true,\"missingFinalFields\":[\"operatorTaskDueAt\",\"CRM association\",\"operation correlation\",\"exact final-payload approval\"],\"actionVersion\":\"sha256:77f55060026203b4576d1b2f988ae3b21574a5beb3e207c4dfae4eb2b9d2e220\"}}",
+        "inspection_json": "{\"policyVersion\":\"finding-review-v2.7\",\"qualityFailures\":[],\"executionBlocks\":[],\"humanReview\":\"PENDING\"}",
+        "review_state": "REVIEWED"
+      }
+    ],
+    "general_approval_identity": [
+      {
+        "approval_id": "approval_dfafecaf-146d-4a4e-8460-fd21e90536df",
+        "authority_hash": "sha256:fb1455d3cf9073d6bccf538da5036760569f3e5f236e33bea969250673599644"
+      }
+    ],
+    "general_approval_bindings": [
+      {
+        "approval_id": "approval_dfafecaf-146d-4a4e-8460-fd21e90536df",
+        "review_id": "review_5f31c575-0c77-490d-9baf-90cc578ee0e5",
+        "action_version": "final-action-v1:sha256:19bc6694d3d6740fe85b82715d9570dd03b34b78894aaf32a2423bb4526073fc"
+      }
+    ],
+    "general_reviews": [
+      {
+        "id": "review_5f31c575-0c77-490d-9baf-90cc578ee0e5",
+        "op_id": "op_79604376-0106-42ad-89a7-ef7fa3d436ab",
+        "operation_id": "operation_94391b68-edf0-4555-a50a-8a9e92beedbf",
+        "actor": "synthetic-contract-test",
+        "identity_kind": "LOCAL_SYNTHETIC",
+        "source_hash": "sha256:6b283a6a5d35ac1066ac7858f123fb9b5cc06a0770d651a32d0ac9142bcb3573",
+        "candidate_hash": "978d66a668b988eb4c2ffa05c1125d6ed4ee5a151bbc19d933672bda4b8aa5f8",
+        "contract_hash": "sha256:ddd99a2d8fac28a9a5f6444b7997023a7a89446edd9b5b42e15fd8fa72520bf0",
+        "spec_json": "{\"actionPurpose\":\"internal_preparation\",\"intent\":\"prepare_quote\",\"priority\":\"MEDIUM\",\"timing\":{\"kind\":\"internal_task\"},\"taskDueAt\":\"2099-01-01T12:00:00.000Z\",\"attestations\":{\"sourceRead\":true,\"evidenceComplete\":true,\"scopeBounded\":true,\"timingVerified\":true}}",
+        "payload_hash": "sha256:7c375fc0ea430ec904d827ce158c1f1d6223e2b9602e17cbf5e3cf8e242267b9",
+        "decision": "REVIEW",
+        "created_at": "2026-11-13T21:06:10.552Z"
+      }
+    ],
+    "operator_email_state": [
+      {
+        "finding_id": "op_79604376-0106-42ad-89a7-ef7fa3d436ab",
+        "context_key": "hubspot:hash-fixture-portal:contact:hash-fixture-contact",
+        "fingerprint": "sha256:6d36dbf4b3530ba1b87d6a8ab429bb48df012ddb0322a247c0fb21287c8450ab",
+        "revision": 2
+      }
+    ],
+    "operator_email_outbox": []
+  },
+  "realHubspotCalls": 0,
+  "realEmailCalls": 0,
+  "realTasksCreated": 0,
+  "productionExecutionApproval": false
+}
