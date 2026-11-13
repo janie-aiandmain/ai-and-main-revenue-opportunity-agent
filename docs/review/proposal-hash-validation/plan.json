@@ -1,0 +1,50 @@
+{
+  "kind": "FINITE_SYNTHETIC_PROPOSAL_HASH_VALIDATION_MATRIX",
+  "runtimeCheckpoint": "60da9e019b7cf20009ba5742061560e60aa75676",
+  "groups": [
+    {
+      "cases": [
+        "ST03",
+        "ST04",
+        "ST07",
+        "ST08",
+        "EN11",
+        "EN12",
+        "EN31",
+        "UV11",
+        "RQ02"
+      ],
+      "runsPerCase": 3,
+      "purpose": "Affected scope, evidence, timing, independent findings and policy cases"
+    },
+    {
+      "cases": [
+        "ST01",
+        "ST02",
+        "ST05",
+        "ST09",
+        "EN20"
+      ],
+      "runsPerCase": 1,
+      "purpose": "Negative controls for decline, employee intent, newer reversal, injection and timestamp ordering"
+    }
+  ],
+  "plannedCalls": 32,
+  "model": "gpt-5.6-terra",
+  "reasoningEffort": "low",
+  "promptVersion": "reasoning-v0.3.3",
+  "schemaVersion": "findings-v0.2",
+  "materializer": "source-evidence-v0.3.10",
+  "proposalVersion": "internal-task-proposal-v2.5",
+  "hashPolicy": "authoritative-proposal-hash-v1",
+  "sourceHashes": {
+    "src/staging/internal-task-policy.js": "883e356214bbf9b351c1c39a85706a815a0f2042a8a817d3df874d37e0ab199e",
+    "src/staging/general-ledger.js": "7146102cd1bc5aca9bff76f4e68c0832717a7ce6b0e6bd5dedf0ee01369a54f2",
+    "src/release/reasoning.js": "4858d3411a6b2ce2ed2f737419a7d56f27b1bf2b33d8c6f087f4460b1fd14eb5",
+    "src/staging/review-policy.js": "e83c0fcf16111feaa20c8c25fb36a4901a530a7fd2b54b221ae743e98e765857",
+    "src/findings-request-v0.3.3.json": "e5630f86c5a7636a49116b8be56c336d3293c15bb024711f0fa36d9df9fa6fea"
+  },
+  "correctionReportHash": "2055a4bce5c27946826bffe6ee09ba252fcb55639aa606aaf4084587b0d53b66",
+  "scope": "Fresh targeted validation only; no runtime generation/identity/subject remediation, deployment, CRM or mail access.",
+  "retryPolicy": "Stop on request/schema/credential failure. Preserve reservations and unrun cases; no automatic repeats."
+}

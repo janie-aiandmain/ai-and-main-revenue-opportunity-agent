@@ -1,0 +1,20 @@
+{
+  "kind": "USER_AUTHORIZED_TASK_SCOPED_EVALUATION_CONTINUATION",
+  "authorized": true,
+  "verbatimUserRequest": "why are we limiting the allowance? can we open it up to get this done",
+  "attribution": "User request in current conversation after proposal-hash correction report",
+  "recordedAt": "2026-11-13T21:40:01.251Z",
+  "replacesCumulativeCap": 242,
+  "cumulativeCallCeiling": null,
+  "scope": "Necessary non-production model validation of the proposal-hash correction",
+  "agentSelectedFiniteRunCalls": 32,
+  "finiteRunLimitIsNotUserSpecifiedSpendingCap": true,
+  "planHash": "2b68c17a95b822af3e9d26dea5475f83bdf186ce3849f859f75a5f58dafbf2b4",
+  "doesNotResetPriorReservations": true,
+  "allowsCrmOrHubSpotCalls": false,
+  "allowsEmailDelivery": false,
+  "allowsDeployment": false,
+  "semanticAcceptance": false,
+  "finalExecutionApproval": false,
+  "releaseAcceptance": false
+}

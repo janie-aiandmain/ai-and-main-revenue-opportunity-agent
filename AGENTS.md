@@ -513,3 +513,18 @@ calls, deployment, credentials/permissions/configuration changes or main merge a
 authorized in this cycle. All write/test/fault/email/release flags remain disabled.
 Offline replay is not fresh inference, semantic acceptance or release approval.
 Revised outputs/contracts remain PENDING; old human acceptance does not transfer.
+
+## Task-scoped model validation continuation
+
+The user subsequently asked to reopen the allowance to finish the work. See
+docs/review/proposal-hash-validation/authorization.json for the verbatim request.
+This replaces the exhausted 242 cumulative cap for necessary non-production
+proposal-hash validation; do not reinterpret it as deployment, CRM/email access,
+semantic acceptance, execution approval or release acceptance. Keep every prior
+reservation journal immutable. Each finite synthetic test matrix still reserves
+before requests, records actual usage and stops on credential/network/schema
+failure. The first continuation matrix has 32 planned calls; that run size is an
+engineering test plan, not a user-specified new cumulative spending ceiling.
+Do not start unrelated evaluations or repetitive unplanned loops. Use only the
+existing non-production EVAL_OPENAI_API_KEY. Keep runtime generation, prompt,
+schema, settings and all write/test/fault/email/release flags unchanged/disabled.
