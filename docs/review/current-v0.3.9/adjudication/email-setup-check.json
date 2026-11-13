@@ -1,0 +1,26 @@
+{
+  "kind": "READ_ONLY_OWNER_MAIL_SECRET_AND_FLAGS_CHECK",
+  "worker": "ai-and-main-revenue-opportunity-staging",
+  "checkedAt": "2026-11-13T17:52:46.245Z",
+  "mutations": 0,
+  "credentialValidity": "NOT_TESTED",
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailProviderCalls": 0,
+  "secretCheck": {
+    "httpStatus": 200,
+    "name": "OPERATOR_EMAIL_API_KEY",
+    "present": true,
+    "configuredAsSecret": true
+  },
+  "flags": {
+    "OPERATOR_EMAIL_ENABLED": "NOT_CONFIGURED",
+    "CRM_WRITEBACK_ENABLED": "false",
+    "ENABLE_TEST_TASK_WRITES": "false",
+    "ENABLE_GENERAL_EXECUTION": "false",
+    "GENERAL_RELEASE_APPROVED": "false",
+    "DEMO_ONLY_EXECUTION_ENABLED": "false",
+    "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false"
+  },
+  "secretValuesRead": false
+}

@@ -1,0 +1,5 @@
+
+> ai-and-main-revenue-opportunity-agent@0.1.0 review:current
+> node scripts/review/consolidate-current.js --check
+
+{"kind":"OFFLINE_REVIEW_PACKET_VERIFIED","entries":14,"packetHash":"2e5bdf7e351c0d0eff1e511415e68b82744afae2a7523a1c1c842a88b36affd7","materializer":"source-evidence-v0.3.9","proposalVersion":"internal-task-proposal-v2.4","allPending":true,"modelCalls":0,"checkOnly":true}

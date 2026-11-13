@@ -1,0 +1,15 @@
+{
+  "kind": "SEMANTIC_ADJUDICATION_MANIFEST",
+  "priorReviewCommit": "4da328dc6e8ea58b887ca7f17c0c314e4accff57",
+  "priorReviewManifestSha256": "751a38a6aea5d7bf60cf47491be9c68789f52a15bf320adff7abc13b82b57a22",
+  "files": {
+    "README.md": "5fa05d85154dd512ee37add6c443fe61a41106d69ff08486c7287d73b75fd704",
+    "decision-proof.json": "79ca2f85f1f479aa317a1004ce676b9aa75afed4a38f1fae1a2d587365371a35",
+    "email-setup-check.json": "d147d0cd74080fe87e039c9d38e8ebc4b3b742406383e26965a06a67a6775068",
+    "results.json": "51dfdf314fb1179a417a1a3796a7b17154932421193add24a726a2a597dc53d4",
+    "review-check.txt": "2534e4672f13a902eb1dc6d88c0a6807529bd70b050838e59afe040ac4ca7363",
+    "tests.txt": "d5c032b25f70b945767bebcb2f8ca8550223d380674d495f957fe5a7aba97853",
+    "../human-decisions.json": "9c190219ab8326fe6b60e3a58e7a637bb4efb3b0b2f067c7abc74d26a06862e2",
+    "../review-packet.json": "9ed03174ba6d3008199523efe41062916ea2b8cc6e1d7d696a4eff90ba8d88bd"
+  }
+}

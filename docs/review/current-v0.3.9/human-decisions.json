@@ -3,7 +3,168 @@
   "packet": "docs/review/current-v0.3.9/review-packet.json",
   "packetHash": "2e5bdf7e351c0d0eff1e511415e68b82744afae2a7523a1c1c842a88b36affd7",
   "scope": "HUMAN_SEMANTIC_ONLY",
-  "events": [],
+  "events": [
+    {
+      "eventType": "USER_APPROVES_ENTIRE_SEMANTIC_REVIEW_PACKET",
+      "scope": "HUMAN_SEMANTIC_ONLY",
+      "packetCommit": "4da328dc6e8ea58b887ca7f17c0c314e4accff57",
+      "packetHash": "2e5bdf7e351c0d0eff1e511415e68b82744afae2a7523a1c1c842a88b36affd7",
+      "verdict": "PASS",
+      "appliesToAllListedOutputs": true,
+      "verbatimUserResponse": "Mailer is added to the staging worker, I approve the review packet",
+      "reviewerAttribution": "Explicit user statement in current conversation",
+      "identityAssurance": "Chat-attributed semantic decision only; no external operator identity inferred",
+      "recordedAt": "2026-11-13T17:54:19.130Z",
+      "interpretation": "Approval covers all fourteen outputs in the presented packet, including current UV11 HIGH priorities. It does not transfer to changed or future outputs, authorize execution/release, activate email or increase the model-call allowance.",
+      "reviewedOutputs": [
+        {
+          "reviewId": "ST03",
+          "caseId": "ST03",
+          "findingId": "finding_5a042b4e59d02576906202200bf2fdd58aaebb1b610f6120212335afaccf6ac7",
+          "outputHash": "1745bb98f717853675368448cff9cf4da7bd2bfbb294db2baf0fd5b3ddc23468",
+          "reviewItemHash": "8c07d2a6bf3124ed5a19bf5f0bacd05f0a2672de49856b9a6ec68b9c22fc45c0",
+          "actionVersion": "sha256:1e0fd719a162be9e6da47df373d77d1f75949ba0559d6f07c823f98c52880608",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "ST04",
+          "caseId": "ST04",
+          "findingId": "finding_f3fc2525315feaf6289d95fd6b4230195e38626b3ef4b8890a77668c86d7acae",
+          "outputHash": "b5e2cb67f450ff6c3c9dc0a75f0ee3945ede5d4cf02dd5aab0e40b84ff0d4fee",
+          "reviewItemHash": "75748e872475d059611b9becbd5b557290d18662bc5852b225597461f8a468aa",
+          "actionVersion": "sha256:d33adc303300dcd73dac38a7758d6038219c487d3eeb35bf6bb74d608c971713",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "ST07",
+          "caseId": "ST07",
+          "findingId": "finding_42cf8a2823cf62a096ee01376e40434642d291a351e21b6f505e21795e930f1c",
+          "outputHash": "3ea09db71cb163fd82e2f55ea8338a51e7ba91acf6226c57f7340936bb426ca7",
+          "reviewItemHash": "eb440a3c555382835be7e3ec8c4955f31331e138a19be95683431a46c4566750",
+          "actionVersion": "sha256:13b07079d85b991f6170b71d2ac91c009eef25f52d78f58a876ec6dc5f4591d1",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "ST08",
+          "caseId": "ST08",
+          "findingId": "finding_e1c3b74e13b3d2f2d209495f66de863a4199650e05fbf85977af4b89fe4d48dc",
+          "outputHash": "bcbb607a2387c9555586eca799354bd2058d43760ad1852a87e1072652d9e02c",
+          "reviewItemHash": "15e5ec2741985c6e2a174299517c81e75720986c2286ea5a9047b17444733002",
+          "actionVersion": "sha256:bcf1a65ff98f9efb6d858aea758364e882010dbc6849830107f21d06c48cdd96",
+          "priority": "MEDIUM",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "EN11-lighting",
+          "caseId": "EN11",
+          "findingId": "finding_108e13ebaf121f761e6a590224895e9631f8f47b5704c5f099e83fcb6abc0623",
+          "outputHash": "9557882dd272de24cb2b7c9f33d188bbc98ac8666ced251d85871e3b6a8d2d11",
+          "reviewItemHash": "7c97d9107c351eaac4b1df3469d906f82ce7773240b69019481e77a606ed8135",
+          "actionVersion": "sha256:76ae1abdb5ce86d032a6bab841f27b27e517ab5bd657d5f08d79019119ebffda",
+          "priority": "MEDIUM",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "EN11-pricing",
+          "caseId": "EN11",
+          "findingId": "finding_27b7fe09da309916c0a89b081f4b6d58efe89988ae717ee8b284eed6ad442ed2",
+          "outputHash": "9557882dd272de24cb2b7c9f33d188bbc98ac8666ced251d85871e3b6a8d2d11",
+          "reviewItemHash": "c30f71de61ce3974fba2e29c8e38954b9cd5f4997121502f04ecccbd47fa4ca2",
+          "actionVersion": "sha256:9451fb99eef1e67952785985353127ff80bbe3318dff181172561771dd5bc7b8",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "EN12-recovery",
+          "caseId": "EN12",
+          "findingId": "finding_50881031e944f24a22941855923c74ec4f825425dd15d9bc7ecc7e4fe1dae9ba",
+          "outputHash": "ec0974e28ad15ec590b348519b58fb24aa6947f0ad7d9d26fb15d8ec997e1478",
+          "reviewItemHash": "2e89581fd18ef15f9d13b12b9f237a4701507113567fefdcdf23616ef7fd2def",
+          "actionVersion": "sha256:a3f87c72f7a52470759d4df18796871e220eb49f844e6206916ce7a92bd91cc0",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "EN12-pricing",
+          "caseId": "EN12",
+          "findingId": "finding_80a9148fa5ce66023279d1e0a682e40b8f5054da6e027dc2a46680da0c38568b",
+          "outputHash": "ec0974e28ad15ec590b348519b58fb24aa6947f0ad7d9d26fb15d8ec997e1478",
+          "reviewItemHash": "10f5c2b51096fbbbeaf322d33db73f54e0f3f3369603eb8c1824b055986835b7",
+          "actionVersion": "sha256:662ae733ad65106a0f9d3427bce466491b20d70e58a0dcb22ea0385718af3aca",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "EN31",
+          "caseId": "EN31",
+          "findingId": "finding_ddefbdfbacf443eaff2da4b243ceb25650f21680b21a7062f3d61564bf7d0c2a",
+          "outputHash": "6a896f5b21098bd888539526b64871b56687ebb38dee3a1b1538aadfc96bcbc2",
+          "reviewItemHash": "d4692478021274be9f48d2229ce4dcb14b05bf08c4fc6c5908a83e5cafdf728f",
+          "actionVersion": "sha256:ed650705de901fd6fb2b70c1dc0a73558eaffe20957c7292fc833bc09a888d50",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "UV11-1",
+          "caseId": "UV11",
+          "findingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+          "outputHash": "f4dd4ce06eed133cb63ba9ed2a24134c06969a16ca270923abbe4ed19dc4f918",
+          "reviewItemHash": "cb42ca0362afeac4b9d00ba976ef200332a3dced708455efc8323003b99cd39c",
+          "actionVersion": "sha256:aa9bcfb56bb4a7572b3d8103d86eae37afeafa81f54fc576309ed3bd6a3c80c8",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "UV11-2",
+          "caseId": "UV11",
+          "findingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+          "outputHash": "3f42196b81747b7542cc7a570c28b041b94ef5b1ac7d0717ddeab05674d0c6c6",
+          "reviewItemHash": "d86e7f320a9adc39c810e129f73a17b4bae0cd753d60248f778ccd3098eb5068",
+          "actionVersion": "sha256:48163b856af8d899ec6415e97898ca8dce3ba54182eeae49cf0154e3d35eb418",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "UV11-3",
+          "caseId": "UV11",
+          "findingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+          "outputHash": "b6ac0d402356293a17191546116e8d529c36796d15e071f58d4d5d1a569a8d42",
+          "reviewItemHash": "625f858e341a91b6f0723467913c2664c472823a73917028c9f84af2148791f3",
+          "actionVersion": "sha256:999bf1c539efe5a7bf658d8388a5f11ec322df1669471f0a75c0bf0335aa9c39",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "UV11-4",
+          "caseId": "UV11",
+          "findingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+          "outputHash": "4eee31c78646b355140d7fee22f0bcf6d4d2109627545a25ce3276d327e96101",
+          "reviewItemHash": "a4b4521e01e965ebae21c56f49344b6d22e813b314899b958004cd8fa6e736f5",
+          "actionVersion": "sha256:d968586684b8d8c4950095eddb7e87ed82eb6a90d784dd9ab6873f5d46837756",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        },
+        {
+          "reviewId": "UV11-5",
+          "caseId": "UV11",
+          "findingId": "finding_6e3dadcabd3750ffc3110b3be06afdfa7d12ea32756a4d8928b368993ef76b3e",
+          "outputHash": "f4dd4ce06eed133cb63ba9ed2a24134c06969a16ca270923abbe4ed19dc4f918",
+          "reviewItemHash": "cb42ca0362afeac4b9d00ba976ef200332a3dced708455efc8323003b99cd39c",
+          "actionVersion": "sha256:aa9bcfb56bb4a7572b3d8103d86eae37afeafa81f54fc576309ed3bd6a3c80c8",
+          "priority": "HIGH",
+          "verdict": "PASS"
+        }
+      ],
+      "finalExecutionApproval": false,
+      "releaseApproval": false,
+      "emailActivationApproval": false,
+      "modelAllowanceApproval": false,
+      "eventId": "semantic-packet-7b17de00386488d28231f22b37c846ae979aa3ae3ed39e701d8319b9278818a5"
+    }
+  ],
   "finalExecutionApproval": false,
   "releaseAcceptance": false
 }

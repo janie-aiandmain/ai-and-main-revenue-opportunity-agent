@@ -38,6 +38,14 @@ The accompanying 32-call model plan is PROPOSED ONLY: the user's 210-call cap ha
 not changed and no reservation may be reset. The user's reported DNS/domain
 verification is an account event, not semantic/execution/release approval.
 
+The user subsequently stated "Mailer is added to the staging worker, I approve
+the review packet". The append-only ledger records semantic PASS for all fourteen
+exact outputs in packet 2e5bdf7e351c0d0eff1e511415e68b82744afae2a7523a1c1c842a88b36affd7,
+including the presented UV11 HIGH drafts. See current-v0.3.9/adjudication. This
+does not approve future outputs, raise the 210-call limit, deploy, activate email,
+or grant exact-payload task approval. Cloudflare now confirms the mail Secret on
+the owner; provider validity is untested and all checked execution flags are off.
+
 Work on the `enterprise-hardening` branch unless explicitly instructed otherwise. Do not merge to `main` automatically.
 
 ## Product boundary

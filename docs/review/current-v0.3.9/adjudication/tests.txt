@@ -1,0 +1,15 @@
+✔ consolidated review binds all fourteen current drafts to exact output hashes and grounded source without inheriting old verdicts (46.874318ms)
+✔ current ST03/EN31 match the published urgent previews; UV11 preserves completion, history and the unresolved HIGH-priority decision (26.745011ms)
+✔ proposed inference allowance does not authorize calls or reset the exhausted historical budget (6.349063ms)
+✔ the explicit Cross-sell choice is a source-bound policy event, not semantic or execution approval (24.837266ms)
+✔ all checkpoint fixtures, raw captures, previous semantic decisions and review artifacts remain unchanged (144.267393ms)
+✔ the selected label policy cannot rewrite unrelated, deferred, scope-change or service-recovery findings (0.700857ms)
+✔ the historical replay command fails before overwriting an earlier policy evidence directory (115.388053ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 523.710697

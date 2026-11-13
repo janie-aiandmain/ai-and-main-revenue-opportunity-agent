@@ -1,0 +1,16 @@
+{
+  "kind": "APPEND_ONLY_PACKET_SEMANTIC_APPROVAL_PROOF",
+  "packetHash": "2e5bdf7e351c0d0eff1e511415e68b82744afae2a7523a1c1c842a88b36affd7",
+  "priorLedgerCommit": "4da328dc6e8ea58b887ca7f17c0c314e4accff57",
+  "priorLedgerSha256": "86d006ccef32502043026d26de6380d97201352c860c22017080d81a224ad370",
+  "updatedLedgerSha256": "9c190219ab8326fe6b60e3a58e7a637bb4efb3b0b2f067c7abc74d26a06862e2",
+  "priorEventsUnchanged": true,
+  "appendedEventId": "semantic-packet-7b17de00386488d28231f22b37c846ae979aa3ae3ed39e701d8319b9278818a5",
+  "acceptedEntries": 14,
+  "uv11HighPriorityAcceptedForExactDrafts": true,
+  "packetSnapshotUnchanged": true,
+  "finalExecutionApproval": false,
+  "emailActivationApproval": false,
+  "modelAllowanceApproval": false,
+  "releaseApproval": false
+}

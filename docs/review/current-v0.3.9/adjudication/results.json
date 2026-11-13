@@ -1,0 +1,38 @@
+{
+  "kind": "SEMANTIC_APPROVAL_AND_OWNER_SECRET_VERIFICATION",
+  "sourceCommit": "4da328dc6e8ea58b887ca7f17c0c314e4accff57",
+  "packetHash": "2e5bdf7e351c0d0eff1e511415e68b82744afae2a7523a1c1c842a88b36affd7",
+  "acceptedExactEntries": 14,
+  "userStatement": "Mailer is added to the staging worker, I approve the review packet",
+  "uv11HighAcceptedForExactDrafts": true,
+  "originalPacketUnchanged": true,
+  "priorLedgerEventsUnchanged": true,
+  "mailSecretNameVerified": true,
+  "secretValuesRead": false,
+  "providerCredentialValidity": "NOT_TESTED",
+  "emailDeliveryEnabled": false,
+  "crmWriteFlagsEnabled": false,
+  "modelAllowanceApproval": false,
+  "additionalModelCallsApproved": 0,
+  "modelCalls": 0,
+  "hubspotCalls": 0,
+  "emailCalls": 0,
+  "readOnlyCloudflareCalls": 2,
+  "deployments": 0,
+  "configurationMutationsByAssistant": 0,
+  "commands": [
+    {
+      "command": "npm run review:current",
+      "exit": 0
+    },
+    {
+      "command": "node --test tests/current-review-packet.test.js tests/semantic-review-records.test.js",
+      "exit": 0,
+      "passed": 7
+    }
+  ],
+  "workerBuildsRerun": false,
+  "reason": "Data-only semantic event and read-only metadata; runtime sources unchanged.",
+  "finalExecutionApproval": false,
+  "releaseApproval": false
+}

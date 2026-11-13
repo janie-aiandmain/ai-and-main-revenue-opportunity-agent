@@ -1,12 +1,16 @@
 # AI & MAIN Revenue Opportunity Agent
 
 Current semantic review: [one consolidated v0.3.9 / proposal v2.4 packet](docs/review/current-v0.3.9/REVIEW.md)
-contains nine findings and five UV11 variants, all PENDING. Review its exact dated
-evidence, recommendations, priorities and hashes; no old verdict transfers.
+contains nine findings and five UV11 variants. The user has now
+[semantically approved all fourteen exact drafts](docs/review/current-v0.3.9/adjudication/README.md),
+including their presented UV11 priorities. The original packet remains an immutable
+PENDING snapshot; the append-only ledger records current status. Model allowance,
+email activation, deployment and final execution approval remain separate.
 
 Email sender follow-up: [selected From / Reply-To and remaining setup](docs/review/email-sender/README.md).
 The disabled demo template uses alerts@aiandmain.ai, with replies and alerts going
-to janie@aiandmain.ai. Domain verification and the sending Secret remain unverified.
+to janie@aiandmain.ai. Domain verification is user-reported and the sending Secret
+is confirmed on the owner Worker; provider validity and delivery remain untested.
 
 Latest source cycle: [supported multi-finding gate and operator email alerts](docs/review/workflow-email/README.md).
 `regression:offline` now exercises the supported finding workflow; the limited
