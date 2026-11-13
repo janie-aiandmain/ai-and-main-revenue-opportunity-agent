@@ -4,6 +4,24 @@
 
 This repository contains the AI & MAIN Revenue Opportunity Agent. The current hardening target is enterprise pilot readiness for a mid-market service business with internal IT/security review.
 
+## Approved supported-workflow gate and email alerts
+
+The user selected option 2: `npm run regression:offline` is the supported
+multi-finding retained-capture gate. Preserve the narrower rules diagnostic under
+`regression:diagnostic` (full exit 1 for independent coverage) and frozen v0.2 under
+`regression:offline:legacy` (19/31). The scoped diagnostic report must disclose
+unsupported coverage and never imply release acceptance. Do not delete expected
+multi-finding cases or silently migrate diagnostic runtime callers.
+
+The user requested HIGH or Immediate Review operator emails, to
+janie@aiandmain.ai for the demo. See docs/review/workflow-email/README.md. Implement
+via the existing owner ledger/alarm, durable deduplication, minimal metadata and
+client configuration. No customer-action authority follows from an alert. Delivery
+is disabled until verified sender/secret configuration and bounded hosted validation;
+do not deploy, send real email, call HubSpot, alter credentials/permissions or start
+fresh model calls in this source-only cycle. No new infrastructure is required.
+Keep all write/test/fault/release flags false and preserve earlier evidence.
+
 Work on the `enterprise-hardening` branch unless explicitly instructed otherwise. Do not merge to `main` automatically.
 
 ## Product boundary

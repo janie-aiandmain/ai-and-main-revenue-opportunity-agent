@@ -11,11 +11,20 @@ import { reasonCorrected } from '../release/reasoning.js';
 import { operatorConsole } from './operator-console.js';
 import { HubSpotCertificationClient } from './hubspot-client.js';
 import { commitDemoFaultAndRestart } from '../release/demo-execution.js';
+import {emailConfig,NOTIFICATION_POLICY} from './email-notifications.js';
 const json=(body,status=200)=>Response.json(body,{status,headers:{'cache-control':'no-store'}});
 export class CertificationLedger extends DurableObject {
-  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.bootId=crypto.randomUUID();this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.runtimeBootId=this.bootId;this.ledger.recoverChecking();if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
-  async ensureRetentionAlarm(){if(await this.demoContext.storage.getAlarm()===null)await this.demoContext.storage.setAlarm(Date.now()+86400000);}
-  async alarm(){this.ledger.pruneAuditMetadata(Number(this.env.AUDIT_RETENTION_DAYS||365));await this.demoContext.storage.setAlarm(Date.now()+86400000);}
+  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.bootId=crypto.randomUUID();this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.runtimeBootId=this.bootId;this.ledger.recoverChecking();this.ledger.emailOutbox.recover();if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
+  async ensureRetentionAlarm(){
+    let ready=false;try{ready=!!emailConfig(this.env);}catch{}
+    const due=ready?this.ledger.emailOutbox.nextDue():null;
+    const desired=Math.min(Date.now()+86400000,due??Infinity),existing=await this.demoContext.storage.getAlarm();
+    if(existing===null||existing>desired)await this.demoContext.storage.setAlarm(desired);
+  }
+  async alarm(){
+    try{await this.ledger.emailOutbox.deliver(this.env,{flush:()=>this.demoContext.storage.sync()});const days=Number(this.env.AUDIT_RETENTION_DAYS||365);this.ledger.pruneAuditMetadata(days);this.ledger.emailOutbox.prune(days);}
+    finally{let ready=false;try{ready=!!emailConfig(this.env);}catch{}await this.demoContext.storage.setAlarm(Math.min(Date.now()+86400000,ready?(this.ledger.emailOutbox.nextDue()??Infinity):Infinity));}
+  }
   async fetch(request){
     const path=new URL(request.url).pathname;
     let input;try{input=await request.json();}catch{return json({status:'invalid_json'},400);}
@@ -49,21 +58,25 @@ export class CertificationLedger extends DurableObject {
         return json(receipt);
       }
       if(path==='/certification/general/findings')return json({findings:l.findings(l.contextKey(this.env))});
+      if(path==='/certification/general/notifications'){
+        let blocker=null;try{emailConfig(this.env);}catch{blocker='operator_email_configuration_incomplete';}
+        return json({policyVersion:NOTIFICATION_POLICY,enabled:this.env.OPERATOR_EMAIL_ENABLED==='true',blocker,deliveries:l.emailOutbox.status()});
+      }
       if(path==='/certification/general/identity-candidates')return json({pendingIdentity:l.pendingIdentity(this.env)});
       if(!['Approver','Admin'].includes(actor.role))return json({status:'approver_required'},403);
       if(path.startsWith('/certification/general/')){
         const source=new DesignatedNoteSource(this.env);
         const reason=(context,key)=>reasonCorrected(this.env,context,key);
-        if(path==='/certification/general/evaluate')return json({findings:await l.evaluate(this.env,source,reason)});
-        if(path==='/certification/general/identity-review')return json(await l.resolveIdentity(input,actor,this.env,source));
+        if(path==='/certification/general/evaluate'){const findings=await l.evaluate(this.env,source,reason);await this.ensureRetentionAlarm();return json({findings});}
+        if(path==='/certification/general/identity-review'){const result=await l.resolveIdentity(input,actor,this.env,source);await this.ensureRetentionAlarm();return json(result);}
         if(path==='/certification/general/review'){
           const checked=await l.review(input,actor,this.env,source);
-          return json(l.finishReview(input,actor,checked,this.env));
+          const result=l.finishReview(input,actor,checked,this.env);await this.ensureRetentionAlarm();return json(result);
         }
         if(path==='/certification/general/approve')return json(l.approveGeneral(input,actor));
         if(path==='/certification/general/resume-approval')return json(await l.resumeApproval(input,actor,this.env,source));
         if(path==='/certification/general/arm-response-loss')return json(l.armDemoResponseLoss(input,actor,this.env));
-        if(path==='/certification/general/execute'){const client=new HubSpotCertificationClient(this.env);if(this.env.CERTIFICATION_MODE==='remote-demo'&&this.env.DEMO_RESPONSE_LOSS_TEST_ENABLED==='true')client.restartAfterInjectedLoss=()=>commitDemoFaultAndRestart(this.demoContext);return json(await l.executeGeneral(input.operationId,input.approvalId,actor,this.env,source,reason,client));}
+        if(path==='/certification/general/execute'){const client=new HubSpotCertificationClient(this.env);if(this.env.CERTIFICATION_MODE==='remote-demo'&&this.env.DEMO_RESPONSE_LOSS_TEST_ENABLED==='true')client.restartAfterInjectedLoss=()=>commitDemoFaultAndRestart(this.demoContext);try{return json(await l.executeGeneral(input.operationId,input.approvalId,actor,this.env,source,reason,client));}finally{await this.ensureRetentionAlarm();}}
         return json({status:'not_found'},404);
       }
       if(path==='/certification/prepare')return json(await l.prepare(input,this.env));

@@ -1,0 +1,5 @@
+
+> ai-and-main-revenue-opportunity-agent@0.1.0 certification:replay
+> node certification/replay-fresh.js
+
+{"cases":31,"reusedOpportunitySlots":12,"distinctOpportunities":12,"newModelCalls":0}

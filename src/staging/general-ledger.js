@@ -8,6 +8,7 @@ import {INTERNAL_PROPOSAL_VERSION} from './internal-task-policy.js';
 import { inspectFinding,generalProjection } from './review-policy.js';
 import request from '../findings-request-v0.3.3.json' with {type:'json'};
 import {EVIDENCE_POLICY,MATERIALIZATION_VERSION} from '../release/reasoning.js';
+import {OperatorEmailOutbox} from './email-notifications.js';
 const contractHash=digest({request,reviewPolicy:REVIEW_POLICY,proposalVersion:INTERNAL_PROPOSAL_VERSION,evidencePolicy:EVIDENCE_POLICY,materializationVersion:MATERIALIZATION_VERSION,approvalIdentityPolicy:'verified-subject-domain-role-v1'});
 const plainHash=value=>createHash('sha256').update(canonical(value)).digest('hex');
 const compactAnchors=(history,evidence)=>sourceAnchors(history,evidence).map(a=>({noteId:a.noteId,start:a.start,end:a.end,sourceHash:plainHash({text:a.sourceText,timestamp:a.timestamp}),text:a.sourceText.slice(a.start,a.end)}));
@@ -23,7 +24,7 @@ export class GeneralFindingLedger extends StagingOperationLedger {
     CREATE TABLE IF NOT EXISTS general_approval_identity(approval_id TEXT PRIMARY KEY,authority_hash TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS general_approval_bindings(approval_id TEXT PRIMARY KEY,review_id TEXT NOT NULL,action_version TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS general_reviews(id TEXT PRIMARY KEY,op_id TEXT NOT NULL,operation_id TEXT,actor TEXT NOT NULL,identity_kind TEXT NOT NULL,source_hash TEXT NOT NULL,candidate_hash TEXT NOT NULL,contract_hash TEXT NOT NULL,spec_json TEXT NOT NULL,payload_hash TEXT,decision TEXT NOT NULL,created_at TEXT NOT NULL);
-  `);}
+  `);this.emailOutbox=new OperatorEmailOutbox(db);}
   contextKey(env){return 'hubspot:'+env.STAGING_PORTAL_ID+':contact:'+env.STAGING_CONTACT_ID;}
   beginEvaluation(env){return this.tx(()=>{
     const key=this.contextKey(env),old=this.db.prepare('SELECT * FROM general_contexts WHERE context_key=?').get(key),generation=(old?.generation||0)+1;
@@ -34,6 +35,7 @@ export class GeneralFindingLedger extends StagingOperationLedger {
     const context=this.db.prepare('SELECT * FROM general_contexts WHERE context_key=?').get(ticket.key);
     if(context?.generation!==ticket.generation)return;
     this.db.prepare("UPDATE general_contexts SET state='FAILED' WHERE context_key=? AND generation=?").run(ticket.key,ticket.generation);
+    this.emailOutbox.cancelContext(ticket.key);
     for(const f of this.db.prepare('SELECT op_id FROM general_findings WHERE context_key=?').all(ticket.key))this.revokeForFinding(f.op_id,'FRESH_EVALUATION_FAILED');
   }
   acceptEvaluation(ticket,history,result,now=new Date().toISOString()){
@@ -60,7 +62,15 @@ export class GeneralFindingLedger extends StagingOperationLedger {
       for(const old of this.db.prepare('SELECT * FROM general_findings WHERE context_key=?').all(ticket.key))if(!seen.has(old.op_id)){this.revokeForFinding(old.op_id,'FINDING_WITHDRAWN');this.db.prepare("UPDATE general_findings SET review_state='WITHDRAWN' WHERE op_id=?").run(old.op_id);}
       this.db.prepare("UPDATE general_contexts SET state='READY',source_hash=?,contract_hash=? WHERE context_key=? AND generation=?").run(sourceHash,contractHash,ticket.key,ticket.generation);
       this.db.prepare('DELETE FROM general_identity_candidates WHERE context_key=?').run(ticket.key);
-      return this.findings(ticket.key);
+      const findings=this.findings(ticket.key);
+      for(const f of findings){
+        if(['WITHDRAWN','DEFER','DECLINE'].includes(f.reviewState))this.emailOutbox.cancel(f.findingId);
+        else {
+          const review=f.reviewState==='REVIEWED'?this.db.prepare('SELECT spec_json FROM general_reviews WHERE op_id=? ORDER BY rowid DESC LIMIT 1').get(f.findingId):null;
+          this.emailOutbox.observe(f,ticket.key,this.env,Date.parse(now),review?JSON.parse(review.spec_json)?.priority:undefined);
+        }
+      }
+      return findings;
     });
   }
   pendingIdentity(env){
@@ -148,6 +158,10 @@ export class GeneralFindingLedger extends StagingOperationLedger {
       const id='review_'+crypto.randomUUID();
       this.db.prepare('INSERT INTO general_reviews VALUES(?,?,?,?,?,?,?,?,?,?,?,?)').run(id,input.findingId,prepared?.operationId??null,actor.subject,actor.kind,f.source_hash,f.candidate_hash,contractHash,JSON.stringify(input.spec??null),prepared?.payloadHash??null,checked.decision,new Date().toISOString());
       this.db.prepare('UPDATE general_findings SET review_state=? WHERE op_id=?').run(checked.decision==='REVIEW'?'REVIEWED':checked.decision,input.findingId);
+      if(checked.decision==='REVIEW'){
+        const finding=this.findings(f.context_key).find(x=>x.findingId===input.findingId);
+        this.emailOutbox.observe(finding,f.context_key,this.env,Date.now(),input.spec.priority);
+      }else this.emailOutbox.cancel(input.findingId);
       return {reviewId:id,identityKind:actor.kind,humanSignoff:actor.kind==='EXTERNAL_VERIFIED'?'OPERATOR_ATTESTED':'NOT_HUMAN_SIGNOFF',...prepared};
     });
   }

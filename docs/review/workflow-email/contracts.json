@@ -1,0 +1,35 @@
+{
+  "notificationPolicy": "operator-email-alerts-v1",
+  "offlineGatePolicy": "supported-workflow-offline-gate-v1",
+  "providerPrompt": {
+    "version": "reasoning-v0.3.3",
+    "sha256": "9f03c4a4f700e386def81eac10a231d2d3ef5b85eca8bddfafdaf3af28434c69",
+    "unchanged": true
+  },
+  "schema": {
+    "version": "findings-v0.2",
+    "sha256": "7bda1bfdc27882023d180cca14e751941401feee18a1d9eb6fca63717519964d",
+    "unchanged": true
+  },
+  "model": "gpt-5.6-terra",
+  "reasoning": {
+    "effort": "low"
+  },
+  "materializer": "source-evidence-v0.3.9",
+  "taskPolicy": "internal-task-policy-v1.4",
+  "proposalVersion": "internal-task-proposal-v2.4",
+  "reviewPolicy": "finding-review-v2.7",
+  "approvalContractHashUnchanged": "sha256:ddd99a2d8fac28a9a5f6444b7997023a7a89446edd9b5b42e15fd8fa72520bf0",
+  "findingOutputChangesAgainstCheckpoint": 0,
+  "freshModelValidation": "PENDING_PREEXISTING_210_CALL_CAP",
+  "sourceSha256": {
+    "src/staging/email-notifications.js": "e7db84a536100dd7a2bdb64127d3840d27e1025e4dcfab4bd714464e4d74c429",
+    "src/staging/general-ledger.js": "e36f932d8821e7dbcbae855f56fdceac299db152be09cc55b9c46c84c6e77f03",
+    "src/staging/worker.js": "0f1ca43099642bbbe9ecc6b6354e5e51e5118ddb945a829c344ede739b324e2b",
+    "src/staging/operator-console.js": "0fd450af020155728c758c941ad1a4dbcb5fa5ee424f2d89528f3fcb5123eab7",
+    "src/release/gateway.js": "b64959196b0fee957c83a830f4734a63a3bb38df54e3d312bf7e86b10499d969",
+    "scripts/regression/workflow-core.js": "1bd3c788baccee8612a4e6dc867ed6c181fb0c79fc371809bf39b803688d0e94",
+    "scripts/regression/workflow-offline.js": "3c704cbb4247b25b5379a7af30fdaa8dae8ca9c4a118cfdbbccd5787c5d09a7a",
+    "scripts/regression/diagnostic-report.js": "40e5c9cdd96eade3ad2a9b4e5e2dce210a7ceee74244b0f89fa7dc40b646b19b"
+  }
+}

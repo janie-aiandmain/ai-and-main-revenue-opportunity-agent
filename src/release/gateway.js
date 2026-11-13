@@ -4,7 +4,7 @@ import {verifyOperator,verifyIdentity} from '../staging/auth.js';
 import {identityBlocker} from '../staging/blockers.js';
 import {operatorConsole} from '../staging/operator-console.js';
 const json=(b,s=200)=>Response.json(b,{status:s,headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});
-const reads=new Set(['status','metrics','preflight','session','general/findings','general/identity-candidates']);
+const reads=new Set(['status','metrics','preflight','session','general/findings','general/identity-candidates','general/notifications']);
 const writes=new Set(['general/evaluate','general/identity-review','general/review','general/approve','general/resume-approval','general/execute','general/arm-response-loss','reconcile','resolve-uncertain']);
 export async function operatorGateway(request,env){
  const path=new URL(request.url).pathname;

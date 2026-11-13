@@ -1,6 +1,13 @@
 # AI & MAIN Revenue Opportunity Agent
 
-Latest source refinement: [immediate review for in-progress scope requests](docs/review/in-progress-scope/README.md)
+Latest source cycle: [supported multi-finding gate and operator email alerts](docs/review/workflow-email/README.md).
+`regression:offline` now exercises the supported finding workflow; the limited
+rules commands remain separately available with their original failures visible.
+HIGH or Immediate Review alerts have a durable, browser-independent email outbox.
+Delivery is disabled pending sender/secret setup and hosted validation. No new
+model calls, CRM calls, tasks or deployment are included in this source cycle.
+
+Previous source refinement: [immediate review for in-progress scope requests](docs/review/in-progress-scope/README.md)
 adds a prominent flag, first-card ordering and HIGH default priority, with dated
 onsite/job context kept separate from HubSpot task status. It is locally validated
 and not deployed; task execution and fresh model validation remain pending.
@@ -10,7 +17,7 @@ signals in CRM service activity. HubSpot remains the system of record. The agent
 supports evidence-backed reasoning, bounded recommendations, human approval and
 CRM-native follow-up; it does not replace the CRM.
 
-Current source-only status: [semantic review and diagnostic evidence](docs/review/semantic-diagnostic-cycle/README.md).
+Previous source-only checkpoint: [semantic review and diagnostic evidence](docs/review/semantic-diagnostic-cycle/README.md).
 The rules diagnostic's classification/review checks improved from 19/31 to 31/31;
 its command still fails because a single summary cannot cover EN11/EN12's two
 independent findings. Frozen v0.2 remains reproducible. The user selected
@@ -98,14 +105,19 @@ versioned under `fixtures/`; production reasoning request settings are unchanged
 ```sh
 npm test
 npm run regression:offline
-# Requires the secure, non-production EVAL_OPENAI_API_KEY binding:
+# Limited diagnostic: exit 1 remains explicit for independent coverage:
+npm run regression:diagnostic
+# Requires a separately approved allowance and non-production credential:
 npm run regression:model -- --live --non-production
 # Regrade captured outputs without additional API calls:
 npm run regression:replay -- reports/model-baseline.json
 ```
 
-The diagnostic baseline currently has known failures and exits nonzero. Model
-baseline availability and measured results are recorded in `docs/baselines/`.
+The primary offline workflow gate and the limited diagnostic are separate.
+The diagnostic exits nonzero for its independent-finding coverage limitation;
+frozen v0.2 remains at 19/31 under `regression:offline:legacy`. Model baseline
+availability and measured results are recorded in `docs/baselines/`; fresh
+inference is blocked by the exhausted 210-call allowance.
 These checks do not authorize deployment, new CRM permissions, or task writes.
 
 ## Independent findings

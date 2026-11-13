@@ -19,9 +19,13 @@ jobs:
         run: npm ci
       - name: Deterministic regression and certification guards
         run: npm test
+      - name: Supported multi-finding offline gate (retained captures, no APIs)
+        run: npm run regression:offline
+      - name: Secondary diagnostic classification and review checks (coverage unsupported)
+        run: npm run regression:diagnostic:report
       - name: Local Worker durable recovery certification
         run: npm run integration:local
-      - name: Fresh captured-output identity replay
+      - name: Retained captured-output identity replay (no new model calls)
         run: npm run certification:replay
       - name: Wrangler dry run
         run: npm run check
@@ -29,3 +33,12 @@ jobs:
         run: npm run certification:check
       - name: Hosted staging configuration dry run
         run: npm run staging:check
+
+      - name: Retain offline gate and limited diagnostic reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: offline-workflow-and-diagnostic
+          path: |
+            reports/workflow-offline.json
+            reports/offline-baseline.json

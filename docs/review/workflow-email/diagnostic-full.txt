@@ -1,0 +1,50 @@
+
+> ai-and-main-revenue-opportunity-agent@0.1.0 regression:diagnostic
+> node scripts/regression/offline.js
+
+{
+  "kind": "offline-current-diagnostic-rules",
+  "corpusVersion": "enterprise-v1",
+  "corpusHash": "8363a9e68da7ff69f4a9e964fb483234176b6a6d9341ca8578cbbdf76f7d8652",
+  "timestamp": "2026-11-13T16:26:44.968Z",
+  "attempted": 31,
+  "decisionCorrect": 31,
+  "decisionRate": 1,
+  "safetyCriticalFailures": [],
+  "confusion": {
+    "tp": 10,
+    "tn": 21,
+    "fp": 0,
+    "fn": 0
+  },
+  "falsePositiveRate": {
+    "numerator": 0,
+    "denominator": 21,
+    "rate": 0
+  },
+  "falseNegativeRate": {
+    "numerator": 0,
+    "denominator": 10,
+    "rate": 0
+  },
+  "diagnosticPolicy": "deterministic diagnostic rules v0.3",
+  "inputContract": "dated serviceHistory sorted by source timestamp",
+  "contractLimitedCases": [
+    {
+      "id": "EN11",
+      "expectedFindings": 2,
+      "singleSummaryCannotProveIndependentCoverage": true
+    },
+    {
+      "id": "EN12",
+      "expectedFindings": 2,
+      "singleSummaryCannotProveIndependentCoverage": true
+    }
+  ],
+  "releaseEligible": false,
+  "limitations": [
+    "Only classification and review state are measured; deterministic rules are not the current model.",
+    "The deterministic output has no opportunityType, finding IDs, independent finding collection or executable action; model FP/FN and semantic metrics are unavailable.",
+    "A passing single summary cannot establish coverage of multiple independent findings."
+  ]
+}

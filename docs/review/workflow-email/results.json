@@ -1,0 +1,136 @@
+{
+  "kind": "SOURCE_ONLY_WORKFLOW_AND_EMAIL_VALIDATION",
+  "baselineCommit": "8d69f9c8a13156a2f5eb4f5f2f6450a1dc8e4bfc",
+  "commands": [
+    {
+      "command": "npm test",
+      "exit": 0,
+      "passed": 205
+    },
+    {
+      "command": "npm run regression:offline",
+      "exit": 0,
+      "executions": 207,
+      "passed": 207,
+      "cases": 59
+    },
+    {
+      "command": "npm run regression:diagnostic:report",
+      "exit": 0,
+      "classificationReviewChecks": "31/31",
+      "independentCoverage": "UNSUPPORTED",
+      "releaseEligible": false
+    },
+    {
+      "command": "npm run regression:diagnostic",
+      "exit": 1,
+      "reason": "Explicit single-summary independent-finding coverage limitation"
+    },
+    {
+      "command": "npm run regression:offline:legacy",
+      "exit": 1,
+      "classificationReviewChecks": "19/31",
+      "reason": "Preserved historical v0.2 failures"
+    },
+    {
+      "command": "npm run integration:local",
+      "exit": 0,
+      "kind": "LOCAL_HTTP_FIXTURE_NOT_HUBSPOT",
+      "fixtureTasks": 4
+    },
+    {
+      "command": "npm run certification:replay",
+      "exit": 0,
+      "cases": 31,
+      "distinctOpportunities": 12,
+      "modelCalls": 0
+    },
+    {
+      "command": "npm run check",
+      "exit": 0,
+      "kind": "DRY_RUN_ONLY"
+    },
+    {
+      "command": "npm run staging:check",
+      "exit": 0,
+      "kind": "DRY_RUN_ONLY"
+    },
+    {
+      "command": "npm run certification:check",
+      "exit": 0,
+      "kind": "DRY_RUN_ONLY"
+    }
+  ],
+  "offlineSummary": {
+    "executions": 207,
+    "cases": 59,
+    "passed": 207,
+    "failures": [],
+    "missingCases": [],
+    "contractCoverage": [
+      {
+        "id": "EN11",
+        "expected": 2,
+        "runs": 7,
+        "passed": true
+      },
+      {
+        "id": "EN12",
+        "expected": 2,
+        "runs": 7,
+        "passed": true
+      }
+    ],
+    "baseCorpus": {
+      "cases": 31,
+      "executions": 122,
+      "passed": 122,
+      "confusion": {
+        "tp": 59,
+        "tn": 63,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    "identityStable": true
+  },
+  "baselineOutputChanges": 0,
+  "semanticVerdictsTransferred": 0,
+  "protectedFilesUnchanged": 176,
+  "email": {
+    "policy": "operator-email-alerts-v1",
+    "providerAdapter": "Resend",
+    "recipient": "janie@aiandmain.ai",
+    "sender": "UNVERIFIED",
+    "delivery": "DISABLED_NOT_DEPLOYED",
+    "hostedDelivery": "NOT_EXECUTED",
+    "tests": [
+      "HIGH or Immediate Review; single combined notification",
+      "Durable server-side alarm with intercepted outbound service",
+      "Synonymous keys and reordered evidence do not duplicate alerts",
+      "Independent needs notify independently",
+      "Material revision cancels stale pending alert",
+      "Operator priority changes; no final approval created",
+      "Persisted send intent and actual local object restart",
+      "Fake provider accepts then deliberately loses response; file-backed restart and identical-key retry; one fake accepted message",
+      "Unknown outcome beyond 23h blocks without another request",
+      "Credential rejection, redirects, route changes and retention",
+      "No real mail provider invoked"
+    ],
+    "inboxDeliveryVerified": false,
+    "automaticCrmPolling": false
+  },
+  "realModelCalls": 0,
+  "realHubSpotCalls": 0,
+  "realEmailProviderCalls": 0,
+  "realTaskCreates": 0,
+  "deployments": 0,
+  "credentialsOrPermissionsChanged": false,
+  "wranglerConfigurationChanged": false,
+  "generalWritebackEnabled": false,
+  "freshModelValidation": "PENDING_PREEXISTING_210_CALL_CAP",
+  "humanSemanticAcceptance": "PENDING",
+  "finalExecutionApproval": false,
+  "releaseAccepted": false,
+  "logFormatting": "Trailing whitespace removed from new command logs only; no original evidence altered."
+}

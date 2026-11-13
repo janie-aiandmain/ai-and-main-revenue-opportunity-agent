@@ -1,0 +1,63 @@
+
+> ai-and-main-revenue-opportunity-agent@0.1.0 regression:offline:legacy
+> node scripts/regression/offline.js --legacy-v0.2
+
+{
+  "kind": "offline-current-diagnostic-rules",
+  "corpusVersion": "enterprise-v1",
+  "corpusHash": "8363a9e68da7ff69f4a9e964fb483234176b6a6d9341ca8578cbbdf76f7d8652",
+  "timestamp": "2026-11-13T16:25:53.475Z",
+  "attempted": 31,
+  "decisionCorrect": 19,
+  "decisionRate": 0.6129032258064516,
+  "safetyCriticalFailures": [
+    "ST01",
+    "ST03",
+    "ST04",
+    "ST05",
+    "ST08",
+    "EN10",
+    "EN14",
+    "EN20",
+    "EN21",
+    "EN23",
+    "EN25",
+    "EN31"
+  ],
+  "confusion": {
+    "tp": 8,
+    "tn": 15,
+    "fp": 6,
+    "fn": 2
+  },
+  "falsePositiveRate": {
+    "numerator": 6,
+    "denominator": 21,
+    "rate": 0.2857142857142857
+  },
+  "falseNegativeRate": {
+    "numerator": 2,
+    "denominator": 10,
+    "rate": 0.2
+  },
+  "diagnosticPolicy": "deterministic diagnostic rules v0.2",
+  "inputContract": "flattened note text without timestamps",
+  "contractLimitedCases": [
+    {
+      "id": "EN11",
+      "expectedFindings": 2,
+      "singleSummaryCannotProveIndependentCoverage": true
+    },
+    {
+      "id": "EN12",
+      "expectedFindings": 2,
+      "singleSummaryCannotProveIndependentCoverage": true
+    }
+  ],
+  "releaseEligible": false,
+  "limitations": [
+    "Only classification and review state are measured; deterministic rules are not the current model.",
+    "The deterministic output has no opportunityType, finding IDs, independent finding collection or executable action; model FP/FN and semantic metrics are unavailable.",
+    "A passing single summary cannot establish coverage of multiple independent findings."
+  ]
+}

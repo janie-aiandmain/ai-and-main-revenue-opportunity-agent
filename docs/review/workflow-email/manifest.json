@@ -1,0 +1,23 @@
+{
+  "kind": "WORKFLOW_EMAIL_SOURCE_EVIDENCE",
+  "baselineCommit": "8d69f9c8a13156a2f5eb4f5f2f6450a1dc8e4bfc",
+  "files": {
+    "README.md": "34d3b1b609f71c1fb995491394249dfc422865036ac4edfec58cb8c2d054c26b",
+    "certification-build.txt": "6cbd0bda89aced56e5ffe293f4898fc7f0f5c389ae0d23cbd31fc69775d2e5f2",
+    "certification-replay.txt": "b9750b32cbc6d02e0f410e1c25f7374aa1acc886ad71f0650b8965eb6553ecc6",
+    "contracts.json": "896e8c7c2477ef86a788e174d0931a08948d5dfcc78b011ac06b43e43637eb09",
+    "demo-build.txt": "9b92bcbed879ca59716cdb945a2d35848fef6c692125ff4a3064fa86331cec05",
+    "diagnostic-full.txt": "8417839101114a62ba4908f3ba64b9993f4a4fa59727029f03f5ad8f6f76f844",
+    "diagnostic-report.json": "4d710d7b36a88a86f5de8db82115061e165d4bfafedb3e716557fb49599d2abd",
+    "diagnostic.txt": "426adc14418241a9e17d68711154145d24dc8b0baa793f06f4a8e163c52aeed4",
+    "legacy-diagnostic-report.json": "ecc10dcf53e61e0e567a084e1e648649ff2660b1a758fdd13d3e9c7507e23abc",
+    "legacy-diagnostic.txt": "a54c4d7769a0c6661d670f6eb61ff78f196dba867463ae851f16636c20ea39bb",
+    "local-integration.txt": "cc3f75b6986ffa4c4fda237254b9fad06944b0a37f0bbaea4df0b76c9881e485",
+    "offline-report.json": "3bd4cf49abfacf9b664297e1ea5cee393e272b68c750a9209fa96e470133c773",
+    "offline.txt": "ab6e7d8758c2850391eeb66e0483f0d2df5177b595fa597fc1df01b835938a33",
+    "owner-build.txt": "c5c5ca05624faaed50759e673af9c730603d712dcf9f6c6811f5e499559a8024",
+    "preserved-checkpoint-sha256.json": "30f51dda1646e93924b72c31a521739a656c0cc61913a553c1b3510748d78b7a",
+    "results.json": "84f07ce33c08a72240e5cfff7c065aa92af02959aa9931f4c6365a7f5c6f4a8c",
+    "tests.txt": "657fcd6e83efe560cd85784687bc8d826bb22d9daa6762216d71a5e70ac9d967"
+  }
+}

@@ -12,10 +12,22 @@ npm run regression:replay -- reports/model-baseline.json
 
 `npm test` tests fixtures, graders, extraction compatibility and mocked production
 paths. Its mocked 9/9 is a harness check, not the historical or current model score.
-`regression:offline` runs the unchanged deterministic diagnostic rules on all 31
-cases and returns exit 1 on known mismatches. It measures classification and review
-only; it does not invent the model-only fields missing from that diagnostic.
+`regression:offline` is the supported multi-finding offline gate: 207 retained
+provider executions across 59 synthetic cases, including every original 31-case
+fixture. It invokes the current materializer, multidimensional finding grader,
+inspection policy and general finding ledger; EN11/EN12 require two distinct
+findings, isolated evidence and stable durable identity. It never calls a model,
+CRM or mail service. Read [scope and limitations](review/workflow-email/README.md).
 
+`regression:diagnostic` retains corrected v0.3 single-summary rules: 31/31
+classification/review checks, but exit 1 for unsupported independent coverage.
+`regression:offline:legacy` retains v0.2's original 19/31/exit 1. The scoped
+`regression:diagnostic:report` command can pass those supported dimensions while
+explicitly reporting the full diagnostic's exit and missing coverage; it is not
+the primary workflow gate or release approval. No expected answers are weakened.
+
+Fresh inference is currently prohibited by the exhausted recorded 210-call budget;
+the following describes the retained runner, not permission to execute it.
 The model runner requires both opt-in flags and the secure non-production
 `EVAL_OPENAI_API_KEY` binding for `api.openai.com`. It calls only the fixed OpenAI
 Responses endpoint, never HubSpot. It uses the same production reasoning function,

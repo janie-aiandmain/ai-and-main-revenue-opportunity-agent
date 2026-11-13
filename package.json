@@ -8,7 +8,7 @@
     "deploy": "wrangler deploy",
     "check": "wrangler deploy --dry-run",
     "test": "node --test tests/*.test.js",
-    "regression:offline": "node scripts/regression/offline.js",
+    "regression:offline": "node scripts/regression/workflow-offline.js",
     "regression:offline:legacy": "node scripts/regression/offline.js --legacy-v0.2",
     "regression:model": "NODE_USE_ENV_PROXY=1 node scripts/regression/model.js",
     "regression:replay": "node scripts/regression/replay.js",
@@ -26,7 +26,9 @@
     "integration:replay": "node certification/replay-corrected.js",
     "staging:check": "WRANGLER_SEND_METRICS=false wrangler deploy --dry-run --config wrangler.staging.jsonc",
     "staging:configure": "node scripts/staging/configure.js",
-    "staging:verify-production": "NODE_USE_ENV_PROXY=1 node scripts/staging/verify-production.js"
+    "staging:verify-production": "NODE_USE_ENV_PROXY=1 node scripts/staging/verify-production.js",
+    "regression:diagnostic": "node scripts/regression/offline.js",
+    "regression:diagnostic:report": "node scripts/regression/diagnostic-report.js"
   },
   "devDependencies": {
     "wrangler": "4.156.2",

@@ -1,0 +1,6 @@
+
+> ai-and-main-revenue-opportunity-agent@0.1.0 integration:local
+> RUN_GENERAL_CERTIFICATION=true CERTIFICATION_EVIDENCE_PATH=reports/general-worker-pipeline.json node certification/local-certification.js
+
+{"event":"AI_MAIN_SAFE_PREFLIGHT","receipt":{"kind":"READ_ONLY_ISOLATION_AND_IDENTITY_PREFLIGHT","identityKind":"LOCAL_SYNTHETIC","role":"Approver","portalId":"test-portal-001","contactId":"fixture-contact-001","readCredentialPortalVerified":true,"writeCredentialPortalVerified":true,"noteCount":1,"taskReadVerified":true,"writesEnabled":false,"generalExecutionEnabled":false,"semanticApproval":false,"productionCertification":false,"ownerSourceCommit":null,"ownerDeploymentVersion":null,"ledgerBootId":"50ea7b25-a978-4bf1-a599-2edb07285e4a"},"subjectHash":"sha256:aaa8fb0f7ad25a229242cec76b3e08bc957bdbd6ea520fb64b485df7849cf970"}
+{"executed":true,"restarts":7,"confirmedFixtureTasks":4,"lostResponsePostCount":1,"unknownOutcomePostCount":1,"verifiedTestOutcomes":1,"hosted":"PENDING"}
