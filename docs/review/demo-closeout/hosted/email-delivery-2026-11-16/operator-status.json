@@ -1,0 +1,23 @@
+{
+  "policyVersion": "operator-email-alerts-v1.1",
+  "enabled": true,
+  "blocker": null,
+  "deliveries": [
+    {
+      "id": "alert_3e640bf4663dfb7a3ad08f0cb9afa26d3848eff3d6ba89365db33b9e56f73bf7",
+      "findingId": "op_1207462a-0eb2-4a52-a5af-57ee8d05a00b",
+      "state": "SENT",
+      "attempts": 1,
+      "providerId": "01a1e5d9-fd3e-7e0c-9902-aafd842a7604",
+      "errorCode": null
+    },
+    {
+      "id": "alert_9034283bc5f8919ea3f1eda4ec092633764e828979a1db19bdf77ee16fb7262c",
+      "findingId": "op_be78186d-6376-4778-95c2-28001c2e3886",
+      "state": "SENT",
+      "attempts": 1,
+      "providerId": "01a1e5d9-fd7e-7a19-b55b-53cb03d03fc4",
+      "errorCode": null
+    }
+  ]
+}

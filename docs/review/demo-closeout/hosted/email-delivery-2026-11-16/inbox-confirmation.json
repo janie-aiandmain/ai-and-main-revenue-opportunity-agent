@@ -1,0 +1,11 @@
+{
+  "kind": "ATTRIBUTABLE_OPERATOR_INBOX_CONFIRMATION",
+  "question": "Did both alerts arrive at janie@aiandmain.ai\u2014one HIGH priority and one IMMEDIATE REVIEW? Check spam/junk too. Please confirm which arrived; no email credentials or message headers are needed.",
+  "verbatimUserAnswer": "both arrived",
+  "source": "User answer in this conversation",
+  "highInboxArrivalConfirmed": true,
+  "immediateReviewInboxArrivalConfirmed": true,
+  "semanticApproval": false,
+  "taskExecutionApproval": false,
+  "releaseAcceptance": false
+}
