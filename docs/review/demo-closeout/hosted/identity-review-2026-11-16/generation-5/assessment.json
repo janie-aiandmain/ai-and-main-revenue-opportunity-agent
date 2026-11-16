@@ -1,0 +1,104 @@
+{
+  "kind": "OFFLINE_ASSESSMENT_OF_OPERATOR_SUPPLIED_HOSTED_PENDING_CANDIDATES",
+  "reviewedAt": "2026-11-16T19:21:47.534Z",
+  "generation": 5,
+  "sourceHash": "sha256:36c1723fe4bb2a2a1e28a0aebe66fbcfc74a346414a342c520475c976fed3309",
+  "originalBytesSha256": "be14b376867ab0115795921fbd9a31239c8b7d49e84c8d8917fad22f3a84d4ee",
+  "parsingNote": "Original pasted text omits its opening brace; only the parsed copy adds it. Exact original bytes preserved.",
+  "items": [
+    {
+      "candidateRef": "finding_0258385548bb23c5b54a561c4c0944f7a63a57c4c91685959953ef83a4ed76b3",
+      "opportunityKey": "whole-home-surge-protector",
+      "outputHash": "sha256:7bfee49abc2a71d0e14ab57ae1f5852642d17958fce1d64ea847ea696ad82ca9",
+      "proposalActionVersion": "sha256:32725c8c604f8c14d946a29221fb1c9454a30022284226a2885fc9174d6e4e6a",
+      "proposalHashVerified": true,
+      "sourceNoteId": "423246844630",
+      "sourceTimestamps": [
+        "2026-11-16T19:03:41.712Z"
+      ],
+      "recommendedIdentity": {
+        "resolution": "NEW"
+      },
+      "classification": "strong cross-sell opportunity",
+      "actionPurpose": "internal_preparation",
+      "priority": "HIGH",
+      "reviewQueue": null,
+      "qualityFailures": [
+        {
+          "code": "restriction_evidence_incomplete",
+          "noteId": "423246844630",
+          "quote": "AI & MAIN SYNTHETIC EMAIL TEST — TEST DATA ONLY."
+        }
+      ],
+      "preparationBlocked": true,
+      "semanticVerdict": "PENDING",
+      "identityDecision": "PENDING_USER_ATTESTATION",
+      "executionApproval": false
+    },
+    {
+      "candidateRef": "finding_46ab7f00473f8c1f1ac9202ea3757db473dfc53e51397ceb42e126a423a04ff5",
+      "opportunityKey": "level-2-ev-charger-installation",
+      "outputHash": "sha256:0ef48bc1444858f905be97b392218adf303af637f9da305c182390453d21b3a6",
+      "proposalActionVersion": "sha256:37530b4f1c565499d68a1bbab2501a13e27b639d8a11c7cdf35e6d38153baa06",
+      "proposalHashVerified": true,
+      "sourceNoteId": "420030479039",
+      "sourceTimestamps": [
+        "2026-11-11T20:35:43.354Z"
+      ],
+      "recommendedIdentity": {
+        "resolution": "EXISTING",
+        "findingId": "op_902d4bd6-5675-4612-b3eb-71e7612bfd5e"
+      },
+      "classification": "strong cross-sell opportunity",
+      "actionPurpose": "internal_preparation",
+      "priority": "HIGH",
+      "reviewQueue": null,
+      "qualityFailures": [],
+      "preparationBlocked": false,
+      "semanticVerdict": "PENDING",
+      "identityDecision": "PENDING_USER_ATTESTATION",
+      "executionApproval": false
+    },
+    {
+      "candidateRef": "finding_d8dee69ce10f3773b98bf2f5d346929e1e1e0aee9729ad26d64d8a1c914f0d02",
+      "opportunityKey": "three-additional-garage-outlets",
+      "outputHash": "sha256:56cfcfe3fc0fb90b4b401030fbb4b3a2edc51b52998492bbd0cdb0fc58d8d5a5",
+      "proposalActionVersion": "sha256:541c2e1b62020f58411b827506e5be3c991a1e3497e0399b765d528ffc5563b8",
+      "proposalHashVerified": true,
+      "sourceNoteId": "423247554235",
+      "sourceTimestamps": [
+        "2026-11-16T19:03:47.362Z"
+      ],
+      "recommendedIdentity": {
+        "resolution": "NEW"
+      },
+      "classification": "scope-change opportunity",
+      "actionPurpose": "internal_verification",
+      "priority": "HIGH",
+      "reviewQueue": "immediate_review",
+      "qualityFailures": [
+        {
+          "code": "restriction_evidence_incomplete",
+          "noteId": "423247554235",
+          "quote": "AI & MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY."
+        }
+      ],
+      "preparationBlocked": true,
+      "semanticVerdict": "PENDING",
+      "identityDecision": "PENDING_USER_ATTESTATION",
+      "executionApproval": false
+    }
+  ],
+  "assessmentIsHumanSignoff": false,
+  "identityDecisionsRecorded": false,
+  "existingConfirmedTaskId": "420072115944",
+  "originalTaskResubmitted": false,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailProviderCalls": 0,
+  "limitations": [
+    "Source facts are supplied in the operator receipt; no live source read or current-generation check was performed.",
+    "Both new findings retain their captured TEST DATA ONLY evidence-quality blockers.",
+    "No existing identity, semantic verdict, task approval or release state was changed."
+  ]
+}
