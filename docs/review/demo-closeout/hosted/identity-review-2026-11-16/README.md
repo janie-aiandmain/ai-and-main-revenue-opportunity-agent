@@ -42,7 +42,7 @@ decisions remain bound to their prior exact outputs.
 - Gateway and private-owner Worker dry-run builds: **PASS**.
 - No HubSpot, model or email-provider test calls.
 
-An initial restricted-sandbox browser run could not bind its local HTTP listener;
+An initial restricted-sandbox browser run could not complete local HTTP listener startup;
 the same local browser test passed in the permitted execution context. The first
 new backend test used an invalid fixture enum, which was corrected to the existing
 `scope change` enum; the complete suite then passed. These preliminary failures
@@ -62,3 +62,22 @@ NEW only if the actual captured evidence establishes they are independent.
 Overlapping/merged/incomplete evidence remains blocked for correction. Do not
 Evaluate again, prepare/approve/submit tasks or reset the existing operation.
 Actual identity decisions, provider delivery IDs and inbox receipt remain PENDING.
+
+## Actual hosted verification
+
+Gateway deployment completed at source `0eb6ac5655f9ea6f5aa52d06d3edd10993224e09`,
+version `e6c3b663-decb-4f3c-8186-5807d5bc57b3`. Readback verifies 100% traffic
+and the exact uploaded JavaScript hashes. All ordinary gateway settings, eight
+Secrets, Access realm/role mapping, namespace and hostname/preview states were
+preserved. All nine execution/test/fault/release flags remain false. The private
+owner remains at `6f5dfca9-9cda-45ad-822e-b4b15ba458a0` with unchanged code,
+existing namespace/Secrets and enabled operator email. No owner deployment or
+new migration was performed. Unauthenticated `/operator`, `/identity` and
+`/certification/general/identity-candidates` requests all redirect to Access (302).
+See [deployment-verification.json](deployment-verification.json).
+
+The operator has not yet inspected or submitted the pending identity decisions
+through the new console. Actual email delivery remains unverified. There were
+no HubSpot, model or email-provider calls by this correction/verification cycle.
+The original confirmed operation was not submitted or reset. The UI change does
+not alter model/generation or final-payload approval contracts.
