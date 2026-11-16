@@ -629,3 +629,23 @@ Fresh authenticated preflight/evaluation, exact garage-task payload approval and
 the bounded one-new-task recovery test remain pending. Preserve the confirmed EV
 task 420072115944 and both new durable finding identities. No chat semantic PASS
 is a task execution grant; do not open test/fault flags before a real exact grant.
+
+## Active one-create garage recovery window — November 16
+
+The operator supplied matching exact approval 28429c11 and full durable baseline
+for operation_523891b4-49a7-4d23-be0f-dcc749e62b9c / garage finding op_1207462a.
+The baseline is APPROVED, null remote ID, zero attempts, payload hash 3520fb4d…,
+with persistence/approval traces. Full records are under hosted/garage-recovery-
+2026-11-16 in docs/review/demo-closeout. The approved test window is now active:
+run release-b2357095-cce1-44cf-bee4-6ffc3b582aba, maximum one new create, expires
+2026-11-16T22:29:46.680Z. Owner config version 285b5f05 and gateway 8d56271f use
+unchanged code/storage/Secrets/Access; all general/legacy/release controls stay
+false. Only the two authenticated demo controls/run settings are enabled.
+Do not submit from Codex, synthesize an actor, reapprove, prepare/evaluate again,
+or make a second run to escape an uncertain/consumed attempt. The operator must
+resume the same grant and click only the response-loss test control once. Await
+full post-attempt evidence; immediately close controls using the existing
+scripts/release/garage-window.js --close --user-authorized, verify closure, then
+perform operator read-only reconciliation. The test is an injected application
+response discard, not a natural outage. No new task/recovery result is claimed
+until actual operator/remote evidence arrives. Preserve the old EV task.

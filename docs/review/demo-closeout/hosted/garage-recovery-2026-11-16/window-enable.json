@@ -1,0 +1,181 @@
+{
+  "kind": "ACTUAL_CONFIGURATION_ONLY_ONE_CREATE_WINDOW_ENABLE",
+  "startedAt": "2026-11-16T21:44:46.681Z",
+  "window": {
+    "policyVersion": "bounded-one-garage-recovery-window-v1",
+    "runId": "release-b2357095-cce1-44cf-bee4-6ffc3b582aba",
+    "maximumNewCreates": 1,
+    "enabledAt": "2026-11-16T21:44:46.679Z",
+    "expiresAt": "2026-11-16T22:29:46.680Z",
+    "operationId": "operation_523891b4-49a7-4d23-be0f-dcc749e62b9c",
+    "approvalId": "approval_28429c11-0ed2-4407-8829-341af213b0ab",
+    "payloadHash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+    "actionVersion": "final-action-v1:sha256:8dcbdc2e04e351265420267a55ad6ff422d3a71ca3560abdf083e5617051e8df",
+    "portalId": "247646122",
+    "contactId": "582095692487",
+    "operatorMustSubmitOnlyThisOperation": true,
+    "codeChanged": false
+  },
+  "configurationOnly": true,
+  "steps": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "beforeVersion": "99679b73-7a80-4ec1-933b-b1d9ea21495e",
+      "activeVersion": "285b5f05-992f-4bff-8771-9166901ee876",
+      "configurationActivated": true,
+      "settingsInherited": true,
+      "namespacePreserved": true,
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "codeEtagUnchanged": false,
+      "at": "2026-11-16T21:45:10.844Z"
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "beforeVersion": "e6c3b663-decb-4f3c-8186-5807d5bc57b3",
+      "activeVersion": "8d56271f-3445-4e08-9931-7b8ece61a4a6",
+      "configurationActivated": true,
+      "settingsInherited": true,
+      "namespacePreserved": true,
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "codeEtagUnchanged": false,
+      "at": "2026-11-16T21:45:23.534Z"
+    }
+  ],
+  "verified": true,
+  "codeChanged": false,
+  "secretValuesRead": false,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailProviderCalls": 0,
+  "taskSubmissions": 0,
+  "controllerScriptSha256": "f8172fb5211dbf019bcb51c11b071299d817e049075cf3070917a61cff0b5cad",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "versionId": "285b5f05-992f-4bff-8771-9166901ee876",
+      "sourceCommit": "70c09ab49fc668f2ccb5afa6fcde8febf14a1ca9",
+      "codeUnchanged": true,
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "e5ef1d9489f05024bb8372c5c5c2bef8e67ebdf976581b225a6d09644fb49c01",
+          "bytes": 254183
+        }
+      ],
+      "allGeneralLegacyReleaseFlagsDisabled": true,
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "true",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "true"
+      },
+      "runId": "release-b2357095-cce1-44cf-bee4-6ffc3b582aba",
+      "maximumNewCreates": "1",
+      "expiresAt": "2026-11-16T22:29:46.680Z",
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "identityAndOtherSettingsPreserved": true,
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      }
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "versionId": "8d56271f-3445-4e08-9931-7b8ece61a4a6",
+      "sourceCommit": "0eb6ac5655f9ea6f5aa52d06d3edd10993224e09",
+      "codeUnchanged": true,
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "9316b530b712cf92c4975093653e6800fd4c29450d79006bb8930802a101f3bc",
+          "bytes": 58010
+        }
+      ],
+      "allGeneralLegacyReleaseFlagsDisabled": true,
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "true",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "true"
+      },
+      "runId": "release-b2357095-cce1-44cf-bee4-6ffc3b582aba",
+      "maximumNewCreates": "1",
+      "expiresAt": "2026-11-16T22:29:46.680Z",
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850",
+          "scriptName": "ai-and-main-revenue-opportunity-staging"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "identityAndOtherSettingsPreserved": true,
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      }
+    }
+  ],
+  "unauthenticated": [
+    {
+      "path": "/operator",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/general/execute",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    }
+  ],
+  "testWindowEnabled": true,
+  "finishedAt": "2026-11-16T21:45:33.032Z"
+}

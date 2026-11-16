@@ -125,3 +125,35 @@ code/storage/Secrets and activating explicit closed versions. The controller's
 new/closed version IDs and code hashes supply the later restart/redeployment
 evidence; actual ledger boot IDs and remote reconciliation still require operator
 receipts. No remote recovery result is claimed from configuration changes alone.
+
+## Actual bounded window activated and verified
+
+Configuration-only inheritance/explicit activation succeeded on both existing
+Workers. The persistent run ID is `release-b2357095-cce1-44cf-bee4-6ffc3b582aba`,
+maximum **one** new create, expiring 2026-11-16T22:29:46.680Z
+(**5:29 p.m. Eastern on November 16**). Only DEMO_ONLY_EXECUTION_ENABLED and
+DEMO_RESPONSE_LOSS_TEST_ENABLED were enabled, alongside that bounded run's
+ID/maximum/expiry. All seven general/legacy/release write controls remain false.
+
+- Owner active configuration version: `285b5f05-992f-4bff-8771-9166901ee876`.
+- Gateway active configuration version: `8d56271f-3445-4e08-9931-7b8ece61a4a6`.
+- Exact downloaded JavaScript module hashes are unchanged on both Workers,
+  despite version-level etags changing; no source code was deployed.
+- Existing namespaces, four/eight Secret names, identity/role/tenant/notification
+  settings and hostname/preview states are preserved.
+- Console and execution probes remain Access redirects (302) for unauthenticated
+  callers. No permissions, credentials, resource bindings or infrastructure were
+  added. The controller made no CRM, model, email-provider or submission calls.
+
+See [window-enable.json](window-enable.json), [window.json](window.json) and
+[controller result](window-enable-log.txt). These configuration changes do not
+establish a task create or recovery result. The last observed operation baseline
+was APPROVED with zero attempts; post-enable operator evidence is pending.
+
+The real operator should refresh the console, **Resume saved approval** on the
+garage finding without creating or renewing a grant, then use ONLY **Submit
+approved synthetic task with response-loss test** once. An interruption or
+UNKNOWN state is expected; a stale/source/credential failure must be reported
+without retry. Supply the full operation evidence before any reconciliation.
+After the single attempt, close the window first, then reconcile read-only.
+The normal Submit button and existing EV task are outside this exercise.

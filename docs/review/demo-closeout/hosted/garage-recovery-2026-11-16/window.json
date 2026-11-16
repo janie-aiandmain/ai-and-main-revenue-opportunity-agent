@@ -1,0 +1,15 @@
+{
+  "policyVersion": "bounded-one-garage-recovery-window-v1",
+  "runId": "release-b2357095-cce1-44cf-bee4-6ffc3b582aba",
+  "maximumNewCreates": 1,
+  "enabledAt": "2026-11-16T21:44:46.679Z",
+  "expiresAt": "2026-11-16T22:29:46.680Z",
+  "operationId": "operation_523891b4-49a7-4d23-be0f-dcc749e62b9c",
+  "approvalId": "approval_28429c11-0ed2-4407-8829-341af213b0ab",
+  "payloadHash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+  "actionVersion": "final-action-v1:sha256:8dcbdc2e04e351265420267a55ad6ff422d3a71ca3560abdf083e5617051e8df",
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "operatorMustSubmitOnlyThisOperation": true,
+  "codeChanged": false
+}
