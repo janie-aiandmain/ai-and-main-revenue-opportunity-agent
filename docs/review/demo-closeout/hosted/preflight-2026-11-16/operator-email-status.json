@@ -1,0 +1,15 @@
+{
+  "kind": "OPERATOR_SUPPLIED_EMAIL_STATUS",
+  "receivedAt": "2026-11-16T16:44:28.505Z",
+  "provenance": "Operator response to requested baseline-evaluation/status step; refreshed finding was not included",
+  "receipt": {
+    "policyVersion": "operator-email-alerts-v1.1",
+    "enabled": false,
+    "blocker": null,
+    "deliveries": []
+  },
+  "provesEmailDisabled": true,
+  "provesNoQueuedDeliveries": true,
+  "provesBaselineFinding": false,
+  "providerKeyValidityEstablished": false
+}

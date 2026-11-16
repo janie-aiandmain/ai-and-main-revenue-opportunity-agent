@@ -1,0 +1,68 @@
+{
+  "kind": "READ_ONLY_CURRENT_HOSTED_SETTINGS",
+  "checkedAt": "2026-11-16T16:37:48.781Z",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "sourceCommit": "32c14912520c6cb2175e20921caecbb8d03505b2",
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "OPERATOR_EMAIL_ENABLED": "false"
+      },
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "portalId": "247646122",
+      "contactId": "582095692487",
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ]
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "sourceCommit": "32c14912520c6cb2175e20921caecbb8d03505b2",
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "OPERATOR_EMAIL_ENABLED": "false"
+      },
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "portalId": "247646122",
+      "contactId": "582095692487",
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ]
+    }
+  ],
+  "secretValuesRead": false,
+  "mutations": 0
+}

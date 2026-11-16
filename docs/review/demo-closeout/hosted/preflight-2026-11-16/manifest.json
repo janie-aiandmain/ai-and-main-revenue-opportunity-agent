@@ -1,0 +1,21 @@
+{
+  "kind": "OPERATOR_PREFLIGHT_AND_BASELINE_STATUS_EVIDENCE",
+  "sourceCommit": "32c14912520c6cb2175e20921caecbb8d03505b2",
+  "ownerVersion": "a9c4dda8-9cb9-44ef-a626-60af8b20b8b5",
+  "sha256": {
+    "README.md": "190cae341dfb3d9c349f8e9858cb06fa27118731a51f90249216ee0aa521ae55",
+    "configuration-check.json": "c74bb6ba8f214a18ed5300ea45c7d17582313c56053c8921119220b4a82cdde1",
+    "email-activation-plan.json": "4bd0c8471af122eaf6436bb6849031a57c63566163e0d0e7ead3aa4a63d49610",
+    "operator-email-status.json": "d23e2edf0127b78cdf559b11076af4800b25468fbc1242a4389ac4bda2ef71dc",
+    "operator-preflight.json": "05d0392b8d8a76e02589043203b10d62ba3bd684142b4dae64c1e7ba27bb8395",
+    "status.json": "42f0eae79d2df02e484095f88dccbc42ff161399391b9e7ee48f0266b7aeb1cc"
+  },
+  "operatorPreflight": "PASS",
+  "configurationCheck": "PASS_LISTED_CONTROLS_OFF",
+  "baselineModelFinding": "PENDING_RECEIPT",
+  "emailEnabled": false,
+  "newTasks": 0,
+  "additionalDirectModelCalls": 0,
+  "exactFinalPayloadApproval": false,
+  "releaseAcceptance": false
+}

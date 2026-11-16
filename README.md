@@ -1,5 +1,10 @@
 # AI & MAIN Revenue Opportunity Agent
 
+Current hosted step: [November 16 preflight passed; baseline finding receipt pending](docs/review/demo-closeout/hosted/preflight-2026-11-16/README.md).
+Both credential portal checks, synthetic marker, task reads and Approver identity
+pass. Email is still disabled; its status alone does not prove the fresh baseline.
+Preserve the already CONFIRMED EV operation. No new task or email was sent.
+
 Current closeout: [source gates passed; semantic approval recorded](docs/review/demo-closeout/adjudication/README.md).
 Fresh proposal-version consistency is 9/9 cases and 11/11 findings after source
 subject and historical-context corrections. All 223 tests, the 207-capture gate

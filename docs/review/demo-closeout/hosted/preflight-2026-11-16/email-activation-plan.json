@@ -1,0 +1,30 @@
+{
+  "kind": "PREPARED_EMAIL_ONLY_ACTIVATION_NOT_EXECUTED",
+  "worker": "ai-and-main-revenue-opportunity-staging",
+  "settingDelta": {
+    "OPERATOR_EMAIL_ENABLED": {
+      "before": "false",
+      "after": "true"
+    }
+  },
+  "requiredBaseline": "Successful current finding must be recorded while delivery is disabled to seed existing-finding fingerprints",
+  "settings": {
+    "OPERATOR_EMAIL_PROVIDER": "resend",
+    "OPERATOR_EMAIL_FROM": "alerts@aiandmain.ai",
+    "OPERATOR_EMAIL_TO": "janie@aiandmain.ai",
+    "OPERATOR_EMAIL_REPLY_TO": "janie@aiandmain.ai",
+    "OPERATOR_CONSOLE_URL": "https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/operator"
+  },
+  "existingSecret": "OPERATOR_EMAIL_API_KEY",
+  "credentialsToCreateOrRotate": [],
+  "crmWriteFlagsMustRemainFalse": [
+    "CRM_WRITEBACK_ENABLED",
+    "ENABLE_TEST_TASK_WRITES",
+    "ENABLE_GENERAL_EXECUTION",
+    "GENERAL_RELEASE_APPROVED",
+    "DEMO_ONLY_EXECUTION_ENABLED",
+    "DEMO_RESPONSE_LOSS_TEST_ENABLED"
+  ],
+  "mutationsPerformed": 0,
+  "actualEmailDelivery": "NOT_EXECUTED"
+}

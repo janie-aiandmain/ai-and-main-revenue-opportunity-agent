@@ -1,0 +1,15 @@
+{
+  "kind": "HOSTED_CLOSEOUT_CURRENT_PROGRESS",
+  "authenticatedIsolationPreflight": "PASS_OPERATOR_SUPPLIED_RECEIPT_MATCHES_DEPLOYED_SOURCE",
+  "directConfigurationCheck": "PASS_BOTH_WORKERS_LISTED_EXECUTION_EMAIL_RELEASE_FLAGS_OFF",
+  "confirmedExistingOperation": "PRESERVE_DO_NOT_RECREATE",
+  "hostedBaselineFinding": "PENDING_MISSING_FINDING_RECEIPT_DO_NOT_EVALUATE_AGAIN",
+  "operatorEmailConfiguration": "PRESENT_DISABLED_PROVIDER_DELIVERY_UNTESTED",
+  "emailActivation": "AUTHORIZED_PREPARED_WAITING_BASELINE",
+  "newTaskCreates": 0,
+  "exactFinalPayloadApproval": false,
+  "generalWritebackEnabled": false,
+  "releaseAccepted": false,
+  "additionalModelRequestsMadeByCodex": 0,
+  "sourceValidationRecordedCalls": 306
+}
