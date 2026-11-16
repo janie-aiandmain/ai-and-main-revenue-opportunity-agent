@@ -1,0 +1,40 @@
+{
+  "kind": "PREPARED_NOT_ENABLED_ONE_CREATE_RESPONSE_DISCARD_EXERCISE",
+  "operationId": "operation_523891b4-49a7-4d23-be0f-dcc749e62b9c",
+  "approvalId": "approval_28429c11-0ed2-4407-8829-341af213b0ab",
+  "payloadHash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+  "reviewId": "review_7444f90f-3134-4c33-84c1-4dd745132df4",
+  "actionVersion": "final-action-v1:sha256:8dcbdc2e04e351265420267a55ad6ff422d3a71ca3560abdf083e5617051e8df",
+  "maximumNewRemoteCreates": 1,
+  "testWindowDurationMinutes": 45,
+  "expiryComputedOnlyAtEnable": true,
+  "allowedPortal": "247646122",
+  "allowedContact": "582095692487",
+  "actorRequired": "EXTERNAL_VERIFIED Approver or Admin bound to current exact approval",
+  "generalWritebackRemainsDisabled": true,
+  "releaseRemainsDisabled": true,
+  "executionOrFaultFlagsChanged": false,
+  "preconditionEvidence": {
+    "state": "APPROVED",
+    "remoteTaskId": null,
+    "demoCreateAttempts": 0,
+    "opportunityId": "op_1207462a-0eb2-4a52-a5af-57ee8d05a00b",
+    "correlation": "ai-main-3184719d-c295-435d-8cbc-7ca1c0051167",
+    "payloadHash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7"
+  },
+  "expectedInjectedMarker": "INJECTED_CREATE_RESPONSE_DISCARDED_BEFORE_SUCCESS_NOT_NETWORK_OUTAGE",
+  "expectedAfterInjection": "UNKNOWN; no automatic second create",
+  "postAttemptSteps": [
+    "Immediately close both demo execution/fault flags; verify directly even if CLI follow-up fails.",
+    "Redeploy/restart the existing owner namespace without replacing storage.",
+    "Operator reconciles read-only: exact correlation, complete task properties and contact association must yield one unique task.",
+    "Repeat read-only reconciliation and verify same remote task ID with one create attempt."
+  ],
+  "uncertainAbsentAmbiguousOrMismatchedOutcome": "BLOCK; no create retry",
+  "notYetDemonstrated": [
+    "New task creation",
+    "Injected response discard",
+    "Restart/reconciliation of this new garage task",
+    "Hosted changed-payload negative test"
+  ]
+}

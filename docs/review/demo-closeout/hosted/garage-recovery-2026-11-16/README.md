@@ -48,3 +48,33 @@ No new remote task ID, create count or recovery result is claimed yet. The next
 exercise must distinguish deliberate response discard from a real network outage,
 close test execution after its single attempt, and reconcile read-only across
 restart/redeployment without another create.
+
+## Current update — exact approval received
+
+The operator supplied approval `approval_28429c11-0ed2-4407-8829-341af213b0ab`
+for this same operation, review, full payload hash and action version, with
+EXTERNAL_VERIFIED identity, state APPROVED and taskSubmitted false. All four
+binding fields exactly match the previously verified prepared request. This is
+recorded in [operator-approval-receipt.json](operator-approval-receipt.json) and
+[approval-check.json](approval-check.json); original prepared checks remain
+unchanged as earlier snapshots. The supplied excerpt does not include issuedAt/
+expiresAt, so neither time nor a renewed validity is invented. The backend must
+revalidate the original stored expiry, operator, source and material before POST.
+
+This is an operator-supplied exact-grant receipt, separate from the prior chat
+semantic PASS. It authorizes only the specified internal synthetic task payload;
+there is no general writeback or release acceptance. The existing authorization
+limits the controlled recovery exercise to one new remote create.
+
+Read-only Cloudflare readiness checks preserve the current versions, Secrets,
+namespace and identity/notification settings. Private base deployment configurations
+are prepared with execution still off. The proposed window is 45 minutes, with
+its expiry computed only when actually enabled and a persistent maximum of one
+create. See [test-plan.json](test-plan.json). Nothing was deployed or activated.
+
+**Required next evidence:** the complete current operation status/trace must show
+APPROVED, the exact hash/correlation, null remoteTaskId and zero create attempts
+before execution is enabled. The approval excerpt alone does not establish this
+full durable baseline. Until supplied, no remote task/create count or recovery is
+claimed. No model/HubSpot/email-provider call occurred in recording or preparing
+this stage. Existing confirmed EV task 420072115944 remains untouched.

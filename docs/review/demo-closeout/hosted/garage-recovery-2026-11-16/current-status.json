@@ -1,0 +1,17 @@
+{
+  "kind": "CURRENT_GARAGE_RECOVERY_PROGRESS",
+  "operationId": "operation_523891b4-49a7-4d23-be0f-dcc749e62b9c",
+  "approvalId": "approval_28429c11-0ed2-4407-8829-341af213b0ab",
+  "exactApprovalReceiptMatchesPreparedTask": true,
+  "phase": "APPROVAL_RECEIVED_BASELINE_PENDING",
+  "testWindowEnabled": false,
+  "remoteTaskId": "NOT_YET_OBSERVED",
+  "demoCreateAttempts": "NOT_YET_OBSERVED",
+  "maximumNewTaskCreates": 1,
+  "taskSubmittedReported": false,
+  "nextRequiredReceipt": "Full operation evidence showing APPROVED, remoteTaskId null, demoCreateAttempts 0, original payload hash/correlation and persisted trace.",
+  "issuedAtAndExpiryNotSupplied": true,
+  "serverMustEnforceOriginalApprovalExpiry": true,
+  "noTaskApprovalRenewal": true,
+  "releaseAccepted": false
+}
