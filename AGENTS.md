@@ -664,3 +664,19 @@ Do not re-enable, submit again, reset an approval or make a new run for this
 consumed attempt. Await operator read-only reconciliation of the existing task
 and its complete operation evidence. Remote ID/recovery remain pending; no
 financial outcome or revenue rescued is established. Preserve the old EV task.
+
+## Garage remote recovery confirmed; final repeat read pending
+
+The operator's read-only reconciliation confirms HubSpot task 424319510263 for
+operation 523891b4 with exact hash/action/correlation unchanged and one create
+attempt. The explicit injected-discard and restart trace is retained, followed
+by EXISTING_TASK_RECONCILED_NO_CREATE at 2026-11-16T22:36:00.293Z. Post-closure
+boot e8c0aef0 differs from post-discard 278e51dc. All nine execution/fault/release
+flags remain false in rechecked immutable active configuration versions d2c840a5
+(owner) and 66e3caac (gateway). See hosted/garage-recovery-2026-11-16/CERTIFICATION.md
+under docs/review/demo-closeout. This verifies one bounded synthetic injected
+recovery, not all real outages or customer production readiness. Final repeated
+confirmed-state read is requested; do not refresh/create/reapprove or reopen the
+consumed run. If reconcile control is gone, operator may read current operation
+evidence instead and identify the action. No hosted financial outcome or broader
+negative matrix is claimed; release acceptance remains pending.

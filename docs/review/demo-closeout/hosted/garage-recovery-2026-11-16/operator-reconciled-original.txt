@@ -1,0 +1,95 @@
+"operationId": "operation_523891b4-49a7-4d23-be0f-dcc749e62b9c",
+  "opportunityId": "op_1207462a-0eb2-4a52-a5af-57ee8d05a00b",
+  "correlation": "ai-main-3184719d-c295-435d-8cbc-7ca1c0051167",
+  "state": "CONFIRMED",
+  "payloadContract": "hubspot-final-payload-v1",
+  "payloadHash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+  "actionVersion": "final-action-v1:sha256:8dcbdc2e04e351265420267a55ad6ff422d3a71ca3560abdf083e5617051e8df",
+  "revision": 1,
+  "remoteTaskId": "424319510263",
+  "ledgerBootId": "e8c0aef0-f864-418c-a844-2a0ffe4d0aef",
+  "demoCreateAttempts": 1,
+  "finalRequest": {
+    "body": {
+      "associations": [
+        {
+          "to": {
+            "id": "582095692487"
+          },
+          "types": [
+            {
+              "associationCategory": "HUBSPOT_DEFINED",
+              "associationTypeId": 204
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "hs_task_body": "Operator routing: IMMEDIATE INTERNAL REVIEW — source reports in-progress work with a scope-change request. Confirm current job status; this label is not work approval.\nInternally verify the current job status and whether additional work has already started. Preserve pricing before additional work. Do not authorize work, scheduling or customer contact.\nAction purpose: internal_verification. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-11-16T19:03:47.362Z; 423247554235] AI &amp; MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY.\n[2026-11-16T19:03:47.362Z; 423247554235] Establish pricing before any additional work.\n[2026-11-16T19:03:47.362Z; 423247554235] Fictional customer requests pricing for exactly three additional garage outlets during an active job while the crew is onsite.\n[2026-11-16T19:03:47.362Z; 423247554235] No additional work, scheduling, customer contact or billing was authorized.\n[2026-11-16T19:03:47.362Z; 423247554235] No deadline or price was agreed.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): [{\"appliesTo\":\"customer_action\",\"code\":\"before_work_state_requires_source_confirmation\",\"noteId\":\"423247554235\",\"satisfiedByInternalVerification\":false}]\nExact source restrictions: AI &amp; MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY.\nEstablish pricing before any additional work.\nNo additional work, scheduling, customer contact or billing was authorized.\nNo deadline or price was agreed.\nInternal task due: 2026-12-01T20:45:00.000Z. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.\nSynthetic demo only. No real customer action or financial outcome.\n[AI_MAIN_CORRELATION:ai-main-3184719d-c295-435d-8cbc-7ca1c0051167]",
+        "hs_task_priority": "HIGH",
+        "hs_task_status": "NOT_STARTED",
+        "hs_task_subject": "[AI & MAIN SYNTHETIC DEMO] Internal verification: AI &amp; MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY.",
+        "hs_task_type": "TODO",
+        "hs_timestamp": "2026-12-01T20:45:00.000Z"
+      }
+    },
+    "contractVersion": "hubspot-final-payload-v1",
+    "method": "POST",
+    "portalId": "247646122",
+    "url": "https://api.hubapi.com/crm/v3/objects/tasks"
+  },
+  "trace": [
+    {
+      "event": "OPERATION_PERSISTED_BEFORE_SUBMISSION",
+      "payload_hash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+      "remote_id": null,
+      "at": "2026-11-16T20:46:16.038Z"
+    },
+    {
+      "event": "EXACT_FINAL_PAYLOAD_APPROVED",
+      "payload_hash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+      "remote_id": null,
+      "at": "2026-11-16T21:04:39.493Z"
+    },
+    {
+      "event": "OPERATOR_ARMED_SYNTHETIC_RESPONSE_LOSS",
+      "payload_hash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+      "remote_id": null,
+      "at": "2026-11-16T22:28:07.377Z"
+    },
+    {
+      "event": "BOUNDED_DEMO_ATTEMPT_RESERVED_BEFORE_POST",
+      "payload_hash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+      "remote_id": null,
+      "at": "2026-11-16T22:28:15.959Z"
+    },
+    {
+      "event": "POST_INTENT_DURABLY_PERSISTED",
+      "payload_hash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+      "remote_id": null,
+      "at": "2026-11-16T22:28:15.959Z"
+    },
+    {
+      "event": "INJECTED_CREATE_RESPONSE_DISCARDED_BEFORE_SUCCESS_NOT_NETWORK_OUTAGE",
+      "payload_hash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+      "remote_id": null,
+      "at": "2026-11-16T22:28:16.401Z"
+    },
+    {
+      "event": "RESTART_RECOVERED_UNCERTAIN_NO_CREATE",
+      "payload_hash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+      "remote_id": null,
+      "at": "2026-11-16T22:28:17.051Z"
+    },
+    {
+      "event": "RECONCILIATION_STARTED",
+      "payload_hash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+      "remote_id": null,
+      "at": "2026-11-16T22:35:58.946Z"
+    },
+    {
+      "event": "EXISTING_TASK_RECONCILED_NO_CREATE",
+      "payload_hash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+      "remote_id": "424319510263",
+      "at": "2026-11-16T22:36:00.293Z"
+    }

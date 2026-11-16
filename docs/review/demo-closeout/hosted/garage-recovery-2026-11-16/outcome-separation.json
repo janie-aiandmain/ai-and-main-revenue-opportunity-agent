@@ -1,0 +1,33 @@
+{
+  "kind": "DEDUPLICATED_SYNTHETIC_TASK_EFFECT_EVIDENCE_NOT_FINANCIAL_LEDGER_EXPORT",
+  "scope": "This garage operation only; no claim about unrelated historical outcomes.",
+  "effects": [
+    {
+      "effectKey": "hubspot:247646122:task:424319510263",
+      "portalId": "247646122",
+      "contactId": "582095692487",
+      "operationId": "operation_523891b4-49a7-4d23-be0f-dcc749e62b9c",
+      "findingId": "op_1207462a-0eb2-4a52-a5af-57ee8d05a00b",
+      "correlation": "ai-main-3184719d-c295-435d-8cbc-7ca1c0051167",
+      "payloadHash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+      "remoteTaskId": "424319510263",
+      "observedCreateAttempts": 1,
+      "confirmedTaskCountForThisOperation": 1,
+      "purpose": "internal_verification",
+      "synthetic": true,
+      "opportunityValueMinor": null,
+      "verifiedRevenueMinor": null,
+      "revenueRescuedMinor": null
+    }
+  ],
+  "financialAttributionRecordsCreatedByThisExercise": [],
+  "financialOutcomeVerification": "NONE",
+  "internalTaskDoesNotEstablish": [
+    "Current job status",
+    "Customer consent",
+    "Pricing delivered",
+    "Additional work approved/performed",
+    "Revenue influenced or rescued"
+  ],
+  "deduplicationNote": "One effect per portal/task ID is represented; the confirmed operation is not duplicated as an opportunity or financial outcome. This does not claim a hosted financial-deduplication test."
+}

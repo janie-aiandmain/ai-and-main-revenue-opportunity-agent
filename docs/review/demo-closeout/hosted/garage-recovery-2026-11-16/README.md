@@ -203,3 +203,36 @@ controller performs no CRM, model, email-provider or task submission calls.
 read-only. Require one unique exact correlation/properties/contact match. Unknown,
 missing, ambiguous or mismatched outcomes remain blocked; do not reopen the run,
 reapprove, evaluate or create another task. General writeback/release remain off.
+
+## Actual read-only remote recovery confirmed
+
+The operator supplied the reconciliation result: **CONFIRMED**, HubSpot task
+**424319510263**, same payload/action version/correlation/revision and still
+**one** create attempt. The original pasted bytes are preserved; its parsed
+copy adds only omitted surrounding delimiters, without inventing any event.
+See [operator-reconciled-original.txt](operator-reconciled-original.txt),
+[parsed receipt](operator-reconciled.json) and
+[reconciliation verification](reconciliation-check.json).
+
+`RECONCILIATION_STARTED` at 22:35:58.946Z is followed by
+`EXISTING_TASK_RECONCILED_NO_CREATE` at 22:36:00.293Z on November 16, with
+remote ID 424319510263. The entire earlier persisted/approval/POST/discard/restart
+trace is retained. The unchanged verified server code only records CONFIRMED
+after exactly one candidate matches the correlation, complete task properties
+and designated contact association. Codex did not call HubSpot independently.
+
+The reconciliation occurred after verified closure/configuration activation, and
+ledger boot changed again from 278e51dc… after discard to e8c0aef0… after closure.
+This supplies actual restart/deployment readback evidence in addition to the
+explicit post-discard restart marker. The remote recovery result is verified for
+**this one injected synthetic scenario**, not all real outages or broad customer
+production readiness. A final repeated confirmed-operation read is still pending;
+that method returns the stored confirmed task without a new create (and does not
+necessarily issue another HubSpot lookup once already confirmed).
+
+[Outcome separation](outcome-separation.json) contains one deduplicated effect
+evidence record keyed by portal/task ID. It is not a financial-ledger export or a
+claim of hosted revenue-attribution testing. No opportunity amount or verified
+financial outcome is established; revenue rescued remains unknown/not measured.
+The task does not establish current job status, consent, pricing delivered, work
+approved/performed or business revenue. No second task was created or attempted.
