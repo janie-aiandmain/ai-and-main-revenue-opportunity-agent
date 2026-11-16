@@ -208,6 +208,21 @@
     }
   ],
   "retainedBusinessRegressions": 0,
+  "identityProof": {
+    "needs": 3,
+    "idsBefore": [
+      "op_3eb364da-bab5-4ee5-8cea-4c9cbec57332",
+      "op_8650ddfa-5e31-478c-9811-1b7bb4d8be07",
+      "op_774b344d-b7c4-4efe-9890-294bb8f04592"
+    ],
+    "idsAfter": [
+      "op_3eb364da-bab5-4ee5-8cea-4c9cbec57332",
+      "op_8650ddfa-5e31-478c-9811-1b7bb4d8be07",
+      "op_774b344d-b7c4-4efe-9890-294bb8f04592"
+    ],
+    "additionalIdentities": 0,
+    "taskOperations": 0
+  },
   "approvalContractHash": {
     "before": "sha256:4719a264c09bde516a6322d30f795a4302a65284e25040c27ed5b71e3f06a7ec",
     "after": "sha256:480b14d3f8666053b01ed597a01106752c0980a555dfd8e5730d0db21735a826"

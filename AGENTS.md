@@ -578,3 +578,22 @@ that task's complete final payload; chat approval is not that grant. Keep genera
 writeback and release flags false. No new infrastructure, permission expansion,
 credential recreation, real-customer activity or main merge. Preserve the old
 confirmed operation and reconcile unknown effects rather than creating again.
+
+## Hosted alerts verified; synthetic-label correction pending semantic review
+
+Both HIGH and IMMEDIATE REVIEW alerts reached the operator inbox, each with one
+provider attempt. See docs/review/demo-closeout/hosted/email-delivery-2026-11-16.
+That user confirmation accepts inbox arrival only, not revised findings/tasks.
+The observed synthetic-header omission is corrected in source evidence policy
+v1.3 / materializer v0.3.12, preserving literal labels without weakening the
+reviewer. See docs/review/demo-closeout/synthetic-label-correction. It passes 229
+tests, 207 retained workflow executions, 32 unchanged prior capture comparisons,
+both builds and two fresh non-production model calls (six findings); all six new
+semantic verdicts remain PENDING. Prior journals/captures/decisions are preserved.
+The old reviewed generator remains deployed; do not deploy this correction until
+its new semantic review. Keep general/test/fault/release execution off and do not
+reset/recreate the confirmed EV task. The current review command verifies the new
+pending packet's integrity; the original v0.3.11 packet checker remains available
+as review:demo-closeout:v0.3.11 and is intentionally source-version-specific.
+Raw model IDs from synthetic validation are not hosted durable opportunity IDs.
+Final-payload approval and release acceptance remain separate from semantic review.

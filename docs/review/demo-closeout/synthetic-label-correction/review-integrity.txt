@@ -1,0 +1,5 @@
+
+> ai-and-main-revenue-opportunity-agent@0.1.0 review:current
+> node scripts/review/verify-synthetic-label.js
+
+{"kind":"CURRENT_REVIEW_PACKET_AUTOMATED_INTEGRITY_NOT_RELEASE_ACCEPTANCE","packetHash":"9d964f917623deb5fb460c38fc9dc1e51dbd67103858d3051fb0bbea04e11d45","automationPassed":true,"sourceCommit":"c6c28c6fb3059ab2ebc65bd88a4764ef76dda940","materializer":"source-evidence-v0.3.12","evidencePolicy":"source-clause-closure-v1.3","freshCalls":2,"reviewItems":6,"humanSemanticVerdicts":"PENDING","executionApproved":false,"releaseAccepted":false}

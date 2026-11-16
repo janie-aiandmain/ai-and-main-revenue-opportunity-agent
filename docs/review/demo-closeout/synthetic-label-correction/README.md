@@ -68,3 +68,48 @@ not be mislabeled as repeated delivery of the unchanged old revision. Ongoing
 email deduplication and task-recovery evidence remain distinct from this source
 correction. General/write/test/fault/release controls remain disabled; no task
 execution or release acceptance follows from the email test.
+
+## Completed results
+
+- **229/229 full offline tests passed** after updating the explicit current-version
+  assertion and strengthening uppercase injection-marker counterexamples.
+- **207/207 supported retained-capture workflow executions passed**.
+- Both Worker dry-run builds passed.
+- **2/2 fresh model calls passed**, each producing the three expected independent
+  findings: six finding instances, no missing/extra needs or quality failures in
+  this controlled positive context, no customer-action authority. This positive-only
+  targeted matrix does not estimate a broad false-positive rate.
+- **3/3 finding proposal versions** agree across the two fresh executions. Raw keys
+  and IDs also agree in these runs; this is not a new five-run/general stability claim.
+- Usage: **3,866 input / 1,095 output tokens**, 4,961 total. Exactly two new durable
+  reservations; previous runner journals are unchanged. Additional hosted model
+  executions remain outside the old 306-call finite-run accounting.
+- Captured missing-label quality failures: **2 before / 0 after**. The 32 prior
+  latest captures retain identical business outputs. Local identity comparison
+  preserves **three needs / three durable IDs, zero extra IDs, zero task operations**.
+- The six exact new outputs are PENDING semantic review in [REVIEW.md](REVIEW.md).
+  [Review packet](review-packet.json) binds every output and item hash. The old
+  confirmed EV task is unchanged; no new EV task is requested.
+
+## Current review command and preserved prior checkpoint
+
+The original `npm run review:current` failed its frozen v0.3.11 assertion when
+run against v0.3.12 ([original failure](prior-packet-check.txt)). Its original
+script/packet/decisions are unchanged; its command remains reproducible as
+`npm run review:demo-closeout:v0.3.11` and must be run at its historical checkpoint
+for the matching source. This is a checkpoint/version mismatch, not a hidden
+passing result or a model failure.
+
+`npm run review:current` now points explicitly to this new packet's automated
+integrity verifier. That command passes source/plan hashes, exact packet/item/
+output hashes, two-call reservation/capture results, identity and proposal
+consistency checks, while explicitly reporting semantic verdicts PENDING and
+execution/release acceptance false. It does not transfer approval from the old
+packet or manufacture human acceptance.
+
+All corrected-generator work remains **source only**. No HubSpot calls, task
+creates, new email delivery, credential/configuration changes or deployment were
+performed during this correction/validation cycle. Hosted notification receipts
+are documented separately. Before deploying this materializer, obtain the user's
+semantic review of this new packet; later task execution still needs a real
+operator's separate exact-final-payload approval.
