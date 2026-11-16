@@ -202,3 +202,13 @@ test('identity review of a new note preserves the confirmed operation, rejects d
  assert.equal(result.findings.length,2);assert.equal(result.findings.find(f=>f.findingId===original.finding.findingId).operation.state,'CONFIRMED');
  assert.ok(result.findings.every(f=>f.reviewState==='PENDING'));assert.equal(result.semanticReviewStillRequired,true);
 }));
+
+test('the preserved v0.3.11 exact approval contract cannot resume under synthetic-label completion v0.3.12',()=>lab(async a=>{
+ const {reviewed,grant}=await a.prepare(),old=JSON.parse(await readFile('docs/review/demo-closeout/contracts.json','utf8'));
+ const current=a.l.db.prepare('SELECT contract_hash FROM general_contexts WHERE context_key=?').get(a.l.contextKey(env)).contract_hash;
+ assert.notEqual(current,old.approvalContractHash);
+ a.l.db.prepare('UPDATE general_contexts SET contract_hash=? WHERE context_key=?').run(old.approvalContractHash,a.l.contextKey(env));
+ await assert.rejects(a.l.resumeApproval({operationId:reviewed.operationId},actor,env,a.source),/contract|changed|stale/);
+ const [fresh]=await a.l.evaluate(env,a.source,a.reason);assert.equal(fresh.reviewState,'PENDING');
+ assert.equal(a.l.db.prepare('SELECT revoked FROM cert_approvals WHERE id=?').get(grant.approvalId).revoked,1);assert.equal(a.posts(),0);
+}));

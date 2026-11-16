@@ -1,0 +1,39 @@
+{
+  "fixtureVersion": "hosted-synthetic-label-v1",
+  "provenance": "Controlled context reconstructed from user-entered synthetic note instructions and quoted hosted evidence; not a live CRM export or raw provider response. Original materialized capture remains unchanged.",
+  "capturePath": "docs/review/demo-closeout/hosted/identity-review-2026-11-16/generation-5/pending-candidates.json",
+  "evaluationTime": "2026-11-16T20:00:00.000Z",
+  "context": {
+    "customer": "AI & MAIN synthetic demo; no real customer",
+    "serviceHistory": [
+      {
+        "noteId": "420030479039",
+        "timestamp": "2026-11-11T20:35:43.354Z",
+        "note": "AI & MAIN SYNTHETIC DEMO \u2014 TEST DATA. Fictional customer requested pricing for one Level 2 EV charger installation. Pricing information only; no site visit, appointment, installation, or other work was requested or authorized. No deadline or price was agreed."
+      },
+      {
+        "noteId": "423246844630",
+        "timestamp": "2026-11-16T19:03:41.712Z",
+        "note": "AI & MAIN SYNTHETIC EMAIL TEST \u2014 TEST DATA ONLY. Fictional customer requested pricing for one whole-home surge protector. Pricing information only. No installation, scheduling, customer contact, billing or other work was authorized. No deadline or price was agreed."
+      },
+      {
+        "noteId": "423247554235",
+        "timestamp": "2026-11-16T19:03:47.362Z",
+        "note": "AI & MAIN SYNTHETIC IMMEDIATE REVIEW TEST \u2014 TEST DATA ONLY. Fictional customer requests pricing for exactly three additional garage outlets during an active job while the crew is onsite. Establish pricing before any additional work. No additional work, scheduling, customer contact or billing was authorized. No deadline or price was agreed."
+      }
+    ]
+  },
+  "expected": {
+    "findings": 3,
+    "scopeNoteId": "423247554235",
+    "pricingNoteIds": [
+      "420030479039",
+      "423246844630"
+    ],
+    "syntheticHeaderNoteIds": [
+      "423246844630",
+      "423247554235"
+    ],
+    "customerActionPermitted": false
+  }
+}

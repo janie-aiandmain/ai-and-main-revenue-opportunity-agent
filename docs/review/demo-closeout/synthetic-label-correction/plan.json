@@ -1,0 +1,19 @@
+{
+  "kind": "FINITE_NECESSARY_VALIDATION_UNDER_EXISTING_TASK_SCOPED_AUTHORIZATION",
+  "plannedCalls": 2,
+  "materializer": "source-evidence-v0.3.12",
+  "evidencePolicy": "source-clause-closure-v1.3",
+  "sourceHashes": {
+    "src/release/evidence.js": "de43a6f039e3f3d15e408792272ddc2e632d3226d534b2b97ac85ebc90aa242d",
+    "src/release/reasoning.js": "4c95bb154013eef67578c8c36d9b484bf6a800fcf03d6a4be11e168c79851411",
+    "src/findings-request-v0.3.3.json": "e5630f86c5a7636a49116b8be56c336d3293c15bb024711f0fa36d9df9fa6fea",
+    "fixtures/hosted-synthetic-label-v1.json": "3004005e953a76f9576fcbb415aab5905394ba74add2f17d9b43cf48d700796f",
+    "scripts/release/synthetic-label-model.js": "2098674c15da2d81f55c74487e1303bc9f1f85cf834e8b6cb2169975f8b3bd1a"
+  },
+  "purpose": "Two independent non-production executions of the same three-need controlled synthetic context after literal label-evidence completion. Preserve prior journals; no credential probe, blind retry or unrelated evaluation.",
+  "authorizationReference": "AGENTS.md task-scoped model validation continuation and approved hosted closeout; user reopened the cumulative allowance for necessary validation. This is an engineering run limit, not a reset of prior spending.",
+  "cumulativeCallCeiling": null,
+  "historicalJournalsUnchanged": true,
+  "executionApproval": false,
+  "deploymentApprovalFromThisPlan": false
+}

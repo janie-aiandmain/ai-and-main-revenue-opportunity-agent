@@ -2,8 +2,10 @@
 // Append a bare adjacent qualifier only when the cited note has exactly one need.
 // Multi-need or instruction-bearing boundaries stay conservative and reviewable.
 import {documentedCompletion} from '../staging/completion-policy.js';
-export const EVIDENCE_POLICY='source-clause-closure-v1.2';
+export const EVIDENCE_POLICY='source-clause-closure-v1.3';
 const qualifier=/^(?:do not|don't|must not|never|no|hold|pause|stop|only|unless|without|until|before|after|once|when)\b/i;
+// Keep a literal controlled-demo header as evidence, never as executable authority.
+const syntheticHeader=/^AI & MAIN SYNTHETIC(?: [A-Z0-9 -]+)? [—-] TEST DATA ONLY[.!]?$/;
 const instruction=/\b(?:ignore (?:previous|all)|system\s*:|mark (?:this )?approved|change (?:the )?deal stage)\b/i;
 export function sourceSentences(text){
  return [...text.matchAll(/\S[\s\S]*?(?:[.!?](?=\s|$)|\n|$)/g)].map(m=>{const quote=m[0].trim(),start=m.index+m[0].indexOf(quote);return {quote,start,end:start+quote.length};}).filter(x=>x.quote);
@@ -17,6 +19,12 @@ export function completeEvidence(raw,history,now=new Date().toISOString()){
   const owners=s=>cited.filter(f=>f.spans.some(e=>e.start<s.end&&e.end>s.start));
   for(const {i,spans} of cited){
    const extra=[];
+   const header=sentences[0];
+   // A shared header cannot be assigned across multiple needs: overlapping
+   // evidence would make their identities ambiguous. Keep that case blocked.
+   if(cited.length===1&&header&&syntheticHeader.test(header.quote)&&!instruction.test(header.quote)&&n.note.indexOf(header.quote)===n.note.lastIndexOf(header.quote)){
+    extra.push(header);
+   }
    for(const e of spans){
     const touched=sentences.filter(s=>s.start<e.end&&s.end>e.start);
     if(touched.length&&touched.every(s=>owners(s).length===1&&!instruction.test(s.quote))){
@@ -27,7 +35,7 @@ export function completeEvidence(raw,history,now=new Date().toISOString()){
    }
    const all=[...findings[i].evidence.filter(e=>e.noteId!==n.noteId),...spans.filter(e=>!extra.some(s=>s.start<=e.start&&s.end>=e.end)).map(e=>({noteId:n.noteId,quote:e.quote})),...extra.map(s=>({noteId:n.noteId,quote:s.quote}))];
    findings[i].evidence=[...new Map(all.map(e=>[e.noteId+'\0'+e.quote,e])).values()];
-   for(const s of extra)if(!spans.some(e=>e.start===s.start&&e.end===s.end))trace.push({findingKey:findings[i].opportunityKey,noteId:n.noteId,start:s.start,end:s.end,reason:'UNAMBIGUOUS_SOURCE_CLAUSE_COMPLETION'});
+   for(const s of extra)if(!spans.some(e=>e.start===s.start&&e.end===s.end))trace.push({findingKey:findings[i].opportunityKey,noteId:n.noteId,start:s.start,end:s.end,reason:s===header&&syntheticHeader.test(s.quote)?'UNIQUE_CONTROLLED_SYNTHETIC_USE_HEADER':'UNAMBIGUOUS_SOURCE_CLAUSE_COMPLETION'});
   }
  }
  // Preserve matching historical deferrals even when only their later completion

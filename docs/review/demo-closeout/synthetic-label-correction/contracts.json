@@ -1,0 +1,30 @@
+{
+  "before": {
+    "materializer": "source-evidence-v0.3.11",
+    "evidencePolicy": "source-clause-closure-v1.2",
+    "approvalContractHash": "sha256:4719a264c09bde516a6322d30f795a4302a65284e25040c27ed5b71e3f06a7ec"
+  },
+  "after": {
+    "materializer": "source-evidence-v0.3.12",
+    "evidencePolicy": "source-clause-closure-v1.3",
+    "approvalContractHash": "sha256:480b14d3f8666053b01ed597a01106752c0980a555dfd8e5730d0db21735a826"
+  },
+  "unchanged": {
+    "proposal": "internal-task-proposal-v2.6",
+    "taskPolicy": "internal-task-policy-v1.6",
+    "subject": "source-anchored-task-subject-v1",
+    "prompt": "reasoning-v0.3.3",
+    "schema": "findings-v0.2",
+    "model": "gpt-5.6-terra",
+    "reasoningEffort": "low"
+  },
+  "sourceHashes": {
+    "src/release/evidence.js": "de43a6f039e3f3d15e408792272ddc2e632d3226d534b2b97ac85ebc90aa242d",
+    "src/release/reasoning.js": "4c95bb154013eef67578c8c36d9b484bf6a800fcf03d6a4be11e168c79851411",
+    "src/staging/review-policy.js": "e83c0fcf16111feaa20c8c25fb36a4901a530a7fd2b54b221ae743e98e765857",
+    "src/staging/internal-task-policy.js": "6392f8fae80ec09eaee69e2d82733780cfa58a54c3c34e19ab4135bf9be9c48f",
+    "src/findings-request-v0.3.3.json": "e5630f86c5a7636a49116b8be56c336d3293c15bb024711f0fa36d9df9fa6fea"
+  },
+  "humanReview": "PENDING",
+  "deployed": false
+}

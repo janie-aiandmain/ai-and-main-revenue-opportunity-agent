@@ -18,7 +18,7 @@ const version=x=>proposalActionVersion(x.finding,x.projection,x.authority,REVIEW
 const reverse=value=>Array.isArray(value)?value.map(reverse):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).reverse().map(([k,v])=>[k,reverse(v)])):value;
 test('proposal v2.5 hashes an explicit authoritative field set and excludes explanation/confidence/raw-ID metadata',async()=>{
  const x=await specimen(),before=version(x),inputs=proposalVersionInputs(x.finding,x.projection,x.authority,REVIEW_POLICY);
- assert.equal(INTERNAL_PROPOSAL_VERSION,'internal-task-proposal-v2.6');assert.equal(MATERIALIZATION_VERSION,'source-evidence-v0.3.11');assert.equal(inputs.hashPolicyVersion,INTERNAL_PROPOSAL_HASH_POLICY);
+ assert.equal(INTERNAL_PROPOSAL_VERSION,'internal-task-proposal-v2.6');assert.equal(MATERIALIZATION_VERSION,'source-evidence-v0.3.12');assert.equal(inputs.hashPolicyVersion,INTERNAL_PROPOSAL_HASH_POLICY);
  assert.deepEqual(Object.keys(inputs.findingDecision).sort(),['classification','evidence','humanReviewRequired','opportunityType','recommendedNextAction']);
  const changed=structuredClone(x);Object.assign(changed.finding,{reasoningSummary:'A different explanatory paraphrase.',confidence:'low',findingId:'another-model-facing-id',opportunityKey:'another-presentation-key',displayCaption:'presentation only'});
  assert.equal(version(changed),before);assert.equal(version(reverse(x)),before);assert.equal(x.finding.proposedAction.actionVersion,before);

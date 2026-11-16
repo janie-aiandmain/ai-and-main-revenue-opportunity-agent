@@ -1,0 +1,671 @@
+{
+  "kind": "OFFLINE_CAPTURE_REPLAY_NOT_FRESH_INFERENCE",
+  "beforeCommit": "7cb4682be116dfb6e86ad097642f18422c6e3ef7",
+  "fixtureProvenance": "Controlled context reconstructed from user-entered synthetic note instructions and quoted hosted evidence; not a live CRM export or raw provider response. Original materialized capture remains unchanged.",
+  "beforeFailures": 2,
+  "afterFailures": 0,
+  "comparison": [
+    {
+      "key": "level-2-ev-charger-installation",
+      "oldQualityFailures": [],
+      "newQualityFailures": [],
+      "oldActionVersion": "sha256:c9739118d53b4b2bf142c2b4a4094b3b67136d4a0e325559f07e333a608527c1",
+      "newActionVersion": "sha256:c9739118d53b4b2bf142c2b4a4094b3b67136d4a0e325559f07e333a608527c1",
+      "outputHash": "bf3873013b2e1e18e28f3ce70e791283671713d03341a750a613e40eabda0cea",
+      "priorHumanApprovalTransferred": false
+    },
+    {
+      "key": "whole-home-surge-protector",
+      "oldQualityFailures": [
+        {
+          "code": "restriction_evidence_incomplete",
+          "noteId": "423246844630",
+          "quote": "AI & MAIN SYNTHETIC EMAIL TEST — TEST DATA ONLY."
+        }
+      ],
+      "newQualityFailures": [],
+      "oldActionVersion": "sha256:c50750174456b67f53db47b18553c6574b0c934f6e1f9c1f38a6a41c0ce4dde6",
+      "newActionVersion": "sha256:100251eea97cf8f6f2d273f4ac22143923688b5392f91647a332ba00fed9a8ae",
+      "outputHash": "f3c59fd58be35649bbfe6d7785e3d116a303cf83925b2e3bdf23e4f459323e90",
+      "priorHumanApprovalTransferred": false
+    },
+    {
+      "key": "three-additional-garage-outlets",
+      "oldQualityFailures": [
+        {
+          "code": "restriction_evidence_incomplete",
+          "noteId": "423247554235",
+          "quote": "AI & MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY."
+        }
+      ],
+      "newQualityFailures": [],
+      "oldActionVersion": "sha256:2f7c6d32f560eff1a203607e41a1b82516bc79bc9c3ffc22fbbd57a3df2b1642",
+      "newActionVersion": "sha256:1d904001d6091e968fc492278b818ed7b429490e07e09c246d2607538cc45fd2",
+      "outputHash": "4ea847aa8b476531a41aaac63e74abfbe6063dca55aa4a22e5cf694fb05cdfd1",
+      "priorHumanApprovalTransferred": false
+    }
+  ],
+  "retainedLatestCaptures": [
+    {
+      "caseId": "ST03",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST03",
+      "repeat": 2,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST03",
+      "repeat": 3,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST04",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST04",
+      "repeat": 2,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST04",
+      "repeat": 3,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST07",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST07",
+      "repeat": 2,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST07",
+      "repeat": 3,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST08",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST08",
+      "repeat": 2,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST08",
+      "repeat": 3,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "EN11",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "EN11",
+      "repeat": 2,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "EN11",
+      "repeat": 3,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "EN12",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "EN12",
+      "repeat": 2,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "EN12",
+      "repeat": 3,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "EN31",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "EN31",
+      "repeat": 2,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "EN31",
+      "repeat": 3,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "UV11",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "UV11",
+      "repeat": 2,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "UV11",
+      "repeat": 3,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "RQ02",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "RQ02",
+      "repeat": 2,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "RQ02",
+      "repeat": 3,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST01",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST02",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST05",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "ST09",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    },
+    {
+      "caseId": "EN20",
+      "repeat": 1,
+      "businessOutputAndPayloadUnchanged": true
+    }
+  ],
+  "retainedBusinessRegressions": 0,
+  "approvalContractHash": {
+    "before": "sha256:4719a264c09bde516a6322d30f795a4302a65284e25040c27ed5b71e3f06a7ec",
+    "after": "sha256:480b14d3f8666053b01ed597a01106752c0980a555dfd8e5730d0db21735a826"
+  },
+  "revisedOutput": {
+    "schemaVersion": "findings-v0.2",
+    "promptVersion": "reasoning-v0.3.3",
+    "findings": [
+      {
+        "findingId": "finding_2adacff09f4b2dbd21e447126cf31a64fb6a49d1641ac129319b98974c84c479",
+        "opportunityKey": "level-2-ev-charger-installation",
+        "classification": "strong cross-sell opportunity",
+        "opportunityType": "cross-sell",
+        "confidence": "high",
+        "evidence": [
+          {
+            "noteId": "420030479039",
+            "quote": "Fictional customer requested pricing for one Level 2 EV charger installation."
+          },
+          {
+            "noteId": "420030479039",
+            "quote": "No deadline or price was agreed."
+          },
+          {
+            "noteId": "420030479039",
+            "quote": "Pricing information only; no site visit, appointment, installation, or other work was requested or authorized."
+          }
+        ],
+        "reasoningSummary": "Customer requested pricing for one Level 2 EV charger installation, limited to pricing information.",
+        "recommendedNextAction": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps. Customer context: \"No deadline or price was agreed.\" Customer context: \"Pricing information only; no site visit, appointment, installation, or other work was requested or authorized.\" Internal task only. No customer action is authorized.",
+        "humanReviewRequired": true,
+        "proposedAction": {
+          "schemaVersion": "internal-task-proposal-v2.6",
+          "hashPolicyVersion": "authoritative-proposal-hash-v1",
+          "actionPurpose": "internal_preparation",
+          "actionPayload": {
+            "type": "hubspot.follow_up_task.create",
+            "target": {
+              "contextKey": "synthetic:label-regression"
+            },
+            "properties": {
+              "hs_task_subject": "Internal pricing preparation: Fictional customer requested pricing for one Level 2 EV charger installation.",
+              "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-11-11T20:35:43.354Z; 420030479039] Fictional customer requested pricing for one Level 2 EV charger installation.\n[2026-11-11T20:35:43.354Z; 420030479039] No deadline or price was agreed.\n[2026-11-11T20:35:43.354Z; 420030479039] Pricing information only; no site visit, appointment, installation, or other work was requested or authorized.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: No deadline or price was agreed.\nPricing information only; no site visit, appointment, installation, or other work was requested or authorized.\nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+              "hs_task_priority": "HIGH",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_type": "TODO"
+            }
+          },
+          "material": {
+            "policyVersion": "internal-task-policy-v1.6",
+            "proposalVersion": "internal-task-proposal-v2.6",
+            "actionClass": "hubspot.follow_up_task.create",
+            "targetContext": "synthetic:label-regression",
+            "classification": "strong cross-sell opportunity",
+            "opportunityType": "cross-sell",
+            "intent": "prepare_quote",
+            "actionPurpose": "internal_preparation",
+            "scope": {
+              "sourceRequests": [
+                "Fictional customer requested pricing for one Level 2 EV charger installation.",
+                "No deadline or price was agreed.",
+                "Pricing information only; no site visit, appointment, installation, or other work was requested or authorized."
+              ]
+            },
+            "priority": "HIGH",
+            "evidence": [
+              {
+                "noteId": "420030479039",
+                "timestamp": "2026-11-11T20:35:43.354Z",
+                "quote": "Fictional customer requested pricing for one Level 2 EV charger installation."
+              },
+              {
+                "noteId": "420030479039",
+                "timestamp": "2026-11-11T20:35:43.354Z",
+                "quote": "No deadline or price was agreed."
+              },
+              {
+                "noteId": "420030479039",
+                "timestamp": "2026-11-11T20:35:43.354Z",
+                "quote": "Pricing information only; no site visit, appointment, installation, or other work was requested or authorized."
+              }
+            ],
+            "timing": {
+              "kind": "none"
+            },
+            "operatorTaskDueAt": null,
+            "sourceTimingConstraints": [],
+            "customerActionGates": [],
+            "sourceRestrictions": [
+              {
+                "noteId": "420030479039",
+                "timestamp": "2026-11-11T20:35:43.354Z",
+                "quote": "No deadline or price was agreed."
+              },
+              {
+                "noteId": "420030479039",
+                "timestamp": "2026-11-11T20:35:43.354Z",
+                "quote": "Pricing information only; no site visit, appointment, installation, or other work was requested or authorized."
+              }
+            ],
+            "customerActionPermitted": false,
+            "humanApprovalRequired": true,
+            "subjectPolicyVersion": "source-anchored-task-subject-v1"
+          },
+          "authorityRequirements": {
+            "policyVersion": "internal-task-policy-v1.6",
+            "humanApprovalRequired": true,
+            "allowedMutation": "hubspot.follow_up_task.create",
+            "customerActionPermitted": false
+          },
+          "qualityFailures": [],
+          "preparationBlocked": false,
+          "executionBlocked": true,
+          "missingFinalFields": [
+            "operatorTaskDueAt",
+            "CRM association",
+            "operation correlation",
+            "exact final-payload approval"
+          ],
+          "actionVersion": "sha256:c9739118d53b4b2bf142c2b4a4094b3b67136d4a0e325559f07e333a608527c1"
+        }
+      },
+      {
+        "findingId": "finding_e4368f9a05fc8c7d58261b7a717065019721c9aa071dd9aa711e607960a37a75",
+        "opportunityKey": "whole-home-surge-protector",
+        "classification": "strong cross-sell opportunity",
+        "opportunityType": "cross-sell",
+        "confidence": "high",
+        "evidence": [
+          {
+            "noteId": "423246844630",
+            "quote": "AI & MAIN SYNTHETIC EMAIL TEST — TEST DATA ONLY."
+          },
+          {
+            "noteId": "423246844630",
+            "quote": "Fictional customer requested pricing for one whole-home surge protector."
+          },
+          {
+            "noteId": "423246844630",
+            "quote": "No deadline or price was agreed."
+          },
+          {
+            "noteId": "423246844630",
+            "quote": "No installation, scheduling, customer contact, billing or other work was authorized."
+          },
+          {
+            "noteId": "423246844630",
+            "quote": "Pricing information only. No installation, scheduling, customer contact, billing or other work was authorized."
+          },
+          {
+            "noteId": "423246844630",
+            "quote": "Pricing information only."
+          }
+        ],
+        "reasoningSummary": "Customer requested pricing for one whole-home surge protector, limited to pricing information.",
+        "recommendedNextAction": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps. Customer context: \"AI & MAIN SYNTHETIC EMAIL TEST — TEST DATA ONLY.\" Customer context: \"No deadline or price was agreed.\" Customer context: \"No installation, scheduling, customer contact, billing or other work was authorized.\" Customer context: \"Pricing information only. No installation, scheduling, customer contact, billing or other work was authorized.\" Customer context: \"Pricing information only.\" Internal task only. No customer action is authorized.",
+        "humanReviewRequired": true,
+        "proposedAction": {
+          "schemaVersion": "internal-task-proposal-v2.6",
+          "hashPolicyVersion": "authoritative-proposal-hash-v1",
+          "actionPurpose": "internal_preparation",
+          "actionPayload": {
+            "type": "hubspot.follow_up_task.create",
+            "target": {
+              "contextKey": "synthetic:label-regression"
+            },
+            "properties": {
+              "hs_task_subject": "Internal pricing preparation: AI &amp; MAIN SYNTHETIC EMAIL TEST — TEST DATA ONLY.",
+              "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-11-16T19:03:41.712Z; 423246844630] AI &amp; MAIN SYNTHETIC EMAIL TEST — TEST DATA ONLY.\n[2026-11-16T19:03:41.712Z; 423246844630] Fictional customer requested pricing for one whole-home surge protector.\n[2026-11-16T19:03:41.712Z; 423246844630] No deadline or price was agreed.\n[2026-11-16T19:03:41.712Z; 423246844630] No installation, scheduling, customer contact, billing or other work was authorized.\n[2026-11-16T19:03:41.712Z; 423246844630] Pricing information only. No installation, scheduling, customer contact, billing or other work was authorized.\n[2026-11-16T19:03:41.712Z; 423246844630] Pricing information only.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: AI &amp; MAIN SYNTHETIC EMAIL TEST — TEST DATA ONLY.\nNo deadline or price was agreed.\nNo installation, scheduling, customer contact, billing or other work was authorized.\nPricing information only. No installation, scheduling, customer contact, billing or other work was authorized.\nPricing information only.\nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+              "hs_task_priority": "HIGH",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_type": "TODO"
+            }
+          },
+          "material": {
+            "policyVersion": "internal-task-policy-v1.6",
+            "proposalVersion": "internal-task-proposal-v2.6",
+            "actionClass": "hubspot.follow_up_task.create",
+            "targetContext": "synthetic:label-regression",
+            "classification": "strong cross-sell opportunity",
+            "opportunityType": "cross-sell",
+            "intent": "prepare_quote",
+            "actionPurpose": "internal_preparation",
+            "scope": {
+              "sourceRequests": [
+                "AI & MAIN SYNTHETIC EMAIL TEST — TEST DATA ONLY.",
+                "Fictional customer requested pricing for one whole-home surge protector.",
+                "No deadline or price was agreed.",
+                "No installation, scheduling, customer contact, billing or other work was authorized.",
+                "Pricing information only. No installation, scheduling, customer contact, billing or other work was authorized.",
+                "Pricing information only."
+              ]
+            },
+            "priority": "HIGH",
+            "evidence": [
+              {
+                "noteId": "423246844630",
+                "timestamp": "2026-11-16T19:03:41.712Z",
+                "quote": "AI & MAIN SYNTHETIC EMAIL TEST — TEST DATA ONLY."
+              },
+              {
+                "noteId": "423246844630",
+                "timestamp": "2026-11-16T19:03:41.712Z",
+                "quote": "Fictional customer requested pricing for one whole-home surge protector."
+              },
+              {
+                "noteId": "423246844630",
+                "timestamp": "2026-11-16T19:03:41.712Z",
+                "quote": "No deadline or price was agreed."
+              },
+              {
+                "noteId": "423246844630",
+                "timestamp": "2026-11-16T19:03:41.712Z",
+                "quote": "No installation, scheduling, customer contact, billing or other work was authorized."
+              },
+              {
+                "noteId": "423246844630",
+                "timestamp": "2026-11-16T19:03:41.712Z",
+                "quote": "Pricing information only. No installation, scheduling, customer contact, billing or other work was authorized."
+              },
+              {
+                "noteId": "423246844630",
+                "timestamp": "2026-11-16T19:03:41.712Z",
+                "quote": "Pricing information only."
+              }
+            ],
+            "timing": {
+              "kind": "none"
+            },
+            "operatorTaskDueAt": null,
+            "sourceTimingConstraints": [],
+            "customerActionGates": [],
+            "sourceRestrictions": [
+              {
+                "noteId": "423246844630",
+                "timestamp": "2026-11-16T19:03:41.712Z",
+                "quote": "AI & MAIN SYNTHETIC EMAIL TEST — TEST DATA ONLY."
+              },
+              {
+                "noteId": "423246844630",
+                "timestamp": "2026-11-16T19:03:41.712Z",
+                "quote": "No deadline or price was agreed."
+              },
+              {
+                "noteId": "423246844630",
+                "timestamp": "2026-11-16T19:03:41.712Z",
+                "quote": "No installation, scheduling, customer contact, billing or other work was authorized."
+              },
+              {
+                "noteId": "423246844630",
+                "timestamp": "2026-11-16T19:03:41.712Z",
+                "quote": "Pricing information only. No installation, scheduling, customer contact, billing or other work was authorized."
+              },
+              {
+                "noteId": "423246844630",
+                "timestamp": "2026-11-16T19:03:41.712Z",
+                "quote": "Pricing information only."
+              }
+            ],
+            "customerActionPermitted": false,
+            "humanApprovalRequired": true,
+            "subjectPolicyVersion": "source-anchored-task-subject-v1"
+          },
+          "authorityRequirements": {
+            "policyVersion": "internal-task-policy-v1.6",
+            "humanApprovalRequired": true,
+            "allowedMutation": "hubspot.follow_up_task.create",
+            "customerActionPermitted": false
+          },
+          "qualityFailures": [],
+          "preparationBlocked": false,
+          "executionBlocked": true,
+          "missingFinalFields": [
+            "operatorTaskDueAt",
+            "CRM association",
+            "operation correlation",
+            "exact final-payload approval"
+          ],
+          "actionVersion": "sha256:100251eea97cf8f6f2d273f4ac22143923688b5392f91647a332ba00fed9a8ae"
+        }
+      },
+      {
+        "findingId": "finding_ef72456bc83ffe0fd742f1b28e734a65c942afd90bfbc56bb797503847f2da3a",
+        "opportunityKey": "three-additional-garage-outlets",
+        "classification": "scope-change opportunity",
+        "opportunityType": "scope change",
+        "confidence": "high",
+        "evidence": [
+          {
+            "noteId": "423247554235",
+            "quote": "AI & MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY."
+          },
+          {
+            "noteId": "423247554235",
+            "quote": "Establish pricing before any additional work."
+          },
+          {
+            "noteId": "423247554235",
+            "quote": "Fictional customer requests pricing for exactly three additional garage outlets during an active job while the crew is onsite."
+          },
+          {
+            "noteId": "423247554235",
+            "quote": "No additional work, scheduling, customer contact or billing was authorized."
+          },
+          {
+            "noteId": "423247554235",
+            "quote": "No deadline or price was agreed."
+          }
+        ],
+        "reasoningSummary": "Customer requested pricing for exactly three additional garage outlets during the job, changing the active-job scope; pricing must be established before additional work.",
+        "recommendedNextAction": "Internally verify the current job status and whether additional work has already started. Preserve pricing before additional work. Do not authorize work, scheduling or customer contact. Customer context: \"AI & MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY.\" Customer context: \"Establish pricing before any additional work.\" Customer context: \"No additional work, scheduling, customer contact or billing was authorized.\" Customer context: \"No deadline or price was agreed.\" Internal task only. No customer action is authorized.",
+        "humanReviewRequired": true,
+        "proposedAction": {
+          "schemaVersion": "internal-task-proposal-v2.6",
+          "hashPolicyVersion": "authoritative-proposal-hash-v1",
+          "actionPurpose": "internal_verification",
+          "actionPayload": {
+            "type": "hubspot.follow_up_task.create",
+            "target": {
+              "contextKey": "synthetic:label-regression"
+            },
+            "properties": {
+              "hs_task_subject": "Internal verification: AI &amp; MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY.",
+              "hs_task_body": "Operator routing: IMMEDIATE INTERNAL REVIEW — source reports in-progress work with a scope-change request. Confirm current job status; this label is not work approval.\nInternally verify the current job status and whether additional work has already started. Preserve pricing before additional work. Do not authorize work, scheduling or customer contact.\nAction purpose: internal_verification. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2026-11-16T19:03:47.362Z; 423247554235] AI &amp; MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY.\n[2026-11-16T19:03:47.362Z; 423247554235] Establish pricing before any additional work.\n[2026-11-16T19:03:47.362Z; 423247554235] Fictional customer requests pricing for exactly three additional garage outlets during an active job while the crew is onsite.\n[2026-11-16T19:03:47.362Z; 423247554235] No additional work, scheduling, customer contact or billing was authorized.\n[2026-11-16T19:03:47.362Z; 423247554235] No deadline or price was agreed.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): [{\"appliesTo\":\"customer_action\",\"code\":\"before_work_state_requires_source_confirmation\",\"noteId\":\"423247554235\",\"satisfiedByInternalVerification\":false}]\nExact source restrictions: AI &amp; MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY.\nEstablish pricing before any additional work.\nNo additional work, scheduling, customer contact or billing was authorized.\nNo deadline or price was agreed.\nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+              "hs_task_priority": "HIGH",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_type": "TODO"
+            }
+          },
+          "material": {
+            "policyVersion": "internal-task-policy-v1.6",
+            "proposalVersion": "internal-task-proposal-v2.6",
+            "actionClass": "hubspot.follow_up_task.create",
+            "targetContext": "synthetic:label-regression",
+            "classification": "scope-change opportunity",
+            "opportunityType": "scope change",
+            "intent": "verify_current_state",
+            "actionPurpose": "internal_verification",
+            "scope": {
+              "sourceRequests": [
+                "AI & MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY.",
+                "Establish pricing before any additional work.",
+                "Fictional customer requests pricing for exactly three additional garage outlets during an active job while the crew is onsite.",
+                "No additional work, scheduling, customer contact or billing was authorized.",
+                "No deadline or price was agreed."
+              ]
+            },
+            "priority": "HIGH",
+            "evidence": [
+              {
+                "noteId": "423247554235",
+                "timestamp": "2026-11-16T19:03:47.362Z",
+                "quote": "AI & MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY."
+              },
+              {
+                "noteId": "423247554235",
+                "timestamp": "2026-11-16T19:03:47.362Z",
+                "quote": "Establish pricing before any additional work."
+              },
+              {
+                "noteId": "423247554235",
+                "timestamp": "2026-11-16T19:03:47.362Z",
+                "quote": "Fictional customer requests pricing for exactly three additional garage outlets during an active job while the crew is onsite."
+              },
+              {
+                "noteId": "423247554235",
+                "timestamp": "2026-11-16T19:03:47.362Z",
+                "quote": "No additional work, scheduling, customer contact or billing was authorized."
+              },
+              {
+                "noteId": "423247554235",
+                "timestamp": "2026-11-16T19:03:47.362Z",
+                "quote": "No deadline or price was agreed."
+              }
+            ],
+            "timing": {
+              "kind": "none"
+            },
+            "operatorTaskDueAt": null,
+            "sourceTimingConstraints": [],
+            "customerActionGates": [
+              {
+                "code": "before_work_state_requires_source_confirmation",
+                "noteId": "423247554235",
+                "appliesTo": "customer_action",
+                "satisfiedByInternalVerification": false
+              }
+            ],
+            "sourceRestrictions": [
+              {
+                "noteId": "423247554235",
+                "timestamp": "2026-11-16T19:03:47.362Z",
+                "quote": "AI & MAIN SYNTHETIC IMMEDIATE REVIEW TEST — TEST DATA ONLY."
+              },
+              {
+                "noteId": "423247554235",
+                "timestamp": "2026-11-16T19:03:47.362Z",
+                "quote": "Establish pricing before any additional work."
+              },
+              {
+                "noteId": "423247554235",
+                "timestamp": "2026-11-16T19:03:47.362Z",
+                "quote": "No additional work, scheduling, customer contact or billing was authorized."
+              },
+              {
+                "noteId": "423247554235",
+                "timestamp": "2026-11-16T19:03:47.362Z",
+                "quote": "No deadline or price was agreed."
+              }
+            ],
+            "customerActionPermitted": false,
+            "humanApprovalRequired": true,
+            "reviewRouting": {
+              "policyVersion": "in-progress-scope-review-v1",
+              "queue": "immediate_review",
+              "label": "Immediate review: in-progress scope request",
+              "priority": "HIGH",
+              "contextTag": "team_onsite",
+              "sourceFacts": [
+                {
+                  "noteId": "423247554235",
+                  "sourceTimestamp": "2026-11-16T19:03:47.362Z",
+                  "quote": "Fictional customer requests pricing for exactly three additional garage outlets during an active job while the crew is onsite."
+                }
+              ],
+              "currentJobStatus": "UNVERIFIED",
+              "customerActionPermitted": false
+            },
+            "subjectPolicyVersion": "source-anchored-task-subject-v1"
+          },
+          "authorityRequirements": {
+            "policyVersion": "internal-task-policy-v1.6",
+            "humanApprovalRequired": true,
+            "allowedMutation": "hubspot.follow_up_task.create",
+            "customerActionPermitted": false
+          },
+          "qualityFailures": [],
+          "preparationBlocked": false,
+          "executionBlocked": true,
+          "missingFinalFields": [
+            "operatorTaskDueAt",
+            "CRM association",
+            "operation correlation",
+            "exact final-payload approval"
+          ],
+          "actionVersion": "sha256:1d904001d6091e968fc492278b818ed7b429490e07e09c246d2607538cc45fd2"
+        }
+      }
+    ],
+    "proposalVersion": "internal-task-proposal-v2.6",
+    "materializationVersion": "source-evidence-v0.3.12",
+    "evidencePolicyVersion": "source-clause-closure-v1.3",
+    "classificationPolicyVersion": "completed-renovation-pricing-classification-v1"
+  },
+  "humanSemanticReview": "PENDING",
+  "finalExecutionApproval": false,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailProviderCalls": 0,
+  "deployments": 0
+}
