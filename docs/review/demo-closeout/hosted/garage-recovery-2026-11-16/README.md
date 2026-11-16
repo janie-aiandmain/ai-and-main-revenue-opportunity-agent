@@ -78,3 +78,24 @@ before execution is enabled. The approval excerpt alone does not establish this
 full durable baseline. Until supplied, no remote task/create count or recovery is
 claimed. No model/HubSpot/email-provider call occurred in recording or preparing
 this stage. Existing confirmed EV task 420072115944 remains untouched.
+
+## Durable starting state supplied
+
+The next operator receipt establishes the expected APPROVED state for the same
+garage finding, correlation, revision 1, exact payload/action version, null
+remoteTaskId and **zero** create attempts. The persisted trace records operation
+creation at 2026-11-16T20:46:16.038Z and exact approval at
+2026-11-16T21:04:39.493Z. Boot ID is 9505f353-4234-49fd-bdab-e1888a29cab9.
+See [operator-before-submission.json](operator-before-submission.json) and
+[before-submission-check.json](before-submission-check.json). The supplied excerpt
+ends after the approval-event timestamp; only its complete reported field sets
+are transcribed, with no later events inferred.
+
+The bounded window may now be opened under the existing authorization. Use only
+configuration changes: preserve code, source tags, all inherited Secret/resource/
+identity bindings and the existing namespace; enable the two authenticated demo
+controls with one shared fresh release run ID, maximum one create and a 45-minute
+expiry. All general/legacy/release write controls remain false. Do not synthesize
+an actor or submit from Codex. The real operator must resume the same stored grant
+and deliberately select the response-loss test button exactly once. No new
+HubSpot task is claimed by this baseline or configuration preparation.

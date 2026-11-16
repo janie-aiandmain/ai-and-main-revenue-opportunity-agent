@@ -1,0 +1,22 @@
+{
+  "kind": "OPERATOR_SUPPLIED_DURABLE_PRE_SUBMISSION_BASELINE_CHECK",
+  "checkedAt": "2026-11-16T21:38:24.324Z",
+  "operationId": "operation_523891b4-49a7-4d23-be0f-dcc749e62b9c",
+  "approvalId": "approval_28429c11-0ed2-4407-8829-341af213b0ab",
+  "opportunityId": "op_1207462a-0eb2-4a52-a5af-57ee8d05a00b",
+  "correlation": "ai-main-3184719d-c295-435d-8cbc-7ca1c0051167",
+  "exactPayloadHashVerified": true,
+  "exactActionVersionMatchesApproval": true,
+  "approved": true,
+  "remoteTaskId": null,
+  "demoCreateAttempts": 0,
+  "ledgerBootId": "9505f353-4234-49fd-bdab-e1888a29cab9",
+  "persistenceBeforeApprovalAndSubmission": true,
+  "traceProvenance": "User-supplied excerpt ends after the timestamp of the second trace event. Both complete supplied event field sets are preserved; no later events are inferred. The unchanged repeated finalRequest is represented by the previously hash-verified full request.",
+  "baselineCheckPassed": true,
+  "testWindowEnabled": false,
+  "remoteTaskCreated": false,
+  "modelCalls": 0,
+  "hubspotCalls": 0,
+  "emailProviderCalls": 0
+}

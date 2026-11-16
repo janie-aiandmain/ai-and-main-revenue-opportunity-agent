@@ -3,15 +3,17 @@
   "operationId": "operation_523891b4-49a7-4d23-be0f-dcc749e62b9c",
   "approvalId": "approval_28429c11-0ed2-4407-8829-341af213b0ab",
   "exactApprovalReceiptMatchesPreparedTask": true,
-  "phase": "APPROVAL_RECEIVED_BASELINE_PENDING",
+  "phase": "APPROVED_BASELINE_VERIFIED_WINDOW_NOT_YET_ENABLED",
   "testWindowEnabled": false,
-  "remoteTaskId": "NOT_YET_OBSERVED",
-  "demoCreateAttempts": "NOT_YET_OBSERVED",
+  "remoteTaskId": null,
+  "demoCreateAttempts": 0,
   "maximumNewTaskCreates": 1,
   "taskSubmittedReported": false,
-  "nextRequiredReceipt": "Full operation evidence showing APPROVED, remoteTaskId null, demoCreateAttempts 0, original payload hash/correlation and persisted trace.",
+  "nextRequiredReceipt": "After the bounded window is activated, the operator resumes the same approval and uses the response-loss submission control exactly once.",
   "issuedAtAndExpiryNotSupplied": true,
   "serverMustEnforceOriginalApprovalExpiry": true,
   "noTaskApprovalRenewal": true,
-  "releaseAccepted": false
+  "releaseAccepted": false,
+  "baselineVerified": true,
+  "baselineLedgerBootId": "9505f353-4234-49fd-bdab-e1888a29cab9"
 }
