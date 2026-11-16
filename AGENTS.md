@@ -597,3 +597,18 @@ pending packet's integrity; the original v0.3.11 packet checker remains availabl
 as review:demo-closeout:v0.3.11 and is intentionally source-version-specific.
 Raw model IDs from synthetic validation are not hosted durable opportunity IDs.
 Final-payload approval and release acceptance remain separate from semantic review.
+
+## User semantic acceptance of the synthetic-label correction
+
+The user subsequently stated “all 3 PASS” after being explicitly told the three
+linked cards cover both displayed runs. Record this as semantic PASS for all six
+exact outputs in packet 9d964f917623deb5fb460c38fc9dc1e51dbd67103858d3051fb0bbea04e11d45
+at 0cec790. See synthetic-label-correction/adjudication and its append-only
+human-decisions.json. Preserve all original capture-time PENDING fields, provider
+captures, journals and prior decisions unchanged. The current review verifier
+validates the exact decision/output/action/payload hashes and derives PASS from
+this overlay. This chat decision is not an externally authenticated final task
+grant, deployment authorization event or release acceptance; existing bounded
+deployment authorization is separate. Recording it performs no deployment,
+model/CRM/email call, configuration change or task creation. Changed/future
+outputs still require review, and all task execution gates remain closed.

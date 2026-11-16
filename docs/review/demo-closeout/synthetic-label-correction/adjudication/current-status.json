@@ -1,0 +1,76 @@
+{
+  "kind": "CURRENT_HUMAN_SEMANTIC_STATUS",
+  "packetCommit": "0cec79055b146951f6ca6cb1edc7505dca569843",
+  "packetHash": "9d964f917623deb5fb460c38fc9dc1e51dbd67103858d3051fb0bbea04e11d45",
+  "decisionEventId": "semantic_decision_42670768-0e7b-49d3-9ff9-1f3e03b0e690",
+  "verbatimUserResponse": "all 3 PASS",
+  "cards": 3,
+  "findingInstances": 6,
+  "semanticVerdict": "PASS",
+  "reviewedOutputs": [
+    {
+      "reviewId": "label-run-1-whole-home-surge-protector",
+      "opportunityKey": "whole-home-surge-protector",
+      "repeat": 1,
+      "reviewItemHash": "9c8029ffd833eb61c099fdc43b8a82d3f6fb060aca79bd0328d53e7a5077bc51",
+      "outputHash": "8752b998f232320637d5d965762bf5912fa460c229c3f4fc072c1b9dcd248129",
+      "actionVersion": "sha256:9047c2e6d211a3a55255cbc0406958f83e2dbef5f891f38bb20ac7bfc87e6927",
+      "proposedPayloadHash": "5759fae16cb6b76eed0a5a7810fd7d8ddc16a7278ec69150bf17a8da1ef69e58",
+      "verdict": "PASS"
+    },
+    {
+      "reviewId": "label-run-1-level-2-ev-charger-installation",
+      "opportunityKey": "level-2-ev-charger-installation",
+      "repeat": 1,
+      "reviewItemHash": "9c4c132048c30e04b9b024eae81ff5a2d0bac642800c9c3e4c3c887d82deaf96",
+      "outputHash": "22bd3378ffa74707a9fe3e44a8f56af2ea5f4a63ef1745396bafef78f2886306",
+      "actionVersion": "sha256:d6596344b8298ea48b41c686b91e8cc5d7de311d00824ce00295b33a37494255",
+      "proposedPayloadHash": "38ccc0b0ac6659b012979dbba1800ddabd6cb1d5ccc44eef5efdc49454abcfea",
+      "verdict": "PASS"
+    },
+    {
+      "reviewId": "label-run-1-three-additional-garage-outlets",
+      "opportunityKey": "three-additional-garage-outlets",
+      "repeat": 1,
+      "reviewItemHash": "ca97f24eadf260b25bfb7e331d1bf8c68ab65c938dffa2be13e519ba04480574",
+      "outputHash": "cbfeeb57e0cda94d9e77de86c05ab35b9fb2804751fc7eb28d434e3957655e34",
+      "actionVersion": "sha256:bc04bd3b2a931128103b52d4091dde0d828fd82632fafedb0b15a7940110be84",
+      "proposedPayloadHash": "96c51fad9d43b48576a76376544b0a9cb9338c95d15ef32dbc5d45806a13d4c1",
+      "verdict": "PASS"
+    },
+    {
+      "reviewId": "label-run-2-whole-home-surge-protector",
+      "opportunityKey": "whole-home-surge-protector",
+      "repeat": 2,
+      "reviewItemHash": "4b7915aea70dcd81be6a380905ecfc51ae800d4f23edf254debd31528f341e90",
+      "outputHash": "2875ae1c23624c947dd32a5644b65f659c5b802d0dc421f8f247e6a9d46dc76b",
+      "actionVersion": "sha256:9047c2e6d211a3a55255cbc0406958f83e2dbef5f891f38bb20ac7bfc87e6927",
+      "proposedPayloadHash": "5759fae16cb6b76eed0a5a7810fd7d8ddc16a7278ec69150bf17a8da1ef69e58",
+      "verdict": "PASS"
+    },
+    {
+      "reviewId": "label-run-2-level-2-ev-charger-installation",
+      "opportunityKey": "level-2-ev-charger-installation",
+      "repeat": 2,
+      "reviewItemHash": "7c1de0a8847debcfc8f063cffc053acdcd96dba91ec644b3e55ca53bcfcc81d2",
+      "outputHash": "de76af3e24acc6df213264c1c51975e2f4ee99e1865f54a647f7702e47c67f67",
+      "actionVersion": "sha256:d6596344b8298ea48b41c686b91e8cc5d7de311d00824ce00295b33a37494255",
+      "proposedPayloadHash": "38ccc0b0ac6659b012979dbba1800ddabd6cb1d5ccc44eef5efdc49454abcfea",
+      "verdict": "PASS"
+    },
+    {
+      "reviewId": "label-run-2-three-additional-garage-outlets",
+      "opportunityKey": "three-additional-garage-outlets",
+      "repeat": 2,
+      "reviewItemHash": "61d4d6efba5bb939013fb7ad454d274f8e52053ad48ec391e806cff1381ee3a5",
+      "outputHash": "e799cc3976fe8f7062bcfc51a96ae4f873befdd4f15e5d05c750d0b91ff982d7",
+      "actionVersion": "sha256:bc04bd3b2a931128103b52d4091dde0d828fd82632fafedb0b15a7940110be84",
+      "proposedPayloadHash": "96c51fad9d43b48576a76376544b0a9cb9338c95d15ef32dbc5d45806a13d4c1",
+      "verdict": "PASS"
+    }
+  ],
+  "executionApproved": false,
+  "releaseAccepted": false,
+  "correctedGeneratorDeployed": false,
+  "originalSnapshotVerdicts": "PENDING fields remain unchanged as capture-time history."
+}

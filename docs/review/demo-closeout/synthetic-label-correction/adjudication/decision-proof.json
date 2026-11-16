@@ -1,0 +1,89 @@
+{
+  "kind": "APPEND_AND_PRESERVATION_PROOF",
+  "packetHash": "9d964f917623deb5fb460c38fc9dc1e51dbd67103858d3051fb0bbea04e11d45",
+  "decisionEventId": "semantic_decision_42670768-0e7b-49d3-9ff9-1f3e03b0e690",
+  "newEvents": 1,
+  "priorEventsPreserved": true,
+  "reviewedOutputs": 6,
+  "originalFilesPreserved": 18,
+  "originalFiles": [
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/README.md",
+      "sha256": "0f24246702bbca0552b052600a9fd4fcc7cc49cde050d0483eb9d4d39e244991"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/REVIEW.md",
+      "sha256": "2bd07c02c81e299722f3356052bb53d56228a78a420e233b0f05bfd659892c59"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/capture-replay.json",
+      "sha256": "f95171df91e8bffb5da41b6218c6ce8240ca553da9c502d492587c73cb823fd1"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/contracts.json",
+      "sha256": "2a062aa240dd29c28fdf6b949e0791ee974c2197a5efbffddee7d7d2edf953e6"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/execution.lock",
+      "sha256": "0de32c829934c39416e8e3e77e968c5601c115833d5a7eb3f45347344c67c43a"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/fresh-model-run.txt",
+      "sha256": "b2763bb0927b219fd7748f3cfcd9a25393f884e1a7076dac1b43c6c1758aaa45"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/fresh-model.json",
+      "sha256": "735357fe7f643e8514cbd56497b14de06b3fa1f74e8b9f07e9302429afda2b59"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/gateway-build.txt",
+      "sha256": "3e6e1a028ba11c202c48f23bf183522c5aa85e67641285d14f3d34d50e9e5301"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/owner-build.txt",
+      "sha256": "4669a20dc49eebc41606047da21c88d6e5f02044dc3be274ec17cb1749595562"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/plan.json",
+      "sha256": "9acf4d41670ad79a00d9271cd8533dcde3d1723c0729229edfb25f9a2509078a"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/prior-packet-check.txt",
+      "sha256": "e56cac45059916b27acfb6e991656e5218a18a6c694d03fd7dca4133ddcf31a6"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/provider-captures.jsonl",
+      "sha256": "e99f65fd2789a15f99815ef844c87fc97269934b8ef972fb95cb053133a3c7c9"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/replay-proof.mjs",
+      "sha256": "19b1381ae8af6a2184891561fe96b1866bc1419bd62ad7c88460b66e985dc578"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/reservations.jsonl",
+      "sha256": "9400d215faaf55069a3f5ae5728dc66f39bc5973f2787baed95173c151400428"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/review-integrity.txt",
+      "sha256": "353c5f5ef06d6763640d8993634af370b85e49b03ca709cd75e16c2f15e98e8c"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/review-packet.json",
+      "sha256": "fcef4480f1d20cd8b753e40350e42681c6d7d693977d0dcc0e8705cdcbcfd4c5"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/tests.txt",
+      "sha256": "f229d4f43e474d8d8348e6f9df59835bfdcb37b743d4c8eae6ce0d2af1e1fd7e"
+    },
+    {
+      "path": "docs/review/demo-closeout/synthetic-label-correction/workflow.txt",
+      "sha256": "c1c2ee14d612cf33b7ed2269dc9528abb19726fc2d47e38c35bdb11e7d1e003e"
+    }
+  ],
+  "sourceRuntimeChanged": false,
+  "modelCalls": 0,
+  "hubspotCalls": 0,
+  "emailProviderCalls": 0,
+  "deployments": 0,
+  "credentialsOrConfigurationChanged": false
+}
