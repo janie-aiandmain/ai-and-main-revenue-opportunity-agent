@@ -1,0 +1,40 @@
+{
+  "kind": "READ_ONLY_ISOLATION_AND_IDENTITY_PREFLIGHT",
+  "identityKind": "EXTERNAL_VERIFIED",
+  "role": "Approver",
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "readCredentialPortalVerified": true,
+  "writeCredentialPortalVerified": true,
+  "noteCount": 3,
+  "taskReadVerified": true,
+  "writesEnabled": false,
+  "generalExecutionEnabled": false,
+  "semanticApproval": false,
+  "productionCertification": false,
+  "ownerSourceCommit": "70c09ab49fc668f2ccb5afa6fcde8febf14a1ca9",
+  "ownerDeploymentVersion": "99679b73-7a80-4ec1-933b-b1d9ea21495e",
+  "ledgerBootId": "7cb43b83-150b-443b-815f-6870308ec9e7",
+  "originalDemoCredentialProof": {
+    "kind": "READ_ONLY_EXISTING_DEMO_CREDENTIAL_CHECK",
+    "checks": [
+      {
+        "credential": "HUBSPOT_ACCESS_TOKEN",
+        "status": "PASS",
+        "portalId": "247646122"
+      },
+      {
+        "credential": "HUBSPOT_WRITE_TOKEN",
+        "status": "PASS",
+        "portalId": "247646122"
+      }
+    ],
+    "writes": 0,
+    "contactMarkerVerified": true
+  },
+  "credentialLocations": {
+    "workflow": "ai-and-main-revenue-opportunity-staging \u2192 Settings \u2192 Variables and Secrets",
+    "existingDemo": "ai-and-main-revenue-opportunity-agent \u2192 Settings \u2192 Variables and Secrets"
+  },
+  "credentialsNotSubstituted": true
+}

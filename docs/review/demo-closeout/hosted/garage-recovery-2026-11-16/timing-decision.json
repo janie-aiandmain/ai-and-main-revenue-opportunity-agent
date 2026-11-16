@@ -1,0 +1,12 @@
+{
+  "kind": "USER_CONFIRMS_INTERNAL_DUE_TIME_ONLY",
+  "recordedAt": "2026-11-16T20:51:44.631233+00:00",
+  "source": "User response in this conversation",
+  "verbatimUserAnswer": "Keep December 1 intentionally",
+  "taskDueAt": "2026-12-01T20:45:00.000Z",
+  "userFacingTime": "December 1, 2026, 3:45 p.m. Eastern",
+  "scope": "Internal staff target only; no customer deadline, customer-action authority, exact approval or release acceptance inferred.",
+  "preparedPayloadChanged": false,
+  "payloadHash": "sha256:3520fb4dba279f873d13cf71895932cbc0dd598d08256d9fa93e7351e784f1a7",
+  "exactExecutionApproval": false
+}
