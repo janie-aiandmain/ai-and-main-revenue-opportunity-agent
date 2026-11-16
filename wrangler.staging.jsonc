@@ -23,7 +23,7 @@
     "AUDIT_RETENTION_DAYS": "365",
     "DEMO_ONLY_EXECUTION_ENABLED": "false",
     "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
-    "OPERATOR_EMAIL_ENABLED": "false",
+    "OPERATOR_EMAIL_ENABLED": "true",
     "OPERATOR_EMAIL_PROVIDER": "resend",
     "OPERATOR_EMAIL_FROM": "alerts@aiandmain.ai",
     "OPERATOR_EMAIL_REPLY_TO": "janie@aiandmain.ai",

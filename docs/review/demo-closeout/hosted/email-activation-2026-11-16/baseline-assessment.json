@@ -1,0 +1,23 @@
+{
+  "kind": "COMMITTED_BASELINE_EVALUATION_ASSESSMENT",
+  "provenance": "Operator-supplied trace corroborated with the deployed source path and prior disabled-email receipt",
+  "event": {
+    "event": "FRESH_FINDING_OR_SOURCE_CHANGED",
+    "payload_hash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+    "remote_id": null,
+    "at": "2026-11-16T16:39:09.399Z"
+  },
+  "existingOperationConfirmed": true,
+  "existingTaskId": "420072115944",
+  "existingCreateAttempts": 1,
+  "originalPayloadHash": "sha256:3e47aa2d7a4cf8a8a4d9d247d8b8719a73cf755b99c7fd42241da41a396f78b6",
+  "baselineEvaluationCommitted": true,
+  "fingerprintObservationInSameTransaction": true,
+  "sourceEvidence": "src/staging/general-ledger.js acceptEvaluation: FRESH_FINDING_OR_SOURCE_CHANGED is recorded in the transaction that observes/persists email fingerprints before commit",
+  "emailWasDisabledPerOperatorStatus": true,
+  "oldConfirmedRequestIsNotFreshFindingContent": true,
+  "freshFindingContentSeparatelyAssessed": false,
+  "newTaskCreatedByBaseline": false,
+  "requiresAnotherModelEvaluation": false,
+  "exactNewTaskApproval": false
+}
