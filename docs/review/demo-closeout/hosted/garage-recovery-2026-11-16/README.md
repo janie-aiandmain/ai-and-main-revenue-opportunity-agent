@@ -99,3 +99,29 @@ expiry. All general/legacy/release write controls remain false. Do not synthesiz
 an actor or submit from Codex. The real operator must resume the same stored grant
 and deliberately select the response-loss test button exactly once. No new
 HubSpot task is claimed by this baseline or configuration preparation.
+
+## Configuration-only window controller
+
+`scripts/release/garage-window.js --enable --user-authorized` opens this one
+authorized run only after validating the exact operator grant and supplied
+zero-attempt baseline. It follows the supported bindings-inheritance/settings-
+version/deployment API sequence already used in the repository recovery harness.
+It does not deploy code, retrieve credential values, synthesize an operator,
+submit a task or call the model/CRM/email provider. Existing Secret/resource/
+identity bindings are inherited; only the two bounded demo flags and the run's
+ID/maximum/expiry change. General/legacy/release write controls remain false.
+
+Owner configuration activates first while the gateway is closed; the gateway
+activates only afterward. Direct version/binding/code-hash/subdomain/Access
+checks verify the effective state. Any failure attempts to close the gateway
+first and then the owner, with any unverified closure explicitly retained. A
+second enable is refused once window.json exists; no new run is silently created
+to escape a consumed or uncertain operation. The operator must select only this
+approved garage operation. The existing server still enforces exact-payload,
+source/version/identity/expiry checks and the durable per-run one-create limit.
+
+`--close --user-authorized` disables both demo controls, gateway first, preserving
+code/storage/Secrets and activating explicit closed versions. The controller's
+new/closed version IDs and code hashes supply the later restart/redeployment
+evidence; actual ledger boot IDs and remote reconciliation still require operator
+receipts. No remote recovery result is claimed from configuration changes alone.
