@@ -1,0 +1,56 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mFailed to write to log file Error: EROFS: read-only file system, open '/home/agent/.config/.wrangler/logs/wrangler-2026-11-16_19-14-52_228.log'[0m
+
+      at async open (node:internal/fs/promises:697:25)
+      at async writeFile (node:internal/fs/promises:1317:14)
+      at async /workspace/ai-and-main-revenue-opportunity-agent/node_modules/wrangler/wrangler-dist/cli.js:70588:7
+      at async Mutex.runWith (/workspace/ai-and-main-revenue-opportunity-agent/node_modules/miniflare/dist/src/index.js:80902:16)
+      at async appendToDebugLogFile (/workspace/ai-and-main-revenue-opportunity-agent/node_modules/wrangler/wrangler-dist/cli.js:70585:3) {
+    errno: -30,
+    code: 'EROFS',
+    syscall: 'open',
+    path: '/home/agent/.config/.wrangler/logs/wrangler-2026-11-16_19-14-52_228.log'
+  }
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mWould have written: [0m
+
+  --- 2026-11-16T19:14:58.454Z debug
+  🪵  Writing logs to "/home/agent/.config/.wrangler/logs/wrangler-2026-11-16_19-14-52_228.log"
+  ---
+
+
+
+
+ ⛅️ wrangler 4.156.2
+────────────────────
+Total Upload: 245.85 KiB / gzip: 64.86 KiB
+Your Worker has access to the following bindings:
+Binding                                                                               Resource
+env.CERTIFICATION_LEDGER (CertificationLedger)                                        Durable Object
+env.RELEASE_VERSION                                                                   Worker Version Metadata
+env.DEPLOYMENT_ENVIRONMENT ("staging")                                                Environment Variable
+env.CERTIFICATION_MODE ("remote-demo")                                                Environment Variable
+env.ENABLE_TEST_TASK_WRITES ("false")                                                 Environment Variable
+env.CRM_WRITEBACK_ENABLED ("false")                                                   Environment Variable
+env.ENABLE_GENERAL_EXECUTION ("false")                                                Environment Variable
+env.GENERAL_RELEASE_APPROVED ("false")                                                Environment Variable
+env.ACCESS_ISSUER ("https://falling-cell-9501.cloudflarea...")                        Environment Variable
+env.ACCESS_AUDIENCE ("f3d28533ee59378b47a60ea0747a3e9ee6743...")                      Environment Variable
+env.STAGING_ISOLATION_APPROVED ("true")                                               Environment Variable
+env.STAGING_PORTAL_ID ("247646122")                                                   Environment Variable
+env.STAGING_CONTACT_ID ("582095692487")                                               Environment Variable
+env.AUDIT_RETENTION_DAYS ("365")                                                      Environment Variable
+env.DEMO_ONLY_EXECUTION_ENABLED ("false")                                             Environment Variable
+env.DEMO_RESPONSE_LOSS_TEST_ENABLED ("false")                                         Environment Variable
+env.OPERATOR_EMAIL_ENABLED ("true")                                                   Environment Variable
+env.OPERATOR_EMAIL_PROVIDER ("resend")                                                Environment Variable
+env.OPERATOR_EMAIL_FROM ("alerts@aiandmain.ai")                                       Environment Variable
+env.OPERATOR_EMAIL_REPLY_TO ("janie@aiandmain.ai")                                    Environment Variable
+env.OPERATOR_EMAIL_TO ("janie@aiandmain.ai")                                          Environment Variable
+env.OPERATOR_CONSOLE_URL ("https://ai-and-main-revenue-opportuni...")                 Environment Variable
+
+--dry-run: exiting now.
+🪵  Logs were written to "/home/agent/.config/.wrangler/logs/wrangler-2026-11-16_19-14-52_228.log"

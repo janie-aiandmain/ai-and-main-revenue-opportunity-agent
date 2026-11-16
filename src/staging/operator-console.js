@@ -1,10 +1,11 @@
 // Narrow finding oversight UI. External Access supplies identity; no token entry or CRM CRUD.
+export const IDENTITY_REVIEW_UI_POLICY='operator-identity-review-ui-v1';
 export function operatorConsole(env){
  const nonce=crypto.randomUUID();
  const crm='https://app.hubspot.com/contacts/'+encodeURIComponent(env.STAGING_PORTAL_ID||'')+'/record/0-1/'+encodeURIComponent(env.STAGING_CONTACT_ID||'');
  const html=String.raw`<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>AI & MAIN — Agent operator console</title>
  <style nonce="${nonce}">body{font:16px system-ui;max-width:960px;margin:2rem auto;padding:0 1rem;background:#f5f6f8;color:#152238}article{background:white;padding:1.2rem;margin:1rem 0;border:1px solid #ccd3dc;border-radius:8px}article.immediate-review{border-left:6px solid #9c3d00;background:#fff8ee}.urgent-badge{display:inline-block;background:#8b3000;color:white;font-weight:700;padding:.5rem .75rem;border-radius:4px}button,input,select{font:inherit;margin:.3rem;padding:.45rem}blockquote{border-left:3px solid #758ab0;padding-left:1rem;margin:1rem 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f2f5;padding:1rem}label{display:block}.warning{color:#8a3500}small{display:block}</style></head><body>
- <h1>AI & MAIN agent operator console</h1><p>Finding oversight · human approval required</p><p>This console reviews agent findings and exact task proposals. HubSpot remains the system of record.</p><p><a id="crm" target="_blank" rel="noopener noreferrer">Open designated synthetic record in HubSpot</a></p><button id="preflight">Check connection (read-only)</button><pre id="connection" hidden></pre><button id="evaluate">Evaluate designated notes</button><button id="refresh">Refresh findings</button><button id="email-status">Show email alert status</button><pre id="email-receipt" hidden></pre><p id="message" role="status"></p><main id="findings"></main>
+ <h1>AI & MAIN agent operator console</h1><p>Finding oversight · human approval required</p><p>This console reviews agent findings and exact task proposals. HubSpot remains the system of record.</p><p><a id="crm" target="_blank" rel="noopener noreferrer">Open designated synthetic record in HubSpot</a></p><button id="preflight">Check connection (read-only)</button><pre id="connection" hidden></pre><button id="evaluate">Evaluate designated notes</button><button id="refresh">Refresh findings</button><button id="identity-review">Show pending identity review</button><button id="email-status">Show email alert status</button><pre id="email-receipt" hidden></pre><p id="message" role="status"></p><section id="identity-panel" hidden></section><main id="findings"></main>
  <script nonce="${nonce}">
  const crmURL=${JSON.stringify(crm).replaceAll('<','\\u003c')};document.getElementById('crm').href=crmURL;
  document.getElementById('preflight').addEventListener('click',async()=>{try{const result=await api('preflight');const panel=document.getElementById('connection');panel.hidden=false;panel.textContent=JSON.stringify(result,null,2);message.textContent='Read-only connection verification complete. No task or release was approved.';}catch(e){message.textContent=e.message;const panel=document.getElementById('connection');panel.hidden=false;panel.textContent=JSON.stringify(e.receipt||{status:e.message},null,2);}});
@@ -13,6 +14,42 @@ export function operatorConsole(env){
  async function api(path,body={}){const r=await fetch('/certification/'+path,{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(90000)});if(!r.headers.get('content-type')?.includes('application/json')){const error=Error('The server returned an unexpected response. Refresh your signed-in session and inspect the current operation before trying again.');error.receipt={status:'unexpected_response',httpStatus:r.status};throw error;}const data=await r.json();if(!r.ok){const error=Error(data.blocker?data.blocker.code+(data.blocker.credential?' ('+data.blocker.credential+')':'')+': '+data.blocker.setupAction:data.status||'Request blocked');error.receipt=data;throw error;}return data;}
  function el(tag,text,parent){const e=document.createElement(tag);if(text)e.textContent=text;if(parent)parent.append(e);return e;}
  function button(text,parent,fn,report=text=>{message.textContent=text;}){const b=el('button',text,parent);b.addEventListener('click',async()=>{b.disabled=true;parent.querySelector('details[data-action-error]')?.remove();report(text+'…');try{await fn();}catch(e){report(e.message,true);if(e.receipt){const details=el('details','',parent);details.dataset.actionError='true';el('summary','Action error details',details);el('pre',JSON.stringify(e.receipt,null,2),details);}}finally{b.disabled=false;}});return b;}
+ async function showIdentityReview(){
+  const panel=document.getElementById('identity-panel');panel.hidden=false;panel.replaceChildren();
+  const session=await api('session'),data=await api('general/identity-candidates');
+  if(!data.pendingIdentity){el('p','No pending identity review. No identities or task approvals were changed.',panel);return;}
+  const pending=data.pendingIdentity,current=await api('general/findings'),rows=[];
+  el('h2','Review finding identities',panel);
+  el('p','A new or changed need could not be assigned safely. Match each candidate to the same existing need, or explicitly identify it as a separate new need. Nothing is selected automatically. If evidence merges different needs or is incomplete, leave this blocked.',panel);
+  el('p','Existing confirmed tasks are preserved. Identity review is not semantic acceptance or exact-task approval. It creates no HubSpot task. With email enabled, accepting eligible findings may queue operator alerts.',panel);
+  for(const candidate of pending.candidates){
+   const card=el('article','',panel),f=candidate.finding;
+   el('h3',f.classification+' · '+f.opportunityType,card);
+   el('small','Raw candidate '+candidate.candidateRef+' · key '+f.opportunityKey,card);
+   for(const evidence of f.evidence){const stamp=f.proposedAction?.material?.evidence?.find(e=>e.noteId===evidence.noteId)?.timestamp;el('small','Source '+evidence.noteId+' · '+(stamp||'timestamp unavailable — review required'),card);el('blockquote',evidence.quote,card);}
+   el('p','Internal recommendation: '+f.recommendedNextAction,card);
+   const label=el('label','Identity decision for this candidate',card),select=el('select','',label);
+   const blank=el('option','Choose after reviewing evidence',select);blank.value='';
+   const fresh=el('option','Separate NEW need — not an existing finding',select);fresh.value='NEW';
+   for(const old of current.findings){const option=el('option','EXISTING '+old.findingId+' — '+old.modelFinding.opportunityKey+(old.operation?' · '+old.operation.state+(old.operation.remoteTaskId?' · task '+old.operation.remoteTaskId:''):''),select);option.value=old.findingId;}
+   if(session.role==='Viewer')select.disabled=true;
+   rows.push({candidateRef:candidate.candidateRef,select});
+  }
+  const details=el('details','',panel);el('summary','Pending candidate receipt',details);el('pre',JSON.stringify(pending,null,2),details);
+  const label=el('label','',panel),check=el('input','',label);check.type='checkbox';label.append(document.createTextNode(' I reviewed every candidate and existing finding. The mappings preserve the same needs, and each NEW need is genuinely separate. This is identity review only.'));
+  const confirm=button('Confirm finding identities only',panel,async()=>{
+   if(!check.checked)throw Error('Explicit identity review attestation is required.');
+   if(rows.some(row=>!row.select.value))throw Error('Choose an explicit identity for every candidate; nothing is selected automatically.');
+   const bindings=rows.map(row=>({candidateRef:row.candidateRef,resolution:row.select.value==='NEW'?'NEW':'EXISTING',...(row.select.value==='NEW'?{}:{findingId:row.select.value})}));
+   const existing=bindings.filter(b=>b.resolution==='EXISTING').map(b=>b.findingId);
+   if(new Set(existing).size!==existing.length)throw Error('Different candidates cannot share one existing identity. Leave merged or ambiguous evidence blocked.');
+   const result=await api('general/identity-review',{generation:pending.generation,sourceHash:pending.sourceHash,bindings,attestHumanReview:true,distinctNeedsConfirmed:true});
+   panel.replaceChildren();el('p','Identity decisions recorded. Semantic review and exact task approval remain separate. No task was submitted.',panel);el('pre',JSON.stringify({identityKind:result.identityKind,humanSignoff:result.humanSignoff,semanticReviewStillRequired:result.semanticReviewStillRequired,findings:result.findings.map(f=>({findingId:f.findingId,reviewState:f.reviewState,operation:f.operation}))},null,2),panel);
+   await refresh();message.textContent='Identity review complete. Inspect the findings and email status. No task was approved or submitted.';
+  });
+  if(session.role==='Viewer'){check.disabled=true;confirm.disabled=true;}
+ }
+ document.getElementById('identity-review').addEventListener('click',()=>showIdentityReview().catch(e=>{message.textContent=e.message;}));
  async function refresh(){const session=await api('session');document.getElementById('evaluate').disabled=session.role==='Viewer';const data=await api('general/findings');root.replaceChildren();const urgent=f=>f.modelFinding?.proposedAction?.material?.reviewRouting?.queue==='immediate_review';const ordered=[...data.findings].sort((a,b)=>Number(urgent(b))-Number(urgent(a)));const count=ordered.filter(urgent).length;if(count)el('h2','Needs immediate review: '+count+' in-progress scope request'+(count===1?'':'s'),root);for(const f of ordered){
   const card=el('article','',root),raw=f.modelFinding;card.id=f.findingId;el('h2',raw.classification,card);el('small','Finding '+f.findingId+' · '+raw.opportunityType+' · '+raw.confidence+' confidence · review '+f.reviewState,card);
   const routing=raw.proposedAction?.material?.reviewRouting;if(urgent(f)){card.className='immediate-review';el('p','IMMEDIATE REVIEW · In-progress scope request',card).className='urgent-badge';el('p','Source context: '+(routing.contextTag==='team_onsite'?'crew/team reported onsite':'work reported in progress')+'. Confirm current job status; this is not approval for added work.',card);for(const fact of routing.sourceFacts)el('small',(fact.sourceTimestamp.slice(0,10)<new Date().toISOString().slice(0,10)?'Historical source — ':'Source — ')+fact.sourceTimestamp+'. Current job/onsite status remains unverified.',card);}
@@ -44,7 +81,7 @@ export function operatorConsole(env){
   for(const decision of ['DEFER','DECLINE'])button(decision==='DEFER'?'Defer':'Decline',card,async()=>{if(!check.checked)throw Error('Review attestation is required.');await api('general/review',reviewBody(decision));grant=null;reviewed=null;await refresh();},report);
  if(session.role==='Viewer')for(const button of card.querySelectorAll('button'))button.disabled=true;
  }if(!data.findings.length)el('p','No findings. Evaluation reads only the designated synthetic staging context.',root);}
- document.getElementById('evaluate').addEventListener('click',async()=>{const button=document.getElementById('evaluate');button.disabled=true;try{message.textContent='Evaluating designated synthetic notes…';await api('general/evaluate');await refresh();message.textContent='Evaluation complete. This does not approve or execute an action.';}catch(e){message.textContent=e.message;}finally{button.disabled=false;}});
+ document.getElementById('evaluate').addEventListener('click',async()=>{const button=document.getElementById('evaluate');button.disabled=true;try{message.textContent='Evaluating designated synthetic notes…';await api('general/evaluate');await refresh();message.textContent='Evaluation complete. This does not approve or execute an action.';}catch(e){message.textContent=e.message;if(e.receipt?.status==='identity_review_required'){try{await showIdentityReview();message.textContent='Identity review required. Review the pending candidates above; do not evaluate again.';}catch(error){message.textContent=error.message;}}}finally{button.disabled=false;}});
  document.getElementById('refresh').addEventListener('click',()=>refresh().catch(e=>{message.textContent=e.message;}));refresh().catch(e=>{message.textContent=e.message;});
  </script></body></html>`;
  return new Response(html,{headers:{'content-type':'text/html;charset=utf-8','cache-control':'no-store','content-security-policy':"default-src 'none'; script-src 'nonce-"+nonce+"'; style-src 'nonce-"+nonce+"'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"}});

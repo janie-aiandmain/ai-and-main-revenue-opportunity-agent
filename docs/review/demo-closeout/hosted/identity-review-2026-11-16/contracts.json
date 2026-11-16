@@ -1,0 +1,13 @@
+{
+  "uiPolicyVersion": "operator-identity-review-ui-v1",
+  "consoleSha256": "d92cb2b49db343b96fa9dc6f4bcc6085cdbd2f55abf89f9b7100c5714188b57a",
+  "changedContracts": [
+    "console presentation only"
+  ],
+  "promptChanged": false,
+  "schemaChanged": false,
+  "generationChanged": false,
+  "identityRulesChanged": false,
+  "approvalBindingChanged": false,
+  "allExecutionFlagsDisabled": true
+}

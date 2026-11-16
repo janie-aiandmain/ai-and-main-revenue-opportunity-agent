@@ -1,0 +1,32 @@
+{
+  "kind": "ACTUAL_LOCAL_CHROMIUM_MOCKED_IDENTITY_REVIEW_NOT_HOSTED",
+  "policy": "operator-identity-review-ui-v1",
+  "passed": true,
+  "assertions": [
+    "pending candidates and existing confirmed task visible",
+    "no automatic selections",
+    "attestation required",
+    "complete explicit mapping required",
+    "duplicate existing mapping rejected",
+    "exact generation/source/candidate bindings submitted once",
+    "Viewer cannot confirm",
+    "no evaluate/approve/submit/email API calls"
+  ],
+  "requestPaths": [
+    "/certification/session",
+    "/certification/general/findings",
+    "/certification/session",
+    "/certification/general/identity-candidates",
+    "/certification/general/findings",
+    "/certification/general/identity-review",
+    "/certification/session",
+    "/certification/general/findings",
+    "/certification/session",
+    "/certification/general/identity-candidates",
+    "/certification/general/findings"
+  ],
+  "modelCalls": 0,
+  "hubspotCalls": 0,
+  "emailProviderCalls": 0,
+  "taskCreates": 0
+}

@@ -182,3 +182,23 @@ test('operator session expiration during the fresh source check is enforced imme
  const client={...a.client,async verifyIsolation(){session.expiresAt=Date.now()-1;}};
  await assert.rejects(a.l.executeGeneral(reviewed.operationId,grant.approvalId,session,env,a.source,a.reason,client),/session_expired/);assert.equal(a.posts(),0);
 }));
+
+test('identity review of a new note preserves the confirmed operation, rejects duplicate allocation, and grants no new task approval',()=>lab(async a=>{
+ const original=await a.prepare();
+ await a.l.executeGeneral(original.reviewed.operationId,original.grant.approvalId,actor,env,a.source,a.reason,a.client);
+ const before=a.l.status(original.reviewed.operationId),history=(await a.source.readContext()).serviceHistory;
+ const quote='Fictional customer requests pricing for three additional garage outlets before any added work starts.';
+ const additional={...candidate(quote,'three-garage-outlets'),classification:'scope-change opportunity',opportunityType:'scope change',evidence:[{noteId:'separate-note',quote}],recommendedNextAction:'Internally verify the current job status and whether additional work started; establish pricing before additional work.'};
+ a.set([...history,{noteId:'separate-note',timestamp:now(),note:quote}],[candidate(),additional]);
+ await assert.rejects(a.l.evaluate(env,a.source,a.reason),/identity_review_required/);
+ const pending=a.l.pendingIdentity(env),bindings=pending.candidates.map(c=>({candidateRef:c.candidateRef,resolution:c.finding.opportunityKey==='surge-protection'?'EXISTING':'NEW',...(c.finding.opportunityKey==='surge-protection'?{findingId:original.finding.findingId}:{})}));
+ const input={generation:pending.generation,sourceHash:pending.sourceHash,bindings,attestHumanReview:true,distinctNeedsConfirmed:true};
+ await assert.rejects(a.l.resolveIdentity({...input,bindings:bindings.map(b=>({...b,resolution:'NEW'}))},actor,env,a.source),/duplicate_existing_need/);
+ const result=await a.l.resolveIdentity(input,actor,env,a.source);
+ const after=a.l.status(original.reviewed.operationId);
+ assert.equal(after.state,'CONFIRMED');assert.equal(after.remoteTaskId,before.remoteTaskId);assert.equal(after.payloadHash,before.payloadHash);
+ assert.equal(a.posts(),1);assert.equal(a.l.db.prepare('SELECT count(*) AS n FROM cert_operations').get().n,1);
+ assert.equal(a.l.db.prepare('SELECT count(*) AS n FROM cert_approvals').get().n,1);
+ assert.equal(result.findings.length,2);assert.equal(result.findings.find(f=>f.findingId===original.finding.findingId).operation.state,'CONFIRMED');
+ assert.ok(result.findings.every(f=>f.reviewState==='PENDING'));assert.equal(result.semanticReviewStillRequired,true);
+}));

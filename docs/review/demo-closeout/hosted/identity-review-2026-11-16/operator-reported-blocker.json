@@ -1,0 +1,15 @@
+{
+  "kind": "USER_REPORTED_HOSTED_IDENTITY_REVIEW_BLOCK",
+  "evaluationStatus": "identity_review_required",
+  "emailStatus": {
+    "policyVersion": "operator-email-alerts-v1.1",
+    "enabled": true,
+    "blocker": null,
+    "deliveries": []
+  },
+  "attribution": "Operator reports in this conversation",
+  "rawPendingCandidatesReceived": false,
+  "identityDecisionRecorded": false,
+  "semanticApproval": false,
+  "executionApproval": false
+}
