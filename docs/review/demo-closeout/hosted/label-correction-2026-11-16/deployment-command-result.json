@@ -1,0 +1,18 @@
+{
+  "kind": "CLI_COMMAND_AND_DIRECT_VERIFICATION_DISTINGUISHED",
+  "wranglerExitCode": 1,
+  "uploadCompleted": true,
+  "failedFollowupEndpoint": "/accounts/cda2ab71dd8127c8031c945a738b86e2/workers/workers/ai-and-main-revenue-opportunity-staging",
+  "cloudflareErrorCode": 9106,
+  "reportedError": "Authentication failed (status: 400)",
+  "wranglerSourceFunction": "getWorkerSubdomain",
+  "actualAccountScopedReadbackVerified": true,
+  "activeOwnerVersion": "99679b73-7a80-4ec1-933b-b1d9ea21495e",
+  "activeSourceCommit": "70c09ab49fc668f2ccb5afa6fcde8febf14a1ca9",
+  "allExecutionClosed": true,
+  "credentialChanged": false,
+  "permissionsExpanded": false,
+  "deploymentRetried": false,
+  "newerEndpointCredentialFailureRootCause": "UNVERIFIED; successful script settings/deployment/module/subdomain reads establish the actual bounded deployment state.",
+  "blockingOperatorPreflightOrApproval": "Pending real operator checks; the optional CLI follow-up did not prevent code activation."
+}

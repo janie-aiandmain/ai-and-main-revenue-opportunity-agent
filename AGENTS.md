@@ -612,3 +612,20 @@ grant, deployment authorization event or release acceptance; existing bounded
 deployment authorization is separate. Recording it performs no deployment,
 model/CRM/email call, configuration change or task creation. Changed/future
 outputs still require review, and all task execution gates remain closed.
+
+## Approved label correction deployed with task execution closed
+
+After “great, let's get this done”, the existing private owner was updated to
+reviewed source 70c09ab / materializer v0.3.12 / evidence v1.3, active version
+99679b73-7a80-4ec1-933b-b1d9ea21495e. See hosted/label-correction-2026-11-16 under
+docs/review/demo-closeout. Direct readback confirms exact code, 100% traffic,
+unchanged namespace/Secrets/settings, private owner hostname/previews off and all
+nine CRM/test/fault/release flags false on both Workers. Gateway e6c3b663 is
+unchanged; operator email remains enabled as previously authorized. Wrangler
+uploaded successfully then exited 1 on a newer subdomain-read endpoint (9106);
+that failure is preserved separately from the successful direct deployment proof.
+Do not retry deployment or expand permissions to satisfy that optional read.
+Fresh authenticated preflight/evaluation, exact garage-task payload approval and
+the bounded one-new-task recovery test remain pending. Preserve the confirmed EV
+task 420072115944 and both new durable finding identities. No chat semantic PASS
+is a task execution grant; do not open test/fault flags before a real exact grant.
