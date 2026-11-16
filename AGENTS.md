@@ -649,3 +649,18 @@ scripts/release/garage-window.js --close --user-authorized, verify closure, then
 perform operator read-only reconciliation. The test is an injected application
 response discard, not a natural outage. No new task/recovery result is claimed
 until actual operator/remote evidence arrives. Preserve the old EV task.
+
+## Garage response discard executed; window explicitly closed
+
+The operator's full receipt shows one reserved create attempt for operation
+523891b4 with unchanged hash 3520fb4d…, explicit injected-discard marker at
+2026-11-16T22:28:16.401Z and restart-recovered UNKNOWN at 22:28:17.051Z. Boot
+changed to 278e51dc; remote ID is still unconfirmed. This is injected application
+response loss, not a natural outage. See hosted/garage-recovery-2026-11-16.
+The controller has already closed both demo flags and verified all nine
+execution/fault/release flags false on both Workers, unchanged code/Secrets/
+namespace/Access. Closed owner config d2c840a5 and gateway 66e3caac are active.
+Do not re-enable, submit again, reset an approval or make a new run for this
+consumed attempt. Await operator read-only reconciliation of the existing task
+and its complete operation evidence. Remote ID/recovery remain pending; no
+financial outcome or revenue rescued is established. Preserve the old EV task.

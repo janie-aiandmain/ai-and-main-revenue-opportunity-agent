@@ -157,3 +157,49 @@ UNKNOWN state is expected; a stale/source/credential failure must be reported
 without retry. Supply the full operation evidence before any reconciliation.
 After the single attempt, close the window first, then reconcile read-only.
 The normal Submit button and existing EV task are outside this exercise.
+
+## Actual hosted attempt, injected discard and restart
+
+The operator supplied the post-attempt operation receipt. It has the same exact
+payload hash/action version/correlation/revision and garage finding, state
+**UNKNOWN**, null remoteTaskId and **one** durable create attempt. The original
+pasted bytes and parsed receipt are preserved in
+[operator-after-discard-original.txt](operator-after-discard-original.txt) and
+[operator-after-discard.json](operator-after-discard.json). Offline canonical
+comparison confirms the complete final request is unchanged.
+
+The trace records one-use arming at 22:28:07.377Z, budget reservation and persisted
+POST intent at 22:28:15.959Z, then the explicit
+`INJECTED_CREATE_RESPONSE_DISCARDED_BEFORE_SUCCESS_NOT_NETWORK_OUTAGE` marker at
+22:28:16.401Z and `RESTART_RECOVERED_UNCERTAIN_NO_CREATE` at 22:28:17.051Z
+on November 16. This is deliberate application response discard after the create
+returned an ID, not a naturally occurring network failure. The actual remote ID
+was intentionally not saved. Boot ID changed from the pre-submission baseline
+9505f353… to 278e51dc…. See [injected-discard-check.json](injected-discard-check.json).
+
+This demonstrates the injected fault and durable uncertain-state recovery. It
+does **not yet confirm** the remote task ID or complete remote reconciliation.
+One reserved attempt is not labeled verified revenue, a financial outcome or a
+confirmed remote task count before readback. No second create was attempted.
+
+## Explicitly closed after the attempt
+
+The controller closed the gateway first, then the private owner, using inherited
+settings and explicit configuration-version activation. Closure readback passes:
+all **nine** execution/fault/release flags are false on both Workers; source code
+bytes, namespaces, Secret names, identity/tenant/notification settings and host
+states are unchanged. Access still redirects unauthenticated requests.
+
+- Closed owner configuration version: `d2c840a5-de7b-4c53-bacc-10869241f651`.
+- Closed gateway configuration version: `66e3caac-21f7-4b8a-933c-b9d8abb10357`.
+
+See [window-close.json](window-close.json) and
+[closure controller result](window-close-log.txt). These are actual active
+configuration deployments after the injected fault, not proposed restarts. A
+post-closure ledger boot ID still requires the operator's next receipt. The
+controller performs no CRM, model, email-provider or task submission calls.
+
+**Next:** refresh the operator console and reconcile the existing garage operation
+read-only. Require one unique exact correlation/properties/contact match. Unknown,
+missing, ambiguous or mismatched outcomes remain blocked; do not reopen the run,
+reapprove, evaluate or create another task. General writeback/release remain off.
