@@ -30,3 +30,26 @@ one HIGH alert and one Immediate Review alert. Actual provider IDs, inbox receip
 and duplicate suppression must be recorded separately. No task may be submitted
 until its complete final payload has a fresh operator approval and the bounded
 one-create test window is opened. General writeback remains disabled.
+
+## Actual activation result
+
+Deployment completed on November 16, 2026. The private owner is active at
+`6f5dfca9-9cda-45ad-822e-b4b15ba458a0`, source commit
+`ef70b07` (full SHA in the verification receipt). Email is enabled only on the
+private owner; its four Secret names, existing ledger namespace, identity realm,
+portal/contact settings and disabled hostname/previews were preserved. All nine
+CRM/test/fault/release flags remain false on both Workers. The public gateway
+deployment is unchanged. Deployed JavaScript module hashes match the previously
+verified closed deployment: this activation changed configuration only.
+
+See [after-activation-verification.json](after-activation-verification.json),
+[deployment log](owner-deployment.txt), [dry-run log](owner-dry-run.txt) and
+[read-only verification script](verification-script.mjs). The script reads
+binding metadata and hashes deployed JavaScript; it does not read stored Secret
+values, call HubSpot/model/email APIs, or mutate deployments.
+
+**Delivery remains pending.** No provider delivery ID or inbox receipt is yet
+available. Two new, separately labeled synthetic notes must be added manually
+and evaluated once by the signed-in operator to test HIGH and Immediate Review
+alerts. The existing EV note and confirmed task must remain unchanged. No new
+task create, execution approval or release acceptance is recorded here.
