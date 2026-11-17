@@ -730,3 +730,20 @@ settings/Secrets/namespace/host/Access state unchanged. No more matrix/recovery
 clicks, task creation or deployment is required. FINAL-REVIEW.md identifies the
 exact controlled-demo candidate; final human demo release acceptance is PENDING.
 It does not authorize general writeback, another task grant or customer rollout.
+
+## Final controlled-demo release accepted — November 17
+
+The user explicitly replied “Approved” to the exact question accepting this
+release for the existing controlled synthetic demo with general writeback
+disabled. See docs/review/demo-approval-negatives-2026-11-17/adjudication. The
+append-only release event binds packet hash 8d9356f98a4f0d848d8f3093cc6117f649a3cb4ae8e76be67248937155848c76,
+reviewed evidence commit 8178ccc, source bef3d71, owner version 3586b7d5 and
+gateway f7ae2b0f. Preserve all original packet/evidence bytes and PENDING capture
+fields; derive ACCEPTED status from the separate real user event. This closes
+the current existing-demo release review. It is chat-attributed release
+acceptance, not an authenticated final-payload task grant, a new semantic verdict
+on future outputs, activation of any control or permission for customer rollout.
+All nine execution/fault/release flags stay false; prior operator email settings
+remain unchanged. No further test, recovery click, task or deployment is needed
+to record this acceptance. Do not reopen consumed operations or transfer this
+acceptance to changed source/outputs/configuration. Main remains unchanged.

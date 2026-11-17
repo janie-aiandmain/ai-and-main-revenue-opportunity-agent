@@ -1,0 +1,20 @@
+{
+  "kind": "DERIVED_CONTROLLED_DEMO_RELEASE_ACCEPTANCE",
+  "humanReleaseVerdict": "ACCEPTED",
+  "eventId": "demo-release-acceptance-0a8bc77b-8ee4-4870-98bc-6b5edb15dba9",
+  "eventHash": "sha256:61226bd8f9f8d47723d4e20f85abdfc3da38cb09ef9cb2efbd1cf9dce2a8b3d6",
+  "packetHash": "sha256:8d9356f98a4f0d848d8f3093cc6117f649a3cb4ae8e76be67248937155848c76",
+  "reviewedEvidenceCommit": "8178ccc584f879b6bf5d55887dc2bf5441cea690",
+  "sourceCommit": "bef3d71276b94c7d398225487c2ecbc36f35bd71",
+  "ownerDeploymentVersion": "3586b7d5-0ce4-42f2-baef-5f1a744443e5",
+  "gatewayDeploymentVersion": "f7ae2b0f-07f1-467d-b7cd-fe8eab47b0fd",
+  "acceptedScope": "Existing controlled synthetic demo, portal 247646122/contact 582095692487, with documented evidence and limits.",
+  "originalPacketAndEvidenceUnchanged": true,
+  "deployedSourceFilesUnchanged": true,
+  "generalWritebackEnabled": false,
+  "allNineExecutionControlsRemainDisabled": true,
+  "newFinalTaskExecutionApproval": false,
+  "customerProductionReleaseApproved": false,
+  "acceptanceTransfersToFutureOutputsOrVersions": false,
+  "verificationMakesNoRemoteCalls": true
+}

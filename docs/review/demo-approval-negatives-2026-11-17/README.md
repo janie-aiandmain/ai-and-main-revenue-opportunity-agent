@@ -28,7 +28,7 @@ sign-off**, and simulated effects/failures are **not hosted CRM effects/outages*
 | Source regression/builds | PASS | [Validation summary](validation.json): 233 tests, 207 retained workflow executions, review integrity, both dry-run builds |
 | Actual closed hosted deployment | PASS | [Owner readback](deployment-owner.json), [gateway readback](deployment-gateway.json), [Access check](access-check.json): actual active module hashes match the tested bundle; all nine switches false; identity/tenant/bindings/Secret names/ordinary settings/hostname state preserved |
 | Actual hosted rejection-fixture invocation | PASS: 38/38, authenticated Approver | [Original receipt](hosted/operator-receipt-original.txt), [parsed receipt](hosted/operator-receipt.json), [per-case verification](hosted/receipt-check.json): 37 negatives, zero simulated create escapes, valid repeated control one simulated create; no CRM/model/email calls |
-| Final demo release acceptance | PENDING human decision | Does not grant general writeback or certify real-customer deployment |
+| Final demo release acceptance | ACCEPTED by the user | [Append-only release decision](adjudication/README.md), bound to the exact packet and deployed versions; general writeback remains disabled |
 
 ## What the matrix tests
 
@@ -101,11 +101,14 @@ unchanged settings/Secret names/namespace/hosts and Access redirects. No additio
 test run, CRM task, model call, email or deployment was required. The prior local
 reports retain their capture-time PENDING fields; this table is the current state.
 
-**Ready for final human release acceptance of the controlled synthetic demo.**
-Review the compact [final acceptance packet](FINAL-REVIEW.md). No further console
-click or task submission is required for this validation cycle. General writeback
-stays disabled; customer deployment is outside this acceptance. No pilot data is
-required.
+**The user accepted the controlled synthetic demo release with “Approved”.**
+The [acceptance record](adjudication/README.md) binds that decision to the exact
+packet hash, source and deployed versions. The [original review packet](FINAL-REVIEW.md)
+and release-candidate.json retain their capture-time PENDING fields unchanged;
+the separate decision overlay establishes current ACCEPTED status. This closes
+the existing-demo review cycle. No further console action, task submission, model
+call or deployment is required. General writeback stays disabled; customer rollout
+is outside this acceptance. No pilot data is required for this accepted demo.
 
 ## Remaining limits
 

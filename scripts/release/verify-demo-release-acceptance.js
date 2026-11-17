@@ -1,0 +1,23 @@
+// Read-only integrity checks and a derived status; no runtime activation or grants.
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import {digest} from '../../src/staging/operation-ledger.js';
+const base='docs/review/demo-approval-negatives-2026-11-17';
+const packet=JSON.parse(await readFile(base+'/release-candidate.json','utf8')),{packetHash,...material}=packet;
+assert.equal(packetHash,'sha256:8d9356f98a4f0d848d8f3093cc6117f649a3cb4ae8e76be67248937155848c76');
+assert.equal(digest(material),packetHash);
+for(const [file,hash] of Object.entries(packet.evidenceFileHashes))assert.equal('sha256:'+createHash('sha256').update(await readFile(base+'/'+file)).digest('hex'),hash,file);
+const contracts=JSON.parse(await readFile(base+'/contracts.json','utf8'));
+for(const [file,hash] of Object.entries(contracts.sourceFileHashes))assert.equal('sha256:'+createHash('sha256').update(await readFile(file)).digest('hex'),hash,file);
+const ledger=JSON.parse(await readFile(base+'/adjudication/release-decisions.json','utf8'));
+assert.equal(ledger.appendOnly,true);assert.equal(ledger.events.length,1);
+const {eventHash,...event}=ledger.events[0];assert.equal(eventHash,digest(event));
+assert.equal(event.userStatementVerbatim,'Approved');assert.equal(event.verdict,'ACCEPTED');
+assert.equal(event.packetHash,packetHash);assert.equal(event.reviewedEvidenceCommit,'8178ccc584f879b6bf5d55887dc2bf5441cea690');
+for(const key of ['sourceCommit','ownerDeploymentVersion','gatewayDeploymentVersion'])assert.equal(event[key],packet[key]);
+assert.equal(event.generalWritebackEnabled,false);assert.equal(event.allNineExecutionControlsRemainDisabled,true);
+for(const key of ['newFinalTaskExecutionApproval','customerProductionReleaseApproved','credentialPermissionOrConfigurationChangeAuthorizedByThisDecision','futureOutputsOrVersionsInheritAcceptance'])assert.equal(event[key],false,key);
+assert.equal(packet.humanReleaseVerdict,'PENDING','Preserve the original capture-time packet; derive acceptance from its separate event.');
+const result={kind:'DERIVED_CONTROLLED_DEMO_RELEASE_ACCEPTANCE',humanReleaseVerdict:'ACCEPTED',eventId:event.eventId,eventHash,packetHash,reviewedEvidenceCommit:event.reviewedEvidenceCommit,sourceCommit:packet.sourceCommit,ownerDeploymentVersion:packet.ownerDeploymentVersion,gatewayDeploymentVersion:packet.gatewayDeploymentVersion,acceptedScope:event.acceptedScope,originalPacketAndEvidenceUnchanged:true,deployedSourceFilesUnchanged:true,generalWritebackEnabled:false,allNineExecutionControlsRemainDisabled:true,newFinalTaskExecutionApproval:false,customerProductionReleaseApproved:false,acceptanceTransfersToFutureOutputsOrVersions:false,verificationMakesNoRemoteCalls:true};
+await writeFile(base+'/adjudication/current-status.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
