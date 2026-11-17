@@ -680,3 +680,18 @@ confirmed-state read is requested; do not refresh/create/reapprove or reopen the
 consumed run. If reconcile control is gone, operator may read current operation
 evidence instead and identify the action. No hosted financial outcome or broader
 negative matrix is claimed; release acceptance remains pending.
+
+## November 17 recovery closeout — repeat read complete
+
+The next-day operator status receipt confirms the same task 424319510263,
+CONFIRMED, one attempt, unchanged exact payload/action/correlation/revision and
+trace, now from boot 6c1e6684. This is persisted-state readback, not another
+HubSpot lookup or task submission. The final live Cloudflare check verifies all
+nine controls still false, same closed active versions d2c840a5/66e3caac, unchanged
+namespace/Secret names and Access protection. See repeat-read-check.json and
+final-config-2026-11-17.json in the existing garage recovery evidence directory.
+The bounded positive injected-recovery/persistence demonstration is COMPLETE; do
+not request another repeat read, reopen this consumed run, recreate any task or
+renew the approval. Source semantic decisions and exact execution grant remain
+preserved. No financial outcome, broader hosted negative matrix or customer
+production/release acceptance is inferred; follow-up scope needs its own review.

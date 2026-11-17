@@ -236,3 +236,22 @@ claim of hosted revenue-attribution testing. No opportunity amount or verified
 financial outcome is established; revenue rescued remains unknown/not measured.
 The task does not establish current job status, consent, pricing delivered, work
 approved/performed or business revenue. No second task was created or attempted.
+
+## November 17 final repeat read — complete
+
+The operator returned the requested saved-operation evidence the next day. It
+retains CONFIRMED task 424319510263, the exact approved request/hash/action/revision/
+correlation, unchanged recovery trace and **one** create attempt. New boot ID
+6c1e6684… differs from the first reconciled read's e8c0aef0…. The saved state
+survived another boot without another create. No additional HubSpot lookup is
+claimed for this status read. See [repeat check](repeat-read-check.json),
+[original paste](operator-repeat-2026-11-17-original.txt) and
+[parsed receipt](operator-repeat-2026-11-17.json).
+
+The final direct Cloudflare verification still shows all nine controls disabled,
+unchanged closed active versions, preserved namespace/Secret names and Access
+protection. See [final configuration](final-config-2026-11-17.json). The bounded
+positive recovery demonstration is complete; no more operator receipt or console
+action is needed for this test. All broader negative/production/release limits
+remain explicit in [CERTIFICATION.md](CERTIFICATION.md). No new remote action was
+performed in this closeout, and no revenue rescued is established.

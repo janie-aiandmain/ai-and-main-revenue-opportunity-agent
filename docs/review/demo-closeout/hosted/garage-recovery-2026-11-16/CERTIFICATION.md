@@ -4,8 +4,9 @@
 was deliberately discarded, the Worker restarted, and read-only reconciliation
 confirmed task **424319510263** with the approved payload unchanged and still
 **one create attempt**. This verifies this injected scenario, not every network
-outage, customer deployment or production release. A final repeated confirmed-
-operation read and user release acceptance are still pending.
+outage, customer deployment or production release. The next-day saved-state read also returned the same task and one attempt from
+another ledger boot. The bounded positive recovery demonstration is complete;
+user release acceptance and broader hosted negative validation remain separate.
 
 | Gate / dimension | Status | Evidence and practical scope |
 | --- | --- | --- |
@@ -15,10 +16,10 @@ operation read and user release acceptance are still pending.
 | Complete final-payload approval | PASS for this operation | Exact request hash, review/action version and grant match. [Prepared request](prepared-task.json), [hash check](prepared-payload-check.json), [operator approval](operator-approval-receipt.json). December 1, 3:45 p.m. Eastern is the user's intentional internal target, not a customer deadline. |
 | Durable pre-POST state and one-create budget | PASS for this operation | APPROVED/null remote ID/zero attempts baseline, persistent operation/correlation before submission, then one budget reservation and POST intent. [Baseline](operator-before-submission.json), [bounded run](window.json). |
 | Injected discard, hosted restart and remote recovery | PASS for this scenario | Explicit discard marker and restart into UNKNOWN, followed by closed configuration activation and a new ledger boot. One exact correlation/properties/contact match produces CONFIRMED remote task 424319510263. [Unknown receipt](operator-after-discard.json), [confirmed receipt](operator-reconciled.json), [recovery check](reconciliation-check.json). |
-| Repeated confirmed-operation read | PENDING | One final read requested; a confirmed-state reconciliation returns the saved effect without create and may short-circuit another HubSpot lookup. Do not describe it as a second remote write or independent lookup. |
+| Repeated confirmed-operation read | PASS for next-day stored-state persistence | Same CONFIRMED task, hash, trace and one attempt on November 17, from new boot 6c1e6684…. [Repeat-read proof](repeat-read-check.json). This is a saved operation read, not a second HubSpot lookup or submission. |
 | Approval invalidation / unknown-state negatives | Local tests PASS; current hosted negative matrix NOT EXECUTED | Local tests cover changed payload/source/contracts/actor/expiry and absent/ambiguous/mismatched reconciliation. This actual run uses one positive exact approval and one successful match; it does not demonstrate every hosted rejection path. |
 | Outcome separation | PASS within this test | [One deduplicated task-effect record](outcome-separation.json); no financial outcome or revenue-attribution record created by this exercise. Task creation does not establish consent, current job status, pricing delivered, work performed or revenue rescued. |
-| Final execution closure | PASS, live rechecked | All nine execution/fault/release flags false on both active Workers; same code/namespace/Secret names/identity/tenant/host settings. [Closure](window-close.json), [post-reconciliation active-version check](post-reconciliation-config.json). Operator email remains enabled separately. |
+| Final execution closure | PASS, live rechecked | All nine execution/fault/release flags false on both active Workers; same code/namespace/Secret names/identity/tenant/host settings. [Closure](window-close.json), [post-reconciliation active-version check](post-reconciliation-config.json), [November 17 final check](final-config-2026-11-17.json). Operator email remains enabled separately. |
 | Customer production / release acceptance | PENDING / outside this demo | General writeback remains off. No main merge or real-customer rollout is authorized by these tests. |
 
 ## Exact approval and effect identifiers
@@ -76,3 +77,26 @@ and one verified hosted synthetic response-loss recovery**. No revenue rescued
 is established. The highest-priority follow-up validation is a hosted changed-
 payload/expired-approval rejection test that is blocked before POST; it should
 require no further CRM task creation. Do not start it or expand this run automatically.
+
+## November 17 closeout
+
+The delayed read-only check is complete. Exact task ID 424319510263, state
+CONFIRMED, original payload hash/action version/revision/correlation and one
+attempt are unchanged. No trace event or additional create appeared. The ledger
+boot is now 6c1e6684-756e-4222-8b07-32782b33db78, demonstrating stored confirmed
+state surviving another boot. Original pasted bytes and the minimally completed
+parsed copy are preserved. This did not issue a fresh HubSpot lookup.
+
+The final direct Cloudflare check on November 17 verifies the same closed active
+versions with all nine execution/fault/release flags false, private owner URL and
+all previews off, the existing namespace/Secret names intact and unauthenticated
+console/execute requests still redirected to Access. No deployment, model call,
+CRM call, email-provider call or configuration change was made for this closeout.
+
+**No more console actions are required for this recovery test.** Do not create
+again, renew approval or reopen the consumed run. The existing EV task remains
+outside this operation and was not reset or recreated. The supported outcome is
+one bounded hosted synthetic recovery plus repeated saved-state persistence;
+there is no verified financial outcome and no automatic customer-production or
+release acceptance. The separately identified hosted approval-invalidation
+negative test remains follow-up work, not a hidden passing gate.
