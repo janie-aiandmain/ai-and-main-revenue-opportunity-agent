@@ -1,3 +1,4 @@
+import {assertNegativeDiagnostics,diagnosticName} from '../staging/approval-negatives.js';
 import {demoExecution} from './demo-execution.js';
 import {DemoHubSpot,PORTAL,CONTACT,MARKER} from '../demo/hubspot.js';
 import {verifyOperator,verifyIdentity} from '../staging/auth.js';
@@ -5,7 +6,7 @@ import {identityBlocker} from '../staging/blockers.js';
 import {operatorConsole} from '../staging/operator-console.js';
 const json=(b,s=200)=>Response.json(b,{status:s,headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});
 const reads=new Set(['status','metrics','preflight','session','general/findings','general/identity-candidates','general/notifications']);
-const writes=new Set(['general/evaluate','general/identity-review','general/review','general/approve','general/resume-approval','general/execute','general/arm-response-loss','reconcile','resolve-uncertain']);
+const writes=new Set(['general/approval-negative-tests','general/evaluate','general/identity-review','general/review','general/approve','general/resume-approval','general/execute','general/arm-response-loss','reconcile','resolve-uncertain']);
 export async function operatorGateway(request,env){
  const path=new URL(request.url).pathname;
  if(['/writeback-task','/writeback-test','/writeback-preview'].includes(path))return json({status:'legacy_writeback_disabled'},403);
@@ -29,6 +30,13 @@ export async function operatorGateway(request,env){
  let body;try{body=JSON.parse(text);if(!body||typeof body!=='object'||Array.isArray(body))throw Error();}catch{return json({status:'invalid_json'},400);}
  const binding=env.CERTIFICATION_LEDGER||env.DEMO_RECOVERY_LEDGER;
  if(!binding||!env.STAGING_PORTAL_ID||!env.STAGING_CONTACT_ID)return json({status:'durable_tenant_not_configured'},503);
+ if(action==='general/approval-negative-tests'){
+  try{assertNegativeDiagnostics(env);}catch(e){return json({status:e.message},403);}
+  if(Object.keys(body).some(k=>k!=='runId'))return json({status:'unsupported_diagnostic_fields'},400);
+  const runId=body.runId||'negative-'+crypto.randomUUID();if(!/^negative-[a-f0-9-]{36}$/.test(runId))return json({status:'invalid_negative_run_id'},400);
+  const isolated=binding.get(binding.idFromName(diagnosticName(runId)));
+  try{return await isolated.fetch(new Request('https://private-ledger'+path,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({runId,actor})}));}catch{return json({status:'negative_diagnostic_interrupted_no_crm_action'},503);}
+ }
  const stub=binding.get(binding.idFromName('release-portal:'+env.STAGING_PORTAL_ID+':contact:'+env.STAGING_CONTACT_ID));
  let response;try{response=await stub.fetch(new Request('https://private-ledger'+path,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...body,actor})}));}catch{return json({status:'operation_interrupted_outcome_unconfirmed',nextStep:'Refresh findings and reconcile any submitted operation. Never create again to resolve uncertainty.'},503);}
  if(action==='preflight'&&env.CERTIFICATION_MODE==='remote-demo'){

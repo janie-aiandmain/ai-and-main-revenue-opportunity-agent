@@ -1,3 +1,4 @@
+import {assertNegativeDiagnostics,diagnosticName,runApprovalNegativeMatrix} from './approval-negatives.js';
 import { StagingBlocker,identityBlocker } from './blockers.js';
 import { DurableObject } from 'cloudflare:workers';
 import { DemoRecoveryLedger,DEMO_CONTRACT } from '../demo/recovery-ledger.js';
@@ -64,6 +65,22 @@ export class CertificationLedger extends DurableObject {
       }
       if(path==='/certification/general/identity-candidates')return json({pendingIdentity:l.pendingIdentity(this.env)});
       if(!['Approver','Admin'].includes(actor.role))return json({status:'approver_required'},403);
+      if(path==='/certification/general/approval-negative-tests'){
+        assertNegativeDiagnostics(this.env);
+        if(!/^negative-[a-f0-9-]{36}$/.test(input.runId||''))throw Error('invalid_negative_run_id');
+        const expected=this.env.CERTIFICATION_LEDGER?.idFromName(diagnosticName(input.runId));
+        if(!expected||this.demoContext.id.toString()!==expected.toString())throw Error('negative_diagnostics_isolated_object_required');
+        const db=durableDatabase(this.demoContext.storage);
+        db.exec('CREATE TABLE IF NOT EXISTS approval_negative_runs(id TEXT PRIMARY KEY,state TEXT NOT NULL,report_json TEXT)');
+        const old=db.prepare('SELECT * FROM approval_negative_runs WHERE id=?').get(input.runId);
+        if(old?.state==='COMPLETE')return json({...JSON.parse(old.report_json),cached:true});
+        if(old)throw Error('negative_diagnostic_previous_run_interrupted');
+        db.prepare("INSERT INTO approval_negative_runs VALUES(?,'RUNNING',NULL)").run(input.runId);
+        const report=await runApprovalNegativeMatrix(db,{runId:input.runId,invocationKind:actor.kind});
+        const result={...report,executionEnvironment:this.env.CERTIFICATION_MODE==='local'?'LOCAL_WORKER_SQLITE_NOT_HOSTED':'HOSTED_CLOUDFLARE_DURABLE_SQLITE_WITH_SYNTHETIC_FIXTURES',operatorInvocation:{identityKind:actor.kind,role:actor.role,subjectHash:digest(actor.subject),humanSemanticApproval:false},isolatedObjectName:diagnosticName(input.runId),isolatedObjectVerified:true,namespaceReused:true,sourceCommit:this.env.RELEASE_SOURCE_SHA||null,ownerDeploymentVersion:this.env.RELEASE_VERSION?.id||null,ledgerBootId:this.bootId,cached:false};
+        db.prepare("UPDATE approval_negative_runs SET state='COMPLETE',report_json=? WHERE id=?").run(JSON.stringify(result),input.runId);
+        return json(result);
+      }
       if(path.startsWith('/certification/general/')){
         const source=new DesignatedNoteSource(this.env);
         const reason=(context,key)=>reasonCorrected(this.env,context,key);

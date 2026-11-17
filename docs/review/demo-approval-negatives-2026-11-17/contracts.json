@@ -1,0 +1,25 @@
+{
+  "diagnosticPolicy": "hosted-isolated-approval-negatives-v1",
+  "fixtureVersion": "approval-negative-v1",
+  "fixtureHash": "sha256:081a9759c87695cdf9e4aa1312b773ea8150f04f5377bd406d5274b87190741c",
+  "approvalContractHash": "sha256:480b14d3f8666053b01ed597a01106752c0980a555dfd8e5730d0db21735a826",
+  "unchanged": {
+    "prompt": "reasoning-v0.3.3",
+    "schema": "findings-v0.2",
+    "materializer": "source-evidence-v0.3.12",
+    "evidencePolicy": "source-clause-closure-v1.3",
+    "proposal": "internal-task-proposal-v2.6",
+    "taskPolicy": "internal-task-policy-v1.6",
+    "review": "finding-review-v2.7",
+    "model": "gpt-5.6-terra",
+    "reasoningEffort": "low"
+  },
+  "sourceFileHashes": {
+    "src/staging/approval-negatives.js": "sha256:9998fe3c33074b12aec78eb82ecac2cffc0e21c98e2ce3fe63574cc6f0c4101d",
+    "fixtures/approval-negative-v1.json": "sha256:cd4420bb2bd2c1c5f169e30ba8c018ada306b4ba5ca243e709b74d54c41500ce",
+    "src/release/gateway.js": "sha256:89447752f31d6df9f9c5613613f5b4fac6d8756815ee561d7998083be29f3002",
+    "src/staging/worker.js": "sha256:4111632857f9643383ae3f9dab8d77496ca83e25ea0eb825fa90293800892f0b",
+    "src/staging/operator-console.js": "sha256:fef7c3600501c7e54aed60ce804b2e76d6ceef1d0060915dacc54fc4936ae8d1"
+  },
+  "productionApprovalGeneratorChanged": false
+}

@@ -1,0 +1,320 @@
+{
+  "fixtureVersion": "approval-negative-v1",
+  "purpose": "Synthetic approval/recovery guards only; no real customer context, human approvals, model inference or CRM requests.",
+  "sourceNote": "Fictional customer requested pricing for one surge protector.",
+  "cases": [
+    {
+      "id": "positive-repeat",
+      "kind": "positive",
+      "expected": "CONFIRMED_ONCE"
+    },
+    {
+      "id": "missing-grant",
+      "kind": "missing_grant",
+      "expected": "REJECTED",
+      "expectedReason": "approval_identity_changed"
+    },
+    {
+      "id": "revoked-grant",
+      "kind": "revoked",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "expired-grant",
+      "kind": "expired",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "future-issued-grant",
+      "kind": "future_issued",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "missing-identity-binding",
+      "kind": "missing_identity",
+      "expected": "REJECTED",
+      "expectedReason": "approval_identity_changed"
+    },
+    {
+      "id": "stale-review-binding",
+      "kind": "stale_review_binding",
+      "expected": "REJECTED",
+      "expectedReason": "approval_review_or_action_version_mismatch"
+    },
+    {
+      "id": "changed-contract",
+      "kind": "context_contract",
+      "expected": "REJECTED",
+      "expectedReason": "operator_review_stale_or_missing"
+    },
+    {
+      "id": "corrupt-payload",
+      "kind": "corrupt_payload",
+      "expected": "REJECTED",
+      "expectedReason": "final_payload_integrity_failure"
+    },
+    {
+      "id": "corrupt-material",
+      "kind": "corrupt_material",
+      "expected": "REJECTED",
+      "expectedReason": "final_payload_integrity_failure"
+    },
+    {
+      "id": "changed-material-hash",
+      "kind": "changed_material",
+      "expected": "REJECTED",
+      "expectedReason": "approval_review_or_action_version_mismatch"
+    },
+    {
+      "id": "actor-subject-other-fixture-approver",
+      "kind": "actor",
+      "field": "subject",
+      "value": "other-fixture-approver",
+      "expected": "REJECTED",
+      "expectedReason": "approval_identity_changed"
+    },
+    {
+      "id": "actor-role-Viewer",
+      "kind": "actor",
+      "field": "role",
+      "value": "Viewer",
+      "expected": "REJECTED",
+      "expectedReason": "verified_operator_required"
+    },
+    {
+      "id": "actor-role-Admin",
+      "kind": "actor",
+      "field": "role",
+      "value": "Admin",
+      "expected": "REJECTED",
+      "expectedReason": "approval_identity_changed"
+    },
+    {
+      "id": "actor-issuer-other-fixture.invalid",
+      "kind": "actor",
+      "field": "issuer",
+      "value": "https://other-fixture.invalid",
+      "expected": "REJECTED",
+      "expectedReason": "approval_identity_changed"
+    },
+    {
+      "id": "actor-audience-other-fixture-app",
+      "kind": "actor",
+      "field": "audience",
+      "value": "other-fixture-app",
+      "expected": "REJECTED",
+      "expectedReason": "approval_identity_changed"
+    },
+    {
+      "id": "actor-expiresAt-PAST",
+      "kind": "actor",
+      "field": "expiresAt",
+      "value": "PAST",
+      "expected": "REJECTED",
+      "expectedReason": "operator_session_expired_before_submission"
+    },
+    {
+      "id": "changed-payload-subject",
+      "kind": "payload",
+      "path": [
+        "body",
+        "properties",
+        "hs_task_subject"
+      ],
+      "value": "Unapproved subject",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "changed-payload-body",
+      "kind": "payload",
+      "path": [
+        "body",
+        "properties",
+        "hs_task_body"
+      ],
+      "value": "Unapproved different scope",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "changed-payload-priority",
+      "kind": "payload",
+      "path": [
+        "body",
+        "properties",
+        "hs_task_priority"
+      ],
+      "value": "LOW",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "changed-payload-due",
+      "kind": "payload",
+      "path": [
+        "body",
+        "properties",
+        "hs_timestamp"
+      ],
+      "value": "2099-01-01T00:00:00.000Z",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "changed-payload-status",
+      "kind": "payload",
+      "path": [
+        "body",
+        "properties",
+        "hs_task_status"
+      ],
+      "value": "COMPLETED",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "changed-payload-type",
+      "kind": "payload",
+      "path": [
+        "body",
+        "properties",
+        "hs_task_type"
+      ],
+      "value": "EMAIL",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "changed-payload-contact",
+      "kind": "payload",
+      "path": [
+        "body",
+        "associations",
+        0,
+        "to",
+        "id"
+      ],
+      "value": "other-fixture-contact",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "changed-payload-association",
+      "kind": "payload",
+      "path": [
+        "body",
+        "associations",
+        0,
+        "types",
+        0,
+        "associationTypeId"
+      ],
+      "value": 999,
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "changed-payload-portal",
+      "kind": "payload",
+      "path": [
+        "portalId"
+      ],
+      "value": "other-fixture-portal",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "changed-payload-url",
+      "kind": "payload",
+      "path": [
+        "url"
+      ],
+      "value": "https://invalid-fixture.invalid/forbidden",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "changed-payload-method",
+      "kind": "payload",
+      "path": [
+        "method"
+      ],
+      "value": "PATCH",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "changed-payload-contract",
+      "kind": "payload",
+      "path": [
+        "contractVersion"
+      ],
+      "value": "incompatible-fixture-contract",
+      "expected": "REJECTED",
+      "expectedReason": "approval_stale_or_expired"
+    },
+    {
+      "id": "review-priority",
+      "kind": "review_priority",
+      "expected": "REJECTED",
+      "expectedReason": "operation_not_approved"
+    },
+    {
+      "id": "review-due",
+      "kind": "review_due",
+      "expected": "REJECTED",
+      "expectedReason": "operation_not_approved"
+    },
+    {
+      "id": "source-change",
+      "kind": "source_change",
+      "expected": "REJECTED",
+      "expectedReason": "operation_not_approved"
+    },
+    {
+      "id": "classification-change",
+      "kind": "classification_change",
+      "expected": "REJECTED",
+      "expectedReason": "operation_not_approved"
+    },
+    {
+      "id": "uncertain-absent",
+      "kind": "uncertain",
+      "lookup": "absent",
+      "expected": "UNKNOWN_NO_CREATE",
+      "expectedTrace": "NO_PROVEN_MATCH_BLOCKED"
+    },
+    {
+      "id": "uncertain-ambiguous",
+      "kind": "uncertain",
+      "lookup": "ambiguous",
+      "expected": "UNKNOWN_NO_CREATE",
+      "expectedTrace": "MULTIPLE_MATCHES_MANUAL_RESOLUTION"
+    },
+    {
+      "id": "uncertain-mismatched",
+      "kind": "uncertain",
+      "lookup": "mismatched",
+      "expected": "UNKNOWN_NO_CREATE",
+      "expectedTrace": "NO_PROVEN_MATCH_BLOCKED"
+    },
+    {
+      "id": "uncertain-unavailable",
+      "kind": "uncertain",
+      "lookup": "unavailable",
+      "expected": "UNKNOWN_NO_CREATE",
+      "expectedTrace": "LOOKUP_UNAVAILABLE_BLOCKED"
+    },
+    {
+      "id": "uncertain-known_id_duplicate",
+      "kind": "uncertain",
+      "lookup": "known_id_duplicate",
+      "expected": "UNKNOWN_NO_CREATE",
+      "expectedTrace": "MULTIPLE_MATCHES_MANUAL_RESOLUTION"
+    }
+  ]
+}

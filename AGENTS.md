@@ -695,3 +695,21 @@ not request another repeat read, reopen this consumed run, recreate any task or
 renew the approval. Source semantic decisions and exact execution grant remain
 preserved. No financial outcome, broader hosted negative matrix or customer
 production/release acceptance is inferred; follow-up scope needs its own review.
+
+## Existing-demo approval rejection validation — November 17
+
+The user selected “Existing demo” for the next cycle; do not request pilot data
+or treat this as a real-customer rollout. The additional diagnostic route runs
+versioned synthetic approval fixtures through the unchanged core validator in a
+separate named object inside the existing CertificationLedger namespace. It must
+verify its own object ID, refuse populated operational storage, use no external
+clients, and require every execution/fault/release flag false in both gateway and
+owner. Invoking it requires a verified Approver/Admin; its fixture grants remain
+LOCAL_SYNTHETIC and never constitute human or execution approval. Preserve all
+existing operational objects, tasks, verdicts, captures and consumed test windows.
+No namespace/class/migration, model call, CRM call or email delivery is needed.
+Local SQLite/workerd evidence must not be described as hosted execution. Existing
+bounded demo deployment authority permits publishing this isolated diagnostic
+while keeping both Workers' current secrets, identity, tenant, namespace, host
+and email settings unchanged. Hosted validation awaits a real signed-in operator
+invocation. Demo release acceptance and any customer deployment remain separate.

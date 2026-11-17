@@ -1,0 +1,54 @@
+{
+  "kind": "LOCAL_VALIDATION_NOT_HOSTED_RELEASE_ACCEPTANCE",
+  "baselineSource": "b351e37ee1dad1d7abd64e63ca6341fee0458363",
+  "baselineTests": 229,
+  "afterTests": 233,
+  "failed": 0,
+  "commands": [
+    {
+      "command": "npm test",
+      "result": "PASS",
+      "tests": 233,
+      "initialSandboxAttempt": "FAIL: subprocess/native execution restricted; unchanged command passed with authorized local execution permissions"
+    },
+    {
+      "command": "npm run regression:offline",
+      "result": "PASS",
+      "retainedExecutions": 207
+    },
+    {
+      "command": "npm run review:current",
+      "result": "PASS",
+      "humanSemanticPassCount": 6,
+      "originalCaptureSnapshotsUnchanged": true
+    },
+    {
+      "command": "npm run approval:negative:offline",
+      "result": "PASS",
+      "cases": 38
+    },
+    {
+      "command": "npm run approval:negative:worker",
+      "result": "PASS",
+      "cases": 38,
+      "environment": "LOCAL_WORKER_SQLITE_NOT_HOSTED",
+      "runtimeRestarts": 1,
+      "externalNetworkCalls": 0
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS_DRY_RUN"
+    },
+    {
+      "command": "npm run staging:check",
+      "result": "PASS_DRY_RUN"
+    }
+  ],
+  "modelCalls": 0,
+  "hubspotCalls": 0,
+  "emailProviderCalls": 0,
+  "generationChanges": false,
+  "sourceSemanticDecisionsPreserved": true,
+  "hostedMatrix": "PENDING_AUTHENTICATED_OPERATOR",
+  "finalDemoReleaseAcceptance": "PENDING"
+}

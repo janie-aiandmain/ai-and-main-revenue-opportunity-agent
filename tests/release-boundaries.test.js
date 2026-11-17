@@ -42,6 +42,24 @@ test('a closed demo gateway cannot forward an execute even if its ledger owner w
  let forwarded=0;const binding={idFromName(){return 'test';},get(){return {fetch(){forwarded++;return Response.json({state:'SENDING'});}};}};
  const r=await operatorGateway(req('/certification/general/execute','test-approver',{operationId:'op',approvalId:'grant'}),{...env,ENABLE_GENERAL_EXECUTION:'false',GENERAL_RELEASE_APPROVED:'false',DEMO_RECOVERY_LEDGER:binding});assert.equal(r.status,403);assert.equal(forwarded,0);
 });
+test('approval diagnostics require a real verified role and route only to a separate named object',async()=>{
+ const calls=[],runId='negative-00000000-0000-4000-8000-000000000001';
+ const binding={idFromName(name){calls.push({name});return name;},get(name){return {async fetch(request){calls.push({name,body:await request.json()});return Response.json({fixture:true});}};}};
+ const configured={...env,DEMO_RECOVERY_LEDGER:binding};
+ const path='/certification/general/approval-negative-tests';
+ assert.equal((await operatorGateway(req(path,'test-viewer',{actor:{role:'Admin'}}),configured)).status,403);
+ assert.equal((await operatorGateway(req(path,'test-approver',{runId,actor:{role:'Admin'}}),configured)).status,400);
+ assert.equal((await operatorGateway(req(path,'test-approver',{runId:'bad'}),configured)).status,400);
+ const crossOrigin=req(path,'test-approver',{runId});crossOrigin.headers.set('Origin','https://evil.invalid');
+ assert.equal((await operatorGateway(crossOrigin,configured)).status,403);
+ assert.equal((await operatorGateway(req(path,'test-approver',{runId}),{...configured,ENABLE_TEST_TASK_WRITES:'true'})).status,403);
+ assert.equal(calls.length,0);
+ const result=await operatorGateway(req(path,'test-approver',{runId}),configured);
+ assert.equal(result.status,200);assert.equal(calls.length,2);
+ assert.ok(calls.every(c=>c.name==='approval-negative-fixtures:'+runId));
+ assert.equal(calls[1].body.actor.subject,'test-approver');assert.equal(calls[1].body.actor.kind,'LOCAL_SYNTHETIC');
+ assert.equal(calls[1].body.actor.role,'Approver');assert.equal(calls[1].body.runId,runId);
+});
 test('demo preflight distinguishes rejected owner credentials from existing healthy credentials without substituting or writing',async()=>{
  const remote={...env,CERTIFICATION_MODE:'remote-demo',ACCESS_ISSUER:'https://release-test.cloudflareaccess.com',LOCAL_TEST_JWKS_JSON:undefined,STAGING_PORTAL_ID:'247646122',STAGING_CONTACT_ID:'582095692487',HUBSPOT_ACCESS_TOKEN:'synthetic-original-reader',HUBSPOT_WRITE_TOKEN:'synthetic-original-writer'};
  const enc=v=>Buffer.from(JSON.stringify(v)).toString('base64url'),data=enc({alg:'RS256',kid:jwk.kid})+'.'+enc({iss:remote.ACCESS_ISSUER,aud:remote.ACCESS_AUDIENCE,sub:'test-approver',exp:Date.now()/1000+3600}),jwt=data+'.'+sign('RSA-SHA256',Buffer.from(data),privateKey).toString('base64url');
