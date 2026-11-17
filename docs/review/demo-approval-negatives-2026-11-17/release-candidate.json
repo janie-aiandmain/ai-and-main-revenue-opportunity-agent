@@ -1,0 +1,30 @@
+{
+  "packetVersion": "controlled-demo-release-candidate-v1",
+  "scope": "Existing synthetic demo only; no customer rollout or new task execution.",
+  "sourceCommit": "bef3d71276b94c7d398225487c2ecbc36f35bd71",
+  "ownerDeploymentVersion": "3586b7d5-0ce4-42f2-baef-5f1a744443e5",
+  "gatewayDeploymentVersion": "f7ae2b0f-07f1-467d-b7cd-fe8eab47b0fd",
+  "hostedRunId": "negative-a8ab07ac-cc01-4836-867d-202e167e7db8",
+  "hostedCasesPassed": 38,
+  "hostedNegativeCases": 37,
+  "negativeSimulatedCreateEscapes": 0,
+  "generalWritebackEnabled": false,
+  "allNineExecutionControlsDisabled": true,
+  "operatorEmailConfiguration": "Previously authorized owner-only setting preserved; no delivery performed in this cycle.",
+  "humanReleaseVerdict": "PENDING",
+  "humanExecutionApprovalGrantedByThisPacket": false,
+  "customerProductionReleaseApproved": false,
+  "evidenceFileHashes": {
+    "contracts.json": "sha256:316e4e8ae501a9871a2fb1b12b2446fd676cf776ec56b85c09db8efb9b282697",
+    "hosted/operator-receipt-original.txt": "sha256:79811942ed13199f4f9593022c9b96864bd68c2f2eb51ebf01a017a027aea39f",
+    "hosted/operator-receipt.json": "sha256:1b9598e52a23b9ad43a329f2832ebbc0d3671dfb5cbf57afa5ffec97b9160b85",
+    "hosted/provenance.json": "sha256:fbd675220f88f7ecd46fd3b1775b9d2a5f90f1ea95df0ccfe9ba79bd13d91975",
+    "hosted/receipt-check.json": "sha256:d4d9927d75fb454abb2e80e930ef798a5ff9e7bd6a615772dc53d79c53df223a",
+    "hosted/final-config.json": "sha256:d6d87e44bd097e3656241aedcbb7a10994780db9eebc29d5e5c9aad02516701c",
+    "deployment-owner.json": "sha256:5b7b4c84727a7f4961498c3bbe59a178401424916975235a1ad4f160f60fdf24",
+    "deployment-gateway.json": "sha256:b667c08b9887825681d9d3d4cf6a55a0c616e8657901f3efdc50678ac15dffe9",
+    "validation.json": "sha256:09364e1c42c1207df99e97628382b167d770901ecdad7a87aa52c0f88598c6e5",
+    "FINAL-REVIEW.md": "sha256:7b284417720c1da90b46b2d113a9a846422f6f4c1d1f39cdd9770bb61c968431"
+  },
+  "packetHash": "sha256:8d9356f98a4f0d848d8f3093cc6117f649a3cb4ae8e76be67248937155848c76"
+}

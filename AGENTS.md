@@ -713,3 +713,20 @@ bounded demo deployment authority permits publishing this isolated diagnostic
 while keeping both Workers' current secrets, identity, tenant, namespace, host
 and email settings unchanged. Hosted validation awaits a real signed-in operator
 invocation. Demo release acceptance and any customer deployment remain separate.
+
+## Hosted negative matrix completed — November 17
+
+The user supplied the actual diagnostic receipt: 38/38 hosted synthetic cases
+pass, 37 negatives have zero simulated create escapes, the valid repeated control
+creates one simulated effect, and live CRM/model/email calls are zero. Invocation
+is EXTERNAL_VERIFIED Approver; fixture grants remain LOCAL_SYNTHETIC, not human
+sign-off. See docs/review/demo-approval-negatives-2026-11-17/hosted. Preserve its
+original pasted bytes and the documented one-brace parsing repair. Every case,
+fixture/contract hash, expected source/version and invocation has been checked;
+do not misrepresent the user-supplied report as an independently downloaded or
+signed attestation. An independent read-only Cloudflare check confirms active
+source bef3d71, owner 3586b7d5, gateway f7ae2b0f, all nine controls false and prior
+settings/Secrets/namespace/host/Access state unchanged. No more matrix/recovery
+clicks, task creation or deployment is required. FINAL-REVIEW.md identifies the
+exact controlled-demo candidate; final human demo release acceptance is PENDING.
+It does not authorize general writeback, another task grant or customer rollout.

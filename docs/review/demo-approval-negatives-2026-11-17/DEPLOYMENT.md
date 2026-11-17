@@ -60,3 +60,16 @@ Actual authenticated hosted fixture execution remains **PENDING**. It requires
 the signed-in operator's one console action. Passing the local matrix, uploaded
 byte comparison or Access redirects does not substitute for that receipt or for
 final demo release acceptance. No financial outcome has been established.
+
+## Subsequent hosted completion
+
+The operator has now supplied the successful 38/38 hosted synthetic report for
+run negative-a8ab07ac-cc01-4836-867d-202e167e7db8, from the exact expected owner
+version/source. See hosted/operator-receipt.json and hosted/receipt-check.json.
+The original bytes are preserved, including their omitted opening object brace;
+the parsed copy repairs only that delimiter. This is attributed operator evidence,
+not an independently downloaded or signed receipt. A later independent read-only
+Cloudflare check confirms the same closed active versions and unchanged settings,
+bindings, Secret names and Access boundary: hosted/final-config.json. No new
+deployment, model call, CRM operation or email delivery occurred in recording it.
+Final human acceptance of the controlled demo remains pending.

@@ -1,0 +1,11 @@
+{
+  "kind": "OPERATOR_SUPPLIED_HOSTED_RECEIPT",
+  "sourceFileId": "file_000000005f6081f6bb63744d7866e63e",
+  "originalSha256": "79811942ed13199f4f9593022c9b96864bd68c2f2eb51ebf01a017a027aea39f",
+  "originalBytes": 31652,
+  "parseRepair": "Prepend one opening object brace only. Original pasted closing brace retained; no fields, values or rows changed.",
+  "originalPreserved": true,
+  "independentReceiptDownload": false,
+  "receiptCryptographicallySigned": false,
+  "operatorInvocationIsNotHumanReleaseAcceptance": true
+}

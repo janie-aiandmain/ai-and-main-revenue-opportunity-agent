@@ -27,7 +27,7 @@ sign-off**, and simulated effects/failures are **not hosted CRM effects/outages*
 | Worker isolation/auth/routing/report persistence | PASS locally | [workerd report](local-worker.json): operational-root refusal, Viewer/expired synthetic JWT/spoof/cross-origin blocks, cached report survives restart, zero external network calls |
 | Source regression/builds | PASS | [Validation summary](validation.json): 233 tests, 207 retained workflow executions, review integrity, both dry-run builds |
 | Actual closed hosted deployment | PASS | [Owner readback](deployment-owner.json), [gateway readback](deployment-gateway.json), [Access check](access-check.json): actual active module hashes match the tested bundle; all nine switches false; identity/tenant/bindings/Secret names/ordinary settings/hostname state preserved |
-| Actual hosted rejection-fixture invocation | PENDING authenticated operator | New console button runs the matrix with no CRM action. Local Worker execution is not this gate |
+| Actual hosted rejection-fixture invocation | PASS: 38/38, authenticated Approver | [Original receipt](hosted/operator-receipt-original.txt), [parsed receipt](hosted/operator-receipt.json), [per-case verification](hosted/receipt-check.json): 37 negatives, zero simulated create escapes, valid repeated control one simulated create; no CRM/model/email calls |
 | Final demo release acceptance | PENDING human decision | Does not grant general writeback or certify real-customer deployment |
 
 ## What the matrix tests
@@ -85,18 +85,33 @@ configuration; no email was sent for these checks. All nine execution/fault/rele
 flags remain false. [Deployment notes](DEPLOYMENT.md) retain the transient verifier
 failure separately from the successful activation/readback.
 
-Open the existing [operator console](https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/operator),
-sign in, and click **Run approval safety checks — no CRM writes** once. Share its
-result JSON; do not Evaluate, Prepare, Approve or Submit a task. This records a real
-authenticated invocation of hosted **synthetic** tests, not real human approvals
-inside the fixtures. Release acceptance remains a separate review of the exact
-deployed version and evidence package. No pilot data is required.
+The operator completed the hosted matrix on November 17 at 5:02 p.m. Eastern.
+Run `negative-a8ab07ac-cc01-4836-867d-202e167e7db8` reports 38/38 passes from the
+expected source/version and verified Approver. [Provenance](hosted/provenance.json)
+preserves the original pasted bytes; parsing adds its missing opening brace only.
+The [verification command](../../../scripts/release/verify-approval-negative-receipt.js)
+checks the exact fixture, every rejection/UNKNOWN outcome, counts, invocation,
+source and contract hashes. This is an operator-supplied report, not an independently
+downloaded or cryptographically signed receipt. The previously verified deployed
+code generated its report; invocation is not human approval of fixture grants.
+
+A subsequent [read-only Cloudflare check](hosted/final-config.json) independently
+confirms the same immutable active versions, all nine false execution controls,
+unchanged settings/Secret names/namespace/hosts and Access redirects. No additional
+test run, CRM task, model call, email or deployment was required. The prior local
+reports retain their capture-time PENDING fields; this table is the current state.
+
+**Ready for final human release acceptance of the controlled synthetic demo.**
+Review the compact [final acceptance packet](FINAL-REVIEW.md). No further console
+click or task submission is required for this validation cycle. General writeback
+stays disabled; customer deployment is outside this acceptance. No pilot data is
+required.
 
 ## Remaining limits
 
 This is a controlled demo, not an independent or universal certification. Local
 expired-token and role tests plus actual Access protection do not demonstrate
-every real identity-provider/session failure. The new hosted matrix, when run,
+every real identity-provider/session failure. The completed hosted matrix
 uses the real deployed core but a non-network effect stub. It does not replace the
 preserved actual HubSpot recovery proof. No financial outcome or revenue rescued
 is established. Customer identity/retention/onboarding and permitted CRM records

@@ -1,0 +1,35 @@
+{
+  "kind": "OFFLINE_VERIFICATION_OF_OPERATOR_SUPPLIED_HOSTED_REPORT",
+  "verified": true,
+  "runId": "negative-a8ab07ac-cc01-4836-867d-202e167e7db8",
+  "receiptHash": "sha256:3d03d02d0dc16b9e0b04400dea8cb9baa661c8628ce024f9a81c8d2c15cb9070",
+  "originalSha256": "79811942ed13199f4f9593022c9b96864bd68c2f2eb51ebf01a017a027aea39f",
+  "fixtureHash": "sha256:081a9759c87695cdf9e4aa1312b773ea8150f04f5377bd406d5274b87190741c",
+  "approvalContractHash": "sha256:480b14d3f8666053b01ed597a01106752c0980a555dfd8e5730d0db21735a826",
+  "sourceCommit": "bef3d71276b94c7d398225487c2ecbc36f35bd71",
+  "ownerDeploymentVersion": "3586b7d5-0ce4-42f2-baef-5f1a744443e5",
+  "ledgerBootId": "212830a8-99b2-4084-a711-2bc2cdb1e111",
+  "operatorInvocation": {
+    "identityKind": "EXTERNAL_VERIFIED",
+    "role": "Approver",
+    "subjectHash": "sha256:73fec8d9377d480aa231f2a21e16e669a8e12d540f4a307ee694d4498b4b9dcf",
+    "humanSemanticApproval": false
+  },
+  "summary": {
+    "cases": 38,
+    "passed": 38,
+    "failed": 0,
+    "negativeCases": 37,
+    "negativeSimulatedCreateEscapes": 0,
+    "positiveControlSimulatedCreates": 1,
+    "liveTaskCreates": 0,
+    "fixtureOperationalRowsRetained": 0
+  },
+  "verificationScope": "Checked report contents, expected per-case rejection/UNKNOWN traces, zero simulated escapes, contract and deployment bindings. Operator receipt is not an independently downloaded or cryptographically signed attestation.",
+  "humanSemanticApproval": false,
+  "finalExecutionApproval": false,
+  "finalDemoReleaseAcceptance": "PENDING",
+  "newHubspotCalls": 0,
+  "newModelCalls": 0,
+  "newEmailCalls": 0
+}
