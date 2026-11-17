@@ -50,5 +50,14 @@
   "generationChanges": false,
   "sourceSemanticDecisionsPreserved": true,
   "hostedMatrix": "PENDING_AUTHENTICATED_OPERATOR",
-  "finalDemoReleaseAcceptance": "PENDING"
+  "finalDemoReleaseAcceptance": "PENDING",
+  "hostedDeployment": {
+    "status": "PASS_ACTUAL_ACTIVE_CODE_READBACK",
+    "sourceCommit": "bef3d71276b94c7d398225487c2ecbc36f35bd71",
+    "ownerVersion": "3586b7d5-0ce4-42f2-baef-5f1a744443e5",
+    "gatewayVersion": "f7ae2b0f-07f1-467d-b7cd-fe8eab47b0fd",
+    "allNineExecutionFlagsDisabledBothWorkers": true,
+    "namespaceSecretsIdentityTenantAndEmailSettingsPreserved": true,
+    "unauthenticatedAccessRedirects": 6
+  }
 }

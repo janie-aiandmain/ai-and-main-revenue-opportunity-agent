@@ -1,0 +1,53 @@
+{
+  "kind": "ACTUAL_UNAUTHENTICATED_DEMO_ACCESS_BOUNDARY_CHECK",
+  "checkedAt": "2026-11-17T21:57:54.003Z",
+  "verified": true,
+  "rows": [
+    {
+      "path": "/operator",
+      "method": "GET",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/identity",
+      "method": "GET",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/general/findings",
+      "method": "POST",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/general/approval-negative-tests",
+      "method": "POST",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/general/execute",
+      "method": "POST",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/writeback-task",
+      "method": "POST",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    }
+  ],
+  "authenticatedHostedMatrix": "PENDING_OPERATOR",
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailProviderCalls": 0
+}

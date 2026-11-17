@@ -26,7 +26,7 @@ sign-off**, and simulated effects/failures are **not hosted CRM effects/outages*
 | Core rejection matrix | PASS locally: 38/38 | [Node SQLite report](offline-matrix.json): 37 negatives, zero create escapes; valid repeat control one simulated create |
 | Worker isolation/auth/routing/report persistence | PASS locally | [workerd report](local-worker.json): operational-root refusal, Viewer/expired synthetic JWT/spoof/cross-origin blocks, cached report survives restart, zero external network calls |
 | Source regression/builds | PASS | [Validation summary](validation.json): 233 tests, 207 retained workflow executions, review integrity, both dry-run builds |
-| Actual closed hosted deployment | PENDING | Must verify active module hashes, identity/tenant/bindings/secrets/settings and Access; source preparation is not deployment |
+| Actual closed hosted deployment | PASS | [Owner readback](deployment-owner.json), [gateway readback](deployment-gateway.json), [Access check](access-check.json): actual active module hashes match the tested bundle; all nine switches false; identity/tenant/bindings/Secret names/ordinary settings/hostname state preserved |
 | Actual hosted rejection-fixture invocation | PENDING authenticated operator | New console button runs the matrix with no CRM action. Local Worker execution is not this gate |
 | Final demo release acceptance | PENDING human decision | Does not grant general writeback or certify real-customer deployment |
 
@@ -68,7 +68,22 @@ changes. [Contract/source hashes](contracts.json) identify the new diagnostic.
 Fresh model inference is not needed for an unchanged generator; none was run.
 Passing retained captures is replay, not a new model evaluation.
 
-## Next human action, after verified deployment
+## Verified deployment and next human action
+
+Both existing Workers now run source
+`bef3d71276b94c7d398225487c2ecbc36f35bd71`:
+
+- Private owner: `3586b7d5-0ce4-42f2-baef-5f1a744443e5`.
+- Demo gateway: `f7ae2b0f-07f1-467d-b7cd-fe8eab47b0fd`.
+
+Each is active at 100% with downloaded JS module hashes matching the local upload
+bundle. The same `CertificationLedger` class/namespace remains bound; no migration,
+namespace or Worker was added. Owner hostname and all previews stay off. Gateway
+Access redirects unauthenticated console, identity, findings, diagnostic, execute
+and legacy-write requests. Operator email stays enabled only on its prior owner
+configuration; no email was sent for these checks. All nine execution/fault/release
+flags remain false. [Deployment notes](DEPLOYMENT.md) retain the transient verifier
+failure separately from the successful activation/readback.
 
 Open the existing [operator console](https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/operator),
 sign in, and click **Run approval safety checks — no CRM writes** once. Share its
