@@ -18,7 +18,7 @@
   ],
   "preview_urls": false,
   "vars": {
-    "VOICE_INTAKE_ENABLED": "false",
+    "VOICE_INTAKE_ENABLED": "true",
     "VOICE_NOTE_WRITES_ENABLED": "false",
     "VOICE_NOTE_RELEASE_APPROVED": "false",
     "CRM_WRITEBACK_ENABLED": "false",

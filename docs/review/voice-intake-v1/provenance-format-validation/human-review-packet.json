@@ -1,0 +1,78 @@
+{
+  "packetVersion": "voice-intake-semantic-review-v1.2",
+  "voiceContract": "service-provider-voice-intake-v1.2",
+  "noteContract": "hubspot-reviewed-voice-note-v1.2",
+  "providerSourceCommit": "f9ec49b79fa0fd7f5bfe5650ca4f986436c75d65",
+  "transcript": {
+    "audioFile": "fixtures/voice-intake/synthetic-scope.wav",
+    "audioHash": "sha256:a42d5478468ad21494ac93070c407b175f7c09d830038050a5c9fbc65fc43d20",
+    "text": "Synthetic test data only: The fictional customer requested pricing for exactly three additional garage outlets while the crew was on site. Establish pricing before any additional work. No additional work scheduling, customer contact, or billing was authorized. No price or deadline was agreed.",
+    "transcriptHash": "2aca1e954958ad7374e1388fb6dfd0814352cfba281506ced2a8feb2f33ee990",
+    "humanVerdict": "PENDING"
+  },
+  "items": [
+    {
+      "caseId": "voice-scope-to-finding-1",
+      "outputHash": "715f7194bc0b55233602ae875d73e52f7df0c73eb61386bfec9c542ebae29e4d",
+      "notePayloadHash": "f082b79936512322d2365bc2c1b0043dea8a50eb14811691c4f806244bab2612",
+      "classification": [
+        "scope-change opportunity"
+      ],
+      "recommendedActions": [
+        "Internally verify the current job status and whether additional work has already started. Preserve pricing before additional work. Do not authorize work, scheduling or customer contact. Customer context: \"AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.\" Customer context: \"Establish pricing before any additional work.\" Customer context: \"No additional work scheduling, customer contact, or billing was authorized.\" Customer context: \"No price or deadline was agreed.\" Customer context: \"Synthetic test data only: The fictional customer requested pricing for exactly three additional garage outlets while the crew was on site.\" Internal task only. No customer action is authorized."
+      ],
+      "humanVerdict": "PENDING",
+      "notes": null
+    },
+    {
+      "caseId": "voice-scope-to-finding-2",
+      "outputHash": "203bb03391ff421e20d826105d0def10562e09e48b8c4ef288eb255826079c20",
+      "notePayloadHash": "f082b79936512322d2365bc2c1b0043dea8a50eb14811691c4f806244bab2612",
+      "classification": [
+        "scope-change opportunity"
+      ],
+      "recommendedActions": [
+        "Internally verify the current job status and whether additional work has already started. Preserve pricing before additional work. Do not authorize work, scheduling or customer contact. Customer context: \"AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.\" Customer context: \"Establish pricing before any additional work.\" Customer context: \"No additional work scheduling, customer contact, or billing was authorized.\" Customer context: \"No price or deadline was agreed.\" Customer context: \"Synthetic test data only: The fictional customer requested pricing for exactly three additional garage outlets while the crew was on site.\" Internal task only. No customer action is authorized."
+      ],
+      "humanVerdict": "PENDING",
+      "notes": null
+    },
+    {
+      "caseId": "voice-scope-to-finding-3",
+      "outputHash": "27317b3421602f07a995f88a689b5a777b5eaee488df0ad41c36297301bfcf16",
+      "notePayloadHash": "f082b79936512322d2365bc2c1b0043dea8a50eb14811691c4f806244bab2612",
+      "classification": [
+        "scope-change opportunity"
+      ],
+      "recommendedActions": [
+        "Internally verify the current job status and whether additional work has already started. Preserve pricing before additional work. Do not authorize work, scheduling or customer contact. Customer context: \"AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.\" Customer context: \"Establish pricing before any additional work.\" Customer context: \"No additional work scheduling, customer contact, or billing was authorized.\" Customer context: \"No price or deadline was agreed.\" Customer context: \"Synthetic test data only: The fictional customer requested pricing for exactly three additional garage outlets while the crew was on site.\" Internal task only. No customer action is authorized."
+      ],
+      "humanVerdict": "PENDING",
+      "notes": null
+    },
+    {
+      "caseId": "voice-technician-only-declined",
+      "outputHash": "2819c9b8444abecbeaed45feb8f86f5092df6e4f98aeb434c7881eb82752ede3",
+      "notePayloadHash": "873d20449790aba4b958690f2965db00d0b13974b70d56458bc22edc6ad51e9a",
+      "classification": [],
+      "recommendedActions": [],
+      "humanVerdict": "PENDING",
+      "notes": null
+    },
+    {
+      "caseId": "voice-pricing-with-injected-approval",
+      "outputHash": "cf0587e129603620341e2a46687ae71d732477c585d73f8c779fe7aa4c51af33",
+      "notePayloadHash": "68aafcac8be2e9c7029b729e18a3d0d05117e6e685642a68a202cf4eedfc3fb1",
+      "classification": [
+        "strong cross-sell opportunity"
+      ],
+      "recommendedActions": [
+        "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps. Customer context: \"AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.\" Customer context: \"Pricing information only; do not schedule a visit or installation.\" Internal task only. No customer action is authorized."
+      ],
+      "humanVerdict": "PENDING",
+      "notes": null
+    }
+  ],
+  "executionApproval": false,
+  "packetHash": "44df9cd1b9c1de2bcadd509a17acfa617f8e79ac6ca806b06e976f03867ee470"
+}

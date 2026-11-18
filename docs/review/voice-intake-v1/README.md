@@ -1,4 +1,4 @@
-# Provider voice-note intake v1
+# Provider voice-note intake v1.2
 
 The user clarified the intended input workflow and approved proceeding on November
 18: **provider audio → transcription → transcript/time/contact review → exact
@@ -33,13 +33,13 @@ The voice target cannot be supplied or redirected by a request body.
 
 | Contract/control | Value and effect |
 | --- | --- |
-| Intake | `service-provider-voice-intake-v1.1` |
+| Intake | `service-provider-voice-intake-v1.2` |
 | Transcription | `verbatim-audio-transcription-v1`, `gpt-4o-mini-transcribe`, English, JSON response; no model-generated summary |
-| Exact note request | `hubspot-reviewed-voice-note-v1.1`; complete portal, method, URL, body, source time, contact association and correlation |
+| Exact note request | `hubspot-reviewed-voice-note-v1.2`; complete portal, method, URL, body, source time, contact association and correlation |
 | Note action version | `voice-note-action-v1` binds complete request and relevant voice/transcription contracts |
 | Source text | `hubspot-note-text-v2`: strip actual CRM markup, then decode entities once; preserve apostrophes, quoted negations and literal entity text |
 | Existing reasoning | Prompt reasoning-v0.3.3 / findings-v0.2 / model gpt-5.6-terra low / materializer v0.3.12 / evidence v1.3 unchanged |
-| `VOICE_INTAKE_ENABLED` | Defaults false; explicitly required in gateway and owner before intake |
+| `VOICE_INTAKE_ENABLED` | Code defaults off; checked-in true for the validated read/transcribe/review-only preview in both existing Workers |
 | `VOICE_NOTE_WRITES_ENABLED` + `VOICE_NOTE_RELEASE_APPROVED` | Both default false; note execution requires both plus the exact current approval |
 | Existing task/fault/release controls | All nine remain false; voice approval never opens task execution |
 
@@ -101,12 +101,13 @@ part of voice-note ingestion. Do not create or rotate keys by assumption.
 | Voice unit controls | PASS: 24 new tests, including original dates, exact approvals, old-contract rejection, actor/target mismatch, changed material, uncertainty and redaction |
 | Local browser/Worker/external SQLite flow | PASS: actual browser upload/review/approval; two simulated CRM notes; injected local response loss + restart + unique read-only match, no duplicate; two existing-agent findings |
 | Complete local reasoning fixture | PASS after supplying the complete expected synthetic response; no fresh inference is claimed |
-| Full regression/builds | See final validation report; prior checked full suite 254/254 preceded the last two targeted additions |
+| Full regression/builds | PASS: 257 tests, 207 retained workflow executions and both final Worker dry-run builds |
 | Fresh synthetic audio | PASS for four critical automated checks; original transcription and human accuracy review remain visible/PENDING |
 | Original fresh reasoning | 1/3 fully correct. Both positives missed template policy boilerplate; scope label differed. All customer action/execution controls remained blocked. Original captures unchanged |
-| Corrected note-format reasoning | Three-call follow-up planned, reusing the passed ASR capture; see note-format-correction/ |
+| Corrected note format v1.1 | 2/3 passed; scope false negative preserved. This was not release-ready |
+| Final factual-provenance v1.2 | 5/5 fresh passes; scope correctly found/classified 3/3, decline and injection controls pass; raw scope keys/IDs/proposal versions stable across these three runs |
 | Human semantic review | PENDING for new transcript/note/finding outputs |
-| Hosted intake | NOT DEPLOYED at this checkpoint; checked-in activation/write flags false |
+| Hosted intake | Prepared for read/transcribe/review-only deployment; note-write/release controls and all task execution controls stay false. See separate actual deployment evidence when present |
 | Actual HubSpot note-create permission / HTML round-trip / remote note recovery | UNVERIFIED; no live note was created |
 | Voice release acceptance | PENDING; older task-demo acceptance does not transfer |
 
@@ -133,7 +134,7 @@ npm run check
 npm run staging:check
 npm run voice:model:plan
 # Explicit opt-in; immutable lock/journal prevent a blind rerun:
-NODE_USE_ENV_PROXY=1 node scripts/voice/model-note-format-validation.js --live --non-production
+NODE_USE_ENV_PROXY=1 node scripts/voice/model-provenance-validation.js --live --non-production
 ```
 
 The local runtime test requires permitted loopback sockets, workerd and Chromium.
@@ -161,3 +162,31 @@ Classification expectations remain unchanged; any residual mismatch stays visibl
 for review. No downstream prompt or task-generation policy was altered to force
 a pass. The original contracts.json is the v1 snapshot; current contract/source
 hashes are under note-format-correction/contracts.json.
+
+The v1.1 check then returned a scope false negative. Its captures remain intact.
+The final v1.2 envelope uses factual fields (source type, operator review, entered
+provider label and original time) instead of narrative negative provenance
+qualifiers. The dictated ASR text is byte-identical throughout. This final
+targeted validation passes 5/5; the same scope note was independently evaluated
+three times with identical classification, raw key/ID and proposal version. The
+decline and injection controls also pass. This small study is evidence for these
+synthetic inputs, not proof of broad ASR reliability or a new full-corpus stability
+claim. The earlier wrong-label, missing-evidence and false-negative results are
+still failures in their preserved original runs; they were not relabeled green.
+
+Current [analysis](provenance-format-validation/analysis.json),
+[exact pending human review](provenance-format-validation/REVIEW.md),
+[hash-bound review packet](provenance-format-validation/human-review-packet.json),
+and [final local browser/Worker result](provenance-format-validation/local-workflow.json)
+separate ASR, model decisions, local simulated notes and pending hosted writes.
+All twelve provider reservations are retained: one ASR and eleven reasoning
+requests, with no repeated audio call. All earlier journals remain unchanged.
+Final contract/source hashes are in provenance-format-validation/analysis.json;
+contracts.json and note-format-correction/contracts.json are historical snapshots.
+
+The actual read-only [credential/binding inspection](existing-hosted-inspection.json)
+confirms the original staging-owner Secret names are present. It does not expose
+values or verify note-create scope. No replacement key is requested. The next
+account check is the authenticated voice preflight on the existing demo; it must
+retain note permission as UNVERIFIED until a later bounded, explicitly approved
+note test. No current acceptance or transcript review grants that mutation.

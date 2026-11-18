@@ -798,3 +798,16 @@ controls (five new reasoning calls, no new ASR). The prior seven reservations
 remain immutable. If the failure persists, stop format iterations and report the
 remaining model-quality blocker rather than claim release readiness or change
 the task reasoning prompt opportunistically. New voice writes remain disabled.
+
+The v1.2 factual-provenance validation passed 5/5: scope found/classified correctly
+3/3 independent runs, decline control zero opportunities, injection control
+pricing-only internal preparation. No quality/authority/execution escape was
+observed in this small targeted set. Twelve provider calls are recorded for the
+whole voice cycle (one ASR, eleven reasoning); all earlier failures remain frozen.
+These are automated results, not human semantic approval or broad ASR reliability.
+The next authorized stage is existing-demo read/transcribe/review-only preview:
+VOICE_INTAKE_ENABLED true, VOICE_NOTE_WRITES_ENABLED false and
+VOICE_NOTE_RELEASE_APPROVED false in both checked-in configurations. All nine
+existing execution/fault/release flags remain false. Preserve original accepted
+task-demo evidence/versions and current secret/tenant/identity/email/binding/host
+settings. Do not activate note writes or a final grant by deploying this preview.

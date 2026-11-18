@@ -1,0 +1,99 @@
+{
+  "kind": "TARGETED_VOICE_VALIDATION_WITH_PRESERVED_FAILURES",
+  "voiceContract": "service-provider-voice-intake-v1.2",
+  "noteContract": "hubspot-reviewed-voice-note-v1.2",
+  "transcriptionContract": "verbatim-audio-transcription-v1",
+  "noteSourcePolicy": "hubspot-note-text-v2",
+  "sourceHashes": {
+    "src/voice/contract.js": "839d80b1a5a24ae6467ab26884f44db62d8b13d9ef34f840c99ac79d2ee35795",
+    "src/voice/ledger.js": "b3faf0a9df3fc8a71d478cb8da48aa1eb57e4fc90c636372ffdf1d56a1a86750",
+    "src/voice/http.js": "80fb2c2cc4941ec84a7239e58a9740ad178b269ed51e3c2ad43ae5f9bb9aa8fa",
+    "src/voice/clients.js": "b0355b463e7d8f7876198c5e823bcb6db190b179086c64260406091dd32941a5",
+    "src/voice/console.js": "d5112126697757c035b4fb1fe056b19778d72ff44b3be9ce2ca82e744f5be55f",
+    "src/staging/note-source.js": "5f1cbed776ef4fb9dcbf3fac8b7af36e98a1683ec553c219bd86d105cc97eae6",
+    "src/release/gateway.js": "cfc999c8b5c419b183eb905676854bfc909f23ce48bbf2fe2b21e4e1977bdf6e",
+    "src/staging/worker.js": "cf64d8498d08692c23fbdfed10882afab805578a862332d4075dce542d245e63"
+  },
+  "initial": {
+    "transcriptionChecksPassed": true,
+    "reasoning": {
+      "providerCallsReserved": 4,
+      "transcriptionCalls": 1,
+      "completedReasoningCases": 3,
+      "reasoningCasesPassed": 1,
+      "reasoningCasesFailed": 2,
+      "transcriptionAutomatedPass": true,
+      "humanSemanticReview": "PENDING",
+      "crmCalls": 0,
+      "emailCalls": 0
+    }
+  },
+  "noteFormatV11": {
+    "reservedCalls": 3,
+    "completed": 3,
+    "passed": 2,
+    "failed": 1,
+    "safetyPasses": 3,
+    "qualityPasses": 3,
+    "repeatAudioCalls": 0,
+    "crmCalls": 0,
+    "emailCalls": 0,
+    "humanReview": "PENDING"
+  },
+  "finalV12": {
+    "reservedCalls": 5,
+    "completed": 5,
+    "passed": 5,
+    "failed": 0,
+    "safetyPasses": 5,
+    "qualityPasses": 5,
+    "repeatAudioCalls": 0,
+    "crmCalls": 0,
+    "emailCalls": 0,
+    "humanReview": "PENDING"
+  },
+  "providerCallsThisCycle": 12,
+  "transcriptionCallsThisCycle": 1,
+  "reasoningCallsThisCycle": 11,
+  "originalASRRepeated": false,
+  "currentFalsePositiveExecutions": 0,
+  "currentNegativeExecutions": 1,
+  "currentFalseNegativeExecutions": 0,
+  "currentPositiveExecutions": 4,
+  "repeatedScope": {
+    "runs": 3,
+    "correctDecisions": 3,
+    "rawOpportunityKeys": [
+      "three-additional-garage-outlets",
+      "three-additional-garage-outlets",
+      "three-additional-garage-outlets"
+    ],
+    "rawFindingIds": [
+      "finding_c798df0014b65e10d02006bc0a71847370d30ffdd897314c41895c54dc6de277",
+      "finding_c798df0014b65e10d02006bc0a71847370d30ffdd897314c41895c54dc6de277",
+      "finding_c798df0014b65e10d02006bc0a71847370d30ffdd897314c41895c54dc6de277"
+    ],
+    "proposalVersions": [
+      "sha256:71bdc6c68d41bec02da27d2a32db02abbf72823962241500d02894b5ce4a6779",
+      "sha256:71bdc6c68d41bec02da27d2a32db02abbf72823962241500d02894b5ce4a6779",
+      "sha256:71bdc6c68d41bec02da27d2a32db02abbf72823962241500d02894b5ce4a6779"
+    ],
+    "scopeNotePayloadHashes": [
+      "f082b79936512322d2365bc2c1b0043dea8a50eb14811691c4f806244bab2612",
+      "f082b79936512322d2365bc2c1b0043dea8a50eb14811691c4f806244bab2612",
+      "f082b79936512322d2365bc2c1b0043dea8a50eb14811691c4f806244bab2612"
+    ]
+  },
+  "limitations": [
+    "Targeted synthetic samples only; not a broad transcription benchmark or five-run full-corpus study.",
+    "Scope case is repeated three times; four positive executions represent only two unique positive needs.",
+    "Raw model keys/IDs/proposal differences are disclosed, not normalized; intake ID uses contact/audio bytes separately.",
+    "Original v1 wrong-label/incomplete-evidence and v1.1 false-negative captures are retained.",
+    "Human transcript/semantic review and exact note execution approval are PENDING.",
+    "No real HubSpot note, actual note-create scope proof, hosted note round-trip or remote note recovery demonstrated."
+  ],
+  "crmCalls": 0,
+  "emailCalls": 0,
+  "humanSemanticVerdict": "PENDING",
+  "noteExecutionApproval": false
+}

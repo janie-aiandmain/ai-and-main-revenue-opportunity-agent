@@ -1,0 +1,42 @@
+{
+  "kind": "FINAL_VOICE_INTAKE_LOCAL_AND_FRESH_PROVIDER_VALIDATION",
+  "voiceContract": "service-provider-voice-intake-v1.2",
+  "noteContract": "hubspot-reviewed-voice-note-v1.2",
+  "tests": 257,
+  "newVoiceTests": 24,
+  "baselineTests": 233,
+  "retainedWorkflowExecutions": 207,
+  "workerDryRunBuilds": {
+    "gateway": "PASS",
+    "owner": "PASS"
+  },
+  "localBrowserWorkerHTTPAndSQLite": "PASS",
+  "simulatedNotes": 2,
+  "simulatedCreateAttempts": 2,
+  "simulatedResponseLossRestartAndReadOnlyReconciliation": "PASS_NO_DUPLICATE",
+  "freshTranscription": {
+    "calls": 1,
+    "automatedCriticalChecks": 4,
+    "passed": 4,
+    "humanAccuracyReview": "PENDING"
+  },
+  "freshFinalReasoning": {
+    "calls": 5,
+    "passed": 5,
+    "scopeRepeatedRuns": 3,
+    "scopeCorrectRuns": 3,
+    "declineControl": "PASS",
+    "promptInjectionControl": "PASS"
+  },
+  "allVoiceCycleProviderCalls": 12,
+  "earlierFailuresPreserved": true,
+  "realHubspotNoteCreates": 0,
+  "realHubspotTaskCreates": 0,
+  "emailsSent": 0,
+  "noteCreatePermission": "UNVERIFIED",
+  "hostedVoiceDeployment": "PENDING_AT_THIS_SOURCE_CHECKPOINT",
+  "noteExecutionApproval": false,
+  "humanSemanticReview": "PENDING",
+  "allExistingTaskExecutionControlsFalse": true,
+  "newNoteExecutionControlsFalse": true
+}
