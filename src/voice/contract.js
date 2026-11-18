@@ -2,10 +2,10 @@ import {createHash} from 'node:crypto';
 import {canonical} from '../findings.js';
 import {tenantConfiguration} from '../release/tenant.js';
 
-export const VOICE_CONTRACT='service-provider-voice-intake-v1.1';
+export const VOICE_CONTRACT='service-provider-voice-intake-v1.2';
 export const TRANSCRIPTION_CONTRACT='verbatim-audio-transcription-v1';
 export const TRANSCRIPTION_MODEL='gpt-4o-mini-transcribe';
-export const NOTE_CONTRACT='hubspot-reviewed-voice-note-v1.1';
+export const NOTE_CONTRACT='hubspot-reviewed-voice-note-v1.2';
 export const MAX_AUDIO_BYTES=5*1024*1024;
 export const MAX_TRANSCRIPT_CHARS=12000;
 export const executionFlags=['CRM_WRITEBACK_ENABLED','ENABLE_TEST_TASK_WRITES','ENABLE_GENERAL_EXECUTION','GENERAL_RELEASE_APPROVED','DEMO_RECOVERY_ENABLED','DEMO_RECOVERY_EXECUTION_ENABLED','DEMO_RECOVERY_FAULT_ENABLED','DEMO_ONLY_EXECUTION_ENABLED','DEMO_RESPONSE_LOSS_TEST_ENABLED'];
@@ -51,7 +51,7 @@ export async function audioBytes(file){
 const escape=text=>text.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 export function noteRequest(draft,env){
  const text=transcriptText(draft.reviewedText),m=metadata(draft);
- const lines=['AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.','Service-provider report, not a direct customer recording. Transcript reviewed by an operator; speaker label is operator-supplied and not independently verified.','Reporting provider: '+m.sourceLabel,'Original recording time (UTC): '+m.recordedAt,text,'[AI_MAIN_VOICE_CORRELATION:'+draft.correlation+']'];
+ const lines=['AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.','Source type: Service-provider dictation.','Transcript review: Checked by the operator.','Provider label (operator-entered): '+m.sourceLabel,'Original recording time (UTC): '+m.recordedAt,'Reviewed transcript:',text,'[AI_MAIN_VOICE_CORRELATION:'+draft.correlation+']'];
  return {contractVersion:NOTE_CONTRACT,method:'POST',url:'https://api.hubapi.com/crm/v3/objects/notes',portalId:env.STAGING_PORTAL_ID,body:{properties:{hs_note_body:lines.map(s=>'<p>'+escape(s).replaceAll('\n','<br>')+'</p>').join(''),hs_timestamp:m.recordedAt},associations:[{to:{id:env.STAGING_CONTACT_ID},types:[{associationCategory:'HUBSPOT_DEFINED',associationTypeId:202}]}]}};
 }
 export const actionVersion=request=>'voice-note-action-v1:'+hash({voiceContract:VOICE_CONTRACT,transcriptionContract:TRANSCRIPTION_CONTRACT,request});

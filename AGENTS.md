@@ -787,3 +787,14 @@ checks against corrected note envelopes, reusing the successful ASR capture.
 Record these in a new finite follow-up journal; do not repeat transcription or
 reset the original four-call records. Total planned calls for this correction
 cycle are seven, not a new cumulative project spending ceiling.
+
+The v1.1 fresh run cleared evidence-completeness defects, but the same scope case
+returned zero findings (a false negative). Both controls passed. Preserve this
+failure separately; do not call an empty finding list a correct positive output.
+The final focused source hypothesis is v1.2's factual provenance fields instead
+of narrative negative provenance qualifiers; the dictated text stays unchanged.
+Measure that note with three independent scope runs plus decline/injection
+controls (five new reasoning calls, no new ASR). The prior seven reservations
+remain immutable. If the failure persists, stop format iterations and report the
+remaining model-quality blocker rather than claim release readiness or change
+the task reasoning prompt opportunistically. New voice writes remain disabled.

@@ -1,0 +1,849 @@
+{
+  "kind": "EXECUTED_LOCAL_CHROMIUM_WORKER_AND_SEPARATE_SQLITE_FIXTURES_NOT_HOSTED",
+  "realHubspotCalls": 0,
+  "realModelCalls": 0,
+  "realEmails": 0,
+  "humanApprovals": 0,
+  "checks": [
+    "gateway_missing_identity_and_Viewer_rejected",
+    "actual_browser_audio_upload_transcription_review_without_CRM_create",
+    "browser_exact_preview_and_approval_then_one_local_note_despite_repeat_submission",
+    "injected_local_HTTP_response_loss_restart_hidden_lookup_then_exact_read_only_match_no_duplicate",
+    "created_local_notes_read_by_existing_agent_as_two_independent_internal_findings_with_complete_fixture_evidence"
+  ],
+  "preflight": {
+    "kind": "VOICE_INTAKE_READ_ONLY_PREFLIGHT",
+    "portalId": "voice-fixture-portal",
+    "contactId": "voice-fixture-contact",
+    "readCredentialPortalVerified": true,
+    "writeCredentialPortalVerified": true,
+    "syntheticContactMarkerVerified": true,
+    "noteContactAssociationType": 202,
+    "noteCreationPermission": "UNVERIFIED_NO_MUTATION_PROBE",
+    "noteWritesEnabled": true,
+    "permissionsExpanded": false,
+    "ownerSourceCommit": null,
+    "ownerDeploymentVersion": null,
+    "ledgerBootId": "3fcbaa90-687c-4fc7-be22-361ef9218e90"
+  },
+  "normal": {
+    "voiceContract": "service-provider-voice-intake-v1.1",
+    "transcriptionContract": "verbatim-audio-transcription-v1",
+    "noteContract": "hubspot-reviewed-voice-note-v1.1",
+    "intakeId": "voice_dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+    "state": "NOTE_CONFIRMED",
+    "revision": 2,
+    "audioHash": "sha256:a42d5478468ad21494ac93070c407b175f7c09d830038050a5c9fbc65fc43d20",
+    "originalTranscriptHash": "sha256:76c34c736cdfaccbc5ee232b8465fa6edf40c38b86128b2a46a30a00347d79c4",
+    "sourceLabel": "Synthetic service provider",
+    "recordedAt": "2025-02-13T12:30:20.000Z",
+    "originalText": "Synthetic test data only. The fictional customer requested pricing for exactly three additional garage outlets while the crew was onsite. Establish pricing before any additional work. No additional work scheduling customer contact or billing was authorized. No price or deadline was agreed.",
+    "reviewedText": "Synthetic test data only. The fictional customer requested pricing for exactly three additional garage outlets while the crew was onsite. Establish pricing before any additional work. No additional work scheduling customer contact or billing was authorized. No price or deadline was agreed.",
+    "payloadHash": "sha256:73066d9250b5898969c54d7a2c0b06a2fe3d909b1d8bc6447640fff4c7e2d5e8",
+    "actionVersion": "voice-note-action-v1:sha256:269b4f57d55c6d451de879320fe9a40f2ba3694f11444fa2b0ffcf2f087a8664",
+    "correlation": "ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+    "finalRequest": {
+      "contractVersion": "hubspot-reviewed-voice-note-v1.1",
+      "method": "POST",
+      "url": "https://api.hubapi.com/crm/v3/objects/notes",
+      "portalId": "voice-fixture-portal",
+      "body": {
+        "properties": {
+          "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.</p><p>Service-provider report, not a direct customer recording. Transcript reviewed by an operator; speaker label is operator-supplied and not independently verified.</p><p>Reporting provider: Synthetic service provider</p><p>Original recording time (UTC): 2025-02-13T12:30:20.000Z</p><p>Synthetic test data only. The fictional customer requested pricing for exactly three additional garage outlets while the crew was onsite. Establish pricing before any additional work. No additional work scheduling customer contact or billing was authorized. No price or deadline was agreed.</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf]</p>",
+          "hs_timestamp": "2025-02-13T12:30:20.000Z"
+        },
+        "associations": [
+          {
+            "to": {
+              "id": "voice-fixture-contact"
+            },
+            "types": [
+              {
+                "associationCategory": "HUBSPOT_DEFINED",
+                "associationTypeId": 202
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "approval": {
+      "approvalId": "voice-approval_a5f7280d-aec1-49d5-a0ff-28d8f79f7eb7",
+      "actorHash": "sha256:0a8a4f2b91fbfa32e59942d79f4b737a2de5e74292bbcc8198d3f34f9d17983b",
+      "payloadHash": "sha256:73066d9250b5898969c54d7a2c0b06a2fe3d909b1d8bc6447640fff4c7e2d5e8",
+      "actionVersion": "voice-note-action-v1:sha256:269b4f57d55c6d451de879320fe9a40f2ba3694f11444fa2b0ffcf2f087a8664",
+      "revision": 2,
+      "issuedAt": 1795012250902,
+      "expiresAt": 1795098650688
+    },
+    "remoteNoteId": "local-voice-note-1",
+    "createAttempts": 1,
+    "providerCalls": 1,
+    "expiresAt": "2026-11-19T14:30:50.688Z",
+    "lastError": null,
+    "draftRedacted": false,
+    "noteWritesEnabled": true,
+    "taskExecutionApproved": false,
+    "trace": [
+      {
+        "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+        "payload_hash": null,
+        "at": "2026-11-18T14:30:50.689Z"
+      },
+      {
+        "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+        "payload_hash": null,
+        "at": "2026-11-18T14:30:50.713Z"
+      },
+      {
+        "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+        "payload_hash": "sha256:73066d9250b5898969c54d7a2c0b06a2fe3d909b1d8bc6447640fff4c7e2d5e8",
+        "at": "2026-11-18T14:30:50.764Z"
+      },
+      {
+        "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+        "payload_hash": "sha256:73066d9250b5898969c54d7a2c0b06a2fe3d909b1d8bc6447640fff4c7e2d5e8",
+        "at": "2026-11-18T14:30:50.903Z"
+      },
+      {
+        "event": "VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL",
+        "payload_hash": "sha256:73066d9250b5898969c54d7a2c0b06a2fe3d909b1d8bc6447640fff4c7e2d5e8",
+        "at": "2026-11-18T14:30:50.934Z"
+      },
+      {
+        "event": "VOICE_POST_INTENT_PERSISTED_BEFORE_CREATE",
+        "payload_hash": "sha256:73066d9250b5898969c54d7a2c0b06a2fe3d909b1d8bc6447640fff4c7e2d5e8",
+        "at": "2026-11-18T14:30:50.949Z"
+      },
+      {
+        "event": "VOICE_CREATE_RESPONSE_REQUIRES_READBACK",
+        "payload_hash": "sha256:73066d9250b5898969c54d7a2c0b06a2fe3d909b1d8bc6447640fff4c7e2d5e8",
+        "at": "2026-11-18T14:30:50.952Z"
+      },
+      {
+        "event": "VOICE_READ_ONLY_RECONCILIATION",
+        "payload_hash": "sha256:73066d9250b5898969c54d7a2c0b06a2fe3d909b1d8bc6447640fff4c7e2d5e8",
+        "at": "2026-11-18T14:30:50.953Z"
+      },
+      {
+        "event": "VOICE_EXISTING_NOTE_MATCHED_NO_NEW_CREATE",
+        "payload_hash": "sha256:73066d9250b5898969c54d7a2c0b06a2fe3d909b1d8bc6447640fff4c7e2d5e8",
+        "at": "2026-11-18T14:30:50.963Z"
+      }
+    ],
+    "ownerSourceCommit": null,
+    "ownerDeploymentVersion": null,
+    "ledgerBootId": "3fcbaa90-687c-4fc7-be22-361ef9218e90"
+  },
+  "recovery": {
+    "unknown": {
+      "voiceContract": "service-provider-voice-intake-v1.1",
+      "transcriptionContract": "verbatim-audio-transcription-v1",
+      "noteContract": "hubspot-reviewed-voice-note-v1.1",
+      "intakeId": "voice_df1b94d2a479d4da18b86941ca36f20fcf49592a0eac66e96c91de6b9d1faca4",
+      "state": "NOTE_UNKNOWN",
+      "revision": 2,
+      "audioHash": "sha256:8b4c28afffa77e1a25b51d3ebff1f997e4a30934e3fc33772633fdd77f8a48df",
+      "originalTranscriptHash": "sha256:2cc18b83966920a9e58937cc3ab4de19911bee1969d0e7d0a9cda51107432c48",
+      "sourceLabel": "Synthetic technician",
+      "recordedAt": "2025-02-14T13:00:00.000Z",
+      "originalText": "Synthetic test data only. The fictional customer requested pricing for one Level 2 EV charger. Pricing information only. No appointment, installation or customer contact was authorized.",
+      "reviewedText": "Synthetic test data only. The fictional customer requested pricing for one Level 2 EV charger. Pricing information only. No appointment, installation or customer contact was authorized.",
+      "payloadHash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+      "actionVersion": "voice-note-action-v1:sha256:b0f65aaf8d220840c66aa222f4b6f56b52049f04a9138aa3fe7cfc2bc8490754",
+      "correlation": "ai-main-voice-df1b94d2a479d4da18b86941ca36f20fcf49592a0eac66e96c91de6b9d1faca4",
+      "finalRequest": {
+        "contractVersion": "hubspot-reviewed-voice-note-v1.1",
+        "method": "POST",
+        "url": "https://api.hubapi.com/crm/v3/objects/notes",
+        "portalId": "voice-fixture-portal",
+        "body": {
+          "properties": {
+            "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.</p><p>Service-provider report, not a direct customer recording. Transcript reviewed by an operator; speaker label is operator-supplied and not independently verified.</p><p>Reporting provider: Synthetic technician</p><p>Original recording time (UTC): 2025-02-14T13:00:00.000Z</p><p>Synthetic test data only. The fictional customer requested pricing for one Level 2 EV charger. Pricing information only. No appointment, installation or customer contact was authorized.</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-df1b94d2a479d4da18b86941ca36f20fcf49592a0eac66e96c91de6b9d1faca4]</p>",
+            "hs_timestamp": "2025-02-14T13:00:00.000Z"
+          },
+          "associations": [
+            {
+              "to": {
+                "id": "voice-fixture-contact"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 202
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "approval": {
+        "approvalId": "voice-approval_8b7001cd-5296-42e3-878d-dd1f5fe42394",
+        "actorHash": "sha256:0a8a4f2b91fbfa32e59942d79f4b737a2de5e74292bbcc8198d3f34f9d17983b",
+        "payloadHash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+        "actionVersion": "voice-note-action-v1:sha256:b0f65aaf8d220840c66aa222f4b6f56b52049f04a9138aa3fe7cfc2bc8490754",
+        "revision": 2,
+        "issuedAt": 1795012251397,
+        "expiresAt": 1795098651329
+      },
+      "remoteNoteId": null,
+      "createAttempts": 1,
+      "providerCalls": 1,
+      "expiresAt": "2026-11-19T14:30:51.329Z",
+      "lastError": "voice_remote_outcome_uncertain_reconcile_no_create",
+      "draftRedacted": false,
+      "noteWritesEnabled": true,
+      "taskExecutionApproved": false,
+      "trace": [
+        {
+          "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+          "payload_hash": null,
+          "at": "2026-11-18T14:30:51.330Z"
+        },
+        {
+          "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+          "payload_hash": null,
+          "at": "2026-11-18T14:30:51.337Z"
+        },
+        {
+          "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.355Z"
+        },
+        {
+          "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.397Z"
+        },
+        {
+          "event": "VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.418Z"
+        },
+        {
+          "event": "VOICE_POST_INTENT_PERSISTED_BEFORE_CREATE",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.426Z"
+        },
+        {
+          "event": "VOICE_UNCERTAIN_OUTCOME_NO_SECOND_CREATE",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.429Z"
+        }
+      ],
+      "ownerSourceCommit": null,
+      "ownerDeploymentVersion": null,
+      "ledgerBootId": "3fcbaa90-687c-4fc7-be22-361ef9218e90"
+    },
+    "absent": {
+      "voiceContract": "service-provider-voice-intake-v1.1",
+      "transcriptionContract": "verbatim-audio-transcription-v1",
+      "noteContract": "hubspot-reviewed-voice-note-v1.1",
+      "intakeId": "voice_df1b94d2a479d4da18b86941ca36f20fcf49592a0eac66e96c91de6b9d1faca4",
+      "state": "NOTE_UNKNOWN",
+      "revision": 2,
+      "audioHash": "sha256:8b4c28afffa77e1a25b51d3ebff1f997e4a30934e3fc33772633fdd77f8a48df",
+      "originalTranscriptHash": "sha256:2cc18b83966920a9e58937cc3ab4de19911bee1969d0e7d0a9cda51107432c48",
+      "sourceLabel": "Synthetic technician",
+      "recordedAt": "2025-02-14T13:00:00.000Z",
+      "originalText": "Synthetic test data only. The fictional customer requested pricing for one Level 2 EV charger. Pricing information only. No appointment, installation or customer contact was authorized.",
+      "reviewedText": "Synthetic test data only. The fictional customer requested pricing for one Level 2 EV charger. Pricing information only. No appointment, installation or customer contact was authorized.",
+      "payloadHash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+      "actionVersion": "voice-note-action-v1:sha256:b0f65aaf8d220840c66aa222f4b6f56b52049f04a9138aa3fe7cfc2bc8490754",
+      "correlation": "ai-main-voice-df1b94d2a479d4da18b86941ca36f20fcf49592a0eac66e96c91de6b9d1faca4",
+      "finalRequest": {
+        "contractVersion": "hubspot-reviewed-voice-note-v1.1",
+        "method": "POST",
+        "url": "https://api.hubapi.com/crm/v3/objects/notes",
+        "portalId": "voice-fixture-portal",
+        "body": {
+          "properties": {
+            "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.</p><p>Service-provider report, not a direct customer recording. Transcript reviewed by an operator; speaker label is operator-supplied and not independently verified.</p><p>Reporting provider: Synthetic technician</p><p>Original recording time (UTC): 2025-02-14T13:00:00.000Z</p><p>Synthetic test data only. The fictional customer requested pricing for one Level 2 EV charger. Pricing information only. No appointment, installation or customer contact was authorized.</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-df1b94d2a479d4da18b86941ca36f20fcf49592a0eac66e96c91de6b9d1faca4]</p>",
+            "hs_timestamp": "2025-02-14T13:00:00.000Z"
+          },
+          "associations": [
+            {
+              "to": {
+                "id": "voice-fixture-contact"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 202
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "approval": {
+        "approvalId": "voice-approval_8b7001cd-5296-42e3-878d-dd1f5fe42394",
+        "actorHash": "sha256:0a8a4f2b91fbfa32e59942d79f4b737a2de5e74292bbcc8198d3f34f9d17983b",
+        "payloadHash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+        "actionVersion": "voice-note-action-v1:sha256:b0f65aaf8d220840c66aa222f4b6f56b52049f04a9138aa3fe7cfc2bc8490754",
+        "revision": 2,
+        "issuedAt": 1795012251397,
+        "expiresAt": 1795098651329
+      },
+      "remoteNoteId": null,
+      "createAttempts": 1,
+      "providerCalls": 1,
+      "expiresAt": "2026-11-19T14:30:51.329Z",
+      "lastError": "voice_no_exact_match_manual_resolution_required",
+      "draftRedacted": false,
+      "noteWritesEnabled": false,
+      "taskExecutionApproved": false,
+      "trace": [
+        {
+          "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+          "payload_hash": null,
+          "at": "2026-11-18T14:30:51.330Z"
+        },
+        {
+          "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+          "payload_hash": null,
+          "at": "2026-11-18T14:30:51.337Z"
+        },
+        {
+          "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.355Z"
+        },
+        {
+          "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.397Z"
+        },
+        {
+          "event": "VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.418Z"
+        },
+        {
+          "event": "VOICE_POST_INTENT_PERSISTED_BEFORE_CREATE",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.426Z"
+        },
+        {
+          "event": "VOICE_UNCERTAIN_OUTCOME_NO_SECOND_CREATE",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.429Z"
+        },
+        {
+          "event": "VOICE_READ_ONLY_RECONCILIATION",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:54.673Z"
+        },
+        {
+          "event": "VOICE_NO_EXACT_MATCH_BLOCKED",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:54.683Z"
+        }
+      ],
+      "ownerSourceCommit": null,
+      "ownerDeploymentVersion": null,
+      "ledgerBootId": "bd59273c-59d9-4737-8ef1-6b184478fb6d"
+    },
+    "recovered": {
+      "voiceContract": "service-provider-voice-intake-v1.1",
+      "transcriptionContract": "verbatim-audio-transcription-v1",
+      "noteContract": "hubspot-reviewed-voice-note-v1.1",
+      "intakeId": "voice_df1b94d2a479d4da18b86941ca36f20fcf49592a0eac66e96c91de6b9d1faca4",
+      "state": "NOTE_CONFIRMED",
+      "revision": 2,
+      "audioHash": "sha256:8b4c28afffa77e1a25b51d3ebff1f997e4a30934e3fc33772633fdd77f8a48df",
+      "originalTranscriptHash": "sha256:2cc18b83966920a9e58937cc3ab4de19911bee1969d0e7d0a9cda51107432c48",
+      "sourceLabel": "Synthetic technician",
+      "recordedAt": "2025-02-14T13:00:00.000Z",
+      "originalText": "Synthetic test data only. The fictional customer requested pricing for one Level 2 EV charger. Pricing information only. No appointment, installation or customer contact was authorized.",
+      "reviewedText": "Synthetic test data only. The fictional customer requested pricing for one Level 2 EV charger. Pricing information only. No appointment, installation or customer contact was authorized.",
+      "payloadHash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+      "actionVersion": "voice-note-action-v1:sha256:b0f65aaf8d220840c66aa222f4b6f56b52049f04a9138aa3fe7cfc2bc8490754",
+      "correlation": "ai-main-voice-df1b94d2a479d4da18b86941ca36f20fcf49592a0eac66e96c91de6b9d1faca4",
+      "finalRequest": {
+        "contractVersion": "hubspot-reviewed-voice-note-v1.1",
+        "method": "POST",
+        "url": "https://api.hubapi.com/crm/v3/objects/notes",
+        "portalId": "voice-fixture-portal",
+        "body": {
+          "properties": {
+            "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.</p><p>Service-provider report, not a direct customer recording. Transcript reviewed by an operator; speaker label is operator-supplied and not independently verified.</p><p>Reporting provider: Synthetic technician</p><p>Original recording time (UTC): 2025-02-14T13:00:00.000Z</p><p>Synthetic test data only. The fictional customer requested pricing for one Level 2 EV charger. Pricing information only. No appointment, installation or customer contact was authorized.</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-df1b94d2a479d4da18b86941ca36f20fcf49592a0eac66e96c91de6b9d1faca4]</p>",
+            "hs_timestamp": "2025-02-14T13:00:00.000Z"
+          },
+          "associations": [
+            {
+              "to": {
+                "id": "voice-fixture-contact"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 202
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "approval": {
+        "approvalId": "voice-approval_8b7001cd-5296-42e3-878d-dd1f5fe42394",
+        "actorHash": "sha256:0a8a4f2b91fbfa32e59942d79f4b737a2de5e74292bbcc8198d3f34f9d17983b",
+        "payloadHash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+        "actionVersion": "voice-note-action-v1:sha256:b0f65aaf8d220840c66aa222f4b6f56b52049f04a9138aa3fe7cfc2bc8490754",
+        "revision": 2,
+        "issuedAt": 1795012251397,
+        "expiresAt": 1795098651329
+      },
+      "remoteNoteId": "local-voice-note-2",
+      "createAttempts": 1,
+      "providerCalls": 1,
+      "expiresAt": "2026-11-19T14:30:51.329Z",
+      "lastError": null,
+      "draftRedacted": false,
+      "noteWritesEnabled": false,
+      "taskExecutionApproved": false,
+      "trace": [
+        {
+          "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+          "payload_hash": null,
+          "at": "2026-11-18T14:30:51.330Z"
+        },
+        {
+          "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+          "payload_hash": null,
+          "at": "2026-11-18T14:30:51.337Z"
+        },
+        {
+          "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.355Z"
+        },
+        {
+          "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.397Z"
+        },
+        {
+          "event": "VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.418Z"
+        },
+        {
+          "event": "VOICE_POST_INTENT_PERSISTED_BEFORE_CREATE",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.426Z"
+        },
+        {
+          "event": "VOICE_UNCERTAIN_OUTCOME_NO_SECOND_CREATE",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:51.429Z"
+        },
+        {
+          "event": "VOICE_READ_ONLY_RECONCILIATION",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:54.673Z"
+        },
+        {
+          "event": "VOICE_NO_EXACT_MATCH_BLOCKED",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:54.683Z"
+        },
+        {
+          "event": "VOICE_READ_ONLY_RECONCILIATION",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:54.694Z"
+        },
+        {
+          "event": "VOICE_EXISTING_NOTE_MATCHED_NO_NEW_CREATE",
+          "payload_hash": "sha256:e70bb18586fe82458ded87fc9797a5141131493837b9bc4bd7cdb3b50801d216",
+          "at": "2026-11-18T14:30:54.701Z"
+        }
+      ],
+      "ownerSourceCommit": null,
+      "ownerDeploymentVersion": null,
+      "ledgerBootId": "bd59273c-59d9-4737-8ef1-6b184478fb6d"
+    }
+  },
+  "findings": [
+    {
+      "findingId": "op_5054fb42-dae3-4a54-aa9b-ece366a56201",
+      "modelFinding": {
+        "findingId": "finding_677361c1299410adea4960be06d22c787937552038e84a37b1f5c81de9e06124",
+        "opportunityKey": "garage-three-outlets",
+        "classification": "scope-change opportunity",
+        "opportunityType": "scope change",
+        "confidence": "high",
+        "evidence": [
+          {
+            "noteId": "local-voice-note-1",
+            "quote": "AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY."
+          },
+          {
+            "noteId": "local-voice-note-1",
+            "quote": "Establish pricing before any additional work."
+          },
+          {
+            "noteId": "local-voice-note-1",
+            "quote": "No additional work scheduling customer contact or billing was authorized."
+          },
+          {
+            "noteId": "local-voice-note-1",
+            "quote": "No price or deadline was agreed."
+          },
+          {
+            "noteId": "local-voice-note-1",
+            "quote": "Synthetic test data only."
+          },
+          {
+            "noteId": "local-voice-note-1",
+            "quote": "The fictional customer requested pricing for exactly three additional garage outlets while the crew was onsite."
+          }
+        ],
+        "reasoningSummary": "Local fixture response with all expected source restrictions; not fresh model inference.",
+        "recommendedNextAction": "Internally verify the current job status and whether additional work has already started. Preserve pricing before additional work. Do not authorize work, scheduling or customer contact. Customer context: \"AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.\" Customer context: \"Establish pricing before any additional work.\" Customer context: \"No additional work scheduling customer contact or billing was authorized.\" Customer context: \"No price or deadline was agreed.\" Customer context: \"Synthetic test data only.\" Internal task only. No customer action is authorized.",
+        "humanReviewRequired": true,
+        "proposedAction": {
+          "schemaVersion": "internal-task-proposal-v2.6",
+          "hashPolicyVersion": "authoritative-proposal-hash-v1",
+          "actionPurpose": "internal_verification",
+          "actionPayload": {
+            "type": "hubspot.follow_up_task.create",
+            "target": {
+              "contextKey": "hubspot:voice-fixture-portal:contact:voice-fixture-contact"
+            },
+            "properties": {
+              "hs_task_subject": "Internal verification: AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.",
+              "hs_task_body": "Operator routing: IMMEDIATE INTERNAL REVIEW — source reports in-progress work with a scope-change request. Confirm current job status; this label is not work approval.\nInternally verify the current job status and whether additional work has already started. Preserve pricing before additional work. Do not authorize work, scheduling or customer contact.\nAction purpose: internal_verification. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2025-02-13T12:30:20.000Z; local-voice-note-1] AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.\n[2025-02-13T12:30:20.000Z; local-voice-note-1] Establish pricing before any additional work.\n[2025-02-13T12:30:20.000Z; local-voice-note-1] No additional work scheduling customer contact or billing was authorized.\n[2025-02-13T12:30:20.000Z; local-voice-note-1] No price or deadline was agreed.\n[2025-02-13T12:30:20.000Z; local-voice-note-1] Synthetic test data only.\n[2025-02-13T12:30:20.000Z; local-voice-note-1] The fictional customer requested pricing for exactly three additional garage outlets while the crew was onsite.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): [{\"appliesTo\":\"customer_action\",\"code\":\"before_work_state_requires_source_confirmation\",\"noteId\":\"local-voice-note-1\",\"satisfiedByInternalVerification\":false}]\nExact source restrictions: AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.\nEstablish pricing before any additional work.\nNo additional work scheduling customer contact or billing was authorized.\nNo price or deadline was agreed.\nSynthetic test data only.\nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+              "hs_task_priority": "HIGH",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_type": "TODO"
+            }
+          },
+          "material": {
+            "policyVersion": "internal-task-policy-v1.6",
+            "proposalVersion": "internal-task-proposal-v2.6",
+            "actionClass": "hubspot.follow_up_task.create",
+            "targetContext": "hubspot:voice-fixture-portal:contact:voice-fixture-contact",
+            "classification": "scope-change opportunity",
+            "opportunityType": "scope change",
+            "intent": "verify_current_state",
+            "actionPurpose": "internal_verification",
+            "scope": {
+              "sourceRequests": [
+                "AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.",
+                "Establish pricing before any additional work.",
+                "No additional work scheduling customer contact or billing was authorized.",
+                "No price or deadline was agreed.",
+                "Synthetic test data only.",
+                "The fictional customer requested pricing for exactly three additional garage outlets while the crew was onsite."
+              ]
+            },
+            "priority": "HIGH",
+            "evidence": [
+              {
+                "noteId": "local-voice-note-1",
+                "timestamp": "2025-02-13T12:30:20.000Z",
+                "quote": "AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY."
+              },
+              {
+                "noteId": "local-voice-note-1",
+                "timestamp": "2025-02-13T12:30:20.000Z",
+                "quote": "Establish pricing before any additional work."
+              },
+              {
+                "noteId": "local-voice-note-1",
+                "timestamp": "2025-02-13T12:30:20.000Z",
+                "quote": "No additional work scheduling customer contact or billing was authorized."
+              },
+              {
+                "noteId": "local-voice-note-1",
+                "timestamp": "2025-02-13T12:30:20.000Z",
+                "quote": "No price or deadline was agreed."
+              },
+              {
+                "noteId": "local-voice-note-1",
+                "timestamp": "2025-02-13T12:30:20.000Z",
+                "quote": "Synthetic test data only."
+              },
+              {
+                "noteId": "local-voice-note-1",
+                "timestamp": "2025-02-13T12:30:20.000Z",
+                "quote": "The fictional customer requested pricing for exactly three additional garage outlets while the crew was onsite."
+              }
+            ],
+            "timing": {
+              "kind": "none"
+            },
+            "operatorTaskDueAt": null,
+            "sourceTimingConstraints": [],
+            "customerActionGates": [
+              {
+                "code": "before_work_state_requires_source_confirmation",
+                "noteId": "local-voice-note-1",
+                "appliesTo": "customer_action",
+                "satisfiedByInternalVerification": false
+              }
+            ],
+            "sourceRestrictions": [
+              {
+                "noteId": "local-voice-note-1",
+                "timestamp": "2025-02-13T12:30:20.000Z",
+                "quote": "AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY."
+              },
+              {
+                "noteId": "local-voice-note-1",
+                "timestamp": "2025-02-13T12:30:20.000Z",
+                "quote": "Establish pricing before any additional work."
+              },
+              {
+                "noteId": "local-voice-note-1",
+                "timestamp": "2025-02-13T12:30:20.000Z",
+                "quote": "No additional work scheduling customer contact or billing was authorized."
+              },
+              {
+                "noteId": "local-voice-note-1",
+                "timestamp": "2025-02-13T12:30:20.000Z",
+                "quote": "No price or deadline was agreed."
+              },
+              {
+                "noteId": "local-voice-note-1",
+                "timestamp": "2025-02-13T12:30:20.000Z",
+                "quote": "Synthetic test data only."
+              }
+            ],
+            "customerActionPermitted": false,
+            "humanApprovalRequired": true,
+            "reviewRouting": {
+              "policyVersion": "in-progress-scope-review-v1",
+              "queue": "immediate_review",
+              "label": "Immediate review: in-progress scope request",
+              "priority": "HIGH",
+              "contextTag": "team_onsite",
+              "sourceFacts": [
+                {
+                  "noteId": "local-voice-note-1",
+                  "sourceTimestamp": "2025-02-13T12:30:20.000Z",
+                  "quote": "The fictional customer requested pricing for exactly three additional garage outlets while the crew was onsite."
+                }
+              ],
+              "currentJobStatus": "UNVERIFIED",
+              "customerActionPermitted": false
+            },
+            "subjectPolicyVersion": "source-anchored-task-subject-v1"
+          },
+          "authorityRequirements": {
+            "policyVersion": "internal-task-policy-v1.6",
+            "humanApprovalRequired": true,
+            "allowedMutation": "hubspot.follow_up_task.create",
+            "customerActionPermitted": false
+          },
+          "qualityFailures": [],
+          "preparationBlocked": false,
+          "executionBlocked": true,
+          "missingFinalFields": [
+            "operatorTaskDueAt",
+            "CRM association",
+            "operation correlation",
+            "exact final-payload approval"
+          ],
+          "actionVersion": "sha256:2bf2ae210d0eff320b2e6b38932283d6c5f7b7edd2d093f548d284c4efff6563"
+        }
+      },
+      "candidateHash": "b141bffa1a4db16bbaa921ea4a1240cf9fd238a0d10faddad5a25d29e9e81ecd",
+      "sourceHash": "sha256:dca70dede8fe6bd24c4c5d504739d897c3e1de30dd7cde85e29b42d14859b834",
+      "inspection": {
+        "policyVersion": "finding-review-v2.7",
+        "qualityFailures": [],
+        "executionBlocks": [
+          {
+            "code": "before_work_state_requires_source_confirmation",
+            "noteId": "local-voice-note-1"
+          }
+        ],
+        "humanReview": "PENDING"
+      },
+      "reviewState": "PENDING",
+      "operation": null
+    },
+    {
+      "findingId": "op_74764e96-1e2f-4911-9d3a-decc659fe8f7",
+      "modelFinding": {
+        "findingId": "finding_b650b484784aa4f708456445b2167774c57271393577670dc8701e48cd98371e",
+        "opportunityKey": "ev-charger-pricing",
+        "classification": "strong cross-sell opportunity",
+        "opportunityType": "cross-sell",
+        "confidence": "high",
+        "evidence": [
+          {
+            "noteId": "local-voice-note-2",
+            "quote": "AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY."
+          },
+          {
+            "noteId": "local-voice-note-2",
+            "quote": "No appointment, installation or customer contact was authorized."
+          },
+          {
+            "noteId": "local-voice-note-2",
+            "quote": "Pricing information only."
+          },
+          {
+            "noteId": "local-voice-note-2",
+            "quote": "Synthetic test data only."
+          },
+          {
+            "noteId": "local-voice-note-2",
+            "quote": "The fictional customer requested pricing for one Level 2 EV charger."
+          }
+        ],
+        "reasoningSummary": "Local fixture response with all expected source restrictions; not fresh model inference.",
+        "recommendedNextAction": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps. Customer context: \"AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.\" Customer context: \"No appointment, installation or customer contact was authorized.\" Customer context: \"Pricing information only.\" Customer context: \"Synthetic test data only.\" Internal task only. No customer action is authorized.",
+        "humanReviewRequired": true,
+        "proposedAction": {
+          "schemaVersion": "internal-task-proposal-v2.6",
+          "hashPolicyVersion": "authoritative-proposal-hash-v1",
+          "actionPurpose": "internal_preparation",
+          "actionPayload": {
+            "type": "hubspot.follow_up_task.create",
+            "target": {
+              "contextKey": "hubspot:voice-fixture-portal:contact:voice-fixture-contact"
+            },
+            "properties": {
+              "hs_task_subject": "Internal pricing preparation: AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.",
+              "hs_task_body": "Internally prepare the requested pricing only, for human review. Do not contact the customer or add service steps.\nAction purpose: internal_preparation. This task is internal only; it grants no customer action.\nSource evidence (verbatim text, with original UTC timestamps):\n[2025-02-14T13:00:00.000Z; local-voice-note-2] AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.\n[2025-02-14T13:00:00.000Z; local-voice-note-2] No appointment, installation or customer contact was authorized.\n[2025-02-14T13:00:00.000Z; local-voice-note-2] Pricing information only.\n[2025-02-14T13:00:00.000Z; local-voice-note-2] Synthetic test data only.\n[2025-02-14T13:00:00.000Z; local-voice-note-2] The fictional customer requested pricing for one Level 2 EV charger.\nSource-relative timing: []\nCustomer-action gates (not satisfied by this task): []\nExact source restrictions: AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.\nNo appointment, installation or customer contact was authorized.\nPricing information only.\nSynthetic test data only.\nInternal task due: NOT SET — final task approval blocked. Operator-selected task timing does not renew a customer deadline.\nAuthority: separately approved HubSpot follow-up task creation only. No customer communications, billing, work, appointment, contact, note, deal or pipeline changes.",
+              "hs_task_priority": "HIGH",
+              "hs_task_status": "NOT_STARTED",
+              "hs_task_type": "TODO"
+            }
+          },
+          "material": {
+            "policyVersion": "internal-task-policy-v1.6",
+            "proposalVersion": "internal-task-proposal-v2.6",
+            "actionClass": "hubspot.follow_up_task.create",
+            "targetContext": "hubspot:voice-fixture-portal:contact:voice-fixture-contact",
+            "classification": "strong cross-sell opportunity",
+            "opportunityType": "cross-sell",
+            "intent": "prepare_quote",
+            "actionPurpose": "internal_preparation",
+            "scope": {
+              "sourceRequests": [
+                "AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.",
+                "No appointment, installation or customer contact was authorized.",
+                "Pricing information only.",
+                "Synthetic test data only.",
+                "The fictional customer requested pricing for one Level 2 EV charger."
+              ]
+            },
+            "priority": "HIGH",
+            "evidence": [
+              {
+                "noteId": "local-voice-note-2",
+                "timestamp": "2025-02-14T13:00:00.000Z",
+                "quote": "AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY."
+              },
+              {
+                "noteId": "local-voice-note-2",
+                "timestamp": "2025-02-14T13:00:00.000Z",
+                "quote": "No appointment, installation or customer contact was authorized."
+              },
+              {
+                "noteId": "local-voice-note-2",
+                "timestamp": "2025-02-14T13:00:00.000Z",
+                "quote": "Pricing information only."
+              },
+              {
+                "noteId": "local-voice-note-2",
+                "timestamp": "2025-02-14T13:00:00.000Z",
+                "quote": "Synthetic test data only."
+              },
+              {
+                "noteId": "local-voice-note-2",
+                "timestamp": "2025-02-14T13:00:00.000Z",
+                "quote": "The fictional customer requested pricing for one Level 2 EV charger."
+              }
+            ],
+            "timing": {
+              "kind": "none"
+            },
+            "operatorTaskDueAt": null,
+            "sourceTimingConstraints": [],
+            "customerActionGates": [],
+            "sourceRestrictions": [
+              {
+                "noteId": "local-voice-note-2",
+                "timestamp": "2025-02-14T13:00:00.000Z",
+                "quote": "AI & MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY."
+              },
+              {
+                "noteId": "local-voice-note-2",
+                "timestamp": "2025-02-14T13:00:00.000Z",
+                "quote": "No appointment, installation or customer contact was authorized."
+              },
+              {
+                "noteId": "local-voice-note-2",
+                "timestamp": "2025-02-14T13:00:00.000Z",
+                "quote": "Pricing information only."
+              },
+              {
+                "noteId": "local-voice-note-2",
+                "timestamp": "2025-02-14T13:00:00.000Z",
+                "quote": "Synthetic test data only."
+              }
+            ],
+            "customerActionPermitted": false,
+            "humanApprovalRequired": true,
+            "subjectPolicyVersion": "source-anchored-task-subject-v1"
+          },
+          "authorityRequirements": {
+            "policyVersion": "internal-task-policy-v1.6",
+            "humanApprovalRequired": true,
+            "allowedMutation": "hubspot.follow_up_task.create",
+            "customerActionPermitted": false
+          },
+          "qualityFailures": [],
+          "preparationBlocked": false,
+          "executionBlocked": true,
+          "missingFinalFields": [
+            "operatorTaskDueAt",
+            "CRM association",
+            "operation correlation",
+            "exact final-payload approval"
+          ],
+          "actionVersion": "sha256:c7c8b862e20fc78bc41b474ad5dbff6f0f706a7f476e19d2679cf3157ca5ea47"
+        }
+      },
+      "candidateHash": "b33e761426e35bda4db38293cad9badabc9fb4dc570835bfd70420adae3f9086",
+      "sourceHash": "sha256:dca70dede8fe6bd24c4c5d504739d897c3e1de30dd7cde85e29b42d14859b834",
+      "inspection": {
+        "policyVersion": "finding-review-v2.7",
+        "qualityFailures": [],
+        "executionBlocks": [],
+        "humanReview": "PENDING"
+      },
+      "reviewState": "PENDING",
+      "operation": null
+    }
+  ],
+  "summary": {
+    "notes": 2,
+    "createAttempts": 2,
+    "transcriptions": 2,
+    "reasonCalls": 1,
+    "unexpectedWrites": 0
+  },
+  "finalNoteWriteFlags": {
+    "VOICE_NOTE_WRITES_ENABLED": "false",
+    "VOICE_NOTE_RELEASE_APPROVED": "false"
+  },
+  "taskWriteFlags": {
+    "CRM_WRITEBACK_ENABLED": "false",
+    "ENABLE_TEST_TASK_WRITES": "false",
+    "ENABLE_GENERAL_EXECUTION": "false",
+    "GENERAL_RELEASE_APPROVED": "false",
+    "DEMO_RECOVERY_ENABLED": "false",
+    "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+    "DEMO_RECOVERY_FAULT_ENABLED": "false",
+    "DEMO_ONLY_EXECUTION_ENABLED": "false",
+    "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false"
+  },
+  "complete": true
+}
