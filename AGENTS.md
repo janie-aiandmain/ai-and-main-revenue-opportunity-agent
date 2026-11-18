@@ -859,3 +859,27 @@ second ASR call and exercises explicit review. Do not Approve/Save or enable any
 write. The updated note preview still needs exact review/approval separately.
 Two captured-content regression controls pass; no runtime contract, provider
 prompt, credential, deployment or configuration was changed by this evidence step.
+
+## Exact synthetic voice-note approval and one-note guard — November 18
+
+The user supplied the real operator APPROVED receipt for revision 2 of intake
+voice_50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a,
+payload bf133090… and action 9dd9d9b2…, approval voice-approval_db6b6e7c… .
+Preserve the original transcript, corrected reviewed text, raw receipts and
+source clarification. This exact grant is not approval of every fresh fixture
+or a general feature release. No note-create permission is assumed from reads.
+
+Before a real operator Save, use one-intake-exact-note-demo-window-v1: exact
+intake/payload/approval, maximum one create, at most 30 minutes; all nine task/
+fault/general-release controls stay false. Necessary bounded existing-demo
+guard deployment preserves both Workers, same class/namespace/bindings, Secrets,
+identity/tenant/host/email settings. Note contracts/payload/action remain unchanged;
+the execution-only guard does not require a replacement human grant. Deploy
+closed first; scripts/voice/note-window.js opens only this specific approved
+note and closes controls explicitly after the operator action or on errors.
+Do not invoke Save with a synthetic actor or send a HubSpot POST from Codex.
+A write rejection must retain its safe exact blocker; do not expand permissions,
+rotate keys or retry an uncertain create. Unknown/absent/ambiguous/mismatched
+outcomes reconcile read-only or remain blocked. No new environment, task, email
+or provider call is needed. Hosted note creation/recovery is pending until
+actual evidence arrives; local simulated faults do not establish hosted recovery.

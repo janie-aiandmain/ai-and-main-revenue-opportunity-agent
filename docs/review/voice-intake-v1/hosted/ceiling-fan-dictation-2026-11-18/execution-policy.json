@@ -1,0 +1,54 @@
+{
+  "executionPolicyVersion": "one-intake-exact-note-demo-window-v1",
+  "executionPolicyFile": "src/voice/execution-window.js",
+  "executionPolicyFileSha256": "7c6917ecd6a790360bf6d087d1a55fe6be81194e246112a6d3fbbd3620817d8c",
+  "voiceContract": "service-provider-voice-intake-v1.2",
+  "noteContract": "hubspot-reviewed-voice-note-v1.2",
+  "approvedPayloadHash": "sha256:bf133090a9103ac3c119c220a7a4d2ede4e8ef66768352eb132ef9029204d599",
+  "approvedActionVersion": "voice-note-action-v1:sha256:9dd9d9b23c3bd679668d4fe85e48adf6f64fa0cfa5293f6e0f7c012f7778d5ad",
+  "approvalCompatibility": "Preserved exact request and action hash; operational guard narrows execution only. No approval transfer to changed payload.",
+  "generationSourceChecks": [
+    {
+      "path": "src/voice/contract.js",
+      "sha256": "839d80b1a5a24ae6467ab26884f44db62d8b13d9ef34f840c99ac79d2ee35795",
+      "unchangedFromDeployedPreview": true
+    },
+    {
+      "path": "src/reasoning.js",
+      "sha256": "a92b8465e90db1846d71b248b2c2bfdd408c464af8200ac4fdad52d505f16b04",
+      "unchangedFromDeployedPreview": true
+    },
+    {
+      "path": "src/staging/note-source.js",
+      "sha256": "5f1cbed776ef4fb9dcbf3fac8b7af36e98a1683ec553c219bd86d105cc97eae6",
+      "unchangedFromDeployedPreview": true
+    }
+  ],
+  "newModelCalls": 0,
+  "freshModelValidationRequiredForThisExecutionOnlyGuard": false,
+  "localTests": {
+    "focused": 40,
+    "full": 273,
+    "failures": 0
+  },
+  "retainedWorkflow": {
+    "passed": 207,
+    "executions": 207
+  },
+  "dryRunBuilds": {
+    "gateway": "PASS",
+    "owner": "PASS"
+  },
+  "hostedNoteCreate": "PENDING",
+  "noteCreatePermission": "UNVERIFIED_NO_MUTATION_PROBE",
+  "semanticReviewOfFivePriorFreshFixtures": "PENDING_NOT_APPROVED_BY_THIS_EXACT_NOTE_GRANT",
+  "localBrowserWorkerdWorkflow": {
+    "result": "PASS",
+    "noteCreates": 2,
+    "noteAttempts": 2,
+    "unexpectedWrites": 0,
+    "realHubspotCalls": 0,
+    "realModelCalls": 0,
+    "fault": "Injected local HTTP response loss, not a hosted note or genuine outage."
+  }
+}

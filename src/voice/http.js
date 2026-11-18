@@ -1,4 +1,5 @@
 import {MAX_AUDIO_BYTES,voiceMode,actorCheck,audioBytes} from './contract.js';
+import {assertNoteWindow} from './execution-window.js';
 import {VoiceIntakeLedger} from './ledger.js';
 import {HubSpotVoiceClient,transcribeAudio} from './clients.js';
 import {durableDatabase} from '../staging/sql-adapter.js';
@@ -28,6 +29,7 @@ export async function voiceGateway(request,env,actor){
   }else{
    const text=await(await bounded(request,98000)).text();let body;try{body=JSON.parse(text);}catch{throw Error('voice_invalid_json');}
    if(!body||typeof body!=='object'||Array.isArray(body)||'actor'in body||'portalId'in body||'finalRequest'in body)throw Error('voice_unsupported_fields');
+   if(action==='submit')assertNoteWindow(env,{intakeId:body.intakeId,approvalId:body.approvalId,payloadHash:env.VOICE_NOTE_EXECUTION_PAYLOAD_HASH});
    forwarded=new Request('https://private-ledger'+new URL(request.url).pathname,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...body,actor})});
   }
   return await binding.get(binding.idFromName(voiceObjectName(env))).fetch(forwarded);

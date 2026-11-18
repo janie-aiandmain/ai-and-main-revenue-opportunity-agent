@@ -70,3 +70,46 @@ This is a verified proposed payload, not proof of approval or remote creation.
 The preview snippet did not include the full state/original-text/approval fields;
 do not invent them. The next requested user action is **Approve exact note** once,
 then share the full intake/approval evidence. Do not Save while writes are closed.
+
+## Exact revision-2 approval received
+
+The operator supplied [the approved intake receipt](operator-approved-note.json).
+[Verification](operator-approval-check.json) reproduces its complete final request,
+payload hash and action version, checks the known Approver authority hash and
+preserves the separate original transcript. This is user-supplied evidence, not
+an independently downloaded/signed attestation. [Attribution](approval-provenance.json)
+records that limitation. The user corrected a spoken omission; no ASR negation
+error is established. The exact corrected note has genuine operator approval;
+other fixture semantic verdicts and feature release acceptance remain separate.
+
+Approval voice-approval_db6b6e7c-c6e3-4674-a23d-c7b3f7fed0e5 expires
+November 19, 2026 at 10:09:30 a.m. Eastern. The supplied receipt is APPROVED,
+revision 2, zero attempts and no remote note. It does not demonstrate note-write
+permission or note creation. No task authority follows from the note.
+
+## Bounded execution safeguard
+
+[Execution policy](execution-policy.json) narrows operational permission without
+changing the approved note contract, payload or action version. Remote creates
+require a configured run ID, exact intake ID, exact payload hash, exact approval
+ID, maximum one create, and a window of at most 30 minutes. Gateway, durable
+ledger and fixed HubSpot client check it; the ledger rechecks after reads and
+storage flush, persists window/correlation/payload/intent before POST, and never
+resets its one-attempt count. Unknown outcomes only reconcile or stay blocked.
+Read-only status/reconciliation remain available after the window closes.
+A safe specific credential/permission blocker is retained after an uncertain
+POST; it is never a reason to automatically recreate. No scopes are expanded.
+
+273 offline tests and 207/207 retained workflow executions pass. Both Worker
+dry-run builds pass. [Local validation](guard-local-validation/) includes unit
+window closure/expiry/mismatch controls. Local recovery faults are simulated,
+not hosted note recovery. Generation source, reasoning prompt/model/settings,
+and the exact request/action hashes are unchanged; no fresh inference is claimed.
+
+Checked-in note switches stay false. The controller
+`scripts/voice/note-window.js` can open only this exact approved intake after
+closed code deployment verification. It preserves all other settings/Secrets/
+bindings and closes on controller error. Runtime expiry blocks further POSTs
+even before explicit closure. After the operator's one Save, explicitly close
+both Workers and verify; record actual note ID/readback separately. No note has
+been created by the code/receipt verification recorded above.

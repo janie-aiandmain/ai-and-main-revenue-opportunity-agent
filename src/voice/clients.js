@@ -1,6 +1,8 @@
 import {HubSpotCertificationClient} from '../staging/hubspot-client.js';
 import {checkedJsonFetch,missingCredential} from '../staging/blockers.js';
-import {voiceMode,TRANSCRIPTION_MODEL,TRANSCRIPTION_CONTRACT,NOTE_CONTRACT} from './contract.js';
+import {voiceMode,TRANSCRIPTION_MODEL,TRANSCRIPTION_CONTRACT,NOTE_CONTRACT,hash} from './contract.js';
+
+import {assertNoteWindow} from './execution-window.js';
 
 function localBase(env){const u=new URL(env.LOCAL_VOICE_FIXTURE_URL||'');if(u.protocol!=='http:'||!['127.0.0.1','localhost'].includes(u.hostname)||u.username||u.password)throw Error('voice_local_fixture_only');return u.origin;}
 export async function transcribeAudio(env,audio){
@@ -30,10 +32,11 @@ export class HubSpotVoiceClient {
   for(const id of ids){const note=await this.reader.request('/crm/v3/objects/notes/'+encodeURIComponent(id)+'?properties=hs_note_body,hs_timestamp&associations=contacts');if(note.associations?.contacts?.paging?.next)throw Error('voice_note_contacts_incomplete');if(note.properties?.hs_note_body?.includes('[AI_MAIN_VOICE_CORRELATION:'+correlation+']'))found.push(note);}
   return found;
  }
- async create(request){
+ async create(request,execution={}){
   voiceMode(this.env);
   if(this.env.VOICE_NOTE_WRITES_ENABLED!=='true'||this.env.VOICE_NOTE_RELEASE_APPROVED!=='true')throw Error('voice_note_execution_disabled');
   if(request.contractVersion!==NOTE_CONTRACT||request.method!=='POST'||request.url!=='https://api.hubapi.com/crm/v3/objects/notes'||request.portalId!==this.env.STAGING_PORTAL_ID||request.body.associations?.length!==1||request.body.associations[0].to.id!==this.env.STAGING_CONTACT_ID)throw Error('voice_note_target_changed');
+  assertNoteWindow(this.env,{...execution,payloadHash:hash(request)});
   const url=this.env.CERTIFICATION_MODE==='local'?localBase(this.env)+'/crm/v3/objects/notes':request.url;
   return checkedJsonFetch(url,{method:'POST',headers:{Authorization:'Bearer '+this.env.STAGING_HUBSPOT_WRITE_TOKEN,'content-type':'application/json'},body:JSON.stringify(request.body),signal:AbortSignal.timeout(10000)},'STAGING_HUBSPOT_WRITE_TOKEN','voice_approved_note_creation');
  }

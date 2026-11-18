@@ -1,0 +1,8 @@
+{
+  "source": "Latest full intake approval receipt pasted by the user on 2026-11-18. Fields transcribed into standard JSON; no independently downloaded or signed receipt is claimed.",
+  "receiptFile": "operator-approved-note.json",
+  "receiptFileSha256": "91f59655e0bcdf94e5168775877b0f07339074f75d832dff5d1a8a697dbc3938",
+  "independentJwtInspection": false,
+  "grantAppliesTo": "Exact revision-2 corrected note only, not task execution or broad voice-feature release.",
+  "speakerClarificationPreserved": true
+}
