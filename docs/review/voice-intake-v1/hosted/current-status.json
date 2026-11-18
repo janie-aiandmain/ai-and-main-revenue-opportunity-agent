@@ -10,7 +10,7 @@
   "voiceNoteReleaseApproved": false,
   "allNineExistingExecutionControlsFalse": true,
   "secretsAndExistingNamespacePreserved": true,
-  "authenticatedVoicePreflight": "PENDING_OPERATOR_RECEIPT",
+  "authenticatedVoicePreflight": "PASS_OPERATOR_RECEIPT_VERIFIED",
   "hostedTranscription": "PENDING_OPERATOR_TEST",
   "noteCreationPermission": "UNVERIFIED",
   "actualHubspotNotesCreatedThisCycle": 0,
@@ -18,5 +18,8 @@
   "humanTranscriptAndSemanticReview": "PENDING",
   "noteExecutionApproval": false,
   "voiceFeatureReleaseAcceptance": "PENDING",
-  "existingAcceptedDemoDecisionPreserved": true
+  "existingAcceptedDemoDecisionPreserved": true,
+  "authenticatedVoicePreflightEvidence": "operator-preflight-check.json",
+  "voiceNoteAssociationTypeVerified": 202,
+  "voicePreflightLedgerBootId": "2ee0bea3-92e0-4485-93cb-a77d52d17104"
 }

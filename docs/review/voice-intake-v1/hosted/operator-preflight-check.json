@@ -1,0 +1,23 @@
+{
+  "kind": "VERIFIED_OPERATOR_SUPPLIED_VOICE_PREFLIGHT",
+  "verified": true,
+  "receiptSha256": "6235cfb3242b2494e455396a1a55f3f32357bb60c7a4b8ebc8ce39c71458fb94",
+  "sourceCommit": "dc8476d6594baceadac302ffe992a6ac206c49c5",
+  "ownerVersion": "910bb6cd-c0a1-410d-b3c2-35ea209ac597",
+  "ledgerBootId": "2ee0bea3-92e0-4485-93cb-a77d52d17104",
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "bothCredentialPortalChecks": true,
+  "syntheticMarkerVerified": true,
+  "noteAssociationTypeVerified": 202,
+  "existingExternalVoiceLedgerPathExercised": true,
+  "claimBasis": "Supplied receipt matches the previously verified deployed code/version; its route enforces external identity and isolated namespace binding. No independent JWT inspection or signed receipt is claimed.",
+  "hostedTranscription": "PENDING_OPERATOR_TEST",
+  "noteCreationPermission": "UNVERIFIED_NO_MUTATION_PROBE",
+  "noteWritesEnabled": false,
+  "humanSemanticApproval": false,
+  "noteExecutionApproval": false,
+  "newCrmCalls": 0,
+  "newModelCalls": 0,
+  "newEmailCalls": 0
+}

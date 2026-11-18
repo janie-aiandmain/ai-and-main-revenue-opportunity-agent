@@ -1,0 +1,12 @@
+{
+  "kind": "USER_SUPPLIED_VOICE_PREFLIGHT_RECEIPT",
+  "userMessageDate": "2026-11-18",
+  "recordedAt": "2026-11-18T15:01:14.572343+00:00",
+  "source": "Fields pasted by the user from Check voice connection (read-only).",
+  "formatting": "Standard JSON object braces/whitespace added to the pasted field list; field names and values unchanged.",
+  "artifactSha256": "6235cfb3242b2494e455396a1a55f3f32357bb60c7a4b8ebc8ce39c71458fb94",
+  "independentReceiptDownload": false,
+  "receiptCryptographicallySigned": false,
+  "humanSemanticApproval": false,
+  "noteExecutionApproval": false
+}

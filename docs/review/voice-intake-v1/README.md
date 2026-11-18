@@ -107,7 +107,7 @@ part of voice-note ingestion. Do not create or rotate keys by assumption.
 | Corrected note format v1.1 | 2/3 passed; scope false negative preserved. This was not release-ready |
 | Final factual-provenance v1.2 | 5/5 fresh passes; scope correctly found/classified 3/3, decline and injection controls pass; raw scope keys/IDs/proposal versions stable across these three runs |
 | Human semantic review | PENDING for new transcript/note/finding outputs |
-| Hosted intake | DEPLOYED and module/binding/settings verified; read/transcribe/review-only. Note-write/release controls and all task execution controls stay false. Authenticated operator voice preflight/transcription remain PENDING |
+| Hosted intake | DEPLOYED; authenticated voice preflight PASS for the expected portal/contact, both credential identities, marker and note association 202. Hosted transcription remains PENDING. All note/task writes stay disabled |
 | Actual HubSpot note-create permission / HTML round-trip / remote note recovery | UNVERIFIED; no live note was created |
 | Voice release acceptance | PENDING; older task-demo acceptance does not transfer |
 
@@ -199,7 +199,7 @@ and share only the resulting JSON or blocker. Do not upload real/customer audio,
 paste secrets, create/rotate keys or change permissions by assumption. Leave
 transcription, approval and Save untouched until the source/record check succeeds.
 
-The expected successful receipt identifies portal **247646122**, designated
+The operator supplied a successful receipt identifying portal **247646122**, designated
 synthetic contact **582095692487**, both credential portal checks, synthetic marker,
 and note-contact association type **202**. `noteCreationPermission` remains
 `UNVERIFIED_NO_MUTATION_PROBE` and `noteWritesEnabled` remains **false**; these are
@@ -207,6 +207,22 @@ expected states, not evidence of a missing key. OpenAI transcription on the host
 owner is not proven by this CRM-only preflight. The non-production Codex key passed
 the real ASR test; the hosted owner's independently stored key is checked only
 when the operator later transcribes a synthetic recording.
+
+The [supplied preflight](hosted/operator-preflight.json) and
+[verification](hosted/operator-preflight-check.json) match the deployed owner
+source/version and record the isolated voice ledger boot. This exercises the
+existing cross-Worker path without another namespace or any CRM mutation. It is
+attributed operator evidence, not an independently downloaded/signed receipt or
+a JWT inspection. No secret, key replacement or permission expansion was needed.
+
+**Current next step:** record a short fictional provider note with **Start
+recording**, then **Stop recording**. Confirm the original recording time and
+synthetic-data checkbox; click **Transcribe audio — no CRM write** once. Share the
+displayed transcript and the JSON under **Intake and approval evidence**, or the
+exact error. Do not Prepare, Approve or Save yet. This verifies the real browser
+microphone and the hosted owner's audio endpoint/key, separately from the Codex
+ASR fixture already tested. Suggested new need: pricing for one ceiling fan
+replacement, pricing only, with no work/appointment/contact/billing authorization.
 
 Deployed code is **dc8476d6594baceadac302ffe992a6ac206c49c5**:
 

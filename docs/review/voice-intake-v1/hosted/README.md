@@ -50,3 +50,27 @@ Rollback, if required, means activating the two previous closed immutable versio
 above and rechecking module/settings/bindings/Access. Preserve all ledger data and
 consumed operations. No rollback was performed. Do not use an older open test
 window version or turn on any note/task control as a rollback shortcut.
+
+## Authenticated voice preflight completed
+
+The user supplied the successful [voice preflight](operator-preflight.json). Both
+credential identities match portal 247646122; contact 582095692487 has the required
+synthetic marker; HubSpot-defined note/contact association type 202 is confirmed.
+The receipt matches source dc8476d and active private-owner version 910bb6cd, from
+voice ledger boot 2ee0bea3-92e0-4485-93cb-a77d52d17104. The [offline verifier](operator-preflight-check.json)
+checks every field and its deployed-version binding. The supplied field list was
+formatted as JSON without changing values. Attribution and the artifact hash are
+in operator-preflight-provenance.json; no signed receipt or independent JWT
+inspection is claimed.
+
+This exercises the actual authenticated cross-Worker voice path. It does not
+prove note-create permission or hosted transcription. The writer's own-account
+identity check is a read, not a create probe. Note writes remain false, creation
+permission remains UNVERIFIED_NO_MUTATION_PROBE, and semantic/execution approval
+remain pending. No credential replacement, scope expansion, configuration
+change, deployment, new model call or CRM mutation was made while recording it.
+
+The next requested action is one synthetic microphone recording and transcription
+in the same voice page, then sharing the transcript and **Intake and approval
+evidence** JSON. Do not Prepare, Approve or Save yet. No prior consumed task
+operation needs another read, grant or submission.

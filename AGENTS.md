@@ -826,3 +826,18 @@ receipt. This proves neither note-create permission nor hosted ASR. Keep both
 PENDING until actually demonstrated, and keep human transcript/semantic review,
 exact note execution approval and new feature acceptance separate. Do not ask
 for new keys or expand permissions on the strength of binding presence alone.
+
+The operator voice preflight receipt is now recorded and verified against the
+deployed source dc8476d / owner 910bb6cd: both credential portal identities match
+247646122, contact 582095692487 has the synthetic marker, association type 202
+is verified, noteWritesEnabled false, permissionsExpanded false, boot
+2ee0bea3-92e0-4485-93cb-a77d52d17104. See hosted/operator-preflight*.json under
+docs/review/voice-intake-v1. Treat it as user-supplied evidence, not an independent
+download/JWT inspection. This closes the authenticated read-only voice preflight
+gate, not note-create permission, hosted ASR, semantic review or execution. No
+CRM mutation, new credential, scope expansion, deployment or model call occurred
+while recording it. Next: one user-recorded synthetic provider note through the
+voice page and one transcription, then inspect transcript/intake receipt before
+Prepare/Approve/Save. Keep note/task execution disabled. Example new independent
+need is pricing for one ceiling fan replacement, pricing only and no customer
+action authority; do not repeat or recreate either consumed task operation.
