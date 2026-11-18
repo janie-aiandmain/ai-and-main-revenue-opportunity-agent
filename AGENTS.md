@@ -925,3 +925,20 @@ is needed. After the real operator Save result, close using note-window.js
 controls false, then reconcile read-only if unknown. No Codex CRM POST, new task,
 permission expansion or transcription retry. Final voice feature acceptance and
 other fixture semantic decisions remain separate.
+
+Window-2's initial plan exceeded 30 minutes by one millisecond because of two
+clock readings. The unchanged deployed guard rejected it, and both switches
+were verified rolled back closed. Preserve note-window-enable.json unchanged.
+The controller now uses one clock and prevalidates before PATCH. It resumed the
+SAME run ace7c329… with deadline shortened by one millisecond; correction and
+verified activation are separately recorded. Full offline suite is 289/289.
+No Worker-code or model/generation change occurred. Actual active owner
+47d6cb0d-dd60-41de-8bdc-f0e4f4e6c07e and gateway
+927281a7-56f8-4baf-96d7-d42f6a266800 preserve source 94dfdeb and prior settings/
+Secrets/namespace/Access. Only the two note switches are true under the exact
+intake/grant/payload/one-create guard until 2026-11-18T23:26:54.109Z (6:26:54 p.m.
+Eastern). All nine task/fault/general-release controls remain false. Real operator
+Save once is pending. On any result/error, close FIRST with note-window.js
+--close --user-authorized --window-2; verify and record, then reconcile read-only
+if unknown. No reset, second create, model call, task, email or permission change.
+If the window expires, close and check current state before any further window.

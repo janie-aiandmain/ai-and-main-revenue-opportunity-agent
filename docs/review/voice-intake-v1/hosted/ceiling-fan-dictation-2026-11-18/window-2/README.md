@@ -58,3 +58,25 @@ The corrected offline suite passes 289/289, including single-clock timing,
 shorten-only/no-renewal controls and expired/future-start rejection. Earlier
 286-test results, operator receipt and failed enable report remain unchanged.
 No new model/ASR call, source payload change or approval renewal is needed.
+
+## Same run actually resumed and verified open
+
+[note-window-resume.json](note-window-resume.json) verifies corrected activation
+on both existing Workers with identical active module bytes, Secret names,
+namespace, identity/tenant/email settings and host/preview state. All nine
+task/fault/general-release controls remain false; unauthenticated voice page and
+submit requests still redirect to Access. The controller made zero CRM/model/
+email calls and zero note submissions. No runtime deployment was needed.
+
+Run voice-note-run-ace7c329-5734-4cfe-83bb-e94623d00f8b is open until November 18
+at 6:26:54 p.m. Eastern (23:26:54.109Z). It is the same second run, shortened
+by one millisecond from the rejected plan, not a fresh approval or renewed
+deadline. note-window-timing-correction.json preserves both plans. Only the
+original note intake/grant/payload can execute, with the existing durable
+one-attempt limit. The real operator has been asked to Load and Save once.
+
+Hosted note creation/permission/readback remain PENDING until a real Save result.
+On that result, close with `--close --user-authorized --window-2` before further
+steps. Preserve old evidence and current status; unknown outcomes reconcile only.
+Do not reset counts, send a Codex POST, ask for another transcription, transfer
+this grant to a changed payload or imply feature release acceptance.
