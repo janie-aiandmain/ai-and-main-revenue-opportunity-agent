@@ -1,0 +1,68 @@
+{
+  "kind": "EXACT_ONE_NOTE_WINDOW_ENABLE",
+  "startedAt": "2026-11-18T22:56:54.111Z",
+  "policyVersion": "one-intake-exact-note-demo-window-v1",
+  "window": {
+    "policyVersion": "one-intake-exact-note-demo-window-v1",
+    "runId": "voice-note-run-ace7c329-5734-4cfe-83bb-e94623d00f8b",
+    "startedAt": "2026-11-18T22:56:54.109Z",
+    "expiresAt": "2026-11-18T23:26:54.110Z",
+    "maximumCreates": 1,
+    "intakeId": "voice_50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a",
+    "approvalId": "voice-approval_db6b6e7c-c6e3-4674-a23d-c7b3f7fed0e5",
+    "payloadHash": "sha256:bf133090a9103ac3c119c220a7a4d2ede4e8ef66768352eb132ef9029204d599",
+    "actionVersion": "voice-note-action-v1:sha256:9dd9d9b23c3bd679668d4fe85e48adf6f64fa0cfa5293f6e0f7c012f7778d5ad",
+    "revision": 2,
+    "portalId": "247646122",
+    "contactId": "582095692487"
+  },
+  "steps": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "beforeVersion": "1c3c72d0-eca5-4c0e-a420-e454888d56cb",
+      "activeVersion": "4edb8d13-61ed-43ee-b205-fdc340bcc685",
+      "at": "2026-11-18T22:57:13.342Z"
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "beforeVersion": "18daa2b8-58cd-45cd-b783-d23d11f76f91",
+      "activeVersion": "48cb3521-d41d-4c95-9c94-33d20c5f30a9",
+      "at": "2026-11-18T22:57:21.678Z"
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "beforeVersion": "48cb3521-d41d-4c95-9c94-33d20c5f30a9",
+      "activeVersion": "245cd549-c5bf-41d5-ab5d-00ed470e6c7f",
+      "at": "2026-11-18T22:57:34.767Z"
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "beforeVersion": "4edb8d13-61ed-43ee-b205-fdc340bcc685",
+      "activeVersion": "7bbd64ed-b23f-4040-af7e-f20617c61de4",
+      "at": "2026-11-18T22:57:47.172Z"
+    }
+  ],
+  "verified": false,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailCalls": 0,
+  "noteSubmissions": 0,
+  "secretValuesRead": false,
+  "controllerScriptSha256": "c29fa56b872e8ea1f69ad50b56a01a8ae6222712ad13bc09707103dd54dfb3c9",
+  "versionPollingSha256": "128b550676525328a66f5be4b41b59332e61db4a61dc4eeb1ded2186ac30ae39",
+  "unusedApprovalVerifierSha256": "d2c76d8b20096dd98dfdc4a8325b24c04abc78d5913ae2024b06ed2b279ea2b5",
+  "windowSequence": 2,
+  "workers": [],
+  "failure": "voice_note_window_missing_or_expired",
+  "rollback": [
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "closed": true
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "closed": true
+    }
+  ],
+  "noteWindowEnabled": false
+}

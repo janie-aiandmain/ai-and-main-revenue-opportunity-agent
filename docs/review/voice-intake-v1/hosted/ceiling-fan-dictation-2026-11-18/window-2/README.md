@@ -35,3 +35,26 @@ after an unknown outcome. No runtime module, prompt/model, schema, credentials,
 permissions, infrastructure or source note payload changed for this controller
 update. No new ASR/model/CRM/email call was needed. General/task/fault/release
 controls stay false. Hosted Save evidence remains PENDING until supplied.
+
+## Timing defect rejected and closed before asking the operator to Save
+
+The first window-2 attempt is preserved in note-window-enable.json. Separate
+clock reads produced a duration of 1,800,001 ms, exceeding the runtime limit by
+one millisecond. The guard correctly rejected it; no Save was requested and the
+controller made zero CRM/model/email calls. Both runtime switches were rolled
+back and verified closed on both Workers. This is a controller scheduling defect,
+not a HubSpot credential failure or a remote note-write test.
+
+The controller now derives both timestamps from one clock reading and validates
+the complete proposed configuration before any PATCH. For this already recorded
+run, resume may ONLY shorten the end to start plus exactly 30 minutes; it keeps
+the same run/intake/grant/payload/one-create limit, never extends the deadline,
+and writes the original/corrected plans in note-window-timing-correction.json
+without changing note-window.json. An expired plan cannot be revived. The worker
+code and policy remain unchanged. The invalid interval could not authorize a
+create through either deployed guard.
+
+The corrected offline suite passes 289/289, including single-clock timing,
+shorten-only/no-renewal controls and expired/future-start rejection. Earlier
+286-test results, operator receipt and failed enable report remain unchanged.
+No new model/ASR call, source payload change or approval renewal is needed.
