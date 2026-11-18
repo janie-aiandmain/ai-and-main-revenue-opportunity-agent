@@ -1,0 +1,13 @@
+{
+  "source": "Full current intake status pasted by the user on November 18, 2026 after read-only Load saved intake.",
+  "receiptFileSha256": "7834a2b672fd3008b434300d60fc7bba1fa663a4985e3f8be7b8d0d5dfcc77b5",
+  "formatting": "Standard JSON formatting of user-supplied fields; all values preserved.",
+  "independentlyDownloaded": false,
+  "signedReceiptClaimed": false,
+  "currentState": "APPROVED",
+  "createAttempts": 0,
+  "remoteNoteId": null,
+  "approvalRenewed": false,
+  "sourceCommit": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+  "ownerVersion": "b0a776a9-919a-4e95-b747-067f5ea32906"
+}

@@ -955,3 +955,17 @@ attempts from the old receipt, reset counts, transcribe again or reapprove an
 unchanged note. Confirmed results are reused; unknown/attempted results only
 reconcile or stay blocked. Exact original approval expires November 19 at
 15:09:30.531Z. General task/release authority remains disabled.
+
+The latest user-supplied read-only receipt again confirms APPROVED revision 2,
+zero create attempts, no remote note/execution intent, same original exact
+grant/payload/action and source 94dfdeb, matching window-2 closed owner b0a776a9
+and boot ff5c2471. Preserve under the new window-3 directory. This permits only
+a separate short window for the SAME UNUSED approved note, not a count/approval
+reset. Numbered controller selectors retain separate artifacts and require the
+immediately prior closure plus a fresh matching receipt. No runtime/generation
+or permission change is needed. After any real operator result, close with
+note-window.js --close --user-authorized --window-3 first, verify both note
+switches/all nine task controls false, then reconcile read-only if unknown.
+Do not rerecord/reapprove unchanged content, issue a Codex CRM POST or create a
+second note after uncertainty. Feature release/other semantic decisions remain
+separate; exact original approval still expires 2026-11-19T15:09:30.531Z.
