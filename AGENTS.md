@@ -942,3 +942,16 @@ Save once is pending. On any result/error, close FIRST with note-window.js
 --close --user-authorized --window-2; verify and record, then reconcile read-only
 if unknown. No reset, second create, model call, task, email or permission change.
 If the window expires, close and check current state before any further window.
+
+The user asked to resume after window-2 expired. Both note switches are now
+EXPLICITLY CLOSED on both Workers; see window-2/note-window-close.json. All nine
+task/fault/general-release controls remain false; code, Secrets, namespace,
+Access, tenant/email/host state are preserved. No CRM/model/email call or note
+submission was made while closing. Effective expiry was 23:26:54.109Z; the close
+report's original plan .110Z is retained alongside the immutable timing correction.
+No operator Save result has been supplied since valid window-2. Await fresh
+read-only intake status before arranging any new window. Do not assume zero
+attempts from the old receipt, reset counts, transcribe again or reapprove an
+unchanged note. Confirmed results are reused; unknown/attempted results only
+reconcile or stay blocked. Exact original approval expires November 19 at
+15:09:30.531Z. General task/release authority remains disabled.

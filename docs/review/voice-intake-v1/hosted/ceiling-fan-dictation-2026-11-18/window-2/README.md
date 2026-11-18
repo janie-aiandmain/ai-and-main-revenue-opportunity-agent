@@ -80,3 +80,21 @@ On that result, close with `--close --user-authorized --window-2` before further
 steps. Preserve old evidence and current status; unknown outcomes reconcile only.
 Do not reset counts, send a Codex POST, ask for another transcription, transfer
 this grant to a changed payload or imply feature release acceptance.
+
+## Second window expired; explicitly closed before resuming
+
+The user asked to resume after the 6:26 p.m. Eastern deadline. Runtime expiry
+already blocked new creates. [Actual closure](note-window-close.json) verifies
+both note switches false on BOTH Workers and all nine task/fault/general-release
+controls false. Active code, Secrets, namespace, identity/tenant/email/host/
+preview settings and Access protection remain unchanged. The controller made
+zero CRM/model/email calls and zero note submissions. The closure report retains
+the original plan timestamp ending .110Z; actual effective expiry was .109Z,
+as separately preserved in note-window-timing-correction.json and the verified
+resume record. Neither earlier artifact is overwritten.
+
+No actual Save result has been supplied since the valid second window, so do
+not infer that the intake is still unused. The user has been asked for fresh
+read-only Load saved intake evidence before another window. If already confirmed,
+reuse the result; if attempted or unknown, reconcile read-only, never create again.
+No new recording, preparation, approval or model call is presently needed.
