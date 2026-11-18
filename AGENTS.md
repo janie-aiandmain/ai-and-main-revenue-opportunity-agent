@@ -773,3 +773,17 @@ write, email, credential/permission change or new environment is authorized by
 this source/local cycle. Bounded deployment of read/transcribe/review-only demo
 intake may follow passing gates under existing deployment authority; note writes
 stay off pending isolated hosted checks and real exact-payload approval.
+
+The original four-call voice run completed: actual ASR preserved critical scope
+and restrictions; the decline control passed, but both positive outputs omitted
+application-policy boilerplate that had been placed in the CRM note. Scope was
+also classified Cross-sell rather than the expected Scope Change. Preserve every
+original capture/journal and disclose the classification mismatch. The measured
+root correction is voice/note contract v1.1: keep policy enforcement in the app,
+remove its authority boilerplate from source business notes, preserve all actual
+dictated restrictions and attribution. This does not change the reasoning prompt,
+model/settings, schema or prior task materializer. Run three fresh reasoning
+checks against corrected note envelopes, reusing the successful ASR capture.
+Record these in a new finite follow-up journal; do not repeat transcription or
+reset the original four-call records. Total planned calls for this correction
+cycle are seven, not a new cumulative project spending ceiling.

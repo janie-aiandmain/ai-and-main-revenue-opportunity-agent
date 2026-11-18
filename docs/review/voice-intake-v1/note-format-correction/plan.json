@@ -1,0 +1,22 @@
+{
+  "planVersion": "voice-note-format-correction-v1",
+  "plannedCalls": 3,
+  "voiceContract": "service-provider-voice-intake-v1.1",
+  "noteContract": "hubspot-reviewed-voice-note-v1.1",
+  "originalRunHash": "61090b91c47b3eef9fa4476f956e3e05fda1a04c19c94554f15256ed24b66152",
+  "reason": "Remove application policy boilerplate from source CRM note while retaining all dictated restrictions and attribution. Freshly measure all three changed note envelopes; preserve classification expectations and disclose any label mismatch.",
+  "repeatedTranscriptionCalls": 0,
+  "crmCalls": 0,
+  "emailCalls": 0,
+  "sourceHashes": {
+    "src/voice/contract.js": "dc72bd57c8cdf3fae57b728347ea31519a9f6a05cb58e8ec0318502757b2bf31",
+    "src/voice/ledger.js": "b3faf0a9df3fc8a71d478cb8da48aa1eb57e4fc90c636372ffdf1d56a1a86750",
+    "src/voice/http.js": "80fb2c2cc4941ec84a7239e58a9740ad178b269ed51e3c2ad43ae5f9bb9aa8fa",
+    "src/voice/clients.js": "b0355b463e7d8f7876198c5e823bcb6db190b179086c64260406091dd32941a5",
+    "src/voice/console.js": "d5112126697757c035b4fb1fe056b19778d72ff44b3be9ce2ca82e744f5be55f",
+    "src/staging/note-source.js": "5f1cbed776ef4fb9dcbf3fac8b7af36e98a1683ec553c219bd86d105cc97eae6",
+    "src/release/reasoning.js": "4c95bb154013eef67578c8c36d9b484bf6a800fcf03d6a4be11e168c79851411",
+    "src/findings-request-v0.3.3.json": "e5630f86c5a7636a49116b8be56c336d3293c15bb024711f0fa36d9df9fa6fea",
+    "scripts/voice/model-note-format-validation.js": "1c603171bddfb087e3344efec167f75146a43ca8bb38e92e3ccea98d789bb182"
+  }
+}

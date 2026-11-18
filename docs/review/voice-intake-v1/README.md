@@ -33,9 +33,9 @@ The voice target cannot be supplied or redirected by a request body.
 
 | Contract/control | Value and effect |
 | --- | --- |
-| Intake | `service-provider-voice-intake-v1` |
+| Intake | `service-provider-voice-intake-v1.1` |
 | Transcription | `verbatim-audio-transcription-v1`, `gpt-4o-mini-transcribe`, English, JSON response; no model-generated summary |
-| Exact note request | `hubspot-reviewed-voice-note-v1`; complete portal, method, URL, body, source time, contact association and correlation |
+| Exact note request | `hubspot-reviewed-voice-note-v1.1`; complete portal, method, URL, body, source time, contact association and correlation |
 | Note action version | `voice-note-action-v1` binds complete request and relevant voice/transcription contracts |
 | Source text | `hubspot-note-text-v2`: strip actual CRM markup, then decode entities once; preserve apostrophes, quoted negations and literal entity text |
 | Existing reasoning | Prompt reasoning-v0.3.3 / findings-v0.2 / model gpt-5.6-terra low / materializer v0.3.12 / evidence v1.3 unchanged |
@@ -98,11 +98,13 @@ part of voice-note ingestion. Do not create or rotate keys by assumption.
 | Gate | State |
 | --- | --- |
 | Initial existing suite | PASS: 233 tests, preserved baseline |
-| Voice unit controls | PASS: 23 new tests, including original dates, exact approvals, actor/target mismatch, changed material, uncertainty and redaction |
+| Voice unit controls | PASS: 24 new tests, including original dates, exact approvals, old-contract rejection, actor/target mismatch, changed material, uncertainty and redaction |
 | Local browser/Worker/external SQLite flow | PASS: actual browser upload/review/approval; two simulated CRM notes; injected local response loss + restart + unique read-only match, no duplicate; two existing-agent findings |
 | Complete local reasoning fixture | PASS after supplying the complete expected synthetic response; no fresh inference is claimed |
 | Full regression/builds | See final validation report; prior checked full suite 254/254 preceded the last two targeted additions |
-| Fresh synthetic audio and reasoning | Finite plan: one real transcription + three unchanged reasoning calls; not yet executed at this checkpoint |
+| Fresh synthetic audio | PASS for four critical automated checks; original transcription and human accuracy review remain visible/PENDING |
+| Original fresh reasoning | 1/3 fully correct. Both positives missed template policy boilerplate; scope label differed. All customer action/execution controls remained blocked. Original captures unchanged |
+| Corrected note-format reasoning | Three-call follow-up planned, reusing the passed ASR capture; see note-format-correction/ |
 | Human semantic review | PENDING for new transcript/note/finding outputs |
 | Hosted intake | NOT DEPLOYED at this checkpoint; checked-in activation/write flags false |
 | Actual HubSpot note-create permission / HTML round-trip / remote note recovery | UNVERIFIED; no live note was created |
@@ -131,7 +133,7 @@ npm run check
 npm run staging:check
 npm run voice:model:plan
 # Explicit opt-in; immutable lock/journal prevent a blind rerun:
-NODE_USE_ENV_PROXY=1 node scripts/voice/model-validation.js --live --non-production
+NODE_USE_ENV_PROXY=1 node scripts/voice/model-note-format-validation.js --live --non-production
 ```
 
 The local runtime test requires permitted loopback sockets, workerd and Chromium.
@@ -139,3 +141,23 @@ Its identities, model responses, note effects and response loss are synthetic.
 The generated WAV fixtures use local FFmpeg/flite, not a real provider/person's
 voice. No real HubSpot call, task, email, credential or permission change is
 required for local validation.
+
+## Measured note-format correction
+
+The first real ASR request preserved exactly three outlets, pricing before work,
+the prohibited actions, and lack of agreed price/deadline. The downstream model
+preserved those spoken restrictions but omitted our added application-policy
+sentence. The reviewer correctly blocked both positive candidates for incomplete
+evidence; the decline control passed. Scope was labeled Cross-sell, despite the
+expected Scope Change. These are failures, not three passing outputs.
+
+The smallest correction removes application authority boilerplate from the source
+CRM note. Policy stays enforced in the app/approval contracts and visible in the
+UI; actual dictated restrictions, customer quantities and timestamps are unchanged.
+The new v1.1 note contract cannot reuse a v1 grant. The original v1 plans, captures,
+lock and four reservations remain immutable. A separate follow-up plan measures
+the changed note envelopes with three fresh reasoning calls and no repeated ASR.
+Classification expectations remain unchanged; any residual mismatch stays visible
+for review. No downstream prompt or task-generation policy was altered to force
+a pass. The original contracts.json is the v1 snapshot; current contract/source
+hashes are under note-format-correction/contracts.json.

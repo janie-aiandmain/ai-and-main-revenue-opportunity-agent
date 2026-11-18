@@ -64,6 +64,9 @@ test('missing attestation, incorrect association, changed identity, stale revisi
 test('approval and payload are checked again after target reads immediately before note creation',async()=>{
  const l=lab();try{const p=await prepared(l),a=approve(l,p);l.client.verifyIsolation=async()=>{const d=l.ledger.read(p.intakeId);d.request.body.properties.hs_note_body+=' unapproved';l.ledger.save(d);};await assert.rejects(l.ledger.submit({intakeId:p.intakeId,approvalId:a.approval.approvalId},l.a,l.client),/payload_integrity_failure/);assert.equal(l.creates(),0);}finally{l.close();}
 });
+test('a previous voice-note contract cannot reuse approval after the note-format correction',async()=>{
+ const l=lab();try{const p=await prepared(l),a=approve(l,p),d=l.ledger.read(p.intakeId);d.request.contractVersion='hubspot-reviewed-voice-note-v1';d.payloadHash=hash(d.request);d.approval.payloadHash=d.payloadHash;l.ledger.save(d);await assert.rejects(l.ledger.submit({intakeId:p.intakeId,approvalId:a.approval.approvalId},l.a,l.client),/payload_integrity_failure/);assert.equal(l.creates(),0);}finally{l.close();}
+});
 test('a concurrent reconciliation/state change after persisted intent prevents the pending create',async()=>{
  const l=lab();try{const p=await prepared(l),a=approve(l,p);l.ledger.flush=async()=>{const d=l.ledger.read(p.intakeId);if(d.state==='NOTE_SENDING'){d.state='NOTE_UNKNOWN';l.ledger.save(d);}};const result=await l.ledger.submit({intakeId:p.intakeId,approvalId:a.approval.approvalId},l.a,l.client);assert.equal(result.state,'NOTE_UNKNOWN');assert.equal(result.createAttempts,1);assert.equal(l.creates(),0);}finally{l.close();}
 });

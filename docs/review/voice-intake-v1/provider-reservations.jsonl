@@ -1,0 +1,4 @@
+{"sequence":1,"reservedBeforeRequestAt":"2026-11-18T14:26:35.910Z","caseId":"voice-synthetic-scope-audio","kind":"transcription","repeat":1}
+{"sequence":2,"reservedBeforeRequestAt":"2026-11-18T14:26:38.151Z","caseId":"voice-scope-to-finding","kind":"reasoning","repeat":1}
+{"sequence":3,"reservedBeforeRequestAt":"2026-11-18T14:26:48.673Z","caseId":"voice-technician-only-declined","kind":"reasoning","repeat":1}
+{"sequence":4,"reservedBeforeRequestAt":"2026-11-18T14:26:54.143Z","caseId":"voice-pricing-with-injected-approval","kind":"reasoning","repeat":1}
