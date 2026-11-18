@@ -27,7 +27,7 @@
   "asrNegationErrorConfirmed": false,
   "sourceClarification": "User confirmed not saying NO before customer contact.",
   "currentIntakeState": "CURRENT_OPERATOR_STATUS_PENDING_AFTER_WINDOW_EXPIRY",
-  "currentIntakeCreateAttempts": 0,
+  "currentIntakeCreateAttempts": null,
   "currentIntakePreparedPayload": true,
   "currentIntakeApproval": true,
   "nextStep": "User Load saved intake read-only and supply current full evidence. Do not Save or reopen a window until current state/attempts/hash/approval are verified.",
@@ -48,5 +48,7 @@
   "noteWindowVerificationEvidence": "ceiling-fan-dictation-2026-11-18/note-window-resume.json",
   "noteWindowClosedAt": "2026-11-18T22:30:21.755Z",
   "noteWindowClosureEvidence": "ceiling-fan-dictation-2026-11-18/note-window-close.json",
-  "lastVerifiedOperatorCreateAttempts": 0
+  "lastVerifiedOperatorCreateAttempts": 0,
+  "currentRemoteNoteId": null,
+  "currentRemoteNoteIdVerified": false
 }
