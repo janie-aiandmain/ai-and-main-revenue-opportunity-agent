@@ -1,0 +1,56 @@
+{
+  "kind": "ACTUAL_UNAUTHENTICATED_VOICE_AND_EXISTING_ROUTE_ACCESS_CHECK",
+  "checkedAt": "2026-11-18T14:48:58.761Z",
+  "verified": true,
+  "rows": [
+    {
+      "path": "/voice-intake",
+      "method": "GET",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/preflight",
+      "method": "POST",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/upload",
+      "method": "POST",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/submit",
+      "method": "POST",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/operator",
+      "method": "GET",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/general/execute",
+      "method": "POST",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    }
+  ],
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailCalls": 0,
+  "hostedAuthenticatedVoicePreflight": "PENDING",
+  "hostedTranscription": "PENDING",
+  "noteWritesEnabled": false,
+  "taskWritesEnabled": false
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "CURRENT_VOICE_INTAKE_PREVIEW_STATUS",
+  "sourceCommit": "dc8476d6594baceadac302ffe992a6ac206c49c5",
+  "ownerVersion": "910bb6cd-c0a1-410d-b3c2-35ea209ac597",
+  "gatewayVersion": "de3ec5b6-564c-4c97-90d3-bb0c0ee69138",
+  "activeCodeMatchesLocalBuildBothWorkers": true,
+  "accessProtected": true,
+  "voiceIntakeEnabled": true,
+  "voiceNoteWritesEnabled": false,
+  "voiceNoteReleaseApproved": false,
+  "allNineExistingExecutionControlsFalse": true,
+  "secretsAndExistingNamespacePreserved": true,
+  "authenticatedVoicePreflight": "PENDING_OPERATOR_RECEIPT",
+  "hostedTranscription": "PENDING_OPERATOR_TEST",
+  "noteCreationPermission": "UNVERIFIED",
+  "actualHubspotNotesCreatedThisCycle": 0,
+  "actualHubspotTasksCreatedThisCycle": 0,
+  "humanTranscriptAndSemanticReview": "PENDING",
+  "noteExecutionApproval": false,
+  "voiceFeatureReleaseAcceptance": "PENDING",
+  "existingAcceptedDemoDecisionPreserved": true
+}

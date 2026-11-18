@@ -107,7 +107,7 @@ part of voice-note ingestion. Do not create or rotate keys by assumption.
 | Corrected note format v1.1 | 2/3 passed; scope false negative preserved. This was not release-ready |
 | Final factual-provenance v1.2 | 5/5 fresh passes; scope correctly found/classified 3/3, decline and injection controls pass; raw scope keys/IDs/proposal versions stable across these three runs |
 | Human semantic review | PENDING for new transcript/note/finding outputs |
-| Hosted intake | Prepared for read/transcribe/review-only deployment; note-write/release controls and all task execution controls stay false. See separate actual deployment evidence when present |
+| Hosted intake | DEPLOYED and module/binding/settings verified; read/transcribe/review-only. Note-write/release controls and all task execution controls stay false. Authenticated operator voice preflight/transcription remain PENDING |
 | Actual HubSpot note-create permission / HTML round-trip / remote note recovery | UNVERIFIED; no live note was created |
 | Voice release acceptance | PENDING; older task-demo acceptance does not transfer |
 
@@ -190,3 +190,49 @@ values or verify note-create scope. No replacement key is requested. The next
 account check is the authenticated voice preflight on the existing demo; it must
 retain note permission as UNVERIFIED until a later bounded, explicitly approved
 note test. No current acceptance or transcript review grants that mutation.
+
+## Hosted preview and next operator step
+
+Open [AI & MAIN voice note intake](https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/voice-intake)
+using the same existing Access sign-in. Click **Check voice connection (read-only)**
+and share only the resulting JSON or blocker. Do not upload real/customer audio,
+paste secrets, create/rotate keys or change permissions by assumption. Leave
+transcription, approval and Save untouched until the source/record check succeeds.
+
+The expected successful receipt identifies portal **247646122**, designated
+synthetic contact **582095692487**, both credential portal checks, synthetic marker,
+and note-contact association type **202**. `noteCreationPermission` remains
+`UNVERIFIED_NO_MUTATION_PROBE` and `noteWritesEnabled` remains **false**; these are
+expected states, not evidence of a missing key. OpenAI transcription on the hosted
+owner is not proven by this CRM-only preflight. The non-production Codex key passed
+the real ASR test; the hosted owner's independently stored key is checked only
+when the operator later transcribes a synthetic recording.
+
+Deployed code is **dc8476d6594baceadac302ffe992a6ac206c49c5**:
+
+- Private owner: **910bb6cd-c0a1-410d-b3c2-35ea209ac597**.
+- Public, Access-protected demo gateway: **de3ec5b6-564c-4c97-90d3-bb0c0ee69138**.
+
+Both active JS modules match the tested local upload bundle. Existing Secret
+names, namespace/class, identity/role/tenant/email settings and hostname/preview
+state are preserved. `VOICE_INTAKE_ENABLED` is true; both note execution controls
+and all nine prior execution/fault/release controls are false. Owner hostname and
+all previews stay off. Six unauthenticated new/existing route checks redirect to
+the original Access issuer. [Deployment and readback evidence](hosted/README.md).
+No HubSpot note/task, email, credential change or permission expansion occurred.
+
+The end-to-end **local** note creation/recovery tests use a separate local SQLite
+service and injected local HTTP response loss. They are not real HubSpot note
+creation or remote note-recovery evidence. The old task recovery is separate and
+does not certify this new mutation. Final transcript/semantic review, exact note
+execution approval, note-create permission/round-trip/recovery and new voice
+release acceptance remain pending. No prior approval silently transfers.
+
+One current prototype limit: an expired, redacted draft is permanently closed
+for that exact recording hash; it cannot revive an old approval. A new recording
+is needed for a fresh draft. An uncertain previously submitted note remains
+reconcilable by its approved hash and correlation after text redaction, without
+creating another note. Microphone capture is implemented but actual-device
+permission/codec behavior remains for operator testing; automated Chromium tested
+file upload, not a real microphone. Only the synthetic WAV path received actual
+ASR validation in this cycle.

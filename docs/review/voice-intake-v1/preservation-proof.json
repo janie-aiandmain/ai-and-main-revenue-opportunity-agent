@@ -1,0 +1,10 @@
+{
+  "baselineCommit": "923c0c892a355f8bf75867f9296ba8439e04173f",
+  "allEarlierFixturesCapturesBaselinesAndReviewPacketsUnchanged": true,
+  "changedEarlierProtectedFiles": [],
+  "originalVoiceV1AndV11RunsPreserved": true,
+  "newModelCallsThisCycle": 12,
+  "existingTaskReasoningPromptUnchanged": true,
+  "newVoiceHumanVerdicts": "PENDING",
+  "noteAndTaskExecutionEnabled": false
+}

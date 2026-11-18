@@ -811,3 +811,18 @@ VOICE_NOTE_RELEASE_APPROVED false in both checked-in configurations. All nine
 existing execution/fault/release flags remain false. Preserve original accepted
 task-demo evidence/versions and current secret/tenant/identity/email/binding/host
 settings. Do not activate note writes or a final grant by deploying this preview.
+
+The read/transcribe/review-only preview is now actually deployed and verified:
+source dc8476d6594baceadac302ffe992a6ac206c49c5; private owner version
+910bb6cd-c0a1-410d-b3c2-35ea209ac597; gateway
+de3ec5b6-564c-4c97-90d3-bb0c0ee69138. Active module bytes match the tested bundles;
+all prior settings/Secrets/namespace/host/email state are preserved except the
+explicit three voice controls and source tag. Note writes/release stay false,
+and all nine previous task/fault/release flags stay false. All checked new/existing
+unauthenticated routes redirect to the existing Access issuer. No live CRM note,
+task, model call or email was made for deployment. The next required operator
+action is /voice-intake → “Check voice connection (read-only)” and supply the safe
+receipt. This proves neither note-create permission nor hosted ASR. Keep both
+PENDING until actually demonstrated, and keep human transcript/semantic review,
+exact note execution approval and new feature acceptance separate. Do not ask
+for new keys or expand permissions on the strength of binding presence alone.

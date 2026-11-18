@@ -1,0 +1,142 @@
+{
+  "kind": "READ_ONLY_PRE_VOICE_PREVIEW_DEPLOYMENT",
+  "checkedAt": "2026-11-18T14:40:38.729Z",
+  "sourceCommit": "dc8476d6594baceadac302ffe992a6ac206c49c5",
+  "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "versionId": "3586b7d5-0ce4-42f2-baef-5f1a744443e5",
+      "sourceCommit": "bef3d71276b94c7d398225487c2ecbc36f35bd71",
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      },
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "ordinarySettingHashes": {
+        "ACCESS_AUDIENCE": "97e04999e8a477f5d039af39e7629224d14db893a65c0a7e1948c4dd0725c35e",
+        "ACCESS_ISSUER": "09cd994a3f6907513a380c60f203af347c2c0bb5f5e73565ae1ef0fbf2a7f6a0",
+        "AUDIT_RETENTION_DAYS": "4e47eb5525df25f94da777993dafa41d9ab2bfa80a89e28f76d42cd46ab082e7",
+        "CERTIFICATION_MODE": "efa0848e6fd55eec6a3d6e2e171a9b8025950871925586a2154448b5bb58502c",
+        "CRM_WRITEBACK_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEMO_ONLY_EXECUTION_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEMO_RECOVERY_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEMO_RECOVERY_FAULT_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEMO_RELEASE_EXPIRES_AT": "4b766f3e9dfd229fc623d7efe896def324cbcd99150d61cfada309f22b70cf61",
+        "DEMO_RELEASE_MAX_CREATES": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "DEMO_RELEASE_RUN_ID": "656c2718d1e1d8f81d114be99f1660e9a58686b3c40b62d41be1652a1a50a4ff",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEPLOYMENT_ENVIRONMENT": "e919a75364398a449f860aeadddc57fa0502145a4e63959ddb33c417a48dc0da",
+        "ENABLE_GENERAL_EXECUTION": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "ENABLE_TEST_TASK_WRITES": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "GENERAL_RELEASE_APPROVED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "OPERATOR_CONSOLE_URL": "cf474b679e0917bbd0052260d4068153183a4c4116411050e9f1713ed50d9c5a",
+        "OPERATOR_EMAIL_ENABLED": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+        "OPERATOR_EMAIL_FROM": "4044fe5a4bb262964281737d070bf91b6264eaa6f45ef56dcf418a5f02fcf103",
+        "OPERATOR_EMAIL_PROVIDER": "6de1be36afd7a16d2e4fb5043e9214d437f65e48eacaaf9f3ab284bc62c0dd06",
+        "OPERATOR_EMAIL_REPLY_TO": "8a5359202941168adbd469a9b0e24e0f31eb5b065207c6ec439aee90b7b94105",
+        "OPERATOR_EMAIL_TO": "8a5359202941168adbd469a9b0e24e0f31eb5b065207c6ec439aee90b7b94105",
+        "RELEASE_SOURCE_SHA": "1767ca7cbf586e2b0b4108e823a9ac6496df7c1d1bdafadd5d21483ea619f48b",
+        "STAGING_CONTACT_ID": "6079b5fdd0b8b422f060fe77cddbb2531b1bd01f5264736468137c078abc0bd0",
+        "STAGING_ISOLATION_APPROVED": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+        "STAGING_PORTAL_ID": "2de9c9788e5c594d027549caa4c120ca7b4b0c5f78c29152a08f36dc81eb319f"
+      },
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false"
+      },
+      "emailEnabled": "true"
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "versionId": "f7ae2b0f-07f1-467d-b7cd-fe8eab47b0fd",
+      "sourceCommit": "bef3d71276b94c7d398225487c2ecbc36f35bd71",
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      },
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850",
+          "scriptName": "ai-and-main-revenue-opportunity-staging"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "ordinarySettingHashes": {
+        "ACCESS_AUDIENCE": "7b8615a1c012eb96eac75e86ae9658a165d19504fa72114875a10f75e910fd85",
+        "ACCESS_ISSUER": "09cd994a3f6907513a380c60f203af347c2c0bb5f5e73565ae1ef0fbf2a7f6a0",
+        "APPROVER_SUBJECTS_JSON": "5a93d9d286e336ef6278432ca823f18bff6f14821b8996eb0d82b994817dbf64",
+        "AUDIT_RETENTION_DAYS": "4e47eb5525df25f94da777993dafa41d9ab2bfa80a89e28f76d42cd46ab082e7",
+        "CERTIFICATION_MODE": "efa0848e6fd55eec6a3d6e2e171a9b8025950871925586a2154448b5bb58502c",
+        "CRM_WRITEBACK_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEMO_ONLY_EXECUTION_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEMO_RECOVERY_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEMO_RECOVERY_EXPIRES_AT": "415ebadc296cdffc9a8497ec99a1167e1d55ddbabd39277911a5fc9e3069b34d",
+        "DEMO_RECOVERY_FAULT_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEMO_RECOVERY_RUN_ID": "b86341c59e80d753949bb3a954e3e1fd3b7479d8e96cb73b67429078a86effaa",
+        "DEMO_RELEASE_EXPIRES_AT": "4b766f3e9dfd229fc623d7efe896def324cbcd99150d61cfada309f22b70cf61",
+        "DEMO_RELEASE_MAX_CREATES": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "DEMO_RELEASE_RUN_ID": "656c2718d1e1d8f81d114be99f1660e9a58686b3c40b62d41be1652a1a50a4ff",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "DEPLOYMENT_ENVIRONMENT": "e919a75364398a449f860aeadddc57fa0502145a4e63959ddb33c417a48dc0da",
+        "ENABLE_GENERAL_EXECUTION": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "ENABLE_TEST_TASK_WRITES": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "GENERAL_RELEASE_APPROVED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "OPERATOR_EMAIL_ENABLED": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+        "RELEASE_SOURCE_SHA": "1767ca7cbf586e2b0b4108e823a9ac6496df7c1d1bdafadd5d21483ea619f48b",
+        "STAGING_CONTACT_ID": "6079b5fdd0b8b422f060fe77cddbb2531b1bd01f5264736468137c078abc0bd0",
+        "STAGING_ISOLATION_APPROVED": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+        "STAGING_PORTAL_ID": "2de9c9788e5c594d027549caa4c120ca7b4b0c5f78c29152a08f36dc81eb319f"
+      },
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false"
+      },
+      "emailEnabled": "false"
+    }
+  ],
+  "secretValuesRead": false,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailCalls": 0,
+  "configurationChanges": 0
+}
