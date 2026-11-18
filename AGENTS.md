@@ -969,3 +969,17 @@ switches/all nine task controls false, then reconcile read-only if unknown.
 Do not rerecord/reapprove unchanged content, issue a Codex CRM POST or create a
 second note after uncertainty. Feature release/other semantic decisions remain
 separate; exact original approval still expires 2026-11-19T15:09:30.531Z.
+
+Window-3 is actually verified open under the SAME unused exact intake/grant/
+payload and one-create cap until 2026-11-19T00:05:54.364Z (November 18, 7:05:54
+p.m. Eastern). See window-3/note-window-enable.json. Run voice-note-run-e9a78a1c-e5ad-44a3-8019-b41f5ab78160
+uses an exactly-thirty-minute single-clock plan. Active code remains 94dfdeb;
+all prior settings/Secrets/namespace/Access/host/email state is preserved. Only
+the two bounded note switches are true; all nine task/fault/general-release
+controls remain false. No CRM/model/email call or note submission was made by
+the controller; real operator Save once is pending. On the next result/error,
+close FIRST with note-window.js --close --user-authorized --window-3, verify
+closure and preserve evidence, then reconcile read-only if unknown. Do not reset
+attempts, create again, transcribe or renew approval. Expired windows require
+closure/current-state inspection before any next step. Feature release remains
+separate; original exact approval expires November 19 at 15:09:30.531Z.

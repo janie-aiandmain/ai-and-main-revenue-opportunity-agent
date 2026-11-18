@@ -30,3 +30,23 @@ Preserve the actual result; reconcile read-only if unknown, never create again.
 Original windows, failures, timing correction and prior closures stay unchanged.
 Hosted note creation and voice feature release acceptance remain pending until
 actual evidence/review; task/general/fault/release controls stay false.
+
+## Third window actually verified open
+
+[note-window-enable.json](note-window-enable.json) verifies both Workers'
+configuration activation and unchanged active module bytes, Secret names,
+namespace, identity/tenant/email/host/preview settings. All nine task/fault/
+general-release controls remain false. Both unauthenticated voice routes
+redirect to Access. The controller made zero CRM/model/email calls and zero
+note submissions; no Worker-code deployment was needed.
+
+Run `voice-note-run-e9a78a1c-e5ad-44a3-8019-b41f5ab78160` expires November 18 at
+7:05:54 p.m. Eastern (2026-11-19T00:05:54.364Z). Its duration is exactly thirty
+minutes. Only the same unused intake, original grant and bf133090… payload can
+execute. The durable one-attempt cap applies across windows; no approval/count
+is reset or renewed. The real operator is asked to refresh, Load and Save once.
+Actual hosted note creation and its permission remain PENDING until a Save result.
+
+On any result/error/expiry, close using --close --user-authorized --window-3
+before further steps; preserve result and reconcile read-only if unknown.
+No task, customer action, email or general feature release is authorized.
