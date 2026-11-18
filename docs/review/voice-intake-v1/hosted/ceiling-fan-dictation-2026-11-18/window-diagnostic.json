@@ -1,0 +1,125 @@
+{
+  "at": "2026-11-18T16:17:42.879Z",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "settingsVoice": {
+        "RELEASE_SOURCE_SHA": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+        "VOICE_NOTE_EXECUTION_APPROVAL_ID": "voice-approval_db6b6e7c-c6e3-4674-a23d-c7b3f7fed0e5",
+        "VOICE_NOTE_EXECUTION_EXPIRES_AT": "2026-11-18T16:46:43.592Z",
+        "VOICE_NOTE_EXECUTION_INTAKE_ID": "voice_50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a",
+        "VOICE_NOTE_EXECUTION_MAX_CREATES": "1",
+        "VOICE_NOTE_EXECUTION_PAYLOAD_HASH": "sha256:bf133090a9103ac3c119c220a7a4d2ede4e8ef66768352eb132ef9029204d599",
+        "VOICE_NOTE_EXECUTION_RUN_ID": "voice-note-run-3bb4a922-6f61-486e-95d1-caa921ea3f4f",
+        "VOICE_NOTE_EXECUTION_STARTED_AT": "2026-11-18T16:16:43.592Z",
+        "VOICE_NOTE_RELEASE_APPROVED": "false",
+        "VOICE_NOTE_WRITES_ENABLED": "false"
+      },
+      "activeVersionId": "974f7e5f-f724-4591-9348-21a4fe30b7f1",
+      "activeVoice": {
+        "RELEASE_SOURCE_SHA": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+        "VOICE_NOTE_EXECUTION_APPROVAL_ID": "voice-approval_db6b6e7c-c6e3-4674-a23d-c7b3f7fed0e5",
+        "VOICE_NOTE_EXECUTION_EXPIRES_AT": "2026-11-18T16:46:43.592Z",
+        "VOICE_NOTE_EXECUTION_INTAKE_ID": "voice_50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a",
+        "VOICE_NOTE_EXECUTION_MAX_CREATES": "1",
+        "VOICE_NOTE_EXECUTION_PAYLOAD_HASH": "sha256:bf133090a9103ac3c119c220a7a4d2ede4e8ef66768352eb132ef9029204d599",
+        "VOICE_NOTE_EXECUTION_RUN_ID": "voice-note-run-3bb4a922-6f61-486e-95d1-caa921ea3f4f",
+        "VOICE_NOTE_EXECUTION_STARTED_AT": "2026-11-18T16:16:43.592Z",
+        "VOICE_NOTE_RELEASE_APPROVED": "false",
+        "VOICE_NOTE_WRITES_ENABLED": "false"
+      },
+      "versions": [
+        {
+          "id": "974f7e5f-f724-4591-9348-21a4fe30b7f1",
+          "createdOn": "2026-11-18T16:17:14.668591Z"
+        },
+        {
+          "id": "b443b9ec-9508-4d5f-a821-bf841400f1a8",
+          "createdOn": "2026-11-18T16:17:00.106467Z"
+        },
+        {
+          "id": "fc8aaeeb-3a20-4130-81ee-53211176b124",
+          "createdOn": "2026-11-18T16:14:50.229882Z"
+        },
+        {
+          "id": "910bb6cd-c0a1-410d-b3c2-35ea209ac597",
+          "createdOn": "2026-11-18T14:42:26.003979Z"
+        },
+        {
+          "id": "3586b7d5-0ce4-42f2-baef-5f1a744443e5",
+          "createdOn": "2026-11-17T21:54:53.214758Z"
+        }
+      ],
+      "deployment": {
+        "id": "304f41c1-b077-4966-b2d7-73a6ce9e3cf1",
+        "source": "api",
+        "strategy": "percentage",
+        "author_email": "ruddy4learning@gmail.com",
+        "annotations": {
+          "workers/message": "Automatic deployment on upload.",
+          "workers/triggered_by": "upload"
+        },
+        "versions": [
+          {
+            "version_id": "974f7e5f-f724-4591-9348-21a4fe30b7f1",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-11-18T16:17:14.668591Z"
+      }
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "settingsVoice": {
+        "RELEASE_SOURCE_SHA": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+        "VOICE_NOTE_RELEASE_APPROVED": "false",
+        "VOICE_NOTE_WRITES_ENABLED": "false"
+      },
+      "activeVersionId": "1ec78c86-ff1a-4d88-acd7-2d4ee9087355",
+      "activeVoice": {
+        "RELEASE_SOURCE_SHA": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+        "VOICE_NOTE_RELEASE_APPROVED": "false",
+        "VOICE_NOTE_WRITES_ENABLED": "false"
+      },
+      "versions": [
+        {
+          "id": "1ec78c86-ff1a-4d88-acd7-2d4ee9087355",
+          "createdOn": "2026-11-18T16:15:24.384791Z"
+        },
+        {
+          "id": "de3ec5b6-564c-4c97-90d3-bb0c0ee69138",
+          "createdOn": "2026-11-18T14:45:32.961794Z"
+        },
+        {
+          "id": "f7ae2b0f-07f1-467d-b7cd-fe8eab47b0fd",
+          "createdOn": "2026-11-17T21:56:03.848118Z"
+        },
+        {
+          "id": "66e3caac-21f7-4b8a-933c-b9d8abb10357",
+          "createdOn": "2026-11-16T22:29:55.397433Z"
+        },
+        {
+          "id": "8d56271f-3445-4e08-9931-7b8ece61a4a6",
+          "createdOn": "2026-11-16T21:45:17.864736Z"
+        }
+      ],
+      "deployment": {
+        "id": "a8fffce2-28ac-4474-bb98-4aa8f46246ad",
+        "source": "api",
+        "strategy": "percentage",
+        "author_email": "ruddy4learning@gmail.com",
+        "annotations": {
+          "workers/message": "Exact-intake voice execution guard; all note/task execution disabled.",
+          "workers/triggered_by": "deployment"
+        },
+        "versions": [
+          {
+            "version_id": "1ec78c86-ff1a-4d88-acd7-2d4ee9087355",
+            "percentage": 100
+          }
+        ],
+        "created_on": "2026-11-18T16:15:45.834414Z"
+      }
+    }
+  ]
+}

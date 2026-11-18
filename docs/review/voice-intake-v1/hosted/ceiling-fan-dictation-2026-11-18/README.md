@@ -128,3 +128,25 @@ No CRM/model/email call or note/task submission occurred during deployment.
 The exact intake grant remains bound to its original unchanged payload/action,
 not automatically to other outputs. A separate configuration-only window and
 the real operator Save are still needed for hosted note-creation evidence.
+
+## First window enable stopped and closed
+
+The first configuration-only attempt is preserved unchanged in
+[note-window-enable.json](note-window-enable.json). Cloudflare PATCH applied a
+new owner version, but the immediately following version-list read returned the
+previous closed version; the controller stopped and attempted closure. The
+rollback's immediate version-detail read also returned transient 404/100146.
+[Subsequent actual readback](window-diagnostic.json) confirms BOTH Workers'
+active versions and current settings have note writes/release false. Owner
+closed version is 974f7e5f-f724-4591-9348-21a4fe30b7f1; gateway was never opened.
+No operator Save was requested; no CRM/model/email call or note submission
+occurred. The first report's original UNVERIFIED field is retained; this later
+readback resolves the closure uncertainty without rewriting it.
+
+The controller now polls read-only for a different version with exactly the
+requested bindings, tolerating only the specific transient version-not-found
+response. It does not repeat PATCH to work around read lag, expand permissions
+or retry a CRM create. Two tests cover stale lists, stale bindings, transient
+version 404, bounded nonconvergence and authentication failures. `--resume`
+uses the SAME unexpired run, exact note/grant and one-create limit, records a
+separate receipt, and never resets historical evidence or a create attempt.
