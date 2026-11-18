@@ -113,3 +113,18 @@ bindings and closes on controller error. Runtime expiry blocks further POSTs
 even before explicit closure. After the operator's one Save, explicitly close
 both Workers and verify; record actual note ID/readback separately. No note has
 been created by the code/receipt verification recorded above.
+
+## Guard actually deployed with writes closed
+
+Source `94dfdeb8d9d65f4cf8f3419031601a3eee386212` is deployed to the existing
+private owner (`fc8aaeeb-3a20-4130-81ee-53211176b124`) and gateway
+(`1ec78c86-ff1a-4d88-acd7-2d4ee9087355`). Both active module bytes match local
+bundles. See guard-before-deployment.json, guard-deployment-owner.json and
+guard-deployment-gateway.json. Prior ordinary settings, Secret names, namespace,
+identity, email state and hostname/preview state are preserved. All nine task
+controls and both note-write switches are false at this closed checkpoint.
+Four unauthenticated voice routes redirect to Access; see guard-access.json.
+No CRM/model/email call or note/task submission occurred during deployment.
+The exact intake grant remains bound to its original unchanged payload/action,
+not automatically to other outputs. A separate configuration-only window and
+the real operator Save are still needed for hosted note-creation evidence.

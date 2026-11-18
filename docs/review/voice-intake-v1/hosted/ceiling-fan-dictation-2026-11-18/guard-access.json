@@ -1,0 +1,33 @@
+{
+  "kind": "ACTUAL_UNAUTHENTICATED_ACCESS_CHECK_AFTER_CLOSED_GUARD_DEPLOYMENT",
+  "checkedAt": "2026-11-18T16:16:04.070Z",
+  "results": [
+    {
+      "path": "/voice-intake",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/status",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/approve",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/submit",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    }
+  ],
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailCalls": 0
+}

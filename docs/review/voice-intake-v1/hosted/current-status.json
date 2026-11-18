@@ -1,8 +1,8 @@
 {
   "kind": "CURRENT_VOICE_INTAKE_PREVIEW_STATUS",
-  "sourceCommit": "dc8476d6594baceadac302ffe992a6ac206c49c5",
-  "ownerVersion": "910bb6cd-c0a1-410d-b3c2-35ea209ac597",
-  "gatewayVersion": "de3ec5b6-564c-4c97-90d3-bb0c0ee69138",
+  "sourceCommit": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+  "ownerVersion": "fc8aaeeb-3a20-4130-81ee-53211176b124",
+  "gatewayVersion": "1ec78c86-ff1a-4d88-acd7-2d4ee9087355",
   "activeCodeMatchesLocalBuildBothWorkers": true,
   "accessProtected": true,
   "voiceIntakeEnabled": true,
@@ -30,12 +30,15 @@
   "currentIntakeCreateAttempts": 0,
   "currentIntakePreparedPayload": true,
   "currentIntakeApproval": true,
-  "nextStep": "Deploy tested exact-intake execution guard with writes closed; permit only one existing approved note in an expiring window. User Save action pending.",
+  "nextStep": "Open exact approved one-note window, then user Load saved intake and Save once. No tasks or general writeback.",
   "lastFullIntakeReceiptState": "APPROVED",
   "derivedWorkflowPhase": "EXACT_NOTE_APPROVAL_VERIFIED_EXECUTION_STILL_CLOSED",
   "preparedNoteRevision": 2,
   "preparedNotePayloadHash": "sha256:bf133090a9103ac3c119c220a7a4d2ede4e8ef66768352eb132ef9029204d599",
   "preparedNoteActionVersion": "voice-note-action-v1:sha256:9dd9d9b23c3bd679668d4fe85e48adf6f64fa0cfa5293f6e0f7c012f7778d5ad",
   "approvalReceiptVerified": true,
-  "noteExecutionApprovalEvidence": "ceiling-fan-dictation-2026-11-18/operator-approval-check.json"
+  "noteExecutionApprovalEvidence": "ceiling-fan-dictation-2026-11-18/operator-approval-check.json",
+  "executionGuardDeployed": true,
+  "executionGuardPolicy": "one-intake-exact-note-demo-window-v1",
+  "noteWritesCurrentlyEnabled": false
 }

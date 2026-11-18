@@ -1,0 +1,80 @@
+{
+  "kind": "ACTUAL_CLOSED_EXACT_VOICE_GUARD_DEPLOYMENT",
+  "checkedAt": "2026-11-18T16:15:11.791Z",
+  "name": "ai-and-main-revenue-opportunity-staging",
+  "sourceCommit": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+  "priorVersionId": "910bb6cd-c0a1-410d-b3c2-35ea209ac597",
+  "activeVersionId": "fc8aaeeb-3a20-4130-81ee-53211176b124",
+  "deploymentId": "ebc356b3-85db-48c7-9bcb-1c54f4d986d6",
+  "traffic": [
+    {
+      "version_id": "fc8aaeeb-3a20-4130-81ee-53211176b124",
+      "percentage": 100
+    }
+  ],
+  "codeMatches": true,
+  "localModules": [
+    {
+      "name": "worker.js",
+      "sha256": "eba0f43d2e911d2c776a6fd5f40c73fee01cf7fab09496c52474634dcba49eed",
+      "bytes": 325912
+    }
+  ],
+  "remoteModules": [
+    {
+      "name": "worker.js",
+      "sha256": "eba0f43d2e911d2c776a6fd5f40c73fee01cf7fab09496c52474634dcba49eed",
+      "bytes": 325912
+    }
+  ],
+  "secretNames": [
+    "EVAL_OPENAI_API_KEY",
+    "OPERATOR_EMAIL_API_KEY",
+    "STAGING_HUBSPOT_READ_TOKEN",
+    "STAGING_HUBSPOT_WRITE_TOKEN"
+  ],
+  "secretsPreserved": true,
+  "namespaceBindings": [
+    {
+      "name": "CERTIFICATION_LEDGER",
+      "className": "CertificationLedger",
+      "namespaceId": "16dca25759494a33813d2800f3f1a850"
+    }
+  ],
+  "namespacePreserved": true,
+  "ordinarySettingsPreservedExceptExplicitVoiceControlsAndSourceTag": true,
+  "subdomain": {
+    "enabled": false,
+    "previews_enabled": false
+  },
+  "hostnameStatePreserved": true,
+  "existingExecutionFlags": {
+    "CRM_WRITEBACK_ENABLED": "false",
+    "ENABLE_TEST_TASK_WRITES": "false",
+    "ENABLE_GENERAL_EXECUTION": "false",
+    "GENERAL_RELEASE_APPROVED": "false",
+    "DEMO_RECOVERY_ENABLED": "false",
+    "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+    "DEMO_RECOVERY_FAULT_ENABLED": "false",
+    "DEMO_ONLY_EXECUTION_ENABLED": "false",
+    "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false"
+  },
+  "allNineExistingExecutionFlagsFalse": true,
+  "voiceFlags": {
+    "VOICE_INTAKE_ENABLED": "true",
+    "VOICE_NOTE_WRITES_ENABLED": "false",
+    "VOICE_NOTE_RELEASE_APPROVED": "false"
+  },
+  "emailEnabled": "true",
+  "emailStatePreserved": true,
+  "secretValuesRead": false,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailCalls": 0,
+  "noteCreatePermission": "UNVERIFIED",
+  "hostedAuthenticatedVoicePreflight": "PASS_PRIOR_OPERATOR_RECEIPT",
+  "hostedTranscription": "PASS_PRIOR_OPERATOR_RESPONSE",
+  "humanSemanticReview": "EXACT_CORRECTED_NOTE_APPROVED_ONLY",
+  "noteExecutionApproval": true,
+  "approvalCompatibility": "Exact note request/action unchanged; operational guard narrows execution only"
+}
