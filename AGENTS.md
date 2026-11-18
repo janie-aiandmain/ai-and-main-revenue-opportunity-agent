@@ -899,3 +899,14 @@ the result and reconcile read-only if unknown. Runtime expiry blocks new POSTs.
 Do not reset attempts, renew this approval, extend the consumed run or reopen a
 new window blindly after a reset. Hosted note creation/permission/recovery remain
 pending until actual evidence; feature release acceptance remains separate.
+
+The user later reported that the note window expired. It is now EXPLICITLY CLOSED
+on both Workers; see note-window-close.json. Both note switches and all nine
+task/fault/general-release controls are verified false, with code/Secrets/
+namespace/Access/tenant/email/host state preserved. No CRM/model/email call or
+note submission occurred while closing. Prior open/failed window artifacts stay
+unchanged. No operator Save result has been supplied: current intake state and
+attempt count remain unverified. Await the user's read-only Load saved intake
+evidence before any further window. Do not assume no write from elapsed time,
+reset attempts, redo transcription or reapprove unchanged text. Exact approval
+expires 2026-11-19T15:09:30.531Z; changed payloads never inherit it.

@@ -182,3 +182,21 @@ additional tests concern deployment metadata convergence only. Earlier 273-test
 results, both Worker dry-run builds, 207/207 retained workflow executions and
 local Chromium/workerd results remain preserved at their original checkpoints.
 No new runtime generator change or provider call was needed.
+
+## Expired window explicitly closed — November 18 evening
+
+The user reported window expiry. Runtime expiry had already blocked new note
+POSTs at 11:46:43 a.m. Eastern. [Actual closure](note-window-close.json) now
+verifies both note-write/release switches false on BOTH Workers, all nine task/
+fault/general-release controls false, unchanged code, Secrets, namespace,
+identity/tenant/email/hostname settings and retained Access protection. The
+closure controller made zero CRM/model/email calls and zero note submissions.
+Prior open-window and failed-attempt evidence remains unchanged.
+
+No Save result has been supplied, so current hosted state, createAttempts and
+remoteNoteId must not be inferred from the earlier zero-attempt receipt. The
+operator has been asked to Load saved intake read-only and share full evidence
+before any further window. Do not reset attempt counts or create after an unknown
+outcome. The original exact grant expires November 19 at 10:09:30 a.m. Eastern;
+window expiry alone does not renew or invalidate it, and it cannot cover a changed
+payload. No new transcription, preparation or approval is presently requested.
