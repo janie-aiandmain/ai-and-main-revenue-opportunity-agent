@@ -1,0 +1,11 @@
+{
+  "source": "User-uploaded Pasted text.txt, sediment file_00000000ee2881f689a0fa506a599d1d.",
+  "rawReceiptFile": "operator-save-receipt.raw.txt",
+  "rawReceiptSha256": "ecb68b384833927cf8b577e8e78090d3be74c48ec8624f956d53ba36410fdc6c",
+  "normalization": "Added the single missing opening object brace before JSON parsing; field values unchanged. Raw uploaded bytes preserved separately.",
+  "independentlyDownloadedReceipt": false,
+  "jwtOrCookieInspected": false,
+  "claimBasis": "Operator-supplied hosted receipt matched to known deployed handler and actual Cloudflare configuration/version evidence.",
+  "remoteNoteId": "426427657968",
+  "state": "NOTE_CONFIRMED"
+}

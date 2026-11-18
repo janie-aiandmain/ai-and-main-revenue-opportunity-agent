@@ -983,3 +983,34 @@ closure and preserve evidence, then reconcile read-only if unknown. Do not reset
 attempts, create again, transcribe or renew approval. Expired windows require
 closure/current-state inspection before any next step. Feature release remains
 separate; original exact approval expires November 19 at 15:09:30.531Z.
+
+## Hosted voice-note Save confirmed and window closed — November 18
+
+The user uploaded the real Save result: NOTE_CONFIRMED, HubSpot note
+426427657968 on designated synthetic contact 582095692487 in portal 247646122,
+one create attempt and one transcription call. Exact bf133090… payload,
+9dd9d9b2… action, revision 2 and original db6b6e7c… approval are unchanged.
+Preserve raw uploaded bytes, normalized receipt (only a missing opening brace
+was added), provenance and confirmed-save-check.json under window-3. The receipt
+matches deployed source 94dfdeb / owner 15f4131b and reports durable pre-POST
+intent, normal create response and strict unique correlation/properties/contact
+readback at 2026-11-18T23:38:45.487Z. It is user-supplied hosted evidence, not an
+independently downloaded HubSpot record, JWT inspection or signed attestation.
+
+The controller immediately CLOSED and verified BOTH note switches and all nine
+task/fault/general-release controls false on both Workers; see window-3/
+note-window-close.json. Code, Secrets, namespace, Access, tenant/email/host state
+are preserved. No Codex CRM/model/email call or task was needed. The normal
+synthetic voice → correction → exact approval → HubSpot note/readback demo is
+complete. DO NOT reopen this consumed intake, reset counts, Save again, renew
+its approval or ask for another transcription to repeat this success.
+
+No fault was injected and no natural outage occurred in this note save. Hosted
+interrupted-note recovery and repeated-submit tests were not executed; earlier
+local simulated note tests and hosted task recoveries stay separate. No current
+model evaluation of this saved note, financial outcome, broader voice-feature
+release or customer rollout is implied. Other fixture semantic decisions remain
+pending as recorded. Final human note approval is not task/customer-action
+authority. scripts/voice/verify-save-receipt.js reproduces the offline receipt/
+closure check at this evidence commit. Latest prior suite is 292/292; no runtime
+changes or additional tests/build/model calls were needed for recording evidence.

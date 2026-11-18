@@ -50,3 +50,18 @@ Actual hosted note creation and its permission remain PENDING until a Save resul
 On any result/error/expiry, close using --close --user-authorized --window-3
 before further steps; preserve result and reconcile read-only if unknown.
 No task, customer action, email or general feature release is authorized.
+
+## Operator Save completed; window closed
+
+The latest result supersedes the earlier pending status: [CONFIRMATION.md](CONFIRMATION.md).
+Real operator receipt: NOTE_CONFIRMED, note **426427657968**, one create attempt,
+original exact payload/action/approval unchanged. Strict handler readback matched
+correlation, full note properties and designated-contact association. Original
+uploaded bytes and the single-brace parsing repair are preserved separately.
+
+Both Workers' note switches and all nine task/fault/general-release controls are
+verified closed in note-window-close.json. Do not reopen this consumed intake,
+Save again or request another transcription/approval. This is a normal hosted
+create/readback demonstration, not a hosted interrupted-note recovery test.
+No task or customer action follows; feature release and other semantic decisions
+remain separate. The evidence-only verifier passed without external calls.
