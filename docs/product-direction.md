@@ -8,6 +8,16 @@ It is an intelligence and orchestration layer that sits on top of an existing CR
 
 The product should improve the client's existing operating system, not replace it.
 
+The intended input workflow also includes service-provider dictation: record or
+upload audio, transcribe it, review/correct the transcript and original recording
+time, confirm the CRM association, then approve saving that exact note in HubSpot.
+This is bounded, append-only capture of a provider's report. It does not provide a
+generic notes editor or customer-management interface. A provider report must not
+be mislabeled as a direct customer recording. Creating the source note and
+approving any resulting follow-up task are separate decisions. The November 18
+implementation starts with the designated synthetic demo; note-write activation
+and permissions must be verified separately from the accepted task demo.
+
 ## The moat
 
 The moat is not a dashboard, a CRM, or an AI note summarizer.

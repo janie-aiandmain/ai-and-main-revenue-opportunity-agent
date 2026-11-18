@@ -1,5 +1,16 @@
 # AI & MAIN Revenue Opportunity Agent
 
+**Current milestone:** the [controlled synthetic demo is accepted](docs/review/demo-approval-negatives-2026-11-17/adjudication/README.md).
+General task writeback stays disabled. **Current development:**
+[provider voice-note intake](docs/review/voice-intake-v1/README.md): record/upload →
+transcribe → review exact transcript/original time/contact → approve exact HubSpot
+note → existing finding workflow. Voice note writes are disabled and permission
+is unverified; this new capability does not inherit the older demo acceptance.
+
+The status paragraphs below are historical checkpoints. Their capture-time
+PENDING/disabled annotations are preserved; use the current milestone and voice
+intake package above for the latest state.
+
 Current hosted step: [November 16 preflight passed; baseline finding receipt pending](docs/review/demo-closeout/hosted/preflight-2026-11-16/README.md).
 Both credential portal checks, synthetic marker, task reads and Approver identity
 pass. Email is still disabled; its status alone does not prove the fresh baseline.

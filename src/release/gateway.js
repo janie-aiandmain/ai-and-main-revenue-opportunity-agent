@@ -4,6 +4,8 @@ import {DemoHubSpot,PORTAL,CONTACT,MARKER} from '../demo/hubspot.js';
 import {verifyOperator,verifyIdentity} from '../staging/auth.js';
 import {identityBlocker} from '../staging/blockers.js';
 import {operatorConsole} from '../staging/operator-console.js';
+import {voiceGateway} from '../voice/http.js';
+import {voiceConsole} from '../voice/console.js';
 const json=(b,s=200)=>Response.json(b,{status:s,headers:{'cache-control':'no-store','x-content-type-options':'nosniff'}});
 const reads=new Set(['status','metrics','preflight','session','general/findings','general/identity-candidates','general/notifications']);
 const writes=new Set(['general/approval-negative-tests','general/evaluate','general/identity-review','general/review','general/approve','general/resume-approval','general/execute','general/arm-response-loss','reconcile','resolve-uncertain']);
@@ -18,7 +20,9 @@ export async function operatorGateway(request,env){
  }
  let actor;try{actor=await verifyOperator(request,env);}catch(error){const b=identityBlocker(error);return json({status:b.code,blocker:b.toJSON()},b.code==='insufficient_permission'?403:401);}
  if(path==='/operator'||path==='/')return request.method==='GET'?operatorConsole(env):json({status:'get_required'},405);
+ if(path==='/voice-intake')return request.method==='GET'?voiceConsole(env):json({status:'get_required'},405);
  if(!path.startsWith('/certification/'))return json({status:'legacy_diagnostic_disabled_use_operator'},404);
+ if(path.startsWith('/certification/voice/'))return request.method==='POST'?voiceGateway(request,env,actor):json({status:'post_required'},405);
  const action=path.slice('/certification/'.length);if(!reads.has(action)&&!writes.has(action))return json({status:'not_found'},404);
  if(request.method!=='POST')return json({status:'post_required'},405);
  if(writes.has(action)&&!['Approver','Admin'].includes(actor.role))return json({status:'approver_required'},403);

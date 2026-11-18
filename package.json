@@ -32,6 +32,8 @@
     "review:current": "node scripts/review/verify-synthetic-label.js",
     "approval:negative:offline": "node scripts/release/approval-negatives-offline.js",
     "approval:negative:worker": "node scripts/release/approval-negatives-worker.js",
+    "voice:local": "node scripts/voice/local-workflow.js",
+    "voice:model:plan": "node scripts/voice/model-validation.js --plan",
     "review:demo-closeout:v0.3.11": "node scripts/review/demo-closeout.js --check"
   },
   "devDependencies": {

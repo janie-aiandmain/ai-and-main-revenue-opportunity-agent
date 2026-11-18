@@ -9,6 +9,9 @@
   "workers_dev": false,
   "preview_urls": false,
   "vars": {
+    "VOICE_INTAKE_ENABLED": "false",
+    "VOICE_NOTE_WRITES_ENABLED": "false",
+    "VOICE_NOTE_RELEASE_APPROVED": "false",
     "DEPLOYMENT_ENVIRONMENT": "staging",
     "CERTIFICATION_MODE": "remote-demo",
     "ENABLE_TEST_TASK_WRITES": "false",

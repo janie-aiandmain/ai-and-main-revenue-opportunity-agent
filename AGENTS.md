@@ -747,3 +747,29 @@ All nine execution/fault/release flags stay false; prior operator email settings
 remain unchanged. No further test, recovery click, task or deployment is needed
 to record this acceptance. Do not reopen consumed operations or transfer this
 acceptance to changed source/outputs/configuration. Main remains unchanged.
+
+## Service-provider voice intake — November 18
+
+The user clarified that the intended product also includes provider voice notes
+becoming HubSpot notes and explicitly said “yes, thank you” to completing that
+intake cycle. This extends the input path: audio → verbatim transcript → explicit
+transcript/original-time/designated-contact review → complete exact note approval
+→ bounded CRM-native note → existing finding workflow. It is not general CRM
+note/contact administration. Start with the existing synthetic demo, identity,
+credentials and ledger class. Note-create permission is unverified, not assumed
+missing or granted. Do not recreate keys or broaden scopes automatically.
+
+Preserve the accepted demo packet/source/version and all earlier evidence. It
+does not approve this new feature's outputs or note mutations. Voice contracts
+and note approvals are separate from task findings/grants. Default the new
+voice activation/write/release controls false in source. Keep every existing
+task/fault/release control false. Necessary finite non-production validation is
+one generated-speech transcription and three unchanged-model reasoning checks,
+reserved before calls in a separate four-call journal; never reset old journals.
+Voice/transcript content remains untrusted data. Preserve provider-versus-customer
+attribution, quantities, conditions and original recording time. Do not renew
+relative dates. No real-customer audio/data is authorized. No HubSpot note/task
+write, email, credential/permission change or new environment is authorized by
+this source/local cycle. Bounded deployment of read/transcribe/review-only demo
+intake may follow passing gates under existing deployment authority; note writes
+stay off pending isolated hosted checks and real exact-payload approval.

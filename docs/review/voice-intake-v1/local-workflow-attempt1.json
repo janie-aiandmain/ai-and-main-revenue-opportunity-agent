@@ -1,0 +1,145 @@
+{
+  "kind": "EXECUTED_LOCAL_CHROMIUM_WORKER_AND_SEPARATE_SQLITE_FIXTURES_NOT_HOSTED",
+  "realHubspotCalls": 0,
+  "realModelCalls": 0,
+  "realEmails": 0,
+  "humanApprovals": 0,
+  "checks": [
+    "gateway_missing_identity_and_Viewer_rejected",
+    "actual_browser_audio_upload_transcription_review_without_CRM_create",
+    "browser_exact_preview_and_approval_then_one_local_note_despite_repeat_submission"
+  ],
+  "preflight": {
+    "kind": "VOICE_INTAKE_READ_ONLY_PREFLIGHT",
+    "portalId": "voice-fixture-portal",
+    "contactId": "voice-fixture-contact",
+    "readCredentialPortalVerified": true,
+    "writeCredentialPortalVerified": true,
+    "syntheticContactMarkerVerified": true,
+    "noteContactAssociationType": 202,
+    "noteCreationPermission": "UNVERIFIED_NO_MUTATION_PROBE",
+    "noteWritesEnabled": true,
+    "permissionsExpanded": false,
+    "ownerSourceCommit": null,
+    "ownerDeploymentVersion": null,
+    "ledgerBootId": "6707bb58-795c-4116-b479-f68c753e8a3a"
+  },
+  "normal": {
+    "voiceContract": "service-provider-voice-intake-v1",
+    "transcriptionContract": "verbatim-audio-transcription-v1",
+    "noteContract": "hubspot-reviewed-voice-note-v1",
+    "intakeId": "voice_dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+    "state": "NOTE_CONFIRMED",
+    "revision": 2,
+    "audioHash": "sha256:a42d5478468ad21494ac93070c407b175f7c09d830038050a5c9fbc65fc43d20",
+    "originalTranscriptHash": "sha256:76c34c736cdfaccbc5ee232b8465fa6edf40c38b86128b2a46a30a00347d79c4",
+    "sourceLabel": "Synthetic service provider",
+    "recordedAt": "2025-02-13T12:30:20.000Z",
+    "originalText": "Synthetic test data only. The fictional customer requested pricing for exactly three additional garage outlets while the crew was onsite. Establish pricing before any additional work. No additional work scheduling customer contact or billing was authorized. No price or deadline was agreed.",
+    "reviewedText": "Synthetic test data only. The fictional customer requested pricing for exactly three additional garage outlets while the crew was onsite. Establish pricing before any additional work. No additional work scheduling customer contact or billing was authorized. No price or deadline was agreed.",
+    "payloadHash": "sha256:cec3d5a7488841903cc0b94af77413fc6ade355664507a0f6dfe11a8858000dd",
+    "actionVersion": "voice-note-action-v1:sha256:90c4d5168fa570df049f83f7b476b93a8e358dd4c8f51d96541b914eeff42747",
+    "correlation": "ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+    "finalRequest": {
+      "contractVersion": "hubspot-reviewed-voice-note-v1",
+      "method": "POST",
+      "url": "https://api.hubapi.com/crm/v3/objects/notes",
+      "portalId": "voice-fixture-portal",
+      "body": {
+        "properties": {
+          "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.</p><p>Service-provider dictation; transcript reviewed by an operator. The speaker label is operator-supplied, not independently verified.</p><p>Reporting provider: Synthetic service provider</p><p>Original recording time (UTC): 2025-02-13T12:30:20.000Z</p><p>The text below is a service-provider report, not a direct recording of the customer. No task, customer contact, scheduling, billing or additional work is authorized by saving it.</p><p>Synthetic test data only. The fictional customer requested pricing for exactly three additional garage outlets while the crew was onsite. Establish pricing before any additional work. No additional work scheduling customer contact or billing was authorized. No price or deadline was agreed.</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf]</p>",
+          "hs_timestamp": "2025-02-13T12:30:20.000Z"
+        },
+        "associations": [
+          {
+            "to": {
+              "id": "voice-fixture-contact"
+            },
+            "types": [
+              {
+                "associationCategory": "HUBSPOT_DEFINED",
+                "associationTypeId": 202
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "approval": {
+      "approvalId": "voice-approval_80b72688-8e7f-4637-b8a7-799e7dc21aea",
+      "actorHash": "sha256:0a8a4f2b91fbfa32e59942d79f4b737a2de5e74292bbcc8198d3f34f9d17983b",
+      "payloadHash": "sha256:cec3d5a7488841903cc0b94af77413fc6ade355664507a0f6dfe11a8858000dd",
+      "actionVersion": "voice-note-action-v1:sha256:90c4d5168fa570df049f83f7b476b93a8e358dd4c8f51d96541b914eeff42747",
+      "revision": 2,
+      "issuedAt": 1795011326956,
+      "expiresAt": 1795097726754
+    },
+    "remoteNoteId": "local-voice-note-1",
+    "createAttempts": 1,
+    "providerCalls": 1,
+    "expiresAt": "2026-11-19T14:15:26.754Z",
+    "lastError": null,
+    "draftRedacted": false,
+    "noteWritesEnabled": true,
+    "taskExecutionApproved": false,
+    "trace": [
+      {
+        "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+        "payload_hash": null,
+        "at": "2026-11-18T14:15:26.754Z"
+      },
+      {
+        "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+        "payload_hash": null,
+        "at": "2026-11-18T14:15:26.789Z"
+      },
+      {
+        "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+        "payload_hash": "sha256:cec3d5a7488841903cc0b94af77413fc6ade355664507a0f6dfe11a8858000dd",
+        "at": "2026-11-18T14:15:26.837Z"
+      },
+      {
+        "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+        "payload_hash": "sha256:cec3d5a7488841903cc0b94af77413fc6ade355664507a0f6dfe11a8858000dd",
+        "at": "2026-11-18T14:15:26.956Z"
+      },
+      {
+        "event": "VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL",
+        "payload_hash": "sha256:cec3d5a7488841903cc0b94af77413fc6ade355664507a0f6dfe11a8858000dd",
+        "at": "2026-11-18T14:15:27.071Z"
+      },
+      {
+        "event": "VOICE_POST_INTENT_PERSISTED_BEFORE_CREATE",
+        "payload_hash": "sha256:cec3d5a7488841903cc0b94af77413fc6ade355664507a0f6dfe11a8858000dd",
+        "at": "2026-11-18T14:15:27.076Z"
+      },
+      {
+        "event": "VOICE_CREATE_RESPONSE_REQUIRES_READBACK",
+        "payload_hash": "sha256:cec3d5a7488841903cc0b94af77413fc6ade355664507a0f6dfe11a8858000dd",
+        "at": "2026-11-18T14:15:27.078Z"
+      },
+      {
+        "event": "VOICE_READ_ONLY_RECONCILIATION",
+        "payload_hash": "sha256:cec3d5a7488841903cc0b94af77413fc6ade355664507a0f6dfe11a8858000dd",
+        "at": "2026-11-18T14:15:27.079Z"
+      },
+      {
+        "event": "VOICE_EXISTING_NOTE_MATCHED_NO_NEW_CREATE",
+        "payload_hash": "sha256:cec3d5a7488841903cc0b94af77413fc6ade355664507a0f6dfe11a8858000dd",
+        "at": "2026-11-18T14:15:27.085Z"
+      }
+    ],
+    "ownerSourceCommit": null,
+    "ownerDeploymentVersion": null,
+    "ledgerBootId": "6707bb58-795c-4116-b479-f68c753e8a3a"
+  },
+  "complete": false,
+  "error": "{\"status\":\"voice_multipart_audio_required\"}\n\n409 !== 200\n",
+  "summary": {
+    "notes": 1,
+    "createAttempts": 1,
+    "transcriptions": 1,
+    "reasonCalls": 0,
+    "unexpectedWrites": 0
+  }
+}

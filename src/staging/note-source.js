@@ -2,6 +2,15 @@ import {tenantConfiguration} from '../release/tenant.js';
 import { StagingBlocker,checkedJsonFetch,missingCredential } from './blockers.js';
 // Only the designated non-production contact is readable through this adapter.
 import { prepareHistory } from '../findings.js';
+export const NOTE_SOURCE_POLICY='hubspot-note-text-v2';
+export function normalizeHubSpotNote(html){
+ // Decode once: a literal transcript spelling "&lt;" must not turn into "<".
+ // Strip actual CRM markup before decoding escaped provider text.
+ const entities={nbsp:' ',amp:'&',lt:'<',gt:'>',quot:'"',apos:"'"};
+ return html.replace(/<br\s*\/?\s*>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&(?:nbsp|amp|lt|gt|quot|apos|#\d{1,7}|#x[a-f0-9]{1,6});/gi,entity=>{
+  const key=entity.slice(1,-1).toLowerCase();if(entities[key]!==undefined)return entities[key];const value=key.startsWith('#x')?parseInt(key.slice(2),16):Number(key.slice(1));return Number.isInteger(value)&&value>0&&value<=0x10ffff&&!(value>=0xd800&&value<=0xdfff)?String.fromCodePoint(value):entity;
+ }).trim();
+}
 export class DesignatedNoteSource {
   constructor(env){
     if(!env.STAGING_HUBSPOT_READ_TOKEN)throw missingCredential('STAGING_HUBSPOT_READ_TOKEN');
@@ -33,7 +42,7 @@ export class DesignatedNoteSource {
       const p=row.properties;
       if(String(row.id)!==id||typeof p?.hs_note_body!=='string'||!Number.isFinite(Date.parse(p.hs_timestamp)))throw Error('note_content_incomplete');
       // Same normalized text is used for reasoning, quotes, hashes and fresh reads.
-      const text=p.hs_note_body.replace(/<br\s*\/?\s*>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').trim();
+      const text=normalizeHubSpotNote(p.hs_note_body);
       notes.push({noteId:id,timestamp:new Date(p.hs_timestamp).toISOString(),note:text});
     }
     return {customer:'Designated non-production context',serviceHistory:await prepareHistory({serviceHistory:notes})};

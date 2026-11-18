@@ -13,21 +13,25 @@ import { operatorConsole } from './operator-console.js';
 import { HubSpotCertificationClient } from './hubspot-client.js';
 import { commitDemoFaultAndRestart } from '../release/demo-execution.js';
 import {emailConfig,NOTIFICATION_POLICY} from './email-notifications.js';
+import {VoiceIntakeLedger} from '../voice/ledger.js';
+import {voiceOwner,voiceGateway} from '../voice/http.js';
+import {voiceConsole} from '../voice/console.js';
 const json=(body,status=200)=>Response.json(body,{status,headers:{'cache-control':'no-store'}});
 export class CertificationLedger extends DurableObject {
-  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.bootId=crypto.randomUUID();this.env=env;this.ledger=new GeneralFindingLedger(durableDatabase(ctx.storage),env);this.ledger.runtimeBootId=this.bootId;this.ledger.recoverChecking();this.ledger.emailOutbox.recover();if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
+  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.bootId=crypto.randomUUID();this.env=env;const db=durableDatabase(ctx.storage);this.ledger=new GeneralFindingLedger(db,env);this.ledger.runtimeBootId=this.bootId;this.ledger.recoverChecking();this.ledger.emailOutbox.recover();if(db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='voice_intake'").get())this.voiceLedger=new VoiceIntakeLedger(db,env,{flush:()=>ctx.storage.sync()});if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
   async ensureRetentionAlarm(){
     let ready=false;try{ready=!!emailConfig(this.env);}catch{}
     const due=ready?this.ledger.emailOutbox.nextDue():null;
-    const desired=Math.min(Date.now()+86400000,due??Infinity),existing=await this.demoContext.storage.getAlarm();
+    const desired=Math.min(Date.now()+86400000,due??Infinity,this.voiceLedger?.nextExpiry()??Infinity),existing=await this.demoContext.storage.getAlarm();
     if(existing===null||existing>desired)await this.demoContext.storage.setAlarm(desired);
   }
   async alarm(){
-    try{await this.ledger.emailOutbox.deliver(this.env,{flush:()=>this.demoContext.storage.sync()});const days=Number(this.env.AUDIT_RETENTION_DAYS||365);this.ledger.pruneAuditMetadata(days);this.ledger.emailOutbox.prune(days);}
-    finally{let ready=false;try{ready=!!emailConfig(this.env);}catch{}await this.demoContext.storage.setAlarm(Math.min(Date.now()+86400000,ready?(this.ledger.emailOutbox.nextDue()??Infinity):Infinity));}
+    try{await this.ledger.emailOutbox.deliver(this.env,{flush:()=>this.demoContext.storage.sync()});const days=Number(this.env.AUDIT_RETENTION_DAYS||365);this.ledger.pruneAuditMetadata(days);this.ledger.emailOutbox.prune(days);this.voiceLedger?.prune();}
+    finally{let ready=false;try{ready=!!emailConfig(this.env);}catch{}await this.demoContext.storage.setAlarm(Math.min(Date.now()+86400000,ready?(this.ledger.emailOutbox.nextDue()??Infinity):Infinity,this.voiceLedger?.nextExpiry()??Infinity));}
   }
   async fetch(request){
     const path=new URL(request.url).pathname;
+    if(path.startsWith('/certification/voice/'))return voiceOwner(request,this);
     let input;try{input=await request.json();}catch{return json({status:'invalid_json'},400);}
     // Private namespace binding only. The public owner Worker never forwards this path.
     if(path==='/internal/demo-recovery-v1'){
@@ -121,6 +125,8 @@ export default {
     if(request.method==='POST'&&request.headers.get('Origin')&&request.headers.get('Origin')!==new URL(request.url).origin)return json({status:'cross_origin_request_forbidden'},403);
     let actor;try{actor=await verifyOperator(request,env);}catch(error){const blocker=identityBlocker(error);return json({status:blocker.code,blocker:blocker.toJSON()},blocker.code==='insufficient_permission'?403:401);}
     if(path==='/operator')return request.method==='GET'?operatorConsole(env):json({status:'get_required'},405);
+    if(path==='/voice-intake')return request.method==='GET'?voiceConsole(env):json({status:'get_required'},405);
+    if(path.startsWith('/certification/voice/'))return request.method==='POST'?voiceGateway(request,env,actor):json({status:'post_required'},405);
     if(!path.startsWith('/certification/')){
       if(request.method!=='GET')return json({status:'read_only_application'},405);
       return application.fetch(request,env);
