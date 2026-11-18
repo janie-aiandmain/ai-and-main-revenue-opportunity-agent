@@ -1,0 +1,13 @@
+{
+  "source": "Full current intake receipt pasted by the user after Load saved intake on November 18, 2026.",
+  "formatting": "Formatted field list as standard JSON without changing values.",
+  "receiptFileSha256": "a105aeddc8095c8ac642339f38d1264fb3f1699e33cb31d1c8a912849041c69e",
+  "independentlyDownloaded": false,
+  "signedReceiptClaimed": false,
+  "currentState": "APPROVED",
+  "createAttempts": 0,
+  "remoteNoteId": null,
+  "receiptSourceCommit": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+  "receiptOwnerVersion": "1c3c72d0-eca5-4c0e-a420-e454888d56cb",
+  "doesNotRenewApproval": true
+}

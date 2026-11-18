@@ -1,0 +1,86 @@
+{
+  "voiceContract": "service-provider-voice-intake-v1.2",
+  "transcriptionContract": "verbatim-audio-transcription-v1",
+  "noteContract": "hubspot-reviewed-voice-note-v1.2",
+  "intakeId": "voice_50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a",
+  "state": "APPROVED",
+  "revision": 2,
+  "audioHash": "sha256:fc937ca9253b4c857c5478acf63134292e8bed774d31cb27467fbe96b2f19f12",
+  "originalTranscriptHash": "sha256:ca30bdb1935dffcb8cb208ba6428b600ab5c0a9c41542a36af5f14e6f865371f",
+  "sourceLabel": "Synthetic service provider",
+  "recordedAt": "2026-11-18T15:08:10.000Z",
+  "originalText": "Synthetic test data only. The fictional customer requesting pricing for one ceiling fan replacement. Pricing only, no work appointment. Customer contact or billing was authorized.",
+  "reviewedText": "Synthetic test data only. The fictional customer requested pricing for one ceiling fan replacement. Pricing information only. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized",
+  "payloadHash": "sha256:bf133090a9103ac3c119c220a7a4d2ede4e8ef66768352eb132ef9029204d599",
+  "actionVersion": "voice-note-action-v1:sha256:9dd9d9b23c3bd679668d4fe85e48adf6f64fa0cfa5293f6e0f7c012f7778d5ad",
+  "correlation": "ai-main-voice-50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a",
+  "finalRequest": {
+    "contractVersion": "hubspot-reviewed-voice-note-v1.2",
+    "method": "POST",
+    "url": "https://api.hubapi.com/crm/v3/objects/notes",
+    "portalId": "247646122",
+    "body": {
+      "properties": {
+        "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE \u2014 TEST DATA ONLY.</p><p>Source type: Service-provider dictation.</p><p>Transcript review: Checked by the operator.</p><p>Provider label (operator-entered): Synthetic service provider</p><p>Original recording time (UTC): 2026-11-18T15:08:10.000Z</p><p>Reviewed transcript:</p><p>Synthetic test data only. The fictional customer requested pricing for one ceiling fan replacement. Pricing information only. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a]</p>",
+        "hs_timestamp": "2026-11-18T15:08:10.000Z"
+      },
+      "associations": [
+        {
+          "to": {
+            "id": "582095692487"
+          },
+          "types": [
+            {
+              "associationCategory": "HUBSPOT_DEFINED",
+              "associationTypeId": 202
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "approval": {
+    "approvalId": "voice-approval_db6b6e7c-c6e3-4674-a23d-c7b3f7fed0e5",
+    "actorHash": "sha256:1733d381cb88719b3d67fe1e46c9135e5361edb113fb5f99ab8a8fe2dc4f2a17",
+    "payloadHash": "sha256:bf133090a9103ac3c119c220a7a4d2ede4e8ef66768352eb132ef9029204d599",
+    "actionVersion": "voice-note-action-v1:sha256:9dd9d9b23c3bd679668d4fe85e48adf6f64fa0cfa5293f6e0f7c012f7778d5ad",
+    "revision": 2,
+    "issuedAt": 1795016082032,
+    "expiresAt": 1795100970531
+  },
+  "remoteNoteId": null,
+  "createAttempts": 0,
+  "providerCalls": 1,
+  "expiresAt": "2026-11-19T15:09:30.531Z",
+  "lastError": null,
+  "draftRedacted": false,
+  "noteWritesEnabled": false,
+  "taskExecutionApproved": false,
+  "trace": [
+    {
+      "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+      "payload_hash": null,
+      "at": "2026-11-18T15:09:30.531Z"
+    },
+    {
+      "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+      "payload_hash": null,
+      "at": "2026-11-18T15:09:31.951Z"
+    },
+    {
+      "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+      "payload_hash": "sha256:bf133090a9103ac3c119c220a7a4d2ede4e8ef66768352eb132ef9029204d599",
+      "at": "2026-11-18T15:20:28.718Z"
+    },
+    {
+      "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+      "payload_hash": "sha256:bf133090a9103ac3c119c220a7a4d2ede4e8ef66768352eb132ef9029204d599",
+      "at": "2026-11-18T15:34:42.032Z"
+    }
+  ],
+  "ownerSourceCommit": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+  "ownerDeploymentVersion": "1c3c72d0-eca5-4c0e-a420-e454888d56cb",
+  "ledgerBootId": "73f2ddb7-c09a-4667-977c-6d67a3f60f67",
+  "blocker": null,
+  "executionWindow": null
+}

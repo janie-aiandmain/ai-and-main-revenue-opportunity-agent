@@ -910,3 +910,18 @@ attempt count remain unverified. Await the user's read-only Load saved intake
 evidence before any further window. Do not assume no write from elapsed time,
 reset attempts, redo transcription or reapprove unchanged text. Exact approval
 expires 2026-11-19T15:09:30.531Z; changed payloads never inherit it.
+
+The user supplied the current full read-only intake receipt: APPROVED revision 2,
+unchanged exact payload/action/original grant, createAttempts 0, remoteNoteId null,
+executionWindow null and one provider call, matching closed owner 1c3c72d0 / source
+94dfdeb. Preserve it under hosted/ceiling-fan-dictation-2026-11-18/window-2. This
+satisfies the prerequisite for a separate short window for the SAME UNUSED note,
+not a new note approval or a reset of attempts. The `--window-2` controller selector
+records new plan/enable/close evidence separately; prior artifacts stay immutable.
+It rejects changed, attempted, unknown, saved or expired receipts and verifies
+live closed code/configuration. No runtime/generation change or new model call
+is needed. After the real operator Save result, close using note-window.js
+--close --user-authorized --window-2, verify both note switches and all nine task
+controls false, then reconcile read-only if unknown. No Codex CRM POST, new task,
+permission expansion or transcription retry. Final voice feature acceptance and
+other fixture semantic decisions remain separate.
