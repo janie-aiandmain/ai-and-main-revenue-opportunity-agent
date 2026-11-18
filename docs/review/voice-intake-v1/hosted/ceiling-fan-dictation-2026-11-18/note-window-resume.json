@@ -1,0 +1,136 @@
+{
+  "kind": "EXACT_ONE_NOTE_WINDOW_RESUME_AFTER_READ_CONVERGENCE",
+  "startedAt": "2026-11-18T16:20:05.781Z",
+  "policyVersion": "one-intake-exact-note-demo-window-v1",
+  "window": {
+    "policyVersion": "one-intake-exact-note-demo-window-v1",
+    "runId": "voice-note-run-3bb4a922-6f61-486e-95d1-caa921ea3f4f",
+    "startedAt": "2026-11-18T16:16:43.592Z",
+    "expiresAt": "2026-11-18T16:46:43.592Z",
+    "maximumCreates": 1,
+    "intakeId": "voice_50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a",
+    "approvalId": "voice-approval_db6b6e7c-c6e3-4674-a23d-c7b3f7fed0e5",
+    "payloadHash": "sha256:bf133090a9103ac3c119c220a7a4d2ede4e8ef66768352eb132ef9029204d599",
+    "actionVersion": "voice-note-action-v1:sha256:9dd9d9b23c3bd679668d4fe85e48adf6f64fa0cfa5293f6e0f7c012f7778d5ad",
+    "revision": 2,
+    "portalId": "247646122",
+    "contactId": "582095692487"
+  },
+  "steps": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "beforeVersion": "974f7e5f-f724-4591-9348-21a4fe30b7f1",
+      "activeVersion": "4a444b32-9d24-4893-8c0a-77beb8eebde3",
+      "at": "2026-11-18T16:20:26.532Z"
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "beforeVersion": "1ec78c86-ff1a-4d88-acd7-2d4ee9087355",
+      "activeVersion": "7063ce15-b830-4a9c-9c6c-4a96bc53d03d",
+      "at": "2026-11-18T16:20:35.717Z"
+    }
+  ],
+  "verified": true,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailCalls": 0,
+  "noteSubmissions": 0,
+  "secretValuesRead": false,
+  "controllerScriptSha256": "d39f77874a2b1188256545aacdc1d6c56a8c65cc9faadfb05ce6d9ce4b4e99a6",
+  "versionPollingSha256": "128b550676525328a66f5be4b41b59332e61db4a61dc4eeb1ded2186ac30ae39",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "versionId": "4a444b32-9d24-4893-8c0a-77beb8eebde3",
+      "sourceCommit": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+      "codeUnchanged": true,
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "eba0f43d2e911d2c776a6fd5f40c73fee01cf7fab09496c52474634dcba49eed",
+          "bytes": 325912
+        }
+      ],
+      "allNineTaskFlagsFalse": true,
+      "noteFlags": {
+        "VOICE_NOTE_WRITES_ENABLED": "true",
+        "VOICE_NOTE_RELEASE_APPROVED": "true"
+      },
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "identityEmailAndOtherSettingsPreserved": true,
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      }
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "versionId": "7063ce15-b830-4a9c-9c6c-4a96bc53d03d",
+      "sourceCommit": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+      "codeUnchanged": true,
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "c19d2cd2fc51d13c75fec90684f6645f3280f1a6b84788df5522888d0f0645a2",
+          "bytes": 97187
+        }
+      ],
+      "allNineTaskFlagsFalse": true,
+      "noteFlags": {
+        "VOICE_NOTE_WRITES_ENABLED": "true",
+        "VOICE_NOTE_RELEASE_APPROVED": "true"
+      },
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850",
+          "scriptName": "ai-and-main-revenue-opportunity-staging"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "identityEmailAndOtherSettingsPreserved": true,
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      }
+    }
+  ],
+  "access": [
+    {
+      "path": "/voice-intake",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/submit",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    }
+  ],
+  "finishedAt": "2026-11-18T16:20:44.131Z",
+  "noteWindowEnabled": true
+}

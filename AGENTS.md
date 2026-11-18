@@ -883,3 +883,19 @@ rotate keys or retry an uncertain create. Unknown/absent/ambiguous/mismatched
 outcomes reconcile read-only or remain blocked. No new environment, task, email
 or provider call is needed. Hosted note creation/recovery is pending until
 actual evidence arrives; local simulated faults do not establish hosted recovery.
+
+The exact one-note guard is now deployed from source 94dfdeb. Its first window
+controller attempt stopped on stale Cloudflare reads and attempted closure;
+subsequent actual readback confirmed both Workers closed. Preserve that failed
+report and later resolution separately. Read-only bounded polling is now tested.
+The SAME run 3bb4a922… is verified open under the exact intake/grant/payload and
+maximum-one-create guard until 2026-11-18T16:46:43.592Z (11:46:43 a.m. Eastern).
+See note-window-resume.json. Only the two note switches are temporarily true;
+all nine task/fault/general-release flags remain false. The user must Save once
+through their authenticated voice page; no Codex CRM POST. No note submission
+has been made by the controller. On the next operator result, close both note
+switches first using note-window.js --close --user-authorized, verify, preserve
+the result and reconcile read-only if unknown. Runtime expiry blocks new POSTs.
+Do not reset attempts, renew this approval, extend the consumed run or reopen a
+new window blindly after a reset. Hosted note creation/permission/recovery remain
+pending until actual evidence; feature release acceptance remains separate.

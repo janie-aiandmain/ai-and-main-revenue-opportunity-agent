@@ -150,3 +150,35 @@ or retry a CRM create. Two tests cover stale lists, stale bindings, transient
 version 404, bounded nonconvergence and authentication failures. `--resume`
 uses the SAME unexpired run, exact note/grant and one-create limit, records a
 separate receipt, and never resets historical evidence or a create attempt.
+
+## Same exact note window actually opened after convergence fix
+
+[note-window-resume.json](note-window-resume.json) verifies both Workers'
+configuration activation and unchanged active code, Secrets, namespace, tenant,
+Access, host/preview and email settings. All nine task/fault/general-release
+controls remain false. The two note switches are temporarily true ONLY under
+the runtime guard for intake voice_50a7b9de…, approval db6b6e7c…, payload bf133090…
+and maximum one create. This is not broad voice-feature or customer release
+acceptance. Both unauthenticated checks still redirect to Access.
+
+It is the original run voice-note-run-3bb4a922-6f61-486e-95d1-caa921ea3f4f,
+expiring November 18 at 11:46:43 a.m. Eastern (16:46:43Z); no window extension
+or new grant was created. Runtime expiry blocks POSTs even if the two settings
+have not yet been explicitly closed. The controller itself made zero CRM/model/
+email calls and zero note submissions. Hosted note creation is PENDING.
+
+The real operator has been asked to Load saved intake and Save the existing
+approved revision-2 note exactly once. Do not request another transcription,
+prepare or approval; do not synthesize an operator identity or POST from Codex.
+On any result, close via `node scripts/voice/note-window.js --close
+--user-authorized` with the existing secured Cloudflare auth, verify closure,
+then reconcile read-only only if necessary. Never reset this run/intake's
+create count or create again after an unknown, absent or mismatched outcome.
+If the window expires before Save, report it and inspect status before any
+newly authorized window; do not silently open another.
+
+After the controller correction, the full offline suite is 275/275. The two
+additional tests concern deployment metadata convergence only. Earlier 273-test
+results, both Worker dry-run builds, 207/207 retained workflow executions and
+local Chromium/workerd results remain preserved at their original checkpoints.
+No new runtime generator change or provider call was needed.
