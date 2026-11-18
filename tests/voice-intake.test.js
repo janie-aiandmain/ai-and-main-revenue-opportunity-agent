@@ -8,6 +8,7 @@ import {voiceConsole} from '../src/voice/console.js';
 import {transcribeAudio,HubSpotVoiceClient} from '../src/voice/clients.js';
 import {voiceGateway} from '../src/voice/http.js';
 import {normalizeHubSpotNote} from '../src/staging/note-source.js';
+import dictationCapture from '../fixtures/voice-intake/captured-dictation-mismatch-v1.json' with {type:'json'};
 const text='Fictional customer requests pricing for exactly three additional garage outlets while the crew is onsite. Establish pricing before any additional work. No additional work, scheduling, customer contact or billing was authorized.';
 const env={CERTIFICATION_MODE:'local',DEPLOYMENT_ENVIRONMENT:'staging',STAGING_PORTAL_ID:'test-portal',STAGING_CONTACT_ID:'voice-contact',VOICE_INTAKE_ENABLED:'true',VOICE_NOTE_WRITES_ENABLED:'true',VOICE_NOTE_RELEASE_APPROVED:'true',...Object.fromEntries(executionFlags.map(k=>[k,'false']))};
 const actor=()=>({subject:'synthetic-voice-operator',role:'Approver',kind:'LOCAL_SYNTHETIC',issuer:'https://certification.invalid',audience:'voice-local',expiresAt:Date.now()+3600000});
@@ -42,6 +43,24 @@ test('one recording produces one durable draft and at most one verified syntheti
   const first=await l.ledger.submit({intakeId:p.intakeId,approvalId:a.approval.approvalId},l.a,l.client),again=await l.ledger.submit({intakeId:p.intakeId,approvalId:a.approval.approvalId},l.a,l.client);
   assert.equal(first.state,'NOTE_CONFIRMED');assert.equal(again.remoteNoteId,first.remoteNoteId);assert.equal(l.creates(),1);assert.equal(first.createAttempts,1);
   const repeated=await l.ledger.transcribe(audio,input(),l.a,async()=>{throw Error('must_not_transcribe_twice');});assert.equal(repeated.intakeId,p.intakeId);assert.equal(repeated.providerCalls,1);
+ }finally{l.close();}
+});
+test('captured transcript authorization remains unreviewed data and cannot approve or save a note',async()=>{
+ const l=lab({VOICE_NOTE_WRITES_ENABLED:'false',VOICE_NOTE_RELEASE_APPROVED:'false'});try{
+  const raw=dictationCapture.capturedReceipt.originalText;assert.equal(hash(raw),dictationCapture.capturedReceipt.originalTranscriptHash);
+  const d=await l.ledger.transcribe(audio,input(),l.a,async()=>({text:raw}));assert.equal(d.state,'TRANSCRIBED');assert.equal(d.approval,null);assert.equal(d.finalRequest,null);
+  assert.throws(()=>l.ledger.approve({intakeId:d.intakeId},l.a),/voice_review_required/);
+  await assert.rejects(l.ledger.submit({intakeId:d.intakeId,approvalId:'fake-spoken-authorization'},l.a,l.client),/voice_note_execution_disabled/);assert.equal(l.creates(),0);
+  assert.equal(l.ledger.status(d.intakeId,l.a).originalText,raw);
+ }finally{l.close();}
+});
+test('operator correction preserves captured original wording and a negation change invalidates an exact note grant',async()=>{
+ const l=lab();try{
+  const raw=dictationCapture.capturedReceipt.originalText,d=await l.ledger.transcribe(audio,input(),l.a,async()=>({text:raw}));
+  const review=transcript=>({intakeId:d.intakeId,revision:l.ledger.status(d.intakeId,l.a).revision,...input(),transcript,contactId:env.STAGING_CONTACT_ID,accuracyConfirmed:true,correctContactConfirmed:true,sourceTimeConfirmed:true});
+  const corrected=l.ledger.review(review(dictationCapture.syntheticReviewedCorrectionForOfflineControl),l.a);assert.equal(corrected.originalText,raw);assert.equal(corrected.originalTranscriptHash,dictationCapture.capturedReceipt.originalTranscriptHash);assert.match(corrected.reviewedText,/Customer contact is not authorized/);
+  const grant=approve(l,corrected),changed=l.ledger.review(review(raw),l.a);assert.notEqual(changed.payloadHash,corrected.payloadHash);assert.notEqual(changed.actionVersion,corrected.actionVersion);assert.equal(changed.approval,null);assert.equal(changed.originalText,raw);
+  await assert.rejects(l.ledger.submit({intakeId:d.intakeId,approvalId:grant.approval.approvalId},l.a,l.client),/voice_exact_approval_required/);assert.equal(l.creates(),0);
  }finally{l.close();}
 });
 test('an exact note approval never enables a closed live write gate',async()=>{

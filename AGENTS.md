@@ -841,3 +841,21 @@ voice page and one transcription, then inspect transcript/intake receipt before
 Prepare/Approve/Save. Keep note/task execution disabled. Example new independent
 need is pricing for one ceiling fan replacement, pricing only and no customer
 action authority; do not repeat or recreate either consumed task operation.
+
+The first user-recorded hosted voice result is preserved under
+hosted/ceiling-fan-dictation-2026-11-18 in docs/review/voice-intake-v1 and the
+immutable captured-dictation-mismatch-v1 fixture. Intake voice_50a7b9de… is
+TRANSCRIBED/revision 1, one provider call, zero create attempts, no prepared
+payload or approval, note/task writes false. Transcript/audio-derived intake
+hashes and expected owner dc8476d / version 910bb6cd match. The returned text says
+“Customer contact or billing was authorized”, contrary to the intended test
+restriction. On replay clarification the user stated “good catch, i did not say
+NO before customer contact”. Record that separately as a speaker clarification;
+do not claim a confirmed ASR negation error or full transcript accuracy/human PASS.
+The assistant has not inspected the audio. Keep originalText/hash unchanged.
+Next is a human correction in Reviewed transcript to the intended fictional
+restrictions, then Prepare exact HubSpot note only. This saves an unnecessary
+second ASR call and exercises explicit review. Do not Approve/Save or enable any
+write. The updated note preview still needs exact review/approval separately.
+Two captured-content regression controls pass; no runtime contract, provider
+prompt, credential, deployment or configuration was changed by this evidence step.

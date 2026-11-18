@@ -1,0 +1,69 @@
+{
+  "fixtureVersion": "captured-voice-dictation-mismatch-v1",
+  "purpose": "Preserve a real unapproved hosted transcript and speaker-confirmed test-script mismatch; do not mislabel it an ASR negation error.",
+  "originalTestScript": "Synthetic test data only. The fictional customer requested pricing for one ceiling fan replacement. Pricing only. No work, appointment, customer contact or billing was authorized.",
+  "capturedReceipt": {
+    "voiceContract": "service-provider-voice-intake-v1.2",
+    "transcriptionContract": "verbatim-audio-transcription-v1",
+    "noteContract": "hubspot-reviewed-voice-note-v1.2",
+    "intakeId": "voice_50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a",
+    "state": "TRANSCRIBED",
+    "revision": 1,
+    "audioHash": "sha256:fc937ca9253b4c857c5478acf63134292e8bed774d31cb27467fbe96b2f19f12",
+    "originalTranscriptHash": "sha256:ca30bdb1935dffcb8cb208ba6428b600ab5c0a9c41542a36af5f14e6f865371f",
+    "sourceLabel": "Synthetic service provider",
+    "recordedAt": "2026-11-18T15:08:10.000Z",
+    "originalText": "Synthetic test data only. The fictional customer requesting pricing for one ceiling fan replacement. Pricing only, no work appointment. Customer contact or billing was authorized.",
+    "reviewedText": "Synthetic test data only. The fictional customer requesting pricing for one ceiling fan replacement. Pricing only, no work appointment. Customer contact or billing was authorized.",
+    "payloadHash": null,
+    "actionVersion": null,
+    "correlation": "ai-main-voice-50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a",
+    "finalRequest": null,
+    "approval": null,
+    "remoteNoteId": null,
+    "createAttempts": 0,
+    "providerCalls": 1,
+    "expiresAt": "2026-11-19T15:09:30.531Z",
+    "lastError": null,
+    "draftRedacted": false,
+    "noteWritesEnabled": false,
+    "taskExecutionApproved": false,
+    "trace": [
+      {
+        "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+        "payload_hash": null,
+        "at": "2026-11-18T15:09:30.531Z"
+      },
+      {
+        "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+        "payload_hash": null,
+        "at": "2026-11-18T15:09:31.951Z"
+      }
+    ],
+    "ownerSourceCommit": "dc8476d6594baceadac302ffe992a6ac206c49c5",
+    "ownerDeploymentVersion": "910bb6cd-c0a1-410d-b3c2-35ea209ac597",
+    "ledgerBootId": "a872e502-f98a-4d67-b7b6-cea3c389dc0b"
+  },
+  "operatorClarification": {
+    "eventType": "USER_SOURCE_DICTATION_CLARIFICATION",
+    "userStatementVerbatim": "good catch, i did not say NO before customer contact",
+    "source": "User response to the replay/negation clarification question in this conversation.",
+    "boundIntakeId": "voice_50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a",
+    "boundAudioHash": "sha256:fc937ca9253b4c857c5478acf63134292e8bed774d31cb27467fbe96b2f19f12",
+    "boundOriginalTranscriptHash": "sha256:ca30bdb1935dffcb8cb208ba6428b600ab5c0a9c41542a36af5f14e6f865371f",
+    "confirmedFact": "The speaker did not say NO before customer contact.",
+    "asrNegationOmissionConfirmed": false,
+    "fullTranscriptHumanAccuracyVerdict": "PENDING",
+    "humanSemanticApproval": false,
+    "noteExecutionApproval": false
+  },
+  "expectedComparison": {
+    "dictationMatchesIntendedRestrictions": false,
+    "asrNegationErrorConfirmed": false,
+    "requiresOperatorCorrectionOrNewRecording": true,
+    "automaticApprovalPermitted": false,
+    "automaticCrmWritePermitted": false
+  },
+  "syntheticReviewedCorrectionForOfflineControl": "Synthetic test data only. The fictional customer requested pricing for one ceiling fan replacement. Pricing information only. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized.",
+  "offlineCorrectionIsHumanApproval": false
+}

@@ -1,0 +1,11 @@
+{
+  "source": "Fields pasted by the user from the hosted voice intake evidence.",
+  "userMessageDate": "2026-11-18",
+  "formatting": "Converted pasted field list to standard JSON braces/whitespace without changing values.",
+  "receiptFileSha256": "385a35e29acb4d1f1585affbd873e2e08f54cce45f78e71f8f2c2c7f50729adc",
+  "receiptCryptographicallySigned": false,
+  "independentReceiptDownload": false,
+  "audioProvidedToAssistant": false,
+  "audioHashReported": "sha256:fc937ca9253b4c857c5478acf63134292e8bed774d31cb27467fbe96b2f19f12",
+  "audioPlaybackByAssistant": false
+}

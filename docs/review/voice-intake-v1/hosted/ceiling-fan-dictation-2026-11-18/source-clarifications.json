@@ -1,0 +1,19 @@
+{
+  "ledgerVersion": "voice-source-clarifications-v1",
+  "appendOnly": true,
+  "events": [
+    {
+      "eventType": "USER_SOURCE_DICTATION_CLARIFICATION",
+      "userStatementVerbatim": "good catch, i did not say NO before customer contact",
+      "source": "User response to the replay/negation clarification question in this conversation.",
+      "boundIntakeId": "voice_50a7b9de02160086ea9e934e27ceb4bf05ec60455fb80cda71fe3f66a08ce51a",
+      "boundAudioHash": "sha256:fc937ca9253b4c857c5478acf63134292e8bed774d31cb27467fbe96b2f19f12",
+      "boundOriginalTranscriptHash": "sha256:ca30bdb1935dffcb8cb208ba6428b600ab5c0a9c41542a36af5f14e6f865371f",
+      "confirmedFact": "The speaker did not say NO before customer contact.",
+      "asrNegationOmissionConfirmed": false,
+      "fullTranscriptHumanAccuracyVerdict": "PENDING",
+      "humanSemanticApproval": false,
+      "noteExecutionApproval": false
+    }
+  ]
+}

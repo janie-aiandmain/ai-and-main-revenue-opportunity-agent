@@ -107,7 +107,7 @@ part of voice-note ingestion. Do not create or rotate keys by assumption.
 | Corrected note format v1.1 | 2/3 passed; scope false negative preserved. This was not release-ready |
 | Final factual-provenance v1.2 | 5/5 fresh passes; scope correctly found/classified 3/3, decline and injection controls pass; raw scope keys/IDs/proposal versions stable across these three runs |
 | Human semantic review | PENDING for new transcript/note/finding outputs |
-| Hosted intake | DEPLOYED; authenticated voice preflight PASS for the expected portal/contact, both credential identities, marker and note association 202. Hosted transcription remains PENDING. All note/task writes stay disabled |
+| Hosted intake | DEPLOYED; authenticated voice preflight PASS for the expected portal/contact, both credential identities, marker and note association 202. Hosted transcription returned a draft; source/semantic review and operator correction are pending. All note/task writes stay disabled |
 | Actual HubSpot note-create permission / HTML round-trip / remote note recovery | UNVERIFIED; no live note was created |
 | Voice release acceptance | PENDING; older task-demo acceptance does not transfer |
 
@@ -252,3 +252,19 @@ creating another note. Microphone capture is implemented but actual-device
 permission/codec behavior remains for operator testing; automated Chromium tested
 file upload, not a real microphone. Only the synthetic WAV path received actual
 ASR validation in this cycle.
+
+## First hosted transcription: source clarification, not a confirmed ASR error
+
+The [ceiling-fan receipt and clarification](hosted/ceiling-fan-dictation-2026-11-18/README.md)
+are recorded. The transcript says customer contact/billing was authorized; that
+differs from the test script. The user clarified they did not say NO before
+customer contact. We preserve that event separately and do not blame ASR or mark
+the whole transcript human-approved. Transport passed; no payload/grant/note exists
+and create attempts are zero. The intended note now needs explicit operator
+correction/review before an exact preview. No extra ASR call is needed.
+
+The **current next step supersedes the earlier recording instruction**: edit
+Reviewed transcript, retain the original model text, review source/time/contact,
+and Prepare exact HubSpot note only. Do not Approve or Save. Two captured-content
+regression tests pass (26 voice tests total); runtime and provider contracts are
+unchanged. Note-create permission and execution approval remain pending.
