@@ -21,7 +21,7 @@
   "retainedWorkflow": "207/207 PASS",
   "nativeWorkerAbort": "PASS_LOCAL_NOT_HOSTED",
   "hostedRecovery": "PASS_ONE_INJECTED_HOSTED_NOTE_RESPONSE_DISCARD_RESTART_AND_READ_ONLY_MATCH",
-  "finalReleaseAcceptance": "PENDING_ACTUAL_USER_DECISION",
+  "finalReleaseAcceptance": "ACCEPTED_CONTROLLED_SYNTHETIC_DEMO_ONLY",
   "newReasoningCalls": 0,
   "newHostedAsrCalls": 1,
   "nextStep": "Review final controlled-demo candidate; record actual human acceptance separately. Keep all note/task/test/fault switches closed. Do not Save, create, reconcile again, reset counts or repeat ASR for either consumed note.",
@@ -42,5 +42,7 @@
   "releaseCandidatePacketHash": "sha256:3128df950eed9c101e2fbf6f80e5ffc7525d50e1561f1103f632d7eabf0c8597",
   "releaseReview": "RELEASE-REVIEW.md",
   "recoveryWindowClosedAt": "2026-11-19T00:26:52.219Z",
-  "recoveryWindowClosureEvidence": "hosted/recovery-run-1/note-window-close.json"
+  "recoveryWindowClosureEvidence": "hosted/recovery-run-1/note-window-close.json",
+  "releaseDecisionEvidence": "release-adjudication/events.jsonl",
+  "routineDemoActivation": "USER_AUTHORIZED_IMPLEMENTATION_PENDING"
 }
