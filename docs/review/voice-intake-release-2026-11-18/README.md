@@ -59,3 +59,23 @@ No fresh reasoning inference is claimed; retained captures are replay evidence.
 Do not mark hosted recovery verified until those actual operator receipts arrive.
 Label the injected application-response discard explicitly; it is not a natural
 network outage. No revenue rescued or other financial outcome is established.
+
+## Closed deployment completed
+
+Tested source `367621d5d3b60cb0415c3f8a544abf3861c7d6a7` is now active on the existing
+private owner (`cbd48dab-7e0a-4247-a380-7b7931bcac57`) and protected gateway
+(`408305be-b9aa-4f8e-ab9e-dc7696da62dd`). Both module bytes match the uploaded
+bundles. All nine task/general/fault flags and all THREE note write/release/
+response-loss flags are false. Existing Secrets, namespace, identity/tenant/email
+and hostname/preview settings are preserved. See hosted/recovery-run-1/
+guard-before-deployment.json and guard-deployment-*.json. Five unauthenticated
+routes, including the new recovery Save endpoint, redirect to Access.
+No CRM/model/email call or note submission occurred during deployment.
+
+The operator's existing exact recovery grant stays compatible: its note request
+and action hashes are reproduced by the unchanged builder; only the operational
+execution guard is new. Do not ask for another transcription or approval.
+Open the specific test window only for this unused approved control; after the
+operator result close with `node scripts/voice/note-window.js --close
+--user-authorized --recovery` before further steps. Do not reopen the consumed
+ceiling-fan note or any old task operation.

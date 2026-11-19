@@ -1,0 +1,39 @@
+{
+  "kind": "ACTUAL_UNAUTHENTICATED_CLOSED_RECOVERY_GUARD_CHECK",
+  "checkedAt": "2026-11-19T00:14:04.563Z",
+  "rows": [
+    {
+      "path": "/voice-intake",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/status",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/submit",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/submit-recovery-test",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/reconcile",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    }
+  ],
+  "crmCalls": 0,
+  "modelCalls": 0,
+  "emailCalls": 0
+}

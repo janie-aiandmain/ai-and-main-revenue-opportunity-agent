@@ -1,0 +1,51 @@
+{
+  "kind": "ACTUAL_CLOSED_NOTE_RECOVERY_GUARD_DEPLOYMENT",
+  "checkedAt": "2026-11-19T00:08:57.078Z",
+  "name": "ai-and-main-revenue-opportunity-staging",
+  "sourceCommit": "367621d5d3b60cb0415c3f8a544abf3861c7d6a7",
+  "priorVersionId": "96daec97-14b6-4998-b904-758e120f632d",
+  "activeVersionId": "cbd48dab-7e0a-4247-a380-7b7931bcac57",
+  "deploymentId": "c81ec078-0f78-43ca-b0a7-9af4a579ebb4",
+  "codeMatches": true,
+  "localModules": [
+    {
+      "name": "worker.js",
+      "sha256": "398a084f58c69dc87e08c2ee5b1f89b5a4f463f9f0f4c370c8e477d3410720d6",
+      "bytes": 331178
+    }
+  ],
+  "remoteModules": [
+    {
+      "name": "worker.js",
+      "sha256": "398a084f58c69dc87e08c2ee5b1f89b5a4f463f9f0f4c370c8e477d3410720d6",
+      "bytes": 331178
+    }
+  ],
+  "subdomain": {
+    "enabled": false,
+    "previews_enabled": false
+  },
+  "secretNames": [
+    "EVAL_OPENAI_API_KEY",
+    "OPERATOR_EMAIL_API_KEY",
+    "STAGING_HUBSPOT_READ_TOKEN",
+    "STAGING_HUBSPOT_WRITE_TOKEN"
+  ],
+  "namespaceBindings": [
+    {
+      "name": "CERTIFICATION_LEDGER",
+      "className": "CertificationLedger",
+      "namespaceId": "16dca25759494a33813d2800f3f1a850"
+    }
+  ],
+  "secretsPreserved": true,
+  "namespacePreserved": true,
+  "allNineTaskFlagsFalse": true,
+  "voiceNoteWritesEnabled": false,
+  "voiceNoteReleaseApproved": false,
+  "voiceNoteResponseLossTestEnabled": false,
+  "otherSettingsPreserved": true,
+  "crmCalls": 0,
+  "modelCalls": 0,
+  "emailCalls": 0
+}

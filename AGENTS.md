@@ -1048,3 +1048,16 @@ evidence after hosted recovery. Broader customer rollout is not authorized.
 302 tests, 207 retained executions, both dry-run builds and actual LOCAL workerd
 abort/SQLite/HTTP recovery pass. They are not hosted HubSpot recovery evidence.
 Generation is unchanged; zero fresh reasoning calls, one new hosted ASR call.
+
+The new note-only recovery guard is actually deployed CLOSED from source
+367621d5d3b60cb0415c3f8a544abf3861c7d6a7: owner cbd48dab-7e0a-4247-a380-7b7931bcac57,
+gateway 408305be-b9aa-4f8e-ab9e-dc7696da62dd. Active bytes match uploads. Both
+existing Workers preserve Secrets/namespace/identity/tenant/email/host state.
+All nine existing task/general/fault controls and all THREE note write/release/
+response-loss controls are false. Five anonymous voice paths redirect to Access.
+The exact recovery note grant 5429433f… remains valid for unchanged 38bcfb54…
+payload / cc6b1333… action. Open only this test via note-window.js --enable
+--user-authorized --recovery. After any operator result close FIRST with
+--close --user-authorized --recovery, verify all three note flags false, then
+read-only reconcile. Hosted recovery and final controlled-demo acceptance remain
+pending. Never reuse the consumed ceiling-fan note or synthesize an actor.
