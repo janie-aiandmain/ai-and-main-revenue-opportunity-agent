@@ -12,8 +12,10 @@ export function normalizeHubSpotNote(html){
  }).trim();
 }
 export class DesignatedNoteSource {
-  constructor(env){
-    if(!env.STAGING_HUBSPOT_READ_TOKEN)throw missingCredential('STAGING_HUBSPOT_READ_TOKEN');
+  constructor(env,{get=null}={}){
+    if(get!==null&&typeof get!=='function')throw Error('trusted_note_transport_required');
+    if(!get&&!env.STAGING_HUBSPOT_READ_TOKEN)throw missingCredential('STAGING_HUBSPOT_READ_TOKEN');
+    this.transport=get;
     const tenant=tenantConfiguration(env);this.synthetic=tenant.synthetic;
     this.env=env;
     if(env.CERTIFICATION_MODE==='local'){
@@ -23,7 +25,7 @@ export class DesignatedNoteSource {
       this.base='https://api.hubapi.com';
     }
   }
-  async get(path){return checkedJsonFetch(this.base+path,{headers:{Authorization:'Bearer '+this.env.STAGING_HUBSPOT_READ_TOKEN},signal:AbortSignal.timeout(10000)},'STAGING_HUBSPOT_READ_TOKEN',path);}
+  async get(path){return this.transport?this.transport(path):checkedJsonFetch(this.base+path,{headers:{Authorization:'Bearer '+this.env.STAGING_HUBSPOT_READ_TOKEN},signal:AbortSignal.timeout(10000)},'STAGING_HUBSPOT_READ_TOKEN',path);}
   async readContext(){
     const portal=await this.get('/account-info/v3/details');if(String(portal.portalId)!==this.env.STAGING_PORTAL_ID)throw new StagingBlocker('portal_mismatch',{credential:'STAGING_HUBSPOT_READ_TOKEN',check:'expected_nonproduction_note_portal',setupStep:2});
     const contact=await this.get('/crm/v3/objects/contacts/'+encodeURIComponent(this.env.STAGING_CONTACT_ID)+'?properties=firstname');

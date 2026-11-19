@@ -1,0 +1,14 @@
+{
+  "kind": "EXECUTED_LOCAL_OWNER_OAUTH_AND_MULTIRECORD_WORKFLOW_WITH_PROVIDER_FIXTURES",
+  "realHubspotCalls": 0,
+  "realModelCalls": 0,
+  "emails": 0,
+  "CRMEffects": 0,
+  "liveOAuthValidated": false,
+  "humanApprovals": 0,
+  "checks": [
+    "actual_gateway_authentication_origin_and_unsupported_write_routes"
+  ],
+  "complete": false,
+  "error": "Expected values to be strictly equal:\n\n200 !== 303\n"
+}

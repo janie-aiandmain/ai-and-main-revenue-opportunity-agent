@@ -1,0 +1,34 @@
+{
+  "goals": {
+    "guidedOwnerConnection": "IMPLEMENTED_AND_LOCALLY_VALIDATED_NOT_HOSTED",
+    "multiplePermittedRecords": "IMPLEMENTED_AND_LOCALLY_VALIDATED_NOT_HOSTED",
+    "liveAccountValidationAndRelease": "BLOCKED_OAUTH_APP_AND_HOSTED_CONFIGURATION_MISSING"
+  },
+  "blockers": [
+    {
+      "code": "missing_configuration",
+      "item": "HubSpot OAuth app",
+      "evidence": "User confirmed only existing service keys."
+    },
+    {
+      "code": "missing_credential",
+      "item": "HUBSPOT_OAUTH_CLIENT_SECRET",
+      "evidence": "No OAuth app exists; no value requested in chat."
+    },
+    {
+      "code": "missing_configuration",
+      "item": "Protected installation host / registered redirect / Access destination",
+      "evidence": "Source configuration prepared; no deployment/provisioning performed."
+    },
+    {
+      "code": "pending_secure_configuration",
+      "item": "Per-installation token-encryption Secret",
+      "evidence": "Declared in prepared profile; not generated or configured remotely."
+    }
+  ],
+  "MCPRequired": false,
+  "customerReleaseApproved": false,
+  "checkoutEnabled": false,
+  "CRMEffectsEnabled": false,
+  "priorHumanDecisionsTransferred": false
+}

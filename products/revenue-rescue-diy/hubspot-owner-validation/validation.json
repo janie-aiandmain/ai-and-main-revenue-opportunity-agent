@@ -1,0 +1,76 @@
+{
+  "contractVersion": "hubspot-owner-validation-v1",
+  "recordedAt": "2026-11-19T17:02:40.400308+00:00",
+  "before": {
+    "fullOfflineTestsPassed": 316,
+    "retainedWorkflowsPassed": 207,
+    "ownerOAuth": "NOT_IMPLEMENTED",
+    "recordsPerPreviewInstallation": 1
+  },
+  "after": {
+    "fullOfflineTestsPassed": 328,
+    "newOwnerTestsPassed": 12,
+    "retainedWorkflowsPassed": 207,
+    "configuredRecordLimitDefault": 25,
+    "localDemonstratedRecords": 2,
+    "localIndependentFindings": 3,
+    "OAuthAndBrowser": "EXECUTED_LOCAL_WITH_PROVIDER_FIXTURES",
+    "liveOAuth": "PENDING_MISSING_APP_CONFIGURATION",
+    "customerRelease": "PENDING"
+  },
+  "commands": [
+    {
+      "check": "fullOfflineTests",
+      "command": "node --test --test-isolation=none tests/*.test.js",
+      "result": "PASS",
+      "logSha256": "ee43d9f708381fd967b858aa31b38aea81eaa623fdeea9dfcc88ce7bf030651c"
+    },
+    {
+      "check": "retainedWorkflow",
+      "command": "npm run regression:offline",
+      "result": "PASS",
+      "logSha256": "c1c2ee14d612cf33b7ed2269dc9528abb19726fc2d47e38c35bdb11e7d1e003e"
+    },
+    {
+      "check": "localOwnerWorkflow",
+      "command": "node scripts/diy/verify-hubspot-owner.js",
+      "result": "PASS",
+      "logSha256": "2fd7b8d11581cf4c8927c157971d3f2714c0811303564df0f5a7bf5275d81d21"
+    },
+    {
+      "check": "customerBuild",
+      "command": "WRANGLER_SEND_METRICS=false npx wrangler deploy --dry-run --config /tmp/hubspot-owner-build.jsonc",
+      "result": "PASS",
+      "logSha256": "5cfddbcbc017e0e96192d960517b8301b040a919bc2d4c8d10c88783cab90a92"
+    },
+    {
+      "check": "gatewayBuild",
+      "command": "WRANGLER_SEND_METRICS=false npx wrangler deploy --dry-run --config wrangler.jsonc",
+      "result": "PASS",
+      "logSha256": "fe70c375a71fc4da547983ff707308d7abe22946af6689d3949e1259ae510dfd"
+    },
+    {
+      "check": "ledgerOwnerBuild",
+      "command": "WRANGLER_SEND_METRICS=false npx wrangler deploy --dry-run --config wrangler.staging.jsonc",
+      "result": "PASS",
+      "logSha256": "1e7720a54d0d24fe712b316be4a4a671210d11b9c2779bc7ff943f18cf477ab4"
+    }
+  ],
+  "realHubspotCalls": 0,
+  "realModelCalls": 0,
+  "emails": 0,
+  "CRMEffects": 0,
+  "deployments": 0,
+  "newCloudflareResources": 0,
+  "humanApprovals": 0,
+  "existingCredentialsChanged": false,
+  "existingWorkerConfigsChanged": false,
+  "providerPromptSchemaSettingsChanged": false,
+  "limitations": [
+    "Local provider fixtures do not establish real OAuth/HubSpot behavior.",
+    "Existing service keys cannot substitute for the missing OAuth app.",
+    "Hosted origin, Access application, OAuth redirect and secrets are not configured for the new installation.",
+    "No automatic paid-installation provisioning was implemented.",
+    "Customer task/note actions and checkout remain disabled."
+  ]
+}

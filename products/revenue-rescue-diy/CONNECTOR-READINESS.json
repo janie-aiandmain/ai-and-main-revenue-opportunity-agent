@@ -15,15 +15,18 @@
       "vendorDemo": "TESTED_CONTROLLED_SYNTHETIC",
       "portableShadowProfile": "LOCALLY_VALIDATED_SYNTHETIC_SHADOW_ONLY",
       "customerRelease": "PENDING",
-      "guidedOwnerConnection": "NOT_BUILT",
-      "multipleRecordIntake": "NOT_BUILT",
+      "guidedOwnerConnection": "IMPLEMENTED_LOCAL_OAUTH_AND_BROWSER_VALIDATION_NOT_HOSTED",
+      "multipleRecordIntake": "IMPLEMENTED_EXPLICIT_PERMISSIONS_LOCAL_TWO_RECORDS_THREE_FINDINGS",
       "voiceCustomerRelease": "PENDING",
       "automaticCustomerActions": false,
       "canChargeForReadyToUseConnector": false,
       "localEvidence": [
         "evidence/customer-worker-local.json",
         "evidence/validation.json"
-      ]
+      ],
+      "oauthApp": "MISSING_USER_CONFIRMED_EXISTING_SERVICE_KEYS_ONLY",
+      "automaticCustomerProvisioning": "NOT_BUILT",
+      "ownerConnectionEvidence": "hubspot-owner-validation/README.md"
     },
     {
       "platform": "Jobber",

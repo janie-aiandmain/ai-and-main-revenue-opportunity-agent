@@ -1,0 +1,19 @@
+{
+  "kind": "PUBLIC_API_CONTRACT_REFERENCE_NOT_LIVE_ACCOUNT_VALIDATION",
+  "url": "https://raw.githubusercontent.com/HubSpot/HubSpot-public-api-spec-collection/main/PublicApiSpecs/Auth/Oauth/Rollouts/155908/v1/oauth.json",
+  "observedOn": "2026-11-19",
+  "sha256": "803c08654572deb52ead1c9741da651af83bdc29c676761cf30eea7f8e88ef37",
+  "endpoint": "POST /oauth/v1/token",
+  "requestFields": [
+    "client_id",
+    "client_secret",
+    "code",
+    "code_verifier",
+    "grant_type",
+    "redirect_uri",
+    "refresh_token",
+    "scope"
+  ],
+  "tokenInfoURLsNotUsed": "They place bearer/refresh token material in the URL path. This implementation uses /account-info/v3/details with Authorization header instead.",
+  "livePKCEAppSupport": "PENDING_ACTUAL_APP_VALIDATION"
+}

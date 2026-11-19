@@ -1179,3 +1179,33 @@ remain incomplete. No new scopes, keys, environments, actual API/model calls,
 payments or deployment are needed for this source/package preparation cycle.
 Prepare sale copy, terms/cost/support decisions and secure-delivery requirements
 for review. Do not publish/activate checkout or claim all three connectors work.
+
+## HubSpot-first owner setup and permitted records — November 19
+
+The user explicitly selected tackling guided HubSpot connection, multiple
+permitted records and live account validation/release. Implement the actual
+workflow rather than remove a gate or substitute another planning packet. The
+user confirmed there is no OAuth app, only the existing service keys. MCP is not
+needed; preserve those keys unchanged and do not broaden their permissions.
+The current source and executed local evidence are under
+products/revenue-rescue-diy/hubspot-owner-validation.
+
+The new separate customer Worker implements a verified Access owner, read-only
+OAuth/PKCE, hashed one-use browser/actor-bound state, encrypted credentials,
+single-flight refresh/reconnect, approved portal and explicit contact-link
+permissions. Multiple records use distinct durable finding contexts; revoke and
+disconnect guard reads and model results. Its flags remain closed and it exposes
+no note/task/approval/execute/email action. A private namespace/migration is
+prepared for each installation, not provisioned. The existing deployed demo and
+its routine synthetic voice behavior remain untouched.
+
+The shared prompt/schema/model/settings and action/evidence generators remain
+unchanged. The shared note source only gains an optional trusted server-side
+transport; existing service-key callers are unchanged. Preserve all previous
+captures, fixture expectations and human decisions. New source/fixtures/local
+identities are not human sign-off or live customer proof. The OAuth app, actual
+registered redirect/host, its credentials and hosted account/Access validation
+remain pending; do not imply service-key success proves OAuth. Keep checkout and
+customer CRM mutations off, no main merge, and no secret values in chat/Git/logs.
+Manual installation bootstrap still precedes the owner UI; automatic paid
+provisioning is not delivered by this source cycle.

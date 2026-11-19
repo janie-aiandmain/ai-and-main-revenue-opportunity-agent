@@ -54,3 +54,15 @@ evaluation**. It does not certify live customer data, routine customer notes,
 approved customer tasks, multi-record operations, no-code provisioning or the
 other two platforms. Those are explicit remaining work, not hidden settings to
 switch on. The existing deployed demo and its normal voice workflow are unchanged.
+
+## HubSpot-first continuation
+
+The user selected HubSpot first. The new
+[owner connection implementation and evidence](hubspot-owner-validation/README.md)
+now adds a server-backed OAuth/owner UI, encrypted credentials, explicit
+multi-record permissions, separate durable findings, revocation and restart
+controls. Its local Worker/SQLite/browser tests are executed. The earlier ZIP
+remains an offline owner-planning preview, not a deployed connection screen.
+Actual OAuth app creation/configuration and hosted validation are pending; the
+user confirmed only service keys exist. MCP is not required. Automatic paid
+provisioning and real-customer release remain incomplete.

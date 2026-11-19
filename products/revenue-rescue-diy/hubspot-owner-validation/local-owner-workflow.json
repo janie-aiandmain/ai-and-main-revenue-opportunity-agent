@@ -1,0 +1,32 @@
+{
+  "kind": "EXECUTED_LOCAL_OWNER_OAUTH_AND_MULTIRECORD_WORKFLOW_WITH_PROVIDER_FIXTURES",
+  "realHubspotCalls": 0,
+  "realModelCalls": 0,
+  "emails": 0,
+  "CRMEffects": 0,
+  "liveOAuthValidated": false,
+  "humanApprovals": 0,
+  "checks": [
+    "actual_gateway_authentication_origin_and_unsupported_write_routes",
+    "PKCE_state_browser_owner_binding_one_use_callback_and_clean_redirect",
+    "encrypted_refresh_and_two_explicit_record_permissions",
+    "separate_records_and_independent_needs_local_evidence_stable_repeat_identity",
+    "actual_local_SQLite_cold_restart_preserves_connection_permissions_and_findings",
+    "actual_Chromium_owner_screen_uses_native_Worker_through_fixture_edge_no_secret_fields_three_findings_mobile_no_overflow",
+    "permission_revocation_and_disconnect_stop_processing_without_fallback_credentials"
+  ],
+  "complete": true,
+  "findingSummary": {
+    "records": 2,
+    "independentFindings": 3,
+    "repeatedIdentityStable": true,
+    "reviewState": "PENDING",
+    "executionApproved": false
+  },
+  "fixtureUsage": {
+    "authorizationCodeExchanges": 1,
+    "refreshExchanges": 1,
+    "modelResponses": 5,
+    "crmReads": 27
+  }
+}

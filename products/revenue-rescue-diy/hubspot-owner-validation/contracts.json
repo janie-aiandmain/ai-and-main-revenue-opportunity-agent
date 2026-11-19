@@ -1,0 +1,26 @@
+{
+  "customerConnector": "hubspot-owner-readonly-v1",
+  "connectionPolicy": "hubspot-oauth-connection-v1",
+  "recordPermissionPolicy": "explicit-hubspot-record-permission-v1",
+  "ownerRolePolicy": "verified-access-owner-email-v1",
+  "prompt": "reasoning-v0.3.3",
+  "schema": "findings-v0.2",
+  "materializer": "source-evidence-v0.3.12",
+  "reasoningOrActionOutputGenerationChanged": false,
+  "sharedAdapterChange": "Optional trusted GET transport only; default service-key path and normalized evidence unchanged.",
+  "hashes": {
+    "src/customer/policy.js": "sha256:f4ad6d3e41a5664f9a2536da5204cca875cab786e67866f1df324d21b8717fb9",
+    "src/customer/connection.js": "sha256:087c10c3b76f29fc902b8271763135865f1a954993b5bc74b058a4242e647612",
+    "src/customer/token-box.js": "sha256:988fa537b0014b31e4088cb20cd0f1e2dc02a765b5b4e3d073a64ffec5af48b2",
+    "src/customer/records.js": "sha256:1690bb8bc336d90c2fb5151226b5133f93d50277225fd16da267cb02a81b6060",
+    "src/customer/http.js": "sha256:3ec5e1bebe4d650b11883a39a380296b3208fb1ba1552807466917784cf262b8",
+    "src/customer/worker.js": "sha256:49a1b363ef9063323b1077e99ebeb2e994924c0fdc04aa083d25099b1108db2f",
+    "src/customer/install-profile.js": "sha256:2acf72e4e1f61b025fad73f86960d4d17c672852788d3df9b664202fa3f8cd4b",
+    "src/customer/owner-console.js": "sha256:ddf50b630b32feb2ede4c607661ba38f1fdd687ceb1ebdb7ea49a4d897d962e3",
+    "src/staging/note-source.js": "sha256:01141fe57b2d86fb3535450b95d9342933858f146d4e8f74316077140cc05511",
+    "src/findings-request-v0.3.3.json": "sha256:e5630f86c5a7636a49116b8be56c336d3293c15bb024711f0fa36d9df9fa6fea",
+    "src/release/reasoning.js": "sha256:4c95bb154013eef67578c8c36d9b484bf6a800fcf03d6a4be11e168c79851411",
+    "src/staging/internal-task-policy.js": "sha256:6392f8fae80ec09eaee69e2d82733780cfa58a54c3c34e19ab4135bf9be9c48f",
+    "src/voice/contract.js": "sha256:839d80b1a5a24ae6467ab26884f44db62d8b13d9ef34f840c99ac79d2ee35795"
+  }
+}

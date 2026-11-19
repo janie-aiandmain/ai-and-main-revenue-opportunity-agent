@@ -2,17 +2,18 @@
 
 Target: a nontechnical owner using HubSpot, Jobber or GoHighLevel. One product,
 one owner workflow, separate validated adapters. Default implementation sequence
-is HubSpot first because the engine and CRM effects already exist; the owner has
-been asked whether all three must be working before any paid launch. Until that
-answer, no checkout or public availability commitment changes.
+is now HubSpot first: the user explicitly selected completing its guided
+connection, permitted records and live account/release work before widening.
+No checkout or public availability commitment is changed by that implementation
+authorization.
 
 | Step | Concrete exit evidence | Current status |
 | --- | --- | --- |
 | Package content | Downloadable owner guide, examples, costs/support, setup preview and checksums | Prepared in this cycle |
 | Portable HubSpot installation | Own account/Access/ledger/record; vendor IDs rejected; negative isolation and no-effect tests; build | Implemented locally, validation recorded separately |
-| Owner setup | CRM selection → secure connection → choose permitted context → reviewer → synthetic acceptance; owner completes without code/secret handling | Not built; blocking DIY usability |
+| Owner setup | CRM selection → secure connection → choose permitted context → reviewer → synthetic acceptance; owner completes without code/secret handling | Server-backed HubSpot owner flow implemented/local-tested; actual OAuth app and protected hosting pending; automatic paid provisioning not built |
 | HubSpot customer connector | Approved non-demo test account; actual read/evidence/target validation; released actions individually approved; interrupted-write recovery and no duplicates in that account | Not executed; old vendor demo does not substitute |
-| Multiple record intake | CRM-originated context identity/association for permitted records; authorization remains finding/action-specific | Not implemented; current runtime is one designated context per installation |
+| Multiple record intake | CRM-originated context identity/association for permitted records; authorization remains finding/action-specific | Implemented/local-tested in new owner connector: two permitted contacts, three independent findings, stable repeat and revocation; hosted test pending |
 | Jobber | Authorized API access, object/association/permissions mapping, real read-only test, exact task/note action and recovery if offered | Adapter not built; no credentials/partner/API plan verified |
 | GoHighLevel | Authorized account/location connection, scopes/object mapping, real read-only test, exact action/recovery if offered | Adapter not built; no app/OAuth/test location verified |
 | Commercial handoff | Final price, license, support/updates, refunds, provider costs/data responsibility and secure post-payment delivery | Draft; owner decisions pending |

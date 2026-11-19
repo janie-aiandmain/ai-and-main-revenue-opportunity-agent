@@ -1,0 +1,17 @@
+import {closedFlags} from '../diy/hubspot-profile.js';
+import {CUSTOMER_HUBSPOT_CONTRACT,READ_SCOPES,numeric} from './policy.js';
+export function customerInstallationConfig(input){
+ const allowed=new Set(['accountId','workerName','publicOrigin','installationId','portalId','ownerEmail','oauthClientId','approvedScopes','readOnlyAppReviewed','tenantReviewed','maximumRecords','roles','accessIssuer','accessAudience']);
+ if(!input||Array.isArray(input)||Object.keys(input).some(k=>!allowed.has(k)))throw Error('nonsecret_installation_fields_only');
+ if(!/^[a-f0-9]{32}$/.test(input.accountId??'')||! /^[a-z0-9][a-z0-9-]{1,62}$/.test(input.workerName??'')||input.workerName.startsWith('ai-and-main-revenue-opportunity-'))throw Error('separate_customer_installation_required');
+ const origin=new URL(input.publicOrigin);if(origin.protocol!=='https:'||origin.origin!==input.publicOrigin)throw Error('public_https_origin_required');
+ if(!/^[a-zA-Z0-9_-]{8,100}$/.test(input.installationId??'')||!numeric(input.portalId)||! /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.ownerEmail??''))throw Error('installation_portal_and_owner_required');
+ const scopes=input.approvedScopes??[];if(!Array.isArray(scopes)||scopes.some(s=>!READ_SCOPES.has(s)))throw Error('approved_read_scopes_only');
+ const max=input.maximumRecords??25;if(!Number.isInteger(max)||max<1||max>100)throw Error('permitted_record_limit_invalid');
+ const roles=input.roles??{};if(!roles||Array.isArray(roles)||Object.entries(roles).some(([s,r])=>! /^[a-zA-Z0-9_-]{1,128}$/.test(s)||['__proto__','constructor','prototype'].includes(s)||!['Viewer','Approver','Admin'].includes(r)))throw Error('external_role_mapping_invalid');
+ if(input.accessIssuer){const issuer=new URL(input.accessIssuer);if(issuer.protocol!=='https:'||!issuer.hostname.endsWith('.cloudflareaccess.com')||issuer.origin!==input.accessIssuer)throw Error('verified_access_issuer_required');}
+ if(input.accessAudience&&!/^[a-f0-9]{64}$/.test(input.accessAudience))throw Error('verified_access_audience_required');
+ return {$schema:'node_modules/wrangler/config-schema.json',name:input.workerName,account_id:input.accountId,main:'src/customer/worker.js',compatibility_date:'2026-10-09',compatibility_flags:['nodejs_compat'],workers_dev:false,preview_urls:false,keep_vars:true,
+  vars:{...Object.fromEntries(closedFlags.map(f=>[f,'false'])),DEPLOYMENT_ENVIRONMENT:'customer',HUBSPOT_CUSTOMER_CONTRACT:CUSTOMER_HUBSPOT_CONTRACT,HUBSPOT_PUBLIC_ORIGIN:origin.origin,HUBSPOT_INSTALLATION_ID:input.installationId,HUBSPOT_EXPECTED_PORTAL_ID:input.portalId,HUBSPOT_OWNER_EMAIL:input.ownerEmail.toLowerCase(),HUBSPOT_SYNTHETIC_RECORDS_ONLY:'true',HUBSPOT_TENANT_REVIEWED:String(input.tenantReviewed===true),HUBSPOT_MAX_PERMITTED_RECORDS:String(max),HUBSPOT_OAUTH_CLIENT_ID:input.oauthClientId??'',HUBSPOT_OAUTH_SCOPES:scopes.join(' '),HUBSPOT_OAUTH_APP_READ_ONLY_CONFIRMED:String(input.readOnlyAppReviewed===true),APPROVER_SUBJECTS_JSON:JSON.stringify(roles),AUDIT_RETENTION_DAYS:'365',ACCESS_ISSUER:input.accessIssuer??'',ACCESS_AUDIENCE:input.accessAudience??''},
+  durable_objects:{bindings:[{name:'HUBSPOT_CUSTOMER_LEDGER',class_name:'HubSpotCustomerLedger'}]},migrations:[{tag:'hubspot-owner-v1',new_sqlite_classes:['HubSpotCustomerLedger']}],secrets:{required:['HUBSPOT_OAUTH_CLIENT_SECRET','HUBSPOT_TOKEN_ENCRYPTION_KEY','EVAL_OPENAI_API_KEY']},version_metadata:{binding:'RELEASE_VERSION'},observability:{enabled:true,logs:{enabled:true,invocation_logs:false}}};
+}

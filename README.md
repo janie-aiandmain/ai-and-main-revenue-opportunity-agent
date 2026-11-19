@@ -14,8 +14,10 @@ nontechnical HubSpot, Jobber and GoHighLevel owners. It includes a printable gui
 offline setup worksheet, explicit connector availability and a bounded launch
 plan. A new isolated, portable HubSpot shadow entry point removes dependency on
 the fixed vendor demo for test-account evaluation. It is not customer production
-certification. Jobber/GoHighLevel adapters, no-code connection/provisioning,
-multi-record intake, customer release and paywall activation remain incomplete.
+certification. The [HubSpot-first owner connection build](products/revenue-rescue-diy/hubspot-owner-validation/README.md)
+now implements OAuth setup and multi-record permissions with local Worker/browser
+evidence. The actual OAuth app, hosted validation, automatic paid provisioning,
+customer release, Jobber/GoHighLevel adapters and paywall activation remain pending.
 
 The status paragraphs below are historical checkpoints. Their capture-time
 PENDING/disabled annotations are preserved; use the current milestone and voice
