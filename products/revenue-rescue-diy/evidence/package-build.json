@@ -1,0 +1,44 @@
+{
+  "kind": "BUILT_OWNER_PREVIEW_NOT_PAID_CUSTOMER_RELEASE",
+  "sourceCheckpoint": "380397a66f6280a14bcfe5870491fcb796e73e34",
+  "archiveName": "Revenue-Rescue-DIY-Owner-Preview-v0.1.0.zip",
+  "sha256": "c2e22792b7538c60dacea67343ff1e9308d3b580e267c29ace625c954cb403aa",
+  "bytes": 58974,
+  "contents": [
+    {
+      "name": "START-HERE.html",
+      "sha256": "92f7d7fd63106b738f904fb34895258fc7194ed288d7cd9626a872f5b36077b0",
+      "bytes": 10343
+    },
+    {
+      "name": "OWNER-GUIDE.md",
+      "sha256": "93f583da015435de4f49c57d46fa61f96ab2ce7c476b1fee1d47f018a87e17b5",
+      "bytes": 3981
+    },
+    {
+      "name": "EXAMPLES-AND-REVIEW.md",
+      "sha256": "90ce95f8efa1cb43752e5b71d3d1a5ff5d60cd8d688a1f5c11249ad361e45def",
+      "bytes": 3872
+    },
+    {
+      "name": "PRIVACY-COSTS-SUPPORT.md",
+      "sha256": "af5e31a18423ae17f733ef9a31b82700ce8744e7c125f9c9b4723fd4eab01093",
+      "bytes": 2547
+    },
+    {
+      "name": "Revenue-Rescue-Owner-Preview.pdf",
+      "sha256": "1bf80cb57c54e73ae11438b4cec68c11f9fd7e503aefd7249f54da9135e542fb",
+      "bytes": 53991
+    },
+    {
+      "name": "PREVIEW-STATUS.txt",
+      "sha256": "d814b9f31be24210311ea9b6cccc353687b7e9faee362e005c6ae2cf17353788",
+      "bytes": 235
+    }
+  ],
+  "allManifestEntriesVerified": true,
+  "vendorAccountAndRecordIdentifiersExcluded": true,
+  "sourceAndProviderEvidenceExcluded": true,
+  "customerReleaseApproved": false,
+  "checkoutEnabled": false
+}

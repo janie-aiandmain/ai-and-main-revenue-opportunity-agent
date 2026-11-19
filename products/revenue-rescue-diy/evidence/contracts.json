@@ -1,0 +1,19 @@
+{
+  "customerPreviewPolicy": "revenue-rescue-hubspot-shadow-v1",
+  "ownerPlanContract": "revenue-rescue-owner-planning-v1",
+  "packageContract": "revenue-rescue-owner-package-v1",
+  "readinessContract": "revenue-rescue-diy-readiness-v1",
+  "promptVersion": "reasoning-v0.3.3",
+  "schemaVersion": "findings-v0.2",
+  "reasoningMaterializer": "source-evidence-v0.3.12",
+  "sharedReasoningOrActionGenerationChanged": false,
+  "hashes": {
+    "src/diy/hubspot-profile.js": "f3a7b5c0452eb6109c1336e20c50b37f1f1280786e8115ebd51a3fcc3e7e99d3",
+    "src/diy/hubspot-fetch.js": "c2a126b74376676161bc1ad26d3e7850aedce2e2c52763014a247fff35d7b3fb",
+    "src/diy/hubspot-worker.js": "1d020712cc309232d74e5c36f99792e30397d4eb7bdd36165473697d3359e5ef",
+    "src/findings-request-v0.3.3.json": "e5630f86c5a7636a49116b8be56c336d3293c15bb024711f0fa36d9df9fa6fea",
+    "src/release/reasoning.js": "4c95bb154013eef67578c8c36d9b484bf6a800fcf03d6a4be11e168c79851411",
+    "src/voice/contract.js": "839d80b1a5a24ae6467ab26884f44db62d8b13d9ef34f840c99ac79d2ee35795"
+  },
+  "existingRuntimeAndDeploymentConfigsUnchangedFrom": "05953a75427d5be059ef20d90ecb3408231a819d"
+}
