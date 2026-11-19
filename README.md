@@ -1,5 +1,7 @@
 # AI & MAIN Revenue Opportunity Agent
 
+**Product architecture decision (November 2026):** Revenue Rescue is **one product with independently certified CRM connectors**. The [connector contract, proposed platform sequence, $1,190 standard-installation boundary, and release gates](docs/revenue-rescue-connector-contract.md) are documented separately from the currently accepted controlled HubSpot demonstration. No connector is yet certified for real-customer deployment.
+
 **Current milestone:** the [controlled synthetic demo is accepted](docs/review/demo-approval-negatives-2026-11-17/adjudication/README.md).
 General task writeback stays disabled. **Current development:**
 [provider voice-note intake](docs/review/voice-intake-v1/README.md): record/upload →
