@@ -4,3 +4,7 @@ node_modules/
 .env*
 reports/
 .staging/
+hubspot.config.yml
+archived.hubspot.config.yml
+.hscli/
+.hs/

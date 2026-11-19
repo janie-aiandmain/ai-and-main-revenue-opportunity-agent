@@ -1209,3 +1209,25 @@ remain pending; do not imply service-key success proves OAuth. Keep checkout and
 customer CRM mutations off, no main merge, and no secret values in chat/Git/logs.
 Manual installation bootstrap still precedes the owner UI; automatic paid
 provisioning is not delivered by this source cycle.
+
+## Verified vendor developer access and OAuth app registration
+
+The user generated an AI & MAIN Personal Access Key with Developer Projects only
+and published HUBSPOT_PERSONAL_ACCESS_KEY / HUBSPOT_ACCOUNT_ID in the Codex
+environment for app creation/upload. Official CLI 8.19.0 read-only project access
+passed for vendor account247646072, initially zero projects. Main Street Electric
+247646122 remains the synthetic installation target, not the vendor account.
+Use --use-env and preserve the existing CRM service keys. Never pass the PAK as
+an argument, print it, write an auth config into Git, or expand its permissions
+without an actual identified need. The CLI is isolated from runtime dependencies.
+
+hubspot-app contains the official-template stable2026.09 OAuth marketplace app,
+with template contact-write removed and only reviewed read scopes. The failed
+template download was resolved through approved public GitHub/raw hosts without
+changing CLI code or network policy. The official validator passes zero errors/
+warnings. scripts/diy/hs-vendor-project.js guards the fixed vendor account/project,
+keeps raw CLI output private, and uploads with --skip-auto-deploy. Its policy
+rejects optional/conditional writes and any hosted callback not separately reviewed.
+The localhost callback is a deliberate development default, not a ready customer
+connection. No app install, Marketplace listing, Cloudflare/CRM deployment or
+customer release follows from a project upload. Main stays unchanged.

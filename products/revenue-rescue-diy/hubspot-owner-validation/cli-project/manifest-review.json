@@ -1,0 +1,19 @@
+{
+  "kind": "REVIEWED_VENDOR_APP_METADATA_NOT_CUSTOMER_RELEASE",
+  "policy": "hubspot-vendor-oauth-registration-v1",
+  "manifestHash": "sha256:b629ddc793671be3b806023bf4a943adf7c562fc6e5406a84e1e95dd84325a93",
+  "scopes": [
+    "oauth",
+    "crm.objects.contacts.read",
+    "crm.objects.notes.read"
+  ],
+  "customerReady": false,
+  "accountId": "247646072",
+  "project": "ai-main-revenue-rescue",
+  "platform": "2026.09",
+  "optionalScopes": [],
+  "callback": "OFFICIAL_LOCALHOST_DEVELOPMENT_DEFAULT_ONLY",
+  "CRMWriteScopes": [],
+  "autoDeployOnUpload": false,
+  "customerReleased": false
+}

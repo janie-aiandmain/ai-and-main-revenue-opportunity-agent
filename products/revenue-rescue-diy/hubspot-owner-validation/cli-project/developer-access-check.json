@@ -1,0 +1,18 @@
+{
+  "kind": "READ_ONLY_HUBSPOT_DEVELOPER_PROJECT_ACCESS_CHECK",
+  "accountId": "247646072",
+  "cliVersion": "8.19.0",
+  "exitCode": 0,
+  "configurationMode": "ENVIRONMENT_ONLY_NO_CREDENTIAL_CONFIG_FILE",
+  "CRMCalls": 0,
+  "projectsChanged": 0,
+  "secretsDisplayed": false,
+  "outputFields": [
+    "accountId",
+    "results"
+  ],
+  "responseAccountId": "247646072",
+  "projectCount": 0,
+  "projectNames": [],
+  "success": true
+}
