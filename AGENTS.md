@@ -1061,3 +1061,23 @@ payload / cc6b1333… action. Open only this test via note-window.js --enable
 --close --user-authorized --recovery, verify all three note flags false, then
 read-only reconcile. Hosted recovery and final controlled-demo acceptance remain
 pending. Never reuse the consumed ceiling-fan note or synthesize an actor.
+
+The exact recovery-control window is now VERIFIED OPEN on both existing Workers
+for intake 97c46fc9… / grant 5429433f… / payload 38bcfb54… under run
+voice-note-run-b456842e-4246-4548-a0bc-7dfd1d1161ee, expiring 2026-11-19T00:46:08.746Z
+(November 18, 7:46:08 p.m. Eastern). Only the THREE note write/release/response-
+loss switches are true; all nine task/general/legacy-fault flags remain false.
+The operator has been asked to copy pre-test boot, use ONLY the explicit
+response-loss Save once, then Load status (not Reconcile yet) and share evidence.
+On that result close FIRST: note-window.js --close --user-authorized --recovery.
+Verify both note switches AND VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED false on
+BOTH Workers, then perform real operator read-only reconciliation. Do not retry
+create, reuse the ceiling-fan operation, reset attempts or forge identity.
+Actual hosted proof and final controlled-demo acceptance remain pending.
+
+Concurrent architecture documentation d3c12d0 / 2a9478a was safely retained by
+rebasing only the unpushed closed-deployment documentation. Runtime source,
+fixtures and config blobs remain identical to tested/deployed 367621d. Respect
+docs/revenue-rescue-connector-contract.md: shared product/governance, adapter
+certification separate per platform/version; no customer connector is certified.
+This cycle does not build another CRM, alter website offers or activate checkout.

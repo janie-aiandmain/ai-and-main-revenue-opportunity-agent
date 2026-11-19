@@ -1,0 +1,14 @@
+{
+  "policyVersion": "one-intake-exact-note-demo-window-v1",
+  "runId": "voice-note-run-b456842e-4246-4548-a0bc-7dfd1d1161ee",
+  "startedAt": "2026-11-19T00:16:08.746Z",
+  "expiresAt": "2026-11-19T00:46:08.746Z",
+  "maximumCreates": 1,
+  "intakeId": "voice_97c46fc9fed04c915710b946da30c37d24cfcea2939558c9825f75f3e91ffb1d",
+  "approvalId": "voice-approval_5429433f-f84f-46d4-8f9c-14563523eb9f",
+  "payloadHash": "sha256:38bcfb5450333b1ff0757352e751b44e24f496db065b42f8d964dd715f17537d",
+  "actionVersion": "voice-note-action-v1:sha256:cc6b1333e049b08fa0ec04cffea8106e5b8bd955070911d70bbea826d292becf",
+  "revision": 2,
+  "portalId": "247646122",
+  "contactId": "582095692487"
+}

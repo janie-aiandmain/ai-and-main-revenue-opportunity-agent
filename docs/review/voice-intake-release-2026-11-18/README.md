@@ -79,3 +79,26 @@ Open the specific test window only for this unused approved control; after the
 operator result close with `node scripts/voice/note-window.js --close
 --user-authorized --recovery` before further steps. Do not reopen the consumed
 ceiling-fan note or any old task operation.
+
+## Exact recovery window verified open
+
+The actual note-window-enable.json verifies BOTH existing Workers with identical
+code, Secrets, namespace, identity/tenant/email/host state and Access protection.
+Only the THREE bounded note write/release/response-loss switches are temporarily
+true for this exact control intake, grant and payload. All nine task/general/
+legacy-fault flags remain false. Run `voice-note-run-b456842e-4246-4548-a0bc-7dfd1d1161ee`
+expires November 18 at 7:46:08 p.m. Eastern (2026-11-19T00:46:08.746Z), maximum
+one durable create across all retries. The controller makes zero CRM/model/mail
+calls and does not submit the note.
+
+The real operator has been asked to copy the loaded pre-test ledgerBootId, click
+ONLY the explicit response-loss Save once, then Load read-only and return full
+evidence. An interruption is expected. Do not reconcile until the controller
+closes all THREE note switches, and never submit again. Hosted recovery remains
+PENDING until actual UNKNOWN/discard/restart/readback receipts arrive.
+
+Concurrent architecture commits d3c12d0 and 2a9478a are retained: one Revenue
+Rescue product with shared governance and independently certified adapters.
+They change documentation only; deployed/tested runtime remains exactly 367621d.
+This voice candidate is only a controlled HubSpot synthetic demo; no customer
+connector certification, website checkout or commercial-release flag is activated.
