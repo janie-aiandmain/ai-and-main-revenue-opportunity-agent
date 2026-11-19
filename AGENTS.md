@@ -1014,3 +1014,37 @@ pending as recorded. Final human note approval is not task/customer-action
 authority. scripts/voice/verify-save-receipt.js reproduces the offline receipt/
 closure check at this evidence commit. Latest prior suite is 292/292; no runtime
 changes or additional tests/build/model calls were needed for recording evidence.
+
+## Authorized note recovery and controlled-demo voice release — November 18
+
+The user asked to finish interrupted-note recovery and broader release. Interpret
+this within the existing synthetic demo, not customer production. The original
+confirmed ceiling-fan intake is consumed: preserve it; never reset/recreate it.
+The user recorded and exact-approved a NEW control note voice_97c46fc9… with
+no customer request or service/task authority, payload 38bcfb54… / action cc6b1333…
+/ grant 5429433f…. Both credentials/marker are checked by the unchanged Save path.
+One extra synthetic note is authorized only through that real operator grant;
+no Codex CRM POST or identity synthesis, new scopes/keys/namespace/Worker/task/mail.
+
+The new exact-note-response-discard-restart-v1 policy is operational only. Keep
+note contracts/payload/action, reasoning prompt/schema/model unchanged; preserve
+all evidence. Both gateway and owner require the exact one-note window plus
+VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED for the explicit recovery Save. Ordinary
+Save is blocked in fault mode. Only the fixed synthetic control is eligible.
+Persist fault/intent before POST, discard response ID before success, flush marker
+then ctx.abort. Restart stays UNKNOWN; reconciliation only or blocked, no second
+create. All nine existing task/general/fault controls remain false. New note
+fault flag defaults false in both Wrangler configs; deploy closed first. Close
+BOTH note switches and note fault flag immediately on the operator result, then
+verify closed state and reconcile read-only. Actual hosted proof is pending.
+
+The user replied PASS for all to the FIVE named v1.2 reasoning outputs. Record
+that as append-only hash-bound semantic events under voice-intake-release-
+2026-11-18/adjudication; original packet remains unchanged. That answer does not
+approve the separate audio-transcript field, future outputs, a note/task or
+release. The recovery note has its own real exact approval already captured.
+Final controlled-demo release acceptance must bind to the completed candidate/
+evidence after hosted recovery. Broader customer rollout is not authorized.
+302 tests, 207 retained executions, both dry-run builds and actual LOCAL workerd
+abort/SQLite/HTTP recovery pass. They are not hosted HubSpot recovery evidence.
+Generation is unchanged; zero fresh reasoning calls, one new hosted ASR call.

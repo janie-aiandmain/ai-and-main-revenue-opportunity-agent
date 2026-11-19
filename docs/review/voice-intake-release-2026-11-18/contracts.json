@@ -1,0 +1,50 @@
+{
+  "recoveryPolicyVersion": "exact-note-response-discard-restart-v1",
+  "recoveryPolicySha256": "17383d0955bfa8a65fcf3bc99f1cda2c69e5f644e20c0804b59a6cc3a120f64d",
+  "executionWindowPolicy": "one-intake-exact-note-demo-window-v1",
+  "voiceContract": "service-provider-voice-intake-v1.2",
+  "noteContract": "hubspot-reviewed-voice-note-v1.2",
+  "prompt": "reasoning-v0.3.3",
+  "schema": "findings-v0.2",
+  "model": "gpt-5.6-terra",
+  "reasoningEffort": "low",
+  "unchangedGenerationSources": [
+    {
+      "path": "src/voice/contract.js",
+      "sha256": "839d80b1a5a24ae6467ab26884f44db62d8b13d9ef34f840c99ac79d2ee35795",
+      "unchangedFromNormalSaveCheckpoint": true
+    },
+    {
+      "path": "src/release/reasoning.js",
+      "sha256": "4c95bb154013eef67578c8c36d9b484bf6a800fcf03d6a4be11e168c79851411",
+      "unchangedFromNormalSaveCheckpoint": true
+    },
+    {
+      "path": "src/findings-request-v0.3.3.json",
+      "sha256": "e5630f86c5a7636a49116b8be56c336d3293c15bb024711f0fa36d9df9fa6fea",
+      "unchangedFromNormalSaveCheckpoint": true
+    },
+    {
+      "path": "src/staging/note-source.js",
+      "sha256": "5f1cbed776ef4fb9dcbf3fac8b7af36e98a1683ec553c219bd86d105cc97eae6",
+      "unchangedFromNormalSaveCheckpoint": true
+    }
+  ],
+  "recoveryApprovedPayloadHash": "sha256:38bcfb5450333b1ff0757352e751b44e24f496db065b42f8d964dd715f17537d",
+  "recoveryApprovedActionVersion": "voice-note-action-v1:sha256:cc6b1333e049b08fa0ec04cffea8106e5b8bd955070911d70bbea826d292becf",
+  "approvalCompatibility": "Exact note/action unchanged; new execution/fault policy only narrows who/when/which one-use synthetic control can create.",
+  "offlineTests": 302,
+  "offlineFailures": 0,
+  "retainedWorkflowPasses": 207,
+  "workerDryRuns": {
+    "gateway": "PASS",
+    "owner": "PASS"
+  },
+  "localActualWorkerdAbortAndSeparateHttpSqliteRecovery": "PASS_NOT_HOSTED",
+  "freshReasoningCalls": 0,
+  "newHostedAsrCalls": 1,
+  "earlierFailedCommand": "First local harness import used the wrong package for convertV4MiniflareOptions; it failed before execution, was corrected to the installed Miniflare export and then passed.",
+  "hostedRecovery": "PENDING",
+  "humanSemanticVerdicts": "FIVE_EXACT_REASONING_OUTPUTS_PASS_FROM_USER_EVENT",
+  "releaseAcceptance": "PENDING"
+}

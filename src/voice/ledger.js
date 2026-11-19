@@ -1,10 +1,11 @@
 import {VOICE_CONTRACT,TRANSCRIPTION_CONTRACT,NOTE_CONTRACT,authority,voiceMode,actorCheck,metadata,transcriptText,noteRequest,actionVersion,noteMatches,hash} from './contract.js';
 import {assertNoteWindow,noteWindowOpen} from './execution-window.js';
+import {assertRecoveryTest,recoveryTestOpen,NOTE_RECOVERY_TEST_POLICY,RECOVERY_CONTROL_TEXT} from './recovery-test.js';
 import {StagingBlocker} from '../staging/blockers.js';
 const EDITABLE=['TRANSCRIBED','REVIEWED','APPROVED'];
 export class VoiceIntakeLedger {
- constructor(db,env,{flush=async()=>{}}={}){
-  this.db=db;this.env=env;this.flush=flush;
+ constructor(db,env,{flush=async()=>{},restartAfterInjectedLoss=null}={}){
+  this.db=db;this.env=env;this.flush=flush;this.restartAfterInjectedLoss=restartAfterInjectedLoss;
   db.exec('CREATE TABLE IF NOT EXISTS voice_intake(id TEXT PRIMARY KEY,data_json TEXT NOT NULL); CREATE TABLE IF NOT EXISTS voice_intake_trace(sequence INTEGER PRIMARY KEY,intake_id TEXT NOT NULL,event TEXT NOT NULL,payload_hash TEXT,at TEXT NOT NULL)');
   for(const {data_json} of db.prepare('SELECT data_json FROM voice_intake').all()){
    const d=JSON.parse(data_json);
@@ -18,7 +19,7 @@ export class VoiceIntakeLedger {
  save(d){this.db.prepare('INSERT INTO voice_intake VALUES(?,?) ON CONFLICT(id) DO UPDATE SET data_json=excluded.data_json').run(d.id,JSON.stringify(d));}
  trace(d,event){this.db.prepare('INSERT INTO voice_intake_trace(intake_id,event,payload_hash,at) VALUES(?,?,?,?)').run(d.id,event,d.payloadHash??null,new Date().toISOString());}
  owned(id,actor){voiceMode(this.env);actorCheck(actor,this.env);const d=this.read(id);if(d.context!==this.context()||d.actorHash!==authority(actor))throw Error('voice_intake_identity_or_target_changed');return d;}
- status(id,actor){const d=this.owned(id,actor);return {voiceContract:VOICE_CONTRACT,transcriptionContract:TRANSCRIPTION_CONTRACT,noteContract:NOTE_CONTRACT,intakeId:d.id,state:d.state,revision:d.revision,audioHash:d.audioHash,originalTranscriptHash:d.originalTranscriptHash??null,sourceLabel:d.sourceLabel,recordedAt:d.recordedAt,originalText:d.originalText,reviewedText:d.reviewedText,payloadHash:d.payloadHash??null,actionVersion:d.actionVersion??null,correlation:d.correlation,finalRequest:d.request??null,approval:d.approval??null,remoteNoteId:d.remoteNoteId??null,createAttempts:d.createAttempts,providerCalls:d.providerCalls,expiresAt:new Date(d.expiresAt).toISOString(),lastError:d.lastError??null,blocker:d.blocker??null,executionWindow:d.executionWindow??null,draftRedacted:!!d.redacted,noteWritesEnabled:noteWindowOpen(this.env,d),taskExecutionApproved:false,trace:this.db.prepare('SELECT event,payload_hash,at FROM voice_intake_trace WHERE intake_id=? ORDER BY sequence').all(id)};}
+ status(id,actor){const d=this.owned(id,actor);return {voiceContract:VOICE_CONTRACT,transcriptionContract:TRANSCRIPTION_CONTRACT,noteContract:NOTE_CONTRACT,intakeId:d.id,state:d.state,revision:d.revision,audioHash:d.audioHash,originalTranscriptHash:d.originalTranscriptHash??null,sourceLabel:d.sourceLabel,recordedAt:d.recordedAt,originalText:d.originalText,reviewedText:d.reviewedText,payloadHash:d.payloadHash??null,actionVersion:d.actionVersion??null,correlation:d.correlation,finalRequest:d.request??null,approval:d.approval??null,remoteNoteId:d.remoteNoteId??null,createAttempts:d.createAttempts,providerCalls:d.providerCalls,expiresAt:new Date(d.expiresAt).toISOString(),lastError:d.lastError??null,blocker:d.blocker??null,executionWindow:d.executionWindow??null,responseLossTest:d.responseLossTest??null,responseLossTestEnabled:recoveryTestOpen(this.env,d),responseLossTestMode:this.env.VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED==='true',draftRedacted:!!d.redacted,noteWritesEnabled:noteWindowOpen(this.env,d),taskExecutionApproved:false,trace:this.db.prepare('SELECT event,payload_hash,at FROM voice_intake_trace WHERE intake_id=? ORDER BY sequence').all(id)};}
  async transcribe(audio,input,actor,provider){
   voiceMode(this.env);actorCheck(actor,this.env);const m=metadata(input);if(input.syntheticConfirmed!==true)throw Error('voice_synthetic_data_attestation_required');
   const id='voice_'+hash({context:this.context(),audioHash:audio.audioHash}).slice(7);let existing;
@@ -53,25 +54,32 @@ export class VoiceIntakeLedger {
   if(d.state==='APPROVED'){this.assertApproval(d,actor);return this.status(d.id,actor);}
   const now=Date.now();d.approval={approvalId:'voice-approval_'+crypto.randomUUID(),actorHash:authority(actor),payloadHash:d.payloadHash,actionVersion:d.actionVersion,revision:d.revision,issuedAt:now,expiresAt:Math.min(now+86400000,d.expiresAt)};d.state='APPROVED';this.save(d);this.trace(d,'VOICE_EXACT_FINAL_NOTE_APPROVED');return this.status(d.id,actor);
  });}
- async submit(input,actor,client){
-  let d=this.owned(input.intakeId,actor);
+ async submit(input,actor,client,{injectResponseLoss=false}={}){
+  let restartRequested=false,d=this.owned(input.intakeId,actor);
   if(d.state==='NOTE_CONFIRMED')return this.status(d.id,actor);
   if(['NOTE_UNKNOWN','NOTE_SENDING'].includes(d.state))return this.reconcile(input,actor,client);
   if(d.state==='NOTE_CHECKING')return this.status(d.id,actor);
   if(this.env.VOICE_NOTE_WRITES_ENABLED!=='true'||this.env.VOICE_NOTE_RELEASE_APPROVED!=='true')throw Error('voice_note_execution_disabled');
   if(d.state!=='APPROVED'||d.approval?.approvalId!==input.approvalId)throw Error('voice_exact_approval_required');
-  this.assertApproval(d,actor);assertNoteWindow(this.env,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});d.state='NOTE_CHECKING';this.save(d);this.trace(d,'VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL');
+  this.assertApproval(d,actor);assertNoteWindow(this.env,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});
+  if(this.env.VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED==='true'&&!injectResponseLoss)throw Error('voice_recovery_test_requires_explicit_action');
+  if(injectResponseLoss){assertRecoveryTest(this.env,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});if(d.reviewedText!==RECOVERY_CONTROL_TEXT)throw Error('voice_recovery_requires_explicit_synthetic_control');if(typeof this.restartAfterInjectedLoss!=='function')throw Error('voice_hosted_restart_unavailable');}
+  d.state='NOTE_CHECKING';this.save(d);this.trace(d,'VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL');
   try{
    await client.verifyIsolation();const prior=await client.lookup(d.correlation);if(!Array.isArray(prior))throw Error('voice_note_lookup_incomplete');
    if(prior.length){d=this.read(d.id);d.state='NOTE_UNKNOWN';this.save(d);return this.acceptMatch(d,prior,actor);}
    d=this.read(d.id);if(d.state!=='NOTE_CHECKING'||d.createAttempts!==0)throw Error('voice_create_state_changed');this.assertApproval(d,actor);
-   d.executionWindow=assertNoteWindow(this.env,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});d.state='NOTE_SENDING';d.createAttempts++;this.save(d);this.trace(d,'VOICE_POST_INTENT_PERSISTED_BEFORE_CREATE');await this.flush();
+   d.executionWindow=assertNoteWindow(this.env,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});if(injectResponseLoss){assertRecoveryTest(this.env,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});d.responseLossTest={policyVersion:NOTE_RECOVERY_TEST_POLICY,runId:d.executionWindow.runId,payloadHash:d.payloadHash,approvalId:d.approval.approvalId,armedBy:d.actorHash,discarded:false};this.trace(d,'VOICE_OPERATOR_ARMED_SYNTHETIC_RESPONSE_DISCARD');}
+   d.state='NOTE_SENDING';d.createAttempts++;this.save(d);this.trace(d,'VOICE_POST_INTENT_PERSISTED_BEFORE_CREATE');await this.flush();
    // An awaited storage flush must not extend an expired session/approval.
    d=this.read(d.id);if(d.state!=='NOTE_SENDING'||d.createAttempts!==1)throw Error('voice_post_intent_changed');this.assertApproval(d,actor);
    const window=assertNoteWindow(this.env,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});if(window.runId!==d.executionWindow.runId)throw Error('voice_note_window_changed_after_intent');
-   const created=await client.create(d.request,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});d=this.read(d.id);d.remoteNoteId=created?.id?String(created.id):null;d.state='NOTE_UNKNOWN';this.save(d);this.trace(d,'VOICE_CREATE_RESPONSE_REQUIRES_READBACK');
+   if(injectResponseLoss)assertRecoveryTest(this.env,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});
+   const created=await client.create(d.request,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});
+   if(injectResponseLoss){d=this.read(d.id);d.responseLossTest.discarded=true;this.save(d);this.trace(d,'VOICE_INJECTED_RESPONSE_DISCARDED_BEFORE_SUCCESS_NOT_NETWORK_OUTAGE');await this.flush();restartRequested=true;await this.restartAfterInjectedLoss();throw Error('voice_injected_response_discard_restart_required');}
+   d=this.read(d.id);d.remoteNoteId=created?.id?String(created.id):null;d.state='NOTE_UNKNOWN';this.save(d);this.trace(d,'VOICE_CREATE_RESPONSE_REQUIRES_READBACK');
    return this.reconcile(input,actor,client);
-  }catch(error){d=this.read(d.id);if(d.state==='NOTE_SENDING'||d.createAttempts>0){d.state='NOTE_UNKNOWN';d.lastError='voice_remote_outcome_uncertain_reconcile_no_create';d.blocker=error instanceof StagingBlocker?error.toJSON():null;this.save(d);this.trace(d,'VOICE_UNCERTAIN_OUTCOME_NO_SECOND_CREATE');return this.status(d.id,actor);}if(d.state==='NOTE_CHECKING'){d.state='APPROVED';this.save(d);}throw error;}
+  }catch(error){if(restartRequested)throw error;d=this.read(d.id);if(d.state==='NOTE_SENDING'||d.createAttempts>0){d.state='NOTE_UNKNOWN';d.lastError='voice_remote_outcome_uncertain_reconcile_no_create';d.blocker=error instanceof StagingBlocker?error.toJSON():null;this.save(d);this.trace(d,'VOICE_UNCERTAIN_OUTCOME_NO_SECOND_CREATE');return this.status(d.id,actor);}if(d.state==='NOTE_CHECKING'){d.state='APPROVED';this.save(d);}throw error;}
  }
  acceptMatch(d,candidates,actor){
   if(!Array.isArray(candidates))throw Error('voice_note_lookup_incomplete');

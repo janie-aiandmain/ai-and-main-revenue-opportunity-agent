@@ -1,0 +1,657 @@
+{
+  "kind": "LOCAL_WORKER_ABORT_AND_HTTP_SQLITE_FIXTURES_NOT_HOSTED",
+  "realHubspotCalls": 0,
+  "realModelCalls": 0,
+  "realEmailCalls": 0,
+  "complete": true,
+  "before": {
+    "voiceContract": "service-provider-voice-intake-v1.2",
+    "transcriptionContract": "verbatim-audio-transcription-v1",
+    "noteContract": "hubspot-reviewed-voice-note-v1.2",
+    "intakeId": "voice_dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+    "state": "APPROVED",
+    "revision": 2,
+    "audioHash": "sha256:a42d5478468ad21494ac93070c407b175f7c09d830038050a5c9fbc65fc43d20",
+    "originalTranscriptHash": "sha256:13a771ed3ee42a285ab3b9dc6b2a25e5fb9a8a37d38447e8873204b4a78bdc77",
+    "sourceLabel": "Local synthetic drill",
+    "recordedAt": "2026-11-18T10:00:00.000Z",
+    "originalText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+    "reviewedText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+    "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+    "actionVersion": "voice-note-action-v1:sha256:cf4ab05e18e2cc696fc879318f0dd43df66510be8937b072f4ec09eed81d2a71",
+    "correlation": "ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+    "finalRequest": {
+      "contractVersion": "hubspot-reviewed-voice-note-v1.2",
+      "method": "POST",
+      "url": "https://api.hubapi.com/crm/v3/objects/notes",
+      "portalId": "voice-fixture-portal",
+      "body": {
+        "properties": {
+          "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.</p><p>Source type: Service-provider dictation.</p><p>Transcript review: Checked by the operator.</p><p>Provider label (operator-entered): Local synthetic drill</p><p>Original recording time (UTC): 2026-11-18T10:00:00.000Z</p><p>Reviewed transcript:</p><p>Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf]</p>",
+          "hs_timestamp": "2026-11-18T10:00:00.000Z"
+        },
+        "associations": [
+          {
+            "to": {
+              "id": "voice-fixture-contact"
+            },
+            "types": [
+              {
+                "associationCategory": "HUBSPOT_DEFINED",
+                "associationTypeId": 202
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "approval": {
+      "approvalId": "voice-approval_ba8f141e-cadc-44ca-b97f-fe38d8a6600c",
+      "actorHash": "sha256:580f829dccc9bb4bf74417a47684ba9a655b2356633f969300ed51fef204c7bd",
+      "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+      "actionVersion": "voice-note-action-v1:sha256:cf4ab05e18e2cc696fc879318f0dd43df66510be8937b072f4ec09eed81d2a71",
+      "revision": 2,
+      "issuedAt": 1795046251643,
+      "expiresAt": 1795132651588
+    },
+    "remoteNoteId": null,
+    "createAttempts": 0,
+    "providerCalls": 1,
+    "expiresAt": "2026-11-19T23:57:31.588Z",
+    "lastError": null,
+    "blocker": null,
+    "executionWindow": null,
+    "responseLossTest": null,
+    "responseLossTestEnabled": true,
+    "responseLossTestMode": true,
+    "draftRedacted": false,
+    "noteWritesEnabled": true,
+    "taskExecutionApproved": false,
+    "trace": [
+      {
+        "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+        "payload_hash": null,
+        "at": "2026-11-18T23:57:31.588Z"
+      },
+      {
+        "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+        "payload_hash": null,
+        "at": "2026-11-18T23:57:31.608Z"
+      },
+      {
+        "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+        "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "at": "2026-11-18T23:57:31.633Z"
+      },
+      {
+        "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+        "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "at": "2026-11-18T23:57:31.643Z"
+      }
+    ],
+    "ownerSourceCommit": null,
+    "ownerDeploymentVersion": null,
+    "ledgerBootId": "1fb37b5d-b186-4a3b-a9fc-085d03e6bb07"
+  },
+  "injectedResponse": {
+    "status": 409,
+    "data": {
+      "status": "voice_intake_blocked"
+    }
+  },
+  "afterAbort": {
+    "voiceContract": "service-provider-voice-intake-v1.2",
+    "transcriptionContract": "verbatim-audio-transcription-v1",
+    "noteContract": "hubspot-reviewed-voice-note-v1.2",
+    "intakeId": "voice_dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+    "state": "NOTE_UNKNOWN",
+    "revision": 2,
+    "audioHash": "sha256:a42d5478468ad21494ac93070c407b175f7c09d830038050a5c9fbc65fc43d20",
+    "originalTranscriptHash": "sha256:13a771ed3ee42a285ab3b9dc6b2a25e5fb9a8a37d38447e8873204b4a78bdc77",
+    "sourceLabel": "Local synthetic drill",
+    "recordedAt": "2026-11-18T10:00:00.000Z",
+    "originalText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+    "reviewedText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+    "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+    "actionVersion": "voice-note-action-v1:sha256:cf4ab05e18e2cc696fc879318f0dd43df66510be8937b072f4ec09eed81d2a71",
+    "correlation": "ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+    "finalRequest": {
+      "contractVersion": "hubspot-reviewed-voice-note-v1.2",
+      "method": "POST",
+      "url": "https://api.hubapi.com/crm/v3/objects/notes",
+      "portalId": "voice-fixture-portal",
+      "body": {
+        "properties": {
+          "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.</p><p>Source type: Service-provider dictation.</p><p>Transcript review: Checked by the operator.</p><p>Provider label (operator-entered): Local synthetic drill</p><p>Original recording time (UTC): 2026-11-18T10:00:00.000Z</p><p>Reviewed transcript:</p><p>Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf]</p>",
+          "hs_timestamp": "2026-11-18T10:00:00.000Z"
+        },
+        "associations": [
+          {
+            "to": {
+              "id": "voice-fixture-contact"
+            },
+            "types": [
+              {
+                "associationCategory": "HUBSPOT_DEFINED",
+                "associationTypeId": 202
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "approval": {
+      "approvalId": "voice-approval_ba8f141e-cadc-44ca-b97f-fe38d8a6600c",
+      "actorHash": "sha256:580f829dccc9bb4bf74417a47684ba9a655b2356633f969300ed51fef204c7bd",
+      "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+      "actionVersion": "voice-note-action-v1:sha256:cf4ab05e18e2cc696fc879318f0dd43df66510be8937b072f4ec09eed81d2a71",
+      "revision": 2,
+      "issuedAt": 1795046251643,
+      "expiresAt": 1795132651588
+    },
+    "remoteNoteId": null,
+    "createAttempts": 1,
+    "providerCalls": 1,
+    "expiresAt": "2026-11-19T23:57:31.588Z",
+    "lastError": null,
+    "blocker": null,
+    "executionWindow": {
+      "policyVersion": "one-intake-exact-note-demo-window-v1",
+      "runId": "local-synthetic"
+    },
+    "responseLossTest": {
+      "policyVersion": "exact-note-response-discard-restart-v1",
+      "runId": "local-synthetic",
+      "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+      "approvalId": "voice-approval_ba8f141e-cadc-44ca-b97f-fe38d8a6600c",
+      "armedBy": "sha256:580f829dccc9bb4bf74417a47684ba9a655b2356633f969300ed51fef204c7bd",
+      "discarded": true
+    },
+    "responseLossTestEnabled": false,
+    "responseLossTestMode": true,
+    "draftRedacted": false,
+    "noteWritesEnabled": false,
+    "taskExecutionApproved": false,
+    "trace": [
+      {
+        "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+        "payload_hash": null,
+        "at": "2026-11-18T23:57:31.588Z"
+      },
+      {
+        "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+        "payload_hash": null,
+        "at": "2026-11-18T23:57:31.608Z"
+      },
+      {
+        "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+        "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "at": "2026-11-18T23:57:31.633Z"
+      },
+      {
+        "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+        "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "at": "2026-11-18T23:57:31.643Z"
+      },
+      {
+        "event": "VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL",
+        "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "at": "2026-11-18T23:57:31.662Z"
+      },
+      {
+        "event": "VOICE_OPERATOR_ARMED_SYNTHETIC_RESPONSE_DISCARD",
+        "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "at": "2026-11-18T23:57:31.668Z"
+      },
+      {
+        "event": "VOICE_POST_INTENT_PERSISTED_BEFORE_CREATE",
+        "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "at": "2026-11-18T23:57:31.668Z"
+      },
+      {
+        "event": "VOICE_INJECTED_RESPONSE_DISCARDED_BEFORE_SUCCESS_NOT_NETWORK_OUTAGE",
+        "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "at": "2026-11-18T23:57:31.671Z"
+      },
+      {
+        "event": "VOICE_RESTART_UNCERTAIN_NO_CREATE",
+        "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "at": "2026-11-18T23:57:31.680Z"
+      }
+    ],
+    "ownerSourceCommit": null,
+    "ownerDeploymentVersion": null,
+    "ledgerBootId": "3e30bcfa-2d8d-4584-83e8-cab1ef23a2f6"
+  },
+  "recovery": {
+    "absent": {
+      "voiceContract": "service-provider-voice-intake-v1.2",
+      "transcriptionContract": "verbatim-audio-transcription-v1",
+      "noteContract": "hubspot-reviewed-voice-note-v1.2",
+      "intakeId": "voice_dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+      "state": "NOTE_UNKNOWN",
+      "revision": 2,
+      "audioHash": "sha256:a42d5478468ad21494ac93070c407b175f7c09d830038050a5c9fbc65fc43d20",
+      "originalTranscriptHash": "sha256:13a771ed3ee42a285ab3b9dc6b2a25e5fb9a8a37d38447e8873204b4a78bdc77",
+      "sourceLabel": "Local synthetic drill",
+      "recordedAt": "2026-11-18T10:00:00.000Z",
+      "originalText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+      "reviewedText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+      "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+      "actionVersion": "voice-note-action-v1:sha256:cf4ab05e18e2cc696fc879318f0dd43df66510be8937b072f4ec09eed81d2a71",
+      "correlation": "ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+      "finalRequest": {
+        "contractVersion": "hubspot-reviewed-voice-note-v1.2",
+        "method": "POST",
+        "url": "https://api.hubapi.com/crm/v3/objects/notes",
+        "portalId": "voice-fixture-portal",
+        "body": {
+          "properties": {
+            "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.</p><p>Source type: Service-provider dictation.</p><p>Transcript review: Checked by the operator.</p><p>Provider label (operator-entered): Local synthetic drill</p><p>Original recording time (UTC): 2026-11-18T10:00:00.000Z</p><p>Reviewed transcript:</p><p>Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf]</p>",
+            "hs_timestamp": "2026-11-18T10:00:00.000Z"
+          },
+          "associations": [
+            {
+              "to": {
+                "id": "voice-fixture-contact"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 202
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "approval": {
+        "approvalId": "voice-approval_ba8f141e-cadc-44ca-b97f-fe38d8a6600c",
+        "actorHash": "sha256:580f829dccc9bb4bf74417a47684ba9a655b2356633f969300ed51fef204c7bd",
+        "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "actionVersion": "voice-note-action-v1:sha256:cf4ab05e18e2cc696fc879318f0dd43df66510be8937b072f4ec09eed81d2a71",
+        "revision": 2,
+        "issuedAt": 1795046251643,
+        "expiresAt": 1795132651588
+      },
+      "remoteNoteId": null,
+      "createAttempts": 1,
+      "providerCalls": 1,
+      "expiresAt": "2026-11-19T23:57:31.588Z",
+      "lastError": "voice_no_exact_match_manual_resolution_required",
+      "blocker": null,
+      "executionWindow": {
+        "policyVersion": "one-intake-exact-note-demo-window-v1",
+        "runId": "local-synthetic"
+      },
+      "responseLossTest": {
+        "policyVersion": "exact-note-response-discard-restart-v1",
+        "runId": "local-synthetic",
+        "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "approvalId": "voice-approval_ba8f141e-cadc-44ca-b97f-fe38d8a6600c",
+        "armedBy": "sha256:580f829dccc9bb4bf74417a47684ba9a655b2356633f969300ed51fef204c7bd",
+        "discarded": true
+      },
+      "responseLossTestEnabled": false,
+      "responseLossTestMode": false,
+      "draftRedacted": false,
+      "noteWritesEnabled": false,
+      "taskExecutionApproved": false,
+      "trace": [
+        {
+          "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+          "payload_hash": null,
+          "at": "2026-11-18T23:57:31.588Z"
+        },
+        {
+          "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+          "payload_hash": null,
+          "at": "2026-11-18T23:57:31.608Z"
+        },
+        {
+          "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.633Z"
+        },
+        {
+          "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.643Z"
+        },
+        {
+          "event": "VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.662Z"
+        },
+        {
+          "event": "VOICE_OPERATOR_ARMED_SYNTHETIC_RESPONSE_DISCARD",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.668Z"
+        },
+        {
+          "event": "VOICE_POST_INTENT_PERSISTED_BEFORE_CREATE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.668Z"
+        },
+        {
+          "event": "VOICE_INJECTED_RESPONSE_DISCARDED_BEFORE_SUCCESS_NOT_NETWORK_OUTAGE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.671Z"
+        },
+        {
+          "event": "VOICE_RESTART_UNCERTAIN_NO_CREATE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.680Z"
+        },
+        {
+          "event": "VOICE_READ_ONLY_RECONCILIATION",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:34.882Z"
+        },
+        {
+          "event": "VOICE_NO_EXACT_MATCH_BLOCKED",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:34.888Z"
+        }
+      ],
+      "ownerSourceCommit": null,
+      "ownerDeploymentVersion": null,
+      "ledgerBootId": "b9353a39-6acc-4de5-95a4-c49b1bb05287"
+    },
+    "confirmed": {
+      "voiceContract": "service-provider-voice-intake-v1.2",
+      "transcriptionContract": "verbatim-audio-transcription-v1",
+      "noteContract": "hubspot-reviewed-voice-note-v1.2",
+      "intakeId": "voice_dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+      "state": "NOTE_CONFIRMED",
+      "revision": 2,
+      "audioHash": "sha256:a42d5478468ad21494ac93070c407b175f7c09d830038050a5c9fbc65fc43d20",
+      "originalTranscriptHash": "sha256:13a771ed3ee42a285ab3b9dc6b2a25e5fb9a8a37d38447e8873204b4a78bdc77",
+      "sourceLabel": "Local synthetic drill",
+      "recordedAt": "2026-11-18T10:00:00.000Z",
+      "originalText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+      "reviewedText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+      "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+      "actionVersion": "voice-note-action-v1:sha256:cf4ab05e18e2cc696fc879318f0dd43df66510be8937b072f4ec09eed81d2a71",
+      "correlation": "ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+      "finalRequest": {
+        "contractVersion": "hubspot-reviewed-voice-note-v1.2",
+        "method": "POST",
+        "url": "https://api.hubapi.com/crm/v3/objects/notes",
+        "portalId": "voice-fixture-portal",
+        "body": {
+          "properties": {
+            "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.</p><p>Source type: Service-provider dictation.</p><p>Transcript review: Checked by the operator.</p><p>Provider label (operator-entered): Local synthetic drill</p><p>Original recording time (UTC): 2026-11-18T10:00:00.000Z</p><p>Reviewed transcript:</p><p>Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf]</p>",
+            "hs_timestamp": "2026-11-18T10:00:00.000Z"
+          },
+          "associations": [
+            {
+              "to": {
+                "id": "voice-fixture-contact"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 202
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "approval": {
+        "approvalId": "voice-approval_ba8f141e-cadc-44ca-b97f-fe38d8a6600c",
+        "actorHash": "sha256:580f829dccc9bb4bf74417a47684ba9a655b2356633f969300ed51fef204c7bd",
+        "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "actionVersion": "voice-note-action-v1:sha256:cf4ab05e18e2cc696fc879318f0dd43df66510be8937b072f4ec09eed81d2a71",
+        "revision": 2,
+        "issuedAt": 1795046251643,
+        "expiresAt": 1795132651588
+      },
+      "remoteNoteId": "local-voice-note-1",
+      "createAttempts": 1,
+      "providerCalls": 1,
+      "expiresAt": "2026-11-19T23:57:31.588Z",
+      "lastError": null,
+      "blocker": null,
+      "executionWindow": {
+        "policyVersion": "one-intake-exact-note-demo-window-v1",
+        "runId": "local-synthetic"
+      },
+      "responseLossTest": {
+        "policyVersion": "exact-note-response-discard-restart-v1",
+        "runId": "local-synthetic",
+        "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "approvalId": "voice-approval_ba8f141e-cadc-44ca-b97f-fe38d8a6600c",
+        "armedBy": "sha256:580f829dccc9bb4bf74417a47684ba9a655b2356633f969300ed51fef204c7bd",
+        "discarded": true
+      },
+      "responseLossTestEnabled": false,
+      "responseLossTestMode": false,
+      "draftRedacted": false,
+      "noteWritesEnabled": false,
+      "taskExecutionApproved": false,
+      "trace": [
+        {
+          "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+          "payload_hash": null,
+          "at": "2026-11-18T23:57:31.588Z"
+        },
+        {
+          "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+          "payload_hash": null,
+          "at": "2026-11-18T23:57:31.608Z"
+        },
+        {
+          "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.633Z"
+        },
+        {
+          "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.643Z"
+        },
+        {
+          "event": "VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.662Z"
+        },
+        {
+          "event": "VOICE_OPERATOR_ARMED_SYNTHETIC_RESPONSE_DISCARD",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.668Z"
+        },
+        {
+          "event": "VOICE_POST_INTENT_PERSISTED_BEFORE_CREATE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.668Z"
+        },
+        {
+          "event": "VOICE_INJECTED_RESPONSE_DISCARDED_BEFORE_SUCCESS_NOT_NETWORK_OUTAGE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.671Z"
+        },
+        {
+          "event": "VOICE_RESTART_UNCERTAIN_NO_CREATE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.680Z"
+        },
+        {
+          "event": "VOICE_READ_ONLY_RECONCILIATION",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:34.882Z"
+        },
+        {
+          "event": "VOICE_NO_EXACT_MATCH_BLOCKED",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:34.888Z"
+        },
+        {
+          "event": "VOICE_READ_ONLY_RECONCILIATION",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:34.902Z"
+        },
+        {
+          "event": "VOICE_EXISTING_NOTE_MATCHED_NO_NEW_CREATE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:34.908Z"
+        }
+      ],
+      "ownerSourceCommit": null,
+      "ownerDeploymentVersion": null,
+      "ledgerBootId": "b9353a39-6acc-4de5-95a4-c49b1bb05287"
+    },
+    "repeat": {
+      "voiceContract": "service-provider-voice-intake-v1.2",
+      "transcriptionContract": "verbatim-audio-transcription-v1",
+      "noteContract": "hubspot-reviewed-voice-note-v1.2",
+      "intakeId": "voice_dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+      "state": "NOTE_CONFIRMED",
+      "revision": 2,
+      "audioHash": "sha256:a42d5478468ad21494ac93070c407b175f7c09d830038050a5c9fbc65fc43d20",
+      "originalTranscriptHash": "sha256:13a771ed3ee42a285ab3b9dc6b2a25e5fb9a8a37d38447e8873204b4a78bdc77",
+      "sourceLabel": "Local synthetic drill",
+      "recordedAt": "2026-11-18T10:00:00.000Z",
+      "originalText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+      "reviewedText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+      "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+      "actionVersion": "voice-note-action-v1:sha256:cf4ab05e18e2cc696fc879318f0dd43df66510be8937b072f4ec09eed81d2a71",
+      "correlation": "ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf",
+      "finalRequest": {
+        "contractVersion": "hubspot-reviewed-voice-note-v1.2",
+        "method": "POST",
+        "url": "https://api.hubapi.com/crm/v3/objects/notes",
+        "portalId": "voice-fixture-portal",
+        "body": {
+          "properties": {
+            "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.</p><p>Source type: Service-provider dictation.</p><p>Transcript review: Checked by the operator.</p><p>Provider label (operator-entered): Local synthetic drill</p><p>Original recording time (UTC): 2026-11-18T10:00:00.000Z</p><p>Reviewed transcript:</p><p>Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-dcb51a349944230912f50a43ee69340de5c9dcd506304a07d800844089e36bcf]</p>",
+            "hs_timestamp": "2026-11-18T10:00:00.000Z"
+          },
+          "associations": [
+            {
+              "to": {
+                "id": "voice-fixture-contact"
+              },
+              "types": [
+                {
+                  "associationCategory": "HUBSPOT_DEFINED",
+                  "associationTypeId": 202
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "approval": {
+        "approvalId": "voice-approval_ba8f141e-cadc-44ca-b97f-fe38d8a6600c",
+        "actorHash": "sha256:580f829dccc9bb4bf74417a47684ba9a655b2356633f969300ed51fef204c7bd",
+        "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "actionVersion": "voice-note-action-v1:sha256:cf4ab05e18e2cc696fc879318f0dd43df66510be8937b072f4ec09eed81d2a71",
+        "revision": 2,
+        "issuedAt": 1795046251643,
+        "expiresAt": 1795132651588
+      },
+      "remoteNoteId": "local-voice-note-1",
+      "createAttempts": 1,
+      "providerCalls": 1,
+      "expiresAt": "2026-11-19T23:57:31.588Z",
+      "lastError": null,
+      "blocker": null,
+      "executionWindow": {
+        "policyVersion": "one-intake-exact-note-demo-window-v1",
+        "runId": "local-synthetic"
+      },
+      "responseLossTest": {
+        "policyVersion": "exact-note-response-discard-restart-v1",
+        "runId": "local-synthetic",
+        "payloadHash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+        "approvalId": "voice-approval_ba8f141e-cadc-44ca-b97f-fe38d8a6600c",
+        "armedBy": "sha256:580f829dccc9bb4bf74417a47684ba9a655b2356633f969300ed51fef204c7bd",
+        "discarded": true
+      },
+      "responseLossTestEnabled": false,
+      "responseLossTestMode": false,
+      "draftRedacted": false,
+      "noteWritesEnabled": false,
+      "taskExecutionApproved": false,
+      "trace": [
+        {
+          "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+          "payload_hash": null,
+          "at": "2026-11-18T23:57:31.588Z"
+        },
+        {
+          "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+          "payload_hash": null,
+          "at": "2026-11-18T23:57:31.608Z"
+        },
+        {
+          "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.633Z"
+        },
+        {
+          "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.643Z"
+        },
+        {
+          "event": "VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.662Z"
+        },
+        {
+          "event": "VOICE_OPERATOR_ARMED_SYNTHETIC_RESPONSE_DISCARD",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.668Z"
+        },
+        {
+          "event": "VOICE_POST_INTENT_PERSISTED_BEFORE_CREATE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.668Z"
+        },
+        {
+          "event": "VOICE_INJECTED_RESPONSE_DISCARDED_BEFORE_SUCCESS_NOT_NETWORK_OUTAGE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.671Z"
+        },
+        {
+          "event": "VOICE_RESTART_UNCERTAIN_NO_CREATE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:31.680Z"
+        },
+        {
+          "event": "VOICE_READ_ONLY_RECONCILIATION",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:34.882Z"
+        },
+        {
+          "event": "VOICE_NO_EXACT_MATCH_BLOCKED",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:34.888Z"
+        },
+        {
+          "event": "VOICE_READ_ONLY_RECONCILIATION",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:34.902Z"
+        },
+        {
+          "event": "VOICE_EXISTING_NOTE_MATCHED_NO_NEW_CREATE",
+          "payload_hash": "sha256:3a56c415b485dd0c252bb9c7af391360d1a09400903352fba3d4594f7c0c847a",
+          "at": "2026-11-18T23:57:34.908Z"
+        }
+      ],
+      "ownerSourceCommit": null,
+      "ownerDeploymentVersion": null,
+      "ledgerBootId": "b9353a39-6acc-4de5-95a4-c49b1bb05287"
+    }
+  },
+  "summary": {
+    "notes": 1,
+    "createAttempts": 1,
+    "transcriptions": 1,
+    "reasonCalls": 0,
+    "unexpectedWrites": 0
+  }
+}

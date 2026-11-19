@@ -13,12 +13,13 @@ import { operatorConsole } from './operator-console.js';
 import { HubSpotCertificationClient } from './hubspot-client.js';
 import { commitDemoFaultAndRestart } from '../release/demo-execution.js';
 import {emailConfig,NOTIFICATION_POLICY} from './email-notifications.js';
+import {commitNoteFaultAndRestart} from '../voice/recovery-test.js';
 import {VoiceIntakeLedger} from '../voice/ledger.js';
 import {voiceOwner,voiceGateway} from '../voice/http.js';
 import {voiceConsole} from '../voice/console.js';
 const json=(body,status=200)=>Response.json(body,{status,headers:{'cache-control':'no-store'}});
 export class CertificationLedger extends DurableObject {
-  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.bootId=crypto.randomUUID();this.env=env;const db=durableDatabase(ctx.storage);this.ledger=new GeneralFindingLedger(db,env);this.ledger.runtimeBootId=this.bootId;this.ledger.recoverChecking();this.ledger.emailOutbox.recover();if(db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='voice_intake'").get())this.voiceLedger=new VoiceIntakeLedger(db,env,{flush:()=>ctx.storage.sync()});if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
+  constructor(ctx,env){super(ctx,env);this.demoContext=ctx;this.bootId=crypto.randomUUID();this.env=env;const db=durableDatabase(ctx.storage);this.ledger=new GeneralFindingLedger(db,env);this.ledger.runtimeBootId=this.bootId;this.ledger.recoverChecking();this.ledger.emailOutbox.recover();if(db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='voice_intake'").get())this.voiceLedger=new VoiceIntakeLedger(db,env,{flush:()=>ctx.storage.sync(),restartAfterInjectedLoss:()=>commitNoteFaultAndRestart(ctx)});if(env.CERTIFICATION_MODE!=='local')ctx.waitUntil(this.ensureRetentionAlarm());}
   async ensureRetentionAlarm(){
     let ready=false;try{ready=!!emailConfig(this.env);}catch{}
     const due=ready?this.ledger.emailOutbox.nextDue():null;

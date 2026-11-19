@@ -1,0 +1,9 @@
+{
+  "version": "synthetic-voice-note-recovery-control-v1",
+  "reviewedText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+  "expectedFindingCount": 0,
+  "customerActionAuthorized": false,
+  "taskExecutionAuthorized": false,
+  "financialOutcome": null,
+  "originalTime": "Use the actual new recording time; do not reuse the successful ceiling-fan intake or its grant."
+}

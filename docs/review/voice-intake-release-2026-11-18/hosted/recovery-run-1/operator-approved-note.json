@@ -1,0 +1,86 @@
+{
+  "voiceContract": "service-provider-voice-intake-v1.2",
+  "transcriptionContract": "verbatim-audio-transcription-v1",
+  "noteContract": "hubspot-reviewed-voice-note-v1.2",
+  "intakeId": "voice_97c46fc9fed04c915710b946da30c37d24cfcea2939558c9825f75f3e91ffb1d",
+  "state": "APPROVED",
+  "revision": 2,
+  "audioHash": "sha256:ac38aa61e54041cfe94afc4437039f99381f2665133a055389ccad65e472361b",
+  "originalTranscriptHash": "sha256:13a771ed3ee42a285ab3b9dc6b2a25e5fb9a8a37d38447e8873204b4a78bdc77",
+  "sourceLabel": "Synthetic service provider",
+  "recordedAt": "2026-11-18T23:48:36.000Z",
+  "originalText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+  "reviewedText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+  "payloadHash": "sha256:38bcfb5450333b1ff0757352e751b44e24f496db065b42f8d964dd715f17537d",
+  "actionVersion": "voice-note-action-v1:sha256:cc6b1333e049b08fa0ec04cffea8106e5b8bd955070911d70bbea826d292becf",
+  "correlation": "ai-main-voice-97c46fc9fed04c915710b946da30c37d24cfcea2939558c9825f75f3e91ffb1d",
+  "finalRequest": {
+    "contractVersion": "hubspot-reviewed-voice-note-v1.2",
+    "method": "POST",
+    "url": "https://api.hubapi.com/crm/v3/objects/notes",
+    "portalId": "247646122",
+    "body": {
+      "properties": {
+        "hs_note_body": "<p>AI &amp; MAIN SYNTHETIC VOICE NOTE — TEST DATA ONLY.</p><p>Source type: Service-provider dictation.</p><p>Transcript review: Checked by the operator.</p><p>Provider label (operator-entered): Synthetic service provider</p><p>Original recording time (UTC): 2026-11-18T23:48:36.000Z</p><p>Reviewed transcript:</p><p>Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.</p><p>[AI_MAIN_VOICE_CORRELATION:ai-main-voice-97c46fc9fed04c915710b946da30c37d24cfcea2939558c9825f75f3e91ffb1d]</p>",
+        "hs_timestamp": "2026-11-18T23:48:36.000Z"
+      },
+      "associations": [
+        {
+          "to": {
+            "id": "582095692487"
+          },
+          "types": [
+            {
+              "associationCategory": "HUBSPOT_DEFINED",
+              "associationTypeId": 202
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "approval": {
+    "approvalId": "voice-approval_5429433f-f84f-46d4-8f9c-14563523eb9f",
+    "actorHash": "sha256:1733d381cb88719b3d67fe1e46c9135e5361edb113fb5f99ab8a8fe2dc4f2a17",
+    "payloadHash": "sha256:38bcfb5450333b1ff0757352e751b44e24f496db065b42f8d964dd715f17537d",
+    "actionVersion": "voice-note-action-v1:sha256:cc6b1333e049b08fa0ec04cffea8106e5b8bd955070911d70bbea826d292becf",
+    "revision": 2,
+    "issuedAt": 1795045931688,
+    "expiresAt": 1795132176041
+  },
+  "remoteNoteId": null,
+  "createAttempts": 0,
+  "providerCalls": 1,
+  "expiresAt": "2026-11-19T23:49:36.041Z",
+  "lastError": null,
+  "blocker": null,
+  "executionWindow": null,
+  "draftRedacted": false,
+  "noteWritesEnabled": false,
+  "taskExecutionApproved": false,
+  "trace": [
+    {
+      "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+      "payload_hash": null,
+      "at": "2026-11-18T23:49:36.041Z"
+    },
+    {
+      "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+      "payload_hash": null,
+      "at": "2026-11-18T23:49:37.849Z"
+    },
+    {
+      "event": "VOICE_EXACT_NOTE_PREPARED_NO_WRITE",
+      "payload_hash": "sha256:38bcfb5450333b1ff0757352e751b44e24f496db065b42f8d964dd715f17537d",
+      "at": "2026-11-18T23:52:03.620Z"
+    },
+    {
+      "event": "VOICE_EXACT_FINAL_NOTE_APPROVED",
+      "payload_hash": "sha256:38bcfb5450333b1ff0757352e751b44e24f496db065b42f8d964dd715f17537d",
+      "at": "2026-11-18T23:52:11.688Z"
+    }
+  ],
+  "ownerSourceCommit": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+  "ownerDeploymentVersion": "96daec97-14b6-4998-b904-758e120f632d",
+  "ledgerBootId": "12be5602-4d88-40a6-8393-5ba2b7806110"
+}

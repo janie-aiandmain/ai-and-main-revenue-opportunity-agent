@@ -1,0 +1,19 @@
+{
+  "kind": "VERIFIED_OPERATOR_EXACT_VOICE_NOTE_APPROVAL",
+  "intakeId": "voice_97c46fc9fed04c915710b946da30c37d24cfcea2939558c9825f75f3e91ffb1d",
+  "approvalId": "voice-approval_5429433f-f84f-46d4-8f9c-14563523eb9f",
+  "revision": 2,
+  "payloadHash": "sha256:38bcfb5450333b1ff0757352e751b44e24f496db065b42f8d964dd715f17537d",
+  "actionVersion": "voice-note-action-v1:sha256:cc6b1333e049b08fa0ec04cffea8106e5b8bd955070911d70bbea826d292becf",
+  "approvedSource": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+  "originalTextAndReviewedTextMatchRecoveryControl": true,
+  "requestAndActionReproducedByCurrentBuilder": true,
+  "createAttempts": 0,
+  "remoteNoteId": null,
+  "knownApproverAuthorityHashMatches": true,
+  "existingGrantCompatibleWithNewOperationalGuard": true,
+  "claimBasis": "User-supplied authenticated operator receipt, independently checked complete hashes and lineage; no JWT inspection claimed.",
+  "noteExecutionEnabled": false,
+  "taskExecutionApproved": false,
+  "releaseAccepted": false
+}

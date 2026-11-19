@@ -1,0 +1,10 @@
+{
+  "source": "Two full operator field lists supplied by the user through the transcription and exact-approval questions on November 18, 2026.",
+  "transcriptionReceipt": "operator-transcribed.json",
+  "approvalReceipt": "operator-approved-note.json",
+  "formatting": "Formatted field lists as JSON; finalRequest reproduced with the unchanged note builder and verified against the complete exact request and payload/action hashes supplied by the user.",
+  "independentlyDownloaded": false,
+  "jwtInspected": false,
+  "originalTextPreserved": true,
+  "newHumanApprovalAppliesTo": "Recovery-control note only; not the five reasoning outputs or release acceptance."
+}

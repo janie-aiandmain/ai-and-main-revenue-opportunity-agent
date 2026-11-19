@@ -31,7 +31,8 @@
     "OPERATOR_EMAIL_FROM": "alerts@aiandmain.ai",
     "OPERATOR_EMAIL_REPLY_TO": "janie@aiandmain.ai",
     "OPERATOR_EMAIL_TO": "janie@aiandmain.ai",
-    "OPERATOR_CONSOLE_URL": "https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/operator"
+    "OPERATOR_CONSOLE_URL": "https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/operator",
+    "VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED": "false"
   },
   "durable_objects": {
     "bindings": [

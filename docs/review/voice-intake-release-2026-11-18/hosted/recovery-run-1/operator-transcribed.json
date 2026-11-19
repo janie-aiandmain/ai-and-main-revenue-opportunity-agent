@@ -1,0 +1,44 @@
+{
+  "voiceContract": "service-provider-voice-intake-v1.2",
+  "transcriptionContract": "verbatim-audio-transcription-v1",
+  "noteContract": "hubspot-reviewed-voice-note-v1.2",
+  "intakeId": "voice_97c46fc9fed04c915710b946da30c37d24cfcea2939558c9825f75f3e91ffb1d",
+  "state": "TRANSCRIBED",
+  "revision": 1,
+  "audioHash": "sha256:ac38aa61e54041cfe94afc4437039f99381f2665133a055389ccad65e472361b",
+  "originalTranscriptHash": "sha256:13a771ed3ee42a285ab3b9dc6b2a25e5fb9a8a37d38447e8873204b4a78bdc77",
+  "sourceLabel": "Synthetic service provider",
+  "recordedAt": "2026-11-18T23:48:36.000Z",
+  "originalText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+  "reviewedText": "Synthetic test only. This is an internal recovery drill. No customer requested services or a quote. Work is not authorized. Appointments are not authorized. Customer contact is not authorized. Billing is not authorized. Task creation is not authorized.",
+  "payloadHash": null,
+  "actionVersion": null,
+  "correlation": "ai-main-voice-97c46fc9fed04c915710b946da30c37d24cfcea2939558c9825f75f3e91ffb1d",
+  "finalRequest": null,
+  "approval": null,
+  "remoteNoteId": null,
+  "createAttempts": 0,
+  "providerCalls": 1,
+  "expiresAt": "2026-11-19T23:49:36.041Z",
+  "lastError": null,
+  "blocker": null,
+  "executionWindow": null,
+  "draftRedacted": false,
+  "noteWritesEnabled": false,
+  "taskExecutionApproved": false,
+  "trace": [
+    {
+      "event": "VOICE_TRANSCRIPTION_CALL_RESERVED",
+      "payload_hash": null,
+      "at": "2026-11-18T23:49:36.041Z"
+    },
+    {
+      "event": "VOICE_TRANSCRIPT_READY_NOT_HUMAN_REVIEWED",
+      "payload_hash": null,
+      "at": "2026-11-18T23:49:37.849Z"
+    }
+  ],
+  "ownerSourceCommit": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+  "ownerDeploymentVersion": "96daec97-14b6-4998-b904-758e120f632d",
+  "ledgerBootId": "2b0856a6-f2c0-40d7-b796-9a3f920c04e6"
+}
