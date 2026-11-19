@@ -3,11 +3,19 @@
 **Product architecture decision (November 2026):** Revenue Rescue is **one product with independently certified CRM connectors**. The [connector contract, proposed platform sequence, $1,190 standard-installation boundary, and release gates](docs/revenue-rescue-connector-contract.md) are documented separately from the currently accepted controlled HubSpot demonstration. No connector is yet certified for real-customer deployment.
 
 **Current milestone:** the [controlled synthetic demo is accepted](docs/review/demo-approval-negatives-2026-11-17/adjudication/README.md).
-General task writeback stays disabled. **Current development:**
-[provider voice-note intake](docs/review/voice-intake-v1/README.md): record/upload →
-transcribe → review exact transcript/original time/contact → approve exact HubSpot
-note → existing finding workflow. Voice note writes are disabled and permission
-is unverified; this new capability does not inherit the older demo acceptance.
+General task writeback stays disabled. The separately accepted
+[routine synthetic voice workflow](docs/review/voice-routine-demo-2026-11-18/README.md)
+is enabled for the designated demo record: record → review/correct → approve the
+exact note → save. It does not authorize customer-account rollout.
+
+**November 19 package preparation:** the
+[DIY Operations Kit owner preview](products/revenue-rescue-diy/README.md) targets
+nontechnical HubSpot, Jobber and GoHighLevel owners. It includes a printable guide,
+offline setup worksheet, explicit connector availability and a bounded launch
+plan. A new isolated, portable HubSpot shadow entry point removes dependency on
+the fixed vendor demo for test-account evaluation. It is not customer production
+certification. Jobber/GoHighLevel adapters, no-code connection/provisioning,
+multi-record intake, customer release and paywall activation remain incomplete.
 
 The status paragraphs below are historical checkpoints. Their capture-time
 PENDING/disabled annotations are preserved; use the current milestone and voice

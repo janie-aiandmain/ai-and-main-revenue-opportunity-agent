@@ -1,0 +1,33 @@
+{
+  "kind": "EXECUTED_LOCAL_OWNER_PREVIEW_BROWSER_NOT_INSTALLED_AGENT",
+  "platforms": [
+    {
+      "platform": "hubspot",
+      "worksheetDownloaded": true,
+      "connected": false,
+      "releaseApproved": false,
+      "approvalGranted": false
+    },
+    {
+      "platform": "jobber",
+      "worksheetDownloaded": true,
+      "connected": false,
+      "releaseApproved": false,
+      "approvalGranted": false
+    },
+    {
+      "platform": "gohighlevel",
+      "worksheetDownloaded": true,
+      "connected": false,
+      "releaseApproved": false,
+      "approvalGranted": false
+    }
+  ],
+  "remoteRequests": [],
+  "humanApprovals": 0,
+  "CRMConnections": 0,
+  "payments": 0,
+  "complete": true,
+  "invalidSelectionBlocked": true,
+  "mobileOverflow": false
+}

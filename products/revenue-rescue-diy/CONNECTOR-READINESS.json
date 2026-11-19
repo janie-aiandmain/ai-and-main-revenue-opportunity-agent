@@ -1,0 +1,55 @@
+{
+  "contractVersion": "revenue-rescue-diy-readiness-v1",
+  "recordedOn": "2026-11-19",
+  "audience": "NONTECHNICAL_BUSINESS_OWNER",
+  "packageVersion": "0.1.0-owner-preview",
+  "customerReleaseApproved": false,
+  "checkoutEnabled": false,
+  "setupPreviewIsLiveConnection": false,
+  "proposedPriceUsd": 395,
+  "priceActivated": false,
+  "connectors": [
+    {
+      "platform": "HubSpot",
+      "key": "hubspot",
+      "vendorDemo": "TESTED_CONTROLLED_SYNTHETIC",
+      "portableShadowProfile": "LOCALLY_VALIDATED_SYNTHETIC_SHADOW_ONLY",
+      "customerRelease": "PENDING",
+      "guidedOwnerConnection": "NOT_BUILT",
+      "multipleRecordIntake": "NOT_BUILT",
+      "voiceCustomerRelease": "PENDING",
+      "automaticCustomerActions": false,
+      "canChargeForReadyToUseConnector": false,
+      "localEvidence": [
+        "evidence/customer-worker-local.json",
+        "evidence/validation.json"
+      ]
+    },
+    {
+      "platform": "Jobber",
+      "key": "jobber",
+      "adapter": "NOT_BUILT",
+      "apiAccessAndPermissions": "UNVERIFIED",
+      "guidedOwnerConnection": "NOT_BUILT",
+      "customerRelease": "PENDING",
+      "canChargeForReadyToUseConnector": false
+    },
+    {
+      "platform": "GoHighLevel",
+      "key": "gohighlevel",
+      "adapter": "NOT_BUILT",
+      "apiAccessAndPermissions": "UNVERIFIED",
+      "guidedOwnerConnection": "NOT_BUILT",
+      "customerRelease": "PENDING",
+      "canChargeForReadyToUseConnector": false
+    }
+  ],
+  "releaseCannotBeInferredFrom": [
+    "SYNTHETIC_DEMO_ACCEPTANCE",
+    "GENERATED_SETUP_WORKSHEET",
+    "PACKAGE_BUILD",
+    "LOCAL_TEST_PASS",
+    "SEMANTIC_PASS",
+    "PAYMENT"
+  ]
+}

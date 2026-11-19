@@ -1,0 +1,56 @@
+{
+  "contractVersion": "revenue-rescue-diy-local-validation-v1",
+  "recordedOn": "2026-11-19",
+  "fullTests": {
+    "passed": 316,
+    "failed": 0
+  },
+  "supportedWorkflows": {
+    "passed": 207,
+    "failed": 0
+  },
+  "portableWorkerProfiles": 2,
+  "nativeWorkerFixtureInferences": 2,
+  "realModelCalls": 0,
+  "realHubspotCalls": 0,
+  "CRMCreates": 0,
+  "emails": 0,
+  "deployments": 0,
+  "payments": 0,
+  "customerProductionCertified": false,
+  "commands": [
+    {
+      "check": "fullOfflineTests",
+      "command": "node --test --test-isolation=none tests/*.test.js",
+      "status": "PASS",
+      "logSha256": "df49bdc4ac84c29355b204c14a6df3ce58bc1f1d0dbfb62dccc27157a850fe68"
+    },
+    {
+      "check": "supportedWorkflow",
+      "command": "npm run regression:offline",
+      "status": "PASS",
+      "logSha256": "c1c2ee14d612cf33b7ed2269dc9528abb19726fc2d47e38c35bdb11e7d1e003e"
+    },
+    {
+      "check": "customerWorkerBuild",
+      "command": "WRANGLER_SEND_METRICS=false npx wrangler deploy --dry-run --config /tmp/diy-customer-build.jsonc",
+      "status": "PASS",
+      "logSha256": "1248f3e23908fb5128534822d0c6000793c56d0876f6ee8d7799cddd1a03c849"
+    },
+    {
+      "check": "nativeCustomerWorker",
+      "command": "node scripts/diy/verify-hubspot-worker.js",
+      "status": "PASS",
+      "logSha256": "fe5cbb8d792d306ea80478511c1b2625c8d38109450a27c7292a186192a4e8b3"
+    },
+    {
+      "check": "ownerBrowser",
+      "command": "node scripts/diy/verify-owner-preview.js",
+      "status": "PASS",
+      "logSha256": "0fcbfecfe299497a10b84df6ea61a95a60b374e87edeea7375915d3534b02692"
+    }
+  ],
+  "browserLimitation": "Managed Chromium rejects file URLs. The same unchanged HTML passed when served on local loopback; browser policy was not changed. Original block receipt preserved.",
+  "existingRuntimeFilesChanged": false,
+  "existingWorkerConfigsChanged": false
+}

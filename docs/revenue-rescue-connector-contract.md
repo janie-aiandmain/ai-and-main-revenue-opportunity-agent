@@ -2,7 +2,16 @@
 
 **Architecture decision:** AI & MAIN will sell one Revenue Rescue product, with interchangeable and independently certified CRM connectors. The core intelligence and governance layer remains shared. Platform adapters handle authentication, data representation, associations, action execution, and reconciliation.
 
-**Current release boundary (November 2026):** HubSpot is an accepted *controlled synthetic demo*, not an approved real-customer implementation. General writeback is disabled. Voice-note creation has separate pending release/permission gates. No customer production connector is currently certified. These distinctions must be preserved on the storefront.
+**Current release boundary (November 2026):** HubSpot is an accepted *controlled synthetic demo*, not an approved real-customer implementation. General writeback is disabled. Routine exact-approved voice-note saving is separately enabled for the designated synthetic demo record; it does not authorize customer voice-note creation. No customer production connector is currently certified. These distinctions must be preserved on the storefront.
+
+The November 19 [DIY owner-package preparation](../products/revenue-rescue-diy/README.md)
+targets nontechnical owners on all three initial platforms: HubSpot, Jobber and
+GoHighLevel. A portable HubSpot shadow test-installation profile now separates
+the account/record/identity/storage configuration from the fixed vendor demo.
+That local implementation is progress toward customer release, not a new
+certification. The owner's guided secure connection/provisioning and the Jobber/
+GoHighLevel adapters are not built. Do not market a technical source ZIP as a
+finished no-code DIY installation or erase a release flag to create availability.
 
 ## Shared Revenue Rescue workflow
 

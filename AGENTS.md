@@ -1158,3 +1158,24 @@ operator save receipt remains PENDING; do not claim prior window-policy saves
 prove it. No more per-intake infrastructure windows are needed. Every new note
 still requires real exact approval; do not reuse either confirmed note or broaden
 to customers/tasks. Main remains unchanged.
+
+## DIY owner package and customer connector completion — November 19
+
+The user requested a package for a website paywall, specified NONTECHNICAL owners
+using HubSpot, Jobber or GoHighLevel, and asked to remove the customer connector
+blocker. Work on enterprise-hardening; do not merge main. Prepare the owner-facing
+kit and implement/validate the required connector portability and setup work.
+Do not treat flipping a storefront/release flag as implementing a connector.
+See products/revenue-rescue-diy for current package, availability and exit gates.
+
+Current new code is an isolated portable HubSpot SHADOW test-account profile,
+with no CRM effects, voice, email, faults or public hostname. It reuses the
+existing engine/class, rejects the vendor demo IDs and requires separately
+reviewed tenant/record/Access configuration. It does not change the existing
+deployed demo, its approved voice mode, model prompt/schema/settings or source
+fixtures. Do not call its fixture identities human approvals or its local pass
+customer certification. Jobber/GoHighLevel adapters and no-code provisioning
+remain incomplete. No new scopes, keys, environments, actual API/model calls,
+payments or deployment are needed for this source/package preparation cycle.
+Prepare sale copy, terms/cost/support decisions and secure-delivery requirements
+for review. Do not publish/activate checkout or claim all three connectors work.

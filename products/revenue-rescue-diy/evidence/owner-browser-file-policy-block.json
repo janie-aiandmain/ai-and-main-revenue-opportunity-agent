@@ -1,0 +1,10 @@
+{
+  "kind": "EXECUTED_LOCAL_OWNER_PREVIEW_BROWSER_NOT_INSTALLED_AGENT",
+  "platforms": [],
+  "remoteRequests": [],
+  "humanApprovals": 0,
+  "CRMConnections": 0,
+  "payments": 0,
+  "complete": false,
+  "error": "browser_condition_timeout {\"url\":\"chrome-error://chromewebdata/\",\"title\":\"file:///workspace/artifacts/revenue-rescue-diy-v0.1.0/START-HERE.html\",\"body\":\"\\n  \\n    \\n      \\n        \\n        \\n          \\n            This page is blocked\\n          \\n          \\n            Your organization doesn’t allow you to view this site\\n          \\n\\n  \"}"
+}

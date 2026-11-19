@@ -1,0 +1,33 @@
+{
+  "kind": "EXECUTED_LOCAL_WORKER_CUSTOMER_PROFILES_WITH_SYNTHETIC_OUTBOUND_FIXTURES",
+  "profiles": [
+    {
+      "portalId": "111111",
+      "contactId": "222222",
+      "readOnlyPreflightPassed": true,
+      "syntheticFindingCount": 1,
+      "findingId": "op_9e57c38f-35c6-4d3e-8df7-977afb8c5ce0",
+      "durableReadbackPassed": true,
+      "mutationsBlocked": true,
+      "fixtureModelCalls": 1,
+      "outboundFixtureCalls": 16
+    },
+    {
+      "portalId": "333333",
+      "contactId": "444444",
+      "readOnlyPreflightPassed": true,
+      "syntheticFindingCount": 1,
+      "findingId": "op_f343ddea-0003-49ab-b6aa-101987a777a3",
+      "durableReadbackPassed": true,
+      "mutationsBlocked": true,
+      "fixtureModelCalls": 1,
+      "outboundFixtureCalls": 16
+    }
+  ],
+  "realHubspotCalls": 0,
+  "realModelCalls": 0,
+  "CRMCreates": 0,
+  "humanApprovals": 0,
+  "hostedCustomerCertification": false,
+  "complete": true
+}
