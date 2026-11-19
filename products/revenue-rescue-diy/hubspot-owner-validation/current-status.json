@@ -2,18 +2,13 @@
   "goals": {
     "guidedOwnerConnection": "IMPLEMENTED_AND_LOCALLY_VALIDATED_NOT_HOSTED",
     "multiplePermittedRecords": "IMPLEMENTED_AND_LOCALLY_VALIDATED_NOT_HOSTED",
-    "liveAccountValidationAndRelease": "BLOCKED_OAUTH_APP_AND_HOSTED_CONFIGURATION_MISSING"
+    "liveAccountValidationAndRelease": "BLOCKED_HOSTED_CONFIGURATION_AND_LIVE_OAUTH_VALIDATION_PENDING"
   },
   "blockers": [
     {
-      "code": "missing_configuration",
-      "item": "HubSpot OAuth app",
-      "evidence": "User confirmed only existing service keys."
-    },
-    {
-      "code": "missing_credential",
+      "code": "pending_secure_configuration",
       "item": "HUBSPOT_OAUTH_CLIENT_SECRET",
-      "evidence": "No OAuth app exists; no value requested in chat."
+      "evidence": "OAuth app registered; its secret has not been retrieved or configured in an installation. No value requested in chat."
     },
     {
       "code": "missing_configuration",
@@ -30,5 +25,24 @@
   "customerReleaseApproved": false,
   "checkoutEnabled": false,
   "CRMEffectsEnabled": false,
-  "priorHumanDecisionsTransferred": false
+  "priorHumanDecisionsTransferred": false,
+  "vendorOAuthApp": {
+    "accountId": "247646072",
+    "projectId": 318345877,
+    "projectName": "ai-main-revenue-rescue",
+    "appId": 62702118,
+    "clientId": "a3bc7d34-d746-4aaf-b3ee-bf2db1927747",
+    "buildId": 2,
+    "deployId": 2,
+    "status": "REGISTERED_SUCCESS_NOT_INSTALLED",
+    "requiredScopes": [
+      "oauth",
+      "crm.objects.contacts.read"
+    ],
+    "redirectUrls": [
+      "http://localhost:3000"
+    ],
+    "notesReadCapability": "UNVERIFIED_REQUIRES_ACTUAL_OAUTH_CONSENT_AND_GET",
+    "registrationPolicy": "hubspot-vendor-oauth-registration-v2"
+  }
 }

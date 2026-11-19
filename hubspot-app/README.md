@@ -10,10 +10,12 @@ platform **2026.09**, with all CRM write scopes removed. It has no serverless
 functions, CRM UI cards, workflows, MCP connector or additional features.
 The Cloudflare agent remains the reasoning/orchestration runtime.
 
-The remaining required app scopes are `oauth`, `crm.objects.contacts.read` and
-`crm.objects.notes.read`. Actual account/API support still requires the later
-owner-authorized read-only installation test; local schema validation is not
-proof of scope availability or live note reads.
+The required app scopes are `oauth` and `crm.objects.contacts.read`.
+HubSpot rejected the first registration because `crm.objects.notes.read` is not
+available to this app, despite the build/validator passing. Registration policy
+v2 removes that scope; it adds no permissions. Actual notes API capability still
+requires the later owner-authorized read-only installation test. A successful
+app registration is not proof of live note reads.
 
 **Development callback only:** `http://localhost:3000` is the official template's
 local development default, not a registered customer hostname. It is deliberately
@@ -45,6 +47,11 @@ release or delete action. Upload is a developer-project build only.
 The CLI's template download failed. The same official template was fetched via
 the already approved GitHub/raw-content hosts, then its minimal descriptors
 were prepared explicitly. No CLI library or network policy was modified.
-The CLI project validator passed with zero errors/warnings before upload.
-Developer credential proof and build results are recorded under
+The CLI project validator passed with zero errors/warnings before upload. Both
+uploads skipped automatic deployment. Exact build 2 was then explicitly registered
+using the official CLI; independent readback confirms deployment SUCCESS and app
+62702118. Build 1's unavailable-scope failure remains preserved. The wrapper still
+exposes no deployment action; the registration was a bounded, manifest-hash-checked
+operation. No customer installation or Cloudflare deployment occurred.
+Developer credential proof, exact manifest hashes and provider results are under
 `products/revenue-rescue-diy/hubspot-owner-validation/cli-project/`.

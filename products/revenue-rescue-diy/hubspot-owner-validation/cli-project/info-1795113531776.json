@@ -1,0 +1,13 @@
+{
+  "kind": "HUBSPOT_VENDOR_PROJECT_INFO",
+  "accountId": "247646072",
+  "CLI": "8.19.0",
+  "exitCode": 1,
+  "CRMCalls": 0,
+  "credentialConfigFileWritten": false,
+  "secretsDisplayed": false,
+  "policy": "hubspot-vendor-oauth-registration-v1",
+  "manifestHash": "sha256:b629ddc793671be3b806023bf4a943adf7c562fc6e5406a84e1e95dd84325a93",
+  "failureSignals": [],
+  "diagnostic": "\n✖ ERROR This project has not been deployed yet.\n\nRun `hs project deploy` to deploy your project.\n"
+}

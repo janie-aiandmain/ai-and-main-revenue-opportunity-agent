@@ -1,0 +1,38 @@
+{
+  "kind": "DIRECT_SDK_READ_ONLY_BUILD_CONFIRMATION",
+  "accountId": 247646072,
+  "projectName": "ai-main-revenue-rescue",
+  "httpStatus": 200,
+  "fields": [
+    "buildId",
+    "portalId",
+    "projectName",
+    "status",
+    "createdAt",
+    "enqueuedAt",
+    "finishedAt",
+    "startedAt",
+    "subbuildStatuses",
+    "deployStatusTaskLocator",
+    "activitySource",
+    "autoDeployId",
+    "uploadMessage",
+    "platformVersion",
+    "buildErrorMessage",
+    "undeployableMeta",
+    "isAutoDeployEnabled",
+    "deployableState",
+    "deployable"
+  ],
+  "CRMCalls": 0,
+  "buildId": 1,
+  "status": "SUCCESS",
+  "isAutoDeployEnabled": true,
+  "components": [
+    {
+      "buildName": "ai_main_revenue_rescue_oauth",
+      "buildType": "APPLICATION",
+      "status": "SUCCESS"
+    }
+  ]
+}

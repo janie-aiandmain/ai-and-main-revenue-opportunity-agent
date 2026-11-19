@@ -1231,3 +1231,21 @@ rejects optional/conditional writes and any hosted callback not separately revie
 The localhost callback is a deliberate development default, not a ready customer
 connection. No app install, Marketplace listing, Cloudflare/CRM deployment or
 customer release follows from a project upload. Main stays unchanged.
+
+The exact vendor app registration is now COMPLETE, not merely uploaded. Build 1
+passed schema/build checks but registration 1 failed: HubSpot says
+crm.objects.notes.read is unavailable to this app. Preserve that failure. Policy
+hubspot-vendor-oauth-registration-v2 removes the unsupported scope and adds none;
+build 2 / deployment 2 successfully registered OAuth app62702118 in vendor
+account247646072/project318345877. Independent SDK readback confirms only oauth
+and crm.objects.contacts.read, empty optional/conditional scopes and development
+localhost callback. See hubspot-owner-validation/cli-project/README.md.
+
+333 offline tests pass; five vendor-guard checks cover writes/identity/callback/
+unsupported-scope restoration. Runtime connector/generation/deployed demo remain
+unchanged. No live OAuth consent, notes-read capability, hosted installation,
+client-secret retrieval/configuration or customer release is proven. Do not create
+another app/key or broaden scopes. Configure the actual protected HTTPS callback
+and installation securely before consent. App/client IDs are non-secret; never
+ask for its client secret in chat. Both uploads skipped automatic deployment;
+the provider default remains true, so future uploads must keep the explicit skip.

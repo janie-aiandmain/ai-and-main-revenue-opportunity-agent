@@ -1,0 +1,16 @@
+{
+  "kind": "EXACT_VENDOR_OAUTH_APP_REGISTRATION",
+  "accountId": 247646072,
+  "projectId": 318345877,
+  "projectName": "ai-main-revenue-rescue",
+  "buildId": 2,
+  "policy": "hubspot-vendor-oauth-registration-v2",
+  "manifestHash": "sha256:e27c7b45db9f337cffe921e0ff74510439a5bc3942483d5e570b400152915ef2",
+  "checkedAt": "2026-11-19T18:47:24.221Z",
+  "exitCode": 0,
+  "CRMCalls": 0,
+  "customerInstalls": 0,
+  "cloudflareDeployments": 0,
+  "secretsDisplayed": false,
+  "deployId": 2
+}

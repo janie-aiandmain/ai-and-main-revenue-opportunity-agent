@@ -1,0 +1,23 @@
+{
+  "kind": "HUBSPOT_VENDOR_PROJECT_VALIDATE",
+  "accountId": "247646072",
+  "CLI": "8.19.0",
+  "exitCode": 0,
+  "CRMCalls": 0,
+  "credentialConfigFileWritten": false,
+  "secretsDisplayed": false,
+  "policy": "hubspot-vendor-oauth-registration-v2",
+  "manifestHash": "sha256:e27c7b45db9f337cffe921e0ff74510439a5bc3942483d5e570b400152915ef2",
+  "fields": [
+    "valid",
+    "errors",
+    "warnings",
+    "projectName",
+    "platformVersion"
+  ],
+  "valid": true,
+  "projectName": "ai-main-revenue-rescue",
+  "platformVersion": "2026.09",
+  "errors": [],
+  "warnings": []
+}

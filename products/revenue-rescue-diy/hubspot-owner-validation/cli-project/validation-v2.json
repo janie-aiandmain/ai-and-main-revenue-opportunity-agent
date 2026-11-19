@@ -1,0 +1,25 @@
+{
+  "kind": "VENDOR_APP_OFFLINE_VALIDATION",
+  "command": "node --test --test-isolation=none tests/*.test.js",
+  "execution": "Actual offline tests outside restricted process sandbox",
+  "exitCode": 0,
+  "tests": 333,
+  "pass": 333,
+  "fail": 0,
+  "skipped": 0,
+  "fullOutputHash": "sha256:8a9bdcae01e97dc36639dc98e56fc654129c6288ffdd19a6e43486072df248c3",
+  "vendorGuardTests": 5,
+  "providerValidator": "PASS_ZERO_ERRORS_ZERO_WARNINGS",
+  "runtimeCodeChanged": false,
+  "reasoningOrActionOutputGenerationChanged": false,
+  "CRMCalls": 0,
+  "modelCalls": 0,
+  "emails": 0,
+  "cloudflareDeployments": 0,
+  "priorSandboxAttempt": {
+    "result": "NODE_INTERNAL_ASSERTION_ABORT",
+    "assertion": "(env_->execution_async_id()) == (0)",
+    "notPassing": true
+  },
+  "workerBuilds": "No runtime/Worker changes in this registration cycle; prior three Worker builds remain separately recorded, not rerun or claimed fresh here."
+}

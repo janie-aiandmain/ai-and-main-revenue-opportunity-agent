@@ -1,0 +1,14 @@
+{
+  "kind": "READ_ONLY_VENDOR_APP_METADATA_CHECK",
+  "accountId": 247646072,
+  "projectId": 318345877,
+  "checkedAt": "2026-11-19T18:44:01.224Z",
+  "CRMCalls": 0,
+  "secretsDisplayed": false,
+  "httpStatus": 404,
+  "errorType": "HubSpotHttpError",
+  "errorCode": "ERR_BAD_REQUEST",
+  "causeType": "AxiosError",
+  "causeStatus": 404,
+  "appMetadataAvailable": false
+}

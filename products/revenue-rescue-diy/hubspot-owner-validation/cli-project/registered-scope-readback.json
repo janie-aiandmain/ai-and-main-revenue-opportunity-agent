@@ -1,0 +1,34 @@
+{
+  "kind": "READ_ONLY_REGISTERED_APP_SCOPE_AND_CALLBACK_CHECK",
+  "checkedAt": "2026-11-19T18:49:10.949Z",
+  "httpStatus": 200,
+  "accountId": 247646072,
+  "appId": 62702118,
+  "clientId": "a3bc7d34-d746-4aaf-b3ee-bf2db1927747",
+  "authType": "OAUTH",
+  "requiredScopeInfo": [
+    {
+      "id": 9,
+      "name": "oauth",
+      "fields": [
+        "id",
+        "name"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "crm.objects.contacts.read",
+      "fields": [
+        "id",
+        "name"
+      ]
+    }
+  ],
+  "optionalScopeInfo": [],
+  "conditionalScopeInfo": [],
+  "redirectUrls": [
+    "http://localhost:3000"
+  ],
+  "CRMCalls": 0,
+  "secretsDisplayed": false
+}

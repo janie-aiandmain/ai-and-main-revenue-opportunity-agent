@@ -1,0 +1,16 @@
+{
+  "kind": "EXACT_VENDOR_OAUTH_APP_REGISTRATION",
+  "accountId": 247646072,
+  "projectId": 318345877,
+  "projectName": "ai-main-revenue-rescue",
+  "buildId": 1,
+  "manifestHash": "sha256:b629ddc793671be3b806023bf4a943adf7c562fc6e5406a84e1e95dd84325a93",
+  "checkedAt": "2026-11-19T18:45:05.317Z",
+  "exitCode": 1,
+  "CRMCalls": 0,
+  "customerInstalls": 0,
+  "cloudflareDeployments": 0,
+  "secretsDisplayed": false,
+  "deployId": 1,
+  "failureSignals": []
+}

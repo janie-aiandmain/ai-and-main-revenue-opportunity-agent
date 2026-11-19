@@ -9,10 +9,12 @@ ordinary OAuth settings. Other locations were not inspected. No secret was rotat
 
 ## HubSpot app step
 
-Open HubSpot's developer/Development area and identify its current **app creation**
-controls. HubSpot account/UI versions differ; use the labels actually shown, not
-an assumed Legacy Apps screen. Create/configure an app with **OAuth authorization**,
-not another service key. A service key or MCP service does not provide owner consent.
+The app now exists: AI & MAIN Revenue Rescue, app 62702118, vendor account
+247646072, project `ai-main-revenue-rescue`, registered build 2. See
+[registration evidence](cli-project/README.md). Do not create another app or key.
+Open its existing developer project to inspect the actual settings controls;
+do not assume a Legacy Apps screen. A service key or MCP service does not provide
+owner consent. The current registered callback is development-only localhost.
 
 Required settings, once that screen is available:
 
@@ -25,11 +27,14 @@ Required settings, once that screen is available:
   explicitly accepts `code_verifier`; actual app/authorization-screen behavior
   still requires the live flow. App availability/distribution/plan restrictions
   are not inferred from the service-key account.
-- Read-only permissions. The implementation accepts `oauth`,
-  `crm.objects.contacts.read` and, if the app supports it,
-  `crm.objects.notes.read`. The configured request must match the app's reviewed
-  read set. It never requests CRM write, task, deal, billing or contact-edit scopes.
-  Check actual account/notes API permissions; do not add broad writes to fix a 403.
+- Read-only permissions. This app's actual registered read set is `oauth` and
+  `crm.objects.contacts.read`. HubSpot rejected `crm.objects.notes.read` as
+  unavailable during the first registration. The corrected build removes it;
+  the prepared connector already accepts this two-scope configuration. The
+  configured request must match the app's reviewed read set. It never requests
+  CRM write, task, deal, billing or contact-edit scopes. Actual notes API capability
+  remains unverified until owner consent/read-only testing. Do not add broad writes
+  to fix a 403 or claim registration proves note access.
 
 The app's actual read-only scope configuration must be reviewed before enabling
 the Connect button. Token responses with a scope list must match the approved

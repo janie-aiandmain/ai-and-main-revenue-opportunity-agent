@@ -1,0 +1,21 @@
+{
+  "kind": "HUBSPOT_VENDOR_PROJECT_LIST",
+  "accountId": 247646072,
+  "CLI": "8.19.0",
+  "exitCode": 2,
+  "CRMCalls": 0,
+  "credentialConfigFileWritten": false,
+  "secretsDisplayed": false,
+  "fields": [
+    "accountId",
+    "results"
+  ],
+  "projects": [
+    {
+      "name": "ai-main-revenue-rescue",
+      "id": 318345877,
+      "platformVersion": "2026.09"
+    }
+  ],
+  "failureSignals": []
+}

@@ -2,14 +2,16 @@
 
 **Scope approved:** the user selected HubSpot first and asked to tackle secure
 guided setup, processing beyond one record, and live account validation/release.
-The user confirmed there is no OAuth app yet: only the two existing service keys.
-MCP is not needed. No old service key is changed, extracted or substituted.
+Initially only the two existing service keys existed. On November 19 the separate
+read-only OAuth app was registered successfully in AI & MAIN developer account
+247646072. See [vendor app evidence](cli-project/README.md). MCP is not needed.
+No old service key is changed, extracted or substituted.
 
 | Goal | Implemented and executed | Remaining gate |
 | --- | --- | --- |
-| 1. Guided owner connection | Authenticated owner screen; HubSpot OAuth authorization with S256 PKCE, one-use state, browser and actor binding; encrypted token storage/refresh/disconnect; local Worker and browser tests | Register/configure the read-only OAuth app; deploy a protected installation; execute actual owner consent |
+| 1. Guided owner connection | Authenticated owner screen; HubSpot OAuth authorization with S256 PKCE, one-use state, browser and actor binding; encrypted token storage/refresh/disconnect; local Worker and browser tests; vendor OAuth app registered | Register the actual protected HTTPS callback; configure a protected installation; execute actual owner consent |
 | 2. Multiple permitted records | Owner permits contacts using their existing HubSpot links; account/record/marker validation; separate durable contexts and finding IDs; multiple independent needs; revoke/disconnect checks during reads/inference; local two-record/three-finding demonstration | Read and evaluate designated synthetic records through the actual OAuth connection |
-| 3. Live account validation/release | Executable adapter, safe config generator, deterministic tests and gate checklist prepared | **BLOCKED: OAuth app absent; live OAuth credentials/redirect/host not configured. No customer release has been accepted.** |
+| 3. Live account validation/release | Executable adapter, safe config generator, deterministic tests and gate checklist prepared; vendor app build 2 registered | **BLOCKED: installation OAuth secret/HTTPS callback/host not configured; live OAuth note-read capability unverified. No customer release has been accepted.** |
 
 This is a working local implementation, not another static worksheet. It is
 separate from the earlier single-record shadow entry point. The deployed vendor

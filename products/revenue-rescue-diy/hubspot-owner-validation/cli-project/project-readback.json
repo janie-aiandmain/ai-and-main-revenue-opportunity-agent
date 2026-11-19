@@ -1,0 +1,26 @@
+{
+  "kind": "DIRECT_SDK_READ_ONLY_PROJECT_CONFIRMATION",
+  "accountId": 247646072,
+  "projectName": "ai-main-revenue-rescue",
+  "httpStatus": 200,
+  "fields": [
+    "id",
+    "portalId",
+    "name",
+    "createdAt",
+    "updatedAt",
+    "deployedBuildId",
+    "isLocked",
+    "deployedBuild",
+    "latestBuild",
+    "sourceIntegration"
+  ],
+  "CRMCalls": 0,
+  "id": 318345877,
+  "hasDeployedBuild": false,
+  "latestBuild": {
+    "buildId": 1,
+    "platformVersion": "2026.09",
+    "status": "SUCCESS"
+  }
+}

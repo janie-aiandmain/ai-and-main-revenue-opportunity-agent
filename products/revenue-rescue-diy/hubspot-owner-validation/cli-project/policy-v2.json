@@ -1,0 +1,24 @@
+{
+  "kind": "NARROWED_VENDOR_APP_REGISTRATION_POLICY",
+  "policy": "hubspot-vendor-oauth-registration-v2",
+  "supersedes": "hubspot-vendor-oauth-registration-v1",
+  "oldManifestHash": "sha256:b629ddc793671be3b806023bf4a943adf7c562fc6e5406a84e1e95dd84325a93",
+  "manifestHash": "sha256:e27c7b45db9f337cffe921e0ff74510439a5bc3942483d5e570b400152915ef2",
+  "removedScopes": [
+    "crm.objects.notes.read"
+  ],
+  "addedScopes": [],
+  "requiredScopes": [
+    "oauth",
+    "crm.objects.contacts.read"
+  ],
+  "reason": "Actual HubSpot registration 1 rejected notes.read as unavailable. No permission expansion.",
+  "customerReady": false,
+  "priorApprovalsTransferred": false,
+  "hashes": {
+    "hubspot-app/hsproject.json": "sha256:d7125fc0806a942bf3f80e956b6ee8bf9952c30ac511f575d83c71a179b6544f",
+    "hubspot-app/src/app/app-hsmeta.json": "sha256:931ef5b696fcc53a5d50e54fee8057e090c029745886b848a89c36509abaa11e",
+    "scripts/diy/vendor-app-policy.js": "sha256:f704e52d95f91af3ab34ac9c6ddf8976a291a2a48586e2d4a8633dcc1bc6d556",
+    "tests/hubspot-vendor-project.test.js": "sha256:6d08ed82bfea3d0b448db7862eda7e09311fa1395bd5c8c362fd4d66634ebd56"
+  }
+}

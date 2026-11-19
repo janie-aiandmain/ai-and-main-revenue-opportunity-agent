@@ -1,0 +1,9 @@
+{
+  "kind": "READ_ONLY_VENDOR_APP_METADATA_CHECK",
+  "accountId": 247646072,
+  "projectId": 318345877,
+  "httpStatus": null,
+  "appMetadataAvailable": false,
+  "secretFieldsNotRecorded": true,
+  "CRMCalls": 0
+}
