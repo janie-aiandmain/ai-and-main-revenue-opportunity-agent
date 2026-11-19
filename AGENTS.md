@@ -1081,3 +1081,41 @@ fixtures and config blobs remain identical to tested/deployed 367621d. Respect
 docs/revenue-rescue-connector-contract.md: shared product/governance, adapter
 certification separate per platform/version; no customer connector is certified.
 This cycle does not build another CRM, alter website offers or activate checkout.
+
+## Hosted note-loss recovery completed; final candidate pending acceptance
+
+The operator uploaded genuine before/after evidence for the requested test.
+Copied pre-test boot48e80e4c… changed to8bbd0ca9… under SAME enabled owner
+e3b12a88/source367621d. Intent persisted at00:23:34.528Z; application response
+was deliberately discarded at00:23:34.906Z, before recording success/remote ID;
+cold constructor recovered UNKNOWN at00:25:14.635Z with ONE attempt. Raw upload,
+pre-boot attribution and normalized loss record are preserved separately.
+
+The controller CLOSED all THREE note switches and all NINE task/general/fault
+flags on BOTH Workers at2026-11-19T00:26:52.219Z. The actual operator then
+reconciled READ-ONLY: strict match at00:30:58.249Z confirms HubSpot NOTE
+426418751203 with STILL ONE create attempt, same38bcfb54 payload,cc6b1333 action,
+original5429433f grant and correlation. Closed-owner boot877698de… / version
+fb54487b… proves persisted state after config restart. Final independent CF
+reads confirm current closed ownerfb54487b and gateway9066a43e, same source367621d,
+module bytes, Secrets, namespace/tenant/identity/email/host and Access protection.
+See voice-intake-release-2026-11-18/hosted/recovery-run-1/CONFIRMATION.md,
+recovery-check.json and final-config-readonly.json. Verifiers use no HubSpot,
+model or email calls; receipts are operator-supplied, not independently signed
+or downloaded CRM/JWT evidence. Label the injected fault, not a natural outage.
+
+DO NOT reopen, reset counts, Save, record/transcribe again or request another
+reconciliation to repeat either this success or the consumed ceiling-fan note
+426427657968. The required hosted recovery is COMPLETE for this one bounded
+scenario. Current normal Chromium/workerd regression also passes with local
+fixtures only;302 tests,207 retained workflows and both builds remain passing.
+Five exact reasoning outputs have user PASS; full ASR benchmarking and customer
+connector certification are not established. No task/financial outcome follows.
+
+The remaining decision is FINAL HUMAN CONTROLLED-DEMO VOICE RELEASE ACCEPTANCE
+of the completed RELEASE-REVIEW.md /release-candidate.json. It is separate from
+semantic verdicts and exact grants. Record only an actual user decision bound to
+packetHash, exact source/closed versions/review bytes. Keep original PENDING
+packet fields unchanged and derive acceptance from a separate append-only event.
+Acceptance does not enable any flag, authorize further writes, real customers,
+website checkout, another connector or future changed source. Main stays unchanged.

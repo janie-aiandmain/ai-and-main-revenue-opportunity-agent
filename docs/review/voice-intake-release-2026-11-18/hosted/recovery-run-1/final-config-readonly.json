@@ -1,0 +1,126 @@
+{
+  "kind": "FINAL_READ_ONLY_POST_RECOVERY_CONFIGURATION_VERIFICATION",
+  "checkedAt": "2026-11-19T00:39:29.132Z",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "activeVersion": "fb54487b-599e-4433-8554-aa0a58c2f1e3",
+      "sourceCommit": "367621d5d3b60cb0415c3f8a544abf3861c7d6a7",
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "VOICE_NOTE_WRITES_ENABLED": "false",
+        "VOICE_NOTE_RELEASE_APPROVED": "false",
+        "VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED": "false"
+      },
+      "codeMatches": true,
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "398a084f58c69dc87e08c2ee5b1f89b5a4f463f9f0f4c370c8e477d3410720d6",
+          "bytes": 331178
+        }
+      ],
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      }
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "activeVersion": "9066a43e-eea8-4073-94c7-3d59b7bb9d13",
+      "sourceCommit": "367621d5d3b60cb0415c3f8a544abf3861c7d6a7",
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "VOICE_NOTE_WRITES_ENABLED": "false",
+        "VOICE_NOTE_RELEASE_APPROVED": "false",
+        "VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED": "false"
+      },
+      "codeMatches": true,
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "403d7e63f32c161784d2fc24cd64629230b3c26b10285fbf9e82d6802c287481",
+          "bytes": 99525
+        }
+      ],
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850",
+          "scriptName": "ai-and-main-revenue-opportunity-staging"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      }
+    }
+  ],
+  "crmCalls": 0,
+  "modelCalls": 0,
+  "emailCalls": 0,
+  "cloudflareWrites": 0,
+  "secretValuesRead": false,
+  "access": [
+    {
+      "path": "/voice-intake",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/submit-recovery-test",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/reconcile",
+      "status": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    }
+  ],
+  "verified": true,
+  "verificationScriptSha256": "44caa130efff202de2359e9de8f68d1d9f66796bdc714e3045cfb126f222beb2"
+}

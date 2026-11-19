@@ -1,0 +1,143 @@
+{
+  "kind": "EXACT_ONE_NOTE_WINDOW_CLOSE",
+  "startedAt": "2026-11-19T00:26:20.658Z",
+  "policyVersion": "one-intake-exact-note-demo-window-v1",
+  "window": {
+    "policyVersion": "one-intake-exact-note-demo-window-v1",
+    "runId": "voice-note-run-b456842e-4246-4548-a0bc-7dfd1d1161ee",
+    "startedAt": "2026-11-19T00:16:08.746Z",
+    "expiresAt": "2026-11-19T00:46:08.746Z",
+    "maximumCreates": 1,
+    "intakeId": "voice_97c46fc9fed04c915710b946da30c37d24cfcea2939558c9825f75f3e91ffb1d",
+    "approvalId": "voice-approval_5429433f-f84f-46d4-8f9c-14563523eb9f",
+    "payloadHash": "sha256:38bcfb5450333b1ff0757352e751b44e24f496db065b42f8d964dd715f17537d",
+    "actionVersion": "voice-note-action-v1:sha256:cc6b1333e049b08fa0ec04cffea8106e5b8bd955070911d70bbea826d292becf",
+    "revision": 2,
+    "portalId": "247646122",
+    "contactId": "582095692487"
+  },
+  "steps": [
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "beforeVersion": "8aae7f81-e783-4584-811e-f12f399a640f",
+      "activeVersion": "9066a43e-eea8-4073-94c7-3d59b7bb9d13",
+      "at": "2026-11-19T00:26:36.533Z"
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "beforeVersion": "e3b12a88-9889-496f-95ac-cd803699eb7e",
+      "activeVersion": "fb54487b-599e-4433-8554-aa0a58c2f1e3",
+      "at": "2026-11-19T00:26:44.757Z"
+    }
+  ],
+  "verified": true,
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailCalls": 0,
+  "noteSubmissions": 0,
+  "secretValuesRead": false,
+  "controllerScriptSha256": "93752d70c0c7f7206580e0e07797983aa005191e2849f54250528f32858ff733",
+  "versionPollingSha256": "128b550676525328a66f5be4b41b59332e61db4a61dc4eeb1ded2186ac30ae39",
+  "unusedApprovalVerifierSha256": "d2c76d8b20096dd98dfdc4a8325b24c04abc78d5913ae2024b06ed2b279ea2b5",
+  "windowTimingSha256": "230ae9e5326cdbd50487088bcf13c7ea4e05582329a98337a3307f39864eb8e5",
+  "recoveryTest": true,
+  "windowSequence": 1,
+  "windowSelectorSha256": "36b2a9b43c168e674dc4b86287d0c32bce870f3cb5e109617f0d553fcb834ad5",
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "versionId": "fb54487b-599e-4433-8554-aa0a58c2f1e3",
+      "sourceCommit": "367621d5d3b60cb0415c3f8a544abf3861c7d6a7",
+      "codeUnchanged": true,
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "398a084f58c69dc87e08c2ee5b1f89b5a4f463f9f0f4c370c8e477d3410720d6",
+          "bytes": 331178
+        }
+      ],
+      "allNineTaskFlagsFalse": true,
+      "noteFlags": {
+        "VOICE_NOTE_WRITES_ENABLED": "false",
+        "VOICE_NOTE_RELEASE_APPROVED": "false",
+        "VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED": "false"
+      },
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "identityEmailAndOtherSettingsPreserved": true,
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      }
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "versionId": "9066a43e-eea8-4073-94c7-3d59b7bb9d13",
+      "sourceCommit": "367621d5d3b60cb0415c3f8a544abf3861c7d6a7",
+      "codeUnchanged": true,
+      "remoteModules": [
+        {
+          "name": "worker.js",
+          "sha256": "403d7e63f32c161784d2fc24cd64629230b3c26b10285fbf9e82d6802c287481",
+          "bytes": 99525
+        }
+      ],
+      "allNineTaskFlagsFalse": true,
+      "noteFlags": {
+        "VOICE_NOTE_WRITES_ENABLED": "false",
+        "VOICE_NOTE_RELEASE_APPROVED": "false",
+        "VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED": "false"
+      },
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850",
+          "scriptName": "ai-and-main-revenue-opportunity-staging"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "identityEmailAndOtherSettingsPreserved": true,
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      }
+    }
+  ],
+  "access": [
+    {
+      "path": "/voice-intake",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    },
+    {
+      "path": "/certification/voice/submit",
+      "httpStatus": 302,
+      "redirectHost": "falling-cell-9501.cloudflareaccess.com",
+      "protected": true
+    }
+  ],
+  "finishedAt": "2026-11-19T00:26:52.219Z",
+  "noteWindowEnabled": false
+}

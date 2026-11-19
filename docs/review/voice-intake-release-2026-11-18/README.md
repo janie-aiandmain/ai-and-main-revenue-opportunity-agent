@@ -102,3 +102,28 @@ Rescue product with shared governance and independently certified adapters.
 They change documentation only; deployed/tested runtime remains exactly 367621d.
 This voice candidate is only a controlled HubSpot synthetic demo; no customer
 connector certification, website checkout or commercial-release flag is activated.
+
+## Hosted result completed — final release decision ready
+
+Actual recovery is CONFIRMED: HubSpot note **426418751203**, still one create
+attempt, original request/action/approval unchanged. Response discard and
+constructor restart were observed under the same deployed version, followed
+by a second config restart and strict read-only match with all switches closed.
+See hosted/recovery-run-1/CONFIRMATION.md and recovery-check.json. The separate
+normal note426427657968 is unchanged. No further Save or recovery click is needed.
+
+A final independent Cloudflare read confirms closed versions, identical code,
+all12 note/task/test flags false on both Workers, same Secrets/namespace/host
+and Access protection. The current normal UI also passes actual local browser/
+workerd regression; original artifacts were restored and new results retained
+separately. No real provider/CRM/mail call was made by those verifiers.
+
+The completed candidate and limits are in RELEASE-REVIEW.md and
+release-candidate.json. Human release acceptance remains PENDING and separate
+from the five semantic PASS decisions and two exact note approvals. This accepts
+no customer connector, website offer, checkout, general writeback or future
+changed source. Original records and concurrent connector architecture remain
+intact. A first final metadata-check command failed on a local variable-shadowing
+error after reads only; the corrected reusable verifier passed with no config
+mutation. The earlier local harness import failure is likewise preserved as a
+fixed tooling issue, not hidden or counted as a safety pass.

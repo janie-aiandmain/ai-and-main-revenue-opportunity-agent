@@ -1,0 +1,6 @@
+{
+  "ledgerBootId": "48e80e4c-7ce8-4d07-9910-a59bb4be323c",
+  "source": "User copied this pre-test boot ID as requested, supplied alongside the uploaded post-loss receipt.",
+  "rawUserMessage": "48e80e4c-7ce8-4d07-9910-a59bb4be323c\"",
+  "normalization": "Removed the single trailing quote around the copied UUID; no JWT/token supplied or inspected."
+}

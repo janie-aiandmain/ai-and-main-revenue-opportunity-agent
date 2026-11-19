@@ -1,0 +1,173 @@
+{
+  "packetVersion": "controlled-synthetic-voice-release-v1",
+  "scope": "EXISTING_CONTROLLED_SYNTHETIC_HUBSPOT_DEMO_ONLY",
+  "sourceCommit": "367621d5d3b60cb0415c3f8a544abf3861c7d6a7",
+  "closedDeployments": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "versionId": "fb54487b-599e-4433-8554-aa0a58c2f1e3",
+      "sourceCommit": "367621d5d3b60cb0415c3f8a544abf3861c7d6a7",
+      "modules": [
+        {
+          "name": "worker.js",
+          "sha256": "398a084f58c69dc87e08c2ee5b1f89b5a4f463f9f0f4c370c8e477d3410720d6",
+          "bytes": 331178
+        }
+      ],
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "VOICE_NOTE_WRITES_ENABLED": "false",
+        "VOICE_NOTE_RELEASE_APPROVED": "false",
+        "VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED": "false"
+      },
+      "namespaceBindings": [
+        {
+          "name": "CERTIFICATION_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN"
+      ],
+      "subdomain": {
+        "enabled": false,
+        "previews_enabled": false
+      }
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "versionId": "9066a43e-eea8-4073-94c7-3d59b7bb9d13",
+      "sourceCommit": "367621d5d3b60cb0415c3f8a544abf3861c7d6a7",
+      "modules": [
+        {
+          "name": "worker.js",
+          "sha256": "403d7e63f32c161784d2fc24cd64629230b3c26b10285fbf9e82d6802c287481",
+          "bytes": 99525
+        }
+      ],
+      "flags": {
+        "CRM_WRITEBACK_ENABLED": "false",
+        "ENABLE_TEST_TASK_WRITES": "false",
+        "ENABLE_GENERAL_EXECUTION": "false",
+        "GENERAL_RELEASE_APPROVED": "false",
+        "DEMO_RECOVERY_ENABLED": "false",
+        "DEMO_RECOVERY_EXECUTION_ENABLED": "false",
+        "DEMO_RECOVERY_FAULT_ENABLED": "false",
+        "DEMO_ONLY_EXECUTION_ENABLED": "false",
+        "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
+        "VOICE_NOTE_WRITES_ENABLED": "false",
+        "VOICE_NOTE_RELEASE_APPROVED": "false",
+        "VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED": "false"
+      },
+      "namespaceBindings": [
+        {
+          "name": "DEMO_RECOVERY_LEDGER",
+          "className": "CertificationLedger",
+          "namespaceId": "16dca25759494a33813d2800f3f1a850",
+          "scriptName": "ai-and-main-revenue-opportunity-staging"
+        }
+      ],
+      "secretNames": [
+        "EVAL_OPENAI_API_KEY",
+        "HUBSPOT_ACCESS_TOKEN",
+        "HUBSPOT_WRITE_TOKEN",
+        "OPENAI_API_KEY",
+        "OPERATOR_EMAIL_API_KEY",
+        "STAGING_HUBSPOT_READ_TOKEN",
+        "STAGING_HUBSPOT_WRITE_TOKEN",
+        "WRITEBACK_APPROVAL_TOKEN"
+      ],
+      "subdomain": {
+        "enabled": true,
+        "previews_enabled": false
+      }
+    }
+  ],
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "normalHostedNote": {
+    "id": "426427657968",
+    "createAttempts": 1,
+    "sourceCommit": "94dfdeb8d9d65f4cf8f3419031601a3eee386212",
+    "evidenceCommit": "5a783f92b888f1056c94c484b95465ec23a75d0a"
+  },
+  "hostedRecovery": {
+    "id": "426418751203",
+    "createAttempts": 1,
+    "payloadHash": "sha256:38bcfb5450333b1ff0757352e751b44e24f496db065b42f8d964dd715f17537d",
+    "actionVersion": "voice-note-action-v1:sha256:cc6b1333e049b08fa0ec04cffea8106e5b8bd955070911d70bbea826d292becf",
+    "approvalId": "voice-approval_5429433f-f84f-46d4-8f9c-14563523eb9f",
+    "faultPolicyVersion": "exact-note-response-discard-restart-v1",
+    "faultType": "INJECTED_APPLICATION_RESPONSE_DISCARD_NOT_NATURAL_NETWORK_OUTAGE",
+    "preTestBoot": "48e80e4c-7ce8-4d07-9910-a59bb4be323c",
+    "postLossBoot": "8bbd0ca9-7c06-46de-af85-12d77047c4fb",
+    "postClosureBoot": "877698de-a0d4-46a3-b078-bffa0709abcd",
+    "reconciledAt": "2026-11-19T00:30:58.249Z",
+    "remoteRecoveryVerified": true
+  },
+  "gates": {
+    "offlineTests": "302/302 PASS",
+    "retainedWorkflow": "207/207 PASS_REPLAY_NOT_FRESH_INFERENCE",
+    "workerBuilds": "BOTH_PASS",
+    "normalCurrentUi": "PASS_LOCAL_CHROMIUM_WORKER_HTTP_SQLITE",
+    "nativeAbort": "PASS_LOCAL_NOT_HOSTED",
+    "semanticOutputs": "5/5 USER_PASS_EXACT_OUTPUT_HASHES",
+    "hostedInjectedNoteRecovery": "PASS_OPERATOR_RECEIPTS_MATCH_VERIFIED_HANDLER",
+    "finalConfiguration": "PASS_INDEPENDENT_CF_READS_ALL12_FLAGS_FALSE_BOTH_WORKERS",
+    "humanReleaseAcceptance": "PENDING"
+  },
+  "voiceContract": "service-provider-voice-intake-v1.2",
+  "noteContract": "hubspot-reviewed-voice-note-v1.2",
+  "recoveryPolicyVersion": "exact-note-response-discard-restart-v1",
+  "recoveryPolicySha256": "17383d0955bfa8a65fcf3bc99f1cda2c69e5f644e20c0804b59a6cc3a120f64d",
+  "reasoningPrompt": "reasoning-v0.3.3",
+  "findingsSchema": "findings-v0.2",
+  "model": "gpt-5.6-terra",
+  "reasoningEffort": "low",
+  "changedGeneration": false,
+  "newReasoningCalls": 0,
+  "newHostedAsrCalls": 1,
+  "newTasks": 0,
+  "newEmails": 0,
+  "financialOutcome": "NONE_ESTABLISHED",
+  "customerConnectorCertification": false,
+  "customerRolloutApproved": false,
+  "websiteCheckoutActivated": false,
+  "executionFlagsActivatedByAcceptance": false,
+  "semanticApprovalIsNotReleaseApproval": true,
+  "exactNoteGrantIsNotReleaseApproval": true,
+  "artifactHashes": {
+    "RELEASE-REVIEW.md": "0643ab4cabc87d9388bfa4fea5dad6063e0a696f7406c4989e7c077cb012910d",
+    "contracts.json": "e67847a7313c2e5f1b6bacf23e0dfe5867892f67e49de0ba1c2cef08bb812a30",
+    "adjudication/events.jsonl": "df3148dd3251e1189936cc15da21713e25eeec295520ab1e74f46e0c2cf2618a",
+    "local-native-recovery.json": "86aac2ccedd4f42f974c7d4c9b26be66ae72116e94e2bb13c3286c93ef8b08e5",
+    "validation/offline-tests.log": "dbab7ad233a1018988ba099059b15797aebeba35dfe41669aba487a549c2131c",
+    "validation/workflow.log": "c1c2ee14d612cf33b7ed2269dc9528abb19726fc2d47e38c35bdb11e7d1e003e",
+    "validation/gateway-build.log": "6e2b177f24d9c00b1b11ea4979fe98614f04cdc1ec42f2f53c3df0b350d43574",
+    "validation/owner-build.log": "ca534a0b4039ae32929c6a852c93b8f5099172e97ba88d911beeae87dcd09e10",
+    "validation/current-normal-local/local-workflow.json": "b69e531eb9d981eaced1c8c0b18e7c06f207dd00c480eb037f386e2b26e2f6ee",
+    "validation/current-normal-local/local-browser.png": "3486f5defa72ea86196dc09c591373276137cf760032ef8149561860f304e34a",
+    "hosted/recovery-run-1/operator-approved-note.json": "4918eb399bb4ae78858590d66243375dafbd3febc2d2197d4139d5f04656a30f",
+    "hosted/recovery-run-1/operator-after-loss.raw.txt": "cc154b72222e45f79b7fb45cdd5a833f807dfe384f2b8982f83ed90901140fe6",
+    "hosted/recovery-run-1/operator-after-loss.json": "eb31d481dda50002c312307a3d1c454353d7c899cc705c566b25efc42e6d7f9d",
+    "hosted/recovery-run-1/pre-test-boot.json": "0fdf7baafbebcb079aba9a9bb309939cc9e55c08842fd1225e05964fba50b996",
+    "hosted/recovery-run-1/operator-reconciled.raw.txt": "2c7de60d033f68a4a8fefd2ffa6e54970385a38bec21faaa9b420e8c5c732961",
+    "hosted/recovery-run-1/operator-reconciled.json": "bc27180c986d25860a066bae9f2ea76c82b6e1e84040b7d7614da5a5ee620686",
+    "hosted/recovery-run-1/recovery-check.json": "4100b4dd36194c672fdccbd5810bc7d991a96fe8e26bd7dcbf0b4f26e3809a56",
+    "hosted/recovery-run-1/note-window-close.json": "73f0de929ae8d82073d14dfc42cc0e60b01e9106613c4a18553b5027edef8a63",
+    "hosted/recovery-run-1/final-config-readonly.json": "c8362143aaa25f8aa8fd97047a4fc51bd4bf5e6822882923a48e95202ed5c9a1"
+  },
+  "packetHash": "sha256:3128df950eed9c101e2fbf6f80e5ffc7525d50e1561f1103f632d7eabf0c8597"
+}

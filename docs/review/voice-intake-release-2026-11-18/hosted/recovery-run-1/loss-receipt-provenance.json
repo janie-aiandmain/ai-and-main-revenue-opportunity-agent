@@ -1,0 +1,13 @@
+{
+  "source": "User uploaded Pasted text.txt, sediment file_000000002db081f5980c1382a1357c82, after the explicit response-loss test and read-only Load.",
+  "rawFile": "operator-after-loss.raw.txt",
+  "rawFileSha256": "cc154b72222e45f79b7fb45cdd5a833f807dfe384f2b8982f83ed90901140fe6",
+  "normalization": "Added the single missing opening JSON brace; raw bytes retained, field values unchanged.",
+  "independentlyDownloaded": false,
+  "jwtInspected": false,
+  "faultType": "Injected application response discard and hosted Durable Object abort; not a naturally observed network outage.",
+  "state": "NOTE_UNKNOWN",
+  "remoteNoteId": null,
+  "createAttempts": 1,
+  "remoteReadback": "PENDING_OPERATOR_RECONCILIATION"
+}

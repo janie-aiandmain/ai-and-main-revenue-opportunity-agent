@@ -1,0 +1,12 @@
+{
+  "source": "User-uploaded Pasted text.txt, sediment file_00000000daf881f58f5ad6be40da9aff, returned after the requested read-only reconciliation.",
+  "rawFile": "operator-reconciled.raw.txt",
+  "rawFileSha256": "2c7de60d033f68a4a8fefd2ffa6e54970385a38bec21faaa9b420e8c5c732961",
+  "normalization": "Added single missing leading JSON object brace; raw bytes retained and values unchanged.",
+  "independentHubspotDownload": false,
+  "jwtInspected": false,
+  "state": "NOTE_CONFIRMED",
+  "remoteNoteId": "426418751203",
+  "createAttempts": 1,
+  "action": "Read-only Reconcile note after verified closure, not another create."
+}
