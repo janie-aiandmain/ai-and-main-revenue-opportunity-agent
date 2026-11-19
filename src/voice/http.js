@@ -1,5 +1,5 @@
 import {MAX_AUDIO_BYTES,voiceMode,actorCheck,audioBytes} from './contract.js';
-import {assertNoteWindow} from './execution-window.js';
+import {assertNoteWindow,executionMode} from './execution-window.js';
 import {assertRecoveryTest,commitNoteFaultAndRestart} from './recovery-test.js';
 import {VoiceIntakeLedger} from './ledger.js';
 import {HubSpotVoiceClient,transcribeAudio} from './clients.js';
@@ -31,7 +31,7 @@ export async function voiceGateway(request,env,actor){
    const text=await(await bounded(request,98000)).text();let body;try{body=JSON.parse(text);}catch{throw Error('voice_invalid_json');}
    if(!body||typeof body!=='object'||Array.isArray(body)||'actor'in body||'portalId'in body||'finalRequest'in body)throw Error('voice_unsupported_fields');
    if(action==='submit-recovery-test'){if(Object.keys(body).some(k=>!['intakeId','approvalId'].includes(k)))throw Error('voice_recovery_unsupported_fields');assertRecoveryTest(env,{intakeId:body.intakeId,approvalId:body.approvalId,payloadHash:env.VOICE_NOTE_EXECUTION_PAYLOAD_HASH});}
-   if(action==='submit'||action==='submit-recovery-test')assertNoteWindow(env,{intakeId:body.intakeId,approvalId:body.approvalId,payloadHash:env.VOICE_NOTE_EXECUTION_PAYLOAD_HASH});
+   if(action==='submit'||action==='submit-recovery-test'){const routine=executionMode(env)==='human_approved_demo';if(routine){if(Object.keys(body).some(k=>!['intakeId','approvalId','payloadHash','actionVersion','revision'].includes(k))||!/^voice-note-action-v2:sha256:[a-f0-9]{64}$/.test(body.actionVersion??'')||!Number.isInteger(body.revision))throw Error('voice_exact_submission_material_required');}assertNoteWindow(env,{intakeId:body.intakeId,approvalId:body.approvalId,payloadHash:routine?body.payloadHash:env.VOICE_NOTE_EXECUTION_PAYLOAD_HASH});}
    forwarded=new Request('https://private-ledger'+new URL(request.url).pathname,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...body,actor})});
   }
   return await binding.get(binding.idFromName(voiceObjectName(env))).fetch(forwarded);

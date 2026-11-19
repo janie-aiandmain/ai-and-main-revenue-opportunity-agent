@@ -1,5 +1,5 @@
 import {VOICE_CONTRACT,TRANSCRIPTION_CONTRACT,NOTE_CONTRACT,authority,voiceMode,actorCheck,metadata,transcriptText,noteRequest,actionVersion,noteMatches,hash} from './contract.js';
-import {assertNoteWindow,noteWindowOpen} from './execution-window.js';
+import {assertNoteWindow,noteWindowOpen,approvedNoteActionVersion,executionMode,VOICE_ROUTINE_POLICY} from './execution-window.js';
 import {assertRecoveryTest,recoveryTestOpen,NOTE_RECOVERY_TEST_POLICY,RECOVERY_CONTROL_TEXT} from './recovery-test.js';
 import {StagingBlocker} from '../staging/blockers.js';
 const EDITABLE=['TRANSCRIBED','REVIEWED','APPROVED'];
@@ -19,7 +19,7 @@ export class VoiceIntakeLedger {
  save(d){this.db.prepare('INSERT INTO voice_intake VALUES(?,?) ON CONFLICT(id) DO UPDATE SET data_json=excluded.data_json').run(d.id,JSON.stringify(d));}
  trace(d,event){this.db.prepare('INSERT INTO voice_intake_trace(intake_id,event,payload_hash,at) VALUES(?,?,?,?)').run(d.id,event,d.payloadHash??null,new Date().toISOString());}
  owned(id,actor){voiceMode(this.env);actorCheck(actor,this.env);const d=this.read(id);if(d.context!==this.context()||d.actorHash!==authority(actor))throw Error('voice_intake_identity_or_target_changed');return d;}
- status(id,actor){const d=this.owned(id,actor);return {voiceContract:VOICE_CONTRACT,transcriptionContract:TRANSCRIPTION_CONTRACT,noteContract:NOTE_CONTRACT,intakeId:d.id,state:d.state,revision:d.revision,audioHash:d.audioHash,originalTranscriptHash:d.originalTranscriptHash??null,sourceLabel:d.sourceLabel,recordedAt:d.recordedAt,originalText:d.originalText,reviewedText:d.reviewedText,payloadHash:d.payloadHash??null,actionVersion:d.actionVersion??null,correlation:d.correlation,finalRequest:d.request??null,approval:d.approval??null,remoteNoteId:d.remoteNoteId??null,createAttempts:d.createAttempts,providerCalls:d.providerCalls,expiresAt:new Date(d.expiresAt).toISOString(),lastError:d.lastError??null,blocker:d.blocker??null,executionWindow:d.executionWindow??null,responseLossTest:d.responseLossTest??null,responseLossTestEnabled:recoveryTestOpen(this.env,d),responseLossTestMode:this.env.VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED==='true',draftRedacted:!!d.redacted,noteWritesEnabled:noteWindowOpen(this.env,d),taskExecutionApproved:false,trace:this.db.prepare('SELECT event,payload_hash,at FROM voice_intake_trace WHERE intake_id=? ORDER BY sequence').all(id)};}
+ status(id,actor){const d=this.owned(id,actor);return {voiceContract:VOICE_CONTRACT,transcriptionContract:TRANSCRIPTION_CONTRACT,noteContract:NOTE_CONTRACT,intakeId:d.id,state:d.state,revision:d.revision,audioHash:d.audioHash,originalTranscriptHash:d.originalTranscriptHash??null,sourceLabel:d.sourceLabel,recordedAt:d.recordedAt,originalText:d.originalText,reviewedText:d.reviewedText,payloadHash:d.payloadHash??null,actionVersion:d.actionVersion??null,correlation:d.correlation,finalRequest:d.request??null,approval:d.approval??null,remoteNoteId:d.remoteNoteId??null,createAttempts:d.createAttempts,providerCalls:d.providerCalls,expiresAt:new Date(d.expiresAt).toISOString(),lastError:d.lastError??null,blocker:d.blocker??null,executionWindow:d.executionWindow??null,responseLossTest:d.responseLossTest??null,responseLossTestEnabled:recoveryTestOpen(this.env,d),responseLossTestMode:this.env.VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED==='true',draftRedacted:!!d.redacted,noteWritesEnabled:noteWindowOpen(this.env,d),executionMode:executionMode(this.env),executionPolicyVersion:executionMode(this.env)==='human_approved_demo'?VOICE_ROUTINE_POLICY:null,approvalNeedsRefresh:!!d.request&&['REVIEWED','APPROVED'].includes(d.state)&&d.actionVersion!==approvedNoteActionVersion(d.request,this.env),taskExecutionApproved:false,trace:this.db.prepare('SELECT event,payload_hash,at FROM voice_intake_trace WHERE intake_id=? ORDER BY sequence').all(id)};}
  async transcribe(audio,input,actor,provider){
   voiceMode(this.env);actorCheck(actor,this.env);const m=metadata(input);if(input.syntheticConfirmed!==true)throw Error('voice_synthetic_data_attestation_required');
   const id='voice_'+hash({context:this.context(),audioHash:audio.audioHash}).slice(7);let existing;
@@ -36,7 +36,7 @@ export class VoiceIntakeLedger {
   if(input.revision!==d.revision)throw Error('voice_review_revision_changed');
   if(input.contactId!==this.env.STAGING_CONTACT_ID)throw Error('voice_designated_contact_mismatch');
   if(['accuracyConfirmed','correctContactConfirmed','sourceTimeConfirmed','syntheticConfirmed'].some(k=>input[k]!==true))throw Error('voice_review_attestations_required');
-  const next={...d,...metadata(input),reviewedText:transcriptText(input.transcript)};next.request=noteRequest(next,this.env);next.payloadHash=hash(next.request);next.actionVersion=actionVersion(next.request);
+  const next={...d,...metadata(input),reviewedText:transcriptText(input.transcript)};next.request=noteRequest(next,this.env);next.payloadHash=hash(next.request);next.actionVersion=approvedNoteActionVersion(next.request,this.env);
   const changed=next.payloadHash!==d.payloadHash||next.actionVersion!==d.actionVersion;
   if(changed){next.revision++;next.approval=null;next.state='REVIEWED';if(d.approval)this.trace(next,'VOICE_APPROVAL_INVALIDATED_BY_MATERIAL_CHANGE');}
   else if(d.state!=='APPROVED')next.state='REVIEWED';
@@ -45,12 +45,13 @@ export class VoiceIntakeLedger {
  assertApproval(d,actor){
   actorCheck(actor,this.env);const a=d.approval;
   if(d.expiresAt<=Date.now()||!a||a.expiresAt<=Date.now()||a.issuedAt>Date.now()||a.actorHash!==authority(actor)||a.payloadHash!==d.payloadHash||a.actionVersion!==d.actionVersion||a.revision!==d.revision)throw Error('voice_approval_stale_expired_or_changed');
-  if(d.redacted||hash(d.request)!==d.payloadHash||hash(noteRequest(d,this.env))!==d.payloadHash||actionVersion(d.request)!==d.actionVersion)throw Error('voice_final_payload_integrity_failure');
+  if(executionMode(this.env)==='human_approved_demo'&&d.request&&approvedNoteActionVersion(d.request,this.env)!==d.actionVersion)throw Error('voice_approval_policy_changed_prepare_and_reapprove');
+  if(d.redacted||hash(d.request)!==d.payloadHash||hash(noteRequest(d,this.env))!==d.payloadHash||approvedNoteActionVersion(d.request,this.env)!==d.actionVersion)throw Error('voice_final_payload_integrity_failure');
   if(d.actorHash!==authority(actor)||d.context!==this.context())throw Error('voice_intake_identity_or_target_changed');
  }
  approve(input,actor){return this.db.transaction(()=>{
   const d=this.owned(input.intakeId,actor);if(!['REVIEWED','APPROVED'].includes(d.state)||d.redacted||d.expiresAt<=Date.now())throw Error('voice_review_required');
-  if(input.revision!==d.revision||input.payloadHash!==d.payloadHash||input.actionVersion!==d.actionVersion||hash(d.request)!==d.payloadHash||hash(noteRequest(d,this.env))!==d.payloadHash)throw Error('voice_exact_payload_approval_mismatch');
+  if(input.revision!==d.revision||input.payloadHash!==d.payloadHash||input.actionVersion!==d.actionVersion||hash(d.request)!==d.payloadHash||hash(noteRequest(d,this.env))!==d.payloadHash||approvedNoteActionVersion(d.request,this.env)!==d.actionVersion)throw Error('voice_exact_payload_approval_mismatch');
   if(d.state==='APPROVED'){this.assertApproval(d,actor);return this.status(d.id,actor);}
   const now=Date.now();d.approval={approvalId:'voice-approval_'+crypto.randomUUID(),actorHash:authority(actor),payloadHash:d.payloadHash,actionVersion:d.actionVersion,revision:d.revision,issuedAt:now,expiresAt:Math.min(now+86400000,d.expiresAt)};d.state='APPROVED';this.save(d);this.trace(d,'VOICE_EXACT_FINAL_NOTE_APPROVED');return this.status(d.id,actor);
  });}
@@ -61,7 +62,7 @@ export class VoiceIntakeLedger {
   if(d.state==='NOTE_CHECKING')return this.status(d.id,actor);
   if(this.env.VOICE_NOTE_WRITES_ENABLED!=='true'||this.env.VOICE_NOTE_RELEASE_APPROVED!=='true')throw Error('voice_note_execution_disabled');
   if(d.state!=='APPROVED'||d.approval?.approvalId!==input.approvalId)throw Error('voice_exact_approval_required');
-  this.assertApproval(d,actor);assertNoteWindow(this.env,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});
+  this.assertApproval(d,actor);if(executionMode(this.env)==='human_approved_demo'&&(input.payloadHash!==d.payloadHash||input.actionVersion!==d.actionVersion||input.revision!==d.revision))throw Error('voice_exact_submission_mismatch');assertNoteWindow(this.env,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});
   if(this.env.VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED==='true'&&!injectResponseLoss)throw Error('voice_recovery_test_requires_explicit_action');
   if(injectResponseLoss){assertRecoveryTest(this.env,{intakeId:d.id,approvalId:d.approval.approvalId,payloadHash:d.payloadHash});if(d.reviewedText!==RECOVERY_CONTROL_TEXT)throw Error('voice_recovery_requires_explicit_synthetic_control');if(typeof this.restartAfterInjectedLoss!=='function')throw Error('voice_hosted_restart_unavailable');}
   d.state='NOTE_CHECKING';this.save(d);this.trace(d,'VOICE_CHECKING_CURRENT_TARGET_AND_APPROVAL');

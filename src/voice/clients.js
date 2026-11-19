@@ -2,7 +2,7 @@ import {HubSpotCertificationClient} from '../staging/hubspot-client.js';
 import {checkedJsonFetch,missingCredential} from '../staging/blockers.js';
 import {voiceMode,TRANSCRIPTION_MODEL,TRANSCRIPTION_CONTRACT,NOTE_CONTRACT,hash} from './contract.js';
 
-import {assertNoteWindow} from './execution-window.js';
+import {assertNoteWindow,executionMode,VOICE_ROUTINE_POLICY} from './execution-window.js';
 
 function localBase(env){const u=new URL(env.LOCAL_VOICE_FIXTURE_URL||'');if(u.protocol!=='http:'||!['127.0.0.1','localhost'].includes(u.hostname)||u.username||u.password)throw Error('voice_local_fixture_only');return u.origin;}
 export async function transcribeAudio(env,audio){
@@ -19,7 +19,7 @@ export class HubSpotVoiceClient {
   const labels=await this.reader.request('/crm/v4/associations/notes/contacts/labels');
   if(!labels.results?.some(x=>x.category==='HUBSPOT_DEFINED'&&x.typeId===202))throw Error('voice_note_contact_association_unverified');
  }
- async preflight(){await this.verifyIsolation();return {kind:'VOICE_INTAKE_READ_ONLY_PREFLIGHT',portalId:this.env.STAGING_PORTAL_ID,contactId:this.env.STAGING_CONTACT_ID,readCredentialPortalVerified:true,writeCredentialPortalVerified:true,syntheticContactMarkerVerified:true,noteContactAssociationType:202,noteCreationPermission:'UNVERIFIED_NO_MUTATION_PROBE',noteWritesEnabled:this.env.VOICE_NOTE_WRITES_ENABLED==='true'&&this.env.VOICE_NOTE_RELEASE_APPROVED==='true',permissionsExpanded:false};}
+ async preflight(){await this.verifyIsolation();return {kind:'VOICE_INTAKE_READ_ONLY_PREFLIGHT',portalId:this.env.STAGING_PORTAL_ID,contactId:this.env.STAGING_CONTACT_ID,readCredentialPortalVerified:true,writeCredentialPortalVerified:true,syntheticContactMarkerVerified:true,noteContactAssociationType:202,noteCreationPermission:'UNVERIFIED_NO_MUTATION_PROBE',executionMode:executionMode(this.env),executionPolicyVersion:executionMode(this.env)==='human_approved_demo'?VOICE_ROUTINE_POLICY:null,noteWritesEnabled:this.env.VOICE_NOTE_WRITES_ENABLED==='true'&&this.env.VOICE_NOTE_RELEASE_APPROVED==='true',permissionsExpanded:false};}
  async lookup(correlation){
   const ids=new Set();let after='';
   for(let page=0;page<100;page++){

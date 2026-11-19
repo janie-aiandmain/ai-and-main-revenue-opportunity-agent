@@ -174,3 +174,12 @@ Do not create:
 - autonomous contact edits.
 
 The objective is to make the agent layer safer, more reliable, more auditable, and easier for client IT teams to approve while preserving the existing CRM as the operational system of record.
+
+The accepted synthetic demo also supports service-provider voice intake:
+record → review/correct the transcript and original time/contact → approve the
+complete exact note → save that note to HubSpot. The user's November 18 routine
+activation instruction removes per-recording infrastructure test windows; it
+retains individual note approval, expiry, one create attempt and uncertain-write
+reconciliation. This is a bounded input adapter, not general note administration.
+Only portal 247646122/contact 582095692487 is enabled; customer rollout, task
+execution and automatic customer action remain separate.

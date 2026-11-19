@@ -19,8 +19,8 @@
   "preview_urls": false,
   "vars": {
     "VOICE_INTAKE_ENABLED": "true",
-    "VOICE_NOTE_WRITES_ENABLED": "false",
-    "VOICE_NOTE_RELEASE_APPROVED": "false",
+    "VOICE_NOTE_WRITES_ENABLED": "true",
+    "VOICE_NOTE_RELEASE_APPROVED": "true",
     "CRM_WRITEBACK_ENABLED": "false",
     "ENABLE_TEST_TASK_WRITES": "false",
     "ENABLE_GENERAL_EXECUTION": "false",
@@ -38,7 +38,8 @@
     "ACCESS_AUDIENCE": "62c0aa3dd79f48d2f6f643ff077c0b4f590b1dd7665058c5e8f442e4ae112151",
     "DEMO_ONLY_EXECUTION_ENABLED": "false",
     "DEMO_RESPONSE_LOSS_TEST_ENABLED": "false",
-    "VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED": "false"
+    "VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED": "false",
+    "VOICE_NOTE_EXECUTION_MODE": "human_approved_demo"
   },
   "durable_objects": {
     "bindings": [

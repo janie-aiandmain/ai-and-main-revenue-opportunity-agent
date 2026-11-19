@@ -1,0 +1,27 @@
+{
+  "authorityPolicy": "authenticated-exact-note-demo-v1",
+  "priorAuthorityPolicy": "one-intake-exact-note-demo-window-v1",
+  "actionVersion": "voice-note-action-v2",
+  "priorActionVersion": "voice-note-action-v1",
+  "actionHashInputs": [
+    "voiceContract",
+    "transcriptionContract",
+    "executionPolicyVersion",
+    "request (complete final request)"
+  ],
+  "noteContract": "hubspot-reviewed-voice-note-v1.2",
+  "voiceContract": "service-provider-voice-intake-v1.2",
+  "transcriptionContract": "verbatim-audio-transcription-v1",
+  "generationChanged": false,
+  "files": {
+    "src/voice/execution-window.js": "sha256:f7358070cc1752ef3482ba2aad41a412917ad74dece872c448e6b0a4c80646a8",
+    "src/voice/contract.js": "sha256:839d80b1a5a24ae6467ab26884f44db62d8b13d9ef34f840c99ac79d2ee35795",
+    "src/voice/ledger.js": "sha256:de6884021e8b4ec77a279cab8742f48e1931b8749d53cb0fc32f78d305554392",
+    "src/voice/http.js": "sha256:89de5fdc5b75474f22b7813b3bb6bc7682c6f3b5edc60b790c69ee1b866c6d1d",
+    "src/voice/console.js": "sha256:ca1e3e92c2d7a35d578a3c5858b7d9b0bb8a1fa3b0edbee019ccd2e17e4e6043",
+    "src/voice/clients.js": "sha256:191422cd4bfb8406dda6385cdd6a58366f754669f19f81e39371d55b79602627",
+    "src/voice/recovery-test.js": "sha256:7f61af49208bf96343a6a249f419229676eb7c80e8bd49f6708ba094eeb1c069",
+    "scripts/voice/routine-demo-deployment.js": "sha256:629b893a10889d118a63c079b4c15ad5babb57ab98d4a34b22fa445ecd3aa7a5"
+  },
+  "noteBodyContractUnchangedFromAcceptedRuntime": true
+}

@@ -10,8 +10,8 @@
   "preview_urls": false,
   "vars": {
     "VOICE_INTAKE_ENABLED": "true",
-    "VOICE_NOTE_WRITES_ENABLED": "false",
-    "VOICE_NOTE_RELEASE_APPROVED": "false",
+    "VOICE_NOTE_WRITES_ENABLED": "true",
+    "VOICE_NOTE_RELEASE_APPROVED": "true",
     "DEPLOYMENT_ENVIRONMENT": "staging",
     "CERTIFICATION_MODE": "remote-demo",
     "ENABLE_TEST_TASK_WRITES": "false",
@@ -32,7 +32,8 @@
     "OPERATOR_EMAIL_REPLY_TO": "janie@aiandmain.ai",
     "OPERATOR_EMAIL_TO": "janie@aiandmain.ai",
     "OPERATOR_CONSOLE_URL": "https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/operator",
-    "VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED": "false"
+    "VOICE_NOTE_RESPONSE_LOSS_TEST_ENABLED": "false",
+    "VOICE_NOTE_EXECUTION_MODE": "human_approved_demo"
   },
   "durable_objects": {
     "bindings": [

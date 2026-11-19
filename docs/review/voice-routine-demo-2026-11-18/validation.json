@@ -1,0 +1,74 @@
+{
+  "kind": "LOCAL_VALIDATION_NOT_HOSTED",
+  "recordedAt": "2026-11-19T01:18:28.820Z",
+  "results": [
+    {
+      "kind": "fullTests",
+      "command": "node --test --test-isolation=none tests/*.test.js",
+      "status": "PASS",
+      "logHash": "sha256:e7dbaae14c36e575f9376f7ac090cfd6bd8cbff0953f03f35e327241557ac73d",
+      "summary": {
+        "tests": 310,
+        "passed": 310,
+        "failed": 0
+      }
+    },
+    {
+      "kind": "localBrowser",
+      "command": "node scripts/voice/local-workflow.js --routine",
+      "status": "PASS",
+      "logHash": "sha256:a2e3d1d466c4ab21d629fb269ca1c45488928bb1da3f5dfb473d936d8a08d9e6",
+      "summary": {
+        "complete": true,
+        "checks": [
+          "gateway_missing_identity_and_Viewer_rejected",
+          "actual_browser_audio_upload_transcription_review_without_CRM_create",
+          "browser_exact_preview_and_approval_then_one_local_note_despite_repeat_submission",
+          "injected_local_HTTP_response_loss_restart_hidden_lookup_then_exact_read_only_match_no_duplicate",
+          "created_local_notes_read_by_existing_agent_as_two_independent_internal_findings_with_complete_fixture_evidence"
+        ],
+        "summary": {
+          "notes": 2,
+          "createAttempts": 2,
+          "transcriptions": 2,
+          "reasonCalls": 1,
+          "unexpectedWrites": 0
+        },
+        "realHubspotCalls": 0,
+        "realModelCalls": 0
+      }
+    },
+    {
+      "kind": "retainedWorkflow",
+      "command": "npm run regression:offline",
+      "status": "PASS",
+      "logHash": "sha256:c1c2ee14d612cf33b7ed2269dc9528abb19726fc2d47e38c35bdb11e7d1e003e",
+      "summary": {
+        "executions": 207,
+        "passed": 207,
+        "failed": 0
+      }
+    },
+    {
+      "kind": "gatewayBuild",
+      "command": "WRANGLER_SEND_METRICS=false npx wrangler deploy --dry-run --config wrangler.jsonc",
+      "status": "PASS",
+      "logHash": "sha256:a837a0c66d93832d03c4d2e45a2857e169612415795d9e0eb6aeb6e58cb59e46",
+      "summary": {
+        "dryRunExit": true
+      }
+    },
+    {
+      "kind": "ownerBuild",
+      "command": "WRANGLER_SEND_METRICS=false npx wrangler deploy --dry-run --config wrangler.staging.jsonc",
+      "status": "PASS",
+      "logHash": "sha256:b0536e1fc5aaf003ba0cec4ca9c5429df4e5271ed98c3d5b617c357d484b5dff",
+      "summary": {
+        "dryRunExit": true
+      }
+    }
+  ],
+  "hubspotCalls": 0,
+  "realModelCalls": 0,
+  "emails": 0
+}

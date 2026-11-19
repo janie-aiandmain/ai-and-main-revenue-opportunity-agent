@@ -1119,3 +1119,29 @@ packetHash, exact source/closed versions/review bytes. Keep original PENDING
 packet fields unchanged and derive acceptance from a separate append-only event.
 Acceptance does not enable any flag, authorize further writes, real customers,
 website checkout, another connector or future changed source. Main stays unchanged.
+
+## Accepted voice demo and explicit routine-save activation — November 18
+
+The user accepted the tested voice candidate and separately instructed activation
+of Record → review/correct → approve the exact note → save to HubSpot. See
+voice-intake-release-2026-11-18/release-adjudication/events.jsonl. This supersedes
+the per-intake Cloudflare window requirement ONLY for human-approved voice notes
+in existing synthetic portal 247646122/contact 582095692487. No new environment,
+credential, permission or real-customer rollout is authorized. Keep the original
+accepted candidate and confirmed notes immutable.
+
+Routine policy authenticated-exact-note-demo-v1 uses mode human_approved_demo,
+VOICE_NOTE_WRITES_ENABLED and VOICE_NOTE_RELEASE_APPROVED true. The note fault
+flag and all nine task/general/fault flags remain false. External Approver/Admin,
+review attestations, complete final payload, matching revision/action/hash,
+24-hour draft/grant expiry, current credential/target validation and one durable
+create attempt per recording remain required. Unknown outcomes only reconcile;
+never create again. Each new recording requires its own genuine approval.
+
+voice-note-action-v2 binds the routine authority contract as well as the complete
+unchanged v1.2 note request. Unused v1 grants require explicit reprepare and fresh
+approval; consumed/confirmed notes remain readable and cannot be recreated.
+Deploy/verify closed first, then enable the two note switches under this explicit
+authorization. Preserve existing Access, hosts, Secrets, Durable Object namespace,
+tenant, email configuration and source evidence. No Codex CRM POST, synthetic
+operator impersonation, extra model inference or email delivery is needed.
