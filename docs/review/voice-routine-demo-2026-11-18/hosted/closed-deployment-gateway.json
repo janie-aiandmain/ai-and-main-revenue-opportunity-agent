@@ -1,0 +1,46 @@
+{
+  "kind": "ACTUAL_CLOSED_ROUTINE_DEMO_DEPLOYMENT",
+  "at": "2026-11-19T01:20:26.538Z",
+  "accountId": "cda2ab71dd8127c8031c945a738b86e2",
+  "policyVersion": "authenticated-exact-note-demo-v1",
+  "hubspotCalls": 0,
+  "modelCalls": 0,
+  "emailCalls": 0,
+  "noteSubmissions": 0,
+  "secretValuesRead": false,
+  "sourceCommit": "0b6ed15531643a8739818023eac63fa79fc605e9",
+  "name": "ai-and-main-revenue-opportunity-agent",
+  "activeVersionId": "3410f2f5-74a8-428c-8328-39767118dd61",
+  "namespaceBindings": [
+    {
+      "name": "DEMO_RECOVERY_LEDGER",
+      "className": "CertificationLedger",
+      "namespaceId": "16dca25759494a33813d2800f3f1a850",
+      "scriptName": "ai-and-main-revenue-opportunity-staging"
+    }
+  ],
+  "secretNames": [
+    "EVAL_OPENAI_API_KEY",
+    "HUBSPOT_ACCESS_TOKEN",
+    "HUBSPOT_WRITE_TOKEN",
+    "OPENAI_API_KEY",
+    "OPERATOR_EMAIL_API_KEY",
+    "STAGING_HUBSPOT_READ_TOKEN",
+    "STAGING_HUBSPOT_WRITE_TOKEN",
+    "WRITEBACK_APPROVAL_TOKEN"
+  ],
+  "subdomain": {
+    "enabled": true,
+    "previews_enabled": false
+  },
+  "remoteModules": [
+    {
+      "name": "worker.js",
+      "sha256": "24ae246df708d5a247d76f904d0cdb0e58dea7bd48bd0fcd35768a2cae961f58",
+      "bytes": 101921
+    }
+  ],
+  "codeMatches": true,
+  "allTaskAndNoteFlagsClosed": true,
+  "otherSettingsPreserved": true
+}

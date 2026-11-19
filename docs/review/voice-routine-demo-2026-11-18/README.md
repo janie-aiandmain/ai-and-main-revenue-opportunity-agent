@@ -79,6 +79,26 @@ state, use `keep_vars: true`, and keep staging public/preview endpoints disabled
 Live deployment/activation receipts are recorded separately in `hosted/` after
 execution. No release to customers or merge to main is included.
 
+## Actually activated — November 18 evening, Eastern
+
+Source **0b6ed15531643a8739818023eac63fa79fc605e9** is deployed on both
+existing Workers. [The activation receipt](hosted/activation.json) verifies:
+
+- Private owner version **f4173395-5801-4ea7-8c62-e9705c08fb4a**.
+- Access-protected gateway version **9c4ab98a-17ef-460d-8727-48ec8a9b57bf**.
+- Routine mode and both note switches enabled; note fault and all nine task/
+  general/fault switches disabled.
+- Existing Secret names, namespace, tenant/identity/email settings and hosts
+  preserved. Deployed code bytes match the closed tested candidate.
+- All four checked anonymous voice/identity paths redirect to Access before
+  and after activation. Staging remains private and previews remain disabled.
+- No HubSpot call/create, inference or email was made by the deployment process.
+
+The supported routine flow is enabled. The first **new hosted v2 routine-save
+receipt remains pending**; the local browser run and prior v1 hosted saves are
+clearly separate evidence. Neither existing confirmed note was reopened.
+See [current-status.json](current-status.json) for the compact state.
+
 ## Operator use
 
 Refresh [the voice page](https://ai-and-main-revenue-opportunity-agent.ruddy4learning.workers.dev/voice-intake)

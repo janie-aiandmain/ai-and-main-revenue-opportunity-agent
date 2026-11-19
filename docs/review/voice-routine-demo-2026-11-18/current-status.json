@@ -1,0 +1,48 @@
+{
+  "kind": "ACTUAL_ROUTINE_SYNTHETIC_VOICE_ACTIVATION",
+  "verifiedAt": "2026-11-19T01:21:15.202Z",
+  "sourceCommit": "0b6ed15531643a8739818023eac63fa79fc605e9",
+  "policyVersion": "authenticated-exact-note-demo-v1",
+  "portalId": "247646122",
+  "contactId": "582095692487",
+  "workflow": [
+    "record",
+    "review_correct",
+    "prepare_complete_note",
+    "approve_exact_note",
+    "save_to_hubspot"
+  ],
+  "noPerIntakeCloudflareWindow": true,
+  "workers": [
+    {
+      "name": "ai-and-main-revenue-opportunity-staging",
+      "versionId": "f4173395-5801-4ea7-8c62-e9705c08fb4a"
+    },
+    {
+      "name": "ai-and-main-revenue-opportunity-agent",
+      "versionId": "9c4ab98a-17ef-460d-8727-48ec8a9b57bf"
+    }
+  ],
+  "noteWritesEnabled": true,
+  "allGeneralTaskAndFaultExecutionEnabled": false,
+  "externalAccessProtected": true,
+  "priorConfirmedNotesUnchanged": [
+    "426427657968",
+    "426418751203"
+  ],
+  "priorApprovalsAutomaticallyTransferred": false,
+  "hostedRoutineV2SaveReceipt": "PENDING_FIRST_NEW_OPERATOR_INTAKE",
+  "localValidation": {
+    "testsPassed": 310,
+    "retainedWorkflowsPassed": 207,
+    "bothDryRunsPassed": true,
+    "actualLocalBrowserRoutineSavePassed": true
+  },
+  "noteBodyGenerationUnchanged": true,
+  "freshModelCallsThisCycle": 0,
+  "hubspotCallsByDeploymentController": 0,
+  "notesCreatedByDeploymentController": 0,
+  "emailsByDeploymentController": 0,
+  "activationReceiptHash": "sha256:a46e737189506fb14f33040fd0e4215d93b2b23f060fc8faa83093569bbe190b",
+  "mainChanged": false
+}

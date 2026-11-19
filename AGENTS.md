@@ -1145,3 +1145,16 @@ Deploy/verify closed first, then enable the two note switches under this explici
 authorization. Preserve existing Access, hosts, Secrets, Durable Object namespace,
 tenant, email configuration and source evidence. No Codex CRM POST, synthetic
 operator impersonation, extra model inference or email delivery is needed.
+
+Routine activation is now VERIFIED on source0b6ed15531643a8739818023eac63fa79fc605e9:
+ownerf4173395-5801-4ea7-8c62-e9705c08fb4a and gateway9c4ab98a-17ef-460d-8727-48ec8a9b57bf.
+See docs/review/voice-routine-demo-2026-11-18/hosted/activation.json. Mode is
+human_approved_demo; both note switches true, note-fault and all nine task flags
+false. Prior settings/Secrets/namespace/hosts remain intact; all checked anonymous
+voice/identity paths redirect to Access.310 tests,207 retained workflow executions,
+both builds and actual local browser/SQLite routine flow pass. No new inference,
+HubSpot call/create or email was made by this activation. First new hosted v2
+operator save receipt remains PENDING; do not claim prior window-policy saves
+prove it. No more per-intake infrastructure windows are needed. Every new note
+still requires real exact approval; do not reuse either confirmed note or broaden
+to customers/tasks. Main remains unchanged.
